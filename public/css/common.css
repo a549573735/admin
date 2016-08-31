@@ -78,7 +78,7 @@ a:hover{ text-decoration: none;}
 
 .c-h{ width: 1200px; margin: 0 auto; height: 36px; background: #fff; line-height: 36px; font-size: 14px;}
 
-.c-bg{ width: 100%; background-image:url('../../public/images/bg.jpg'); background-size:cover; height: 270px; overflow: hidden; background-position:50%;   }
+.c-bg{ width: 100%; background-image:url('../images/bg.jpg'); background-size:cover; height: 270px; overflow: hidden; background-position:50%;   }
 .c-w{ overflow: hidden; width: 100%; position: relative;}
 .c-content{ width: 1200px; min-height: 200px; margin: 48px auto;}
 
@@ -106,7 +106,7 @@ a:hover{ text-decoration: none;}
 
 
 
-/*ÐÂ¼Ó*/
+/*ï¿½Â¼ï¿½*/
 .o-pd-r{padding-right: 0 !important;}
 .c-m{ width:1200px; float: left;  min-height: 500px; margin: 0px auto; }
 

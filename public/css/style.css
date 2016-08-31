@@ -6,7 +6,7 @@ a{ text-decoration:none;}
 
 
 /*登录（denglu）页面的css*/
-.big_bj{width:100%;float:left;height:800px;background:url(../../public/images/dl.jpg) no-repeat center center;background-size:cover;}
+.big_bj{width:100%;float:left;height:800px;background:url(../images/dl.jpg) no-repeat center center;background-size:cover;}
 .denglu{width:476px;height:497px;float:right;margin-top:157px;background:#fff;border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;-webkit-border-radius:6px;box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-webkit-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-moz-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);}
 .denglu_title{ width:100%; height:48px; line-height:48px; padding-top:49px; text-align:center; overflow:hidden; font-size:36px; color:#333333; }
 .denglu_content{ width:388px; float:left; overflow:hidden;}
@@ -140,7 +140,9 @@ nav{float:left; text-align:center;}
 
 
 
-
+.o-add-l{ margin-left:66px;}
+.v-righ{ text-align:right; color:#313131; font-size:18px; line-height:34px;}
+.v-left{text-align:left;color:#333333;font-size:14px;line-height:34px}
 
 
 

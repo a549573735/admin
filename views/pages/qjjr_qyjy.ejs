@@ -1,0 +1,837 @@
+<% include ../common/header.ejs %>
+
+<div class="c-content o-pad" id="c-content">
+    <div class="clearfix">
+       <% include ../common/leftNav.ejs %>
+         <div class="c-r">
+            <div class="v-tabs-title ">
+                <div class="block">
+                    <div class="block-header clearfix">
+                        <div class="col-md-12 o-pd">
+                            <h3 class="block-title">上海医德医疗设备有限公司</h3>
+                        </div>
+                        <div class="col-md-8 col-md-offset-4 text-right o-pd clearfix">
+                            <div class="v-item-btn">
+                                <button class="btn btn-minw btn-primary v-tabs-btn" data-toggle="modal"data-target="#modal-fromleft"  type="button">退出</button>
+                            </div>
+
+                            <div class=" v-item-btn">
+                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">不合格</button>
+                                <div class="v-modal-min">
+                                    <div class="form-group clearfix o-mg">
+
+
+                                        <div class="form-group ">
+
+                                            <label class="col-md-3 control-label " for="val-suggestions">建议:</label>
+                                            <div class="col-md-8 o-pd">
+                                                <textarea class="form-control"  name="val-suggestions" rows="8" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-10 col-md-offset-3 o-pd text-left v-code">
+                                            <label class="css-input css-checkbox css-checkbox-primary" >
+                                                <input type="checkbox"   ><span></span> 抄送至该企业所属园区
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-10 col-md-offset-3 v-code text-left o-pd">
+                                            <button class="btn btn-sm btn-primary v-t-b" type="submit">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" v-item-btn">
+                                <button class="btn btn-minw btn-primary v-tabs-btn" data-toggle="modal"data-target="#modal-fromleft"  type="button">合格</button>
+                            </div>
+
+                            <div class=" v-item-btn">
+                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">建议</button>
+                                <div class="v-modal-min">
+                                    <div class="form-group clearfix o-mg">
+
+
+                                      <div class="form-group ">
+
+                                        <label class="col-md-3 control-label " for="val-suggestions">建议:</label>
+                                        <div class="col-md-8 o-pd">
+                                            <textarea class="form-control"  name="val-suggestions" rows="8" placeholder=""></textarea>
+                                        </div>
+                                      </div>
+
+                                        <div class="col-md-10 col-md-offset-3 o-pd text-left v-code">
+                                            <label class="css-input css-checkbox css-checkbox-primary" >
+                                                <input type="checkbox"  ><span></span> 抄送至该企业所属园区
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-10 col-md-offset-3 v-code text-left o-pd">
+                                            <button class="btn btn-sm btn-primary v-t-b" type="submit">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class=" v-item-btn">
+                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">预约</button>
+                                <div class="v-modal-min">
+                                    <div class="form-group clearfix o-mg">
+                                        <div class="form-group clearfix">
+                                            <form>
+                                                <label class="col-md-3 control-label v-min-fz">约谈时间:</label>
+                                                <div class="col-md-8 o-pd">
+                                                    <input class="js-datepicker form-control" data-date-format="yyyy/mm/dd/" type="text" placeholder="mm/dd/yy">
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="form-group ">
+
+                                            <label class="col-md-3 control-label " for="val-suggestions">建议:</label>
+                                            <div class="col-md-8 o-pd">
+                                                <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="8" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-10 col-md-offset-3 o-pd text-left v-code">
+                                            <label class="css-input css-checkbox css-checkbox-primary" >
+                                                <input type="checkbox"  name="val-terms" value="1"><span></span> 抄送至该企业所属园区
+                                            </label>
+                                        </div>
+
+                                        <div class="col-md-10 col-md-offset-3 v-code text-left o-pd">
+                                            <button class="btn btn-sm btn-primary v-t-b" type="submit">提交</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="v-item-btn">
+                                  <button class="btn btn-minw btn-primary v-tabs-btn" data-toggle="modal"data-target="#modal-fromleft" type="button">约谈</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="block">
+                <ul class="nav nav-tabs nav-justified" id="v-nav-tab" >
+                    <li class="active">
+                        <a href="javascript:;"> 企业信息</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">采购信息</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">销售信息</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">发票信息</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">客户资质</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">生产商资质</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">供应商资质</a>
+                    </li>
+                    <li class="">
+                        <a href="javascript:;">产品资质</a>
+                    </li>
+                </ul>
+                <div class="block-content tab-content v-tab-content ">
+                    <div class="tab-pane  active">
+                            <div class="col-md-12">
+                                    <div class="col-md-12 o-pd qyspxq_title">企业信息</div>
+                                    <div class="col-md-12 o-pd qyspxq_text">
+                                        公司名称：上海医德医疗设备有限公司<br />
+                                        公司地址：上海市奉贤区南桥镇南亭公路269号<br />
+                                        隶属市场所：上海青浦医疗器械市场所<br />
+                                        隶属园区：上海青浦医疗器械区局<br />
+                                        联系人：李先生<br />
+                                        联系人：12334565455<br />
+                                       <span class="col-md-2 o-pd qjjr_xq ">经营范围 ：</span><span class="col-md-10">从事网络科技、计算机科技，从事网络科技、计算机科技，从事网络科技、计算机科技<br />
+                                           从事网络科技、计算机科技。</span><br />
+                                        <span class="col-md-12 o-pd">经营许可证：沪A4854552</span><br />
+                                        许可证有效期：2020年6月30日
+                                    </div>
+                                     </div>
+                    </div>
+
+                    <div class="tab-pane">
+                        <div class="v-tabs-date">
+                            <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
+                                    <div class="col-md-12">
+                                        <div class="form-group clearfix">
+                                            <label class="col-md-2 o-pd v-fz" >采购时间:</label>
+                                            <div class="col-md-5">
+                                                <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
+                                                    <input class="form-control" type="text"  name="example-daterange1" placeholder="2016-08-12 ">
+                                                    <span class="input-group-addon">~</span>
+                                                    <input class="form-control" type="text" name="example-daterange2" placeholder="2016-08-12 ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="row v-table">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <!--<table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 12%">企业名称</th>
+                                            <th class="text-center" style="width: 20%">采购订单号</th>
+                                            <th class="text-center" style="width: 10%;">采购日期</th>
+                                            <th class="text-center" style="width: 11%">供货企业</th>
+                                            <th class="text-center" style="width: 14%">货品名称</th>
+                                            <th class="text-center" style="width: 7%">经办人</th>
+                                            <th class="text-center" style="width: 11%">采购随行单</th>
+                                            <th class="text-center" style="width: 9%">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+
+
+                                        </tbody>
+                                    </table>-->
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 25%">采购订单号</th>
+                                            <th class="text-center" style="width: 12%">采购日期</th>
+                                            <th class="text-center" style="width: 16%;">供货企业</th>
+                                            <th class="text-center" style="width: 15%">货品名称</th>
+                                            <th class="text-center" style="width: 10%">经办人</th>
+                                            <th class="text-center" style="width: 14%">采购随行单</th>
+                                            <th class="text-center">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">随行单<span class="icon-file-alt"></span></td>
+                                        </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" >
+                        <div class="v-tabs-date">
+                            <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
+                                    <div class="col-md-12">
+                                        <div class="form-group clearfix">
+                                            <label class="col-md-2 o-pd v-fz" >销售时间:</label>
+                                            <div class="col-md-5">
+                                                <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
+                                                    <input class="form-control" type="text"  name="example-daterange1" placeholder="2016-08-12 ">
+                                                    <span class="input-group-addon">~</span>
+                                                    <input class="form-control" type="text" name="example-daterange2" placeholder="2016-08-12 ">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                            </form>
+                        </div>
+                        <div class="row v-table">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 25%">订货单号</th>
+                                            <th class="text-center" style="width: 15%">销售日期</th>
+                                            <th class="text-center" style="width: 15%">购货企业</th>
+                                            <th class="text-center" style="width: 15%">货品名称</th>
+                                            <th class="text-center" style="width: 15%">销售代表</th>
+                                            <th class="text-center">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">CGDD-2016-06-24-0002</td>
+                                            <td class="text-center">2016-06-29</td>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">复方氨酚烷胺胶囊</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" >
+                        <div class="v-tabs-date">
+                            <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
+                                <div class="col-md-12">
+                                    <div class="form-group clearfix">
+                                        <label class="col-md-2 o-pd v-fz" >销售时间:</label>
+                                        <div class="col-md-5">
+                                            <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
+                                                <input class="form-control" type="text"  name="example-daterange1" placeholder="2016-08-12">
+                                                <span class="input-group-addon">~</span>
+                                                <input class="form-control" type="text" name="example-daterange2" placeholder="2016-08-12">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="row v-table">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 10%">发票单号</th>
+                                            <th class="text-center" style="width: 12%">开票日期</th>
+                                            <th class="text-center" style="width: 10%;">发票类别</th>
+                                            <th class="text-center" style="width: 14%">客户</th>
+                                            <th class="text-center" style="width: 10%">税号</th>
+                                            <th class="text-center" style="width: 9%">开票金额</th>
+                                            <th class="text-center" style="width: 8%">收票人</th>
+                                            <th class="text-center" style="width: 8%">经办人</th>
+                                            <th class="text-center" style="width: 9%">发票单</th>
+                                            <th class="text-center" style="width: 10%">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">45654454</td>
+                                            <td class="text-center">2016-08-16</td>
+                                            <td class="text-center">服务类</td>
+                                            <td class="text-center">河南欧迪医疗医药有限公司</td>
+                                            <td class="text-center">3102264564561238</td>
+                                            <td class="text-center">1000000</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">李先生</td>
+                                            <td class="text-center">单据<span class="icon-file-alt"></span></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">45654454</td>
+                                            <td class="text-center">2016-08-16</td>
+                                            <td class="text-center">服务类</td>
+                                            <td class="text-center">河南欧迪医疗医药有限公司</td>
+                                            <td class="text-center">3102264564561238</td>
+                                            <td class="text-center">1000000</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">李先生</td>
+                                            <td class="text-center">单据<span class="icon-file-alt"></span></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+
+                                        <tr>
+                                            <td class="text-center">45654454</td>
+                                            <td class="text-center">2016-08-16</td>
+                                            <td class="text-center">服务类</td>
+                                            <td class="text-center">河南欧迪医疗医药有限公司</td>
+                                            <td class="text-center">3102264564561238</td>
+                                            <td class="text-center">1000000</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">李先生</td>
+                                            <td class="text-center">单据<span class="icon-file-alt"></span></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">45654454</td>
+                                            <td class="text-center">2016-08-16</td>
+                                            <td class="text-center">服务类</td>
+                                            <td class="text-center">河南欧迪医疗医药有限公司</td>
+                                            <td class="text-center">3102264564561238</td>
+                                            <td class="text-center">1000000</td>
+                                            <td class="text-center">王先生</td>
+                                            <td class="text-center">李先生</td>
+                                            <td class="text-center">单据<span class="icon-file-alt"></span></td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" >
+                        <div class="v-tabs-date">
+                            <form class="form-horizontal clearfix" action="" method="post" onsubmit="return false;">
+                               <div class="col-md-12">
+                                   <div class="form-group clearfix">
+                                    <label class="col-md-2 o-pd v-fz" >生产商名称:</label>
+                                    <div class="col-md-5 ">
+                                        <div class="col-md-8 o-pd">
+                                            <input class="form-control" type="text" id="Text2" name="example-if-password" placeholder="雅为">
+
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <button class="btn btn-default btn-primary" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                               </div>
+                            </form>
+                        </div>
+                        <div class="row v-table">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 15%">客户名称</th>
+                                            <th class="text-center" style="width: 15%">客户地址</th>
+                                            <th class="text-center" style="width: 14%;">联系方式</th>
+                                            <th class="text-center" style="width: 14%">经营许可证号</th>
+                                            <th class="text-center" style="width: 17%">经营范围</th>
+                                            <th class="text-center" style="width: 15%">许可证截止日期</th>
+                                            <th class="text-center" style="width: 10%">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" >
+                        <div class="v-tabs-date">
+                            <form class="form-horizontal clearfix" action="" method="post" onsubmit="return false;">
+                               <div class="col-md-12">
+                                   <div class="form-group clearfix">
+                                    <label class="col-md-2 o-pd v-fz" >生产商名称:</label>
+                                    <div class="col-md-5 ">
+                                        <div class="col-md-8 o-pd">
+                                            <input class="form-control" type="text" id="Text3" name="example-if-password" placeholder="雅为">
+
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <button class="btn btn-default btn-primary" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                               </div>
+                            </form>
+                        </div>
+                        <div class="row v-table">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 15%">生产商名称</th>
+                                            <th class="text-center" style="width: 15%">生产商地址</th>
+                                            <th class="text-center" style="width: 14%;">联系方式</th>
+                                            <th class="text-center" style="width: 14%">经营许可证号</th>
+                                            <th class="text-center" style="width: 17%">经营范围</th>
+                                            <th class="text-center" style="width: 15%">许可证截止日期</th>
+                                            <th class="text-center" style="width: 10%">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4852158</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" >
+                        <div class="v-tabs-date">
+                            <form class="form-horizontal clearfix" action="" method="post" onsubmit="return false;">
+                               <div class="col-md-12">
+                                   <div class="form-group clearfix">
+                                    <label class="col-md-2 o-pd v-fz" >供应商名称:</label>
+                                    <div class="col-md-5 ">
+                                        <div class="col-md-8 o-pd">
+                                            <input class="form-control" type="text" id="Text1" name="example-if-password" placeholder="雅为">
+
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <button class="btn btn-default btn-primary" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                               </div>
+                            </form>
+                        </div>
+                        <div class="row v-table">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 14%">供应商名称</th>
+                                            <th class="text-center" style="width: 15%">供应商地址</th>
+                                            <th class="text-center" style="width: 14%;">联系方式</th>
+                                            <th class="text-center" style="width: 14%">经营许可证号</th>
+                                            <th class="text-center" style="width: 20%">经营范围</th>
+                                            <th class="text-center" style="width: 15%">许可证截止日期</th>
+                                            <th class="text-center" style="width: 8%">备注</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号</td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4568879</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号</td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4568879</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号</td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4568879</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">上海雅为生物科技有限公司</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号</td>
+                                            <td class="text-center">021-1256-4589</td>
+                                            <td class="text-center">沪A4568879</td>
+                                            <td class="text-center">
+                                                从事网络科技、计算机科技、信息科技、软件科技领域内<a href="javascript:;" class="btn-link"> 详情</a>
+                                            </td>
+                                            <td class="text-center">2020-06-30</td>
+                                            <td class="text-center"></td>
+                                        </tr>
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane" >
+                        <div class="v-tabs-date">
+                            <form class="form-horizontal clearfix" action="" method="post" onsubmit="return false;">
+                               <div class="col-md-12">
+                                   <div class="form-group clearfix">
+                                    <label class="col-md-2 o-pd v-fz" >产品名称:</label>
+                                    <div class="col-md-5 ">
+                                        <div class="col-md-8 o-pd">
+                                            <input class="form-control" type="text" id="example-if-password" name="example-if-password" placeholder="雅为">
+
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <button class="btn btn-default btn-primary" type="submit">查询</button>
+                                        </div>
+                                    </div>
+                                  </div>
+                               </div>
+                            </form>
+                        </div>
+                        <div class="row v-table">
+                            <div class="col-md-12">
+                                <div class="block">
+                                    <table class="table table-hover table-borderless">
+                                        <thead>
+                                        <tr class="v-table-tr">
+                                            <th class="text-center" style="width: 20%">产品名称</th>
+                                            <th class="text-center" style="width: 20%">生产地址</th>
+                                            <th class="text-center" style="width: 20%;">产品规格</th>
+                                            <th class="text-center" style="width: 15%">产品注册证号</th>
+                                            <th class="text-center">注册证有效期</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td class="text-center">布洛芬混悬液</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">145645695458622</td>
+                                            <td class="text-center">沪A546558</td>
+                                            <td class="text-center">2020-06-30</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="text-center">布洛芬混悬液</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">145645695458622</td>
+                                            <td class="text-center">沪A546558</td>
+                                            <td class="text-center">2020-06-30</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">布洛芬混悬液</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">145645695458622</td>
+                                            <td class="text-center">沪A546558</td>
+                                            <td class="text-center">2020-06-30</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">布洛芬混悬液</td>
+                                            <td class="text-center">上海市奉贤区南桥镇南亭公路269号 </td>
+                                            <td class="text-center">145645695458622</td>
+                                            <td class="text-center">沪A546558</td>
+                                            <td class="text-center">2020-06-30</td>
+                                        </tr>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"  src="dist/index.js"></script>
+<% include ../common/footer.ejs %>
+<% include ../common/modals.ejs %>
+
+<script>
+
+    var navTabs=$('#v-nav-tab');
+    var contentTabs=$('.v-tab-content');
+
+    navTabs.on('click','li',function (){
+
+        $(this).addClass('active').siblings().removeClass('active');
+        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
+
+    })
+
+    uiHelperTableToolsCheckable();
+
+</script>
+
+
+
+      
+
+

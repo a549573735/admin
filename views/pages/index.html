@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../../public/lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/lib/fontawesome/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../public/css/common.css">
+    <link rel="stylesheet" href="../../../public/css/style.css">
+    <link rel="stylesheet" href="../../../public/css/c-table.css">
+    <link rel="stylesheet" href="../../../public/lib/bootstrap-datepicker3.min.css">
+    <script src="../../../public/lib/jquery/jquery.min.js"></script>
+</head>
+<body>
+
+
+
+</body>
+</html>
+<script src="../../../public/lib/jquery/jquery.min.js"></script>
+<script src="../../../public/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="../../../public/js/common.js"></script>
+<script src="../../../public/lib/bootstrap-datepicker.js"></script>
+<script src="../../../public/lib/locales/bootstrap-datepicker.zh-CN.js"></script>
+
+<script>
+  new Common('.c-list li >a');
+
+
+    var navTabs=$('#v-nav-tab');
+    var contentTabs=$('.v-tab-content');
+
+    navTabs.on('click','li',function (){
+
+        $(this).addClass('active').siblings().removeClass('active');
+        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
+
+    })
+
+    uiHelperTableToolsCheckable();
+
+
+
+</script>
+
+
+
+
+
+

@@ -1,0 +1,32 @@
+<% include ../common/header.ejs %>
+
+<div class="c-content o-pad" id="c-content">
+    <div class="clearfix">
+       <% include ../common/leftNav.ejs %>
+        <div class="c-r">
+           <% include ../common/common.ejs %>
+        </div>
+    </div>
+</div>
+
+
+<% include ../common/footer.ejs %>
+
+<script>
+
+    var navTabs=$('#v-nav-tab');
+    var contentTabs=$('.v-tab-content');
+
+    navTabs.on('click','li',function (){
+
+        $(this).addClass('active').siblings().removeClass('active');
+        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
+
+    })
+
+    uiHelperTableToolsCheckable();
+
+</script>
+
+
+

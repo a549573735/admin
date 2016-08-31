@@ -9,14 +9,14 @@ const group = require("./routes/group");
 const app = express();
 
 app.engine('ejs', consolidate.ejs);           // 对某一个扩展名进行解析
-app.set('views', __dirname + 'views');       // 路径
+app.set('views', __dirname + '/views');       // 路径
 app.set('view engine', 'ejs');               // html引擎（指定引擎扩展名省略）
 
 app.use(express.static(path.join(__dirname, 'public')));    // 设置静态文件夹
 
 app.use(function(req, res, next) {
    res.locals.config = {
-       version: '20160521'
+       version: '20160831'
    };
    next();
 });
@@ -24,5 +24,6 @@ app.use(function(req, res, next) {
 app.use(group);
 
 app.listen(config.port);
+console.log('开启服务器'+config.port)
 
 

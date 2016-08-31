@@ -1,6 +1,6 @@
 
 .table-borderless > tbody > tr > td, .table-borderless > tfoot > tr > td {
-    border: none;font-size: 14px; line-height:33px;
+    border: none;font-size: 14px; 
 }
 
 .table>thead>tr>th{ border-bottom: 0; font-size: 16px; font-weight: normal;}
@@ -37,8 +37,10 @@ label{font-weight: normal; color: #313131;}
 
 .v-table-tr th{font-size: 16px; }
 .v-tabs-modal{ width: 950px !important;}
+.v-label-l{  font-size: 18px !important; padding-left: 15px; width: 120px; margin-top: 7px; }
 .v-label{ font-size: 18px !important; padding-left: 15px; width: 120px; margin-top: 7px;}
 .v-label-s{font-size: 18px !important;width: 80px; margin-top: 7px; }
+.v-label-x{font-size: 18px !important;width: 60px; margin-top: 7px; }
 
 
 .v-tabs-title{ padding-bottom: 20px;}
@@ -192,3 +194,16 @@ label{font-weight: normal; color: #313131;}
 
 .v-code{ padding-top: 10px !important;}
 .v-min-fz{ margin-top: 7px;}
+
+
+.v-table-img{ width: 730px; height: 480px; margin: 0 auto;}
+.v-table-img img {width: 100%;}
+
+.v-table-text{ height: 200px;}
+
+
+
+
+
+
+
