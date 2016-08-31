@@ -1,0 +1,1468 @@
+[2016-06-21 16:10:34.744] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):52
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:10:38.175] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):42
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:17:22.916] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):297
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:17:22.961] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):40
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:17:23.688] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):37
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:17:24.215] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):32
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:18:09.039] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):38
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:57.835] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:58.332] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:58.646] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):30
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:58.855] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):33
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:59.039] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:59.224] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:59.419] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):37
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:23:59.599] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:24:09.448] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):38
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:32:21.979] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):36
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:32:23.394] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):37
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:32:23.576] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:32:23.749] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):33
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:32:23.922] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:41:26.011] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:41:26.297] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):38
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:41:26.471] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):34
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:41:26.680] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):40
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:41:26.839] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):34
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:41:27.001] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):34
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:41:27.189] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):33
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:46:13.195] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):81
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:49:00.675] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):57
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:49:01.320] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):42
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:49:02.024] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):35
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:49:02.613] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):42
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:49:02.805] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):42
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:49:02.873] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):535
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:49:57.563] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):48
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:48.674] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):42
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:50.339] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):43
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:50.515] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):32
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:50.671] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:50.835] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:50.998] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):35
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:51.276] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:51.429] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:51.580] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:52:52.092] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):973
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:55:32.541] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:55:33.003] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):43
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:55:33.210] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:55:33.407] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:45.766] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):49
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:46.099] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):34
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:46.374] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:46.596] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:46.773] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:46.951] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):32
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:47.120] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):33
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:47.282] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:47.458] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:47.641] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:47.806] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:47.966] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:49.665] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:49.900] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):30
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:50.083] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:50.267] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:50.436] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):39
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:52.052] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):32
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:52.972] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 16:57:57.370] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:02.580] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):37
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:02.756] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:02.925] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:03.070] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):32
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:03.228] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:03.348] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:03.502] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:03.613] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:03.751] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:03.885] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:04.140] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):133
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:00:04.160] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):35
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:01:13.246] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):51
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:01:13.601] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:01:14.935] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):36
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:01:15.246] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:01:15.413] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:01:15.565] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:02:24.972] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):91
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:02:26.249] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):33
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:03:07.231] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):54
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:03:09.571] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:03:17.155] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):50
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:05:39.751] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):1066
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: connect ECONNREFUSED 114.55.38.178:3005
+[2016-06-21 17:05:42.195] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):1048
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: connect ECONNREFUSED 114.55.38.178:3005
+[2016-06-21 17:05:59.570] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]mapi.dev.vd.cn:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):6013
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: socket hang up
+[2016-06-21 17:06:06.482] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]mapi.dev.vd.cn:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):6002
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: socket hang up
+[2016-06-21 17:06:33.097] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]mapi.dev.vd.cn:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):6010
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: socket hang up
+[2016-06-21 17:08:01.920] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]mapi.dev.vd.cn:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):6006
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: socket hang up
+[2016-06-21 17:08:11.888] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]mapi.dev.vd.cn:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):6011
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: socket hang up
+[2016-06-21 17:08:13.033] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):80
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:09:57.499] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):56
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:10:12.795] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):1061
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: connect ECONNREFUSED 114.55.38.178:3005
+[2016-06-21 17:10:14.603] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):1041
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: connect ECONNREFUSED 114.55.38.178:3005
+[2016-06-21 17:10:16.114] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):1060
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: connect ECONNREFUSED 114.55.38.178:3005
+[2016-06-21 17:12:03.196] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):64
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:15:16.322] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):57
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:15:51.344] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):71
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:19:38.991] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):47
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:19:52.569] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):68
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:20:13.752] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):52
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:20:19.779] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):66
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:24:48.520] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):49
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:25:05.778] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):49
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:25:05.961] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):33
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:25:06.899] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:25:13.806] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):52
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:25:14.526] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):36
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:25:30.281] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):81
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:40:13.970] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):57
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:40:22.823] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):50
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:41:59.793] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):61
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:42:06.798] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):62
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:42:47.421] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):43
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:43:31.987] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):54
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:43:32.816] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:43:33.395] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 17:43:55.180] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):75
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:06:57.040] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):47
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:17.510] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):37
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:28.257] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:29.391] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):333
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:30.271] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:31.321] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:31.620] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:32.435] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:34.370] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:34.903] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:08:35.227] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:09:21.579] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:09:27.112] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:09:27.734] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:09:28.431] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:09:31.940] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:09:32.636] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:09:33.381] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:13.408] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:13.616] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):37
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:13.750] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:13.893] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:14.073] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:14.240] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:14.373] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:14.519] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:14.677] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:14.832] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:15.046] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:15.579] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:15.747] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:16.075] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:16.235] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:16.392] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:16.725] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:16.888] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.020] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.184] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.361] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.820] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.836] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.851] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.880] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.906] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.935] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:17.951] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.316] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.788] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.829] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.855] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.901] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.919] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):17
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.970] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:18.995] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.019] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.051] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.097] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.120] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.145] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.165] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.213] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.236] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.261] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.295] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.318] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.336] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.355] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.382] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.402] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.448] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):30
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.488] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.510] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.525] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.550] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.577] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.600] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.628] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.651] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.711] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):30
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.724] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.744] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):17
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.770] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.790] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.819] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.840] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.866] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.890] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.919] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.966] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:19.990] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.008] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.066] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.103] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.112] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.139] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.159] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.186] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):18
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.206] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.229] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.255] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.281] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.310] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.325] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.399] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.423] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.459] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.467] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.503] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:20.971] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):19
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:21.447] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:21.669] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:21.858] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:22.041] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:10:22.531] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6001
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:23.959] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6000
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:24.738] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6001
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:24.784] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6002
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:24.854] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6001
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:24.933] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6001
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:25.049] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6000
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:25.171] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6002
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:25.439] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6002
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:25.657] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6003
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:25.917] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6001
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:26.024] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6006
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:26.336] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6004
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:26.367] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6015
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:10:26.500] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6002
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-06-21 18:20:37.041] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:37.935] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:38.293] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):30
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:38.488] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):29
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:38.984] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:39.196] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:39.353] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:39.906] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):28
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:40.086] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:40.582] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:40.781] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:40.937] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):30
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:41.416] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:41.592] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):26
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:42.166] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):43
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:42.305] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:42.787] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:20:42.970] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):31
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:21:15.652] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:21:16.400] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:28:08.107] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):24
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:28:08.640] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):22
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:29:27.014] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):21
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:29:28.757] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:29:29.940] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):20
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-06-21 18:29:35.185] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6000
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-07-29 16:54:00.821] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/getPageInfo  TAKE TIMES(ms):54
+{"applicationName":"mengdian.yiyuanduobao-service","BaseAppVersion":"4.1.0","channel":"DuoBaoHome"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 16:54:07.603] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):23
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 16:54:17.801] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):6002
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: socket hang up
+[2016-07-29 16:55:57.491] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):43
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 16:55:58.038] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):30
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 16:55:58.337] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):27
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 16:55:59.790] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):33
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 16:56:18.231] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]114.55.38.178:8081/service  TAKE TIMES(ms):38
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"com.weimob.mengdian.yiyuanduobao.service.GoodsExportService","methodName":"getAllGoodsGroup"}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:06:51.873] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):71
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:06:52.404] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):43
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:06:52.599] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):41
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:06:52.750] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):34
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:06:52.910] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):40
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:06:53.167] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):85
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:07:16.828] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):59
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:09:17.941] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):39
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
+[2016-07-29 17:09:18.368] [ERROR] exception - z_pro\utils\proxy.js:120:16
+[--PROXY--]112.124.28.82:3005/mengdianApp/duobao/question/list  TAKE TIMES(ms):25
+{"applicationName":"mengdian.yiyuanduobao-service","serviceName":"","methodName":""}
+Error: 101057795:error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol:openssl\ssl\s23_clnt.c:794:
+
