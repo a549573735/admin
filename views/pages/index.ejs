@@ -1,4 +1,5 @@
 <% include ../common/header.ejs %>
+<script type=""></script>
 
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
@@ -15,11 +16,13 @@
     </div>
 </div>
 
-<script type="text/javascript"  src="/dist/index.js"></script>
+
 <% include ../common/footer.ejs %>
 <% include ../common/modals.ejs %>
 
 <script>
+    seajs.use("/js_cmd/components/message/message");
     seajs.use("js_cmd/group/marketList-cmd");
+
 
 </script>

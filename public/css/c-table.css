@@ -195,11 +195,14 @@ label{font-weight: normal; color: #313131;}
 .v-code{ padding-top: 10px !important;}
 .v-min-fz{ margin-top: 7px;}
 
-
 .v-table-img{ width: 730px; height: 480px; margin: 0 auto;}
 .v-table-img img {width: 100%;}
 
 .v-table-text{ height: 200px;}
+
+.v-cont{ white-space: nowrap;text-overflow: ellipsis; }
+.v-msg-content-n{ display: none; }
+.v-msg-company-n{ display: none; }
 
 
 
