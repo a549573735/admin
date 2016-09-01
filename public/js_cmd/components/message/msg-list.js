@@ -33,20 +33,19 @@ define(function (require, exports, module) {
     props: ['datalist'],
    
     methods:{     
-      notify: function (event) {
-         
-         var msg={
-            title:$(event.target).html(),
-            content:$(event.target).parent().next().find('.v-msg-content-n').html(),
-            date:$(event.target).parent().next().next().html(),
-            company:$(event.target).parent().next().find('.v-msg-company-n').html(),
-            _id:$(event.target).attr('data-id')
-         }
+        
+          notify: function (event) {
+             
+             var msg={
+                title:$(event.target).html(),
+                content:$(event.target).parent().next().find('.v-msg-content-n').html(),
+                date:$(event.target).parent().next().next().html(),
+                company:$(event.target).parent().next().find('.v-msg-company-n').html(),
+                _id:$(event.target).attr('data-id')
+             }
 
-          console.log(msg)
-            this.$dispatch('send-msg', msg)       
-          
-     }
+                this.$dispatch('send-msg', msg)         
+            }
 
     }
     });

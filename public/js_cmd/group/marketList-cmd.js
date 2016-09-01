@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
-    var Vue = require('lib_cmd/vue-cmd'),
-        tableCom = require('js_cmd/tableCom');
+    var Vue = require('lib_cmd/vue-cmd')
+        // tableCom = require('js_cmd/tableCom');
 
     var navTabs=$('#v-nav-tab');
     var contentTabs=$('.v-tab-content');
@@ -14,7 +14,7 @@ define(function (require, exports, module) {
 
     uiHelperTableToolsCheckable();
 
-
+    require('/js_cmd/tableCom');
     new Vue({
         el: '#app',
         data: {

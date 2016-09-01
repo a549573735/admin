@@ -7,7 +7,8 @@ var c_index=require('../../controllers/admin')
 	router.get('/group/market_list', function(req, res, next) {
 	    res.render('group/market_list', {
 	        title: '首页',
-	        pageName: '平台页'
+	        pageName: '平台页',
+	        data:'11'
 	    });
 	});
 

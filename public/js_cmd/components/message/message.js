@@ -4,37 +4,36 @@ define(function (require, exports, module) {
     require('/js_cmd/components/message/msg-list')
    
     
-     
     var message=new Vue({
          'el':'#v-msg',
          data:function (){
          	return {
          	     msglist:[
          	     {
-                      title:'邹兴平吃屎1',
-                      content:'赶紧死去把组建写完 不然抽的你妈都不认得',
+                      title:'111111111',
+                      content:'aaaaaaaaaaaaaaaaaaa',
                       _id:'1',
                       date:'2016-9-1',
                       company:'XXX公司'
          	     },
          	     {
-                      title:'邹兴平吃屎2',
-                      content:'赶紧死去把组建写完 不然抽的你妈都不认得',
+                      title:'2222222222222',
+                      content:'bbbbbbbbbbbbbbbbbbb',
                       _id:'2',
                       date:'2016-9-1',
                       company:'XXX公司'
          	     },
          	     {
-                      title:'邹兴平吃屎3',
-                      content:'赶紧死去把组建写完 不然抽的你妈都不认得',
+                      title:'3333333333333',
+                      content:'ccccccccccccccccccc',
                       _id:'3',
                       date:'2016-9-1',
                       company:'日'
          	     }
          	     ],
          	   message:{
-         	     	  title:'邹兴平吃屎1',
-                      content:'赶紧死去把组建写完 不然抽的你妈都不认得',
+         	     	  title:'444444444444444444',
+                      content:'dddddddddddddddddddd',
                       _id:'1',
                       date:'2016-9-1',
                       company:'日'
@@ -52,8 +51,7 @@ define(function (require, exports, module) {
 		      // 事件回调内的 `this` 自动绑定到注册它的实例上
 		      this.message=msg
 
-		      console.log(msg)
-
+		    
 		    }
 		  }
 

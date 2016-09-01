@@ -5,9 +5,8 @@
 
 exports.data=function(req, res, next) {
 
- 
-   
-   res.json({ title: 'Express',data:'123123'});
+
+   // res.json({ title: 'Express',data:'123123'});
 
 }
 
@@ -15,10 +14,23 @@ exports.data=function(req, res, next) {
 
 exports.index=function(req, res, next) {
 
+  var data={ 
+                    data:{
 
+                    title:['','企业名称','检查状态','检查员','检查日期','备注'],
+                    content:[
+                                  ['上海医德医疗设备有限公司','true','王先生','2016-06-29'],
+                                  ['上海医德医疗设备有限公司','true','朱王杰','2016-06-29']
+                             ],
+                    style:['25%','100px','100px','15%','auto'],
+                    details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}]
+                     
+                             }          
+           }
+             
    console.log(req.query.name)
    
-   res.render('pages/index', { title: 'Express',data:'123123'} );
+   res.render('pages/index', data );
 
 }
 
