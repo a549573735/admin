@@ -11,34 +11,33 @@ define(function (require, exports, module) {
          	return {
          	     msglist:[
          	     {
-                      title:'邹兴平是个禽兽1',
+                      title:'邹兴平吃屎1',
                       content:'赶紧死去把组建写完 不然抽的你妈都不认得',
                       _id:'1',
                       date:'2016-9-1',
-                      company:'狗日的'
+                      company:'XXX公司'
          	     },
          	     {
-                      title:'邹兴平是个禽兽2',
+                      title:'邹兴平吃屎2',
                       content:'赶紧死去把组建写完 不然抽的你妈都不认得',
                       _id:'2',
                       date:'2016-9-1',
-                      company:'狗日的'
+                      company:'XXX公司'
          	     },
          	     {
-                      title:'邹兴平是个禽兽3',
+                      title:'邹兴平吃屎3',
                       content:'赶紧死去把组建写完 不然抽的你妈都不认得',
                       _id:'3',
                       date:'2016-9-1',
-                      company:'狗日的'
+                      company:'日'
          	     }
          	     ],
          	   message:{
-         	     	  title:'邹兴平是个禽兽1',
+         	     	  title:'邹兴平吃屎1',
                       content:'赶紧死去把组建写完 不然抽的你妈都不认得',
                       _id:'1',
                       date:'2016-9-1',
-                      company:'狗日的'
-
+                      company:'日'
          	   }
          	}
          },
