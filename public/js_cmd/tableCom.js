@@ -1,6 +1,6 @@
 define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
-    Vue.component('child', {
+    Vue.component('table-past1', {
         template: ' <div class="block">\
         <div class="block-content tab-content v-tab-content" id="v-tab-content">\
         <ul class="nav nav-tabs nav-justified "  id="v-nav-tab">\
@@ -52,17 +52,17 @@ define(function (require, exports, module) {
         <table class="table table-hover table-borderless">\
         <thead>\
         <tr class="v-table-tr">\
-            <th class="text-center " v-for="item in mydata.title" v-bind:style="{ width: style[$index] }">{{item}}</th>\
+            <th class="text-center " v-for="item in mydata.title" v-bind:style="{ width: style[$index] }">{{title}}</th>\
         </tr>\
     </thead>\
     <tbody>\
-    <tr v-for="item in mydata.content">\
+    <tr v-for="item in mydata">\
         <td class="text-center">{{item.title}}</td>\
-    <td class="text-center">{{item.state?'合格':'不合格'}}</td>\
+    <td class="text-center">{{item.state}}</td>\
     <td class="text-center">{{item.name}}</td>\
     <td class="text-center">{{item.date}}</td>\
     <td class="text-center">\
-        {{item.message}} <a href="javascript:;"  class="btn btn-link " data-toggle="modal" data-target="#modal-fromtext"> 详情</a>\
+        {{message}} <a href="javascript:;"  class="btn btn-link" data-toggle="modal" data-target="#modal-fromtext"> 详情</a>\
     </td>\
         </tr>\
         </tbody>\
@@ -73,6 +73,8 @@ define(function (require, exports, module) {
         </div>\
         </div>\
         </div>',
-    props: [title, state, name, data, message]
+    props: {
+            mydata: []
+    }
     });
 });

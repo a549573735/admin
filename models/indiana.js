@@ -2,7 +2,7 @@ var proxy = require("../utils/proxy"),
     config = require('../utils/config');
 
 function Indiana(){}
-// ³£¼ûÎÊÌâ(¶ÔÍâ)
+// å¸¸è§é—®é¢˜(å¯¹å¤–)
 Indiana.questionList = function (args, fn) {
     var arg = {};
     arg.applicationName = 'mengdian.yiyuanduobao-service';
@@ -23,7 +23,7 @@ Indiana.questionList = function (args, fn) {
     });
 };
 
-// ÂÖ²¥ºÍÆ»¹û×¨Çø(¶ÔÍâ)
+// è½®æ’­å’Œè‹¹æœä¸“åŒº(å¯¹å¤–)
 Indiana.bannerGroup = function (args, fn) {
     var arg = {};
     arg.applicationName = 'mengdian.yiyuanduobao-service';
@@ -43,7 +43,7 @@ Indiana.bannerGroup = function (args, fn) {
     });
 };
 
-// ÉÌÆ··Ö×éÁĞ±í
+// å•†å“åˆ†ç»„åˆ—è¡¨
 Indiana.getGoodsGroup = function(args, fn){
     var arg = {};
     arg.applicationName = 'mengdian.yiyuanduobao-service';
