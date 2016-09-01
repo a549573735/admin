@@ -4,12 +4,12 @@ var router = require("./router"),
 var c_index=require('../../controllers/admin')
  
 
-router.get('/group/market_list', function(req, res, next) {
-    res.render('group/market_list', {
-        title: '首页',
-        pageName: '平台页'
-    });
-});
+	router.get('/group/market_list', function(req, res, next) {
+	    res.render('group/market_list', {
+	        title: '首页',
+	        pageName: '平台页'
+	    });
+	});
 
 	router.get('/data', c_index.data);  
 	
