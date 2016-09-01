@@ -24,6 +24,6 @@ app.use(function(req, res, next) {
 app.use(group);
 
 app.listen(config.port);
-console.log('开启服务器'+config.port)
+console.log('开启服务器'+config.port);
 
 
