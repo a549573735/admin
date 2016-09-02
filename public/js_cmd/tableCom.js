@@ -1,12 +1,12 @@
 define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
-    
 
-    Vue.component('table-past1',{  
-                 props: {
-                    mydata: []
-                 },
-                 template:'<div class="block" > \
+
+    Vue.component('table-past1', {
+            props: {
+                mydata: []
+            },
+            template: '<div class="block" > \
                                     <ul class="nav nav-tabs nav-justified " id="v-nav-tab">\
                                         <li class="active">\
                                             <a href="javascript:;"> 企业信息</a>\
@@ -50,9 +50,9 @@ define(function (require, exports, module) {
                 <div class="block">\
                     <table class="table table-hover table-borderless"><thead><tr class="v-table-tr"><th class="text-center " v-for="item in mydata.title" v-bind:style="{ width: style[$index] }">{{title}}</th></tr></thead><tbody><tr v-for="item in mydata"><td class="text-center">{{item.title}}</td><td class="text-center">{{item.state}}</td><td class="text-center">{{item.name}}</td><td class="text-center">{{item.date}}</td><td class="text-center">\ {{message}} <a  class="btn btn-link" data-toggle="modal" data-target="#modal-fromtext"> 详情</a></td></tr></tbody></table></div></div></div></div></div>\
                         </div>',
-           
-                }
-   );
+
+        }
+    );
 });
 
 

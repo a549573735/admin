@@ -5,10 +5,14 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
         <div class="c-r">
-         
-            <div id="app">
-            
-       		 	<% include ../components/table.ejs %>         
+     
+            <div class="block" id="tables">
+              
+       		 	   <table-btns></table-btns> 
+               
+               <table-content-s :datalist="<%= JSON.stringify(data)%>" ></table-content-s>  
+               <table-content-d :datalist="<%= JSON.stringify(data)%>" ></table-content-d> 
+
                <v-pages :pagelist="<%= JSON.stringify(pagelist) %>"></v-pages>
             </div>
         </div>
@@ -20,7 +24,7 @@
 <% include ../common/modals.ejs %>
 
 <script>
-
+    seajs.use("/js_cmd/components/companytable/table");
     seajs.use("/js_cmd/components/paging");
     seajs.use("/js_cmd/components/message/message");
     seajs.use("js_cmd/group/marketList-cmd");

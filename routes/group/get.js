@@ -3,7 +3,7 @@ var router = require("./router"),
 
 var Index=require('../../controllers/admin')
 var Region=require('../../controllers/regional')
-var User=reuqire('../../controllers/user')
+var User=require('../../controllers/user')
 var Company=require('../../controllers/company');
 
  
@@ -20,17 +20,11 @@ var Company=require('../../controllers/company');
 	
 	router.get('/', Index.index);                  	    //公共模块   企业详情
 
+			 
 			 //登陆页面
 
 
- 	router.get('/common', Index.common);  
-
-
-
-
-
-
-
+ 	router.get('/common', Index.common);               //公共模块
 
 
 
@@ -57,21 +51,15 @@ var Company=require('../../controllers/company');
 
 
 
-
-
 	router.get('/region/qy', Region.qjjr_qy); 			//区局进入 企业
 
-	router.get('/region/yq', Region.qjjr_yq); 	
+	router.get('/region/yq', Region.qjjr_yq); 	        //企业进入园区
 
 	router.get('/region/qyjy', Region.qjjr_qyjy);             //区局进入 企业建议
 	 
     router.get('/region/scs', Region.qjjr_scs);         //   区局进入 市车所 
 	 
 	router.get('/region', Region.qujujinru);					  //区局进入
-
-
-
-
 
 
 
