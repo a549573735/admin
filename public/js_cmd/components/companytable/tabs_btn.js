@@ -36,4 +36,7 @@ define(function (require, exports, module) {
                }         
       
     })        
+
+
+      seajs.use("js_cmd/group/marketList-cmd");
 })                             

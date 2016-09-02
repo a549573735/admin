@@ -1,7 +1,7 @@
 var router = require("./router"),
     group_ctr = require('../../controllers/group');
 
-var Index=require('../../controllers/admin')
+var Index=require('../../controllers/index')
 var Region=require('../../controllers/regional')
 var User=require('../../controllers/user')
 var Company=require('../../controllers/company');
@@ -21,10 +21,11 @@ var Company=require('../../controllers/company');
 	router.get('/', Index.index);                  	    //公共模块   企业详情
 
 			 
-			 //登陆页面
+			
 
 
  	router.get('/common', Index.common);               //公共模块
+
 
 
 
@@ -37,7 +38,7 @@ var Company=require('../../controllers/company');
 
 
 
-  	router.get('/login', User.login);		
+  	router.get('/login', User.login);		            //登陆页面
 
 	router.get('/admin/edit', User.jsgl_bjgly);			 //角色管理 编辑
 
@@ -73,7 +74,8 @@ var Company=require('../../controllers/company');
 	router.get('/administration/talks/list', Index.xzyt_lb);    //行政约谈列表
 
 
- 
+    
+
 	router.get('/park', Index.yqjr_qy); 				 // 园区进入
 
 	router.get('/park/annual', Index.yqnb_gslb);      // 园区年报 公示列表

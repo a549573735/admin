@@ -1,6 +1,8 @@
 
 
 
+
+
 exports.qujujinru = function(req, res, next) {
 
    res.render('pages/qujujinru', { title: 'Express',data:'123123' });

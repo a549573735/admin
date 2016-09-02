@@ -10,7 +10,7 @@ define(function (require, exports, module) {
         },
         template: '<div class="tab-pane">\
                                 <div class="v-tabs-date">\
-                                    <form class="form-horizontal clearfix" action="" method="post" onsubmit="return false;">\
+                                    <form class="form-horizontal clearfix" action="https://www.baidu.com" method="post" onsubmit="return false;">\
                                        <div class="col-md-12">\
                                            <div \
                                            class="form-group clearfix">\
@@ -20,7 +20,7 @@ define(function (require, exports, module) {
                                                     <input class="form-control" type="text" id="example-if-password" name="example-if-password" placeholder="">\
                                                 </div>\
                                                 <div class="col-md-4 ">\
-                                                    <button class="btn btn-default btn-primary" type="submit">查询</button>\
+                                                    <button class="btn btn-default btn-primary" type="submit" >查询</button>\
                                                 </div>\
                                             </div>\
                                           </div>\
@@ -33,8 +33,10 @@ define(function (require, exports, module) {
                                              <com-table-list :datalist="datalist"></com-table-list>\
                                         </div>\
                                     </div>\
-                                </div></div>'
-        , methods: {}
+                  </div></div>'
+        , methods: {
 
+            
+        }
     })
 })                                    

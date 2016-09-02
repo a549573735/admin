@@ -4,6 +4,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/companytable/tabs_content_s')
     require('/js_cmd/components/companytable/tabs_content_d')
     require('/js_cmd/components/companytable/tabs_btn')
+
    
     
     var message=new Vue({
@@ -42,12 +43,10 @@ define(function (require, exports, module) {
          	   }
          	}
          }
-        
-        
-
-
+      
     });
 
+   seajs.use("js_cmd/group/marketList-cmd");
 
 }) 
     

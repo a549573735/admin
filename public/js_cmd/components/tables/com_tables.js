@@ -23,6 +23,7 @@ define(function (require, exports, module) {
 
 
     Vue.component('com-table-list', {
+
         props:['datalist'],
         template:'<table class="table  table-hover table-borderless">\
                       <thead>\
@@ -32,16 +33,17 @@ define(function (require, exports, module) {
                       </thead>\
                       <tbody class="v-tabs-check">\
                         <tr v-for="itemlist in datalist.content">\
-                            <td v-for="item in itemlist" class="text-center">{{ item === "true"?"是":item || item === "false"?"否":item   }}</td>\
-                            <td  class="text-center">{{datalist.details[$index].msg  }}<a href=javascript:;" @click="sub($event)" :data-id="datalist.details[$index]._id"  class="btn btn-link"> 详情</a></td>\
+                            <td v-for="item in itemlist" class="text-center">{{ item === "true"?"是":item   }}</td>\
+                            <td  class="text-center">{{datalist.details[$index].msg  }}<a href="javascript:;" @click="sub($event)" :data-id="datalist.details[$index]._id"  class="btn-link"> 详情</a></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
+
         methods:{
             
              sub:function (event){
                      
-                  alert($(event.target).attr('data-id'))
+                  console.log($(event.target).attr('data-id'))
 
              }
 
