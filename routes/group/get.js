@@ -12,9 +12,9 @@ var c_index=require('../../controllers/admin')
 	    });
 	});
 
-	router.get('/data', c_index.data);  
 	
-	router.get('/common', c_index.index);       	    //公共模块   企业详情
+	
+	router.get('/', c_index.index);                  	    //公共模块   企业详情
 
 	router.get('/zxp',c_index.zxp);
 
@@ -54,7 +54,6 @@ var c_index=require('../../controllers/admin')
 
 	router.get('/order/list', c_index.yyjc_lb);         //预约列表
 
+	module.exports = router
 
 
-
-module.exports = router;

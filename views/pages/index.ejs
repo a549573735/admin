@@ -9,7 +9,7 @@
             <div id="app">
             
        		 	<% include ../components/table.ejs %>         
-           
+               <v-pages :pagelist="<%= JSON.stringify(pagelist) %>"></v-pages>
             </div>
         </div>
     </div>
@@ -20,9 +20,9 @@
 <% include ../common/modals.ejs %>
 
 <script>
-  
+
+    seajs.use("/js_cmd/components/paging");
     seajs.use("/js_cmd/components/message/message");
     seajs.use("js_cmd/group/marketList-cmd");
     
-
 </script>
