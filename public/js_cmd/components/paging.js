@@ -22,7 +22,7 @@ define(function (require, exports, module) {
                                         </li>\
                                     </ul>\
                                 </nav>\
-                                <div class="yema_end"> 页<a href="javascript:;" class="btn btn-link" @click="getPrevious($event)"  >下一页</a> <a href="javascript:;" @click="getPage($event)"  class="btn btn-link">尾页</a></div>\
+                                <div class="yema_end"> 页<a href="javascript:;" class="btn btn-link" @click="getNext($event)"  >下一页</a> <a href="javascript:;" @click="getPage($event)"  class="btn btn-link">尾页</a></div>\
                  </div> ',
     
     methods:{     
@@ -31,7 +31,7 @@ define(function (require, exports, module) {
 
              	 if($(event.target).html()=='尾页'){
 
- 					  this.now = this.pagelist.length-1;
+ 					  this.now = this.pagelist;
              	 }else {
 
              	 	  this.now =$(event.target).html()
@@ -52,10 +52,12 @@ define(function (require, exports, module) {
              },
              getNext:function (){
                   
-                  if(this.now>=pagelist.length){
+                  if(this.now>=this.pagelist){
                   	 return false;
                   }else {
+              		
               		this.now++;
+
               		this.$dispatch('send-page', this.now)  
                   }
              }
