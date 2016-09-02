@@ -95,8 +95,8 @@ a:hover{ text-decoration: none;}
 .c-l ul >li dl dd:nth-last-child(1) a {border-bottom: none;}
 .c-l ul >li a:hover{ background: #438bd6; color: #fff;}
 .c-l ul >li a:hover i{color: #fff;}
-
-
+.c-l ul >li a.active i{color: #fff;}
+.c-l ul >li a.active{  background: #438bd6; color: #fff;}
 .c-r{ width:890px; float: left;  min-height: 500px; margin: 0px 30px; }
 .c-f{ width: 100%; position: relative; height: 96px; background:#438bd6; display: table; visibility: hidden;}
 .c-f .c-text{ text-align: center; font-size: 20px; color: #fff; display: table-cell; vertical-align: middle; }

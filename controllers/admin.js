@@ -3,13 +3,6 @@
 //var services=require('../services/index.js');
 
 
-exports.data=function(req, res, next) {
-
-
-   // res.json({ title: 'Express',data:'123123'});
-
-}
-
 
 
 exports.index=function(req, res, next) {
@@ -36,6 +29,17 @@ exports.index=function(req, res, next) {
 }
 
 
+exports.common = function(req, res, next) {
+
+   res.render('pages/common', {
+      title: 'common'
+   });
+
+}
+
+
+
+
 exports.zxp = function(req, res, next) {
 
    res.render('pages/zxp', {
@@ -45,28 +49,6 @@ exports.zxp = function(req, res, next) {
 }
 
 
-exports.login = function(req, res, next) {
-
-   res.render('pages/login', { title: 'Express' });
-
-};
-
-
-
-
-exports.dwgl_scs=function(req, res, next) {
-
- res.render('pages/dwgl_scs', { title: 'Express',data:'123123' });
-
-}
-
-
-
-exports.dwgl_yq=function(req, res, next) {
-
-    res.render('pages/dwgl_yq', { title: 'Express',data:'123123' });
-
-}
 
 
 exports.jsgl_bjgly=function(req, res, next) {
@@ -86,19 +68,6 @@ exports.jsgl_zjyh=function(req, res, next) {
 exports.nbgs_lb = function(req, res, next) {
 
    res.render('pages/nbgs_lb', { title: 'Express',data:'123123' });
-
-}
-
-
-exports.qujujinru = function(req, res, next) {
-
-   res.render('pages/qujujinru', { title: 'Express',data:'123123' });
-
-}
-
-exports.qiyejinru = function(req, res, next) {
-
-   res.render('pages/qiyejinru', { title: 'Express',data:'123123' });
 
 }
 
@@ -170,43 +139,6 @@ exports.yyjc_lb = function(req, res, next) {
 
 }
 
-
-
-
-exports.qjjr_qy = function(req, res, next) {
-
-   res.render('pages/qjjr_qy', { title: 'Express',data:'123123' });
-
-}
-
-
-
-exports.qjjr_scs = function(req, res, next) {
-
-   res.render('pages/qjjr_scs', { title: 'Express',data:'123123' });
-
-}
-
-
-exports.qjjr_qyjy = function(req, res, next) {
-
-   res.render('pages/qjjr_qyjy', { title: 'Express',data:'123123' });
-
-}
-
-
-exports.qjjr_yq = function(req, res, next) {
-
-   res.render('pages/qjjr_yq', { title: 'Express',data:'123123' });
-
-}
-
-
-exports.qijujinru = function(req, res, next) {
-
-   res.render('pages/qujujinru', { title: 'Express',data:'123123' });
-
-}
 
 
 

@@ -15,20 +15,20 @@ define(function (require, exports, module) {
     uiHelperTableToolsCheckable();
 
     require('/js_cmd/tableCom');
-    new Vue({
-        el: '#app',
-        data: {
-            mydata: [
-                {title: 'biaoti', state: 'state', name: 'name', date: 'data', message: 'meesageeg'},
-                {title: 'biaoti2', state: 'state2', name: 'name2', date: 'data', message: 'meesagee23g'},
-                {title: 'biaoti3', state: 'state3', name: 'name3', date: 'data', message: 'meesageeg32'},
-                {title: 'biaoti4', state: 'state', name: 'name4', date: 'data', message: 'meesageeg123'}
-            ]
-        },
-        methods: {
+    // new Vue({
+    //     el: '#app',
+    //     data: {
+    //         mydata: [
+    //             {title: 'biaoti', state: 'state', name: 'name', date: 'data', message: 'meesageeg'},
+    //             {title: 'biaoti2', state: 'state2', name: 'name2', date: 'data', message: 'meesagee23g'},
+    //             {title: 'biaoti3', state: 'state3', name: 'name3', date: 'data', message: 'meesageeg32'},
+    //             {title: 'biaoti4', state: 'state', name: 'name4', date: 'data', message: 'meesageeg123'}
+    //         ]
+    //     },
+    //     methods: {
 
-        }
-    })
+    //     }
+    // })
 });
 
 
