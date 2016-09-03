@@ -18,141 +18,8 @@
             </form>
 
             <div class="row v-table">
-                <div class="col-md-12">
-                    <div class="block">
-                        <table class="table table-hover table-borderless">
-                            <thead>
-                            <tr class="v-table-tr">
-                                <th class="text-center" style="width: 25%">园区名称</th>
-                                <th class="text-center" style="width: 25%">园区地址</th>
-                                <th class="text-center" style="width: 25%">联系人</th>
-                                <th class="text-center" style="width: 25%">联系方式</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                                
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">
-                                    1234586445
-                                </td>
-                               
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="block" id="c-table-checkbox">
+                    <com-table-list :datalist="data"></com-table-list>
                 </div>
             </div>
         </div>
@@ -165,8 +32,7 @@
 <% include ../common/modals.ejs %>
 
 <script>
-    seajs.use("js_cmd/group/marketList-cmd");
-
+    seajs.use("/js_cmd/group/dwglScs-cmd");
 </script>
 
 

@@ -9,7 +9,7 @@ exports.login = function(req, res, next) {
   
 
    
-   req.session.user='user'
+  // req.session.user='user'
 
    res.render('pages/login', { title: 'Express' });
 
