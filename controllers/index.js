@@ -25,8 +25,7 @@ exports.index=function(req, res, next) {
              
   // request({method:'POST',url:config.internal.host+'/api/app/inspect/list',json:true}).then(function (data){
 
-      
-
+    
   // })
 
  

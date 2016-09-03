@@ -7,13 +7,9 @@ var path=require('path');
 
 exports.login = function(req, res, next) {
   
-
-   
   // req.session.user='user'
 
    res.render('pages/login', { title: 'Express' });
-
-
 
 };
 
