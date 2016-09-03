@@ -81,25 +81,27 @@ exports.nbgs_lb = function(req, res, next) {
 
 
 
-exports.wljc_lb = function(req, res, next) {
-
-   res.render('pages/wljc_lb', { title: 'Express',data:'123123' });
-
-}
 
 
+exports.inspect = function(req, res, next) {            //网络
 
-exports.xzjy_lb = function(req, res, next) {
-
-   res.render('pages/xzjy_lb', { title: 'Express',data:'123123' });
+   res.render('pages/inspect', { title: 'Express',data:'123123' });
 
 }
 
 
 
-exports.xzyt_lb = function(req, res, next) {
+exports.suggestion = function(req, res, next) {        //行政建议列表
 
-   res.render('pages/xzyt_lb', { title: 'Express',data:'123123' });
+   res.render('pages/suggestion', { title: 'Express',data:'123123' });
+
+}
+
+
+
+exports.interview = function(req, res, next) {        //行政约谈列表
+
+   res.render('pages/interview', { title: 'Express',data:'123123' });
 
 }
 

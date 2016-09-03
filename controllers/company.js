@@ -24,9 +24,9 @@ exports.qiyejinru = function(req, res, next) {
 }
 
 
-exports.dwgl_scs=function(req, res, next) {
+exports.company_market=function(req, res, next) {        //单位管理  市场所
 
-   res.render('pages/dwgl_scs', { title: 'Express',data:'123123' });
+   res.render('pages/company_market', { title: 'Express',data:'123123' });
 
 }
 

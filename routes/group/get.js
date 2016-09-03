@@ -20,15 +20,13 @@ var Company=require('../../controllers/company');
 	
 	router.get('/', Index.index);                  	    //公共模块   企业详情
 
-			 
-	
-
  	router.get('/common', Index.common);               //公共模块
-
 
 	router.get('/company', Company.qiyejinru);				 //企业进入
 
-	router.get('/company/scs',Company.dwgl_scs);			//单位管理 市场所
+	router.get('/company/market',Company.company_market);			//单位管理 市场所
+
+
 
 	router.get('/company/yq', Company.dwgl_yq);             //单位管理 园区
 
@@ -37,13 +35,13 @@ var Company=require('../../controllers/company');
 
   	router.get('/login', User.login);		            //登陆页面
 
-	router.get('/admin/edit', User.jsgl_bjgly);			 //角色管理 编辑
+	router.get('/user/edit', User.jsgl_bjgly);			 //角色管理 编辑
 
-	router.get('/admin/add', User.jsgl_zjyh);			 //角色管理 增加 
+	router.get('/admin/user/add', User.jsgl_zjyh);			 //角色管理 增加 
 
-  	router.get('/admin/user/list', User.yhlb_bjyh);   //用户编辑列表
+  	router.get('/user/list', User.yhlb_bjyh);   //用户编辑列表
 
-	router.get('/admin/user/add', User.yhlb_zjyh);   //用户添加
+	router.get('/user/add', User.yhlb_zjyh);   //用户添加
 
 
 
@@ -64,11 +62,11 @@ var Company=require('../../controllers/company');
 
 	router.get('/annal/list', Index.nbgs_lb);			 //年报公示列表
 
-	router.get('/network/list', Index.wljc_lb);                 //网络检查列表
+	router.get('/inspect/list', Index.inspect);                 //网络检查列表
 
-	router.get('/administration/suggest/list', Index.xzjy_lb);   //行政建议列表
+	router.get('/suggestion/list', Index.suggestion);   //行政建议列表
 
-	router.get('/administration/talks/list', Index.xzyt_lb);    //行政约谈列表
+	router.get('/interview/list', Index.interview);    //行政约谈列表
 
 
     
