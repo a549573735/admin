@@ -1,4 +1,3 @@
-
 <% include ../common/header.ejs %>
 
 <div class="c-content o-pad" id="c-content">
@@ -44,57 +43,8 @@
 
             <div class="row v-table">
                 <div class="col-md-12">
-                    <div class="block">
-                        <table class="table table-hover table-borderless">
-                            <thead>
-                            <tr class="v-table-tr">
-                                <th class="text-center" style="width: 25%">企业名称 </th>
-                                <th class="text-center" style="width: 15%">年报状态</th>
-                                <th class="text-center" style="width: 15%;">上传时间</th>
-                                <th class="text-center" style="width: 15%">操作员</th>
-                                <th class="text-center" style="width: 15%">备注</th>
-                                <th class="text-center" style="width: 15%"></th>
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已提交</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已提交</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已提交</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已提交</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-
-
-                            </tbody>
-                        </table>
+                    <div class="block" id="c-table-checkbox">
+                        <com-table-list :datalist="data"></com-table-list>
                     </div>
                 </div>
             </div>
@@ -108,7 +58,7 @@
 <% include ../common/modals.ejs %>
 
 <script>
-
+    seajs.use("/js_cmd/group/yqnbGslb-cmd");
     var navTabs=$('#v-nav-tab');
     var contentTabs=$('.v-tab-content');
 

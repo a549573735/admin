@@ -19,36 +19,8 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-md-1 o-pd v-label-s" for="val-skill">市场所：</label>
-                            <div class="col-md-3">
-                                <select class="form-control" id="val-skill" name="val-skill">
-                                    <option value="">奉贤青村食品药品监督管理所</option>
-                                    <option value="html">奉贤青村食品药品监督管理所</option>
-                                    <option value="css">奉贤青村食品药品监督管理所</option>
-                                    <option value="javascript">奉贤青村食品药品监督管理所</option>
-                                    <option value="ruby">奉贤青村食品药品监督管理所</option>
-                                    <option value="php">奉贤青村食品药品监督管理所</option>
-                                    <option value="asp">奉贤青村食品药品监督管理所</option>
-                                    <option value="python">奉贤青村食品药品监督管理所</option>
-                                    <option value="mysql">奉贤青村食品药品监督管理所</option>
-                                </select>
-                            </div>
-
-                            <label class="col-md-1 o-pd v-label-x" for="val-skill">园区：</label>
-                            <div class="col-md-2 o-pd-l">
-                                <select class="form-control"  name="val-skill">
-                                    <option value="">奉贤青村食品药品</option>
-                                    <option value="html">奉贤青村食品药品</option>
-                                    <option value="css">奉贤青村食品药品</option>
-                                    <option value="javascript">奉贤青村食品药品</option>
-                                    <option value="ruby">奉贤青村食品药品</option>
-                                    <option value="php">奉贤青村食品药品</option>
-                                    <option value="asp">奉贤青村食品药品</option>
-                                    <option value="python">奉贤青村食品药品</option>
-                                    <option value="mysql">奉贤青村食品药品</option>
-                                </select>
-                            </div>
+                        <div class="form-group" id="app">
+                            <v-select :selectdata="data"></v-select>
 
 
                             <label class="col-md-1 o-pd v-label-x" for="val-skill">企业：</label>
@@ -81,57 +53,8 @@
 
             <div class="row v-table">
                 <div class="col-md-12">
-                    <div class="block">
-                        <table class="table table-hover table-borderless">
-                            <thead>
-                            <tr class="v-table-tr">
-                                <th class="text-center" style="width: 25%">企业名称 </th>
-                                <th class="text-center" style="width: 15%">预约状态</th>
-                                <th class="text-center" style="width: 15%;">检查员</th>
-                                <th class="text-center" style="width: 15%">检查日期</th>
-                                <th class="text-center" style="width: 15%">备注</th>
-                                <th class="text-center" style="width: 15%"></th>
-
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已接受</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已接受</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已接受</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-                            <tr>
-                                <td class="text-left">上海医德医疗设备有限公司</td>
-                                <td class="text-center">已接受</td>
-                                <td class="text-center">王先生</td>
-                                <td class="text-center">2016-06-25</td>
-                                <td class="text-center"></td>
-                                <td class="text-center"></td>
-                            </tr>
-
-
-                            </tbody>
-                        </table>
+                    <div class="block" id="c-table-checkbox">
+                        <com-table-list :datalist="data"></com-table-list>
                     </div>
                 </div>
             </div>
@@ -145,6 +68,7 @@
 
 <script>
 
+    seajs.use("/js_cmd/group/yyjcLb-cmd");
     var navTabs=$('#v-nav-tab');
     var contentTabs=$('.v-tab-content');
 

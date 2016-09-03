@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "./node_modules/.bin/supervisor bin/www"
+    "start": "supervisor bin/www"
   },
   "dependencies": {
     "body-parser": "~1.13.2",
@@ -34,5 +34,17 @@
     "log4js": "~0.6.35",
     "node-fetch": "^1.6.0",
     "request": "^2.74.0"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/a549573735/admin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/a549573735/admin/issues"
+  },
+  "homepage": "https://github.com/a549573735/admin#readme",
+  "description": ""
 }
