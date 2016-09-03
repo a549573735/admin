@@ -34,7 +34,7 @@ define(function (require, exports, module) {
                       <tbody class="v-tabs-check">\
                         <tr v-for="itemlist in datalist.content">\
                             <td v-for="item in itemlist" class="text-center">{{ item === "true"?"是":item   }}</td>\
-                            <td  class="text-center">{{datalist.details[$index].msg  }}<a href="javascript:;" @click="sub($event)" :data-id="datalist.details[$index]._id"  class="btn-link"> 详情</a></td>\
+                            <td  class="text-center">{{datalist.details[$index].msg  }}<a  @click="sub($event)" :data-id="datalist.details[$index]._id" data-toggle="modal" data-target="#modal-fromtext"  class="btn-link"> 详情</a></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
@@ -43,7 +43,11 @@ define(function (require, exports, module) {
             
              sub:function (event){
                      
-                  console.log($(event.target).attr('data-id'))
+                  var _id=$(event.target).attr('data-id')
+                  /*  备注弹框  */
+                  $('#modal-fromtext').on('show.bs.modal', function () {
+                         $(this).find('.remarks').html('按钮的 _id '+_id)
+                  })
 
              }
 

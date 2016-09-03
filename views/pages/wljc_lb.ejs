@@ -19,36 +19,9 @@
                             </div>
                         </div>
 
-                        <div class="form-group">
-                            <label class="col-md-1 o-pd v-label-s" for="val-skill">市场所：</label>
-                            <div class="col-md-3">
-                                <select class="form-control" id="val-skill" name="val-skill">
-                                    <option value="">奉贤青村食品药品监督管理所</option>
-                                    <option value="html">奉贤青村食品药品监督管理所</option>
-                                    <option value="css">奉贤青村食品药品监督管理所</option>
-                                    <option value="javascript">奉贤青村食品药品监督管理所</option>
-                                    <option value="ruby">奉贤青村食品药品监督管理所</option>
-                                    <option value="php">奉贤青村食品药品监督管理所</option>
-                                    <option value="asp">奉贤青村食品药品监督管理所</option>
-                                    <option value="python">奉贤青村食品药品监督管理所</option>
-                                    <option value="mysql">奉贤青村食品药品监督管理所</option>
-                                </select>
-                            </div>
-
-                            <label class="col-md-1 o-pd v-label-x" for="val-skill">园区：</label>
-                            <div class="col-md-2 o-pd-l">
-                                <select class="form-control"  name="val-skill">
-                                    <option value="">奉贤青村食品药品</option>
-                                    <option value="html">奉贤青村食品药品</option>
-                                    <option value="css">奉贤青村食品药品</option>
-                                    <option value="javascript">奉贤青村食品药品</option>
-                                    <option value="ruby">奉贤青村食品药品</option>
-                                    <option value="php">奉贤青村食品药品</option>
-                                    <option value="asp">奉贤青村食品药品</option>
-                                    <option value="python">奉贤青村食品药品</option>
-                                    <option value="mysql">奉贤青村食品药品</option>
-                                </select>
-                            </div>
+                        <div class="form-group" id="app">
+                        
+                            <v-select :selectdata="data"></v-select>
 
 
                             <label class="col-md-1 o-pd v-label-x" for="val-skill">企业：</label>
@@ -151,7 +124,8 @@
 <% include ../common/modals.ejs %>
 
 <script>
-
+    
+    seajs.use("/js_cmd/components/select.js");
     var navTabs=$('#v-nav-tab');
     var contentTabs=$('.v-tab-content');
 
