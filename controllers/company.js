@@ -1,4 +1,7 @@
 
+var Promise=require('bluebird');
+var request=Promise.promisify(require('request'));
+var config=require('../utils/config')
 
 
 
@@ -19,10 +22,9 @@ exports.qiyejinru = function(req, res, next) {
 
 exports.dwgl_scs=function(req, res, next) {
 
- res.render('pages/dwgl_scs', { title: 'Express',data:'123123' });
+   res.render('pages/dwgl_scs', { title: 'Express',data:'123123' });
 
 }
-
 
 
 exports.dwgl_yq=function(req, res, next) {

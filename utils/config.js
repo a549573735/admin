@@ -1,12 +1,12 @@
 var config = {
-    indiana:{
-        host:"114.55.38.178",
+    internal:{
+        host:"192.168.1.102",
         port:"8081"
     },
     // dev
-    indianaRaider:{
+    data:{
         // 114.55.38.178    121.43.197.98   112.124.28.82   mapi.dev.vd.cn
-        host:"112.124.28.82",
+        host:"192.168.1.102",
         port:"3005"
     }
 };

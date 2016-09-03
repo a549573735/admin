@@ -1,6 +1,7 @@
 
-
-//var services=require('../services/index.js');
+var Promise=require('bluebird');
+var request=Promise.promisify(require('request'));
+var config=require('../utils/config')
 
 
 
@@ -22,7 +23,14 @@ exports.index=function(req, res, next) {
                   pagelist:5 
            }
              
-   console.log(req.query.name)
+  // request({method:'POST',url:config.internal.host+'/api/app/inspect/list',json:true}).then(function (data){
+
+      
+
+  // })
+
+ 
+
    
    res.render('pages/index', data );
 

@@ -21,12 +21,9 @@ var Company=require('../../controllers/company');
 	router.get('/', Index.index);                  	    //公共模块   企业详情
 
 			 
-			
-
+	
 
  	router.get('/common', Index.common);               //公共模块
-
-
 
 
 	router.get('/company', Company.qiyejinru);				 //企业进入
