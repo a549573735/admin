@@ -6,10 +6,10 @@ var User=require('../../controllers/user')
 var Company=require('../../controllers/company');
 var Park=require('../../controllers/park');
 
+
+
  
 
-	
-	
 	router.get('/', Index.index);                  		     	    //公共模块   企业详情
 
  	router.get('/common', Index.common);             				 //公共模块
@@ -21,10 +21,11 @@ var Park=require('../../controllers/park');
 	router.get('/company/park', Company.company_park);             //单位管理 园区 列表
     
  
- 
 
 
   	router.get('/login', User.login);		             //登陆页面
+
+  	router.get('/login_img', User.login_img);	
 
 	router.get('/user/edit', User.user_edit);			 //角色管理 编辑
   
@@ -33,6 +34,8 @@ var Park=require('../../controllers/park');
   	router.get('/user/edit/list', User.user_edit_list);       //用户编辑列表
 
 	router.get('/user/add', User.user_add);   			 //用户添加
+
+
 
 
 	router.get('/organize/company', Organize.organize_company); 			//区局进入 企业
@@ -51,13 +54,6 @@ var Park=require('../../controllers/park');
     
   
     
-    
-   
-
-
-
-
-
 
 
 
@@ -72,7 +68,6 @@ var Park=require('../../controllers/park');
 	router.get('/appointment/list', Index.appointment);         //预约列表
 
  
-
 
 	router.get('/park', Park.park_index); 				  // 园区进入
 

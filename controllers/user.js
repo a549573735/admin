@@ -1,17 +1,37 @@
 
 
 var path=require('path');
+var ccap = require('ccap')();//Instantiated ccap class   
+var fs=require('fs');
+
 
 
 
 
 exports.login = function(req, res, next) {
-  
-  // req.session.user='user'
 
-   res.render('pages/login', { title: 'Express' });
+
+    var ary = ccap.get();
+    var txt = ary[0];
+    var buf = ary[1];
+
+ //   res.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': buf.length });
+   console.log(res)
+    res.render('pages/login',{buf:buf});
 
 };
+exports.login_img=function (req,res,next){
+
+    var ary = ccap.get();
+    var txt = ary[0];
+    var buf = ary[1];
+    
+    
+    console.log((buf))
+    res.end(buf)
+
+}
+
 
 
 exports.signRequired=function (req,res,next)

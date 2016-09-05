@@ -42,7 +42,7 @@
                         </div>
                         
                             <div class="v-t-b col-md-3">
-                                <button class=" btn btn-md btn-primary btn-block " type="submit">增加</button>
+                                <a href="/user/admin/add" class=" btn btn-md btn-primary btn-block " >增加</a>
                             </div>
                             <div class="v-t-b col-md-3">
                                 <button class="btn btn-md btn-primary btn-block" type="submit">删除</button>
@@ -155,23 +155,14 @@
     </div>
 </div>
 
-<script type="text/javascript"  src="dist/index.js"></script>
+
 <% include ../common/footer.ejs %>
 <% include ../common/modals.ejs %>
 
 <script>
 
-    var navTabs=$('#v-nav-tab');
-    var contentTabs=$('.v-tab-content');
+  
 
-    navTabs.on('click','li',function (){
-
-        $(this).addClass('active').siblings().removeClass('active');
-        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
-
-    })
-
-    uiHelperTableToolsCheckable();
 
 </script>
 
