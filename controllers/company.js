@@ -1,4 +1,5 @@
 
+
 var Promise=require('bluebird');
 var request=Promise.promisify(require('request'));
 var config=require('../utils/config')
@@ -9,17 +10,9 @@ var config=require('../utils/config')
 
 
 
-exports.qujujinru = function(req, res, next) {
+exports.company = function(req, res, next) {
 
-
-   res.render('pages/qujujinru', { title: 'Express',data:'123123' });
-
-}
-
-
-exports.qiyejinru = function(req, res, next) {
-
-   res.render('pages/qiyejinru', { title: 'Express',data:'123123' });
+   res.render('pages/company', { title: 'Express',data:'123123' });
 
 }
 
@@ -31,8 +24,15 @@ exports.company_market=function(req, res, next) {        //单位管理  市场�
 }
 
 
-exports.dwgl_yq=function(req, res, next) {
+exports.company_park=function(req, res, next) {
 
-    res.render('pages/dwgl_yq', { title: 'Express',data:'123123' });
+    res.render('pages/company_park', { title: 'Express',data:'123123' });
 
 }
+
+
+
+
+
+
+

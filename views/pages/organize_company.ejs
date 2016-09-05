@@ -8,37 +8,11 @@
             <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                 <div class="row clearfix">
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>
-                            <div class="col-md-2 o-pd">
-                                <select class="form-control" id="val-skill" name="val-skill">
-                                    <option value="">奉贤青村食品药品监督管理所</option>
-                                    <option value="html">奉贤青村食品药品监督管理所</option>
-                                    <option value="css">奉贤青村食品药品监督管理所</option>
-                                    <option value="javascript">奉贤青村食品药品监督管理所</option>
-                                    <option value="ruby">奉贤青村食品药品监督管理所</option>
-                                    <option value="php">奉贤青村食品药品监督管理所</option>
-                                    <option value="asp">奉贤青村食品药品监督管理所</option>
-                                    <option value="python">奉贤青村食品药品监督管理所</option>
-                                    <option value="mysql">奉贤青村食品药品监督管理所</option>
-                                </select>
-                            </div>
+                        <div class="form-group" id="app">
+                            <v-select :selectdata="data"></v-select>
 
-                            <label class="col-md-1 o-pd-r v-label" for="val-skill">园区：</label>
-                            <div class="col-md-2 o-pd">
-                                <select class="form-control"  name="val-skill">
-                                    <option value="">奉贤青村食品药品监督管理所</option>
-                                    <option value="html">奉贤青村食品药品监督管理所</option>
-                                    <option value="css">奉贤青村食品药品监督管理所</option>
-                                    <option value="javascript">奉贤青村食品药品监督管理所</option>
-                                    <option value="ruby">奉贤青村食品药品监督管理所</option>
-                                    <option value="php">奉贤青村食品药品监督管理所</option>
-                                    <option value="asp">奉贤青村食品药品监督管理所</option>
-                                    <option value="python">奉贤青村食品药品监督管理所</option>
-                                    <option value="mysql">奉贤青村食品药品监督管理所</option>
-                                </select>
-                            </div>
-                            <label class="col-md-1 o-pd-r v-label" for="val-skill">企业：</label>
+
+                            <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">企业：</label>
                             <div class="col-md-2 o-pd">
                                <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
                             </div>
@@ -48,11 +22,11 @@
                                     <div class="col-md-2 o-pd">
                                        <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
                                     </div>
-                                    <label class="col-md-1 o-pd-r v-label" for="val-skill">客户：</label>
+                                    <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">客户：</label>
                                     <div class="col-md-2 o-pd">
                                        <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
                                     </div>
-                                    <label class="col-md-1 o-pd-r v-label" for="val-skill">产品：</label>
+                                    <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">产品：</label>
                                     <div class="col-md-2 o-pd">
                                        <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
                                     </div>
@@ -62,28 +36,24 @@
                                     <div class="col-md-2 o-pd">
                                        <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
                                     </div>
-                                    <label class="col-md-1 o-pd-r v-label" for="val-skill">客户：</label>
+                                    <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">客户：</label>
                                     <div class="col-md-4 o-pd">
                                        <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
                                     </div>
                               <div class="v-t-b o-m-p">
-                                <button class="btn btn-md btn-primary btn-block" type="submit">查询</button>
+                                <button class="btn btn-md btn-primary btn-block text-center" type="submit">查询</button>
                             </div>
                            </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
-
             </form>
 
             <div class="row v-table">
                 <div class="col-md-12">
-                    <div class="block">
-                        <table class="table table-hover table-borderless o-m-t">
+                    <div class="block" id="handle-table">
+
+                     <!--    <table class="table table-hover table-borderless o-m-t">
                             <thead>
                             <tr class="v-table-tr">
                                 <th class="text-center" style="width: 15%">企业名称 </th>
@@ -136,34 +106,26 @@
 
 
                             </tbody>
-                        </table>
+                        </table> -->
+
+                       <handle-table-list :datalist="data"></handle-table-list>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
 
-<script type="text/javascript"  src="dist/index.js"></script>
+
 <% include ../common/footer.ejs %>
 <% include ../common/modals.ejs %>
 
 <script>
 
-    var navTabs=$('#v-nav-tab');
-    var contentTabs=$('.v-tab-content');
-
-    navTabs.on('click','li',function (){
-
-        $(this).addClass('active').siblings().removeClass('active');
-        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
-
-    })
-
-    uiHelperTableToolsCheckable();
+   seajs.use("js_cmd/group/organize_company-cmd");
 
 </script>
 
 
        
+

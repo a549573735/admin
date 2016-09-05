@@ -5,46 +5,27 @@ define(function (require, exports, module) {
     require('/js_cmd/components/companytable/tabs_content_d')
     require('/js_cmd/components/companytable/tabs_btn')
 
-   
-    
+
+
+
     var message=new Vue({
          'el':'#tables',
          data:function (){
-         	return {
-         	     msglist:[
-         	     {
-                      title:'111111111',
-                      content:'aaaaaaaaaaaaaaaaaaa',
-                      _id:'1',
-                      date:'2016-9-1',
-                      company:'XXX公司'
-         	     },
-         	     {
-                      title:'2222222222222',
-                      content:'bbbbbbbbbbbbbbbbbbb',
-                      _id:'2',
-                      date:'2016-9-1',
-                      company:'XXX公司'
-         	     },
-         	     {
-                      title:'3333333333333',
-                      content:'ccccccccccccccccccc',
-                      _id:'3',
-                      date:'2016-9-1',
-                      company:'日'
-         	     }
-         	     ],
-         	   message:{
-         	     	  title:'444444444444444444',
-                      content:'dddddddddddddddddddd',
-                      _id:'1',
-                      date:'2016-9-1',
-                      company:'日'
-         	   }
-         	}
+           	return {
+           	    btnlist:[
+                    {href:"/organize/details/company",title:'企业信息',active:true},
+                    {href:"/organize/details/purchase",title:'采购信息',active:false},
+                    {href:"/organize/details/sale",title:'销售信息',active:false},
+                    {href:"/organize/details/invoice",title:'发票信息',active:false},
+                    {href:"/organize/details/customer",title:'客户资质',active:false},
+                    {href:"/organize/details/producer",title:'生产商资质',active:false},
+                    {href:"/organize/details/provider",title:'供应商资质',active:false},
+                    {href:"/organize/details/product",title:'产品资质',active:false}
+                ]     
+           	}
          }
-      
     });
+
 
    seajs.use("js_cmd/group/marketList-cmd");
 

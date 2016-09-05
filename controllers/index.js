@@ -23,15 +23,18 @@ exports.index=function(req, res, next) {
                   pagelist:5 
            }
              
-  // request({method:'POST',url:config.internal.host+'/api/app/inspect/list',json:true}).then(function (data){
+   //   request({method:'POST',url:config.internal.host+'/api/app/role/permission/DISTRICT/list',json:true}).then(function (data){
+       
 
-    
-  // })
+   //     console.log(data.body)
+
+
+   // })
 
  
 
    
-   res.render('pages/index', data );
+   res.render('pages/details', data );
 
 }
 
@@ -47,38 +50,14 @@ exports.common = function(req, res, next) {
 
 
 
-exports.zxp = function(req, res, next) {
-
-   res.render('pages/zxp', {
-      title: 'zxp'
-   });
-
-}
 
 
 
+exports.publicity = function(req, res, next) {
 
-exports.jsgl_bjgly=function(req, res, next) {
-
-     res.render('pages/jsgl_bjgly', { title: 'Express',data:'123123' });
+   res.render('pages/publicity', { title: 'Express',data:'123123' });
 
 }
-
-
-exports.jsgl_zjyh=function(req, res, next) {
-
-   res.render('pages/jsgl_zjyh', { title: 'Express',data:'123123' });
-
-}
-
-
-exports.nbgs_lb = function(req, res, next) {
-
-   res.render('pages/nbgs_lb', { title: 'Express',data:'123123' });
-
-}
-
-
 
 
 
@@ -107,54 +86,16 @@ exports.interview = function(req, res, next) {        //行政约谈列表
 
 
 
-exports.yhlb_bjyh = function(req, res, next) {
-
-   res.render('pages/yhlb_bjyh', { title: 'Express',data:'123123' });
-
-}
 
 
 
+exports.appointment = function(req, res, next) {
 
-exports.yhlb_zjyh = function(req, res, next) {
-
-   res.render('pages/yhlb_zjyh', { title: 'Express',data:'123123' });
+   res.render('pages/appointment', { title: 'Express',data:'123123' });
 
 }
 
 
 
-
-exports.yqjr_qy = function(req, res, next) {
-
-   res.render('pages/yqjr_qy', { title: 'Express',data:'123123' });
-
-}
-
-
-
-
-exports.yqnb_gslb = function(req, res, next) {
-
-   res.render('pages/yqnb_gslb', { title: 'Express',data:'123123' });
-
-}
-
-
-
-exports.yyjc_lb = function(req, res, next) {
-
-   res.render('pages/yyjc_lb', { title: 'Express',data:'123123' });
-
-}
-
-
-
-
-exports.wljc_lb = function(req, res, next) {
-
-   res.render('pages/wljc_lb', { title: 'Express',data:'123123' });
-
-}
 
 

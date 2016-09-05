@@ -56,8 +56,8 @@
 
             <div class="row v-table">
                 <div class="col-md-12">
-                    <div class="block">
-                        <table class="table table-hover table-borderless o-m-t">
+                    <div class="block" id="check-table">
+                        <!-- <table class="table table-hover table-borderless o-m-t">
                             <thead>
                             <tr class="v-table-tr">
                                 <th class="text-center" style="width: 5%"></th>
@@ -122,7 +122,9 @@
                                 <td class="text-center"><div class="xgl-btm"><input class="btn btn-md btn-primary btn-block" type="submit" value="详情"></div></td>
                             </tr>
                             </tbody>
-                        </table>
+                        </table> -->
+
+                        <check-table-list :datalist="data"></check-table-list>
                     </div>
                 </div>
             </div>
@@ -135,18 +137,7 @@
 <% include ../common/modals.ejs %>
 
 <script>
-
-    var navTabs=$('#v-nav-tab');
-    var contentTabs=$('.v-tab-content');
-
-    navTabs.on('click','li',function (){
-
-        $(this).addClass('active').siblings().removeClass('active');
-        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
-
-    })
-
-    uiHelperTableToolsCheckable();
+    seajs.use("js_cmd/group/organize_park-cmd");
 
 </script>
 

@@ -6,15 +6,15 @@ define(function (require, exports, module) {
                 data:function (){
                     return { k:1 ,state:false}
                 },
-                template: 	'<label class="col-md-1 o-pd v-label-s" for="val-skill">市场所:</label>\
-	                         <div class="col-md-3">\
+                template: 	'<label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>\
+	                         <div class="col-md-2 o-pd">\
 	                                 <select class="form-control" id="val-skill" name="val-skill" @change="selectChange($event)">\
 	                                     <option value="0">请选择</option>\
 	                                     <option v-for="item in selectdata" :value="item.value">{{item.text}}</option>\
 	                                 </select>\
 	                         </div>\
-	                          <label class="col-md-1 o-pd v-label-x" for="val-skill2">园区:</label>\
-	                                 <div class="col-md-2 o-pd-l" >\
+	                          <label class="col-md-1 o-pd-r v-label text-center" for="val-skill2">园区：</label>\
+	                                 <div class="col-md-2 o-pd" >\
 	                                   <select class="form-control" id="val-skill" name="val-skill" @change="sendVal($event)">\
 	                                         <option value="0">请选择</option>\
 	                                         <option v-if="state" v-for="item in selectdata[k-1].son" :value="item.value">{{item.text}}</option>\
@@ -23,6 +23,7 @@ define(function (require, exports, module) {
                 methods:{
 
                     selectChange:function (event){
+
                        if($(event.target).val()=='0'){
                            this.k=1;
                            this.state=false;

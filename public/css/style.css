@@ -149,6 +149,17 @@ nav{float:left; text-align:center;}
 
 
 
+/*区局架构*/
+
+.quju_title{ background:url(../images/tiao.jpg) no-repeat  center bottom; height:98px; margin-top:17px;}
+.quju_zi{ width:146px; height:75px; margin:0 auto; background:url(../images/kuang1.jpg) no-repeat center center; line-height:75px; text-align:center; font-size:24px; color:#000; overflow:hidden;}
+.quju{ position:relative;}
+.quju ul{ width:112%; position:absolute; left:-26px; top:0;}
+.quju ul li{ width:146px; height:97px; float:left; text-align:center; background:url(../images/kuang2.jpg) no-repeat center center; padding-top:22px; margin-right:45.5px; overflow:hidden; white-space:nowrap;}
+.quju_sp1{ line-height:24px; font-size:14px; color:#000; padding-top:16px;}
+.qiju_sp2{ font-size:24px; color:#000; line-height:79px;}
+.qiju_sp3{ font-size:24px; color:#000; line-height:31px; padding-top:9px;}
+.qiju_sp4{ font-size:20px; color:#666666; line-height:32px;}
 
 
 

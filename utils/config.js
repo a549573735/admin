@@ -1,6 +1,6 @@
 var config = {
     internal:{
-        host:"192.168.1.102",
+        host:"http://139.196.152.218/",
         port:"8081"
     },
     // dev

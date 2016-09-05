@@ -1,6 +1,7 @@
 
 .table-borderless > tbody > tr > td, .table-borderless > tfoot > tr > td {
     border: none;font-size: 14px; 
+    line-height: 2.3;
 }
 
 .table>thead>tr>th{ border-bottom: 0; font-size: 16px; font-weight: normal;}
@@ -203,6 +204,9 @@ label{font-weight: normal; color: #313131;}
 .v-cont{ white-space: nowrap;text-overflow: ellipsis; }
 .v-msg-content-n{ display: none; }
 .v-msg-company-n{ display: none; }
+.v-btn-w{width: 80px !important;}
+.open{display: block;}
+
 
 
 

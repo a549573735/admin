@@ -1,0 +1,102 @@
+<% include ../common/header.ejs %>
+<script type=""></script>
+
+<div class="c-content o-pad" id="c-content">
+    <div class="clearfix">
+       <% include ../common/leftNav.ejs %>
+       <div class="c-r">
+             
+
+
+              <% include ../common/rightBtns.ejs %>
+            <!--  测试 -->
+               <div class="block" id="tables">
+            
+       		 	   <table-btns :btnlist="<%= JSON.stringify(btnlist)%>"></table-btns> 
+              <% if(company){%> 
+                    <div class="tab-pane active">
+                            <div class="col-md-12">
+                                        <div class="col-md-12 o-pd qyspxq_title">企业信息</div>
+                                        <div class="col-md-12 o-pd qyspxq_text">
+                                            公司名称：上海医德医疗设备有限公司<br />
+                                            公司地址：上海市奉贤区南桥镇南亭公路269号<br />
+                                            隶属市场所：上海青浦医疗器械市场所<br />
+                                            隶属园区：上海青浦医疗器械区局<br />
+                                            联系人：李先生<br />
+                                            联系人：12334565455<br />
+                                           <span class="col-md-2 o-pd qjjr_xq ">经营范围 ：</span><span class="col-md-10">从事网络科技、计算机科技，从事网络科技、计算机科技，从事网络科技、计算机科技<br />
+                                               从事网络科技、计算机科技。</span><br />
+                                            <span class="col-md-12 o-pd">经营许可证：沪A4854552</span><br />
+                                            许可证有效期：2020年6月30日
+                                        </div>
+                                  </div>
+                   </div>
+               <% } else {%>
+                     
+                     <% if(type=='search'){%>
+
+                           <div class="v-tabs-date">
+                                      <form class="form-horizontal clearfix" action="https://www.baidu.com" method="post" onsubmit="return false;">
+                                         <div class="col-md-12">
+                                             <div class="form-group clearfix">
+                                              <label class="col-md-2 o-pd v-fz" >产品名称:</label>
+                                              <div class="col-md-5 ">
+                                                  <div class="col-md-8 o-pd">
+                                                      <input class="form-control" type="text" id="example-if-password" name="example-if-password" placeholder="">
+                                                  </div>
+                                                  <div class="col-md-4 ">
+                                                      <button class="btn btn-default btn-primary" type="submit" >查询</button>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                         </div>
+                                      </form>
+                            </div>
+
+                           <table-content-s :datalist="<%= JSON.stringify(data)%>" ></table-content-s>  
+                      
+                     <% }else { %>
+                       <div class="v-tabs-date">
+                              <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
+                                  <div class="col-md-12">
+                                      <div class="form-group clearfix">
+                                          <label class="col-md-2 o-pd v-fz" >检查时间:</label>
+                                          <div class="col-md-5">
+                                              <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
+                                                  <input class="form-control" type="text"  name="example-daterange1" placeholder="开始">
+                                                  <span class="input-group-addon">~</span>
+                                                  <input class="form-control" type="text" name="example-daterange2" placeholder="结束">
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </form>
+                       </div>
+
+                       <table-content-d :datalist="<%= JSON.stringify(data)%>" ></table-content-d> 
+
+                     <%} %>
+                     <v-pages :pagelist="<%= JSON.stringify(pagelist) %>"></v-pages>
+               <%} %>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<% include ../common/footer.ejs %>
+<% include ../common/modals.ejs %>
+
+<script>
+
+    seajs.use("/js_cmd/components/companytable/table");
+
+    seajs.use("/js_cmd/components/paging");
+    seajs.use("/js_cmd/components/message/message");
+
+
+    seajs.use("js_cmd/group/marketList-cmd");
+   
+    
+</script>

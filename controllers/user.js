@@ -40,33 +40,33 @@ exports.adminRequired=function (req,res,next)
 
 
 
-exports.yhlb_bjyh = function(req, res, next) {
+exports.user_edit_list = function(req, res, next) {
 
-   res.render('pages/yhlb_bjyh', { title: 'Express',data:'123123' });
-
-}
-
-
-
-
-exports.yhlb_zjyh = function(req, res, next) {
-
-   res.render('pages/yhlb_zjyh', { title: 'Express',data:'123123' });
+   res.render('pages/user_edit_list', { title: 'Express',data:'123123' });
 
 }
 
 
 
-exports.jsgl_bjgly=function(req, res, next) {
 
-     res.render('pages/jsgl_bjgly', { title: 'Express',data:'123123' });
+exports.user_add = function(req, res, next) {
+
+   res.render('pages/user_add', { title: 'Express',data:'123123' });
 
 }
 
 
-exports.jsgl_zjyh=function(req, res, next) {
 
-   res.render('pages/jsgl_zjyh', { title: 'Express',data:'123123' });
+exports.user_edit=function(req, res, next) {
+
+     res.render('pages/user_edit', { title: 'Express',data:'123123' });
+
+}
+
+
+exports.user_admin_add=function(req, res, next) {
+
+   res.render('pages/user_admin_add', { title: 'Express',data:'123123' });
 
 }
 
