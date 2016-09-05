@@ -7,9 +7,6 @@ var config=require('../utils/config')
 
 
 
-
-
-
 exports.company = function(req, res, next) {
 
    res.render('pages/company', { title: 'Express',data:'123123' });

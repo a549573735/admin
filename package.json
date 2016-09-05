@@ -31,7 +31,8 @@
     "log4js": "~0.6.35",
     "node-fetch": "^1.6.0",
     "request": "^2.74.0",
-    "ccap": "^0.6.10"
+    "express-session": "^1.14.1",
+    "cookie-parser": "^1.4.3"
   },
   "main": "index.js",
   "repository": {

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta  charset="UTF-8">
+<meta  charset="UTF-8" />
 <title>奉贤区医疗器械管理平台</title>
 
 <link type="text/css" href="css/common.css" rel="stylesheet" />
@@ -21,26 +21,35 @@
         <div class="big_bj">
             <div class="warp">
                 <div class="denglu">
-
+                 
                       <div class="denglu_title">用户登录</div>
                       <div class="denglu_content">
                          <div class="denglu_kuang">
                            <div class="denglu_name">用户名：</div>
-                           <input type="text" class="denglu_m" value="请输入系统分配的密码">
+                           <input type="text" class="denglu_m" name="username"  placeholder="请输入系统分配的密码">
                          </div>
                          <div class="denglu_kuang">
                            <div class="denglu_name">密码：</div>
-                           <input type="text" class="denglu_m" value="请输入系统分配的密码">
+                           <input type="password" class="denglu_m" name="password" placeholder="请输入系统分配的密码"  >
                          </div>
+             
                          <div class="denglu_kuang">
                            <div class="denglu_name">验证码：</div>
                            <input type="text" class="denglu_yz">
-                           <div class="denglu_tu"><%=buf%></div>
+                           <div class="denglu_tu" id="checkCodeArea"></div>
                          </div>
+                         <div class="denglu_kuang " style="padding-top:10px; height:auto;">
+                                <div class="error">
+                                     123123
+                                </div>
+                         </div>
+              
                       </div>
+               
                       <div class="denglu_rem"><input class="kk" type="checkbox" >记住密码</div>
                       <div class="denglu_am">
-                      <div class="denglu_bm"><input class="btn denglu_btm" type="button" value="登录"></div>
+               
+                      <div class="denglu_bm"><input class="btn denglu_btm" type="button"  value="登录"></div>
                       <a href="#">忘记密码？</a></div>
                 </div>
             </div>

@@ -1,16 +1,58 @@
 define(function (require, exports, module) {
        
+     require('/js_cmd/checkCode');
+
+     var checkCodes=new CheckCode({
+
+           obj:document.getElementById('checkCodeArea'),
+
+           codesLen:4              //该参数可选，默认为4
+
+     });
+
+        checkCodes.render();           //渲染验证码
 
 
-        $('.big_bj').height($(window).height());
+      $('.big_bj').height($(window).height());
        
+      $('#checkCodeArea').on('click',function (){
+           
+				checkCodes.refresh()
+                
+      })
 
-        
-    $.get('/login_img').then(function (data){
-        
-        console.log(data)
+	  $('.denglu_btm').on('click',function (){
 
-    })
+	        var val=$('.denglu_yz').val().toLowerCase()
+	        var check=checkCodes.getCodes().toLowerCase();
+	        
+	        var data={
+	        	"username":$('input[name=username]').val(),
+	        	"password":$('input[name=password]').val()
+	        }
+             console.log(check,val)
+	        if(val==check){
+	        	 $.post('/loginUp',data,function (data){
+	                    
+	                 if(data.state==false){
+	                    $('.error').show().html('账户密码错误请重新输入')
+	                    checkCodes.refresh()
+	                    return false;
+	                 }
+
+	                 console.log(data)
+
+	        	 },'json')
+                // $('#form_login').submit();
+
+
+
+	        }else{
+	        	$('.error').show().html('验证码错误请重新输入')
+	        	checkCodes.refresh()
+	        	return false;
+	        }
+	  })
 
 
 });

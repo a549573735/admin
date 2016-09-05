@@ -14,15 +14,15 @@ a{ text-decoration:none;}
 .denglu_name{ width:130px; float:left; height:41px; line-height:41px; overflow:hidden; text-align:right; font-size:24px; color:#000;}
 .denglu_m{ width:232px; height:37px; line-height:37px; float:right; border:1px solid #b5b5b5; color:#999999; font-size:14px;  text-indent:14px;}
 .denglu_yz{ width:107px; height:37px; float:left; margin-left:25px; display:inline; border:1px solid #b5b5b5;}
-.denglu_tu{ width:116px; float:right;}
+.denglu_tu{ width:116px; float:right; height: 41px;}
 .denglu_tu img{ display:block;height:41px; }
 .denglu_rem{ float:left; padding-left:152px; height:30px; line-height:30px; color:#333333; font-size:14px;}
 .denglu_rem .kk{ width:15px; height:15px; border:1px solid #b5b5b5;}
-.denglu_am{ width:100%; float:left; padding-top:35px;}
-.denglu_am .denglu_bm{ width:120px; margin:0 auto; }
+.denglu_am{ width:100%; float:left; padding-top:10px;}
+.denglu_am .denglu_bm{ width:120px; padding-left: 155px; height: 40px;}
 .denglu_am .denglu_bm .denglu_btm{ width:100%; float:left; height:40px; line-height:30px; outline: none; overflow:hidden; text-align:center; background:#438bd6; color:#fff; font-size:24px;}
-.denglu_am a{ width:100%; float:left; text-align:center; color:#333333; font-size:14px; line-height:40px;}
-
+.denglu_am a{ width:100%; float:left; padding-left: 185px; color:#333333; font-size:14px; line-height:40px;}
+.error{ color: red;  padding-left: 155px;  display: none;}
 
 
 /*单位管理园区*/

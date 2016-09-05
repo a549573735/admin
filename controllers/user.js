@@ -1,37 +1,21 @@
-
-
-var path=require('path');
-var ccap = require('ccap')();//Instantiated ccap class   
+var path=require('path'); 
 var fs=require('fs');
-
 
 
 
 
 exports.login = function(req, res, next) {
 
-
-    var ary = ccap.get();
-    var txt = ary[0];
-    var buf = ary[1];
-
- //   res.writeHead(200, { 'Content-Type': 'image/png', 'Content-Length': buf.length });
-   console.log(res)
-    res.render('pages/login',{buf:buf});
+    res.render('pages/login',{});
 
 };
-exports.login_img=function (req,res,next){
 
-    var ary = ccap.get();
-    var txt = ary[0];
-    var buf = ary[1];
-    
-    
-    console.log((buf))
-    res.end(buf)
 
+exports.loginUp = function(req, res, next) {
+
+        console.log(req.body)
+        
 }
-
 
 
 exports.signRequired=function (req,res,next)
@@ -46,10 +30,11 @@ exports.signRequired=function (req,res,next)
         
 }
 
-exports.adminRequired=function (req,res,next)
-
+ exports.adminRequired=function (req,res,next)
 {
 	var user=req.session.user;
+
+
 
 	if(user.rolt<10|| !user.rolt){
 		res.redirect('/')
@@ -72,7 +57,7 @@ exports.user_edit_list = function(req, res, next) {
 exports.user_add = function(req, res, next) {
 
    res.render('pages/user_add', { title: 'Express',data:'123123' });
-
+   
 }
 
 
