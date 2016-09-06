@@ -1,7 +1,7 @@
 var path=require('path'); 
 var fs=require('fs');
 var api_user=require('../models/api_user');
-var nav=require('../utils/rolt_nav');
+
 var md5=require('md5');
 
 
@@ -25,10 +25,9 @@ exports.loginUp = function(req, res, next) {
              
             if(data.success){
 
-                 // if(data.permissions.length>4){
-                 //      req.session.user.navlist=nav.navData
-                 // }
-
+               
+                
+                 
                  req.session.user=data
                 
                  res.json({msg:'登录成功',state:true})

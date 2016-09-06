@@ -1,4 +1,5 @@
 var session=require('express-session');
+var nav=require('../utils/rolt_nav');
 
 module.exports=function (app){
    
@@ -15,8 +16,13 @@ module.exports=function (app){
 	 //预处理
    app.use(function (req,res,next){
        var _user=req.session.user||false
+           if(_user){
+         		  _user.content.navlist=nav.navData.subAdmin
+            }
        app.locals.user=_user
-       
+
+       console.log(app.locals.user)
+
        next()
 
    })
