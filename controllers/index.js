@@ -7,6 +7,27 @@ var config=require('../utils/config')
 var api_user=require('../models/api_user');
 
 
+
+
+
+
+exports.home=function(req,res,next){
+     
+     if(req.session.user){
+     
+          res.redirect('/organize/architecture');
+     
+     }else {
+          res.redirect('/login');
+     }
+     
+}
+
+
+
+
+
+
 exports.index=function(req, res, next) {
 
   var data={ 
@@ -33,12 +54,14 @@ exports.index=function(req, res, next) {
    // })GET /api/app/user/login/{username}/{password}
 
 
- 
-
-   
    res.render('pages/details', data );
 
 }
+
+
+
+
+
 
 
 exports.common = function(req, res, next) {

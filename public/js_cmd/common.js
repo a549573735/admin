@@ -18,7 +18,8 @@
                 $lUserBtn           : jQuery('#u-btn'),
                 $lDate              : jQuery('.input-daterange').add('.js-datepicker'),
                 $lMinModal          : jQuery('.v-modal-min'),
-                $lMinBtn            : jQuery('.v-min-toggle')
+                $lMinBtn            : jQuery('.v-min-toggle'),
+                $lNav               : jQuery('.c-list')
           };
 
           this.listDown();
@@ -26,18 +27,22 @@
           this.userMessage();
           this.inputDate();
           this.minModal();
+          this.setNavActive();
 
     }
 
     Common.prototype.listDown=function (obj){
         this.obj.on('click',function (){
-            this.bclick= !this.bclick
-            if(this.bclick){
+            
+
+            if(  !$(this).next().hasClass('open')){
                 $(this).find('i').attr('class','icon-caret-down')
-                $(this).next().show()
+                $(this).next().addClass('open')
+
             }else {
+
                 $(this).find('i').attr('class','icon-caret-right')
-                $(this).next().hide()
+                $(this).next().removeClass('open')
             }
         })
     };
@@ -103,6 +108,32 @@
          })
 
     }
+
+
+    Common.prototype.setNavActive=function () {
+       
+       var href=window.location.pathname;
+
+       console.log(href)
+       this.uiInit.$lNav.find('li a').each(function (index,val){
+            
+             if($(val).attr('href')==href){
+                 $(val).addClass('active');
+              
+                  if($(val).parent()[0].tagName!=='LI'){
+                      // console.log($(val).parent()[0])
+                      $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')
+                       $(val).parent().parent().addClass('open')
+                  }
+             }
+
+            
+
+       })
+         
+
+    }
+
 
 //checkbox  uiHelperTableToolsCheckable();
 

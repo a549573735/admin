@@ -11,14 +11,14 @@ var Park=require('../controllers/park');
  module.exports=function (app){
 
 
-	app.get('/',  User.login);        
+	app.get('/',  Index.home);        
 
  	app.get('/login', User.login);		             //登陆页面
 
     app.get('/signout',User.signOut)                //登出
 
-
-    app.post('/loginUp',User.signRequired,  User.loginUp);               // 用户登录 提交用户名    		     	   
+    app.post('/loginUp', User.loginUp);               // 用户登录 提交用户名
+          		     	 
      
 
  	app.get('/common', Index.common);            //公共模块   企业详情    	 //公共模块
@@ -31,8 +31,7 @@ var Park=require('../controllers/park');
     
      
 
-  
- 
+
 	
 	app.get('/user/edit',User.signRequired,  User.user_edit);			 //角色管理 编辑
   

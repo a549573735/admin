@@ -205,7 +205,7 @@ label{font-weight: normal; color: #313131;}
 .v-msg-content-n{ display: none; }
 .v-msg-company-n{ display: none; }
 .v-btn-w{width: 80px !important;}
-.open{display: block;}
+.open{display: block !important;}
 
 
 

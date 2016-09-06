@@ -40,7 +40,7 @@ define(function (require, exports, module) {
 	                    return false;
 	                 }
 
-                    window.location.href='/common'
+                    window.location.href='/organize/architecture';
 	               
 
 	        	 },'json')

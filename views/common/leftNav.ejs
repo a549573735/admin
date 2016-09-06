@@ -5,8 +5,7 @@
               <% user.content.navlist.forEach(function (item){ %>
                 <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
                    <% if(item.list){%>
-
-                       <dl class="open">
+                       <dl >
                             <% item.list.forEach(function (it){ %>
                                <dd>
                                    <a href="<%=it.href%>"><%=it.title%></a>
