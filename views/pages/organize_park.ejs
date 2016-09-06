@@ -4,7 +4,7 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
-        <div class="c-r">
+        <div class="c-r"  id="check-table">
             <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                 <div class="row clearfix">
                     <div class="col-md-12">
@@ -56,78 +56,14 @@
 
             <div class="row v-table">
                 <div class="col-md-12">
-                    <div class="block" id="check-table">
-                        <!-- <table class="table table-hover table-borderless o-m-t">
-                            <thead>
-                            <tr class="v-table-tr">
-                                <th class="text-center" style="width: 5%"></th>
-                                <th class="text-center" style="width: 20%">园区名称</th>
-                                <th class="text-center" style="width: 25%">园区地址</th>
-                                <th class="text-center" style="width: 10%">联系人</th>
-                                <th class="text-center" style="width: 25%">联系方式</th>
-                                <th class="text-center" style="width: 15%"></th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td class="text-center"><label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label></td>
-                                <td class="text-center">上海化学工业区</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">1234586445</td>
-                                <td class="text-center"><div class="xgl-btm"><input class="btn btn-md btn-primary btn-block" type="submit" value="详情"></div></td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-center"><label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label></td>
-                                <td class="text-center">上海化学工业区</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">1234586445</td>
-                                <td class="text-center"><div class="xgl-btm"><input class="btn btn-md btn-primary btn-block" type="submit" value="详情"></div></td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label></td>
-                                <td class="text-center">上海化学工业区</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">1234586445</td>
-                                <td class="text-center"><div class="xgl-btm"><input class="btn btn-md btn-primary btn-block" type="submit" value="详情"></div></td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-center"><label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label></td>
-                                <td class="text-center">上海化学工业区</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">1234586445</td>
-                                <td class="text-center"><div class="xgl-btm"><input class="btn btn-md btn-primary btn-block" type="submit" value="详情"></div></td>
-                            </tr>
-                            <tr>
-                                <td class="text-center"><label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label></td>
-                                <td class="text-center">上海化学工业区</td>
-                                <td class="text-center">奉贤青村食品药品监督管理所</td>
-                                <td class="text-center">张先生</td>
-                                <td class="text-center">1234586445</td>
-                                <td class="text-center"><div class="xgl-btm"><input class="btn btn-md btn-primary btn-block" type="submit" value="详情"></div></td>
-                            </tr>
-                            </tbody>
-                        </table> -->
-
+                    <div class="block">
+        
                         <check-table-list :datalist="data"></check-table-list>
                     </div>
                 </div>
             </div>
+
+             <v-pages :pagelist="5"> </v-pages>
         </div>
     </div>
 </div>

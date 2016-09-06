@@ -4,7 +4,7 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
-        <div class="c-r">
+        <div class="c-r" id="app">
                 <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                     <div class="clearfix">
                         <div class="col-md-12">
@@ -19,7 +19,7 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" id="app">
+                            <div class="form-group" >
                                 <v-select :selectdata="data"></v-select>
 
 

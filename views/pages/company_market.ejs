@@ -4,7 +4,7 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
 
-        <div class="c-r">
+        <div class="c-r" id="c-table-checkbox">
             <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                 <div class="row clearfix">
                     <div class="col-md-12">
@@ -18,10 +18,12 @@
             </form>
 
             <div class="row v-table">
-                <div class="block" id="c-table-checkbox">
+                <div class="block" >
                     <com-table-list :datalist="data"></com-table-list>
                 </div>
             </div>
+
+             <v-pages :pagelist="5"> </v-pages>
         </div>
    
     </div>

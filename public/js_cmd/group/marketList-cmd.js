@@ -13,7 +13,7 @@ define(function (require, exports, module) {
     })
 
     uiHelperTableToolsCheckable();
-
+    require('/js_cmd/components/paging')
     require('/js_cmd/tableCom');
     // new Vue({
     //     el: '#app',
