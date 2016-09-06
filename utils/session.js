@@ -12,7 +12,6 @@ module.exports=function (app){
 		}
 	}));
 
-
 	 //预处理
    app.use(function (req,res,next){
        var _user=req.session.user||false
@@ -20,8 +19,6 @@ module.exports=function (app){
          		  _user.content.navlist=nav.navData.subAdmin
             }
        app.locals.user=_user
-
-       console.log(app.locals.user)
 
        next()
 

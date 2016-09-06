@@ -15,19 +15,14 @@ exports.login = function(req, res, next) {
 
 exports.loginUp = function(req, res, next) {
 
-          
         var data=req.body;
 
         data.password=md5(data.password)
-        console.log(JSON.stringify(data))
-    
+
         api_user.loginUp('api/app/user/login/','GET',data).then(function (data){
              
             if(data.success){
 
-               
-                
-                 
                  req.session.user=data
                 
                  res.json({msg:'登录成功',state:true})
@@ -47,7 +42,7 @@ exports.signOut=function (req,res,next){
     
       delete req.session.user;
        
-      redirect('/login') 
+      res.redirect('/') 
 
 }
 
