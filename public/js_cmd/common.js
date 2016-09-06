@@ -86,7 +86,7 @@
             weekStart: 1,
             autoclose: true,
             todayHighlight: true,
-            format: 'yyyy/mm/dd'
+            format: 'yyyy-mm'   //yyyy-mm-dd
 
         })
 
@@ -113,25 +113,16 @@
     Common.prototype.setNavActive=function () {
        
        var href=window.location.pathname;
-
-       console.log(href)
        this.uiInit.$lNav.find('li a').each(function (index,val){
             
              if($(val).attr('href')==href){
                  $(val).addClass('active');
-              
                   if($(val).parent()[0].tagName!=='LI'){
-                      // console.log($(val).parent()[0])
                       $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')
                        $(val).parent().parent().addClass('open')
                   }
              }
-
-            
-
        })
-         
-
     }
 
 
