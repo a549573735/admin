@@ -35,18 +35,16 @@ define(function (require, exports, module) {
 	        	 $.post('/loginUp',data,function (data){
 	                    
 	                 if(data.state==false){
-	                    $('.error').show().html('账户密码错误请重新输入')
+	                    $('.error').show().html(data.msg)
 	                    checkCodes.refresh()
 	                    return false;
 	                 }
 
-	                 console.log(data)
+                    window.location.href='/common'
+	               
 
 	        	 },'json')
-                // $('#form_login').submit();
-
-
-
+	        	 
 	        }else{
 	        	$('.error').show().html('验证码错误请重新输入')
 	        	checkCodes.refresh()

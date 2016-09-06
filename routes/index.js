@@ -7,10 +7,11 @@ var Park=require('../controllers/park');
 
 
 
+
  module.exports=function (app){
 
 
-	app.get('/',  Index.index);                  		     	    //公共模块   企业详情
+	app.get('/',  User.login);                  		     	    //公共模块   企业详情
 
  	app.get('/common', Index.common);             				 //公共模块
 
@@ -20,12 +21,13 @@ var Park=require('../controllers/park');
 
 	app.get('/company/park', Company.company_park);             //单位管理 园区 列表
     
-    app.post('/loginUp', User.loginUp);
 
 
+    app.post('/loginUp', User.loginUp);               // 用户登录 提交用户名
+ 
   	app.get('/login', User.login);		             //登陆页面
 
-
+    app.get('/signout',User.signOut)                //登出
 	
 	app.get('/user/edit', User.user_edit);			 //角色管理 编辑
   

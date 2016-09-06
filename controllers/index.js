@@ -4,6 +4,7 @@ var request=Promise.promisify(require('request'));
 var config=require('../utils/config')
 
 
+var api_user=require('../models/api_user');
 
 
 exports.index=function(req, res, next) {
@@ -29,7 +30,8 @@ exports.index=function(req, res, next) {
    //     console.log(data.body)
 
 
-   // })
+   // })GET /api/app/user/login/{username}/{password}
+
 
  
 
@@ -41,14 +43,24 @@ exports.index=function(req, res, next) {
 
 exports.common = function(req, res, next) {
 
+
+   //  api_user.loginUp('api/app/user/login/','GET',{username:123,password:123}).then(function (data){
+    
+   //    console.log(data)
+
+   // }).catch(function (err){
+
+   //    console.log(err)
+   // })
+
+
    res.render('pages/common', {
       title: 'common'
    });
 
+
+
 }
-
-
-
 
 
 
