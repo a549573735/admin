@@ -1,4 +1,5 @@
 var config = {
+    
         internal:{
             host:"http://139.196.152.218/",
             port:"8081",

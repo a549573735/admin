@@ -4,91 +4,52 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
-          <div class="c-r">
-                <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
-                    <div class="row clearfix">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="col-md-1 v-label-l" for="radio-1"><input class="radio-m" name="user" checked="checked" id="radio-1" type="radio"><span></span>市场所</label>
-
-                                <label class="col-md-1 o-pd v-label-s" for="radio-2"><input class="radio-m" name="user" type="radio" id="radio-2"><span></span>企业：</label>
-                                <div class="col-md-2 o-pd-l">
-                                    <select class="form-control"  name="val-skill">
-                                        <option value="">雅为</option>
-                                        <option value="html">雅为</option>
-                                        <option value="css">雅为</option>
-                                        <option value="javascript">雅为</option>
-                                        <option value="ruby">雅为</option>
-                                        <option value="php">雅为</option>
-                                        <option value="asp">雅为</option>
-                                        <option value="python">雅为</option>
-                                        <option value="mysql">雅为</option>
-                                    </select>
-                                </div>
-
-                                <label class="col-md-1 o-pd v-label-s"  for="radio-3"><input class="radio-m" name="user" type="radio" id="radio-3"><span></span>园区：</label>
-                                <div class="col-md-2 o-pd-l">
-                                    <select class="form-control" name="val-skill">
-                                        <option value="">雅为</option>
-                                        <option value="html">雅为</option>
-                                        <option value="css">雅为</option>
-                                        <option value="javascript">雅为</option>
-                                        <option value="ruby">雅为</option>
-                                        <option value="php">雅为</option>
-                                        <option value="asp">雅为</option>
-                                        <option value="python">雅为</option>
-                                        <option value="mysql">雅为</option>
-                                    </select>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </form>
-
+          <div class="c-r" id="app">
+                <v-radio-select :selectdata="data" ></v-radio-select>
                 <div class="row v-table">
                     <div class="col-md-12">
                         <div class="block">
+                          
                             <div class="col-md-6  o-add-l">
                                     <div class="col-md-12 o-pd o-m-t" >
                                         <div class="col-md-3 o-pd  v-righ">姓名：</div>
                                         <div class="col-md-6 o-pd ">
                                             <input type="text" class="form-control"></div>
                                         </div>
-                                    <div class="col-md-12 o-pd o-m-t"" >
+                                     <div class="col-md-12 o-pd o-m-t" >
+                                        <div class="col-md-3 o-pd  v-righ">密码：</div>
+                                        <div class="col-md-6 o-pd ">
+                                            <input type="password" class="form-control"></div>
+                                        </div>    
+                                    <div class="col-md-12 o-pd o-m-t">
                                         <div class="col-md-3 o-pd  v-righ">用户名：</div>
                                         <div class="col-md-6 o-pd ">
                                             <input type="text" class="form-control"></div>
                                         </div>
-                                <div class="col-md-12 o-pd o-m-t"" >
+                                <div class="col-md-12 o-pd o-m-t" >
                                         <div class="col-md-3 o-pd  v-righ">手机号：</div>
                                         <div class="col-md-6 o-pd ">
                                             <input type="text" class="form-control"></div>
                                         </div>
-                                <div class="col-md-12 o-pd o-m-t"" >
+                                <div class="col-md-12 o-pd o-m-t">
                                         <div class="col-md-3 o-pd  v-righ">邮箱：</div>
                                         <div class="col-md-6 o-pd ">
                                             <input type="text" class="form-control"></div>
                                         </div>
-                                <div class="col-md-12 o-pd o-m-t"" >
+                                <div class="col-md-12 o-pd o-m-t">
                                         <div class="col-md-3 o-pd  v-righ">角色：</div>
                                         <div class="col-md-6 o-pd ">
                                             <select class="form-control" id="val-skill" name="val-skill">
-                                                <option value="">Please select</option>
-                                                <option value="html">HTML</option>
-                                                <option value="css">CSS</option>
-                                                <option value="javascript">Javascript</option>
-                                                <option value="ruby">Ruby</option>
-                                                <option value="php">PHP</option>
-                                                <option value="asp">ASP.NET</option>
-                                                <option value="python">Python</option>
-                                                <option value="mysql">MySQL</option>
+                                                <option value="">请选择</option>
+                                               <% content.forEach(function (item){%>     
+                                                <option value="<%=item.id %>" data-permissions="<%=item.permissionIds%> " ><%=item.name %></option>
+                                                <% }) %>
                                     </select></div>
                                         </div>
                                     <div class="col-md-12 o-m-t o-pd">
                                         <div class="col-md-5 o-pd o-m-t">
                                             <div class="v-t-m o-m-t">
-                                              <button class=" btn btn-md btn-primary btn-block  " type="submit">确定</button>
+                                              <button class=" btn btn-md btn-primary btn-block " type="submit">确定</button>
                                             </div>
                                         </div>
                                         <div class="col-md-2 o-pd o-m-t"></div>
@@ -112,17 +73,8 @@
 
 <script>
 
-    var navTabs=$('#v-nav-tab');
-    var contentTabs=$('.v-tab-content');
+   seajs.use('/js_cmd/group/user_admin_add-cmd.js');
 
-    navTabs.on('click','li',function (){
-
-        $(this).addClass('active').siblings().removeClass('active');
-        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
-
-    })
-
-    uiHelperTableToolsCheckable();
 
 </script>
 

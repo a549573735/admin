@@ -7,12 +7,12 @@ var config=require('../utils/config');
 var prex=config.internal.host;
 
 
-exports.parkAll=function (url,method,data){
+exports.marrketAll=function (url,method,data){
 		
-	return  new Promise(function (resolve,reject){
-	      console.log(2)
-		services.Interface(prex+url,method,null).then(function (data){
 
+	return  new Promise(function (resolve,reject){
+	
+		services.Interface(prex+url,method,null).then(function (data){
                 resolve(data)
            
 		}).catch(function (err){
@@ -23,7 +23,4 @@ exports.parkAll=function (url,method,data){
 
 	})
 }
-
-
-
 

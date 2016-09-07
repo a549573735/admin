@@ -12,7 +12,7 @@ exports.loginUp=function (url,method,data){
 	return  new Promise(function (resolve,reject){
 	  
 		
-		services.Interfacelogin(prex+url+data.username+'/'+data.password,method,null).then(function (data){
+		services.Interfacelogin(prex+url,method,data).then(function (data){
 
                 resolve(data)
            

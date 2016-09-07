@@ -14,25 +14,27 @@ exports.login = function(req, res, next) {
 };
 
 
-
+ /*  用户登录 */
 exports.loginUp = function(req, res, next) {
 
         var data=req.body;
-
         data.password=md5(data.password)
+        var str='username='+data.username+'&password='+data.password;
 
-        api_user.loginUp('api/app/user/login/','GET',data).then(function (data){
+        api_user.loginUp('api/app/user/verify','POST',str).then(function (data){
              
-            if(data.success){
+            data=JSON.parse(data);
 
+            if(data.success){
+                 
                  req.session.user=data
 
                  config.headers['User-Token']=data.content.id;
                  
-
                  res.json({msg:'登录成功',state:true})
 
             }else {
+                // 
                  res.json({msg:'用户名密码错误',state:false})
             }
 
@@ -43,6 +45,8 @@ exports.loginUp = function(req, res, next) {
         })
 }
 
+
+/* 用户登出*/
 exports.signOut=function (req,res,next){
     
       delete req.session.user;
@@ -53,7 +57,7 @@ exports.signOut=function (req,res,next){
 
 
 
-
+/* 判断用户是否登录 */
 exports.signRequired=function (req,res,next)
 {
         
@@ -80,6 +84,7 @@ exports.signRequired=function (req,res,next)
 }
 
 
+  /*获取用户列表*/
 
 exports.user_edit_list = function(req, res, next) {
 
@@ -90,13 +95,9 @@ exports.user_edit_list = function(req, res, next) {
                 "size": 0
                 }
 
-      console.log(_id);
-
-
       api_user.usercommon('api/app/user/'+_id+'/list',"POST",data).then(function (data){
 
-        console.log(data)
-          
+          console.log(data)
          res.render('pages/user_edit_list', data);
 
       }).catch(function (err){
@@ -109,7 +110,7 @@ exports.user_edit_list = function(req, res, next) {
 }
 
 
-
+/* 获取用户权限列表*/
 
 exports.user_add = function(req, res, next) {
 
@@ -117,13 +118,13 @@ exports.user_add = function(req, res, next) {
 
    api_user.usercommon('api/app/role/permission/'+type+'/list',"GET",null).then(function (data){
         
-        console.log(data)
+         console.log(data)
          res.render('pages/user_add', data);
      
 
    }).catch(function (err){
            
-           console.log(err)
+         console.log(err)
          res.json({msg:'用户权限列表服务器错误',state:false})
 
    })
@@ -143,14 +144,11 @@ exports.user_add_list = function(req, res, next) {
 
    }).catch(function (err){
            
-           console.log(err)
+         console.log(err)
          res.json({msg:'用户权限列表服务器错误',state:false})
 
    })
-
-   
 }
-
 
 
 
@@ -164,8 +162,26 @@ exports.user_edit=function(req, res, next) {
 
 
 exports.user_admin_add=function(req, res, next) {
+    
+    var type=req.body.type||"DISTRICT"; 
+   
+    api_user.usercommon('api/app/role/'+type+'/list',"GET",null).then(function (data){
+        
+            console.log(data)
+         res.render('pages/user_admin_add', data);
+     
+   }).catch(function (err){
+           
+           console.log(err)
 
-   res.render('pages/user_admin_add', { title: 'Express',data:'123123' });
+         res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
+     
+
+   })
+
+  //  GET /api/app/role/{type}/list
+
+ 
 
 }
 

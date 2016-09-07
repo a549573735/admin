@@ -33,7 +33,8 @@ define(function (require, exports, module) {
              console.log(check,val)
 	        if(val==check){
 	        	 $.post('/loginUp',data,function (data){
-	                    
+	                  
+	                 console.log(data)   
 	                 if(data.state==false){
 	                    $('.error').show().html(data.msg)
 	                    checkCodes.refresh()

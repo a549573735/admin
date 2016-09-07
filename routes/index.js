@@ -4,9 +4,9 @@ var Organize=require('../controllers/organize')
 var User=require('../controllers/user')
 var Company=require('../controllers/company');
 var Park=require('../controllers/park');
+var Market=require('../controllers/market');
 var request=require('request');
 var config=require('../utils/config')
-
 
 
 
@@ -84,6 +84,17 @@ var config=require('../utils/config')
 	app.get('/park', User.signRequired, Park.park_index); 				  // 园区进入
 
 	app.get('/park/publicity',User.signRequired,  Park.park_publicity);          // 园区年报 公示列表
+
+
+
+    app.get('/park/all/:id', User.signRequired, Park.parkAll); 	
+
+    app.get('/park/briefall/:id', User.signRequired, Park.parkBriefAll); 	
+
+
+	app.get('/market/all',User.signRequired,Market.marketAll)        // 所有市场所信息
+
+	app.get('/market/brief',User.signRequired,Market.marketBriefAll)       //所有市场所 简介 用作调 select 
 
 
 }

@@ -10,13 +10,13 @@ Services.prototype.Interfacelogin=function (url,method,data){
    
      return new Promise(function (resolve,reject){
         
-         request({method:method,url:url,body:data,json:true}).then(function (response){
+         request({method:method,url:url,form:data}).then(function (response){
 
               resolve(response.body)
  
          }).catch(function (err){
               console.log(err)
-         	  reject(err)
+         	    reject(err)
          })
      }) 
 }
@@ -35,7 +35,6 @@ Services.prototype.Interface=function (url,method,data){
          })
      }) 
 }
-
 
 
 
