@@ -1,15 +1,16 @@
 var Promise=require('bluebird');
 var request=Promise.promisify(require('request'));
+var config=require('./config')
 
 
 function Services(){}
 
 
-Services.prototype.Interface=function (url,method,data){
+Services.prototype.Interfacelogin=function (url,method,data){
    
      return new Promise(function (resolve,reject){
         
-         request({method:method,url:url,form:data,json:true}).then(function (response){
+         request({method:method,url:url,body:data,json:true}).then(function (response){
 
               resolve(response.body)
  
@@ -20,6 +21,20 @@ Services.prototype.Interface=function (url,method,data){
      }) 
 }
 
+Services.prototype.Interface=function (url,method,data){
+   
+     return new Promise(function (resolve,reject){
+     
+         request({method:method,url:url,body:data,json:true,headers:config.headers}).then(function (response){
+
+              resolve(response.body)
+ 
+         }).catch(function (err){
+              console.log(err)
+         	  reject(err)
+         })
+     }) 
+}
 
 
 

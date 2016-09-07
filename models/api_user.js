@@ -7,16 +7,12 @@ var config=require('../utils/config');
 var prex=config.internal.host;
 
 
-
-
-
-
 exports.loginUp=function (url,method,data){
 		
 	return  new Promise(function (resolve,reject){
 	  
 		
-		services.Interface(prex+url+data.username+'/'+data.password,'GET',null).then(function (data){
+		services.Interfacelogin(prex+url+data.username+'/'+data.password,method,null).then(function (data){
 
                 resolve(data)
            
@@ -29,7 +25,26 @@ exports.loginUp=function (url,method,data){
 	})
 }
 
+exports.userList=function (url,method,data){
 
+
+	return  new Promise(function (resolve,reject){
+
+		console.log(prex+url,method,data)
+         
+       services.Interface(prex+url,method,data).then(function(data){
+
+  				resolve(data)
+       
+       }).catch(function (err){
+             console.log(err);
+        		reject(err)
+
+       })
+
+	})
+
+}
 
 
 

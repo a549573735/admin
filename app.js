@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var config=require('./utils/config')
+var proxy = require('express-http-proxy');
 
 var routes = require('./routes/index');
 
@@ -26,6 +28,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
+
+
 app.use(function(req, res, next) {
    res.locals.config = {
        version: '20160831'
@@ -33,7 +37,18 @@ app.use(function(req, res, next) {
    next();
 });
 
+
+
 session(app);
+
+
+// app.all('*', proxy(config.internal.host, {
+//     decorateRequest: function(req){
+//         req.headers['User-Token'] =req.session.user.content.id;
+//         return req;
+//     }
+    
+// }));
 
 
 routes(app)

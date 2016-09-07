@@ -4,13 +4,13 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
           <div class="c-r">
-            <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
+            <form class="form-horizontal clearfix"  method="post" action="" onsubmit="return false;">
                 <div class=" clearfix">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="col-md-1 o-pd v-label" for="val-skill"><input class="radio-m" name="val-skill" checked="" type="radio"><span></span>市场所</label>
+                            <label class="col-md-1 o-pd v-label" for="radio-1"><input class="radio-m" name="user" checked="checked" id="radio-1" type="radio"><span></span>市场所</label>
 
-                            <label class="col-md-1 o-pd v-label-s" for="val-skill"><input class="radio-m" name="radio-group10" type="radio"><span></span>企业：</label>
+                            <label class="col-md-1 o-pd v-label-s" for="radio-2"><input class="radio-m" name="user" type="radio" id="radio-2"><span></span>企业：</label>
                             <div class="col-md-2 o-pd-l">
                                 <select class="form-control"  name="val-skill">
                                     <option value="">雅为</option>
@@ -25,7 +25,7 @@
                                 </select>
                             </div>
 
-                            <label class="col-md-1 o-pd v-label-s" for="val-skill"><input class="radio-m" name="radio-group10" type="radio"><span></span>园区：</label>
+                            <label class="col-md-1 o-pd v-label-s" for="radio-3"><input class="radio-m" name="user" type="radio" id="radio-3"><span></span>园区：</label>
                             <div class="col-md-2 o-pd-l">
                                 <select class="form-control" name="val-skill">
                                     <option value="">雅为</option>
@@ -42,10 +42,10 @@
                         </div>
                         
                             <div class="v-t-b col-md-3">
-                                <a href="/user/admin/add" class=" btn btn-md btn-primary btn-block " >增加</a>
+                                <a href="/user/admin/add"  data-toggle="modal"data-target="#modal-fromuser"  class=" btn btn-md btn-primary btn-block " >增加</a>
                             </div>
                             <div class="v-t-b col-md-3">
-                                <button class="btn btn-md btn-primary btn-block" type="submit">删除</button>
+                                <button class="btn btn-md btn-primary btn-block" >删除</button>
                             </div>
                     </div>
                 </div>
@@ -80,72 +80,10 @@
                                 <td class="text-center">13656489126@163.com</td>
                                 <td class="text-center">2016-08-17</td>
                                 <td class="text-center">行政部</td>
-                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">修改</button></div>
+                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" data-toggle="modal"data-target="#modal-fromuser">修改</button></div>
                                  <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">重置</button></div></td>
                             </tr>
-                            <tr>
-                                <td class="text-center">
-                                        <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label>
-                                </td>
-                                <td class="text-center">李先生</td>
-                                <td class="text-center">admin1</td>
-                                <td class="text-center">13656489126</td>
-                                <td class="text-center">13656489126@163.com</td>
-                                <td class="text-center">2016-08-17</td>
-                                <td class="text-center">行政部</td>
-                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">修改</button></div>
-                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">重置</button></div></td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">
-                                        <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label>
-                                </td>
-                                <td class="text-center">李先生</td>
-                                <td class="text-center">admin1</td>
-                                <td class="text-center">13656489126</td>
-                                <td class="text-center">13656489126@163.com</td>
-                                <td class="text-center">2016-08-17</td>
-                                <td class="text-center">行政部</td>
-                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">修改</button></div>
-                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">重置</button></div></td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">
-                                        <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label>
-                                </td>
-                                <td class="text-center">李先生</td>
-                                <td class="text-center">admin1</td>
-                                <td class="text-center">13656489126</td>
-                                <td class="text-center">13656489126@163.com</td>
-                                <td class="text-center">2016-08-17</td>
-                                <td class="text-center">行政部</td>
-                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">修改</button></div>
-                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">重置</button></div></td>
-                            </tr>
-
-                            <tr>
-                                <td class="text-center">
-                                        <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
-                                        </label>
-                                </td>
-                                <td class="text-center">李先生</td>
-                                <td class="text-center">admin1</td>
-                                <td class="text-center">13656489126</td>
-                                <td class="text-center">13656489126@163.com</td>
-                                <td class="text-center">2016-08-17</td>
-                                <td class="text-center">行政部</td>
-                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">修改</button></div>
-                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">重置</button></div></td>
-                            </tr>
+                          
                             </tbody>
                         </table>
                     </div>

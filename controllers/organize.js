@@ -33,6 +33,8 @@ exports.architecture = function(req, res, next) {
 
 exports.details = function(req, res, next) {
 
+
+            
    var data={ 
                   data:{
 

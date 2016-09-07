@@ -1,6 +1,7 @@
 var path=require('path'); 
 var fs=require('fs');
 var api_user=require('../models/api_user');
+var config=require('../utils/config')
 
 var md5=require('md5');
 
@@ -11,6 +12,7 @@ exports.login = function(req, res, next) {
     res.render('pages/login',{});
 
 };
+
 
 
 exports.loginUp = function(req, res, next) {
@@ -24,7 +26,10 @@ exports.loginUp = function(req, res, next) {
             if(data.success){
 
                  req.session.user=data
-                
+
+                 config.headers['User-Token']=data.content.id;
+                 
+
                  res.json({msg:'登录成功',state:true})
 
             }else {
@@ -78,7 +83,30 @@ exports.signRequired=function (req,res,next)
 
 exports.user_edit_list = function(req, res, next) {
 
-   res.render('pages/user_edit_list', { title: 'Express',data:'123123' });
+
+      var _id= req.session.user.content.id
+      var data={
+                "page": 0,
+                "size": 0
+                }
+
+      console.log(_id);
+
+
+      api_user.userList('api/app/user/'+_id+'/list',"POST",data).then(function (data){
+
+        console.log(data)
+          
+         res.render('pages/user_edit_list', data);
+
+      }).catch(function (err){
+           
+           console.log(err)
+           res.json({msg:'用户列表服务器错误',state:false})
+
+      })
+
+  
 
 }
 

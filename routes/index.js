@@ -4,6 +4,8 @@ var Organize=require('../controllers/organize')
 var User=require('../controllers/user')
 var Company=require('../controllers/company');
 var Park=require('../controllers/park');
+var request=require('request');
+var config=require('../utils/config')
 
 
 
@@ -19,7 +21,9 @@ var Park=require('../controllers/park');
 
     app.post('/loginUp', User.loginUp);               // 用户登录 提交用户名
           		     	 
-     
+  
+
+
 
  	app.get('/common', Index.common);            //公共模块   企业详情    	 //公共模块
 
