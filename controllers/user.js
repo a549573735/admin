@@ -93,7 +93,7 @@ exports.user_edit_list = function(req, res, next) {
       console.log(_id);
 
 
-      api_user.userList('api/app/user/'+_id+'/list',"POST",data).then(function (data){
+      api_user.usercommon('api/app/user/'+_id+'/list',"POST",data).then(function (data){
 
         console.log(data)
           
@@ -106,8 +106,6 @@ exports.user_edit_list = function(req, res, next) {
 
       })
 
-  
-
 }
 
 
@@ -115,15 +113,52 @@ exports.user_edit_list = function(req, res, next) {
 
 exports.user_add = function(req, res, next) {
 
-   res.render('pages/user_add', { title: 'Express',data:'123123' });
+   var type=req.body.type||"DISTRICT"; 
+
+   api_user.usercommon('api/app/role/permission/'+type+'/list',"GET",null).then(function (data){
+        
+        console.log(data)
+         res.render('pages/user_add', data);
+     
+
+   }).catch(function (err){
+           
+           console.log(err)
+         res.json({msg:'用户权限列表服务器错误',state:false})
+
+   })
+
    
 }
+
+exports.user_add_list = function(req, res, next) {
+
+   var type=req.body.type||"DISTRICT"; 
+
+   api_user.usercommon('api/app/role/permission/'+type+'/list',"GET",null).then(function (data){
+        
+       
+         res.json(data);
+     
+
+   }).catch(function (err){
+           
+           console.log(err)
+         res.json({msg:'用户权限列表服务器错误',state:false})
+
+   })
+
+   
+}
+
 
 
 
 exports.user_edit=function(req, res, next) {
 
      res.render('pages/user_edit', { title: 'Express',data:'123123' });
+
+
 
 }
 

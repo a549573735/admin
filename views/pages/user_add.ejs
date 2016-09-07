@@ -4,94 +4,11 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
 
-        <div class="c-r">
-
-                <form class="form-horizontal clearfix" method="post" onsubmit="return false;">
-                    <div class="row clearfix">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="col-md-1 v-label" for="radio-1">
-                                    <input class="radio-m" id="radio-1"  name="user" checked="checked" type="radio"><span></span>市场所</label>
-
-                                <label class="col-md-1 o-pd v-label-s" for="radio-2">
-                                    <input class="radio-m" name="user" id="radio-2" type="radio"><span></span>企业：</label>
-                                <div class="col-md-2 o-pd-l">
-                                    <select class="form-control" name="val-skill">
-                                        <option value="">雅为</option>
-                                        <option value="html">雅为</option>
-                                        <option value="css">雅为</option>
-                                        <option value="javascript">雅为</option>
-                                        <option value="ruby">雅为</option>
-                                        <option value="php">雅为</option>
-                                        <option value="asp">雅为</option>
-                                        <option value="python">雅为</option>
-                                        <option value="mysql">雅为</option>
-                                    </select>
-                                </div>
-
-                                <label class="col-md-1 o-pd v-label-s" for="radio-3">
-                                    <input class="radio-m" name="user" type="radio" id="radio-3"><span></span>园区：</label>
-                                <div class="col-md-2 o-pd-l">
-                                    <select class="form-control" name="val-skill">
-                                        <option value="">雅为</option>
-                                        <option value="html">雅为</option>
-                                        <option value="css">雅为</option>
-                                        <option value="javascript">雅为</option>
-                                        <option value="ruby">雅为</option>
-                                        <option value="php">雅为</option>
-                                        <option value="asp">雅为</option>
-                                        <option value="python">雅为</option>
-                                        <option value="mysql">雅为</option>
-                                    </select>
-                                </div>
-
-                            </div>
-
-                        </div>
-                    </div>
-                </form>
-                <div class="row v-table">
-                    <div class="col-md-12 o-m-t">
-                        <div class="block">
-                            <div class="col-md-6  o-add-l">
-                                <div class="col-md-12 o-pd" >
-                                    <div class="col-md-3 o-pd  v-righ">角色名：</div>
-                                    <div class="col-md-9 o-pd ">
-                                        <input type="text" class="form-control"></div>
-                                    </div>
-                                <div class="col-md-12 o-m-t o-pd">
-                                    <div class="col-md-3 o-pd  v-righ">权限：</div>
-                                    <div class="col-md-9 o-pd v-left">
-                                        <label class="col-md-6 o-pd css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" id="row_3" name="row_3"><span></span>平级用户管理</label>
-                                        <label class="col-md-6 o-pd o-pd css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" id="Checkbox1" name="row_3"><span></span>下级用户管理</label>
-                                        <label class="col-md-12 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox2" name="row_3"><span></span>企业信息</label>
-                                        <label class="col-md-12 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox3" name="row_3"><span></span>网络检查列表</label>
-                                        <label class="col-md-6 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox4" name="row_3"><span></span>预约检查列表</label>
-                                        <label class="col-md-6 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox5" name="row_3"><span></span>预约检查</label>
-                                        <label class="col-md-6 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox6" name="row_3"><span></span>行政约谈列表</label>
-                                        <label class="col-md-6 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox7" name="row_3"><span></span>行政约谈</label>
-                                        <label class="col-md-6 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox8" name="row_3"><span></span>行政建议列表</label>
-                                        <label class="col-md-6 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox9" name="row_3"><span></span>行政建议</label>
-                                        <label class="col-md-12 o-pd o-pd o-m-t css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="Checkbox10" name="row_3"><span></span>年报公示列表</label>
-                                    </div>
-                                </div>
-                                <div class="col-md-12 o-m-t o-pd">
-                                    <div class="col-md-3 o-pd o-m-t"></div>
-                                    <div class="col-md-9 o-pd ">
-                                        <div class="v-t-b ">
-                                          <button class=" btn btn-md btn-primary btn-block  " type="submit">确定</button>
-                                        </div>
-                                    </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+        <div class="c-r" id="app" >
+              <v-radio-select :selectdata="data"  ></v-radio-select>
+              <v-radio-content :datacheckbox="checkboxDate" ></v-radio-content>
         </div>
+
 
     </div>
 </div>
@@ -101,7 +18,8 @@
 <% include ../common/modals.ejs %>
 
 <script>
-    seajs.use("js_cmd/group/marketList-cmd");
+    seajs.use("/js_cmd/group/marketList-cmd");
+    seajs.use('/js_cmd/components/radio');
 
 </script>
 

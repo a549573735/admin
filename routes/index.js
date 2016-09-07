@@ -44,6 +44,10 @@ var config=require('../utils/config')
   	app.get('/user/edit/list',User.signRequired,  User.user_edit_list);       //用户编辑列表
 
 	app.get('/user/add',User.signRequired,  User.user_add);   			 //用户添加
+    
+   
+
+	app.post('/user/add/list',User.signRequired, User.user_add_list);   //动态传输 用户权限列表
 
 
 

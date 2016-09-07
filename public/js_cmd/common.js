@@ -113,16 +113,27 @@
     Common.prototype.setNavActive=function () {
        
        var href=window.location.pathname;
-       this.uiInit.$lNav.find('li a').each(function (index,val){
-            
-             if($(val).attr('href')==href){
-                 $(val).addClass('active');
-                  if($(val).parent()[0].tagName!=='LI'){
-                      $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')
-                       $(val).parent().parent().addClass('open')
-                  }
-             }
-       })
+       var reg=/^\/organize\/details\/\w+$/;
+     
+       if(href=='/user/admin/add'){
+           href="/user/edit/list"
+       }else if(reg.test(href)){
+          
+          href="/organize/company"
+       }
+
+         this.uiInit.$lNav.find('li a').each(function (index,val){
+              
+               if($(val).attr('href')==href){
+                   $(val).addClass('active');
+                    if($(val).parent()[0].tagName!=='LI'){
+                        $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')
+                         $(val).parent().parent().addClass('open')
+                    }
+               }
+
+
+         })
     }
 
 

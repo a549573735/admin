@@ -42,6 +42,8 @@ label{font-weight: normal; color: #313131;}
 .v-label{ font-size: 18px !important; padding-left: 15px; width: 120px; margin-top: 7px;}
 .v-label-s{font-size: 18px !important;width: 80px; margin-top: 7px; }
 .v-label-x{font-size: 18px !important;width: 60px; margin-top: 7px; }
+.v-label-m{font-size: 18px !important;width: 100px; margin-top: 7px; }
+
 
 
 .v-tabs-title{ padding-bottom: 20px;}
