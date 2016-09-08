@@ -2,9 +2,30 @@ define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
     
     Vue.component('v-radio-select', {
-        props: ['selectdata','radiodata'],
         data: function () {
-            return {k: 1, state: false,radio:''}
+            return {k: 1, state: false,radio:'',
+            selectdata:function(){
+                     var that=this;
+                     var select=null;
+                       $.ajax({
+                              url: '/market/brief',    //请求的url地址
+                              dataType: "json",   //返回格式为json
+                              async: false, //请求是否异步，默认为异步，这也是ajax重要特性  
+                              type: "GET",   //请求方式
+                              success: function(data) {
+                                  //请求成功时处理
+
+                              select=data.content;
+                                 
+                              },
+                              error: function(err) {
+                                  //请求出错处理
+                                  alert(err.msg);
+                              }
+                          });
+                    return select
+            }(),selectsubset:[],
+        }
         },
         template: '<div class="form-horizontal clearfix" >\
                     <div class=" clearfix">\
@@ -16,8 +37,8 @@ define(function (require, exports, module) {
                                     <input class="radio-m" name="user" @click="sendRadio($event)" value="MARKET" id="radio-2" type="radio"><span></span>市场所：</label>\
                                 <div class="col-md-3 o-pd-l">\
                                     <select class="form-control" name="val-skill" @change="selectChange($event)">\
-                                     <option value="0">请选择</option>\
-                                         <option v-for="item in selectdata" :value="item.value">{{item.text}}</option>\
+                                          <option value="0">请选择</option>\
+                                          <option v-for="item in selectdata" :value="item.id">{{item.name}}</option>\
                                     </select>\
                                 </div>\
                                 <label class="col-md-1 o-pd v-label-s" for="radio-3">\
@@ -25,7 +46,7 @@ define(function (require, exports, module) {
                                 <div class="col-md-3 o-pd-l">\
                                     <select class="form-control" name="val-skill" @change="sendVal($event)">\
                                              <option value="0">请选择</option>\
-                                             <option v-if="state" v-for="item in selectdata[k-1].son" :value="item.value">{{item.text}}</option>\
+                                             <option v-for="item in selectsubset" :value="item.id">{{item.name}}</option>\
                                     </select>\
                                 </div>\
                             </div>\
@@ -42,6 +63,24 @@ define(function (require, exports, module) {
                }else {
                    this.state=true;
                    this.k=$(event.target).val()
+                   var that=this;
+                        
+                     $.ajax({
+                          url: '/park/briefall/'+that.k,    //请求的url地址
+                          dataType: "json",   //返回格式为json
+                          async: false, //请求是否异步，默认为异步，这也是ajax重要特性  
+                          type: "GET",   //请求方式
+                          success: function(data) {
+                              //请求成功时处理
+                              console.log(JSON.stringify(data.content))
+                               that.selectsubset = data.content;
+                          },
+                          error: function(err) {
+                              //请求出错处理
+                              alert(err.msg);
+                          }
+                      });
+
                }
             },
             sendVal:function (event){
@@ -54,7 +93,11 @@ define(function (require, exports, module) {
                    this.radio=$(event.target).val()
 
                    this.$dispatch('send-radio',this.radio)
-            }
+            },
+            getSelect:function (){
+                      
+                         
+            },
 
         }
     })

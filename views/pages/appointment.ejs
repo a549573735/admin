@@ -4,7 +4,7 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
-          <div class="c-r" id="app">
+          <div class="c-r" >
                 <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                     <div class="clearfix">
                         <div class="col-md-12">
@@ -19,9 +19,8 @@
                                 </div>
                             </div>
 
-                            <div class="form-group" >
-                                <v-select :selectdata="data"></v-select>
-
+                            <div class="form-group" id="app">
+                                <v-select ></v-select>
 
                                 <label class="col-md-1 o-pd v-label-s text-center" for="val-skill">企业:</label>
                                 <div class="col-md-2 o-pd-l">
@@ -46,15 +45,16 @@
                     </div>
                 </form>
 
-                <div class="row v-table">
+                <div class="row v-table" id="c-table-checkbox">
                     <div class="col-md-12">
-                        <div class="block" id="c-table-checkbox">
+                        <div class="block" >
                             <com-table-list :datalist="data"></com-table-list>
                         </div>
                     </div>
+                     <v-pages :pagelist="5"> </v-pages>
                 </div>
 
-                 <v-pages :pagelist="5"> </v-pages>
+                
           </div>
     </div>
 </div>
