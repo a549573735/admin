@@ -1,6 +1,5 @@
 var Promise=require('bluebird');
 var request=Promise.promisify(require('request'));
-
 var Services=require('../utils/tool');
 var services=new Services();
 var config=require('../utils/config');
@@ -25,7 +24,9 @@ exports.loginUp=function (url,method,data){
 	})
 }
 
-exports.usercommon=function (url,method,data){
+
+
+exports.commonRequest=function (url,method,data){
 
 
 	return  new Promise(function (resolve,reject){
@@ -47,28 +48,6 @@ exports.usercommon=function (url,method,data){
 }
 
 
-
-
-exports.userAdd=function (url,method,data){
-
-
-	return  new Promise(function (resolve,reject){
-
-		console.log(prex+url,method,data)
-         
-       services.Interface(prex+url,method,data).then(function(data){
-
-  				resolve(data)
-       
-       }).catch(function (err){
-             console.log(err);
-        		reject(err)
-
-       })
-
-	})
-
-}
 
 
 

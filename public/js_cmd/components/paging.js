@@ -1,13 +1,13 @@
 define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
-    
-    Vue.component('v-pages', {
-    props: ['pagelist'],
-    data:function (){
 
-    	return {now:2}
-    },
-    template: '<div class="yema">\
+    Vue.component('v-pages', {
+        props: ['pagelist'],
+        data: function () {
+
+            return {now: 1}
+        },
+        template: '<div class="yema">\
                                 <div class="yema_befor"><a href="javascript:;" class="btn btn-link"  @click="getPrevious($event)" >上一页</a>  第</div>\
                                 <nav>\
                                     <ul class="pagination pagination-sm">\
@@ -23,50 +23,45 @@ define(function (require, exports, module) {
                                     </ul>\
                                 </nav>\
                                 <div class="yema_end"> 页<a href="javascript:;" class="btn btn-link" @click="getNext($event)"  >下一页</a> <a href="javascript:;" @click="getPage($event)"  class="btn btn-link">尾页</a></div>\
-                 </div> ',
-    
-    methods:{     
-       
-             getPage:function (event){
+               </div> ',
 
-             	 if($(event.target).html()=='尾页'){
+        methods: {
 
- 					  this.now = this.pagelist;
-             	 }else {
+            getPage: function (event) {
 
-             	 	  this.now =$(event.target).html()
-             	 }
-                this.$dispatch('send-page', this.now)   
+                if ($(event.target).html() == '尾页') {
 
-             },
-             getPrevious:function (event){
-                  
-                 if(this.now==1){
+                    this.now = this.pagelist;
+                } else {
+
+                    this.now = $(event.target).html()
+                }
+                this.$dispatch('send-page', this.now)
+
+            },
+            getPrevious: function (event) {
+
+                if (this.now == 1) {
 
                     return false;
-                 }else {
-                 	this.now--;
-					this.$dispatch('send-page', this.now)  
-                 }
+                } else {
+                    this.now--;
+                    this.$dispatch('send-page', this.now)
+                }
 
-             },
-             getNext:function (){
-                  
-                  if(this.now>=this.pagelist){
-                  	 return false;
-                  }else {
-              		
-              		this.now++;
+            },
+            getNext: function () {
 
-              		this.$dispatch('send-page', this.now)  
-                  }
-             }
+                if (this.now >= this.pagelist) {
+                    return false;
+                } else {
 
-      },
-      created: function(){
-            
-         	   
-      }
+                    this.now++;
+
+                    this.$dispatch('send-page', this.now)
+                }
+            }
+        }
     });
 });
 

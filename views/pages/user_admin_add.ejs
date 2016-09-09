@@ -14,48 +14,49 @@
                                     <div class="col-md-12 o-pd o-m-t" >
                                         <div class="col-md-3 o-pd  v-righ">姓名：</div>
                                         <div class="col-md-6 o-pd ">
-                                            <input type="text" class="form-control"></div>
+                                            <input type="text" class="form-control displayName" name="displayName"></div>
                                         </div>
                                      <div class="col-md-12 o-pd o-m-t" >
                                         <div class="col-md-3 o-pd  v-righ">密码：</div>
                                         <div class="col-md-6 o-pd ">
-                                            <input type="password" class="form-control"></div>
+                                            <input type="password" class="form-control password" name="password"></div>
                                         </div>    
                                     <div class="col-md-12 o-pd o-m-t">
-                                        <div class="col-md-3 o-pd  v-righ">用户名：</div>
+                                        <div class="col-md-3 o-pd  v-righ" >用户名：</div>
                                         <div class="col-md-6 o-pd ">
-                                            <input type="text" class="form-control"></div>
+                                            <input type="text" class="form-control username" name="username"></div>
                                         </div>
                                 <div class="col-md-12 o-pd o-m-t" >
                                         <div class="col-md-3 o-pd  v-righ">手机号：</div>
                                         <div class="col-md-6 o-pd ">
-                                            <input type="text" class="form-control"></div>
+                                            <input type="text" class="form-control phone"  name="phone"></div>
                                         </div>
                                 <div class="col-md-12 o-pd o-m-t">
                                         <div class="col-md-3 o-pd  v-righ">邮箱：</div>
                                         <div class="col-md-6 o-pd ">
-                                            <input type="text" class="form-control"></div>
+                                            <input type="text" class="form-control email" name="email"></div>
                                         </div>
                                 <div class="col-md-12 o-pd o-m-t">
+                             
                                         <div class="col-md-3 o-pd  v-righ">角色：</div>
                                         <div class="col-md-6 o-pd ">
-                                            <select class="form-control" id="val-skill" name="val-skill">
+                                            <select class="form-control val-user-id"  name="val-id">
                                                 <option value="">请选择</option>
                                                <% content.forEach(function (item){%>     
                                                 <option value="<%=item.id %>" data-permissions="<%=item.permissionIds%> " ><%=item.name %></option>
                                                 <% }) %>
-                                    </select></div>
+                                        </select></div>
                                         </div>
                                     <div class="col-md-12 o-m-t o-pd">
                                         <div class="col-md-5 o-pd o-m-t">
                                             <div class="v-t-m o-m-t">
-                                              <button class=" btn btn-md btn-primary btn-block " type="submit">确定</button>
+                                              <button class=" btn btn-md btn-primary btn-block" @click="subForm($event)" >确定</button>
                                             </div>
                                         </div>
                                         <div class="col-md-2 o-pd o-m-t"></div>
                                         <div class="col-md-5 o-pd o-m-t">
                                             <div class="v-t-b o-m-t">
-                                              <button class=" btn btn-md btn-primary btn-block  " type="submit">取消</button>
+                                              <a class=" btn btn-md btn-primary btn-block" href="/user/edit/list" >取消</a>
                                             </div>
                                         </div>
                                         </div>

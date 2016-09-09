@@ -12,7 +12,8 @@ var config=require('../utils/config')
 
  module.exports=function (app){
 
-
+	app.get('/common', Index.common);            //公共模块   企业详情    	 //公共模块
+	
 	app.get('/',  Index.home);        
 
  	app.get('/login', User.login);		             //登陆页面
@@ -22,32 +23,55 @@ var config=require('../utils/config')
     app.post('/loginUp', User.loginUp);               // 用户登录 提交用户名
           		     	 
   
-
-
-
- 	app.get('/common', Index.common);            //公共模块   企业详情    	 //公共模块
+ 	
 
 	app.get('/company',User.signRequired,  Company.company);						 //企业进入
 
-	app.get('/company/market',User.signRequired, Company.company_market);			//单位管理 市场所
+	app.get('/company/market', Company.company_market);			//单位管理 市场所
 
-	app.get('/company/park',User.signRequired,  Company.company_park);             //单位管理 园区 列表
+	app.get('/company/park',  Company.company_park);             //单位管理 园区 列表
     
      
 
-
 	
-	app.get('/user/edit',User.signRequired,  User.user_edit);			 //角色管理 编辑
+	app.get('/user/role/list',User.signRequired,  User.user_role);			 //角色管理 编辑
+    
+    app.post('/api/user/role/list',User.signRequired,  User.user_role_list)
+
   
 	app.get('/user/admin/add',User.signRequired,  User.user_admin_add);		 //角色管理 增加 
 
-  	app.get('/user/edit/list',User.signRequired,  User.user_edit_list);       //用户编辑列表
+  	app.get('/user/edit/list',User.signRequired,  User.user_edit_list);       //用户编辑列表页面
 
+	app.get('/api/user/edit/list',User.signRequired,  User.api_user_edit_list);  //用户编辑列表
+  
 	app.get('/user/add',User.signRequired,  User.user_add);   			 //用户添加
+    
+    app.post('/app/role/delete',User.signRequired,  User.delete_user_role)
+
+
+
+
     
    
 
 	app.post('/user/add/list',User.signRequired, User.user_add_list);   //动态传输 用户权限列表
+
+    app.post('/user/admin/add',User.signRequired, User.Post_add_user);   //添加用户个人信息
+
+    
+    app.post('/delete/user',User.signRequired, User.delete_user);   //添加用户个人信息
+
+    app.post('/put/user',User.signRequired, User.put_user);   //修改用户个人信息
+
+
+    app.post('/user/add/role',User.signRequired, User.add_role);      //增加 角色 权限
+
+    
+
+
+
+
 
 
 
@@ -81,7 +105,7 @@ var config=require('../utils/config')
 
  
 
-	app.get('/park', User.signRequired, Park.park_index); 				  // 园区进入
+	app.get('/park', Park.park_index); 				  // 园区进入
 
 	app.get('/park/publicity',User.signRequired,  Park.park_publicity);          // 园区年报 公示列表
 
@@ -92,7 +116,7 @@ var config=require('../utils/config')
     app.get('/park/briefall/:id', User.signRequired, Park.parkBriefAll); 	
 
 
-	app.get('/market/all',User.signRequired,Market.marketAll)        // 所有市场所信息
+	app.get('/market/all',User.signRequired,Market.marketAll) ;         // 所有市场所信息
 
 	app.get('/market/brief',User.signRequired,Market.marketBriefAll)       //所有市场所 简介 用作调 select 
 

@@ -1,8 +1,8 @@
-<% include ../common/header.ejs %>
+<% include ../common/copy-header.ejs %>
 
-<div class="c-content o-pad" id="c-content">
+<div class="c-content o-pad" >
     <div class="clearfix">
-       <% include ../common/leftNav.ejs %>
+       <% include ../common/copy-navleft.ejs %>
 
         <div class="c-r">
               <!--右侧头部－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－-->
@@ -805,14 +805,11 @@
 </div>
 
 
-   
- 
-<% include ../common/footer.ejs %>
-<% include ../common/modals.ejs %>
+    <% include ../common/footer.ejs %>
 
 <script>
 
-    seajs.use("js_cmd/group/marketList-cmd");
+seajs.use('/js_cmd/group/marketList-cmd')
 
 </script>
 

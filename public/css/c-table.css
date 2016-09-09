@@ -212,6 +212,9 @@ label{font-weight: normal; color: #313131;}
 
 .v-btn-mar{margin-left: 107px;}
 
+[v-cloak] {
+  display: none;
+}
 
 
 

@@ -1,7 +1,7 @@
 var path=require('path'); 
 var fs=require('fs');
-var api_market=require('../models/api_market');
-var config=require('../utils/config')
+var api_services=require('../models/api_services');
+
 
 
 
@@ -9,10 +9,10 @@ var config=require('../utils/config')
 exports.marketAll=function (req,res,next){
     
  
-  //GET /api/app/market/all
-	  api_market.marrketAll('api/app/market/all',"GET",null).then(function (data){
+  //GET /api/app/market/all  // 市场所
+
+	  api_services.commonRequest('api/app/market/all',"GET",null).then(function (data){
             
-           console.log(data)
             res.json(data)
 
 	  }).catch(function (err){
@@ -27,10 +27,11 @@ exports.marketAll=function (req,res,next){
 exports.marketBriefAll=function (req,res,next){
     
  
-  //GET /api/app/market/all
-	  api_market.marrketAll('api/app/market/brief/all',"GET",null).then(function (data){
+  //GET /api/app/market/brief/all
+
+	  api_services.commonRequest('api/app/market/brief/all',"GET",null).then(function (data){
             
-           console.log(data)
+     
             res.json(data)
 
 	  }).catch(function (err){

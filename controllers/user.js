@@ -1,6 +1,6 @@
 var path=require('path'); 
 var fs=require('fs');
-var api_user=require('../models/api_user');
+var api_services=require('../models/api_services');
 var config=require('../utils/config')
 
 var md5=require('md5');
@@ -8,7 +8,7 @@ var md5=require('md5');
 
 
 exports.login = function(req, res, next) {
-
+     
     res.render('pages/login',{});
 
 };
@@ -21,9 +21,10 @@ exports.loginUp = function(req, res, next) {
         data.password=md5(data.password)
         var str='username='+data.username+'&password='+data.password;
 
-        api_user.loginUp('api/app/user/verify','POST',str).then(function (data){
+        api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
              
             data=JSON.parse(data);
+            //console.log(data)
 
             if(data.success){
                  
@@ -88,17 +89,27 @@ exports.signRequired=function (req,res,next)
 
 exports.user_edit_list = function(req, res, next) {
 
+                //user/edit/list
 
-      var _id= req.session.user.content.id
+      res.render('pages/user_edit_list');          
+    
+
+}
+
+exports.api_user_edit_list = function(req, res, next) {
+
+    var _id=req.query.id || req.session.user.content.id 
+    var page=req.query.page
+
       var data={
-                "page": 0,
-                "size": 0
+                "page": page||0,
+                "size": 15
                 }
 
-      api_user.usercommon('api/app/user/'+_id+'/list',"POST",data).then(function (data){
+    api_services.commonRequest('api/app/user/'+_id+'/list',"POST",data).then(function (data){
 
-          console.log(data)
-         res.render('pages/user_edit_list', data);
+           console.log(data.content)
+           res.json(data)
 
       }).catch(function (err){
            
@@ -110,33 +121,26 @@ exports.user_edit_list = function(req, res, next) {
 }
 
 
+
 /* 获取用户权限列表*/
 
 exports.user_add = function(req, res, next) {
 
    var type=req.body.type||"DISTRICT"; 
 
-   api_user.usercommon('api/app/role/permission/'+type+'/list',"GET",null).then(function (data){
-        
-         console.log(data)
-         res.render('pages/user_add', data);
-     
 
-   }).catch(function (err){
-           
-         console.log(err)
-         res.json({msg:'用户权限列表服务器错误',state:false})
-
-   })
-
+         res.render('pages/user_add');
    
 }
+
+
+    /* 权限列表 用户权限列表*/
 
 exports.user_add_list = function(req, res, next) {
 
    var type=req.body.type||"DISTRICT"; 
 
-   api_user.usercommon('api/app/role/permission/'+type+'/list',"GET",null).then(function (data){
+   api_services.commonRequest('api/app/role/permission/'+type+'/list',"GET",null).then(function (data){
         
        
          res.json(data);
@@ -152,22 +156,24 @@ exports.user_add_list = function(req, res, next) {
 
 
 
-exports.user_edit=function(req, res, next) {
+exports.user_role=function(req, res, next) {
 
-     res.render('pages/user_edit', { title: 'Express',data:'123123' });
-
+     res.render('pages/user_role_list');
 
 
 }
 
 
+
+   /* 权限列表 用户权限列表*/
+
 exports.user_admin_add=function(req, res, next) {
     
     var type=req.body.type||"DISTRICT"; 
    
-    api_user.usercommon('api/app/role/'+type+'/list',"GET",null).then(function (data){
+    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
-            console.log(data)
+            //console.log(data)
          res.render('pages/user_admin_add', data);
      
    }).catch(function (err){
@@ -179,11 +185,176 @@ exports.user_admin_add=function(req, res, next) {
 
    })
 
-  //  GET /api/app/role/{type}/list
+}
+
+
+
+
+/* 添加用户 */
+
+ exports.Post_add_user=function (req,res,next){
+
+     var form=req.body;
+       // console.log(form)
+     form.belongId=form.type=='DISTRICT'?req.session.user.content.id:form.belongId
+
+     api_services.commonRequest('api/app/user/add',"POST",form).then(function (data){
+
+            console.log(data)
+            res.json(data)
+
+     }).catch(function (err){
+            console.log(err)
+            res.json({msg:'服务器用户添加错误',state:false})
+
+     })
+
+
+ }
+
+
+ exports.delete_user=function (req,res,next){
+     
+       var arr=[]
+
+       var data=req.body['user[]'];
+        if(typeof data =='string'){
+          arr.push(data)
+        }else {
+          arr=data
+        }
+  
+       api_services.commonRequest('api/app/user/delete',"DELETE",arr).then(function (data){
+
+                  res.json(data)
+
+       }).catch(function (err){
+
+                  res.json({msg:'服务器用户添加错误',state:false})
+
+       })
+
+ }
+
+
+
+ exports.put_user=function (req,res,next){
+
+       var data=req.body;
+
+       api_services.commonRequest('api/app/user/modify',"PUT",data).then(function (data){
+                console.log(data)
+                  res.json(data)
+
+       }).catch(function (err){
+
+                  res.json({msg:'服务器用户更新错误',state:false})
+
+       })
+
+ }
+
+
+  exports.add_role=function (req,res,next){
+      
+       var data={
+            name:req.body.name,
+            permissionIds:[],
+            type:req.body.type,
+          
+       }
+
+       if(typeof req.body['permissionIds[]'] =='string'){
+          data.permissionIds.push(req.body['permissionIds[]'])
+    
+        }else {
+           data.permissionIds=req.body['permissionIds[]']
+        }
+  
+
+       api_services.commonRequest('api/app/role/add',"POST",data).then(function (data){
+             
+                  res.json(data)
+
+       }).catch(function (err){
+
+                  res.json({msg:'服务器用户更新错误',state:false})
+
+       })
+
+ }
+
+
+
+exports.user_role_list = function(req, res, next) {
+
+   var type=req.body.type||"DISTRICT"; 
+
+
+
+   api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
+        
+    
+       
+         res.json(data);
+     
+
+   }).catch(function (err){
+           
+         console.log(err)
+         res.json({msg:'用户权限列表服务器错误',state:false})
+
+   })
+}
+
+//DELETE /api/app/role/delete
+exports.delete_user_role = function (req,res,next){
+
+       var arr=[]
+
+       var data=req.body['id[]'];
+        if(typeof data =='string'){
+          arr.push(data)
+        }else {
+          arr=data
+        }
+
+          console.log(11111,arr)
+       
+       api_services.commonRequest('/api/app/role/delete',"DELETE",arr).then(function (data){
+                  console.log(data)
+                  res.json(data)
+
+       }).catch(function (err){
+
+
+                  res.json({msg:'服务器用户添加错误',state:false})
+
+       })
+
+}
+
+
+
+
+
+
+//  GET /api/app/role/{type}/list
+
 
  
 
-}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

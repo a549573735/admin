@@ -1,0 +1,60 @@
+<% include ../common/header.ejs %>
+
+<div class="c-content o-pad" id="c-content">
+    <div class="clearfix">
+       <% include ../common/leftNav.ejs %>
+        
+       <div class="c-r" id="app" >
+        
+              <v-radio-select  ></v-radio-select>
+               <div class="row">
+                    <div class="v-t-b col-md-3">
+                    <a class=" btn btn-md btn-primary btn-block" href="/user/add" >增加</a>
+                    </div>
+                    <div class="v-t-b col-md-3">
+                    <button class="btn btn-md btn-primary btn-block" @click="deleteUser()">删除</button>
+                </div>
+               </div> 
+
+
+             
+            <div class="row v-table">
+                <div class="col-md-12">
+                    <div class="block">
+                        <table class="table table-hover  table-borderless o-m-t">
+                            <thead>
+                            <tr class="v-table-tr">
+                                <th class="text-center" style="width: 10%"></th>
+                                <th class="text-center" style="width: 70%">角色名称</th>
+                                <th class="text-center" style="width: 20%"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr v-for="item in listData" v-cloak>
+                                <td class="text-center user-checked">
+                                        <label class="css-input css-checkbox css-checkbox-primary">
+                                            <input type="checkbox" :value="item.id" name="row_3"><span></span>
+                                        </label>
+                                </td>
+                                <td class="text-center">{{item.name}}</td>
+                                <td class="text-center"><div class="xg-btm"><input class="btn btn-md btn-primary btn-block" type="submit" :data-id="item.id" value="修改"></div></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<% include ../common/footer.ejs %>
+<% include ../common/modals.ejs %>
+
+<script>
+
+    seajs.use("/js_cmd/group/user_role_list-cmd");
+
+</script>

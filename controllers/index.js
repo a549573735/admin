@@ -4,8 +4,7 @@ var request=Promise.promisify(require('request'));
 var config=require('../utils/config')
 
 
-var api_user=require('../models/api_user');
-
+var api_services=require('../models/api_services');
 
 
 

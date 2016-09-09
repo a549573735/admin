@@ -1,5 +1,5 @@
 
-var api_park=require('../models/api_park');
+var api_services=require('../models/api_services');
 
 
 exports.park_index = function(req, res, next) {
@@ -20,13 +20,14 @@ exports.park_publicity = function(req, res, next) {
 
 
 
+
 exports.parkAll=function (req,res,next){
 
           var _id=req.params.id;
  
-	  api_park.parkAll('api/app/park/'+_id,"GET",null).then(function (data){
+	  api_services.commonRequest('api/app/park/'+_id,"GET",null).then(function (data){
             
-           console.log(data)
+    
             res.json(data)
 
 	  }).catch(function (err){
@@ -41,11 +42,11 @@ exports.parkAll=function (req,res,next){
 exports.parkBriefAll=function (req,res,next){
       
       var _id=req.params.id;
-      console.log(_id)
+
  
-	  api_park.parkAll('api/app/park/brief/'+_id,"GET",null).then(function (data){
+	  api_services.commonRequest('api/app/park/brief/'+_id,"GET",null).then(function (data){
             
-           console.log(data)
+      
             res.json(data)
 
 	  }).catch(function (err){

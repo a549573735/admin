@@ -1,6 +1,6 @@
 <% include ../common/header.ejs %>
 
-<div class="c-content o-pad" id="c-content">
+<div class="c-content o-pad" id="app">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
           <div class="c-r" id="app">
@@ -10,7 +10,7 @@
                                 <a href="/user/admin/add"  class=" btn btn-md btn-primary btn-block " >增加</a>
                             </div>
                             <div class="v-t-b col-md-3">
-                                <button class="btn btn-md btn-primary btn-block" >删除</button>
+                                <button class="btn btn-md btn-primary btn-block" id="delete_user" @click="deleteUser()" >删除</button>
                </div>
             </div>
 
@@ -31,29 +31,29 @@
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr v-for="item in listData.content" v-cloak>
                                 <td class="text-center">
-                                        <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" name="row_3"><span></span>
+                                        <label class="css-input css-checkbox css-checkbox-primary user-checked">
+                                            <input type="checkbox" :value="item.id" name="row_3"><span></span>
                                         </label>
                                 </td>
-                                <td class="text-center">李先生</td>
-                                <td class="text-center">admin1</td>
-                                <td class="text-center">13656489126</td>
-                                <td class="text-center">13656489126@163.com</td>
-                                <td class="text-center">2016-08-17</td>
-                                <td class="text-center">行政部</td>
-                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" data-toggle="modal"data-target="#modal-fromuser">修改</button></div>
-                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" type="submit">重置</button></div></td>
+                                <td class="text-center displayName">{{item.displayName}}</td>
+                                <td class="text-center username">{{item.username}}</td>
+                                <td class="text-center phone">{{item.phone||'null'}}</td>
+                                <td class="text-center mail">{{item.mail||'null'}}</td>
+                                <td class="text-center">{{item.createDate}}</td>
+                                <td class="text-center">{{item.createDate}}</td>
+                                <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" :data-id="item.id" :data-belongId="item.belongId" :data-roleId="item.roleId"  data-toggle="modal" @click="getMsg($event)" data-target="#modal-fromuser" >修改</button></div>
+                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" :data-id="item.id">重置</button></div></td>
                             </tr>
-                          
+                    
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-           <v-pages :pagelist="5"> </v-pages>
+           <v-pages :pagelist="listData.page?0:1" ></v-pages>
         </div>
     </div>
 </div>

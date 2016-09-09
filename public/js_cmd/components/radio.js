@@ -60,6 +60,7 @@ define(function (require, exports, module) {
                if($(event.target).val()=='0'){
                    this.k=1;
                    this.state=false;
+                   this.$dispatch('send-select','')
                }else {
                    this.state=true;
                    this.k=$(event.target).val()
@@ -80,17 +81,27 @@ define(function (require, exports, module) {
                               alert(err.msg);
                           }
                       });
+                     console.log(this.k)
+
+                    this.$dispatch('send-select',this.k)
+
+
 
                }
             },
             sendVal:function (event){
                   var data=$(event.target).val()
-                  console.log(data)
-                  this.$dispatch('send-select',data)
+                  if(data=='0'){
+                     this.$dispatch('send-select','')
+                  }else {
+                     this.$dispatch('send-select',data)
+                  }
+                
             },
 
             sendRadio:function (event){
                    this.radio=$(event.target).val()
+
 
                    this.$dispatch('send-radio',this.radio)
             },
@@ -115,11 +126,11 @@ define(function (require, exports, module) {
                                 <div class="col-md-12 o-pd" >\
                                     <div class="col-md-3 o-pd  v-righ">角色名：</div>\
                                     <div class="col-md-9 o-pd ">\
-                                        <input type="text" class="form-control"></div>\
+                                        <input type="text"  class="form-control per_name"></div>\
                                     </div>\
                                 <div class="col-md-12 o-m-t o-pd">\
                                     <div class="col-md-3 o-pd  v-righ">权限：</div>\
-                                    <div class="col-md-9 o-pd v-left">\
+                                    <div class="col-md-9 o-pd v-left rolt-user-checked">\
                                         <label v-for="item in datacheckbox" class="col-md-6 o-pd css-input css-checkbox css-checkbox-primary"><input type="checkbox" id="row_3" :data-id="item.id" :code="item.code"  name="row_3"><span></span>{{item.name}}</label>\
                                     </div>\
                                 </div>\
@@ -127,7 +138,7 @@ define(function (require, exports, module) {
                                     <div class="col-md-3 o-pd o-m-t"></div>\
                                     <div class="col-md-9 o-pd ">\
                                         <div class="v-t-b ">\
-                                          <button class=" btn btn-md btn-primary btn-block  " type="submit">确定</button>\
+                                          <button class=" btn btn-md btn-primary btn-block " @click="sendCode()" type="submit">确定</button>\
                                         </div>\
                                     </div>\
                                     </div>\
@@ -135,7 +146,26 @@ define(function (require, exports, module) {
                             </div>\
                         </div>\
                     </div>\
-                </div>'
+                </div>',
+        methods:{
+             sendCode:function (){
+
+               
+                    var id=[]
+
+                    $('.rolt-user-checked').find('input[type=checkbox]').each(function (index,val){
+                                
+                                if($(val).prop('checked')){
+                                
+                                        id.push($(val).attr('data-id'))
+                                }
+                    })
+                    
+                    this.$dispatch('send-code',id)
+
+
+             }
+        }      
     })
 
 
