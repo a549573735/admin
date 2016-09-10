@@ -32,10 +32,13 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                        <tr v-for="itemlist in datalist.content">\
-                            <td v-for="item in itemlist" class="text-center">{{ item }}</td>\
+                        <tr v-for="item in datalist.content" v-cloak>\
+                            <td  class="text-center">{{ item.name }}</td>\
+                            <td  class="text-center">{{ item.address }}</td>\
+                            <td  class="text-center">{{ item.contact }}</td>\
+                            <td  class="text-center">{{ item.phone }}</td>\
                             <td v-if="datalist.overflow" class="text-center">{{ datalist.details[$index].msg}}<a href="javascript:;" class="btn-link">详情</a></td>\
-                            <td  class="text-center"><a :href="datalist.href+datalist.details[$index]._id"   class="btn  btn-primary "> 详情</a></td>\
+                            <td  class="text-center"><a :href="datalist.href+item.id"  class="btn  btn-primary "> 详情</a></td>\
                         </tr>\
                       </tbody>\
                   </table>', 

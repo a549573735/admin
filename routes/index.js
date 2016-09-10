@@ -71,11 +71,6 @@ var config=require('../utils/config')
 
 
 
-
-
-
-
-
 	app.get('/organize/company',User.signRequired,  Organize.organize_company); 			//区局进入 企业
     
     app.get('/organize/company/:id',User.signRequired,  Organize.organize_company); 
@@ -83,15 +78,21 @@ var config=require('../utils/config')
 	app.get('/organize/park',User.signRequired,  Organize.organize_park); 	        //企业进入园区
 	
     app.get('/organize/market',User.signRequired,  Organize.organize_market);         //   区局进入 市车所 
+    
 
-    app.get('/organize/park/:id',User.signRequired,  Organize.organize_park);       // 详情 to 园区
+    app.get('/organize/park/:id',User.signRequired,  Organize.organize_park_id);       // 详情 to 园区
 	 
     app.get('/organize/architecture',User.signRequired, Organize.architecture)     //组织架构
 
     app.get('/organize/details/:id',User.signRequired, Organize.details)     //企业详情
-    
+
+    app.get('/api/organize/park/list',User.signRequired, Organize.api_organize_park_list)  
+
+    app.get('/api/organize/company/list',User.signRequired, Organize.api_organize_company_list)  
+
   
-    
+
+
 
 	app.get('/publicity/list',User.signRequired,  Index.publicity);			 //年报公示列表
 
@@ -108,8 +109,6 @@ var config=require('../utils/config')
 	app.get('/park', Park.park_index); 				  // 园区进入
 
 	app.get('/park/publicity',User.signRequired,  Park.park_publicity);          // 园区年报 公示列表
-
-
 
     app.get('/park/all/:id', User.signRequired, Park.parkAll); 	
 

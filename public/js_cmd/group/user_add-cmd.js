@@ -64,7 +64,7 @@ define(function (require, exports, module) {
                                         console.log(data)
                                         if(data.success){
                                           alert('添加成功')
-                                          window.location.reload()
+                                          window.location.href='/user/role/list';
                                         }else {
                                            alert(data.errMessage)
                                         }

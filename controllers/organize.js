@@ -1,7 +1,20 @@
+var path=require('path'); 
+var fs=require('fs');
+var api_services=require('../models/api_services');
+
+
+exports.api_organize_company_list=function (req,res,next){
+
+    
+
+}
+
+
 
 
 exports.organize_company = function(req, res, next) {
-
+  
+ // GET /api/app/company/{id}/detail
    res.render('pages/organize_company', { title: 'Express',data:'123123' });
 
 }
@@ -9,18 +22,93 @@ exports.organize_company = function(req, res, next) {
 
 
 exports.organize_market = function(req, res, next) {
+   
+   var form={
+      page:req.query.page,
+      size:15
+   }
 
-   res.render('pages/organize_market', { title: 'Express',data:'123123' });
+  api_services.commonRequest('api/app/market/all','GET',null).then(function (data){
+
+
+        var  datalist={ 
+                       href:'/organize/park/',
+                       title:['市场所名称','市场所地址','联系人','联系方式'],
+                       content:data.content,
+                       style:['25%','auto','100px','15%'],
+                       details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+                       overflow:false
+
+          }
+        console.log(data)
+
+         res.render('pages/organize_market', {data:datalist});
+       
+  })
 
 }
 
 
+
+exports.organize_park_id = function(req, res, next) {
+
+   var id=req.params.id||req.session.user.content.id;
+   
+
+    api_services.commonRequest('api/app/park/brief/'+id,'GET',null).then(function (dataSelect){
+          
+          console.log(dataSelect.content)
+
+
+          res.render('pages/organize_park', { select:dataSelect.content });
+
+    }).catch(function (data){
+
+         console.log(data)
+    })
+
+}
 
 exports.organize_park = function(req, res, next) {
 
-   res.render('pages/organize_park', { title: 'Express',data:'123123' });
+    var id=req.params.id||req.session.user.content.id;
+   
+
+    api_services.commonRequest('api/app/park/brief/'+id,'GET',null).then(function (dataSelect){
+
+          res.render('pages/organize_park', { select:dataSelect.content });
+
+    }).catch(function (data){
+
+         console.log(data)
+    })
 
 }
+
+exports.api_organize_park_list=function(req, res, next) {
+
+    var id=req.query.id;
+    var parkName=encodeURI(req.query.parkname);
+
+     console.log(parkName)
+
+
+
+   
+    api_services.commonRequest('api/app/park/'+id+'/'+parkName,'GET',null).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect.content)
+
+    }).catch(function (data){
+           console.log(data)
+           res.json(data)
+    })
+
+
+
+
+}
+
 
 
 exports.architecture = function(req, res, next) {
@@ -63,7 +151,6 @@ exports.details = function(req, res, next) {
    }
   
    switch(req.params.id){
-
        case 'company':
        data.company=true;
        data.btnlist[0].active=true;

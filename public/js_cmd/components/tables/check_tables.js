@@ -32,13 +32,16 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                        <tr v-for="itemlist in datalist.content">\
+                        <tr v-for="item in datalist.content">\
                             <td class="text-center"><label class="css-input css-checkbox css-checkbox-primary">\
                                             <input type="checkbox" name="row_3"><span></span>\
                                            </label>\
                             </td>\
-                            <td v-for="item in itemlist" class="text-center">{{ item }}</td>\
-                            <td  class="text-center"><a :href="datalist.href+datalist.details[$index]._id"   class="btn  btn-primary v-btn-w"> 详情</a></td>\
+                            <td  class="text-center">{{ item.name }}</td>\
+                            <td  class="text-center">{{ item.address }}</td>\
+                            <td  class="text-center">{{ item.contact }}</td>\
+                            <td  class="text-center">{{ item.phone }}</td>\
+                            <td  class="text-center"><a :href="datalist.href+item.id"   class="btn  btn-primary v-btn-w"> 详情</a></td>\
                         </tr>\
                       </tbody>\
                   </table>', 

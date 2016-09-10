@@ -4,14 +4,13 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
-         <div class="c-r" >
+         <div class="c-r" id="handle-table">
             <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                 <div class="row clearfix">
                     <div class="col-md-12">
-                        <div class="form-group" id="app">
-
-                            <v-select :selectdata="dataSelect" ></v-select>
-
+                        <div class="form-group" >
+                            <v-select ></v-select>
+                        
 
                             <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">企业：</label>
                             <div class="col-md-2 o-pd">
@@ -70,7 +69,7 @@
 
 <script>
 
-   seajs.use("js_cmd/group/organize_company-cmd");
+   seajs.use("/js_cmd/group/organize_company-cmd");
 
 </script>
 

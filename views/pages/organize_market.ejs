@@ -7,9 +7,7 @@
             <div class="row v-table">
                 <div class="col-md-12">
                     <div class="block" >
-                    
-                        <handle-table-list :datalist="data"></handle-table-list>
-
+                        <handle-table-list :datalist="<%=JSON.stringify(data) %>"></handle-table-list>
                     </div>
                 </div>
             </div>

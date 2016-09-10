@@ -311,7 +311,9 @@ exports.user_role_list = function(req, res, next) {
 exports.delete_user_role = function (req,res,next){
 
        var arr=[]
-
+      
+       console.log(req.body)
+       
        var data=req.body['id[]'];
         if(typeof data =='string'){
           arr.push(data)
@@ -319,9 +321,9 @@ exports.delete_user_role = function (req,res,next){
           arr=data
         }
 
-          console.log(11111,arr)
+        
        
-       api_services.commonRequest('/api/app/role/delete',"DELETE",arr).then(function (data){
+       api_services.commonRequest('api/app/role/delete',"DELETE",arr).then(function (data){
                   console.log(data)
                   res.json(data)
 

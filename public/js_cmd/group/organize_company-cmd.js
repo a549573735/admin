@@ -1,12 +1,13 @@
 define(function (require, exports, module) {
-	require('/js_cmd/components/select');
+
     var Vue = require('lib_cmd/vue-cmd');
+    require('/js_cmd/components/select');
     require('/js_cmd/components/paging')
     require('/js_cmd/components/tables/handle_tables')
 
 
     new Vue( {
-	    	'el':'#handle-table',
+	      'el':'#handle-table',
 		   data:   {
 			   data:{
 			   	   href:'/organize/details/',

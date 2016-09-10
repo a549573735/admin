@@ -10,27 +10,23 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="col-md-1 o-pd-r v-label-s" for="val-skill">园区：</label>
+                            
                             <div class="col-md-2 o-pd">
-                                <select class="form-control"  name="val-skill">
-                                    <option value="">奉贤青村食品药品监督管理所</option>
-                                    <option value="html">奉贤青村食品药品监督管理所</option>
-                                    <option value="css">奉贤青村食品药品监督管理所</option>
-                                    <option value="javascript">奉贤青村食品药品监督管理所</option>
-                                    <option value="ruby">奉贤青村食品药品监督管理所</option>
-                                    <option value="php">奉贤青村食品药品监督管理所</option>
-                                    <option value="asp">奉贤青村食品药品监督管理所</option>
-                                    <option value="python">奉贤青村食品药品监督管理所</option>
-                                    <option value="mysql">奉贤青村食品药品监督管理所</option>
+                                <select class="form-control"  id="select_park" name="val-skill">
+                                    <option value="0">请选择</option>
+                                    <% select.forEach(function (item){%>
+                                             <option value="<%=item.id%>"><%=item.name%></option>
+                                     <% })%>
                                 </select>
                             </div>
+
                             <label class="col-md-1 o-pd-r v-label-s" for="val-skill">企业：</label>
                             <div class="col-md-2 o-pd">
-                               <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
+                               <input type="text" class="form-control select-parkname" >
                             </div>
                             <div class="col-md-4 text-right o-pd clearfix">
                             <div class="v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">建议</button>
-
                                 <div class="v-modal-min">
                                     <div class="form-group clearfix o-mg">
 
@@ -42,7 +38,6 @@
                                             </div>
                                         </div>
                                     
-
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd v-btn-mar">
                                             <button class="btn btn-sm btn-primary v-t-b " type="submit">提交</button>
                                         </div>
@@ -109,7 +104,7 @@
                             </div>
 
                             <div class=" v-item-btn">
-                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">查询</button>
+                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle " @click="getParkList()" type="button">查询</button>
                             </div>
                         </div>
                         </div>
@@ -121,8 +116,7 @@
             <div class="row v-table">
                 <div class="col-md-12">
                     <div class="block">
-        
-                        <check-table-list :datalist="data"></check-table-list>
+                        <check-table-list :datalist="tableList"></check-table-list>
                     </div>
                 </div>
             </div>
