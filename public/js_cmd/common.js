@@ -113,20 +113,18 @@
     Common.prototype.setNavActive=function () {
        
        var href=window.location.pathname;
+       var query=window.location.search;
+       
        var reg=/^\/organize\/details\/\w+$/;
        var regpark=/^\/organize\/park\/\w+$/;
        var regcompany=/^\/organize\/company\/\w+$/;
-     
+      
+       var view= $.query.get('view')
+
        if(href=='/user/admin/add'){
            href="/user/edit/list"
-       }else if(reg.test(href)){
+       }else if(view){          //reg.test(href)
           href="/organize/company"
-
-       }else if(regpark.test(href)){
-            href="/organize/park"
-       }else if(regcompany.test(href)){
-            href="/organize/company"
-
        }
 
          this.uiInit.$lNav.find('li a').each(function (index,val){
