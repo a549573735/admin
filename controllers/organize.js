@@ -134,80 +134,136 @@ exports.architecture = function(req, res, next) {
 
 
 
+
 exports.details = function(req, res, next) {
 
-         var id= req.query.id;  
+
+
+   var id= req.query.id;  
    var data={ 
-                  data:{
+               data:{
+                      title:['企业名称','检查状态','检查员','检查日期','备注'],
+                      content:null,
+                      style:['25%','100px','100px','15%','auto'],
+                      details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+                      overflow:false,
+                 },
 
-                        title:['企业名称','检查状态','检查员','检查日期','备注'],
-                        content:[
-                                      ['上海医德医疗设备有限公司','true','王先生','2016-06-29'],
-                                      ['上海医德医疗设备有限公司','true','朱王杰','2016-06-29']
-                                 ],
-                        style:['25%','100px','100px','15%','auto'],
-                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
-                        overflow:true,
-                   },
-
-                   btnlist:[
-                    {href:"/organize/details?view=company&id="+id,title:'企业信息',active:false},
-                    {href:"/organize/details?view=purchase&id="+id,title:'采购信息',active:false},
-                    {href:"/organize/details?view=sale&id="+id,title:'销售信息',active:false},
-                    {href:"/organize/details?view=invoice&id="+id,title:'发票信息',active:false},
-                    {href:"/organize/details?view=customer&id="+id,title:'客户资质',active:false},
-                    {href:"/organize/details?view=producer&id="+id,title:'生产商资质',active:false},
-                    {href:"/organize/details?view=provider&id="+id,title:'供应商资质',active:false},
-                    {href:"/organize/details?view=product&id="+id,title:'产品资质',active:false}
-                  ],   
-                  company:false,
-                  type:'search',
-                  pagelist:5 
+                 btnlist:[
+                  {href:"/organize/details?view=company&id="+id,title:'企业信息',active:false},
+                  {href:"/organize/details?view=purchase&id="+id,title:'采购信息',active:false},
+                  {href:"/organize/details?view=sale&id="+id,title:'销售信息',active:false},
+                  {href:"/organize/details?view=invoice&id="+id,title:'发票信息',active:false},
+                  {href:"/organize/details?view=customer&id="+id,title:'客户资质',active:false},
+                  {href:"/organize/details?view=producer&id="+id,title:'生产商资质',active:false},
+                  {href:"/organize/details?view=provider&id="+id,title:'供应商资质',active:false},
+                  {href:"/organize/details?view=product&id="+id,title:'产品资质',active:false}
+                ],   
+                company:false,
+                type:'search',
+                pagelist:1,
+                companyName:''
    }
+
   
+    
+ 
+
    switch(req.query.view){
        case 'company':
        data.company=true;
        data.btnlist[0].active=true;
+       api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                        console.log(dataSelect)
+                         data.companyName=dataSelect.content.name;
+                         data.data.content=dataSelect.content;
+                         res.render('pages/details', data );
+                 }).catch(function (data){
+                       console.log(data)
+       })
+                     
            break;
        case 'purchase':
        data.btnlist[1].active=true;
        data.type='date';
+           api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+            })
+   
            break;
         case 'sale':
        data.btnlist[2].active=true;
        data.type='date';
+         api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+        })
            break;
         case 'invoice':
        data.btnlist[3].active=true;
        data.type='date';
+       api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+       })
            break;
          case 'customer':
        data.btnlist[4].active=true;
        data.type='search';
+         api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+            })
            break;   
           case 'producer':
        data.btnlist[5].active=true;
        data.type='search';
+         api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+            })
            break;          
         case 'provider':
        data.btnlist[6].active=true;
        data.type='search';
+        api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+            })
            break;
         case 'product':
        data.btnlist[7].active=true;
        data.type='search';
+     api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+            })
            break;
         default:
        data.company=true;
        data.btnlist[0].active=true;    
+      api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
+                     data.companyName=dataSelect.content.name;
+                         res.render('pages/details',data);
+               }).catch(function (data){
+                     console.log(data)
+            })
    }
-   if(req.params.id=='company'){
-        data.company=true;
-   }
-
-
-   res.render('pages/details', data );
 
 
 }

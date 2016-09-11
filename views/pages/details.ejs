@@ -10,24 +10,35 @@
 
               <% include ../common/rightBtns.ejs %>
             <!--  测试 -->
-               <div class="block" id="tables">
-            
+               <div class="block" id="app">
+ <!--  content: 
+   { id: '4028198156b2a5400156b2dd5ce92222',
+     name: '上海立邦医疗器械公司',
+     address: '上海奉贤区南奉公路1581号',
+     belongMarket: '奉贤青村食品药品监督管理所',
+     belongPark: '奉贤青村镇高新创业园区',
+     contact: '李先生',
+     phone: '021-987654',
+     businesses: '序号:1,  类别:Ⅱ, :6801基础外科手术器械, 医用缝合针(不带线), 品种举例:医用缝合针(不带线);序号:2,  类别:Ⅰ, :6801基础外科手术器械, 基础外科用刀, 品种举例:手术刀柄和刀片、皮片刀、疣体剥离刀、柳叶刀、铲刀、剃毛刀、皮屑刮刀、挑刀、锋刀、修脚刀、修甲刀、解剖刀\t',
+     certificate: '222222222222',
+     expireDate: '2019-07-07' },     -->        
+
+
        		 	   <table-btns :btnlist="<%= JSON.stringify(btnlist)%>"></table-btns> 
               <% if(company){%> 
-                    <div class="tab-pane active">
+                    <div class="tab-pane active" v-cloak>
                             <div class="col-md-12">
                                         <div class="col-md-12 o-pd qyspxq_title">企业信息</div>
                                         <div class="col-md-12 o-pd qyspxq_text">
-                                            公司名称：上海医德医疗设备有限公司<br />
-                                            公司地址：上海市奉贤区南桥镇南亭公路269号<br />
-                                            隶属市场所：上海青浦医疗器械市场所<br />
-                                            隶属园区：上海青浦医疗器械区局<br />
-                                            联系人：李先生<br />
-                                            联系人：12334565455<br />
-                                           <span class="col-md-2 o-pd qjjr_xq ">经营范围 ：</span><span class="col-md-10">从事网络科技、计算机科技，从事网络科技、计算机科技，从事网络科技、计算机科技<br />
-                                               从事网络科技、计算机科技。</span><br />
-                                            <span class="col-md-12 o-pd">经营许可证：沪A4854552</span><br />
-                                            许可证有效期：2020年6月30日
+                                            <span class="details-title">公司名称：</span></span> <%=data.content.name%><br />
+                                            <span class="details-title">公司地址：</span> <%=data.content.address%><br />
+                                            <span class="details-title">隶属市场所：</span><%=data.content.belongMarket%><br />
+                                            <span class="details-title">隶属园区：</span> <%=data.content.belongPark%><br />
+                                            <span class="details-title">联系人：</span> <%=data.content.contact%><br />
+                                            <span class="details-title">联系电话：</span> <%=data.content.phone%><br />
+                                           <span class="col-md-2 o-pd qjjr_xq ">经营范围 ：</span><span class="col-md-10"><%=data.content.businesses%></span><br />
+                                            <span class="col-md-12 o-pd"><span class="details-title">经营许可证：</span><%=data.content.certificate%></span><br />
+                                            <span class="details-title">许可证有效期：</span><%=data.content.expireDate%>
                                         </div>
                                   </div>
                    </div>
