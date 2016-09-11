@@ -7,13 +7,7 @@ define(function (require, exports, module) {
                 el: '#app',
                 data: {
 
-// InspectEntity {
-// id (string, optional),
-// notes (string, optional): 备注 ,
-// status (string): 状态 = ['PASS', 'FAIL'],
-// target (string): 企业 ,
-// user (string): 检查员
-// }
+
 
 
                     dataList:{

@@ -6,27 +6,31 @@ var api_services=require('../models/api_services');
 exports.organize_company=function (req,res,next){
     
             var form=req.body||{};
-            form.page=req.body.page||0;
-            form.size=15;
-
-            switch(req.session.user.content.belongId){
-                      case  'ROOT':
-                    form.market=req.query.id||req.session.user.content.id
-                      break;
-                      case 'DISTRICT':
-                    form.market=req.query.id||req.session.user.content.id
-                      break;  
-                      case   'PARK':
-                    form.park=req.query.id||req.session.user.content.id
-                      break;  
-            }
+                form.page=req.body.page||0;
+                form.size=15;
+            
+            if(!req.query.id){
+                  // switch(req.session.user.content.belongId){
+                  //           case  'ROOT':
+                  //         form.market=req.query.id||req.session.user.content.id
+                  //           break;
+                  //           case 'DISTRICT':
+                  //         form.market=req.query.id||req.session.user.content.id
+                  //           break;  
+                  //           case  'PARK':
+                  //         form.park=req.query.id||req.session.user.content.id
+                  //           break;  
+                  // }
+              }else {
+                  form.park=req.query.id
+              }
     
     
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
 
 
         var  datalist={ 
-                       href:'/organize/details?',
+                       href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
                        content:data.content.content,
                        style:['20%','auto','100px','100px','80px','20%','100px'],
@@ -118,8 +122,6 @@ exports.api_organize_park_list=function(req, res, next) {
              res.json(data)
     })
     
-
-
 }
 
 
@@ -134,7 +136,7 @@ exports.architecture = function(req, res, next) {
 
 exports.details = function(req, res, next) {
 
-            
+         var id= req.query.id;  
    var data={ 
                   data:{
 
@@ -147,22 +149,23 @@ exports.details = function(req, res, next) {
                         details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                         overflow:true,
                    },
+
                    btnlist:[
-                    {href:"/organize/details/company",title:'企业信息',active:false},
-                    {href:"/organize/details/purchase",title:'采购信息',active:false},
-                    {href:"/organize/details/sale",title:'销售信息',active:false},
-                    {href:"/organize/details/invoice",title:'发票信息',active:false},
-                    {href:"/organize/details/customer",title:'客户资质',active:false},
-                    {href:"/organize/details/producer",title:'生产商资质',active:false},
-                    {href:"/organize/details/provider",title:'供应商资质',active:false},
-                    {href:"/organize/details/product",title:'产品资质',active:false}
+                    {href:"/organize/details?view=company&id="+id,title:'企业信息',active:false},
+                    {href:"/organize/details?view=purchase&id="+id,title:'采购信息',active:false},
+                    {href:"/organize/details?view=sale&id="+id,title:'销售信息',active:false},
+                    {href:"/organize/details?view=invoice&id="+id,title:'发票信息',active:false},
+                    {href:"/organize/details?view=customer&id="+id,title:'客户资质',active:false},
+                    {href:"/organize/details?view=producer&id="+id,title:'生产商资质',active:false},
+                    {href:"/organize/details?view=provider&id="+id,title:'供应商资质',active:false},
+                    {href:"/organize/details?view=product&id="+id,title:'产品资质',active:false}
                   ],   
                   company:false,
                   type:'search',
                   pagelist:5 
    }
   
-   switch(req.query.href){
+   switch(req.query.view){
        case 'company':
        data.company=true;
        data.btnlist[0].active=true;
