@@ -32,7 +32,8 @@ define(function (require, exports, module) {
 					   ['上海医德医疗设备有限公司','true','朱王杰','2016-06-29']
 				   ],
 				   style:['25%','100px','100px','15%','auto'],
-				   details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}]
+				   details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+				   overfull:false
 
 			   }
 		   }

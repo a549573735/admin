@@ -32,7 +32,7 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                        <tr v-for="item in datalist.content">\
+                        <tr v-for="item in datalist.content.content">\
                             <td class="text-center"><label class="css-input css-checkbox css-checkbox-primary">\
                                             <input type="checkbox" name="row_3"><span></span>\
                                            </label>\

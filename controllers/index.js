@@ -94,11 +94,32 @@ exports.publicity = function(req, res, next) {
 }
 
 
-
+//POST /api/app/inspect/list
 
 exports.inspect = function(req, res, next) {            //网络
 
-   res.render('pages/inspect', { title: 'Express',data:'123123' });
+   res.render('pages/inspect');
+
+}
+
+exports.api_inspect=function (req,res,next){
+    
+     var form= {
+              "page":req.query.page||0,
+              "size":15,
+              "id":req.session.user.content.id
+              }
+
+
+    api_services.commonRequest('/api/app/inspect/list','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
 
 }
 

@@ -24,7 +24,7 @@ exports.loginUp = function(req, res, next) {
         api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
              
             data=JSON.parse(data);
-            //console.log(data)
+            console.log(data)
 
             if(data.success){
                  

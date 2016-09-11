@@ -10,7 +10,6 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="col-md-1 o-pd-r v-label-s" for="val-skill">园区：</label>
-                            
                             <div class="col-md-2 o-pd">
                                 <select class="form-control"  id="select_park" name="val-skill">
                                     <option value="0">请选择</option>
@@ -113,17 +112,19 @@
 
             </form>
 
-            <div class="row v-table">
+            <div class="row v-table" >
                 <div class="col-md-12">
                     <div class="block">
-                        <check-table-list :datalist="tableList"></check-table-list>
+                        <check-table-list :datalist="tableList"  ></check-table-list>
                     </div>
                 </div>
             </div>
-
-             <v-pages :pagelist="5"> </v-pages>
+          
+             <v-pages :pagelist="tableList.page||1"> </v-pages>
+        
         </div>
     </div>
+
 </div>
 
 

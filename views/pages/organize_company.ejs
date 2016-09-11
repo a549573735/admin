@@ -5,17 +5,17 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
          <div class="c-r" id="handle-table">
-            <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
+            <form class="form-horizontal clearfix"  action="/organize/company" method="post" onsubmit="return false;">
                 <div class="row clearfix">
                     <div class="col-md-12">
                         <div class="form-group" >
                             <v-select ></v-select>
                         
-
                             <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">企业：</label>
                             <div class="col-md-2 o-pd">
-                               <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
+                               <input type="text" class="form-control" name="company" value="奉贤青村食品药品监督管理所">
                             </div>
+                          
 
                             <div class="col-md-12 o-pd o-m-t">
                                     <label class="col-md-1 o-pd-r v-label" for="val-skill">供应商：</label>
@@ -52,10 +52,12 @@
             <div class="row v-table" id="handle-table">
                 <div class="col-md-12">
                     <div class="block" >
-                       <handle-table-list :datalist="data" ></handle-table-list>
+                 
+                        <handle-table-list :datalist="<%=JSON.stringify(data)%>" ></handle-table-list>
+                   
                     </div>
                 </div>
-                 <v-pages :pagelist="5"> </v-pages>
+                 <v-pages :pagelist="<%=JSON.stringify(data.content.page||1)%>"> </v-pages>
             </div>
 
             

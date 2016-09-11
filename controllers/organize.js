@@ -3,20 +3,50 @@ var fs=require('fs');
 var api_services=require('../models/api_services');
 
 
-exports.api_organize_company_list=function (req,res,next){
-
+exports.organize_company=function (req,res,next){
     
+            var form=req.body||{};
+            form.page=req.body.page||0;
+            form.size=15;
 
+            switch(req.session.user.content.belongId){
+                      case  'ROOT':
+                    form.market=req.query.id||req.session.user.content.id
+                      break;
+                      case 'DISTRICT':
+                    form.market=req.query.id||req.session.user.content.id
+                      break;  
+                      case   'PARK':
+                    form.park=req.query.id||req.session.user.content.id
+                      break;  
+            }
+    
+    
+    api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
+
+
+        var  datalist={ 
+                       href:'/organize/details?',
+                       title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
+                       content:data.content.content,
+                       style:['20%','auto','100px','100px','80px','20%','100px'],
+                       details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+                       overflow:false,
+                       page:data.content.page
+
+          }
+            console.log(data)
+
+        res.render('pages/organize_company',{data:datalist});
+    })
 }
 
 
 
 
-exports.organize_company = function(req, res, next) {
+exports.api_organize_company_list = function(req, res, next) {
   
- // GET /api/app/company/{id}/detail
-   res.render('pages/organize_company', { title: 'Express',data:'123123' });
-
+  
 }
 
 
@@ -24,7 +54,7 @@ exports.organize_company = function(req, res, next) {
 exports.organize_market = function(req, res, next) {
    
    var form={
-      page:req.query.page,
+      page:req.query.page||0,
       size:15
    }
 
@@ -32,7 +62,7 @@ exports.organize_market = function(req, res, next) {
 
 
         var  datalist={ 
-                       href:'/organize/park/',
+                       href:'/organize/park?id=',
                        title:['市场所名称','市场所地址','联系人','联系方式'],
                        content:data.content,
                        style:['25%','auto','100px','15%'],
@@ -52,29 +82,11 @@ exports.organize_market = function(req, res, next) {
 
 exports.organize_park_id = function(req, res, next) {
 
-   var id=req.params.id||req.session.user.content.id;
-   
-
+    var id=req.query.id||req.session.user.content.id;
+    
     api_services.commonRequest('api/app/park/brief/'+id,'GET',null).then(function (dataSelect){
           
-          console.log(dataSelect.content)
-
-
-          res.render('pages/organize_park', { select:dataSelect.content });
-
-    }).catch(function (data){
-
-         console.log(data)
-    })
-
-}
-
-exports.organize_park = function(req, res, next) {
-
-    var id=req.params.id||req.session.user.content.id;
-   
-
-    api_services.commonRequest('api/app/park/brief/'+id,'GET',null).then(function (dataSelect){
+          console.log(dataSelect)
 
           res.render('pages/organize_park', { select:dataSelect.content });
 
@@ -84,27 +96,28 @@ exports.organize_park = function(req, res, next) {
     })
 
 }
+
 
 exports.api_organize_park_list=function(req, res, next) {
 
-    var id=req.query.id;
-    var parkName=encodeURI(req.query.parkname);
-
-     console.log(parkName)
+    var id=req.query.id||req.session.user.content.id;
+    var parkName=encodeURI(req.query.parkname)||'';
 
 
-
-   
-    api_services.commonRequest('api/app/park/'+id+'/'+parkName,'GET',null).then(function (dataSelect){
+    var form={
+        page:req.body.page||0,
+        size:15
+    }
+     
+    api_services.commonRequest('api/app/park/'+id+'/'+parkName,'POST',form).then(function (dataSelect){
              console.log(dataSelect)
-             res.json(dataSelect.content)
+             res.json(dataSelect)
 
     }).catch(function (data){
-           console.log(data)
-           res.json(data)
+             console.log(data)
+             res.json(data)
     })
-
-
+    
 
 
 }
@@ -121,7 +134,6 @@ exports.architecture = function(req, res, next) {
 
 exports.details = function(req, res, next) {
 
-
             
    var data={ 
                   data:{
@@ -132,8 +144,8 @@ exports.details = function(req, res, next) {
                                       ['上海医德医疗设备有限公司','true','朱王杰','2016-06-29']
                                  ],
                         style:['25%','100px','100px','15%','auto'],
-                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}]
-                         
+                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+                        overflow:true,
                    },
                    btnlist:[
                     {href:"/organize/details/company",title:'企业信息',active:false},
@@ -150,7 +162,7 @@ exports.details = function(req, res, next) {
                   pagelist:5 
    }
   
-   switch(req.params.id){
+   switch(req.query.href){
        case 'company':
        data.company=true;
        data.btnlist[0].active=true;

@@ -21,20 +21,9 @@
                             <div class="form-group" >
                                 <v-select ></v-select>
 
-
                                 <label class="col-md-1 o-pd v-label-s text-center" for="val-skill">企业:</label>
                                 <div class="col-md-2 o-pd-l">
-                                    <select class="form-control" name="val-skill">
-                                        <option value="">奉贤青村食品药品</option>
-                                        <option value="html">奉贤青村食品药品</option>
-                                        <option value="css">奉贤青村食品药品</option>
-                                        <option value="javascript">奉贤青村食品药品</option>
-                                        <option value="ruby">奉贤青村食品药品</option>
-                                        <option value="php">奉贤青村食品药品</option>
-                                        <option value="asp">奉贤青村食品药品</option>
-                                        <option value="python">奉贤青村食品药品</option>
-                                        <option value="mysql">奉贤青村食品药品</option>
-                                    </select>
+                                    <input class="form-control" name="company">
                                 </div>
 
                                 <div class="v-t-b">
@@ -48,7 +37,7 @@
                 <div class="row v-table">
                     <div class="col-md-12">
                         <div class="block" id="c-table-checkbox">
-                            <com-table-list :datalist="data"></com-table-list>
+                            <com-table-list :datalist="dataList"></com-table-list>
                         </div>
                     </div>
                 </div>
