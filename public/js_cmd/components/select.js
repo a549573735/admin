@@ -26,14 +26,14 @@ define(function (require, exports, module) {
                 },
                 template: '<label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>\
 	                         <div class="col-md-2 o-pd">\
-	                                 <select class="form-control" id="val-skill" name="market" @change="selectChange($event)">\
+	                                 <select class="form-control" id="select_market" name="market" @change="selectChange($event)">\
 	                                     <option value="0">请选择</option>\
 	                                     <option v-for="item in selectdata" :value="item.id">{{item.name}}</option>\
 	                                 </select>\
 	                         </div>\
 	                          <label class="col-md-1 o-pd-r v-label text-center" for="val-skill2">园区：</label>\
 	                                 <div class="col-md-2 o-pd" >\
-	                                   <select class="form-control" id="val-skill" name="park" @change="sendVal($event)">\
+	                                   <select class="form-control" id="select_park"name="park" @change="sendVal($event)">\
 	                                         <option value="0">请选择</option>\
                                            <option v-if="state" v-for="item in selectsubset" :value="item.id">{{item.name}}</option>\
 	                                   </select>\

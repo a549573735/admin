@@ -42,23 +42,28 @@ exports.api_organize_company_list = function(req, res, next) {
        var form=req.body||{};
            form.page=req.body.page||0;
            form.size=15;
-
-        api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
-
-        var  datalist={ 
-                       href:'/organize/details?view=company&id=',
-                       title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
-                       content:data.content.content,
-                       style:['20%','auto','100px','100px','80px','20%','100px'],
-                       details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
-                       overflow:false,
-                       page:data.content.page
-
-          }
+           if( form.park=='0'){
+             delete form.park;
+           }
+           if( form.market=='0'){
+             delete form.market;
+           }
            
+        api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
+                console.log(data.content)
+            var  datalist={ 
+                           href:'/organize/details?view=company&id=',
+                           title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
+                           content:data.content.content,
+                           style:['20%','auto','100px','100px','80px','20%','100px'],
+                           details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+                           overflow:false,
+                           page:data.content.page
 
-        res.render('pages/organize_company',{data:datalist});
-     })
+              }
+               
+            res.json(datalist);
+        })
 }
 
 
