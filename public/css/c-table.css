@@ -1,7 +1,7 @@
 
 .table-borderless > tbody > tr > td, .table-borderless > tfoot > tr > td {
     border: none;font-size: 14px; 
-    line-height: 2.3;
+    line-height: 1.6;
 }
 
 .table>thead>tr>th{ border-bottom: 0; font-size: 16px; font-weight: normal;}

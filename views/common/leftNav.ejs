@@ -1,20 +1,59 @@
     <div class="c-l">
      
-          <%  if(user){ %>
-           <ul class="c-list">
-              <% user.content.navlist.forEach(function (item){ %>
-                <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
-                   <% if(item.list){%>
-                       <dl >
-                            <% item.list.forEach(function (it){ %>
-                               <dd>
-                                   <a href="<%=it.href%>"><%=it.title%></a>
-                               </dd>
+          <%  if(user.content.belongId!='backStage'){ %>
+
+                   
+                           <ul class="c-list">
+                              
+                              <% user.content.navlist.forEach(function (item){ %>
+                                  <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
+                                     <% if(item.list){%>
+                                         <dl >
+                                              <% item.list.forEach(function (it){ %>
+                                                 <dd>
+                                                     <a href="<%=it.href%>"><%=it.title%></a>
+                                                 </dd>
+                                              <%})%>
+                                        </dl>
+                                     <%}%>
+                                  </li>
+                              <%})%>
+
+                                <li><a href="javascript:;"><i class="icon-caret-right"></i>用户管理</a>
+                                     <dl>
+                                               <dd>
+                                                   <a href="/user/role/list">角色管理</a>
+                                               </dd>
+                                            
+                                               <dd>
+                                                   <a href="/user/edit/list">用户列表</a>
+                                               </dd>
+                                            
+                                               <dd>
+                                                   <a href="/signout">退出</a>
+                                               </dd>
+                                      </dl>
+                                </li>
+                                
+                           </ul>               
+          
+
+           <%  }else{ %>
+
+                 <ul class="c-list">
+                          <% user.content.navlist.forEach(function (item){ %>
+                            <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
+                               <% if(item.list){%>
+                                   <dl >
+                                        <% item.list.forEach(function (it){ %>
+                                           <dd>
+                                               <a href="<%=it.href%>"><%=it.title%></a>
+                                           </dd>
+                                        <%})%>
+                                  </dl>
+                               <%}%>
+                            </li>
                             <%})%>
-                      </dl>
-                   <%}%>
-                </li>
-                <%})%>
-           </ul>
-           <%  }%>
+                       </ul>
+           <%}%>
    </div>
