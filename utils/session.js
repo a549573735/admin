@@ -1,7 +1,5 @@
 var session=require('express-session');
 var nav=require('./rolt_nav');
-var Services=require('./tool')
-var tools=new Services();
 var _=require('lodash');
 
 module.exports=function (app){
@@ -15,26 +13,13 @@ module.exports=function (app){
 		}
 	}));
 
-  function json(obj){
-  
-      var arr=[]
-      for(var i=0;i<obj.length;i++){
-          var json={};
-         if(!json[obj[i]]){
-            json[obj[i]]={code:obj[i]}
-         }
-         arr.push(json)
-      }
-      return arr
-  }
- 
 	 //预处理
    app.use(function (req,res,next){
 
        var _user=req.session.user||false
 
         if(_user){
-             if(_user.content.belongId=="backStage"){
+             if(_user.content.type=="BACKSTAGE"){
 
                  _user.content.navlist=nav.navData.backStage
             	 
@@ -61,7 +46,7 @@ module.exports=function (app){
                        })
                    }
                })
-               console.log(dest)
+               
                 _user.content.navlist=_.uniq(dest)
              }
         }
