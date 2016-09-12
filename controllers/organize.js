@@ -1,6 +1,8 @@
 var path=require('path'); 
 var fs=require('fs');
 var api_services=require('../models/api_services');
+var Services=require('../utils/tool');
+var tools=new Services();
 
 
 exports.organize_company=function (req,res,next){
@@ -9,25 +11,12 @@ exports.organize_company=function (req,res,next){
                 form.page=req.body.page||0;
                 form.size=15;
             
-            if(!req.query.id){
-                  // switch(req.session.user.content.belongId){
-                  //           case  'ROOT':
-                  //         form.market=req.query.id||req.session.user.content.id
-                  //           break;
-                  //           case 'DISTRICT':
-                  //         form.market=req.query.id||req.session.user.content.id
-                  //           break;  
-                  //           case  'PARK':
-                  //         form.park=req.query.id||req.session.user.content.id
-                  //           break;  
-                  // }
-              }else {
-                  form.park=req.query.id
+            if(req.query.id){
+                form.park=req.query.id
               }
     
     
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
-
 
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
@@ -136,15 +125,14 @@ exports.architecture = function(req, res, next) {
 
 
 exports.details = function(req, res, next) {
-
-
-
+   
+  console.log(req.query)
    var id= req.query.id;  
    var data={ 
                data:{
-                      title:['企业名称','检查状态','检查员','检查日期','备注'],
+                      title:[],
                       content:null,
-                      style:['25%','100px','100px','15%','auto'],
+                      style:[],
                       details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                       overflow:false,
                  },
@@ -164,18 +152,24 @@ exports.details = function(req, res, next) {
                 pagelist:1,
                 companyName:''
    }
+   var form={
+      page:req.query.page||0,
+      size:15,
+      name:req.query.name||''
+   }
 
-  
-    
- 
+   var date=new Date();
+    form.from=req.form|| date.getFullYear()+'-'+tools.addZero(date.getMonth())+'-'+tools.addZero(date.getDate());
+    form.to=req.to|| date.getFullYear()+'-'+tools.addZero((date.getMonth()+1))+'-'+tools.addZero(date.getDate());
 
+   
    switch(req.query.view){
        case 'company':
        data.company=true;
        data.btnlist[0].active=true;
        api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
                         console.log(dataSelect)
-                         data.companyName=dataSelect.content.name;
+                         req.session.user.content.companyName=dataSelect.content.name;
                          data.data.content=dataSelect.content;
                          res.render('pages/details', data );
                  }).catch(function (data){
@@ -184,85 +178,122 @@ exports.details = function(req, res, next) {
                      
            break;
        case 'purchase':
-       data.btnlist[1].active=true;
-       data.type='date';
-           api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
+ 
+        data.btnlist[1].active=true;
+        data.type='date';
+     
+        api_services.commonRequest('api/app/company/'+id+'/purchase/list','POST',form).then(function (dataSelect){
+             
+                  tools.Interface_company({title:['采购订单号','采购日期','供货企业','供货名称','经办人','采购随行单','备注'],
+                                           style: ['20%','20%','10%','10%','10%','20%','10%']},
+                                           data.data,
+                                           dataSelect
+                                           )
+                  res.render('pages/details',data);
                }).catch(function (data){
-                     console.log(data)
-            })
-   
+                  console.log(data)
+        })
            break;
         case 'sale':
        data.btnlist[2].active=true;
        data.type='date';
-         api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
-               }).catch(function (data){
-                     console.log(data)
+       api_services.commonRequest('api/app/company/'+id+'/sale/list','POST',form).then(function (dataSelect){
+
+              console.log(dataSelect.content)
+             tools.Interface_company({title:['订货单号','销售日期','采购企业','供货名称','销售代表','备注'],
+                                         style: ['20%','20%','20%','10%','10%','10%']},
+                                         data.data,
+                                         dataSelect
+                                      )
+    
+              res.render('pages/details',data);
+             }).catch(function (data){
+                   console.log(data)
         })
-           break;
+        break;
         case 'invoice':
        data.btnlist[3].active=true;
        data.type='date';
-       api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
-               }).catch(function (data){
-                     console.log(data)
+       api_services.commonRequest('api/app/company/'+id+'/invoice/list','POST',form).then(function (dataSelect){
+
+             console.log(dataSelect.content)
+             tools.Interface_company({title:['发票单号','开票日期','发票类别','客户','税号','开票金额','收票人','经办人','发票单'],
+                                         style: ['10%','15%','10%','10%','15%','10%','10%','10%','10%']},
+                                         data.data,
+                                         dataSelect
+                                      )
+    
+              res.render('pages/details',data);
+             }).catch(function (data){
+                   console.log(data)
        })
            break;
          case 'customer':
        data.btnlist[4].active=true;
        data.type='search';
-         api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
-               }).catch(function (data){
-                     console.log(data)
-            })
+
+       api_services.commonRequest('api/app/company/'+id+'/customer/aptitude/list','POST',form).then(function (dataSelect){
+
+                  console.log(dataSelect.content)
+             tools.Interface_company({title:['客户名称','客户地址','联系方式','经营许可证','经营范围','许可证截止日期'],
+                                         style: ['10%','15%','10%','20%','auto','20%']},
+                                         data.data,
+                                         dataSelect
+                                      )
+    
+              res.render('pages/details',data);
+             }).catch(function (data){
+                   console.log(data)
+      })
            break;   
           case 'producer':
        data.btnlist[5].active=true;
        data.type='search';
-         api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
-               }).catch(function (data){
-                     console.log(data)
-            })
+         api_services.commonRequest('api/app/company/'+id+'/producer/aptitude/list','POST',form).then(function (dataSelect){
+                  console.log(dataSelect.content)
+             tools.Interface_company({title:['生产商姓名','生产商地址','联系方式','经营许可证','经营范围','许可证截止日期'],
+                                         style: ['15%','15%','10%','20%','auto','20%']},
+                                         data.data,
+                                         dataSelect
+                                      )
+    
+              res.render('pages/details',data);
+             }).catch(function (data){
+                   console.log(data)
+      })
            break;          
         case 'provider':
        data.btnlist[6].active=true;
        data.type='search';
-        api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
-               }).catch(function (data){
-                     console.log(data)
-            })
-           break;
+       api_services.commonRequest('api/app/company/'+id+'/provider/aptitude/list','POST',form).then(function (dataSelect){
+                  console.log(dataSelect.content)
+                      tools.Interface_company({title:['供应商姓名','供应商地址','联系方式','经营许可证','经营范围','许可证截止日期'],
+                                         style: ['15%','15%','10%','20%','auto','20%']},
+                                         data.data,
+                                         dataSelect
+                                      )
+                       res.render('pages/details',data);
+             }).catch(function (data){
+                   console.log(data)
+        })
+         break;
         case 'product':
        data.btnlist[7].active=true;
        data.type='search';
-     api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
-               }).catch(function (data){
-                     console.log(data)
-            })
+
+       api_services.commonRequest('api/app/company/'+id+'/product/aptitude/list','POST',form).then(function (dataSelect){
+              console.log(dataSelect.content)
+                      tools.Interface_company({title:['产品名称','生产地址','产品规格','产品注册证号','注册证有效期'],
+                                         style: ['20%','20%','auto','20%','20%']},
+                                         data.data,
+                                         dataSelect
+                                      )
+                       res.render('pages/details',data);
+             }).catch(function (data){
+                   console.log(data)
+       })
            break;
-        default:
-       data.company=true;
-       data.btnlist[0].active=true;    
-      api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
-                     data.companyName=dataSelect.content.name;
-                         res.render('pages/details',data);
-               }).catch(function (data){
-                     console.log(data)
-            })
+     
    }
 
 

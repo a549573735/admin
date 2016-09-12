@@ -41,16 +41,6 @@ app.use(function(req, res, next) {
 
 session(app);
 
-
-// app.all('*', proxy(config.internal.host, {
-//     decorateRequest: function(req){
-//         req.headers['User-Token'] =req.session.user.content.id;
-//         return req;
-//     }
-    
-// }));
-
-
 routes(app)
 
 

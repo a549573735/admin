@@ -37,5 +37,35 @@ Services.prototype.Interface=function (url,method,data){
 }
 
 
+Services.prototype.addZero=function (obj){
+
+   return obj=obj>9?obj:'0'+obj;
+}
+
+
+Services.prototype.Interface_company=function (obj,data,dataSelect){
+
+        data.title=obj.title
+        data.style=obj.style
+        data.customer=obj.customer
+        data.salesRep=obj.salesRep
+        data.content=dataSelect.content
+        data.pagelist=dataSelect.page+1
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports=Services;

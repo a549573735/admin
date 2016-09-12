@@ -2,26 +2,32 @@ define(function (require, exports, module) {
 
 
 	    var Vue = require('lib_cmd/vue-cmd');
-	    seajs.use("/js_cmd/components/paging");
-	    seajs.use("js_cmd/group/marketList-cmd");
 
-
-	 
+	    require("/js_cmd/components/paging");
 	    require('/js_cmd/components/companytable/tabs_content_s')
 	    require('/js_cmd/components/companytable/tabs_content_d')
 	    require('/js_cmd/components/companytable/tabs_btn')
 
-	    var message=new Vue({
+	    new Vue({
 	         'el':'#app',
-	         data:function (){
-	           	return {
- 
-	           	}
+
+	         methods:{
+
+	         	  setDate:function (){
+	         	  
+	         	  	 $('input[name=view]').val($.query.get('view'));
+	         	  	 $('input[name=id]').val($.query.get('id'));
+	         	  }(),
+	         	  getDate:function (){
+ 						 $('#date-form').submit()
+	         	  },
+	         	  getName:function (){
+
+	         	  	  $('#search-form').submit()
+	         	  }
+
+
 	         }
 	    });
-
-
-   seajs.use("js_cmd/group/marketList-cmd");
-    
  })
    

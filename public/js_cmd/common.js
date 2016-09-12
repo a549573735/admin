@@ -86,7 +86,7 @@
             weekStart: 1,
             autoclose: true,
             todayHighlight: true,
-            format: 'yyyy-mm'   //yyyy-mm-dd
+            format: 'yyyy-mm-dd'   //yyyy-mm-dd
 
         })
 

@@ -12,7 +12,7 @@ var config=require('../utils/config')
 
  module.exports=function (app){
 
-	app.get('/common', Index.common);            //公共模块   企业详情    	 //公共模块
+	//app.get('/common', Index.common);            //公共模块   企业详情    	 //公共模块
 	
 	app.get('/',  Index.home);        
 
@@ -22,8 +22,7 @@ var config=require('../utils/config')
 
     app.post('/loginUp', User.loginUp);               // 用户登录 提交用户名
           		     	 
-  
- 	
+ 
 
 	app.get('/company',User.signRequired,  Company.company);						 //企业进入
 
@@ -76,7 +75,7 @@ var config=require('../utils/config')
     app.get('/organize/architecture',User.signRequired, Organize.architecture)     //组织架构
 
     app.get('/organize/details',User.signRequired, Organize.details)     //企业详情
-
+    
 
     app.get('/organize/park',User.signRequired,  Organize.organize_park_id);         //企业进入园区     // 详情 to 园区
     
@@ -117,7 +116,7 @@ var config=require('../utils/config')
 
 	app.get('/market/brief',User.signRequired,Market.marketBriefAll)       //所有市场所 简介 用作调 select 
 
-
+     
 }
 
 
