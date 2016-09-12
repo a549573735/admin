@@ -1,19 +1,5 @@
 define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
-    
-  
-//    {
-// address (string): 企业地址 ,
-// belongMarket (string): 所属市场所 ,
-// belongPark (string): 所属园区 ,
-// businesses (string): 经营范围 ,
-// certificate (string): 经营许可证 ,
-// contact (string): 联系人 ,
-// expireDate (string): 许可证有效期 ,
-// id (string, optional),
-// name (string): 企业名称 ,
-// phone (string): 联系方式
-// }
 
     Vue.component('handle-table-list', {
 

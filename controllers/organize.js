@@ -177,14 +177,14 @@ exports.details = function(req, res, next) {
                 companyName:''
    }
    var form={
-      page:req.query.page||0,
+      page:req.query.page||req.body.page||0,
       size:15,
-      name:req.query.name||''
+      name:req.query.name||req.body.name||''
    }
 
    var date=new Date();
-    form.from=req.form|| date.getFullYear()+'-'+tools.addZero(date.getMonth())+'-'+tools.addZero(date.getDate());
-    form.to=req.to|| date.getFullYear()+'-'+tools.addZero((date.getMonth()+1))+'-'+tools.addZero(date.getDate());
+    form.from=req.query.from||req.body.from|| date.getFullYear()+'-'+tools.addZero(date.getMonth())+'-'+tools.addZero(date.getDate());
+    form.to=req.query.to||req.body.to|| date.getFullYear()+'-'+tools.addZero((date.getMonth()+1))+'-'+tools.addZero(date.getDate());
 
    
    switch(req.query.view){
