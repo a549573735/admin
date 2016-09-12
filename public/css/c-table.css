@@ -203,7 +203,7 @@ label{font-weight: normal; color: #313131;}
 
 .v-table-text{ height: 200px;}
 
-.v-cont{ white-space: nowrap;text-overflow: ellipsis; }
+.v-cont{ white-space: nowrap; text-overflow: ellipsis; }
 .v-msg-content-n{ display: none; }
 .v-msg-company-n{ display: none; }
 .v-btn-w{width: 80px !important;}
@@ -216,6 +216,7 @@ label{font-weight: normal; color: #313131;}
   display: none;
 }
 
+.bus-msg{ width: 100%; display: inline-block; height: 70px;  overflow:hidden; text-overflow:ellipsis !important; }
 
 
 

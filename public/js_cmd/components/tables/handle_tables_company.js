@@ -31,8 +31,8 @@ define(function (require, exports, module) {
                             <td  class="text-center">{{ item.belongMarket }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
-                            <td  class="text-center">{{ item.businesses }}</td>\
-                            <td v-if="datalist.overflow" class="text-center" :expiredate="item.expireDate" :certificate="item.certificate" ><a href="javascript:;" class="btn-link">详情</a></td>\
+                            <td  class="text-center"><span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;"" @click="showMsg($event) " class="btn-link">详情</a></td>\
+                            <td v-if="datalist.overflow" class="text-center" :expiredate="item.expireDate" :certificate="item.certificate" ><a href="javascript:;"  class="btn-link">详情</a></td>\
                             <td  class="text-center"><a :href="datalist.href+item.id"  class="btn  btn-primary "> 详情</a></td>\
                         </tr>\
                       </tbody>\
@@ -40,11 +40,17 @@ define(function (require, exports, module) {
 
         methods:{
             
-             sub:function (event){
-                     
-             
+             showMsg:function (event){
+                 event.target.bclick=!event.target.bclick   
+                 if(event.target.bclick){ 
+                   console.log($(event.target))
+                   $(event.target).siblings('span').css('overflow','inherit')
+                   $(event.target).html('收起')
                   /*  备注弹框  */
-            
+                  }else {
+                     $(event.target).siblings('span').css('overflow','hidden')
+                     $(event.target).html('详情')
+                  }
              }
 
         }          
