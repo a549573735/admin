@@ -5,7 +5,7 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
          <div class="c-r" id="handle-table">
-            <form class="form-horizontal clearfix"  action="/organize/company" method="post" onsubmit="return false;">
+            <form class="form-horizontal clearfix" id="company-list" action="/api/organize/company/list" method="post">
                 <div class="row clearfix">
                     <div class="col-md-12">
                         <div class="form-group" >
@@ -13,35 +13,46 @@
                         
                             <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">企业：</label>
                             <div class="col-md-2 o-pd">
-                               <input type="text" class="form-control" name="company" value="奉贤青村食品药品监督管理所">
+                               <input type="text" class="form-control" name="company" >
                             </div>
                           
-
+<!--                  {
+businesses (string): 经验范围 ,
+company (string): 公司模糊查询 ,
+customer (string): 客户模糊查询 ,
+market (string): 市场所ID ,
+page (integer): 请求页 ,
+park (string): 园区ID ,
+producer (string): 生产商模糊查询 ,
+product (string): 产品模糊查询 ,
+provider (string): 供应商模糊查询 ,
+size (integer): 每页数量
+}        -->   
                             <div class="col-md-12 o-pd o-m-t">
                                     <label class="col-md-1 o-pd-r v-label" for="val-skill">供应商：</label>
                                     <div class="col-md-2 o-pd">
-                                       <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
+                                       <input type="text" class="form-control" name="provider">
                                     </div>
                                     <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">客户：</label>
                                     <div class="col-md-2 o-pd">
-                                       <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
+                                       <input type="text" class="form-control" name="customer" >
                                     </div>
                                     <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">产品：</label>
                                     <div class="col-md-2 o-pd">
-                                       <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
+                                       <input type="text" class="form-control" name="product">
                                     </div>
                            </div>
                              <div class="col-md-12 o-pd o-m-t">
-                                    <label class="col-md-1 o-pd-r v-label" for="val-skill">供应商：</label>
+                                    <label class="col-md-1 o-pd-r v-label" for="val-skill">生产商：</label>
                                     <div class="col-md-2 o-pd">
-                                       <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
+                                       <input type="text" class="form-control" name="producer">
                                     </div>
-                                    <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">客户：</label>
+                                    <label class="col-md-1 o-pd-r v-label text-center" for="val-skill">经营范围：</label>
                                     <div class="col-md-4 o-pd">
-                                       <input type="text" class="form-control" value="奉贤青村食品药品监督管理所">
+                                       <input type="text" class="form-control" name="businesses">
                                     </div>
                               <div class="v-t-b o-m-p">
-                                <button class="btn btn-md btn-primary btn-block text-center" type="submit">查询</button>
+                                <button class="btn btn-md btn-primary btn-block text-center" @click="searchData()">查询</button>
                             </div>
                            </div>
                         </div>
@@ -52,9 +63,7 @@
             <div class="row v-table" id="handle-table">
                 <div class="col-md-12">
                     <div class="block" >
-                 
                         <handle-table-list :datalist="<%=JSON.stringify(data)%>" ></handle-table-list>
-                   
                     </div>
                 </div>
                  <v-pages :pagelist="<%=JSON.stringify(data.content.page||1)%>"> </v-pages>

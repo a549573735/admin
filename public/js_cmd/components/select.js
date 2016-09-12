@@ -26,21 +26,19 @@ define(function (require, exports, module) {
                 },
                 template: '<label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>\
 	                         <div class="col-md-2 o-pd">\
-	                                 <select class="form-control" id="val-skill" name="val-skill" @change="selectChange($event)">\
+	                                 <select class="form-control" id="val-skill" name="market" @change="selectChange($event)">\
 	                                     <option value="0">请选择</option>\
 	                                     <option v-for="item in selectdata" :value="item.id">{{item.name}}</option>\
 	                                 </select>\
 	                         </div>\
 	                          <label class="col-md-1 o-pd-r v-label text-center" for="val-skill2">园区：</label>\
 	                                 <div class="col-md-2 o-pd" >\
-	                                   <select class="form-control" id="val-skill" name="val-skill" @change="sendVal($event)">\
+	                                   <select class="form-control" id="val-skill" name="park" @change="sendVal($event)">\
 	                                         <option value="0">请选择</option>\
                                            <option v-if="state" v-for="item in selectsubset" :value="item.id">{{item.name}}</option>\
 	                                   </select>\
 	                          </div>',
                 methods:{
-
-//      <option v-if="state" v-for="item in selectdata[k-1].son" :value="item.value">{{item.text}}</option>\
 
                     selectChange:function (event){
                        var that=this;
@@ -84,10 +82,5 @@ define(function (require, exports, module) {
 
       // return {data: [{value: 1, text: 'css',son:[{value:'11',text:'11111'},{value:'111',text:'111111'}]}, {value: 2, text: 'js',son:[{value:'22',text:'2222'},{value:'222',text:'2222222'}]}, {value: 3, text: 'node',son:[{value:'333',text:'33333'},{value:'33333',text:'3333333333'}]}]}
      
-
-
-
-
-
 
 })
