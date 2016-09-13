@@ -145,7 +145,15 @@ exports.architecture = function(req, res, next) {
      api_services.commonRequest('api/app/organize/architecture','GET',null).then(function (dataSelect){
                        
                          console.log(dataSelect)
-                         res.render('pages/architecture',{data:dataSelect});
+                          var parkall=0;
+                          var companyall=0;
+                           dataSelect.content.forEach(function (item){
+                                    parkall+=item.parkCount;
+                                    companyall+=item.companyCount
+                           })
+                           
+
+                         res.render('pages/architecture',{data:dataSelect,parkAll:parkall,companyAll:companyall});
 
                  
      }).catch(function (data){

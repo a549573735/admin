@@ -16,15 +16,17 @@
                     <%}%>
                   
                     <li><div class="qiju_sp2"><a href="/organize/market">更多市场所</a></div></li>
-                     <% for(var i=0;i<4;i++){%>   
+
+                    <% for(var i=0;i<4;i++){%>   
                        <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（<%=data.content[i].parkCount%>家）</div></li>
                     <%}%>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（203家）</div></li>  
-                    <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（220家）</div></li>
-                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（210家）</div></li>
-                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（190家）</div></li>
-                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（240家）</div></li>
-                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（1800家）</div></li>                                       
+
+                    <li><div class="qiju_sp3"><a href="/organize/park">园区详情</div><div class="qiju_sp4">（<%=parkAll%>家）</a></div></li>  
+
+                     <% for(var i=0;i<4;i++){%>   
+                     <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（<%=data.content[i].companyCount%>家）</div></li>
+                      <%}%>
+                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（<%=companyAll%>家）</div></li>                                       
                   </ul>
                 </div>
             </div>
