@@ -44,22 +44,15 @@ module.exports=function (app){
                var b=[]
 
                 dest.forEach(function (item,val){
-
                     if(item.parentTitle==1){
-               
                          a.list.push(item)
-
                     }else {
                         b.push(item)
                     }
                 })
-
                var c=[a];
                var d =c.concat(b)
-
                _user.content.navlist=d
-
-
              }
         }
 

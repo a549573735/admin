@@ -40,8 +40,12 @@ define(function (require, exports, module) {
 	                    checkCodes.refresh()
 	                    return false;
 	                 }
+	                 if(data.type=='COMPANY'){ 	
+                	     window.location.href='/organize/details?view=company&id='+data.id;
+                    }else {
+ 						window.location.href='/organize/architecture';
 
-                    window.location.href='/organize/architecture';
+                    }
 	               
 
 	        	 },'json')

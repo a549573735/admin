@@ -6,6 +6,7 @@
                         <div class="col-md-12 o-pd">
                             <h3 class="block-title"><%=user.content.companyName%></h3>
                         </div>
+                       <%if(user.content.type!="COMPANY"){%> 
                         <div class="col-md-8 col-md-offset-4 text-right o-pd clearfix">
                             <div class="v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn" data-toggle="modal"data-target="#modal-fromleft"  type="button">退出</button>
@@ -101,6 +102,7 @@
                                   <button class="btn btn-minw btn-primary v-tabs-btn" data-toggle="modal"data-target="#modal-fromleft" type="button">约谈</button>
                             </div>
                         </div>
+                        <%}%>
                     </div>
                 </div>   
          </div>

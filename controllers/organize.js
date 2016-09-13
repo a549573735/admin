@@ -151,7 +151,7 @@ exports.architecture = function(req, res, next) {
 exports.details = function(req, res, next) {
    
   console.log(req.query)
-   var id= req.query.id;  
+   var id= req.query.id; 
    var data={ 
                data:{
                       title:[],

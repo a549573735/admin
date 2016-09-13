@@ -32,7 +32,7 @@ exports.loginUp = function(req, res, next) {
 
                  config.headers['User-Token']=data.content.id;
                  
-                 res.json({msg:'登录成功',state:true,type:req.session.user.content.type})
+                 res.json({msg:'登录成功',state:true,type:req.session.user.content.type,id:data.content.companyId})
 
             }else {
                 // 

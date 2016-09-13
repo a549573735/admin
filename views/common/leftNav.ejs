@@ -2,7 +2,7 @@
      
           <%if(user.content.type!='BACKSTAGE'&&user.content.type!='COMPANY'){ %>
 
-                   
+                      <%if(user.content.navlist!=null){%> 
                            <ul class="c-list">
                               
                               <% user.content.navlist.forEach(function (item){ %>
@@ -41,10 +41,11 @@
                                       </dl>
                                 </li>
                            </ul>               
-          
+                    <%}%>
            <%  }else{ %>
-
+                     <%if(user.content.navlist!=null){%> 
                      <ul class="c-list">
+
                           <% user.content.navlist.forEach(function (item){ %>
                             <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
                                <% if(item.list){%>
@@ -59,5 +60,6 @@
                             </li>
                             <%})%>
                        </ul>
+                       <%}%>
            <%}%>
    </div>
