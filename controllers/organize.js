@@ -84,7 +84,8 @@ exports.organize_market = function(req, res, next) {
                        content:data.content,
                        style:['25%','auto','100px','15%'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
-                       overflow:false
+                       overflow:false,
+                       overflow_btn:true
 
           }
         console.log(data)
@@ -151,7 +152,7 @@ exports.architecture = function(req, res, next) {
                                     parkall+=item.parkCount;
                                     companyall+=item.companyCount
                            })
-                           
+
 
                          res.render('pages/architecture',{data:dataSelect,parkAll:parkall,companyAll:companyall});
 
@@ -161,8 +162,6 @@ exports.architecture = function(req, res, next) {
                          console.log(data)
      })
 }
-
-
 
 
 exports.details = function(req, res, next) {

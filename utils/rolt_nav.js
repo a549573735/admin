@@ -24,13 +24,13 @@
                                                      ]}
                ],
             backStage:[
-              {href:'/publicity/list',title:'接口管理'},
+              {href:'/admin/interface/list',title:'接口管理'},
+
               {href:'javascript:;',title:'单位管理',list:[
                                                          
-                                                        {href:"/company/market",title:'市场所'},
-                                                        {href:"/company/park",title:'园区'},
+                                                        {href:"/admin/market",title:'市场所',code:'same_level_manage'},
+                                                        {href:"/admin/park",title:'园区',code:'lower_level_manage'},
                                                    
-
                                                        ]}
 
 

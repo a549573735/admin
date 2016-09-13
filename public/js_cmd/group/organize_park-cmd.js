@@ -42,7 +42,9 @@ define(function (require, exports, module) {
 		                     return datalist
 				   }(),
 				   style:['5%','20%','auto','120px','120px','100px'],
-				   type:"PARK"
+				   type:"PARK",
+				   overfull:true,
+				   overfull_btn:true
 				  
 			   }
 // 			    {

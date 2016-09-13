@@ -4,7 +4,7 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
 
-        <div class="c-r" id="c-table-checkbox">
+        <div class="c-r" id="handle-table">
             <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                 <div class="row clearfix">
                     <div class="col-md-12">
@@ -19,11 +19,11 @@
 
             <div class="row v-table">
                 <div class="block" >
-                    <com-table-list :datalist="data"></com-table-list>
+                       <handle-table-list :datalist="<%=JSON.stringify(data) %>"></handle-table-list>
                 </div>
             </div>
 
-             <v-pages :pagelist="5"> </v-pages>
+             <v-pages :pagelist="<%=JSON.stringify(data.page)||1%>"> </v-pages>
         </div>
    
     </div>

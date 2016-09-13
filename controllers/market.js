@@ -10,7 +10,6 @@ exports.marketAll=function (req,res,next){
     
  
   //GET /api/app/market/all  // 市场所
-
 	  api_services.commonRequest('api/app/market/all',"GET",null).then(function (data){
             
             res.json(data)

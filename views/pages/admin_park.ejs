@@ -5,23 +5,18 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
-         <div class="c-r" id="c-table-checkbox">
+         <div class="c-r" id="check-table">
             <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                 <div class="clearfix">
                     <div class="col-md-12">
                         <div class="form-group">
                             <label class="col-md-1 o-pd v-label" for="val-skill">市场所：</label>
                             <div class="col-md-3">
-                                <select class="form-control" id="val-skill" name="val-skill">
-                                    <option value="">奉贤青村食品药品</option>
-                                    <option value="html">奉贤青村食品药品</option>
-                                    <option value="css">奉贤青村食品药品</option>
-                                    <option value="javascript">奉贤青村食品药品</option>
-                                    <option value="ruby">奉贤青村食品药品</option>
-                                    <option value="php">奉贤青村食品药品</option>
-                                    <option value="asp">奉贤青村食品药品</option>
-                                    <option value="python">奉贤青村食品药品</option>
-                                    <option value="mysql">奉贤青村食品药品</option>
+                                <select class="form-control" id="select_park" name="val-skill" @change="getParkList()">
+                                    <option value="">请选择</option>
+                                    <% dataSelect.forEach(function (item){ %>
+                                      <option value="<%=item.id%>"><%=item.name%></option>
+                                    <%})%>
                                 </select>
                             </div>
                             <div class="v-t-m">
@@ -30,19 +25,17 @@
                         </div>
                     </div>
                 </div>
-
-
             </form>
 
             <div class="row v-table">
                 <div class="col-md-12">
                     <div class="block" >
-                        <com-table-list :datalist="data"></com-table-list>
+                         <check-table-list :datalist="tableList"  ></check-table-list>
                     </div>
                 </div>
             </div>
 
-             <v-pages :pagelist="5"> </v-pages>
+             <v-pages :pagelist="tableList.page||1"> </v-pages>
         </div>
     </div>
 </div>
