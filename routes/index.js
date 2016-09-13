@@ -92,17 +92,32 @@ var config=require('../utils/config')
 
 	app.get('/publicity/list',User.signRequired,  Index.publicity);			 //年报公示列表
 
+	app.get('/api/publicity/list',User.signRequired,  Index.api_publicity);			 //年报公示列表
+
+
 	app.get('/inspect/list',User.signRequired,  Index.inspect);                 //网络检查列表
 
 	app.get('/api/inspect/list',User.signRequired,  Index.api_inspect);  //
 
+
+
 	app.get('/suggestion/list',User.signRequired,  Index.suggestion);   //行政建议列表
+
+	app.get('/api/suggestion/list',User.signRequired,  Index.api_suggestion);   //行政建议列表
+
 
 	app.get('/interview/list',User.signRequired,  Index.interview);    //行政约谈列表
 
+	app.get('/api/interview/list',User.signRequired,  Index.api_interview);    //行政约谈列表
+
+
+
 	app.get('/appointment/list',User.signRequired,  Index.appointment);         //预约列表
 
+	app.get('/api/appointment/list',User.signRequired,  Index.api_appointment);  //
+
  
+
 
 	app.get('/park', Park.park_index); 				  // 园区进入
 

@@ -4,17 +4,29 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
          <div class="c-r" id="app">
-                <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
+                <form class="form-horizontal clearfix"  onsubmit="return false;">
                     <div class="clearfix">
                         <div class="col-md-12">
                             <div class="form-group clearfix">
-                                <label class="col-md-2 o-pd v-label" >预约时间:</label>
+                                <label class="col-md-2 o-pd v-label" >检查时间:</label>
                                 <div class="col-md-5 o-pd">
                                     <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
-                                        <input class="form-control" type="text"  name="example-daterange1" placeholder="2016-08-12">
+                                        <input class="form-control" type="text"  name="from" placeholder="2016-08-12">
                                         <span class="input-group-addon">~</span>
-                                        <input class="form-control" type="text" name="example-daterange2" placeholder="2016-08-12">
+                                        <input class="form-control" type="text" name="to" placeholder="2016-08-12">
                                     </div>
+                                </div>
+
+                                 <label class="col-md-1 o-pd v-label-l text-center" for="">类型:</label>
+                                <div class="col-md-2 o-pd-l">
+                                    <select class="form-control" name="type" >
+                                        <option >请选择</option>
+                                        <option value="DISTRICT">区局</option>
+                                        <option value="MARKET">市场所</option>
+                                        <option value="PARK">园区</option>
+                                        <option value="COMPANY">企业</option>
+                                        <option value="BACKSTAGE">后台</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -27,7 +39,7 @@
                                 </div>
 
                                 <div class="v-t-b">
-                                    <button class="btn btn-md btn-primary btn-block" type="submit">查询</button>
+                                    <button class="btn btn-md btn-primary btn-block inspect_btn" @click="getContent()" type="submit">查询</button>
                                 </div>
                             </div>
                         </div>
@@ -42,7 +54,7 @@
                     </div>
                 </div>
 
-                <v-pages :pagelist="5"> </v-pages>
+                <v-pages :pagelist="dataList.content.page||1"> </v-pages>
           </div>
     </div>
 </div>

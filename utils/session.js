@@ -23,6 +23,10 @@ module.exports=function (app){
 
                  _user.content.navlist=nav.navData.backStage
             	 
+             }else if(_user.content.type=="COMPANY"){
+
+                   _user.content.navlist=null
+
              }else{
               
                if( _user.content.permissions.length==0)return 
@@ -34,22 +38,31 @@ module.exports=function (app){
                    if (_.includes(_user.content.permissions, item.code)){ 
 
                          dest.push(item)
-
-                   }
-
-                   if(item.list){
-                       item.list.forEach(function (part){
-
-                             if (_.includes(_user.content.permissions, part.code)){ 
-                                    dest.push(item)
-                             }
-                       })
                    }
                })
+               var a={href:'javascript:;','parentTitle':'item1',title:'组织',list:[]};
+               var b=[]
+
+                dest.forEach(function (item,val){
+
+                    if(item.parentTitle==1){
                
-                _user.content.navlist=_.uniq(dest)
+                         a.list.push(item)
+
+                    }else {
+                        b.push(item)
+                    }
+                })
+
+               var c=[a];
+               var d =c.concat(b)
+
+               _user.content.navlist=d
+
+
              }
         }
+
              app.locals.user=_user
 
        next()

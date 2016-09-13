@@ -6,10 +6,6 @@ define(function (require, exports, module) {
       new Vue({
                 el: '#app',
                 data: {
-
-
-
-
                     dataList:{
                            title:['企业名称','检查状态','检查员','检查日期','备注'],
                            content:function (){
@@ -32,7 +28,7 @@ define(function (require, exports, module) {
                                     },
                                     error: function(err) {
                                         //请求出错处理
-                                         alert(err.msg);
+                                         //alert(err.msg);
                                     }
 
                                 });
@@ -42,17 +38,45 @@ define(function (require, exports, module) {
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],
+                           page:''
+
                     }
                    
                   
                 },
-                methods: {},
+                methods: {
+
+                   getContent:function (){
+                          var that=this;
+                          var form= {
+                              "page":this.page||0,
+                              "size":15,
+                              "type":$('input[name=type]').val(),
+                              "market":$('input[name=market]').val(),
+                              "company":$('input[name=company]').val(),
+                              "park":$('input[name=park]').val(),
+                              "from":$('input[name=from]').val(),
+                              "to":$('input[name=to]').val()
+                              }
+
+                          $.get('/api/inspect/list',form).then(function (data){
+
+                              that.dataList=ata.content
+                          })   
+
+                   }
+
+
+
+                },
                 events:{
 
                     'send-page':function (page){
 
                       this.page=page-1
                       var that=this;
+
+                       this.getContent()
 
                       // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
 
@@ -65,17 +89,6 @@ define(function (require, exports, module) {
                 }
       })
 
-       // data:{
-
-                   // title:['企业名称','检查状态','检查员','检查日期','备注'],
-                   // content:[
-                   //     ['上海医德医疗设备有限公司','true','王先生','2016-06-29'],
-                   //     ['上海医德医疗设备有限公司','true','朱王杰','2016-06-29']
-                   // ],
-                   // style:['25%','100px','100px','15%','auto'],
-                   // details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
-                   // overfull:false
-
-       //  }
+     
 
 });

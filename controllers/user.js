@@ -32,7 +32,7 @@ exports.loginUp = function(req, res, next) {
 
                  config.headers['User-Token']=data.content.id;
                  
-                 res.json({msg:'登录成功',state:true})
+                 res.json({msg:'登录成功',state:true,type:req.session.user.content.type})
 
             }else {
                 // 
@@ -71,18 +71,6 @@ exports.signRequired=function (req,res,next)
         
 }
 
- exports.adminRequired=function (req,res,next)
-{
-	var user=req.session.user;
-
-
-
-	if(user.rolt<10|| !user.rolt){
-		res.redirect('/')
-	}
-	next()
-
-}
 
 
   /*获取用户列表*/

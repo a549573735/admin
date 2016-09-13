@@ -1,6 +1,6 @@
     <div class="c-l">
      
-          <%  if(user.content.belongId!='backStage'){ %>
+          <%if(user.content.type!='BACKSTAGE'&&user.content.type!='COMPANY'){ %>
 
                    
                            <ul class="c-list">
@@ -9,11 +9,17 @@
                                   <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
                                      <% if(item.list){%>
                                          <dl >
+                                              <dd>
+                                                  <a href="/organize/architecture">组织架构</a>
+                                              </dd>
                                               <% item.list.forEach(function (it){ %>
                                                  <dd>
                                                      <a href="<%=it.href%>"><%=it.title%></a>
                                                  </dd>
                                               <%})%>
+                                               <dd>
+                                                     <a href="/organize/company">企业</a>
+                                               </dd>
                                         </dl>
                                      <%}%>
                                   </li>
@@ -34,13 +40,11 @@
                                                </dd>
                                       </dl>
                                 </li>
-                                
                            </ul>               
           
-
            <%  }else{ %>
 
-                 <ul class="c-list">
+                     <ul class="c-list">
                           <% user.content.navlist.forEach(function (item){ %>
                             <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
                                <% if(item.list){%>

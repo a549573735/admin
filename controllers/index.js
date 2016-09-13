@@ -2,11 +2,11 @@
 var Promise=require('bluebird');
 var request=Promise.promisify(require('request'));
 var config=require('../utils/config')
+var Services=require('../utils/tool');
+var tools=new Services();
 
 
 var api_services=require('../models/api_services');
-
-
 
 
 
@@ -24,69 +24,42 @@ exports.home=function(req,res,next){
 
 
 
-exports.index=function(req, res, next) {
-
-  var data={ 
-                  data:{
-
-                        title:['企业名称','检查状态','检查员','检查日期','备注'],
-                        content:[
-                                      ['上海医德医疗设备有限公司','true','王先生','2016-06-29'],
-                                      ['上海医德医疗设备有限公司','true','朱王杰','2016-06-29']
-                                 ],
-                        style:['25%','100px','100px','15%','auto'],
-                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}]
-                         
-                   },
-                  pagelist:5 
-           }
-             
-   //   request({method:'POST',url:config.internal.host+'/api/app/role/permission/DISTRICT/list',json:true}).then(function (data){
-       
-
-   //     console.log(data.body)
-
-
-   // })GET /api/app/user/login/{username}/{password}
-
-
-   res.render('pages/details', data );
-
-}
-
-
-
-
-
-exports.common = function(req, res, next) {
-
-
-   //  api_user.loginUp('api/app/user/login/','GET',{username:123,password:123}).then(function (data){
-    
-   //    console.log(data)
-
-   // }).catch(function (err){
-
-   //    console.log(err)
-   // })
-
-
-   res.render('pages/common', {
-      title: 'common'
-   });
-
-
-
-}
-
-
-
-
 exports.publicity = function(req, res, next) {
 
-   res.render('pages/publicity', { title: 'Express',data:'123123' });
+   res.render('pages/publicity');
 
 }
+
+
+exports.api_publicity=function (req,res,next){
+     var date=new Date()
+     var time=tools.setForm()
+     var form= {
+              "page":req.query.page||0,
+              "size":15,
+              "type":req.query.type||req.session.user.content.type,
+              "market":req.query.park||req.session.user.content.id,
+              "company":req.query.company||'',
+              "park":req.query.park||req.session.user.content.id,
+              "from":req.query.from||req.body.from||time.from,
+              "to":req.query.from||req.body.from||time.to
+              }
+
+    api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
+
+}
+
+
+
+
 
 
 //POST /api/app/inspect/list
@@ -98,15 +71,20 @@ exports.inspect = function(req, res, next) {            //网络
 }
 
 exports.api_inspect=function (req,res,next){
-    
+     var date=new Date()
+     var time=tools.setForm()
      var form= {
               "page":req.query.page||0,
               "size":15,
-              "id":req.session.user.content.id
+              "type":req.query.type||req.session.user.content.type,
+              "market":req.query.park||req.session.user.content.id,
+              "company":req.query.company||'',
+              "park":req.query.park||req.session.user.content.id,
+              "from":req.query.from||req.body.from||time.from,
+              "to":req.query.from||req.body.from||time.to
               }
 
-
-    api_services.commonRequest('/api/app/inspect/list','POST',form).then(function (dataSelect){
+    api_services.commonRequest('api/app/inspect/list','POST',form).then(function (dataSelect){
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -128,9 +106,67 @@ exports.suggestion = function(req, res, next) {        //行政建议列表
 
 
 
+exports.api_suggestion=function (req,res,next){
+     var date=new Date()
+     var time=tools.setForm()
+     var form= {
+              "page":req.query.page||0,
+              "size":15,
+              "type":req.query.type||req.session.user.content.type,
+              "market":req.query.park||req.session.user.content.id,
+              "company":req.query.company||'',
+              "park":req.query.park||req.session.user.content.id,
+              "from":req.query.from||req.body.from||time.from,
+              "to":req.query.from||req.body.from||time.to
+              }
+
+    api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
+
+}
+
+
+
+
+
+
 exports.interview = function(req, res, next) {        //行政约谈列表
 
-   res.render('pages/interview', { title: 'Express',data:'123123' });
+   res.render('pages/interview');
+
+}
+
+
+exports.api_interview=function (req,res,next){
+     var date=new Date()
+     var time=tools.setForm()
+     var form= {
+              "page":req.query.page||0,
+              "size":15,
+              "type":req.query.type||req.session.user.content.type,
+              "market":req.query.park||req.session.user.content.id,
+              "company":req.query.company||'',
+              "park":req.query.park||req.session.user.content.id,
+              "from":req.query.from||req.body.from||time.from,
+              "to":req.query.from||req.body.from||time.to
+              }
+
+    api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
 
 }
 
@@ -141,11 +177,37 @@ exports.interview = function(req, res, next) {        //行政约谈列表
 
 exports.appointment = function(req, res, next) {
 
-   res.render('pages/appointment', { title: 'Express',data:'123123' });
+   res.render('pages/appointment');
 
 }
 
 
 
+
+exports.api_appointment=function (req,res,next){
+     var date=new Date()
+     var time=tools.setForm()
+     var form= {
+              "page":req.query.page||0,
+              "size":15,
+              "type":req.query.type||req.session.user.content.type,
+              "market":req.query.park||req.session.user.content.id,
+              "company":req.query.company||'',
+              "park":req.query.park||req.session.user.content.id,
+              "from":req.query.from||req.body.from||time.from,
+              "to":req.query.from||req.body.from||time.to
+              }
+
+    api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
+
+}
 
 
