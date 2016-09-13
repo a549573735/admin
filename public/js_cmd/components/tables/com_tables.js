@@ -17,6 +17,7 @@ define(function (require, exports, module) {
     Vue.component('com-table-list', {
 
         props: ['datalist'],
+        
         template:'<table class="table  table-hover table-borderless">\
                       <thead>\
                       <tr class="v-table-tr">\
@@ -26,9 +27,10 @@ define(function (require, exports, module) {
                       <tbody class="v-tabs-check">\
                          <tr v-for="item in datalist.content.content">\
                             <td  class="text-center">{{ item.target }}</td>\
-                            <td  class="text-center">{{ item.status==\'PASS\'?合格:不合格 }}</td>\
+                            <td  class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
                             <td  class="text-center">{{ item.user }}</td>\
-                            <td  class="text-center">{{ item.notes }}<a :href="javascript:;" :data-id="item.id"  class="btn  btn-primary v-btn-w"> 详情</a></td>\
+                            <td  class="text-center">{{ item.inspectDate }}</td>\
+                            <td  class="text-center">{{ item.notes }}</td>\
                         </tr>\
                       </tbody>\
                   </table>', 

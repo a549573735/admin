@@ -25,9 +25,6 @@
                             </div>
 
 
-
-
-
                             <div class="col-md-4 text-right o-pd clearfix">
                             <div class="v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">建议</button>
@@ -38,7 +35,8 @@
 
                                             <label class="col-md-3 control-label " for="val-suggestions">建议:</label>
                                             <div class="col-md-7 o-pd">
-                                                <textarea class="form-control" name="val-suggestion"  rows="8"  ></textarea>
+                                                <textarea class="form-control" id="val-suggestion"  rows="8"  ></textarea>
+                                                <p class="v-msg"></p>
                                             </div>
                                         </div>
                                     
@@ -52,11 +50,6 @@
 
 
 
-
-
-
-
-
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle"  type="button">约谈</button>
                                  <div class="v-modal-min">
@@ -66,8 +59,8 @@
                                                 <label class="col-md-3 control-label v-min-fz">约谈时间:</label>
                                                 
                                                 <div class="col-md-5 o-pd">
-                                                  <select class="form-control "  name="date-interview">
-                                                            <option value="0">请选择</option>
+                                                  <select class="form-control " id="select-interview" name="date-interview">
+                                                       
                                                              <option value="1">一天</option>
                                                              <option value="2">二天</option>
                                                              <option value="3">三天</option>
@@ -79,7 +72,8 @@
 
                                             <label class="col-md-3 control-label " for="val-suggestions">备注:</label>
                                             <div class="col-md-7 o-pd">
-                                                <textarea class="form-control"  name="val-interview" rows="8" ></textarea>
+                                                <textarea class="form-control" id="val-interview"  name="val-interview" rows="8" ></textarea>
+                                                <p class="v-msg"></p>
                                             </div>
                                         </div>
                                     
@@ -93,10 +87,6 @@
 
 
 
-
-
-
-
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle " type="button">预约</button>
                                 <div class="v-modal-min">
@@ -106,8 +96,8 @@
                                                 <label class="col-md-3 control-label v-min-fz">预约时间:</label>
                                                 <div class="col-md-7 o-pd">
                                                   <div class="col-md-7 o-pd">
-                                                    <input class="js-datepicker form-control" data-date-format="yyyy/mm/dd/" type="text" name="date-appointment"  placeholder="mm/dd/yy">
-
+                                                    <input class="js-datepicker form-control" data-date-format="yyyy/mm/dd/" type="text"  id="date-appointment"  placeholder="mm/dd/yy">
+                                                   
                                                     </div>
                                                 </div>
                                             </form>
@@ -118,6 +108,7 @@
                                             <label class="col-md-3 control-label " for="val-suggestions">备注:</label>
                                             <div class="col-md-7 o-pd">
                                                 <textarea class="form-control" id="val-appointment" name="val-suggestions" rows="8" placeholder=""></textarea>
+                                                 <p class="v-msg"></p>
                                             </div>
                                         </div>
                                     

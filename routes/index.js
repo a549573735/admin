@@ -31,7 +31,6 @@ var config=require('../utils/config')
 	app.get('/admin/park', User.signRequired,  Admin.admin_park);             //单位管理  后台 园区 列表
     
      
-
 	
 	app.get('/user/role/list',User.signRequired,  User.user_role);			 //角色管理 编辑
     
@@ -51,24 +50,20 @@ var config=require('../utils/config')
 
 
 
-    
-   
-
 	app.post('/user/add/list',User.signRequired, User.user_add_list);   //动态传输 用户权限列表
 
     app.post('/user/admin/add',User.signRequired, User.Post_add_user);   //添加用户个人信息
 
     
+
     app.post('/delete/user',User.signRequired, User.delete_user);   //添加用户个人信息
 
     app.post('/put/user',User.signRequired, User.put_user);   //修改用户个人信息
-
 
     app.post('/user/add/role',User.signRequired, User.add_role);      //增加 角色 权限
 
     
 
-	
     app.get('/organize/market',User.signRequired,  Organize.organize_market);         //   区局进入 市车所 
     
     app.get('/organize/architecture',User.signRequired, Organize.architecture)     //组织架构
@@ -99,14 +94,19 @@ var config=require('../utils/config')
 
 
 
+
 	app.get('/suggestion/list',User.signRequired,  Index.suggestion);   //行政建议列表
 
 	app.get('/api/suggestion/list',User.signRequired,  Index.api_suggestion);   //行政建议列表
+
+	app.post('/api/suggestion/msg',User.signRequired,  Index.api_suggestion_msg);   //行政建议
 
 
 	app.get('/interview/list',User.signRequired,  Index.interview);    //行政约谈列表
 
 	app.get('/api/interview/list',User.signRequired,  Index.api_interview);    //行政约谈列表
+
+    app.post('/api/interview/msg',User.signRequired, Index.api_interview_msg);    //行政约谈列表
 
 
 
@@ -114,7 +114,10 @@ var config=require('../utils/config')
 
 	app.get('/api/appointment/list',User.signRequired,  Index.api_appointment);  //
 
- 
+    app.post('/api/appointment/msg',User.signRequired,  Index.api_appointment_msg);   //预约列表
+
+
+
 
     app.get('/park/all/:id', User.signRequired, Park.parkAll); 	
 

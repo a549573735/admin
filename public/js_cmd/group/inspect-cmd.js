@@ -18,7 +18,7 @@ define(function (require, exports, module) {
                                     type: "GET",   //请求方式
                                     success: function(data) {
                                         //请求成功时处理
-                                  console.log(data)
+                                  console.log(JSON.stringify(data))
                                         if(data.success){
                                        
                                             dataList=data.content
@@ -34,7 +34,7 @@ define(function (require, exports, module) {
                                 });
                                  return dataList     
                             }(),
-                           style:['25%','100px','100px','15%','auto'],
+                           style:['23%','100px','100px','20%','auto'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],
@@ -46,22 +46,22 @@ define(function (require, exports, module) {
                 },
                 methods: {
 
-                   getContent:function (){
+                     getContent:function (){
                           var that=this;
                           var form= {
                               "page":this.page||0,
                               "size":15,
-                              "type":$('input[name=type]').val(),
-                              "market":$('input[name=market]').val(),
+                              "type":$('#selectType').val(),
+                              "market":$('#select_market').val(),
                               "company":$('input[name=company]').val(),
-                              "park":$('input[name=park]').val(),
+                              "park":$('#select_park').val(),
                               "from":$('input[name=from]').val(),
                               "to":$('input[name=to]').val()
                               }
 
                           $.get('/api/inspect/list',form).then(function (data){
 
-                              that.dataList=ata.content
+                              that.dataList.content=data.content
                           })   
 
                    }

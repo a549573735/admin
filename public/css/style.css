@@ -163,9 +163,10 @@ nav{float:left; text-align:center;}
 
 .details-title{ width: 140px; display: inline-block; white-space:pre-line}
 
+.v-msg{ text-align: left;  padding-top: 10px; display: none;}
 
-
-
+.v-sucess{ color: #42ff00; }
+.v-error{ color: #f84949; }
 
 
 

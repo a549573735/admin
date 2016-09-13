@@ -28,7 +28,10 @@
           this.inputDate();
           this.minModal();
           this.setNavActive();
-          this.appointment();  
+          this.sendMessage('.suggestion-btn','#val-suggestion',null,'/api/suggestion/msg');    //建议
+          this.sendMessage('.interview-btn','#val-interview','#select-interview','/api/interview/msg');    //约谈
+          this.sendMessage('.appointment-btn','#val-appointment',null,'/api/appointment/msg','#date-appointment');    // 预约
+
     }
 
     Common.prototype.listDown=function (obj){
@@ -94,9 +97,11 @@
     Common.prototype.minModal=function () {
 
          this.uiInit.$lMinBtn.on('click',function (){
+            $(this).closest('.v-item-btn').find('.v-msg').hide()
+            $(this).closest('.v-item-btn').find('textarea').val('')
              this.bclick=!this.bclick;
             if(this.bclick){
-
+             
               $(this).next().show().animate({opacity:'1'})
 
             }else {
@@ -112,53 +117,74 @@
 
     Common.prototype.setNavActive=function () {
        
-       var href=window.location.pathname;
-       var query=window.location.search;
-       
-       var view= $.query.get('view')
+         var href=window.location.pathname;
+         var query=window.location.search;
+         
+         var view= $.query.get('view')
 
-       if(href=='/user/admin/add'){
-           href="/user/edit/list"
-       }else if(view){          //reg.test(href)
-           href="/organize/company"
-       }
+         if(href=='/user/admin/add'){
+             href="/user/edit/list"
+         }else if(view){          //reg.test(href)
+             href="/organize/company"
+         }
 
-         this.uiInit.$lNav.find('li a').each(function (index,val){
-              
-               if($(val).attr('href')==href){
-                   $(val).addClass('active');
-                    if($(val).parent()[0].tagName!=='LI'){
-                        $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')
-                         $(val).parent().parent().addClass('open')
-                    }
-               }
+           this.uiInit.$lNav.find('li a').each(function (index,val){
+                
+                 if($(val).attr('href')==href){
+                     $(val).addClass('active');
+                      if($(val).parent()[0].tagName!=='LI'){
+                          $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')
+                           $(val).parent().parent().addClass('open')
+                      }
+                 }
 
 
-         })
+           })
     }
 
 
-  Common.prototype.appointment=function () {
+  Common.prototype.sendMessage=function (obj,textarea,select,href,date) {
 
+        $(obj).on('click',function(){
+             
+              var id=$.query.get('id')
+              var type=$.query.get('view').toUpperCase()
+              var targetList=[];
+            
+              $('#tables').find('input[type=checkbox]:checked').each(function (index,val){
+                    targetList.push($(val).val())
+              })
+              console.log(targetList)
 
-        //$('.suggestion_btn')
-
-        //$('interview_btn')
-
-        $('.appointment-btn').on('click',function(){
-
+              var _type=$('#tables').find('input[type=checkbox]:checked').attr('data-type')
               var form={
-
+                  suggestion:$(textarea).val(),
+                  target:targetList.length>0?targetList:id,
+                  type:_type?_type:type,
+                  period:$(select).val(),
+                  inspectDate:$(date).val(),
+                  notes:$(textarea).val()
               }
-              $('#tables').find('input[type=checkbox]:checked')
+              console.log(form)
+              var that=this
 
+             $.post(href,form).then(function (data){
 
+                    if(data.success){
+                       $(that).closest('.v-modal-min').find('.v-msg').html('提交成功').show()
+                    }else {
+                       $(that).closest('.v-modal-min').find('.v-msg').html(data.errMessage).show()
+                      
+                    }
+             })
         })
-
-
-   
-
   }
+
+
+
+
+
+
 
 
 //checkbox  uiHelperTableToolsCheckable();

@@ -51,21 +51,20 @@ define(function (require, exports, module) {
                           var form= {
                               "page":this.page||0,
                               "size":15,
-                              "type":$('input[name=type]').val(),
-                              "market":$('input[name=market]').val(),
+                              "type":$('#selectType').val(),
+                              "market":$('#select_market').val(),
                               "company":$('input[name=company]').val(),
-                              "park":$('input[name=park]').val(),
+                              "park":$('#select_park').val(),
                               "from":$('input[name=from]').val(),
                               "to":$('input[name=to]').val()
                               }
 
                           $.get('/api/interview/list',form).then(function (data){
 
-                              that.dataList=ata.content
+                              that.dataList.content=data.content
                           })   
 
                    }
-
 
 
                 },

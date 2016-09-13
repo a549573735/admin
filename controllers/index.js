@@ -31,6 +31,7 @@ exports.publicity = function(req, res, next) {
 }
 
 
+
 exports.api_publicity=function (req,res,next){
      var date=new Date()
      var time=tools.setForm()
@@ -42,10 +43,10 @@ exports.api_publicity=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park||req.session.user.content.id,
               "from":req.query.from||req.body.from||time.from,
-              "to":req.query.from||req.body.from||time.to
+               "to":req.query.to||req.body.to||time.to
               }
 
-    api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
+    api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -54,8 +55,31 @@ exports.api_publicity=function (req,res,next){
              res.json(data)
     })
 
+}
+
+
+
+exports.api_publicity_msg=function (req,res,next){
+
+     var form=req.body;
+
+        form.user=req.session.user.content.displayName
+        form.target=req.body['target[]']
+      
+
+       
+
+        api_services.commonRequest('api/app/publicity/add','POST',form).then(function (dataSelect){
+                 console.log(dataSelect)
+                 res.json(dataSelect)
+
+        }).catch(function (data){
+                 console.log(data)
+                 res.json(data)
+        })
 
 }
+
 
 
 
@@ -81,11 +105,12 @@ exports.api_inspect=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park||req.session.user.content.id,
               "from":req.query.from||req.body.from||time.from,
-              "to":req.query.from||req.body.from||time.to
+              "to":req.query.to||req.body.to||time.to
               }
 
+
     api_services.commonRequest('api/app/inspect/list','POST',form).then(function (dataSelect){
-             console.log(dataSelect)
+             console.log(dataSelect.content)
              res.json(dataSelect)
 
     }).catch(function (data){
@@ -98,11 +123,16 @@ exports.api_inspect=function (req,res,next){
 
 
 
+
+
+
+
 exports.suggestion = function(req, res, next) {        //行政建议列表
 
    res.render('pages/suggestion', { title: 'Express',data:'123123' });
 
 }
+
 
 
 
@@ -117,10 +147,10 @@ exports.api_suggestion=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park||req.session.user.content.id,
               "from":req.query.from||req.body.from||time.from,
-              "to":req.query.from||req.body.from||time.to
+               "to":req.query.to||req.body.to||time.to
               }
 
-    api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
+    api_services.commonRequest('api/app/suggestion/list','POST',form).then(function (dataSelect){
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -132,6 +162,27 @@ exports.api_suggestion=function (req,res,next){
 
 }
 
+
+
+
+exports.api_suggestion_msg=function (req,res,next){
+   var form=req.body;
+
+    form.user=req.session.user.content.displayName
+    form.target=req.body['target[]']
+
+   
+
+    api_services.commonRequest('api/app/suggestion/add','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
+}
 
 
 
@@ -155,7 +206,7 @@ exports.api_interview=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park||req.session.user.content.id,
               "from":req.query.from||req.body.from||time.from,
-              "to":req.query.from||req.body.from||time.to
+               "to":req.query.to||req.body.to||time.to
               }
 
     api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
@@ -169,6 +220,36 @@ exports.api_interview=function (req,res,next){
 
 
 }
+
+exports.api_interview_msg=function (req,res,next){
+
+     var form=req.body;
+     form.targets=[];   
+     form.user=req.session.user.content.displayName;
+     var data=req.body['target[]']||req.body.target;
+      if(typeof data =='string'){
+        form.targets.push(data)
+      }else {
+        form.targets=data
+      }
+      console.log(form.targets)
+
+    api_services.commonRequest('api/app/interview/add','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
+
+
+}
+
+
+
+
 
 
 
@@ -184,6 +265,7 @@ exports.appointment = function(req, res, next) {
 
 
 
+
 exports.api_appointment=function (req,res,next){
      var date=new Date()
      var time=tools.setForm()
@@ -195,7 +277,7 @@ exports.api_appointment=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park||req.session.user.content.id,
               "from":req.query.from||req.body.from||time.from,
-              "to":req.query.from||req.body.from||time.to
+               "to":req.query.to||req.body.to||time.to
               }
 
     api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
@@ -209,5 +291,45 @@ exports.api_appointment=function (req,res,next){
 
 
 }
+
+
+
+
+exports.api_appointment_msg=function (req,res,next){
+   var form=req.body;
+
+    form.user=req.session.user.content.displayName
+    // form.target=[]
+
+    form.target=req.body['target[]']||req.body.target;
+
+      // if(typeof data =='string'){
+      //   form.target.push(data)
+      // }else {
+      //   form.target=data
+      // }
+
+    
+  
+   
+    api_services.commonRequest('api/app/appointment/add','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
+}
+
+
+
+
+
+
+
+
+
 
 
