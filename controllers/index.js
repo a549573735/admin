@@ -169,7 +169,7 @@ exports.api_suggestion_msg=function (req,res,next){
    var form=req.body;
 
     form.user=req.session.user.content.displayName
-    form.target=req.body['target[]']
+    form.target=req.body['target[]']||req.body.target
 
    
 
