@@ -28,7 +28,7 @@
           this.inputDate();
           this.minModal();
           this.setNavActive();
-
+          this.appointment();  
     }
 
     Common.prototype.listDown=function (obj){
@@ -136,6 +136,29 @@
 
          })
     }
+
+
+  Common.prototype.appointment=function () {
+
+
+        //$('.suggestion_btn')
+
+        //$('interview_btn')
+
+        $('.appointment-btn').on('click',function(){
+
+              var form={
+
+              }
+              $('#tables').find('input[type=checkbox]:checked')
+
+
+        })
+
+
+   
+
+  }
 
 
 //checkbox  uiHelperTableToolsCheckable();

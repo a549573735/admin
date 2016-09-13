@@ -11,21 +11,20 @@
                 </div>
                 <div class="col-md-12 o-pd quju">
                   <ul>
-                    <li><div class="quju_sp1">奉贤青村食品药品<br>监督管理所</div></li>
-                    <li><div class="quju_sp1">奉贤柘林食品药品<br>监督管理所</div></li>
-                    <li><div class="quju_sp1">奉贤庄行镇食品药品<br>监督管理所</div></li>
-                    <li><div class="quju_sp1">奉贤奉浦食品药品<br>监督管理所</div></li>
-                    <li><div class="qiju_sp2">更多市场所</div></li>
-                    <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（19家）</div></li>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（24家）</div></li>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（20家）</div></li>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（21家）</div></li>
+                     <% for(var i=0;i<4;i++){%>                   
+                         <li><div class="quju_sp1"><a href="/organize/park?id=<%=data.content[i].id%>"><%=data.content[i].name%></a></div></li>
+                    <%}%>
+                  
+                    <li><div class="qiju_sp2"><a href="/organize/market">更多市场所</a></div></li>
+                     <% for(var i=0;i<4;i++){%>   
+                       <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（<%=data.content[i].parkCount%>家）</div></li>
+                    <%}%>
                       <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（203家）</div></li>  
-                    <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（220家）</div></li>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（210家）</div></li>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（190家）</div></li>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（240家）</div></li>
-                      <li><div class="qiju_sp3">园区详情</div><div class="qiju_sp4">（1800家）</div></li>                                       
+                    <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（220家）</div></li>
+                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（210家）</div></li>
+                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（190家）</div></li>
+                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（240家）</div></li>
+                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（1800家）</div></li>                                       
                   </ul>
                 </div>
             </div>
@@ -38,17 +37,6 @@
 
 <script>
 
-    var navTabs=$('#v-nav-tab');
-    var contentTabs=$('.v-tab-content');
-
-    navTabs.on('click','li',function (){
-
-        $(this).addClass('active').siblings().removeClass('active');
-        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
-
-    })
-
-    uiHelperTableToolsCheckable();
 
 </script>
 

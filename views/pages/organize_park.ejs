@@ -9,7 +9,7 @@
                 <div class="row clearfix">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="col-md-1 o-pd-r v-label-s" for="val-skill">园区：</label>
+                            <label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>
                             <div class="col-md-2 o-pd">
                                 <select class="form-control"  id="select_park" name="val-skill">
                                     <option value="0">请选择</option>
@@ -23,6 +23,15 @@
                             <div class="col-md-2 o-pd">
                                <input type="text" class="form-control select-parkname" >
                             </div>
+
+
+
+
+
+
+
+
+
                             <div class="col-md-4 text-right o-pd clearfix">
                             <div class="v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">建议</button>
@@ -33,74 +42,100 @@
 
                                             <label class="col-md-3 control-label " for="val-suggestions">建议:</label>
                                             <div class="col-md-7 o-pd">
-                                                <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="8" placeholder=""></textarea>
+                                                <textarea class="form-control" name="val-suggestion"  rows="8"  ></textarea>
                                             </div>
                                         </div>
                                     
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd v-btn-mar">
-                                            <button class="btn btn-sm btn-primary v-t-b " type="submit">提交</button>
+                                            <button class="btn btn-sm btn-primary v-t-b suggestion-btn" type="submit">提交</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
+
+
+
+
+
 
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle"  type="button">约谈</button>
                                  <div class="v-modal-min">
                                     <div class="form-group clearfix o-mg">
                                         <div class="form-group clearfix">
-                                            <form>
+                                       
                                                 <label class="col-md-3 control-label v-min-fz">约谈时间:</label>
-                                                <div class="col-md-7 o-pd">
-                                                    <input class="js-datepicker form-control" data-date-format="yyyy/mm/dd/" type="text" placeholder="mm/dd/yy">
-                                                </div>
-                                            </form>
+                                                
+                                                <div class="col-md-5 o-pd">
+                                                  <select class="form-control "  name="date-interview">
+                                                            <option value="0">请选择</option>
+                                                             <option value="1">一天</option>
+                                                             <option value="2">二天</option>
+                                                             <option value="3">三天</option>
+                                                   </select>
+                                               </div>
                                         </div>
 
                                         <div class="form-group ">
 
-                                            <label class="col-md-3 control-label " for="val-suggestions">建议:</label>
+                                            <label class="col-md-3 control-label " for="val-suggestions">备注:</label>
                                             <div class="col-md-7 o-pd">
-                                                <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="8" placeholder=""></textarea>
+                                                <textarea class="form-control"  name="val-interview" rows="8" ></textarea>
                                             </div>
                                         </div>
                                     
 
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd v-btn-mar">
-                                            <button class="btn btn-sm btn-primary v-t-b " type="submit">提交</button>
+                                            <button class="btn btn-sm btn-primary v-t-b interview-btn" type="submit">提交</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
+
+
+
+
+
+
                             <div class=" v-item-btn">
-                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">预约</button>
+                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle " type="button">预约</button>
                                 <div class="v-modal-min">
                                     <div class="form-group clearfix o-mg">
                                         <div class="form-group clearfix">
                                             <form>
                                                 <label class="col-md-3 control-label v-min-fz">预约时间:</label>
                                                 <div class="col-md-7 o-pd">
-                                                    <input class="js-datepicker form-control" data-date-format="yyyy/mm/dd/" type="text" placeholder="mm/dd/yy">
+                                                  <div class="col-md-7 o-pd">
+                                                    <input class="js-datepicker form-control" data-date-format="yyyy/mm/dd/" type="text" name="date-appointment"  placeholder="mm/dd/yy">
+
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
 
                                         <div class="form-group ">
 
-                                            <label class="col-md-3 control-label " for="val-suggestions">建议:</label>
+                                            <label class="col-md-3 control-label " for="val-suggestions">备注:</label>
                                             <div class="col-md-7 o-pd">
-                                                <textarea class="form-control" id="val-suggestions" name="val-suggestions" rows="8" placeholder=""></textarea>
+                                                <textarea class="form-control" id="val-appointment" name="val-suggestions" rows="8" placeholder=""></textarea>
                                             </div>
                                         </div>
                                     
 
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd v-btn-mar">
-                                            <button class="btn btn-sm btn-primary v-t-b " type="submit">提交</button>
+                                            <button class="btn btn-sm btn-primary v-t-b appointment-btn" type="submit">提交</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+
+
+
 
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle " @click="getParkList()" type="button">查询</button>
@@ -114,7 +149,7 @@
 
             <div class="row v-table" >
                 <div class="col-md-12">
-                    <div class="block">
+                    <div class="block" id="tables">
                         <check-table-list :datalist="tableList"  ></check-table-list>
                     </div>
                 </div>

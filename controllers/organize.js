@@ -100,8 +100,8 @@ exports.organize_market = function(req, res, next) {
 exports.organize_park_id = function(req, res, next) {
 
     var id=req.query.id||req.session.user.content.id;
-    
-    api_services.commonRequest('api/app/park/brief/'+id,'GET',null).then(function (dataSelect){
+ 
+    api_services.commonRequest('api/app/market/all','GET',null).then(function (dataSelect){
           
           console.log(dataSelect)
 
@@ -141,8 +141,17 @@ exports.api_organize_park_list=function(req, res, next) {
 
 exports.architecture = function(req, res, next) {
 
-   res.render('pages/architecture', { title: 'Express',data:'123123' });
 
+     api_services.commonRequest('api/app/organize/architecture','GET',null).then(function (dataSelect){
+                       
+                         console.log(dataSelect)
+                         res.render('pages/architecture',{data:dataSelect});
+
+                 
+     }).catch(function (data){
+
+                         console.log(data)
+     })
 }
 
 
