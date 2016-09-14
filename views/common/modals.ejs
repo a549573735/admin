@@ -31,130 +31,62 @@
 
                 <div class="row v-table">
                     <div class="col-md-12">
-                        <div class="block" id="c-table-checkbox">
-                            <table class="table js-table-checkable  table-hover table-borderless">
+                        <div class="block" v-cloak>
+                            <table class="table js-table-checkable  table-hover table-borderless"id="tables-all">
                                 <thead>
                                 <tr class="v-table-tr">
                                     <th class="text-center" style="width: 50px;"></th>
-                                    <th class="text-center" style="width: 22%">企业名称</th>
-                                    <th class="text-center" style="width: 150px">检查状态</th>
-                                    <th class="text-center" style="width: 150px;">检查员</th>
-                                    <th class="text-center" style="width: 15%">检查日期</th>
-                                    <th class="text-center">备注</th>
+                                    <th class="text-center " v-for="item in modalList.title" v-bind:style="{ width: modalList.style[$index] }">{{item}}</th>
                                 </tr>
                                 </thead>
                                 <tbody class="v-tabs-check">
-                                <tr>
+                                <tr v-for="item in modalList.content">
                                     <td class="text-center">
                                         <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox" id="row_3" name="row_3"><span></span>
+                                            <input type="checkbox" data-type="COMPANY" :value="item.id"><span></span>
                                         </label>
                                     </td>
-                                    <td class="text-center">上海医德医疗设备有限公司</td>
-                                    <td class="text-center">合格</td>
-                                    <td class="text-center">王先生</td>
+
+                                    <td class="text-center">{{item.name}}</td>
+                                    <td class="text-center">{{item.address}}</td>
+                                    <td class="text-center">{{item.phone}}</td>
                                     <td class="text-center">
-                                        2016-06-29
+                                     {{item.certificate}}
                                     </td>
                                     <td class="text-center">
-                                        该公司的销售及供应商<a href="javascript:;"  class="btn btn-link"> 详情</a>
+                                        <span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;" @click="showMsg($event) " class="btn-link">详情</a>
+                                    </td>
+                                    <td class="text-center">
+                                       {{item.expireDate}}
                                     </td>
                                 </tr>
 
-                                <tr>
-                                    <td class="text-center">
-                                        <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox"  name="row_3"><span></span>
-                                        </label>
-                                    </td>
-                                    <td class="text-center">上海医德医疗设备有限公司</td>
-                                    <td class="text-center">合格</td>
-                                    <td class="text-center">王先生</td>
-                                    <td class="text-center">
-                                        2016-06-29
-                                    </td>
-                                    <td class="text-center">
-                                        该公司的销售及供应商<a href="javascript:;" class="btn-link"> 详情</a>
-                                    </td>
-                                </tr>
-
-                                <tr>
-                                    <td class="text-center">
-                                        <label class="css-input css-checkbox css-checkbox-primary">
-                                            <input type="checkbox"  name="row_3"><span></span>
-                                        </label>
-                                    </td>
-                                    <td class="text-center">上海医德医疗设备有限公司</td>
-                                    <td class="text-center">合格</td>
-                                    <td class="text-center">王先生</td>
-                                    <td class="text-center">
-                                        2016-06-29
-                                    </td>
-                                    <td class="text-center">
-                                        该公司的销售及供应商<a href="javascript:;" class="btn-link"> 详情</a>
-                                    </td>
-                                </tr>
-
+                            
                                 </tbody>
                             </table>
+                  
                            
-                         
-
-                            <div class="col-lg-12 "id="v-all-check">
+                        
+                            <div class="col-md-2 "  id="v-all-check">
                                 <label class="css-input css-checkbox css-checkbox-primary">
                                     <input type="checkbox"  name="row_3"><span></span>
                                 </label>
                                 <b class="v-all">全选</b>
-                                <button class="btn btn-primary btn-sm v-modal-yue" >约谈</button>
-                            </div>
-
-                            <div class="yema">
-                                <div class="yema_befor disabled">
-                                     <a href="javascript:;"class="btn btn-link" onclick="javascript:alert(1)" >上一页</a>     第</div>
-                                <nav>
-                                    <ul class="pagination pagination-sm">
-                                        <li class="disabled">
-                                            <a href="javascript:void(0)"><i class="fa fa-angle-double-left"></i></a>
-                                        </li>
-                                        <li class="active">
-                                            <a href="javascript:void(0)">1</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">2</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">3</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">4</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">5</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">6</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">7</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">8</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">9</a>
-                                        </li>
-                                        <li>
-                                            <a href="javascript:void(0)">...</a>
-                                        </li>
-
-                                        <li>
-                                            <a href="javascript:void(0)"><i class="fa fa-angle-double-right"></i></a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                                <div class="yema_end"> 页<a href="javascript:;" class="btn btn-link"  >下一页</a> <a href="javascript:;" class="btn btn-link">尾页</a></div>
-                            </div>
+                             </div>
+                            <div class="col-md-3 o-pd">
+                                      <select class="form-control " id="select-interview-all" name="date-interview">
+                                           
+                                                 <option value="3">三天内</option>
+                                                 <option value="7">七天内</option>
+                                                 <option value="10">十天内</option>
+                                       </select>
+                             </div>
+                             <div class="col-md-1 o-pd v-modal-min-all" >
+                                 <button class="btn btn-primary btn-sm v-modal-yue interview-btn-all">约谈</button>
+                                 <p class="" id="v-msg" ></p>
+                             </div>
                         </div>
+                          <v-pages :pagelist="modalList.page||1"> </v-pages>
                     </div>
                 </div>
 
@@ -284,6 +216,34 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal  用户 修改  弹框  -->
+
+
+
+<div class="modal fade " id="modal-details" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header o-nobor">
+                <button type="button" class="close v-tabs-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                <div class="row " v-cloak>
+                    <div class="col-md-12 col-lg-12" v-for="item in modalMsg.content.title">
+                          <div class="col-md-3 text-right v-modal-text">{{item}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0][modalMsg.content.keys[$index]]}}</div> 
+                    </div>
+                </div>
+            </div>
+             <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" :data-name="modalMsg.content.name"  data-target="#modal-fromleft" data-dismiss="modal" @click="getRelation($event,modalMsg.href)">关联账户</button>
+             </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal  详情页面  -->
+
+
+
+
 
 
 

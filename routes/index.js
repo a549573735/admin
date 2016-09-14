@@ -128,6 +128,17 @@ var config=require('../utils/config')
 	app.get('/market/brief',User.signRequired,Market.marketBriefAll)       //所有市场所 简介 用作调 select 
 
      
+
+
+
+
+
+
+
+
+    app.post('/api/app/company/by/product',User.signRequired,Organize.api_byProduct)       //关联接口 产品
+
+
 }
 
 

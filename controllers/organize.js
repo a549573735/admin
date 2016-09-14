@@ -191,12 +191,13 @@ exports.details = function(req, res, next) {
                 type:'search',
                 pagelist:1,
                 companyName:''
-   }
+           }
    var form={
       page:req.query.page||req.body.page||0,
       size:15,
       name:req.query.name||req.body.name||''
    }
+   //encodeURIComponent
 
    var date=new Date();
     form.from=req.query.from||req.body.from|| date.getFullYear()+'-'+tools.addZero(date.getMonth())+'-'+tools.addZero(date.getDate());
@@ -211,7 +212,11 @@ exports.details = function(req, res, next) {
                         console.log(dataSelect)
                          req.session.user.content.companyName=dataSelect.content.name;
                          data.data.content=dataSelect.content;
-                         res.render('pages/details', data );
+                         if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
                  }).catch(function (data){
                        console.log(data)
        })
@@ -229,7 +234,11 @@ exports.details = function(req, res, next) {
                                            data.data,
                                            dataSelect
                                            )
-                  res.render('pages/details',data);
+                   if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
                }).catch(function (data){
                   console.log(data)
         })
@@ -246,7 +255,11 @@ exports.details = function(req, res, next) {
                                          dataSelect
                                       )
     
-              res.render('pages/details',data);
+                      if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
              }).catch(function (data){
                    console.log(data)
         })
@@ -263,7 +276,11 @@ exports.details = function(req, res, next) {
                                          dataSelect
                                       )
     
-              res.render('pages/details',data);
+                         if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
              }).catch(function (data){
                    console.log(data)
        })
@@ -281,7 +298,11 @@ exports.details = function(req, res, next) {
                                          dataSelect
                                       )
     
-              res.render('pages/details',data);
+                       if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
              }).catch(function (data){
                    console.log(data)
       })
@@ -296,8 +317,12 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
-    
-              res.render('pages/details',data);
+  
+                        if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
              }).catch(function (data){
                    console.log(data)
       })
@@ -312,7 +337,11 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
-                       res.render('pages/details',data);
+                        if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
              }).catch(function (data){
                    console.log(data)
         })
@@ -323,12 +352,21 @@ exports.details = function(req, res, next) {
 
        api_services.commonRequest('api/app/company/'+id+'/product/aptitude/list','POST',form).then(function (dataSelect){
               console.log(dataSelect.content)
-                      tools.Interface_company({title:['产品名称','生产地址','产品规格','产品注册证号','注册证有效期'],
-                                         style: ['20%','20%','auto','20%','20%']},
+                      tools.Interface_company({
+                                         title:['产品名称','生产地址','产品规格','经营范围','产品注册证号','注册证有效期'],
+                                         style: ['15%','20%','15%','10%','auto','20%']},
                                          data.data,
                                          dataSelect
                                       )
-                       res.render('pages/details',data);
+                       
+                        data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+                        data.data.href='/api/app/company/by/product'   // 给关联 设置路由 
+
+                        if(req.query.api=='true'){
+                            res.json( data );
+                         }else {
+                            res.render('pages/details', data );
+                         }
              }).catch(function (data){
                    console.log(data)
        })
@@ -338,6 +376,66 @@ exports.details = function(req, res, next) {
 
 
 }
+
+
+
+
+
+
+
+
+
+//关联接口
+
+exports.api_byProduct = function(req, res, next) {
+
+
+      var name=encodeURI(req.body.name);
+
+
+       var form={
+              page:req.body.page||0,
+              size:15
+          }
+        //POST /api/app/company/by/product/{name}
+      console.log(name)
+        api_services.commonRequest('api/app/company/by/product/'+name,'POST',form).then(function (dataSelect){
+                 console.log(dataSelect)
+            
+
+               res.json(dataSelect)
+            
+
+
+        }).catch(function (data){
+
+                 console.log(data)
+                 res.json(data)
+        
+        })
+   
+
+
+
+
+}
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

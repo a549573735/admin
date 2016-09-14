@@ -7,6 +7,7 @@
        <div class="c-r" id="app" <%if(user.content.type=="COMPANY"){%> style=" width: 1000px; float: inherit;     margin: 0 auto;" <%}%>  >
                 
               <% include ../common/rightBtns.ejs %>
+              <% include ../common/modals.ejs %>
    
             <!--  测试 -->
                <div class="block" >
@@ -67,8 +68,6 @@
                                                   <input class="form-control" type="text"  name="from" placeholder="开始">
                                                   <span class="input-group-addon">~</span>
                                                   <input class="form-control" type="text" name="to" placeholder="结束">
-                                                 
-
                                               </div>
                                             <input class="form-control" type="hidden"  name="view" >
                                                   <input class="form-control" type="hidden"  name="id" >     
@@ -95,7 +94,7 @@
 
 
 <% include ../common/footer.ejs %>
-<% include ../common/modals.ejs %>
+
 
 <script>
 

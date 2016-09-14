@@ -20,13 +20,16 @@ define(function (require, exports, module) {
                                                   </thead>\
                                                   <tbody class="v-tabs-check">\
                                                      <tr v-for="item in datalist.content.content">\
-                                                        <td v-if="item.name" class="text-center">{{ item.name }}</td>\
+                                                        <td v-if="datalist.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} <div class="hover_table"> 查看资质</div>\
+                                                         </a></td>\
+                                                        <td v-if="!datalist.product" class="text-center">{{ item.name }}</td>\
                                                         <td v-if="item.address" class="text-center">{{ item.address }}</td>\
                                                         <td v-if="item.specification" class="text-center">{{ item.specification }}</td>\
                                                         <td v-if="item.registerNo" class="text-center">{{ item.registerNo }}</td>\
                                                         <td v-if="item.phone" class="text-center">{{ item.phone }}</td>\
                                                         <td v-if="item.certificate" class="text-center">{{ item.certificate }}</td>\
-                                                        <td v-if="item.businesses" class="text-center">{{ item.businesses }}</td>\
+                                                        <td v-if="item.businesses" class="text-center"><span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;"" @click="showMsg($event) " class="btn-link">详情</a></td>\
+                                                        <td v-if="item.registerNo" class="text-center"><span class="bus-msg">{{ item.registerNo }}</td>\
                                                         <td v-if="item.expireDate" class="text-center">{{ item.expireDate }}</td>\
                                                     </tr>\
                                                   </tbody>\
@@ -35,29 +38,49 @@ define(function (require, exports, module) {
                                     </div>\
                   </div></div>'
         , methods: {
-                // { id: '8aaf887b5700248c0157003c31220017',
-                //    name: '产品二',
-                //    producerId: '8aaf887b5700248c015700360cf00011',
-                //    businesses: '产品经营范围二',
-                //    specification: '5555555555',
-                //    registerNo: '33333333',
-                //    measurement: '12*12',
-                //    expireDate: '2018-09-09' }
+               showMsg:function (event){
+                       event.target.bclick=!event.target.bclick   
+                       if(event.target.bclick){ 
+                         console.log($(event.target))
+                         $(event.target).siblings('span').css('overflow','inherit')
+                         $(event.target).html('收起')
+                        /*  备注弹框  */
+                        }else {
+                           $(event.target).siblings('span').css('overflow','hidden')
+                           $(event.target).html('详情')
+                        }
+                   },
+                getModalMsg:function (event){
 
-                
-// businesses (string): 经营范围 ,
-// expireDate (string): 过期时间 ,
-// id (string, optional),
-// measurement (string, optional): 产品计量单位 ,
-// name (string): 产品名称 ,
-// producerId (string): 生产商ID ,
-// registerNo (string): 产品注册号 ,
-// specification (string): 规格
-// }
+                      var _id=$.query.get('id');
+                      var view=$.query.get('view')
+                      var _name=$(event.target).text().split(/\s+/g)[1]
+                      var that=this;
+                      
+                      $.get('/organize/details?view='+view+'&id='+_id+'&name='+_name+'&api=true').then(function (data){
+                          data.data.content.name=_name;
+                          that.$dispatch('send-modal-msg', data)
 
-
-
-            
+                      })
+                }    
         }
     })
-})                                    
+})        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

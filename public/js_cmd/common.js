@@ -28,9 +28,9 @@
           this.inputDate();
           this.minModal();
           this.setNavActive();
-          this.sendMessage('.suggestion-btn','#val-suggestion',null,'/api/suggestion/msg');    //建议
-          this.sendMessage('.interview-btn','#val-interview','#select-interview','/api/interview/msg');    //约谈
-          this.sendMessage('.appointment-btn','#val-appointment',null,'/api/appointment/msg','#date-appointment');    // 预约
+          this.sendMessage('.suggestion-btn','#tables','#val-suggestion',null,'/api/suggestion/msg',null,'.v-modal-min','.v-msg');    //建议
+          this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg');    //约谈
+          this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg');    // 预约
 
     }
 
@@ -143,20 +143,20 @@
     }
 
 
-  Common.prototype.sendMessage=function (obj,textarea,select,href,date) {
-
+  Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success) {
+      
         $(obj).on('click',function(){
              
               var id=$.query.get('id')
-              var type=$.query.get('view').toUpperCase()
+              var type="COMPANY"
               var targetList=[];
             
-              $('#tables').find('input[type=checkbox]:checked').each(function (index,val){
+              $(table).find('input[type=checkbox]:checked').each(function (index,val){
                     targetList.push($(val).val())
               })
               console.log(targetList)
 
-              var _type=$('#tables').find('input[type=checkbox]:checked').attr('data-type')
+              var _type=$(table).find('input[type=checkbox]:checked').attr('data-type')
               var form={
                   suggestion:$(textarea).val(),
                   target:targetList.length>0?targetList:id,
@@ -171,13 +171,18 @@
              $.post(href,form).then(function (data){
 
                     if(data.success){
-                       $(that).closest('.v-modal-min').find('.v-msg').html('提交成功').show()
+                       $(that).closest(parent).find(success).html('提交成功').show()
+                      alert('提交成功')
+
                     }else {
-                       $(that).closest('.v-modal-min').find('.v-msg').html(data.errMessage).show()
-                      
+                       $(that).closest(parent).find(success).html(data.errMessage).show()
+                  
+                        alert('提交失败'+data.errMessage)
                     }
              })
         })
+
+       
   }
 
 

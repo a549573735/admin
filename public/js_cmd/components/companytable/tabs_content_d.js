@@ -41,27 +41,24 @@ define(function (require, exports, module) {
                                     </div>\
                                 </div>\
                   </div>',
-        methods: {}
+        methods: {
+           showMsg:function (event){
+                       event.target.bclick=!event.target.bclick   
+                       if(event.target.bclick){ 
+                         console.log($(event.target))
+                         $(event.target).siblings('span').css('overflow','inherit')
+                         $(event.target).html('收起')
+                        /*  备注弹框  */
+                        }else {
+                           $(event.target).siblings('span').css('overflow','hidden')
+                           $(event.target).html('详情')
+                        }
+                   }
+
+
+        }
 
     })
-
-                    //['采购订单号','采购日期','供货企业','供货名称','经办人','采购随行单','备注']
-
-//  {
-// amount (number): 开票金额 ,
-// customer (string): 客户 ,
-// customerId (string): 客户ID ,
-// id (string, optional),
-// invoiceDate (string): 开票日期 ,
-// invoiceFile (string): 发票影像 ,
-// invoiceNo (string): 发票单号 ,
-// invoiceType (string): 发票类别 ,
-// notes (string): 备注 ,
-// operator (string): 经办人 ,
-// receiver (string): 收票人（寄给客户的指定接收人或自己接收人) ,
-// taxNo (string): 税号 ,
-// type (string): 采购或销售 = ['SALE', 'PURCHASE']
-// }
 
 
 

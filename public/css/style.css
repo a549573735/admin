@@ -100,7 +100,7 @@ a{ text-decoration:none;}
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.yema{ width:100%; float:left; line-height:77px; text-align:left; padding-left:24%;}
+.yema{ width:100%; float:left; line-height:77px; text-align:left; padding-left:30%;}
 .yema_befor{ float:left; text-align:right;}
 .yema_end{ float: left; }
 .disabled a:hover{ cursor: not-allowed; }
@@ -167,6 +167,7 @@ nav{float:left; text-align:center;}
 
 .v-sucess{ color: #42ff00; }
 .v-error{ color: #f84949; }
+#v-all-check{ width: 110px; }
 
 
 
