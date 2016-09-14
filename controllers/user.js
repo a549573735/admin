@@ -329,7 +329,7 @@ exports.delete_user_role = function (req,res,next){
 
 
 
-//  GET /api/app/role/{type}/list
+
 
 
  

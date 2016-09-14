@@ -23,6 +23,7 @@ exports.marketAll=function (req,res,next){
 }
 
 
+
 exports.marketBriefAll=function (req,res,next){
     
  

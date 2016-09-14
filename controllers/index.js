@@ -129,7 +129,7 @@ exports.api_inspect=function (req,res,next){
 
 exports.suggestion = function(req, res, next) {        //行政建议列表
 
-   res.render('pages/suggestion', { title: 'Express',data:'123123' });
+   res.render('pages/suggestion');
 
 }
 
@@ -252,10 +252,6 @@ exports.api_interview_msg=function (req,res,next){
 
 
 
-
-
-
-
 exports.appointment = function(req, res, next) {
 
    res.render('pages/appointment');
@@ -309,8 +305,6 @@ exports.api_appointment_msg=function (req,res,next){
       //   form.target=data
       // }
 
-    
-  
    
     api_services.commonRequest('api/app/appointment/add','POST',form).then(function (dataSelect){
              console.log(dataSelect)
