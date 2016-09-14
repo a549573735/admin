@@ -17,14 +17,15 @@
                                 <div class="v-modal-min">
                                     <div class="form-group clearfix o-mg">
                                         <div class="form-group ">
-                                            <label class="col-md-3 control-label " for="val-suggestions">原因:</label>
+                                            <label class="col-md-3 control-label " >原因:</label>
                                             <div class="col-md-8 o-pd">
-                                                <textarea class="form-control"  name="val-suggestions" rows="8" placeholder=""></textarea>
+                                                <textarea class="form-control"  id="val-qualified"  rows="8" placeholder=""></textarea>
+                                                <p class="v-msg"></p>
                                             </div>
                                         </div>
 
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd">
-                                            <button class="btn btn-sm btn-primary v-t-b" type="submit">提交</button>
+                                            <button class="btn btn-sm btn-primary v-t-b inspect-qualified-btn" data-status="FAIL" type="submit">提交</button>
                                         </div>
                                     </div>
                                 </div>
@@ -33,7 +34,7 @@
 
 
                             <div class=" v-item-btn">
-                                <button class="btn btn-minw btn-primary v-tabs-btn"   type="button">合格</button>
+                                <button class="btn btn-minw btn-primary v-tabs-btn inspect-qualified-btn2"  data-status="PASS" type="button">合格</button>
                             </div>
 
 

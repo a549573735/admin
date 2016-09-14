@@ -117,6 +117,10 @@ var config=require('../utils/config')
     app.post('/api/appointment/msg',User.signRequired,  Index.api_appointment_msg);   //预约列表
 
 
+   
+
+
+   app.post('/api/inspect/qualified/msg',User.signRequired,  Index.api_inspect_qualified_msg);   //预约列表
 
 
     app.get('/park/all/:id', User.signRequired, Park.parkAll); 	

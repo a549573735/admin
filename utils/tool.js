@@ -57,7 +57,7 @@ Services.prototype.Interface_company=function (obj,data,dataSelect){
 
 
 
-Services.prototype.setForm=function (form){
+Services.prototype.setForm=function (){
     var date=new Date();
 
     var from= date.getFullYear()+'-'+this.addZero(date.getMonth())+'-'+this.addZero(date.getDate());

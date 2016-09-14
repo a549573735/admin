@@ -24,8 +24,6 @@
                                                      ]}
                ],
             backStage:[
-              {href:'/admin/interface/list',title:'接口管理'},
-
               {href:'javascript:;',title:'单位管理',list:[
                                                          
                                                         {href:"/admin/market",title:'市场所',code:'same_level_manage'},

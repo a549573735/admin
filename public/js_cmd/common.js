@@ -32,6 +32,8 @@
           this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg');    //约谈
           this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg');    // 预约
 
+          this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg');  //不合格  
+          this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null); 
     }
 
     Common.prototype.listDown=function (obj){
@@ -144,7 +146,7 @@
 
 
   Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success) {
-      
+      var self=this;
         $(obj).on('click',function(){
              
               var id=$.query.get('id')
@@ -163,7 +165,9 @@
                   type:_type?_type:type,
                   period:$(select).val(),
                   inspectDate:$(date).val(),
-                  notes:$(textarea).val()
+                  notes:$(textarea).val(),
+                  status:$(this).attr('data-status')
+                 
               }
               console.log(form)
               var that=this
@@ -181,13 +185,22 @@
                     }
              })
         })
-
-       
   }
 
 
+Common.prototype.addZero=function (obj){
+
+   return obj=obj>9?obj:'0'+obj;
+}
 
 
+Common.prototype.setForm=function (){
+    var date=new Date();
+
+    var from= date.getFullYear()+'-'+this.addZero(date.getMonth())+'-'+this.addZero(date.getDate());
+    var to=date.getFullYear()+'-'+this.addZero((date.getMonth()+1))+'-'+this.addZero(date.getDate());
+  return { from:from,to:to}
+}
 
 
 
