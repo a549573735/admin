@@ -243,6 +243,14 @@ exports.user_admin_add=function(req, res, next) {
  }
 
 
+
+
+
+
+
+
+
+
   exports.add_role=function (req,res,next){
       
        var data={
@@ -271,6 +279,46 @@ exports.user_admin_add=function(req, res, next) {
        })
 
  }
+
+
+
+
+/*  修改角色权限 */
+exports.modify_role=function (req,res,next){
+
+      var data={
+            name:req.body.name,
+            permissionIds:[],
+            type:req.body.type,
+            id:req.body.id
+          
+       }
+
+//PUT /api/app/role/modify
+
+      if(typeof req.body['permissionIds[]'] =='string'){
+            data.permissionIds.push(req.body['permissionIds[]'])
+      
+        }else {
+           data.permissionIds=req.body['permissionIds[]']
+        }     
+
+      api_services.commonRequest('api/app/role/modify',"PUT",data).then(function (data){
+             
+                  res.json(data)
+
+       }).catch(function (err){
+
+                  res.json({msg:'服务器用户更新错误',state:false})
+
+       })
+
+
+
+}
+
+
+
 
 
 

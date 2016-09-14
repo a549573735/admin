@@ -18,6 +18,7 @@ define(function (require, exports, module) {
 	         	page:'',
 	         	href:'',
 	         	name:'',
+	         	type:'',
 
 	         },
 	         methods:{
@@ -40,6 +41,7 @@ define(function (require, exports, module) {
  					 var that=this;	
  					 this.href=href;
  					 this.name=name;
+ 					 console.log(href)
 	 
  					 $.post(href,{name:name,page:this.page}).then(function (data){
 
@@ -79,7 +81,12 @@ define(function (require, exports, module) {
 	         	"send-modal-msg":function (data){
 	         	
 	         		var reg=/id$/i
+	         		this.href=data.data.href
+	  				this.type=data.data.type
+	          
+	         		if(data.data.content.content.length<=0)return 
 	         		var keys=Object.keys(data.data.content.content[0]);
+	         		
 	         		console.log(keys)
 	         		for(var i=0;i<keys.length;i++){
 	         			if(reg.test(keys[i])){
@@ -87,9 +94,18 @@ define(function (require, exports, module) {
 	         			}
 	         		}
 	         		data.data.content.keys=keys;
-	         		data.data.content.title=['产品名称','经营范围','规格','产品注册号','产品计量单位','过期时间']
+
+	         		if(this.type=='product'){
+
+	         			data.data.content.title=['产品名称','经营范围','规格','产品注册号','产品计量单位','过期时间']
 	         		
-	         		this.modalMsg=data.data;	
+	         		}else{
+
+	         			data.data.content.title=['供应商名称','地址','电话号码','产品注册号','过期时间','经营范围']
+	         			
+	         		}
+	         		
+	         		this.modalMsg=data.data;
 	         		console.log(this.modalMsg.content.content[0].name)
 	         	},
 	         	"send-page":function (data){

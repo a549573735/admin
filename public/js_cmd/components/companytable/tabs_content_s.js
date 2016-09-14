@@ -8,6 +8,11 @@ define(function (require, exports, module) {
             mydata: [],
             datalist: []
         },
+        data:function (){
+          return {href:'',type:function (){
+                  return  $.query.get('view')
+          }()}
+        },
         template: '<div class="tab-pane">\
                                 <div class="row v-table">\
                                     <div class="col-md-12">\
@@ -20,8 +25,12 @@ define(function (require, exports, module) {
                                                   </thead>\
                                                   <tbody class="v-tabs-check">\
                                                      <tr v-for="item in datalist.content.content">\
-                                                        <td v-if="datalist.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} <div class="hover_table"> 查看资质</div>\
+                                                        <td v-if="datalist.product&&!!item.producerId"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} <div class="hover_table"> 查看资质</div>\
                                                          </a></td>\
+                                                        <td v-if="type==\'provider\'" class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} <div class="hover_table"> 查看资质</div>\
+                                                         </a></td>\
+                                                        <td v-if="type==\'customer\'" class="text-center">{{ item.name }}</td>\
+                                                        <td v-if="type==\'producer\'" class="text-center">{{ item.name }}</td>\
                                                         <td v-if="!datalist.product" class="text-center">{{ item.name }}</td>\
                                                         <td v-if="item.address" class="text-center">{{ item.address }}</td>\
                                                         <td v-if="item.specification" class="text-center">{{ item.specification }}</td>\
@@ -39,7 +48,7 @@ define(function (require, exports, module) {
                   </div></div>'
         , methods: {
                showMsg:function (event){
-                       event.target.bclick=!event.target.bclick   
+                        event.target.bclick=!event.target.bclick   
                        if(event.target.bclick){ 
                          console.log($(event.target))
                          $(event.target).siblings('span').css('overflow','inherit')
@@ -56,12 +65,30 @@ define(function (require, exports, module) {
                       var view=$.query.get('view')
                       var _name=$(event.target).text().split(/\s+/g)[1]
                       var that=this;
-                      
-                      $.get('/organize/details?view='+view+'&id='+_id+'&name='+_name+'&api=true').then(function (data){
-                          data.data.content.name=_name;
-                          that.$dispatch('send-modal-msg', data)
+                    
+                     console.log($(event.target).attr('data-producerId'))
+                     if($(event.target).attr('data-producerId')){
+                       view='product'
+                       this.type='product'
+                        this.href='/api/app/company/by/product';
+                     }else  if($(event.target).attr('data-customerId')){
+                      this.href='/api/app/company/by/provider'; 
+                       view='provider'
+                      this.type='provider'
+                     }else {
 
-                      })
+                       this.href='/api/app/company/by/provider'; 
+                       view='provider'
+                        this.type='provider'
+                     }
+                      
+                     $.get('/organize/details?view='+view+'&id='+_id+'&name='+_name+'&api=true').then(function (data){
+                        data.data.content.name=_name;
+                        data.data.href=that.href;
+                        data.data.type=that.type;
+                        that.$dispatch('send-modal-msg',data)
+
+                     })
                 }    
         }
     })

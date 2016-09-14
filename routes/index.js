@@ -62,7 +62,10 @@ var config=require('../utils/config')
 
     app.post('/user/add/role',User.signRequired, User.add_role);      //增加 角色 权限
 
-    
+    app.post('/api/user/role/modify',User.signRequired,User.modify_role);  //修改 角色 权限
+
+//PUT /api/app/role/modify
+
 
     app.get('/organize/market',User.signRequired,  Organize.organize_market);         //   区局进入 市车所 
     
@@ -120,7 +123,7 @@ var config=require('../utils/config')
    
 
 
-   app.post('/api/inspect/qualified/msg',User.signRequired,  Index.api_inspect_qualified_msg);   //预约列表
+    app.post('/api/inspect/qualified/msg',User.signRequired,  Index.api_inspect_qualified_msg);   //预约列表
 
 
     app.get('/park/all/:id', User.signRequired, Park.parkAll); 	
@@ -137,11 +140,9 @@ var config=require('../utils/config')
 
 
 
-
-
-
     app.post('/api/app/company/by/product',User.signRequired,Organize.api_byProduct)       //关联接口 产品
 
+	app.post('/api/app/company/by/provider',User.signRequired,Organize.api_byProvider)       //关联接口 供应商
 
 }
 

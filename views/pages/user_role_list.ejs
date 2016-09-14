@@ -37,7 +37,7 @@
                                         </label>
                                 </td>
                                 <td class="text-center">{{item.name}}</td>
-                                <td class="text-center"><div class="xg-btm"><input class="btn btn-md btn-primary btn-block" type="submit" :data-id="item.id" value="修改"></div></td>
+                                <td class="text-center"><div class="xg-btm"><a class="btn btn-md btn-primary btn-block" :href="'/user/add?type=modify&id='+item.id"  :data-id="item.id" >修改</a></div></td>
                             </tr>
                             </tbody>
                         </table>

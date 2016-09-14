@@ -212,6 +212,9 @@ exports.details = function(req, res, next) {
                         console.log(dataSelect)
                          req.session.user.content.companyName=dataSelect.content.name;
                          data.data.content=dataSelect.content;
+
+
+                            // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -228,15 +231,17 @@ exports.details = function(req, res, next) {
         data.type='date';
      
         api_services.commonRequest('api/app/company/'+id+'/purchase/list','POST',form).then(function (dataSelect){
-             
+              console.log(dataSelect.content)
                   tools.Interface_company({title:['采购订单号','采购日期','供货企业','供货名称','经办人','采购随行单','备注'],
                                            style: ['20%','20%','10%','10%','10%','20%','10%']},
                                            data.data,
                                            dataSelect
                                            )
+                   data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                    if(req.query.api=='true'){
                             res.json( data );
                          }else {
+
                             res.render('pages/details', data );
                          }
                }).catch(function (data){
@@ -254,7 +259,8 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
-    
+                        
+          data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                       if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -275,7 +281,7 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
-    
+               data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -297,6 +303,10 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
+                        data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+                   
+                        
+                        data.data.type="provider" 
     
                        if(req.query.api=='true'){
                             res.json( data );
@@ -317,7 +327,11 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
-  
+                        data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+                   
+                    
+                        data.data.type="provider" 
+                   
                         if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -331,12 +345,16 @@ exports.details = function(req, res, next) {
        data.btnlist[6].active=true;
        data.type='search';
        api_services.commonRequest('api/app/company/'+id+'/provider/aptitude/list','POST',form).then(function (dataSelect){
-                  console.log(dataSelect.content)
+                     console.log(dataSelect.content)
                       tools.Interface_company({title:['供应商姓名','供应商地址','联系方式','经营许可证','经营范围','许可证截止日期'],
                                          style: ['15%','15%','10%','20%','auto','20%']},
                                          data.data,
                                          dataSelect
                                       )
+                        data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+                   
+                          // 给关联 设置路由 
+                        data.data.type="provider" 
                         if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -360,8 +378,8 @@ exports.details = function(req, res, next) {
                                       )
                        
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
-                        data.data.href='/api/app/company/by/product'   // 给关联 设置路由 
-
+                      
+                        data.data.type="product" 
                         if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -413,12 +431,44 @@ exports.api_byProduct = function(req, res, next) {
                  res.json(data)
         
         })
-   
-
-
-
+  
 
 }
+
+
+exports.api_byProvider = function(req, res, next) {
+
+
+       var name=encodeURI(req.body.name);
+
+
+       var form={
+              page:req.body.page||0,
+              size:15
+          }
+      //POST /api/app/company/by/provider/{name}
+      console.log(name)
+        api_services.commonRequest('api/app/company/by/provider/'+name,'POST',form).then(function (dataSelect){
+                 console.log(dataSelect)
+            
+
+               res.json(dataSelect)
+            
+
+
+        }).catch(function (data){
+
+                 console.log(data)
+                 res.json(data)
+        
+        })
+  
+
+}
+
+
+
+
 
 
 

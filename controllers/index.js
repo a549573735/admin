@@ -61,13 +61,16 @@ exports.api_publicity=function (req,res,next){
 
 exports.api_publicity_msg=function (req,res,next){
 
-     var form=req.body;
-
-        form.user=req.session.user.content.id
-        form.target=req.body['target[]']
-      
-
-       
+       var form=req.body;
+       form.targets=[];   
+       form.user=req.session.user.content.id;
+       var data=req.body['target[]']||req.body.target;
+        if(typeof data =='string'){
+          form.targets.push(data)
+        }else {
+          form.targets=data
+        }
+    
 
         api_services.commonRequest('api/app/publicity/add','POST',form).then(function (dataSelect){
                  console.log(dataSelect)
@@ -166,10 +169,17 @@ exports.api_suggestion=function (req,res,next){
 
 
 exports.api_suggestion_msg=function (req,res,next){
+  
    var form=req.body;
-
-    form.user=req.session.user.content.id
-    form.target=req.body['target[]']||req.body.target
+     form.targets=[];   
+     form.user=req.session.user.content.id;
+     var data=req.body['target[]']||req.body.target;
+      if(typeof data =='string'){
+        form.targets.push(data)
+      }else {
+        form.targets=data
+      }
+ 
 
    
 
@@ -232,7 +242,7 @@ exports.api_interview_msg=function (req,res,next){
       }else {
         form.targets=data
       }
-      console.log(form.targets)
+ 
 
     api_services.commonRequest('api/app/interview/add','POST',form).then(function (dataSelect){
              console.log(dataSelect)
@@ -292,18 +302,18 @@ exports.api_appointment=function (req,res,next){
 
 
 exports.api_appointment_msg=function (req,res,next){
+
+
    var form=req.body;
-
-    form.user=req.session.user.content.id
-    // form.target=[]
-
-    form.target=req.body['target[]']||req.body.target;
-
-      // if(typeof data =='string'){
-      //   form.target.push(data)
-      // }else {
-      //   form.target=data
-      // }
+     form.targets=[];   
+     form.user=req.session.user.content.id;
+     var data=req.body['target[]']||req.body.target;
+      if(typeof data =='string'){
+        form.targets.push(data)
+      }else {
+        form.targets=data
+      }
+ 
 
    
     api_services.commonRequest('api/app/appointment/add','POST',form).then(function (dataSelect){
@@ -326,11 +336,6 @@ exports.api_inspect_qualified_msg=function (req,res,next){
 
     form.target=req.body['target[]']||req.body.target;
 
-      // if(typeof data =='string'){
-      //   form.target.push(data)
-      // }else {
-      //   form.target=data
-      // }
 
     api_services.commonRequest('api/app/inspect/qualified','POST',form).then(function (dataSelect){
              console.log(dataSelect)

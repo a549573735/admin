@@ -6,7 +6,7 @@ define(function (require, exports, module) {
        new Vue({
 
                 el: '#app',
-                   data:{      
+                    data:{      
                                radio_val:'DISTRICT',
                                checkboxDate:function (){
                                            var dataCheck=null; 
@@ -55,21 +55,40 @@ define(function (require, exports, module) {
                                     name:$('.per_name').val(),
                                     permissionIds:id,
                                     type:this.radio_val,
-                         
+                                    id:$.query.get('id')||'',
 
                                  }
 
-                                 $.post('/user/add/role',form).then(function (data){
-                                        
-                                        console.log(data)
-                                        if(data.success){
-                                          alert('添加成功')
-                                          window.location.href='/user/role/list';
-                                        }else {
-                                           alert(data.errMessage)
-                                        }
+                                 var type=$.query.get('type')||''
 
-                                 })
+                                 if(type=='modify'){
+
+                                    $.post('/api/user/role/modify',form).then(function (data){
+                                            
+                                            console.log(data)
+                                            if(data.success){
+                                              alert('修改成功')
+                                              window.location.href='/user/role/list';
+                                            }else {
+                                               alert(data.errMessage)
+                                            }
+
+                                     })
+
+                                 }else {
+
+                                     $.post('/user/add/role',form).then(function (data){
+                                            
+                                            console.log(data)
+                                            if(data.success){
+                                              alert('添加成功')
+                                              window.location.href='/user/role/list';
+                                            }else {
+                                               alert(data.errMessage)
+                                            }
+
+                                     })
+                                 }
                              }
 
                       }
