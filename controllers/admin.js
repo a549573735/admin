@@ -12,7 +12,7 @@ var api_services=require('../models/api_services');
 exports.interface = function(req, res, next) {
     
     
-   res.render('pages/admin', { title: 'Express',data:'123123' });
+   res.render('pages/admin');
 
 }
 
