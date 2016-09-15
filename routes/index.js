@@ -172,6 +172,12 @@ var config=require('../utils/config')
 
 	app.post('/api/app/company/by/provider',User.signRequired,Organize.api_byProvider)       //关联接口 供应商
 
+    app.get('/api/app/company/appKey',User.signRequired,Organize.api_appkey)       //获取appKEY
+
+    app.get('/api/app/company/secret/generate',User.signRequired,Organize.api_secret)       //获取appKEY
+
+
+
 }
 
 

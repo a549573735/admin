@@ -99,7 +99,7 @@
 
 <!--   共用 照片弹框  －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－-->
 
-<div class="modal fade " id="modal-fromtext" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade " id="modal-fromkey" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header o-nobor">
@@ -110,19 +110,24 @@
                 <div class="row v-table-text">
                     <div class="col-md-12 col-lg-12">
                         <div class="form-group clearfix">
-                            <label class="col-md-2 o-pd control-label col-md-offset-1 text-right" for="val-suggestions">备注内容：</label>
-                            <div class="col-md-7 remarks">
-                                撒打算打算dasd啊实打实的阿斯顿阿斯顿
-                                撒打算打算dasd啊实打实的阿斯顿阿斯顿
-                                撒打算打算dasd啊实打实的阿斯顿阿斯顿
-                                撒打算打算dasd啊实打实的阿斯顿阿斯顿
+                            <label class="col-md-3 o-pd control-label col-md-offset-1 text-right" for="val-suggestions">APPKEY：</label>
+                            <div class="col-md-8 appkey">
                                 撒打算打算dasd啊实打实的阿斯顿阿斯顿
                             </div>
                         </div>
+                     <div class="form-group clearfix">
+                            <label class="col-md-3 o-pd control-label col-md-offset-1 text-right" for="val-suggestions">SECRET：</label>
+                            <div class="col-md-8 secret">
+                                撒打算打算dasd啊实打实的阿斯顿阿斯顿
+                            </div>
+                    </div>
                     </div>
                 </div>
 
             </div>
+            <div class="modal-footer">
+                        <button type="button" class="btn btn-primary " id="again_secret"  >重新获取secret</button>
+             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal  照片弹框  -->

@@ -19,7 +19,9 @@
                 $lDate              : jQuery('.input-daterange').add('.js-datepicker'),
                 $lMinModal          : jQuery('.v-modal-min'),
                 $lMinBtn            : jQuery('.v-min-toggle'),
-                $lNav               : jQuery('.c-list')
+                $lNav               : jQuery('.c-list'),
+                $appKeyBtn          : jQuery('#appkey-btn'),
+                $againSecret       : jQuery('#again_secret')  
           };
 
           this.listDown();
@@ -34,6 +36,9 @@
 
           this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg');  //不合格  
           this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null); 
+
+          this.getAppkey();  //获取appkey
+          this.againSecret();
     }
 
     Common.prototype.listDown=function (obj){
@@ -202,7 +207,37 @@ Common.prototype.setForm=function (){
   return { from:from,to:to}
 }
 
+Common.prototype.getAppkey=function (){
 
+      this.uiInit.$appKeyBtn.on('click',function (){
+
+       // remarks
+          $.get('/api/app/company/appKey').then(function (data){
+
+                  $('.appkey').html(data.content.appKey)
+
+                  $('.secret').html(data.content.secret)
+
+          })
+
+      })
+
+
+}
+Common.prototype.againSecret=function (){
+      
+      this.uiInit.$againSecret.on('click',function (){
+
+         $.get('/api/app/company/secret/generate').then(function (data){
+
+      
+                  $('.secret').html(data.content)
+
+          })
+
+      })
+
+}
 
 
 //checkbox  uiHelperTableToolsCheckable();

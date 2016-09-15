@@ -70,7 +70,7 @@ define(function (require, exports, module) {
     methods:{     
         
           notify: function (event) {
-             
+             $('.confirm-msg').html('')
              var msg={
                 title:$(event.target).html(),
                 content:$(event.target).parent().next().find('.v-msg-content-n').html(),

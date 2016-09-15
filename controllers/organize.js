@@ -470,6 +470,46 @@ exports.api_byProvider = function(req, res, next) {
 
 
 
+exports.api_appkey = function(req, res, next) {
+
+    var id=req.session.user.content.id;
+
+  api_services.commonRequest('/api/app/company/'+id+'/appKey','POST',null).then(function (dataSelect){
+                 console.log(dataSelect)
+            
+               res.json(dataSelect)
+            
+        }).catch(function (data){
+
+                 console.log(data)
+                 res.json(data)
+        
+        })
+}
+
+exports.api_secret = function(req, res, next) {
+
+    var id=req.session.user.content.id;
+
+  api_services.commonRequest('/api/app/company/'+id+'/secret/generate','POST',null).then(function (dataSelect){
+                 console.log(dataSelect)
+            
+               res.json(dataSelect)
+            
+        }).catch(function (data){
+
+                 console.log(data)
+                 res.json(data)
+        
+        })
+}
+
+   // POST /api/app/company/{id}/appKey
+   // POST /api/app/company/{id}/secret/generate
+
+
+
+
 
 
 
