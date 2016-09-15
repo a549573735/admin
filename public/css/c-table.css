@@ -201,6 +201,7 @@ label{font-weight: normal; color: #313131;}
 .v-table-text{ height: 200px;}
 
 .v-cont{ white-space: nowrap; text-overflow: ellipsis; }
+.v-cont a{color: #3f4535;}
 .v-msg-content-n{ display: none; }
 .v-msg-company-n{ display: none; }
 .v-btn-w{width: 80px !important;}

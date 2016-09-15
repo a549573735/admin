@@ -377,14 +377,53 @@ exports.delete_user_role = function (req,res,next){
 
 
 
+//POST /api/app/user/{id}/messages
+
+exports.get_user_messages = function (req,res,next){
+
+       var _id=req.session.user.content.id
+       var form={
+          page:req.query.page||0,
+          size:15
+       }
+
+       
+       api_services.commonRequest('api/app/user/'+_id+'/messages',"POST",form).then(function (data){
+               
+                  console.log(data.content)
+                  res.json(data)
+
+       }).catch(function (err){
+
+
+                  res.json({msg:'服务器用户添加错误',state:false})
+
+       })
+
+}
 
 
 
- 
+exports.read_user_messages = function (req,res,next){
+
+
+     var id=req.query.id;
+
+       
+       api_services.commonRequest('api/app/user/message/'+id+'/read',"POST",null).then(function (data){
+               
+                  console.log(data)
+                  res.json(data)
+
+       }).catch(function (err){
+
+                  res.json(err)
+
+       })
 
 
 
-
+}
 
 
 

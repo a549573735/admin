@@ -349,13 +349,47 @@ exports.api_inspect_qualified_msg=function (req,res,next){
 }
 
 
+exports.put_appointment_messages=function (req,res,next){
+      var form=req.body;
+
+
+       api_services.commonRequest('api/app/appointment/confirm/'+form.id+'/'+form.status,'PUT',null).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+        }).catch(function (data){
+                 console.log(data)
+                 res.json(data)
+        })
+
+
+}
+
+
+
+
+exports.put_interview_messages=function (req,res,next){
+      var form=req.body;
+
+       api_services.commonRequest('api/app/interview/confirm/'+form.id+'/'+form.status,'PUT',null).then(function (dataSelect){
+             console.log(dataSelect)
+                 res.json(dataSelect)
+
+        }).catch(function (data){
+                 console.log(data)
+                 res.json(data)
+        })
+
+
+}
 
 
 
 
 
+// PUT /api/app/appointment/confirm/{id}/{status}
 
-
+//  PUT /api/app/interview/confirm/{id}/{status}
 
 
 

@@ -55,6 +55,8 @@ var config=require('../utils/config')
     app.post('/user/admin/add',User.signRequired, User.Post_add_user);   //添加用户个人信息
 
     
+ 
+
 
     app.post('/delete/user',User.signRequired, User.delete_user);   //添加用户个人信息
 
@@ -64,7 +66,19 @@ var config=require('../utils/config')
 
     app.post('/api/user/role/modify',User.signRequired,User.modify_role);  //修改 角色 权限
 
-//PUT /api/app/role/modify
+
+
+
+    app.get('/user/messages/list',User.signRequired, User.get_user_messages);   //获取用户消息列表
+
+
+
+
+
+
+
+
+ 
 
 
     app.get('/organize/market',User.signRequired,  Organize.organize_market);         //   区局进入 市车所 
@@ -124,6 +138,20 @@ var config=require('../utils/config')
 
 
     app.post('/api/inspect/qualified/msg',User.signRequired,  Index.api_inspect_qualified_msg);   //预约列表
+
+
+
+
+
+    app.post('/api/appointment/confirm',User.signRequired, Index.put_appointment_messages)     //回复预约 
+
+    app.post('/api/interview/confirm',User.signRequired, Index.put_interview_messages)         //回复约谈 
+
+    app.get('/api/read/message',User.signRequired, User.read_user_messages)                    //回复 已读
+
+   
+
+
 
 
     app.get('/park/all/:id', User.signRequired, Park.parkAll); 	

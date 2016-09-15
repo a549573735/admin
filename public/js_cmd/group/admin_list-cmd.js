@@ -2,6 +2,7 @@ define(function (require, exports, module) {
      var Vue = require('lib_cmd/vue-cmd');
      require('/js_cmd/components/paging')
      require('/js_cmd/components/tables/com_tables')
+
      var select = require('/js_cmd/components/select');
       new Vue({
                 el: '#app',
@@ -89,6 +90,7 @@ define(function (require, exports, module) {
                 }
       })
 
+      seajs.use('/js-cmd/compangtable/message/message')
      
 
 });

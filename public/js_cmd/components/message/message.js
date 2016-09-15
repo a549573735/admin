@@ -8,35 +8,37 @@ define(function (require, exports, module) {
          'el':'#v-msg',
          data:function (){
          	return {
-         	     msglist:[
-         	     {
-                      title:'111111111',
-                      content:'aaaaaaaaaaaaaaaaaaa',
-                      _id:'1',
-                      date:'2016-9-1',
-                      company:'XXX公司'
-         	     },
-         	     {
-                      title:'2222222222222',
-                      content:'bbbbbbbbbbbbbbbbbbb',
-                      _id:'2',
-                      date:'2016-9-1',
-                      company:'XXX公司'
-         	     },
-         	     {
-                      title:'3333333333333',
-                      content:'ccccccccccccccccccc',
-                      _id:'3',
-                      date:'2016-9-1',
-                      company:'日'
-         	     }
-         	     ],
+         	     msglist:function (){
+                   var msgList=null
+                   $.ajax({
+                            url: '/user/messages/list',    //请求的url地址
+                            dataType: "json",   //返回格式为json
+                            async: false, //请求是否异步，默认为异步，这也是ajax重要特性
+                            type: "GET",   //请求方式
+                            success: function(data) {
+                                //请求成功时处理
+                          console.log(data)
+                                if(data.success){
+                               
+                                  msgList=data.content.content
+                              }else {
+                                  alert(data.errMessage)
+                              }
+                            },
+                            error: function(err) {
+                                //请求出错处理
+                                 alert(err);
+                            }
+                          })
+                      return  msgList  
+               }(),
          	   message:{
-         	     	  title:'444444444444444444',
-                      content:'dddddddddddddddddddd',
-                      _id:'1',
-                      date:'2016-9-1',
-                      company:'日'
+         	     	      title:'',
+                      content:'',
+                      id:'',
+                      date:'',
+                      company:'',
+                      type:'',
          	   }
          	}
          },
