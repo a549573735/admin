@@ -196,7 +196,7 @@ label{font-weight: normal; color: #313131;}
 .v-min-fz{ margin-top: 7px;}
 
 .v-table-img{ width: 730px; height: 480px; margin: 0 auto;}
-.v-table-img img {width: 100%;}
+.v-table-img img {width: 100%; height: 100%;}
 
 .v-table-text{ height: 200px;}
 

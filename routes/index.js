@@ -107,6 +107,8 @@ var config=require('../utils/config')
 
 
 	app.get('/publicity/list',User.signRequired,  Index.publicity);			 //年报公示列表
+    
+    app.post('/add/publicity',User.signRequired,  Index.add_publicity);          //增加年报公示
 
 	app.get('/api/publicity/list',User.signRequired,  Index.api_publicity);			 //年报公示列表
 

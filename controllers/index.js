@@ -25,8 +25,25 @@ exports.home=function(req,res,next){
 
 
 exports.publicity = function(req, res, next) {
+   
+    var id=req.session.user.content.id;
+    var form={
+         page:0,
+         size:50
+    } 
 
-   res.render('pages/publicity');
+    api_services.commonRequest('api/app/company/'+id+'/list','POST',form).then(function (dataSelect){
+            
+             console.log(dataSelect)
+              res.render('pages/publicity',{dataSelect:dataSelect});
+
+        
+    }).catch(function (data){
+              console.log(data)
+              res.json(data)
+    })
+
+
 
 }
 
@@ -41,10 +58,14 @@ exports.api_publicity=function (req,res,next){
               "type":req.query.type||req.session.user.content.type,
               "market":req.query.park||req.session.user.content.id,
               "company":req.query.company||'',
-              "park":req.query.park||req.session.user.content.id,
+              "park":req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
                "to":req.query.to||req.body.to||time.to
               }
+     if(req.session.user.content.type=="PARK"){
+          form.market=req.session.user.content.belongId;
+          form.park=req.session.user.content.id;
+      }         
 
     api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
              console.log(dataSelect)
@@ -56,6 +77,27 @@ exports.api_publicity=function (req,res,next){
     })
 
 }
+
+
+exports.add_publicity=function (req,res,next){
+
+      var form=req.body;
+
+      form.user=req.session.user.content.displayName;
+
+        api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
+             console.log(dataSelect)
+             res.json(dataSelect)
+
+    }).catch(function (data){
+             console.log(data)
+             res.json(data)
+    })
+
+
+}
+
+
 
 
 

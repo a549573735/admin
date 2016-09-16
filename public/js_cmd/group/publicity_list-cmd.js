@@ -64,10 +64,24 @@ define(function (require, exports, module) {
                               that.dataList.content=data.content
                           })   
 
+                   },
+                   addPublicity:function (){
+                        
+                        var form={
+                            id:$('#publicity-select').val(),
+                            publicity:$('.val-publicity').val(),
+                            notes:$('.notes-publicity').val()
+                        }
+
+                        $.post('/add/publicity',form).then(function (data){  
+
+                               if(data.success){
+                                 alert('添加成功')
+                               }else {
+                                 alert('添加失败')
+                               }
+                        })
                    }
-
-
-
                 },
                 events:{
 

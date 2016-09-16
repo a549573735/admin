@@ -44,7 +44,7 @@
                                 </div>
                                 <% if(user.content.type=="PARK"){%>
                                          <div class="v-t-b" style="margin-left:15px;">
-                                            <button class="btn btn-md btn-primary btn-block inspect_btn" @click="" type="submit">新增公示</button>
+                                            <button class="btn btn-md btn-primary btn-block inspect_btn" data-target="#modal-publicity" data-toggle="modal" type="submit">新增公示</button>
                                         </div>
                                  <%}%>  
                             </div>
@@ -61,9 +61,73 @@
                 </div>
 
                 <v-pages :pagelist="dataList.content.page||1"> </v-pages>
+
+                <div class="modal fade " id="modal-publicity" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  ">
+        <div class="modal-content">
+            <div class="modal-header o-nobor">
+                <button type="button" class="close v-tabs-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                       <div class="block-content block-content-narrow">
+
+                                    <div class="js-validation-bootstrap form-horizontal" >
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label " for="val-password">公司: <span class="text-danger">*</span></label>
+                                              <div class="col-md-7">
+                                                          <select class="form-control" id="publicity-select"  name="modal-publicity">
+                                                                     <option value="">请选择</option>
+                                                                     <%if(dataSelect.content.content.length>0){%>
+                                                                            <%dataSelect.content.content.forEach(function(item){ %>  
+                                                                                     <option value="<%=item.id%>"><%=item.name%></option>
+                                                                              <%})%>    
+                                                                     <%}%>
+                                                          </select>
+                                              </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-password">公示 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control val-publicity" type="text" name="val-password" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label " for="val-password">备注: <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control notes-publicity" type="text" name="publicity-notes" >
+                                            </div>
+                                        </div>
+                                       
+                                        <div class="form-group">
+                                            <div class="col-md-8 col-md-offset-3">
+                                                <button class="btn btn-sm btn-primary v-btn-w  model-add-publicity" @click="addPublicity()" >提交</button>
+                                            </div>
+                                        </div>
+                                      
+                                    </div>
+                                </div>
+            </div>
+        </div>
+    </div>
+</div>
           </div>
     </div>
 </div>
+
+
+<!--   园区新增 年报公示  弹框 －－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－-->
+
+
+
+
+
+        
+
+
+
 
 
 <% include ../common/modals.ejs %>
@@ -73,7 +137,6 @@
 
     seajs.use("/js_cmd/group/publicity_list-cmd");
    
-    uiHelperTableToolsCheckable();
 
 </script>
 
