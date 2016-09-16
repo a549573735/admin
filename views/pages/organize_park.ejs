@@ -11,7 +11,7 @@
                         <div class="form-group">
                             <label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>
                             <div class="col-md-2 o-pd">
-                                <select class="form-control"  id="select_park" name="val-skill">
+                                <select class="form-control"  id="select_park" name="val-skill" @change="getParkList()">
                                     <option value="0">请选择</option>
                                     <% select.forEach(function (item){%>
                                              <option value="<%=item.id%>"><%=item.name%></option>
