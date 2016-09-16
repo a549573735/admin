@@ -62,6 +62,7 @@ define(function (require, exports, module) {
                                var id=$(event.target).attr('data-id');
                                var roleId=$(event.target).attr('data-roleId');
                                var belongId=$(event.target).attr('data-belongId');
+                               var type=$(event.target).attr('data-type')
  
                                $('.model-displayName').val(tr.find('.displayName').html())
                                $('.model-username').val(tr.find('.username').html())
@@ -69,7 +70,9 @@ define(function (require, exports, module) {
                                $('.model-mail').val(tr.find('.mail').html())
                                $('.model-id').val(id);
                                $('.model-roleId').val(roleId)
-                               $('.model-belongId').val(belongId)
+                               $('.model-belongId').val(belongId);
+                               $('.model-type').val(type);
+
                               
                          },putUser:function (){
                                 var that=this;
@@ -84,7 +87,10 @@ define(function (require, exports, module) {
                                           password:$('.model-password').val(),
                                           id:$('.model-id').val(),
                                           roleId:$('.model-roleId').val(),
-                                          belongId:$('.model-belongId').val()
+                                          belongId:$('.model-belongId').val(),
+                                          type:$('.model-type').val()
+
+
                                     }
        
 
