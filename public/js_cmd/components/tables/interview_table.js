@@ -2,7 +2,6 @@ define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
     
 
-
     Vue.component('com-table-list', {
 
         props: ['datalist'],
@@ -15,15 +14,12 @@ define(function (require, exports, module) {
                       </thead>\
                       <tbody class="v-tabs-check">\
                          <tr v-for="item in datalist.content.content">\
-                            <td v-if="item.target" class="text-center">{{ item.target }}</td>\
-                            <td v-if="item.company" class="text-center">{{ item.company }}</td>\
-                            <td v-if="item.publicity" class="text-center">{{ item.publicity }}</td>\
-                            <td v-if="item.status" class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
-                            <td v-if="item.readFlag" class="text-center">{{ item.readFlag }}</td>\
-                            <td v-if="item.suggestion" class="text-center">{{ item.suggestion }}</td>\
-                            <td v-if="item.user" class="text-center">{{ item.user }}</td>\
-                            <td v-if="item.inspectDate " class="text-center">{{ item.inspectDate }}</td>\
-                            <td v-if="item.notes " class="text-center">{{ item.notes }}</td>\
+                            <td  class="text-center">{{ item.target }}</td>\
+                            <td  class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
+                            <td  class="text-center">{{ item.period }}</td>\
+                            <td  class="text-center">{{ item.agreeDate }}</td>\
+                            <td  class="text-center">{{ item.user }}</td>\
+                            <td  class="text-center">{{ item.notes }}</td>\
                         </tr>\
                       </tbody>\
                   </table>', 

@@ -8,7 +8,7 @@ define(function (require, exports, module) {
                 data: {
 
                     dataList:{
-                           title:['企业名称','年报状态','上传时间','操作员','备注'],
+                           title:['企业名称','年报状态','操作员','备注'],
                            content:function (){
                               var dataList=null;
                                  $.ajax({
@@ -34,7 +34,7 @@ define(function (require, exports, module) {
                                 });
                                  return dataList     
                             }(),
-                           style:['25%','100px','100px','15%','auto'],
+                           style:['25%','100px','15%','auto'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],
@@ -60,13 +60,13 @@ define(function (require, exports, module) {
                               }
 
                           $.get('/api/publicity/list',form).then(function (data){
-
+                              console.log(JSON.stringify(data.content))
                               that.dataList.content=data.content
                           })   
 
                    },
                    addPublicity:function (){
-                        
+
                         var form={
                             id:$('#publicity-select').val(),
                             publicity:$('.val-publicity').val(),

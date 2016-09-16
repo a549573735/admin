@@ -261,8 +261,9 @@ exports.api_interview=function (req,res,next){
                "to":req.query.to||req.body.to||time.to
               }
 
-    api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
-             console.log(dataSelect)
+
+    api_services.commonRequest('api/app/interview/list','POST',form).then(function (dataSelect){
+             console.log(dataSelect.content)
              res.json(dataSelect)
 
     }).catch(function (data){

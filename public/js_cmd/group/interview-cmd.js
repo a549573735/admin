@@ -1,14 +1,14 @@
 define(function (require, exports, module) {
      var Vue = require('lib_cmd/vue-cmd');
      require('/js_cmd/components/paging')
-     require('/js_cmd/components/tables/com_tables')
+     require('/js_cmd/components/tables/interview_tables')
      var select = require('/js_cmd/components/select');
       new Vue({
                 el: '#app',
                 data: {
 
                     dataList:{
-                           title:['企业名称','预约状态','检查员','检查日期','备注'],
+                           title:['企业名称','约谈状态','时间类别','接受日期','约谈员','备注'],
                            content:function (){
                                      
                               var dataList=null;
@@ -35,7 +35,7 @@ define(function (require, exports, module) {
                                 });
                                  return dataList     
                             }(),
-                           style:['25%','100px','100px','15%','auto'],
+                           style:['25%','80px','100px','100px','100px','80px','auto'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],

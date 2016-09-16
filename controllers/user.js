@@ -186,7 +186,8 @@ exports.user_admin_add=function(req, res, next) {
      var form=req.body;
        // console.log(form)
      form.belongId=form.type=='DISTRICT'?req.session.user.content.id:form.belongId
-
+     console.log(form.belongId ) 
+      console.log(req.session.user.content.id) 
      api_services.commonRequest('api/app/user/add',"POST",form).then(function (data){
 
             console.log(data)
