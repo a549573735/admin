@@ -10,7 +10,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="v-t-m">
-                                <button class="btn btn-md btn-primary btn-block" type="submit">新增市场所</button>
+                                <button class="btn btn-md btn-primary btn-block" data-toggle="modal" data-target="#modal-addParty"  >新增市场所</button>
                             </div>
                         </div>
                     </div>
@@ -30,11 +30,14 @@
 </div>
 
 
-<% include ../common/footer.ejs %>
 <% include ../common/modals.ejs %>
+<% include ../common/footer.ejs %>
+
 
 <script>
     seajs.use("/js_cmd/group/company_market-cmd");
+
+
 </script>
 
 

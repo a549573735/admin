@@ -31,6 +31,7 @@ define(function (require, exports, module) {
 			
  					$.post('/api/organize/company/list',form).then(function (data){
 						that.tablsData=	data
+						console.log(data)
  					})
 
 		   		}

@@ -5,7 +5,10 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
+
+      
          <div class="c-r" id="check-table">
+
             <form class="form-horizontal clearfix"  method="post" onsubmit="return false;">
                 <div class="clearfix">
                     <div class="col-md-12">
@@ -20,7 +23,7 @@
                                 </select>
                             </div>
                             <div class="v-t-m">
-                                <button class="btn btn-md btn-primary btn-block" type="submit">新增园区</button>
+                                <button class="btn btn-md btn-primary btn-block " data-toggle="modal" data-target="#modal-addParty"  >新增园区</button>
                             </div>
                         </div>
                     </div>
@@ -36,13 +39,17 @@
             </div>
 
              <v-pages :pagelist="tableList.page||1"> </v-pages>
+
+                   
         </div>
     </div>
+
 </div>
 
-<% include ../common/footer.ejs %>
-<% include ../common/modals.ejs %>
 
+<% include ../common/modals.ejs %>
+<% include ../common/footer.ejs %>
 <script>
     seajs.use("/js_cmd/group/company_park-cmd");
+
 </script>

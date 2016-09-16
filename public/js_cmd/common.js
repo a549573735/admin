@@ -21,7 +21,8 @@
                 $lMinBtn            : jQuery('.v-min-toggle'),
                 $lNav               : jQuery('.c-list'),
                 $appKeyBtn          : jQuery('#appkey-btn'),
-                $againSecret       : jQuery('#again_secret')  
+                $againSecret        : jQuery('#again_secret'),
+
           };
 
           this.listDown();
@@ -39,6 +40,9 @@
 
           this.getAppkey();  //获取appkey
           this.againSecret();
+          this.addParty();
+         
+
     }
 
     Common.prototype.listDown=function (obj){
@@ -224,6 +228,8 @@ Common.prototype.getAppkey=function (){
 
 
 }
+
+
 Common.prototype.againSecret=function (){
       
       this.uiInit.$againSecret.on('click',function (){
@@ -238,6 +244,36 @@ Common.prototype.againSecret=function (){
       })
 
 }
+ Common.prototype.addParty=function (){
+            
+         
+         $('.admin-add-btn').on('click',function (){
+
+                var form={
+                        parentId:$('#select_park').val()||"ROOT",
+                        name:$('.admin-name').val(),
+                        phone:$('.admin-phone').val(),
+                        contact:$('.admin-concat').val(),
+                        address:$('.admin-address').val()
+                   }
+
+                   $.post('/api/organize/add',form).then(function (data){
+
+                             if(data.success){
+                               $('.admin-concat').val('')
+                               $('.admin-phone').val('')
+                               $('.admin-address').val('')
+                               $('.admin-name').val('')
+                                   alert('添加成功')
+                             }else {
+                                   alert('添加失败')
+                               }      
+                   }) 
+          })
+                  
+}  
+
+
 
 
 //checkbox  uiHelperTableToolsCheckable();
@@ -299,6 +335,13 @@ var uiHelperTableToolscheckRow = function($checkbox, $checkedStatus) {
             .removeClass('active');
     }
 };
+
+
+
+
+
+
+
 
 
 

@@ -7,8 +7,8 @@ define(function (require, exports, module) {
 	    	'el':'#check-table',
 		   data:   {
 			   tableList:{
-			   	   href:'/organize/company?id=',
-				   title:['','园区名称','园区地址','联系人','联系方式',''],
+			   	   href:'',
+				   title:['No.','园区名称','园区地址','联系人','联系方式','操作'],
 				   content:function (){
 				   	    var  arr =window.location.search.split('?')[1]?window.location.search.split('?')[1].split(/&?[a-z]+=/ig):'';
 				   	    var  form={
@@ -42,17 +42,12 @@ define(function (require, exports, module) {
 		                     return datalist
 				   }(),
 				   style:['5%','20%','auto','120px','120px','100px'],
-				   type:"PARK"
+				   type:"PARK",
+				  
+
 				  
 			   }
-// 			    {
-// address (string): 地址 ,
-// contact (string, optional): 联系人 ,
-// id (string, optional),
-// name (string): 名称 ,
-// parentId (string): 所属 ,
-// phone (string, optional): 电话
-// }
+
 		   },
 		   methods:{
 		   	  getParkList:function (){
@@ -66,8 +61,6 @@ define(function (require, exports, module) {
 
 		 				this.tableList.content=this.getData(form)
 
-						
-				  // console.log(this.tableList)
  				  
 		   	  },getData:function (form){
 		   	     	var datalist=null;
@@ -95,7 +88,8 @@ define(function (require, exports, module) {
                     });
                      return datalist
 
-		   	  }	 
+		   	  }
+		   	 
 
 		   }  	
 

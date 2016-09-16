@@ -1,96 +1,95 @@
 define(function (require, exports, module) {
-     var Vue = require('lib_cmd/vue-cmd');
-     require('/js_cmd/components/paging')
-     require('/js_cmd/components/tables/com_tables')
 
-     var select = require('/js_cmd/components/select');
-      new Vue({
-                el: '#app',
-                data: {
+    var Vue = require('lib_cmd/vue-cmd');
+    require('/js_cmd/components/select');
+    require('/js_cmd/components/admin_select');
+    require('/js_cmd/components/paging')
+    require('/js_cmd/components/tables/handle_tables_company')
 
-                    dataList:{
-                           title:['企业名称','预约状态','检查员','检查日期','备注'],
-                           content:function (){
-                              var dataList=null;
-                                 $.ajax({
-                                    url: '/api/publicity/list',    //请求的url地址
-                                    dataType: "json",   //返回格式为json
-                                    async: false, //请求是否异步，默认为异步，这也是ajax重要特性
-                                    type: "GET",   //请求方式
-                                    success: function(data) {
-                                        //请求成功时处理
-                                  console.log(data)
-                                        if(data.success){
-                                       
-                                            dataList=data.content
-                                        }else {
-                                              alert(data.errMessage)
-                                        }
-                                    },
-                                    error: function(err) {
-                                        //请求出错处理
-                                         //alert(err.msg);
-                                    }
+    new Vue( {
+        'el':'#handle-table',
+       data:{
+          tablsData: function (){
+                     var data= JSON.parse($('.data_tabls').val())
+                         data.detals=true
+                      return data
 
-                                });
-                                 return dataList     
-                            }(),
-                           style:['25%','100px','100px','15%','auto'],
-                           details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
-                           overfull:false,
-                           selectsubset:[],
+          }(),
+          parkId:''
+       },
+       methods:{
+              searchData:function (){
+                var that=this;
+                  var form={
+                    "businesses": $('input[name=businesses]').val(),
+                    "company":  $('input[name=company]').val(),
+                    "customer":  $('input[name=customer]').val(),
+                    "market":  $('#select_market').val(),
+                    "page": 0,
+                    "park":  $('#select_park').val(),
+                    "producer":  $('input[name=producer]').val(),
+                    "product":  $('input[name=product]').val(),
+                    "provider":  $('input[name=provider]').val(),
+                    "size": 15
+                  }
+          
+                $.post('/api/organize/company/list',form).then(function (data){
+                  data.detals=true
+                  that.tablsData= data
+                  console.log(data)
+                })
 
-                    }
-                   
-                  
-                },
-                methods: {
+          },createCompany:function(){
 
-            
-                   getContent:function (){
-                          var that=this;
-                          var form= {
-                              "page":this.page||0,
-                              "size":15,
-                              "type":$('#selectType').val(),
-                              "market":$('#select_market').val(),
-                              "company":$('input[name=company]').val(),
-                              "park":$('#select_park').val(),
-                              "from":$('input[name=from]').val(),
-                              "to":$('input[name=to]').val()
-                              }
-
-                          $.get('/api/publicity/list',form).then(function (data){
-
-                              that.dataList.content=data.content
-                          })   
-
-                   }
-
-
-
-                },
-                events:{
-
-                    'send-page':function (page){
-
-                      this.page=page-1
-                      var that=this;
-
-                       this.getContent()
-
-                      // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
-
-                      //       that.listData=data.content;
-
-                      // })
-
-                      }
-                  
+                var form={
+                      address:$('input[name=admin-address]').val(),
+                      belongId:this.parkId,
+                      businesses:$('input[name=admin-businesses]').val(),
+                      certificate:$('input[name=admin-certificate]').val(),
+                      expireDate:$('input[name=admin-expireDate]').val(),
+                      contact:$('input[name=admin-contact]').val(),
+                      name:$('input[name=admin-company]').val(),
+                      phone:$('input[name=admin-phone]').val(),
                 }
-      })
+                
+                $.post('/api/company/add',form).then(function (data){
 
-      seajs.use('/js-cmd/compangtable/message/message')
-     
+
+                      if(data.success){
+                        alert('新增成功')
+                      }else {
+                        console.log(data.errMessage)
+                        alert('新增失败')
+                      }
+
+                })
+
+
+           }
+       },events:{
+
+          'send-select-admin':function (id){
+             this.parkId=id;
+          }
+
+       }
+  })
 
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

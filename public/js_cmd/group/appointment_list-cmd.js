@@ -10,7 +10,6 @@ define(function (require, exports, module) {
                     dataList:{
                            title:['企业名称','预约状态','检查员','检查日期','备注'],
                            content:function (){
-                                     
                               var dataList=null;
                                  $.ajax({
                                     url: '/api/appointment/list',    //请求的url地址

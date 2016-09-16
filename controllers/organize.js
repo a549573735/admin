@@ -509,12 +509,45 @@ exports.api_secret = function(req, res, next) {
 
 
 
+exports.api_add_organize = function(req, res, next) {
 
+      var form=req.body;
 
+     
+       api_services.commonRequest('api/app/organize/add','POST',form).then(function (data){
+                 console.log(data)
+            
+               res.json(data)
+            
+        }).catch(function (data){
 
+                 console.log(data)
+                 res.json(data)
+        
+        })
 
+}
   
 
+
+exports.api_add_company=function(req,res,next){
+
+       var form=req.body;
+
+        console.log(1)
+       api_services.commonRequest('api/app/company/add','POST',form).then(function (data){
+                 console.log(data)
+            
+                 res.json(data)
+            
+        }).catch(function (data){
+
+                 console.log(data)
+                 res.json(data)
+        
+        })
+
+}
 
 
 

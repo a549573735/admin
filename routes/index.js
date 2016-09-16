@@ -24,12 +24,13 @@ var config=require('../utils/config')
           		     	 
  
 
-	app.get('/admin/interface/list',User.signRequired, Admin.interface);						 //企业进入
+	app.get('/admin/interface/list',User.signRequired, Admin.interface);						 //后台进入
 
 	app.get('/admin/market', User.signRequired,Admin.admin_market);			//单位管理 后台 市场所
 
 	app.get('/admin/park', User.signRequired,  Admin.admin_park);             //单位管理  后台 园区 列表
     
+  
      
 	
 	app.get('/user/role/list',User.signRequired,  User.user_role);			 //角色管理 编辑
@@ -177,6 +178,12 @@ var config=require('../utils/config')
     app.get('/api/app/company/secret/generate',User.signRequired,Organize.api_secret)       //获取appKEY
 
 
+
+
+
+    app.post('/api/organize/add',User.signRequired,Organize.api_add_organize)       //获取appKEY 
+
+    app.post('/api/company/add',User.signRequired, Organize.api_add_company)       //获取appKEY 
 
 }
 
