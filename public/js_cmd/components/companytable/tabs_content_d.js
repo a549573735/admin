@@ -66,7 +66,9 @@ define(function (require, exports, module) {
 
                   var _id=$.query.get('id');
                   var view=$.query.get('view')
-                  var _name=$(event.target).text().split(/\s+/g)[1]
+                  var _name=$(event.target).text().trim().split(/\s+/g)[0]
+
+                  console.log(_name,$(event.target).text().split(/\s+/g))
                   var that=this;
                       
 

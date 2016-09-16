@@ -261,6 +261,7 @@ exports.details = function(req, res, next) {
                                       )
                         
           data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+                       
                       if(req.query.api=='true'){
                             res.json( data );
                          }else {
