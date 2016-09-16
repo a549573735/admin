@@ -44,7 +44,7 @@
           this.againSecret();
           this.addParty();
 
-          this.setPassword('.rest-password-btn');//修改密码
+          this.setPassword('.model-password-btn');//修改密码
          
 
     }
@@ -318,16 +318,23 @@ Common.prototype.checkIphone=function (obj){
 Common.prototype.setPassword=function (obj){
 
         $(obj).on('click',function (){
-         
-         
-
-              $.post('/reset/user/password',{id:''}).then(function (data){
+             var that=this;
+             var form={
+                  "newPassword": $('#new-password').val(),
+                  "oldPassword": $('#old-password').val()
+              }
+              $.post('/put/user/password',form).then(function (data){
                     if(data.success){
-                      alert('重置成功，密码将会发入填写的邮箱中')
+                  
+                      $(that).parent().next().show().html('密码修改成功')
+                      setTimeout(function (){
+                         $('#modal-password').modal('toggle')
+                         $(that).parent().next().hide()
+                      },1500)
                     }else{
-                      alert(data.errMessage)
-                    }
 
+                     $(that).parent().next().show().html(data.errMessage)
+                    }
               })
        })
 

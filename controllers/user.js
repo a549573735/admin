@@ -84,6 +84,7 @@ exports.user_edit_list = function(req, res, next) {
 
 }
 
+
 exports.api_user_edit_list = function(req, res, next) {
 
     var _id=req.query.id || req.session.user.content.id 
@@ -246,22 +247,12 @@ exports.user_admin_add=function(req, res, next) {
 /* 修改密码*/
  exports.put_user_password=function (req,res,next){
 
-       var password=md5(req.body.password)
+       var form=req.body
+       form.newPassword= md5(form.newPassword);
+       form.oldPassword= md5(form.oldPassword);
+       form.id=req.session.user.content.id;
 
-       var data={
-
-            displayName:req.session.user.content.displayName,
-            username:req.session.user.content.username,
-            phone:req.session.user.content.phone,
-            mail:req.session.user.content.mail,
-            id:req.session.user.content.id,
-            roleId:req.session.user.content.roleId,
-            belongId:req.session.user.content.belongId,
-            password:password
-
-       }
-
-       api_services.commonRequest('api/app/user/modify',"PUT",data).then(function (data){
+       api_services.commonRequest('api/app/user/password/modify',"PUT",form).then(function (data){
                 console.log(data)
                   res.json(data)
 
