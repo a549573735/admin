@@ -10,19 +10,12 @@
 </div>
 
 
+<% include ../common/modals.ejs %>
 <% include ../common/footer.ejs %>
 
 <script>
 
-    var navTabs=$('#v-nav-tab');
-    var contentTabs=$('.v-tab-content');
-
-    navTabs.on('click','li',function (){
-
-        $(this).addClass('active').siblings().removeClass('active');
-        contentTabs.children().removeClass('active').eq($(this).index()).addClass('active')
-
-    })
+ 
 
     uiHelperTableToolsCheckable();
 

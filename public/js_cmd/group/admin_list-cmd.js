@@ -51,7 +51,7 @@ define(function (require, exports, module) {
                       name:$('input[name=admin-company]').val(),
                       phone:$('input[name=admin-phone]').val(),
                 }
-                
+
                 $.post('/api/company/add',form).then(function (data){
 
 
@@ -63,8 +63,6 @@ define(function (require, exports, module) {
                       }
 
                 })
-
-
            }
        },events:{
 

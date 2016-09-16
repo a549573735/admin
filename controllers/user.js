@@ -243,6 +243,64 @@ exports.user_admin_add=function(req, res, next) {
  }
 
 
+/* 修改密码*/
+ exports.put_user_password=function (req,res,next){
+
+       var password=md5(req.body.password)
+
+       var data={
+
+            displayName:req.session.user.content.displayName,
+            username:req.session.user.content.username,
+            phone:req.session.user.content.phone,
+            mail:req.session.user.content.mail,
+            id:req.session.user.content.id,
+            roleId:req.session.user.content.roleId,
+            belongId:req.session.user.content.belongId,
+            password:password
+
+       }
+
+       api_services.commonRequest('api/app/user/modify',"PUT",data).then(function (data){
+                console.log(data)
+                  res.json(data)
+
+       }).catch(function (err){
+
+                  res.json({msg:'服务器用户更新错误',state:false})
+
+       })
+
+ }
+
+
+
+/*重置密码*/
+//PUT /api/app/user/{id}/password/reset
+
+ exports.reset_user_password=function (req,res,next){
+
+
+       var id=req.body.id||req.session.user.content.id;
+        console.log(1123)
+      
+       api_services.commonRequest('/api/app/user/'+id+'/password/reset',"PUT",null).then(function (data){
+                console.log(data)
+                  res.json(data)
+
+       }).catch(function (err){
+
+                  res.json({msg:'服务器用户更新错误',state:false})
+
+       })
+
+ }
+
+
+
+
+
+
 
 
 

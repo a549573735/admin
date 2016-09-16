@@ -44,7 +44,7 @@
                                 <td class="text-center">{{item.createDate}}</td>
                                 <td class="text-center">{{item.createDate}}</td>
                                 <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" :data-id="item.id" :data-belongId="item.belongId" :data-roleId="item.roleId"  data-toggle="modal" @click="getMsg($event)" data-target="#modal-fromuser" >修改</button></div>
-                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" :data-id="item.id">重置</button></div></td>
+                                 <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" @click="restPassword($event)" :data-id="item.id">重置</button></div></td>
                             </tr>
                     
                             </tbody>
@@ -59,8 +59,8 @@
 </div>
 
 
-<% include ../common/footer.ejs %>
 <% include ../common/modals.ejs %>
+<% include ../common/footer.ejs %>
 
 <script>
 

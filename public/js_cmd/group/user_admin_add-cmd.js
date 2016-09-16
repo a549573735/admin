@@ -2,6 +2,7 @@ define(function (require, exports, module) {
        var Vue = require('/lib_cmd/vue-cmd');
 	  
  			require('/js_cmd/components/radio');
+     // var Common=new Common();
 
        new Vue({
 
@@ -44,6 +45,23 @@ define(function (require, exports, module) {
                                     phone:$('.phone').val()
 
                                }
+                              
+                              var checkEmpty = Common.checkEmpty($('#app').find('input'));
+
+
+                              var checkEmail = Common.checkEmail($('.email'));
+                              
+                              if(checkEmpty.state=='false'){
+                                alert(checkEmpty.message)
+                                    return false
+
+                              }
+
+                              if(checkEmail.state=='false'){
+                                    alert(checkEmail.message)
+                                    return false
+                              }
+
                                $.post('/user/admin/add',form).then(function (data){
                                       
                                       if(data.success==false||data.state==false){

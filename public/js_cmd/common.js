@@ -24,6 +24,8 @@
                 $againSecret        : jQuery('#again_secret'),
 
           };
+          this.regIphone=/^1\d{10}$/i;
+          this.regEmail=/^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$/;
 
           this.listDown();
           this.contentHeight();
@@ -41,6 +43,8 @@
           this.getAppkey();  //获取appkey
           this.againSecret();
           this.addParty();
+
+          this.setPassword('.rest-password-btn');//修改密码
          
 
     }
@@ -276,7 +280,66 @@ Common.prototype.againSecret=function (){
 
 
 
+Common.prototype.checkEmpty=function (obj){
+    var count=0;
+    $.each(obj,function (i,val){
+        if($(val).val()==''){
+            count++
+        }
+    })
+
+    if(count!=0){
+        return {message:'输入框不能为空',state:'false'}
+    }else {
+        return {message:'',state:'true'}
+    }
+}
+
+Common.prototype.checkEmail=function (obj){
+
+    if(!this.regEmail.test( obj.val())){
+        return {message:'您输入的邮箱有误,请重新输入',state:'false'}
+    }else{
+        return {message:'',state:'true'}
+    }
+
+}
+
+Common.prototype.checkIphone=function (obj){
+
+    if(!this.regIphone.test(obj.val())){
+        return {message:'您输入的手机有误,请重新输入',state:'false'}
+    }else {
+        return {message:'',state:'true'}
+    }
+}
+
+
+Common.prototype.setPassword=function (obj){
+
+        $(obj).on('click',function (){
+         
+         
+
+              $.post('/reset/user/password',{id:''}).then(function (data){
+                    if(data.success){
+                      alert('重置成功，密码将会发入填写的邮箱中')
+                    }else{
+                      alert(data.errMessage)
+                    }
+
+              })
+       })
+
+}
+
+
+
+
+
+
 //checkbox  uiHelperTableToolsCheckable();
+
 
 var uiHelperTableToolsCheckable = function() {
     var $table = jQuery('.js-table-checkable');

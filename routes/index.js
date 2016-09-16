@@ -63,6 +63,11 @@ var config=require('../utils/config')
 
     app.post('/put/user',User.signRequired, User.put_user);   //修改用户个人信息
 
+    app.post('/put/user/password',User.signRequired, User.put_user_password);   //修改用户密码
+
+    app.post('/reset/user/password',User.signRequired, User.reset_user_password);   //重置密码
+
+
     app.post('/user/add/role',User.signRequired, User.add_role);      //增加 角色 权限
 
     app.post('/api/user/role/modify',User.signRequired,User.modify_role);  //修改 角色 权限

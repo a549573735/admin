@@ -110,6 +110,18 @@ define(function (require, exports, module) {
                                     });
                                 })
                          }(),
+                         restPassword:function (event){
+                                  var id=$(event.target).attr('data-id'); 
+                                   console.log(id) 
+                                  $.post('/reset/user/password',{id:id}).then(function (data){
+                                        if(data.success){
+                                          alert('重置成功，密码将会发入填写的邮箱中')
+                                        }else{
+                                          alert(data.errMessage)
+                                        }
+
+                                  })
+                         }
 
                      },
                       events:{
