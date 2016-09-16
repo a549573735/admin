@@ -6,6 +6,7 @@ define(function (require, exports, module) {
     Vue.component('com-table-list', {
 
         props: ['datalist'],
+
         
         template:'<table class="table  table-hover table-borderless">\
                       <thead>\
@@ -19,7 +20,7 @@ define(function (require, exports, module) {
                             <td v-if="item.company" class="text-center">{{ item.company }}</td>\
                             <td v-if="item.publicity" class="text-center">{{ item.publicity }}</td>\
                             <td v-if="item.status" class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
-                            <td v-if="item.readFlag" class="text-center">{{ item.readFlag }}</td>\
+                            <td v-if="item.readFlag" class="text-center">{{ item.readFlag==\'false\'?\'已读\':\'未读\' }}</td>\
                             <td v-if="item.suggestion" class="text-center">{{ item.suggestion }}</td>\
                             <td v-if="item.user" class="text-center">{{ item.user }}</td>\
                             <td v-if="item.inspectDate " class="text-center">{{ item.inspectDate }}</td>\

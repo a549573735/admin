@@ -19,8 +19,12 @@ define(function (require, exports, module) {
                                     type: "GET",   //请求方式
                                     success: function(data) {
                                         //请求成功时处理
-                                  console.log(data)
+                                 //   console.log(data)
                                         if(data.success){
+                                            data.content.content.forEach(function (item){
+                                                item.readFlag+=''
+                                          
+                                            })
                                        
                                             dataList=data.content
                                         }else {
@@ -61,6 +65,10 @@ define(function (require, exports, module) {
 
                           $.get('/api/suggestion/list',form).then(function (data){
 
+                              data.content.content.forEach(function (item){
+                                            item.readFlag+=''
+                                      
+                              })
                               that.dataList.content=data.content
                           })   
                    } 
