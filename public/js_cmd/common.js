@@ -333,11 +333,6 @@ Common.prototype.setPassword=function (obj){
 
 }
 
-
-
-
-
-
 //checkbox  uiHelperTableToolsCheckable();
 
 
