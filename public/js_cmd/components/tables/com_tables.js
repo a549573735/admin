@@ -20,10 +20,11 @@ define(function (require, exports, module) {
                             <td v-if="item.company" class="text-center">{{ item.company }}</td>\
                             <td v-if="item.publicity" class="text-center">{{ item.publicity }}</td>\
                             <td v-if="item.status" class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
-                            <td v-if="item.readFlag" class="text-center">{{ item.readFlag==\'false\'?\'已读\':\'未读\' }}</td>\
+                            <td v-if="item.readFlag" class="text-center">{{ item.readFlag==\'false\'?\'未读\':\'已读\' }}</td>\
                             <td v-if="item.suggestion" class="text-center">{{ item.suggestion }}</td>\
                             <td v-if="item.user" class="text-center">{{ item.user }}</td>\
                             <td v-if="item.inspectDate " class="text-center">{{ item.inspectDate }}</td>\
+                            <td v-if="item.readDate" class="text-center">{{ item.readDate===\'null\'?\'null\':item.readDate}}</td>\
                             <td v-if="item.notes " class="text-center">{{ item.notes }}</td>\
                         </tr>\
                       </tbody>\

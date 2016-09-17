@@ -23,9 +23,13 @@ define(function (require, exports, module) {
                                         if(data.success){
                                             data.content.content.forEach(function (item){
                                                 item.readFlag+=''
-                                          
+                                                if(item.readDate==null){
+                                                   item.readDate='null'
+                                                }
+                                      
+                                                
                                             })
-                                       
+                                   
                                             dataList=data.content
                                         }else {
                                               alert(data.errMessage)
@@ -67,6 +71,10 @@ define(function (require, exports, module) {
 
                               data.content.content.forEach(function (item){
                                             item.readFlag+=''
+                                             if(item.readDate==null){
+                                                   item.readDate='null'
+                                                }
+                                       
                                       
                               })
                               that.dataList.content=data.content
