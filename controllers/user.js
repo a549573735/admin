@@ -177,6 +177,26 @@ exports.user_admin_add=function(req, res, next) {
 }
 
 
+exports.api_admin_role=function (req, res, next){
+
+   var type=req.body.type||"DISTRICT"; 
+   
+    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
+        
+         console.log(data)
+         res.json(data);
+     
+   }).catch(function (err){
+           
+           console.log(err)
+
+      
+   })
+
+
+}
+
+
 
 
 /* 添加用户 */

@@ -39,12 +39,14 @@
                                 <div class="col-md-12 o-pd o-m-t">
                              
                                         <div class="col-md-3 o-pd  v-righ">角色：</div>
+                                        <input type="hidden"  id="role_select" value="<%=JSON.stringify(content)%>"> 
+                                  
                                         <div class="col-md-6 o-pd ">
                                             <select class="form-control val-user-id"  name="val-id">
+ 
                                                 <option value="">请选择</option>
-                                               <% content.forEach(function (item){%>     
-                                                <option value="<%=item.id %>" data-permissions="<%=item.permissionIds%> " ><%=item.name %></option>
-                                                <% }) %>
+                                                <option v-for="item in roleSelect" :value="item.id"  >{{item.name }}</option>
+                                               
                                         </select></div>
                                         </div>
                                     <div class="col-md-12 o-m-t o-pd">

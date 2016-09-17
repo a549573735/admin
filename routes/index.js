@@ -48,8 +48,7 @@ var config=require('../utils/config')
     
     app.post('/app/role/delete',User.signRequired,  User.delete_user_role)
 
-
-
+    app.post('/api/admin/role/list',User.signRequired,User.api_admin_role)    
 
 	app.post('/user/add/list',User.signRequired, User.user_add_list);   //动态传输 用户权限列表
 

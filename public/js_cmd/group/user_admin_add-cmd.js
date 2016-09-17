@@ -29,6 +29,9 @@ define(function (require, exports, module) {
                                               });
                                          return dataCheck
                               }(),
+                              roleSelect:function (){
+                                  return   JSON.parse($('#role_select').val())
+                              }()
                       },
                   
                      methods: {
@@ -70,6 +73,14 @@ define(function (require, exports, module) {
                                          window.location.href='/user/edit/list';
                                       }
                                })
+                         },
+                         getSelect:function (){
+
+                            
+
+
+
+
                          }
                      },
                       events:{
@@ -77,6 +88,15 @@ define(function (require, exports, module) {
                                 // 事件回调内的 `this` 自动绑定到注册它的实例上
                                  var that=this;
                                  this.form.type=msg
+
+                                
+                                $.post('/api/admin/role/list',{type:this.form.type}).then(function (data){
+                                        
+                                 
+                                    that.roleSelect=data.content; 
+                                  
+                                })
+                               
                            
                              },
                              'send-select':function (id){

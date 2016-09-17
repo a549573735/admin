@@ -64,8 +64,9 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
                        overflow:false,
                        overflow_btn:false
 
-          }
-            
+          }       
+             datalist.content.page=Math.ceil(datalist.content.total/datalist.content.size);
+
               res.render('pages/admin_market',{data:datalist} );
 
 	  }).catch(function (err){
@@ -94,6 +95,8 @@ exports.admin_park=function(req, res, next) {
    
 
 }
+
+
 
 
 
