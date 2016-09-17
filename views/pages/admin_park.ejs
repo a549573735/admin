@@ -16,7 +16,7 @@
                             <label class="col-md-1 o-pd v-label" for="val-skill">市场所：</label>
                             <div class="col-md-3">
                                 <select class="form-control" id="select_park" name="val-skill" @change="getParkList()">
-                                    <option value="">请选择</option>
+                                    <option value="all">请选择</option>
                                     <% dataSelect.forEach(function (item){ %>
                                       <option value="<%=item.id%>"><%=item.name%></option>
                                     <%})%>

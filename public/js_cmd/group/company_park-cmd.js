@@ -12,7 +12,7 @@ define(function (require, exports, module) {
 				   content:function (){
 				   	    var  arr =window.location.search.split('?')[1]?window.location.search.split('?')[1].split(/&?[a-z]+=/ig):'';
 				   	    var  form={
-				 				  	id:arr[1],
+				 				  	id:'all',
 				 				  	page:arr[2]||0,
 				 				  	parkname:'',
 				 				}	
