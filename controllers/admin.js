@@ -23,7 +23,7 @@ exports.interface = function(req, res, next) {
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
 
 
-        console.log(data.content.content)
+        console.log(data.content)
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
@@ -50,7 +50,7 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
 		      page:req.query.page||0,
 		      size:15
 	  }
-
+   console.log(data.content)
       api_services.commonRequest('api/app/market/all',"GET",null).then(function (data){
 
          console.log(data)
