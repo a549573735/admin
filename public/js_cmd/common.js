@@ -254,7 +254,7 @@ Common.prototype.againSecret=function (){
          $('.admin-add-btn').on('click',function (){
 
                 var form={
-                        parentId:$('#select_park').val()||"ROOT",
+                        parentId:$('.select_park').val()||"ROOT",
                         name:$('.admin-name').val(),
                         phone:$('.admin-phone').val(),
                         contact:$('.admin-concat').val(),
