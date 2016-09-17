@@ -42,9 +42,11 @@ define(function (require, exports, module) {
 	                 }
 	                 if(data.type=='COMPANY'){ 	
                 	     window.location.href='/organize/details?view=company&id='+data.id;
-                    }else {
- 						window.location.href='/organize/architecture';
+                    }else if(data.type="BACKSTAGE"){
+ 						window.location.href='/admin/interface/list';
 
+                    }else {
+                    	window.location.href='/organize/architecture';
                     }
 	               
 

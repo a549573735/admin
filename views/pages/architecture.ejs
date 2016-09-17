@@ -11,6 +11,7 @@
                 </div>
                 <div class="col-md-12 o-pd quju">
                   <ul>
+                    <% if(data.content.length>0){ %> 
                      <% for(var i=0;i<4;i++){%>                   
                          <li><div class="quju_sp1"><a href="/organize/park?id=<%=data.content[i].id%>"><%=data.content[i].name%></a></div></li>
                     <%}%>
@@ -26,7 +27,8 @@
                      <% for(var i=0;i<4;i++){%>   
                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（<%=data.content[i].companyCount%>家）</div></li>
                       <%}%>
-                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（<%=companyAll%>家）</div></li>                                       
+                      <li><div class="qiju_sp3">企业详情</div><div class="qiju_sp4">（<%=companyAll%>家）</div></li>      
+                      <%}%>                                 
                   </ul>
                 </div>
             </div>
