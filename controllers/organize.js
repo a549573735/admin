@@ -17,7 +17,8 @@ exports.organize_company=function (req,res,next){
     
     
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
-
+           
+           
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
@@ -31,6 +32,10 @@ exports.organize_company=function (req,res,next){
             console.log(data)
 
         res.render('pages/organize_company',{data:datalist});
+    }).catch(function (err){
+
+        console.log(err)
+
     })
 }
 
