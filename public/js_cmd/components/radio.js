@@ -32,9 +32,9 @@ define(function (require, exports, module) {
                         <div class="col-md-12">\
                             <div class="form-group" >\
                                 <label class="col-md-2 v-label o-pd" for="radio-1">\
-                                    <input class="radio-m" id="radio-1" @click="sendRadio($event)" value="DISTRICT" name="user" checked="checked" type="radio"><span></span>奉贤区局：</label>\
+                                    <input class="radio-m" id="radio-1" @click="sendRadio($event)" value="DISTRICT" name="user" checked="checked"  type="radio"><span></span>奉贤区局：</label>\
                                 <label class="col-md-2 o-pd v-label-m" for="radio-2">\
-                                    <input class="radio-m" name="user" @click="sendRadio($event)" value="MARKET" id="radio-2" type="radio"><span></span>市场所：</label>\
+                                    <input class="radio-m" name="user" @click="sendRadio($event)" value="MARKET" id="radio-2" checked="checked"  type="radio"><span></span>市场所：</label>\
                                 <div class="col-md-3 o-pd-l">\
                                     <select class="form-control" name="val-skill" @change="selectChange($event)">\
                                           <option value="0">请选择</option>\
@@ -42,7 +42,7 @@ define(function (require, exports, module) {
                                     </select>\
                                 </div>\
                                 <label class="col-md-1 o-pd v-label-s" for="radio-3">\
-                                    <input class="radio-m" name="user" @click="sendRadio($event)" value="PARK" type="radio" id="radio-3"><span></span>园区：</label>\
+                                    <input class="radio-m" name="user" @click="sendRadio($event)" value="PARK" type="radio" checked="checked"  id="radio-3"><span></span>园区：</label>\
                                 <div class="col-md-3 o-pd-l">\
                                     <select class="form-control" name="val-skill" @change="sendVal($event)">\
                                              <option value="0">请选择</option>\

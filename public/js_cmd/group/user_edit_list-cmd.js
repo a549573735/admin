@@ -2,7 +2,7 @@ define(function (require, exports, module) {
        var Vue = require('/lib_cmd/vue-cmd');
 
 	    require('/js_cmd/components/paging');
- 			require('/js_cmd/components/radio');
+ 			require('/js_cmd/components/user_radio');
 
        new Vue({
                 el: '#app',
@@ -28,6 +28,7 @@ define(function (require, exports, module) {
                           }(),
                           id:'',
                           page:'',
+                          
                          },
                   
                      methods: {
@@ -88,10 +89,12 @@ define(function (require, exports, module) {
                                           id:$('.model-id').val(),
                                           roleId:$('.model-roleId').val(),
                                           belongId:$('.model-belongId').val(),
-                                          type:$('.model-type').val()
+                                          type:$('.model-type').val(),
+                                         
 
 
                                     }
+                                    console.log(from)
        
 
                                    $.ajax({

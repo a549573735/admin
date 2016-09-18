@@ -1,13 +1,13 @@
 define(function (require, exports, module) {
        var Vue = require('/lib_cmd/vue-cmd');
     
-      require('/js_cmd/components/radio');
+      require('/js_cmd/components/user_radio');
 
        new Vue({
 
                 el: '#app',
                     data:{      
-                               radio_val:'DISTRICT',
+                               radio_val:'',
                                checkboxDate:function (){
                                            var dataCheck=null; 
                                            var that=this;
@@ -15,7 +15,7 @@ define(function (require, exports, module) {
                                                     url: '/user/add/list',    //请求的url地址
                                                     dataType: "json",   //返回格式为json
                                                     async: false, //请求是否异步，默认为异步，这也是ajax重要特性
-                                                    data: { "type": that.radio_val },    //参数值
+                                                    data: { "type":this.radio_val||JSON.parse($('#user_role').val()).type },    //参数值
                                                     type: "POST",   //请求方式
                                                     success: function(data) {
                                                         //请求成功时处理
@@ -54,7 +54,7 @@ define(function (require, exports, module) {
 
                                     name:$('.per_name').val(),
                                     permissionIds:id,
-                                    type:this.radio_val,
+                                    type:this.radio_val||JSON.parse($('#user_role').val()).type,
                                     id:$.query.get('id')||'',
 
                                  }

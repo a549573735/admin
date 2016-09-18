@@ -12,6 +12,7 @@
                                 <a class="btn btn-minw btn-primary v-tabs-btn" href="/organize/company" >退出</a>
                             </div>
 
+                        <%if(user.content.btnPermissions.network_check){%>  
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">不合格</button>
                                 <div class="v-modal-min">
@@ -32,12 +33,14 @@
                             </div>
 
 
-
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn inspect-qualified-btn2"  data-status="PASS" type="button">合格</button>
                             </div>
+                    
+                        <%}%> 
 
 
+                    <%if(user.content.btnPermissions.suggestion){%>  
                             <div class="v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">建议</button>
                                 <div class="v-modal-min">
@@ -58,10 +61,10 @@
                                     </div>
                                 </div>
                             </div>
-                            
+                         <%}%>   
 
 
-
+                        <%if(user.content.btnPermissions.appointment){%>  
                            <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle " type="button">预约</button>
                                 <div class="v-modal-min">
@@ -94,45 +97,57 @@
                                     </div>
                                 </div>
                             </div>
+                           <%}%> 
 
 
+                            <%if(user.content.btnPermissions.interview){%>        
+                                         <div class=" v-item-btn">
+                                            <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle"  type="button">约谈</button>
+                                             <div class="v-modal-min">
+                                                        <div class="form-group clearfix o-mg">
+                                                            <div class="form-group clearfix">
+                                                           
+                                                                    <label class="col-md-3 control-label v-min-fz">约谈时间:</label>
+                                                                    
+                                                                    <div class="col-md-5 o-pd">
+                                                                      <select class="form-control " id="select-interview" name="date-interview">
+                                                                           
+                                                                                 <option value="3">三天内</option>
+                                                                                 <option value="7">七天内</option>
+                                                                                 <option value="10"十天内</option>
+                                                                       </select>
+                                                                   </div>
+                                                            </div>
 
+                                                                    <div class="form-group ">
 
-                             <div class=" v-item-btn">
-                                <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle"  type="button">约谈</button>
-                                 <div class="v-modal-min">
-                                    <div class="form-group clearfix o-mg">
-                                        <div class="form-group clearfix">
-                                       
-                                                <label class="col-md-3 control-label v-min-fz">约谈时间:</label>
-                                                
-                                                <div class="col-md-5 o-pd">
-                                                  <select class="form-control " id="select-interview" name="date-interview">
-                                                       
-                                                             <option value="3">三天内</option>
-                                                             <option value="7">七天内</option>
-                                                             <option value="10"十天内</option>
-                                                   </select>
-                                               </div>
-                                        </div>
+                                                                        <label class="col-md-3 control-label " for="val-suggestions">备注:</label>
+                                                                        <div class="col-md-7 o-pd">
+                                                                            <textarea class="form-control" id="val-interview"  name="val-interview" rows="8" ></textarea>
+                                                                            <p class="v-msg"></p>
+                                                                        </div>
+                                                                    </div>
+                                                                
 
-                                        <div class="form-group ">
-
-                                            <label class="col-md-3 control-label " for="val-suggestions">备注:</label>
-                                            <div class="col-md-7 o-pd">
-                                                <textarea class="form-control" id="val-interview"  name="val-interview" rows="8" ></textarea>
-                                                <p class="v-msg"></p>
+                                                                    <div class="col-md-10 col-md-offset-3 v-code text-left o-pd ">
+                                                                        <button class="btn btn-sm btn-primary v-t-b interview-btn" type="submit">提交</button>
+                                                                    </div>
+                                                    </div>
+                                                 
                                             </div>
+                                      
                                         </div>
-                                    
+                                    <%}%>
 
-                                        <div class="col-md-10 col-md-offset-3 v-code text-left o-pd ">
-                                            <button class="btn btn-sm btn-primary v-t-b interview-btn" type="submit">提交</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
 
+
+
+
+
+
+
+
+                                  
                         </div>
                         <%}%>
                     </div>

@@ -24,7 +24,10 @@
                                <input type="text" class="form-control select-parkname" >
                             </div>
 
-                            <div class="col-md-4 text-right o-pd clearfix">
+
+                            <div class="col-md-4 text-left o-pd clearfix">
+
+                        <%if(user.content.btnPermissions.suggestion){%>  
                             <div class="v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle" type="button">建议</button>
                                 <div class="v-modal-min">
@@ -45,10 +48,10 @@
                                     </div>
                                 </div>
                             </div>
+                        <%}%>            
 
 
-
-
+                     <%if(user.content.btnPermissions.interview){%>  
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle"  type="button">约谈</button>
                                  <div class="v-modal-min">
@@ -83,9 +86,9 @@
                                     </div>
                                 </div>
                             </div>
+                          <%}%>      
 
-
-
+                         <%if(user.content.btnPermissions.appointment){%>     
                             <div class=" v-item-btn">
                                 <button class="btn btn-minw btn-primary v-tabs-btn v-min-toggle " type="button">预约</button>
                                 <div class="v-modal-min">
@@ -118,8 +121,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
+                         <%}%>   
 
 
 
@@ -130,7 +132,6 @@
                         </div>
                     </div>
                 </div>
-
             </form>
 
             <div class="row v-table" >

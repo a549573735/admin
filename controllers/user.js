@@ -158,7 +158,9 @@ exports.user_role=function(req, res, next) {
 
 exports.user_admin_add=function(req, res, next) {
     
-    var type=req.body.type||"DISTRICT"; 
+    var type=req.body.type||req.session.user.content.type; 
+
+    console.log()
    
     api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
@@ -205,9 +207,10 @@ exports.api_admin_role=function (req, res, next){
 
      var form=req.body;
        // console.log(form)
-     form.belongId=form.type=='DISTRICT'?req.session.user.content.id:form.belongId
-     console.log(form.belongId ) 
-      console.log(req.session.user.content.id) 
+     // form.belongId=form.type!='DISTRICT'?req.session.user.content.id:form.belongId
+      form.belongId=form.belongId||req.session.user.content.id
+
+  
      api_services.commonRequest('api/app/user/add',"POST",form).then(function (data){
 
             console.log(data)
@@ -336,7 +339,8 @@ exports.api_admin_role=function (req, res, next){
         }else {
            data.permissionIds=req.body['permissionIds[]']
         }
-  
+
+        console.log(data)  
 
        api_services.commonRequest('api/app/role/add',"POST",data).then(function (data){
              
@@ -360,9 +364,11 @@ exports.modify_role=function (req,res,next){
             name:req.body.name,
             permissionIds:[],
             type:req.body.type,
-            id:req.body.id
+            id:req.body.id||req.session.user.content.id
           
        }
+
+       console.log(data)
 
 //PUT /api/app/role/modify
 

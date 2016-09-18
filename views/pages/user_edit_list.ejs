@@ -4,7 +4,10 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
           <div class="c-r" id="app">
-            <v-radio-select></v-radio-select>
+            <v-radio-select :role="<%=JSON.stringify(user.content)%>" :showselect="true"></v-radio-select>
+
+               <input type="hidden" id="user_role" value="<%=JSON.stringify(user.content)%>">
+             
             <div class="row">
                 <div class="v-t-b col-md-3">
                                 <a href="/user/admin/add"  class=" btn btn-md btn-primary btn-block " >增加</a>
@@ -42,7 +45,7 @@
                                 <td class="text-center phone">{{item.phone||'null'}}</td>
                                 <td class="text-center mail">{{item.mail||'null'}}</td>
                                 <td class="text-center">{{item.createDate}}</td>
-                                <td class="text-center">{{item.createDate}}</td>
+                                <td class="text-center">{{item.roleName}}</td>
                                 <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" :data-id="item.id" :data-belongId="item.belongId" :data-roleId="item.roleId"  data-toggle="modal" @click="getMsg($event)" :data-type="item.type" data-target="#modal-fromuser" >修改</button></div>
                                  <div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" @click="restPassword($event)" :data-id="item.id">重置</button></div></td>
                             </tr>

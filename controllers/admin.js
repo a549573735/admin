@@ -50,7 +50,7 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
 		      page:req.query.page||0,
 		      size:15
 	  }
-   console.log(data.content)
+  
       api_services.commonRequest('api/app/market/all',"GET",null).then(function (data){
 
          console.log(data)

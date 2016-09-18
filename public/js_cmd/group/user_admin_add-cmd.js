@@ -1,14 +1,14 @@
 define(function (require, exports, module) {
        var Vue = require('/lib_cmd/vue-cmd');
 	  
- 			require('/js_cmd/components/radio');
+ 			require('/js_cmd/components/user_radio');
      // var Common=new Common();
 
        new Vue({
 
                 el: '#app',
-                   data:{    form:{type:'DISTRICT',_id:'' } ,
-                             radio_val:'DISTRICT',
+                   data:{    form:{type:'',_id:'' } ,
+                             radio_val:'',
                              checkboxDate:function (){
                                          var dataCheck=null; 
                                          var that=this;
@@ -16,7 +16,7 @@ define(function (require, exports, module) {
                                                   url: '/user/add/list',    //请求的url地址
                                                   dataType: "json",   //返回格式为json
                                                   async: false, //请求是否异步，默认为异步，这也是ajax重要特性
-                                                  data: { "type": that.radio_val },    //参数值
+                                                  data: { "type": JSON.parse($('#user_role').val()).type },    //参数值
                                                   type: "POST",   //请求方式
                                                   success: function(data) {
                                                       //请求成功时处理
@@ -38,16 +38,19 @@ define(function (require, exports, module) {
                          subForm:function (event){
                                var form={
                                 
-                                    type:this.form.type,
+                                    type:this.form.type||JSON.parse($('#user_role').val()).type,
                                     belongId:this.form._id||'',
                                     username:$('.username').val(),
                                     roleId:$('.val-user-id').val(),
                                     mail:$('.email').val(),
                                     password:$('.password ').val(),
                                     displayName:$('.displayName').val(),
-                                    phone:$('.phone').val()
+                                    phone:$('.phone').val(),
+                                    roleName:$(".val-user-id").find("option:selected").text()
 
                                }
+                
+
                               
                               var checkEmpty = Common.checkEmpty($('#app').find('input'));
 
@@ -65,6 +68,7 @@ define(function (require, exports, module) {
                                     return false
                               }
 
+                                console.log(form)  
                                $.post('/user/admin/add',form).then(function (data){
                                       
                                       if(data.success==false||data.state==false){
@@ -89,19 +93,23 @@ define(function (require, exports, module) {
                                  var that=this;
                                  this.form.type=msg
 
-                                
+                            
                                 $.post('/api/admin/role/list',{type:this.form.type}).then(function (data){
                                         
-                                 
-                                    that.roleSelect=data.content; 
+                                    if(data.success){
+                                      that.roleSelect=data.content; 
+                                    }else {
+                                       alert(data.errMessage)  
+                                    }
                                   
                                 })
                                
                            
                              },
                              'send-select':function (id){
-                                 
+                               
                                   this.form._id=id
+                                 
 
                              }
 

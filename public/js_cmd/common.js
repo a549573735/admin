@@ -340,6 +340,28 @@ Common.prototype.setPassword=function (obj){
 
 }
 
+Common.prototype.getChecked=function (){
+
+
+    var  permissionIds=$.query.get('permissionIds').split(',');
+    
+    $('.rolt-user-checked').find('input[type=checkbox]').each(function (index,val){
+
+          permissionIds.forEach(function (item){
+
+               if($(val).attr('data-id')==item){
+                  $(val).prop('checked','checked')
+               }
+
+          })
+
+    })
+
+}
+
+
+
+
 //checkbox  uiHelperTableToolsCheckable();
 
 
