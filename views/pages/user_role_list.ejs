@@ -9,16 +9,17 @@
          
             
             <input type="hidden" id="user_role" value="<%= JSON.stringify(user.content) %>">
-
-            <div class="row">
-                <div class="v-t-b col-md-3">
-                    <a class=" btn btn-md btn-primary btn-block" href="/user/add">增加</a>
+                
+            <%if(user.content.btnPermissions.same_level_manage){%>    
+                <div class="row">
+                    <div class="v-t-b col-md-3">
+                        <a class=" btn btn-md btn-primary btn-block" href="/user/add">增加</a>
+                    </div>
+                    <div class="v-t-b col-md-3">
+                        <button class="btn btn-md btn-primary btn-block" @click="deleteUser()">删除</button>
+                    </div>
                 </div>
-                <div class="v-t-b col-md-3">
-                    <button class="btn btn-md btn-primary btn-block" @click="deleteUser()">删除</button>
-                </div>
-            </div>
-
+            <%}%>
 
             <div class="row v-table">
                 <div class="col-md-12">

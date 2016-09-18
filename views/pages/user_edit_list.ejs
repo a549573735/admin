@@ -8,12 +8,14 @@
                <input type="hidden" id="user_role" value="<%=JSON.stringify(user.content)%>">
              
             <div class="row">
+               <%if(user.content.btnPermissions.same_level_manage){%>    
                 <div class="v-t-b col-md-3">
                                 <a href="/user/admin/add"  class=" btn btn-md btn-primary btn-block " >增加</a>
                             </div>
                             <div class="v-t-b col-md-3">
                                 <button class="btn btn-md btn-primary btn-block" id="delete_user" @click="deleteUser()" >删除</button>
-               </div>
+                </div>
+               <%}%> 
             </div>
 
             <div class="row v-table">

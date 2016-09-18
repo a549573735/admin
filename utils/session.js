@@ -56,7 +56,7 @@ module.exports=function (app){
                }
           }
 
-          var json={publicity:'',suggestion:'',interview:'',appointment:'',network_check:''}  
+          var json={publicity:'',suggestion:'',interview:'',appointment:'',network_check:'',same_level_manage:""}  
 
          if(_user ){   
                     if( _user.content.permissions!=null){
@@ -78,6 +78,8 @@ module.exports=function (app){
                                  case 'network_check':
                               json.network_check=  item;
                                 break
+                                case  'same_level_manage':
+                              json.same_level_manage =item;
                               }
 
                       })
