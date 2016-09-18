@@ -95,7 +95,7 @@ define(function (require, exports, module) {
                 var src=$(event.target).attr('data-src');
                 var img= src.split(',')[0]
 
-                $('#v-com-img').attr('src',img)
+                $('#v-com-img').attr('src','http://'+img)
 
             }  
 

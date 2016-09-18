@@ -18,7 +18,7 @@ exports.organize_company=function (req,res,next){
     
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
            
-           
+        data.content.page=Math.ceil(data.content.total/data.content.size);   
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
@@ -30,6 +30,7 @@ exports.organize_company=function (req,res,next){
 
           }
             console.log(data)
+
 
         res.render('pages/organize_company',{data:datalist});
     }).catch(function (err){
@@ -55,7 +56,7 @@ exports.api_organize_company_list = function(req, res, next) {
            }
            
         api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
-            
+            data.content.page=Math.ceil(data.content.total/data.content.size);   
             var  datalist={ 
                            href:'/organize/details?view=company&id=',
                            title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
@@ -82,7 +83,7 @@ exports.organize_market = function(req, res, next) {
 
   api_services.commonRequest('api/app/market/all','GET',null).then(function (data){
 
-
+      data.content.page=Math.ceil(data.content.total/data.content.size);   
         var  datalist={ 
                        href:'/organize/park?id=',
                        title:['市场所名称','市场所地址','联系人','联系方式'],
@@ -108,7 +109,7 @@ exports.organize_park_id = function(req, res, next) {
     var id=req.query.id||req.session.user.content.id;
  
     api_services.commonRequest('api/app/market/all','GET',null).then(function (dataSelect){
-          
+            dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);   
           console.log(dataSelect)
 
           res.render('pages/organize_park', { select:dataSelect.content });
@@ -128,11 +129,13 @@ exports.api_organize_park_list=function(req, res, next) {
 
 
     var form={
-        page:req.body.page||0,
+        page:req.body.page||req.query.page||0,
         size:15
     }
-     
+      
+
     api_services.commonRequest('api/app/park/'+id+'/'+parkName,'POST',form).then(function (dataSelect){
+             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -215,6 +218,7 @@ exports.details = function(req, res, next) {
        data.btnlist[0].active=true;
        api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
                         console.log(dataSelect)
+                         dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
                          req.session.user.content.companyName=dataSelect.content.name;
                          data.data.content=dataSelect.content;
 
@@ -236,6 +240,7 @@ exports.details = function(req, res, next) {
         data.type='date';
      
         api_services.commonRequest('api/app/company/'+id+'/purchase/list','POST',form).then(function (dataSelect){
+                  dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
               console.log(dataSelect.content)
                   tools.Interface_company({title:['采购订单号','采购日期','供货企业','供货名称','经办人','采购随行单','备注'],
                                            style: ['20%','20%','10%','10%','10%','20%','10%']},
@@ -257,7 +262,7 @@ exports.details = function(req, res, next) {
        data.btnlist[2].active=true;
        data.type='date';
        api_services.commonRequest('api/app/company/'+id+'/sale/list','POST',form).then(function (dataSelect){
-
+               dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
               console.log(dataSelect.content)
              tools.Interface_company({title:['订货单号','销售日期','采购企业','供货名称','销售代表','备注'],
                                          style: ['20%','20%','20%','10%','10%','10%']},
@@ -280,7 +285,7 @@ exports.details = function(req, res, next) {
        data.btnlist[3].active=true;
        data.type='date';
        api_services.commonRequest('api/app/company/'+id+'/invoice/list','POST',form).then(function (dataSelect){
-
+             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect.content)
              tools.Interface_company({title:['发票单号','开票日期','发票类别','客户','税号','开票金额','收票人','经办人','发票单'],
                                          style: ['10%','15%','10%','10%','15%','10%','10%','10%','10%']},
@@ -302,7 +307,7 @@ exports.details = function(req, res, next) {
        data.type='search';
 
        api_services.commonRequest('api/app/company/'+id+'/customer/aptitude/list','POST',form).then(function (dataSelect){
-
+             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
                   console.log(dataSelect.content)
              tools.Interface_company({title:['客户名称','客户地址','联系方式','经营许可证','经营范围','许可证截止日期'],
                                          style: ['10%','15%','10%','20%','auto','20%']},
@@ -327,6 +332,7 @@ exports.details = function(req, res, next) {
        data.btnlist[5].active=true;
        data.type='search';
          api_services.commonRequest('api/app/company/'+id+'/producer/aptitude/list','POST',form).then(function (dataSelect){
+              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);    
                   console.log(dataSelect.content)
              tools.Interface_company({title:['生产商姓名','生产商地址','联系方式','经营许可证','经营范围','许可证截止日期'],
                                          style: ['15%','15%','10%','20%','auto','20%']},
@@ -351,6 +357,7 @@ exports.details = function(req, res, next) {
        data.btnlist[6].active=true;
        data.type='search';
        api_services.commonRequest('api/app/company/'+id+'/provider/aptitude/list','POST',form).then(function (dataSelect){
+                     dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
                      console.log(dataSelect.content)
                       tools.Interface_company({title:['供应商姓名','供应商地址','联系方式','经营许可证','经营范围','许可证截止日期'],
                                          style: ['15%','15%','10%','20%','auto','20%']},
@@ -375,7 +382,8 @@ exports.details = function(req, res, next) {
        data.type='search';
 
        api_services.commonRequest('api/app/company/'+id+'/product/aptitude/list','POST',form).then(function (dataSelect){
-              console.log(dataSelect.content)
+                       dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+                      console.log(dataSelect.content)
                       tools.Interface_company({
                                          title:['产品名称','生产地址','产品规格','经营范围','产品注册证号','注册证有效期'],
                                          style: ['15%','20%','15%','10%','auto','20%']},
@@ -426,7 +434,7 @@ exports.api_byProduct = function(req, res, next) {
         api_services.commonRequest('api/app/company/by/product/'+name,'POST',form).then(function (dataSelect){
                  console.log(dataSelect)
             
-
+               dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
                res.json(dataSelect)
             
 
@@ -457,7 +465,7 @@ exports.api_byProvider = function(req, res, next) {
         api_services.commonRequest('api/app/company/by/provider/'+name,'POST',form).then(function (dataSelect){
                  console.log(dataSelect)
             
-
+                dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);   
                res.json(dataSelect)
             
 
@@ -522,7 +530,7 @@ exports.api_add_organize = function(req, res, next) {
      
        api_services.commonRequest('api/app/organize/add','POST',form).then(function (data){
                  console.log(data)
-            
+               data.content.page=Math.ceil(data.content.total/data.content.size); 
                res.json(data)
             
         }).catch(function (data){

@@ -46,10 +46,10 @@ define(function (require, exports, module) {
                 methods: {
 
             
-                   getContent:function (){
+                   getContent:function (page){
                           var that=this;
                           var form= {
-                              "page":this.page||0,
+                             "page":this.dataList.content.page||page||0,
                               "size":15,
                               "type":$('#selectType').val(),
                               "market":$('#select_market').val(),

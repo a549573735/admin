@@ -32,13 +32,13 @@
 
             <div class="row v-table">
                 <div class="col-md-12">
-                    <div class="block" >
+                    <div class="block" v-cloak>
                          <check-table-list :datalist="tableList"  ></check-table-list>
                     </div>
                 </div>
             </div>
-
-             <v-pages :pagelist="tableList.page||1"> </v-pages>
+           
+             <v-pages :pagelist="tableList.content.page||1"> </v-pages>
 
                    
         </div>

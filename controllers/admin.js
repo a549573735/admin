@@ -12,7 +12,7 @@ var api_services=require('../models/api_services');
 exports.interface = function(req, res, next) {
 
         var form=req.body||{};
-                form.page=req.body.page||0;
+                form.page=req.body.page||req.query.page||0;
                 form.size=15;
             
             if(req.query.id){
@@ -24,6 +24,7 @@ exports.interface = function(req, res, next) {
 
 
         console.log(data.content)
+        data.content.page=Math.ceil(data.content.total/data.content.size); 
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
@@ -37,8 +38,6 @@ exports.interface = function(req, res, next) {
 
         res.render('pages/admin',{data:datalist});
     })
-
-
 }
 
 
@@ -54,6 +53,7 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
       api_services.commonRequest('api/app/market/all',"GET",null).then(function (data){
 
          console.log(data)
+
 
       	 var  datalist={ 
                        href:'/organize/park?id=',
@@ -83,7 +83,9 @@ exports.admin_park=function(req, res, next) {
 
      api_services.commonRequest('api/app/market/brief/all',"GET",null).then(function (data){
             
- 			console.log(data)
+
+        data.content.page=Math.ceil(data.content.total/data.content.size);
+
              res.render('pages/admin_park', { dataSelect:data.content });
 
 	  }).catch(function (err){

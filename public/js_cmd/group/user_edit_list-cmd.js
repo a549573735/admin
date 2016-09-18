@@ -27,7 +27,7 @@ define(function (require, exports, module) {
                              return list
                           }(),
                           id:'',
-                          page:'',
+                         
                           
                          },
                   
@@ -156,7 +156,7 @@ define(function (require, exports, module) {
 
                                   var that=this;
 
-                                  $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
+                                  $.get('/api/user/edit/list?page='+this.listData.page+'&id='+this.id).then(function (data){
 
                                         that.listData=data.content;
 

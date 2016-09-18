@@ -38,7 +38,7 @@ define(function (require, exports, module) {
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],
-                           page:''
+                   
 
                     }
                    
@@ -46,10 +46,10 @@ define(function (require, exports, module) {
                 },
                 methods: {
 
-                     getContent:function (){
+                     getContent:function (page){
                           var that=this;
                           var form= {
-                              "page":this.page||0,
+                              "page":this.dataList.content.page||page||0,
                               "size":15,
                               "type":$('#selectType').val(),
                               "market":$('#select_market').val(),
@@ -63,9 +63,7 @@ define(function (require, exports, module) {
 
                               that.dataList.content=data.content
                           })   
-
                    }
-
 
 
                 },
@@ -76,7 +74,7 @@ define(function (require, exports, module) {
                       this.page=page-1
                       var that=this;
 
-                       this.getContent()
+                      this.getContent(this.page)
 
                       // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
 

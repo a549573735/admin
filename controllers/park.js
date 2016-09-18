@@ -13,6 +13,7 @@ exports.parkAll=function (req,res,next){
 	  api_services.commonRequest('api/app/park/'+_id,"GET",null).then(function (data){
             
     	    data.content.page=Math.ceil(data.content.total/data.content.size);
+    	  
             res.json(data)
 
 	  }).catch(function (err){
@@ -32,7 +33,8 @@ exports.parkBriefAll=function (req,res,next){
  
 	  api_services.commonRequest('api/app/park/brief/'+_id,"GET",null).then(function (data){
             
-      			
+      				
+      		data.content.page=Math.ceil(data.content.total/data.content.size);
             res.json(data)
 
 	  }).catch(function (err){

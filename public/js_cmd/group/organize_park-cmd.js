@@ -25,7 +25,7 @@ define(function (require, exports, module) {
 		                        type: "GET",   //请求方式
 		                        success: function(data) {
 		                            //请求成功时处理
-		                      console.log(data)
+		                        console.log(data)
 		                            if(data.success){
 		                           
 				                          datalist=data.content
@@ -39,22 +39,16 @@ define(function (require, exports, module) {
 		                        }
 
 		                    });
-		                     return datalist
+		                return datalist
 				   }(),
 				   style:['5%','20%','auto','120px','120px','100px'],
 				   type:"PARK",
 				   overfull:true,
-				   overfull_btn:true
+				   overfull_btn:true,
+
 				  
 			   }
-// 			    {
-// address (string): 地址 ,
-// contact (string, optional): 联系人 ,
-// id (string, optional),
-// name (string): 名称 ,
-// parentId (string): 所属 ,
-// phone (string, optional): 电话
-// }
+
 		   },
 		   methods:{
 		   	  getParkList:function (){
@@ -64,7 +58,7 @@ define(function (require, exports, module) {
 		   	  	   	    var form={
 		 				   	   parkname:$('.select-parkname').val()||'',
 		 				   	   id: $('#select_park').val()
-		 				   };
+		 				 };
 
 		 				this.tableList.content=this.getData(form)
 
@@ -99,6 +93,22 @@ define(function (require, exports, module) {
 
 		   	  }	 
 
+		   },events:{
+		   	 'send-page':function (page){
+		   	 		
+		   	 		this.tableList.content.page=page;
+		   	 		 var that=this;
+
+		   	  	   	    var form={
+		 				   	   parkname:$('.select-parkname').val()||'',
+		 				   	   id: $('#select_park').val(),
+		 				   	   page:page-1
+		 				 };
+
+		 			this.tableList.content=this.getData(form)
+
+
+		   	 }
 		   }  	
 
 	})

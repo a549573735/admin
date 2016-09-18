@@ -55,7 +55,7 @@
                         <handle-table-list :datalist="tablsData" ></handle-table-list>
                     </div>
                 </div>
-                 <v-pages :pagelist="<%=JSON.stringify(data.content.page||1)%>"> </v-pages>
+                 <v-pages :pagelist="tablsData.page||1"> </v-pages>
             </div>
 
             

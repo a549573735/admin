@@ -25,7 +25,7 @@ exports.loginUp = function(req, res, next) {
              
             data=JSON.parse(data);
             console.log(data)
-
+            data.content.page=Math.ceil(data.content.total/data.content.size);
             if(data.success){
                  
                  req.session.user=data
@@ -95,8 +95,10 @@ exports.api_user_edit_list = function(req, res, next) {
                 "size": 15
                 }
 
+
     api_services.commonRequest('api/app/user/'+_id+'/list',"POST",data).then(function (data){
 
+          data.content.page=Math.ceil(data.content.total/data.content.size);
            console.log(data.content)
            res.json(data)
 
@@ -131,7 +133,7 @@ exports.user_add_list = function(req, res, next) {
 
    api_services.commonRequest('api/app/role/permission/'+type+'/list',"GET",null).then(function (data){
         
-       
+       data.content.page=Math.ceil(data.content.total/data.content.size);
          res.json(data);
      
 
@@ -164,7 +166,7 @@ exports.user_admin_add=function(req, res, next) {
    
     api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
-            //console.log(data)
+         data.content.page=Math.ceil(data.content.total/data.content.size);
          res.render('pages/user_admin_add', data);
      
    }).catch(function (err){
@@ -185,7 +187,7 @@ exports.api_admin_role=function (req, res, next){
    
     api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
-         console.log(data)
+         data.content.page=Math.ceil(data.content.total/data.content.size);
          res.json(data);
      
    }).catch(function (err){
@@ -213,7 +215,7 @@ exports.api_admin_role=function (req, res, next){
   
      api_services.commonRequest('api/app/user/add',"POST",form).then(function (data){
 
-            console.log(data)
+            data.content.page=Math.ceil(data.content.total/data.content.size);
             res.json(data)
 
      }).catch(function (err){
@@ -239,7 +241,8 @@ exports.api_admin_role=function (req, res, next){
   
        api_services.commonRequest('api/app/user/delete',"DELETE",arr).then(function (data){
 
-                  res.json(data)
+              data.content.page=Math.ceil(data.content.total/data.content.size);
+              res.json(data)
 
        }).catch(function (err){
 
@@ -257,6 +260,7 @@ exports.api_admin_role=function (req, res, next){
 
        api_services.commonRequest('api/app/user/modify',"PUT",data).then(function (data){
                 console.log(data)
+                data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)
 
        }).catch(function (err){
@@ -278,6 +282,7 @@ exports.api_admin_role=function (req, res, next){
 
        api_services.commonRequest('api/app/user/password/modify',"PUT",form).then(function (data){
                 console.log(data)
+                data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)
 
        }).catch(function (err){
@@ -301,6 +306,7 @@ exports.api_admin_role=function (req, res, next){
       
        api_services.commonRequest('/api/app/user/'+id+'/password/reset',"PUT",null).then(function (data){
                 console.log(data)
+                data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)
 
        }).catch(function (err){
@@ -343,7 +349,7 @@ exports.api_admin_role=function (req, res, next){
         console.log(data)  
 
        api_services.commonRequest('api/app/role/add',"POST",data).then(function (data){
-             
+                  data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)
 
        }).catch(function (err){
@@ -406,7 +412,7 @@ exports.user_role_list = function(req, res, next) {
 
    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
-    
+         data.content.page=Math.ceil(data.content.total/data.content.size);
        
          res.json(data);
      
@@ -465,7 +471,7 @@ exports.get_user_messages = function (req,res,next){
 
        
        api_services.commonRequest('api/app/user/'+_id+'/messages',"POST",form).then(function (data){
-               
+                 data.content.page=Math.ceil(data.content.total/data.content.size);
                   console.log(data.content)
                   res.json(data)
 

@@ -25,7 +25,7 @@ define(function (require, exports, module) {
                     "company":  $('input[name=company]').val(),
                     "customer":  $('input[name=customer]').val(),
                     "market":  $('#select_market').val(),
-                    "page": 0,
+                    "page": this.tablsData.page,
                     "park":  $('#select_park').val(),
                     "producer":  $('input[name=producer]').val(),
                     "product":  $('input[name=product]').val(),
@@ -68,6 +68,26 @@ define(function (require, exports, module) {
 
           'send-select-admin':function (id){
              this.parkId=id;
+          },
+          'send-page':function (page){
+            this.tablsData.page=page;
+
+           // this.searchData()
+
+            var that=this;
+            var form={
+                page:page-1
+            }
+
+            $.post(' /api/organize/company/list',form).then(function (data){
+
+                  data.detals=true
+                  that.tablsData = data
+                  console.log(that.tablsData.page)  
+                  console.log(that.tablsData)
+
+            })
+
           }
 
        }
