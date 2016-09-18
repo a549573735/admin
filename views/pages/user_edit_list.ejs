@@ -4,8 +4,7 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
           <div class="c-r" id="app">
-            <v-radio-select :role="<%=JSON.stringify(user.content)%>" :showselect="true"></v-radio-select>
-
+         
                <input type="hidden" id="user_role" value="<%=JSON.stringify(user.content)%>">
              
             <div class="row">
@@ -52,9 +51,87 @@
                     
                             </tbody>
                         </table>
+                      <input type="hidden"  id="role_select" value="<%=JSON.stringify(content)%>"> 
                     </div>
                 </div>
             </div>
+
+<div class="modal fade " id="modal-fromuser" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  ">
+        <div class="modal-content">
+            <div class="modal-header o-nobor">
+                <button type="button" class="close v-tabs-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                       <div class="block-content block-content-narrow">
+
+                                    <div class="js-validation-bootstrap form-horizontal" >
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-username">姓名 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control model-displayName" type="text" id="val-username" name="val-username" >
+                                            </div>
+                                        </div>
+                                      
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-username">用户名 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control model-username" type="text" id="val-username" name="val-username" >
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-username">密码 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control model-password" type="text" id="val-password" name="val-password" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-email">邮箱 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control model-mail" type="text" id="val-email" name="val-email" >
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-confirm-password">电话<span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control model-phone" type="text" id="val-confirm-password" name="val-confirm-password" >
+                                            </div>
+                                             <input class="form-control model-id" type="hidden" >
+                                             <input class="form-control model-roleId" type="hidden" >
+                                             <input class="form-control model-belongId" type="hidden" >
+                                             <input class="form-control model-type" type="hidden" >
+                                        </div>
+                                   
+                                         <div class="form-group">
+                             
+                                                    <div class="col-md-3 control-label">角色：</div>
+                
+                                                    <div class="col-md-7">
+                                                        <select class="form-control " id="select-role-id"  name="val-id">
+                                                            <option value="">请选择</option>
+                                                            <option v-for="item in roleSelect"  :value="item.id"  >{{item.name }}</option>
+                                                        </select>
+                                                    </div>
+                                      
+                                        </div>
+                                        
+                                       
+                                        <div class="form-group">
+                                            <div class="col-md-8 col-md-offset-3">
+                                                <button class="btn btn-sm btn-primary v-btn-w model-put-btn" >提交</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal  用户 修改  弹框  -->
+
            
            <v-pages :pagelist="listData.page||1" ></v-pages>
         </div>

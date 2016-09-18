@@ -30,6 +30,7 @@ define(function (require, exports, module) {
                                          return dataCheck
                               }(),
                               roleSelect:function (){
+                               
                                   return   JSON.parse($('#role_select').val())
                               }()
                       },

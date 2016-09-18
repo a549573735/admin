@@ -78,9 +78,24 @@ exports.signRequired=function (req,res,next)
 exports.user_edit_list = function(req, res, next) {
 
                 //user/edit/list
+    var type=req.body.type||req.session.user.content.type; 
 
-      res.render('pages/user_edit_list');          
-    
+   
+    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
+        
+         data.content.page=Math.ceil(data.content.total/data.content.size);
+
+         res.render('pages/user_edit_list', data);
+     
+   }).catch(function (err){
+           
+           console.log(err)
+
+         res.render('pages/user_edit_list',{msg:'用户权限列表服务器错误',state:false});
+     
+
+   })       
+      
 
 }
 

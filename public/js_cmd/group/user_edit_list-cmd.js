@@ -27,6 +27,9 @@ define(function (require, exports, module) {
                              return list
                           }(),
                           id:'',
+                          roleSelect:function (){
+                                  return   JSON.parse($('#role_select').val())
+                           }()
                          
                           
                          },
@@ -61,7 +64,7 @@ define(function (require, exports, module) {
                                // model-put-btn
                                var tr=$(event.target).closest('tr');
                                var id=$(event.target).attr('data-id');
-                               var roleId=$(event.target).attr('data-roleId');
+                              
                                var belongId=$(event.target).attr('data-belongId');
                                var type=$(event.target).attr('data-type')
  
@@ -70,10 +73,9 @@ define(function (require, exports, module) {
                                $('.model-phone').val(tr.find('.phone').html())
                                $('.model-mail').val(tr.find('.mail').html())
                                $('.model-id').val(id);
-                               $('.model-roleId').val(roleId)
+                             
                                $('.model-belongId').val(belongId);
                                $('.model-type').val(type);
-
                               
                          },putUser:function (){
                                 var that=this;
@@ -87,16 +89,13 @@ define(function (require, exports, module) {
                                           mail:$('.model-mail').val(),
                                           password:$('.model-password').val(),
                                           id:$('.model-id').val(),
-                                          roleId:$('.model-roleId').val(),
                                           belongId:$('.model-belongId').val(),
                                           type:$('.model-type').val(),
-                                         
-
-
+                                          roleId:$('#select-role-id').val(),
+                                          roleName:$('#select-role-id').find("option:selected").text()
                                     }
-                                    console.log(from)
+                                  
        
-
                                    $.ajax({
                                         url: '/put/user',    //请求的url地址
                                         dataType: "json",   //返回格式为json

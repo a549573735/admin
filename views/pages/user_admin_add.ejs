@@ -5,8 +5,7 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
           <div class="c-r" id="app">
-                 <v-radio-select :role="<%= JSON.stringify(user.content) %>" :showselect="true"></v-radio-select>
-            
+                          
                   <input type="hidden" id="user_role" value="<%= JSON.stringify(user.content) %>">
 
                 <div class="row v-table">
@@ -51,7 +50,7 @@
                                                 <option v-for="item in roleSelect"  :value="item.id"  >{{item.name }}</option>
                                                
                                         </select></div>
-                                        </div>
+                               </div>
                                     <div class="col-md-12 o-m-t o-pd">
                                         <div class="col-md-5 o-pd o-m-t">
                                             <div class="v-t-m o-m-t">
