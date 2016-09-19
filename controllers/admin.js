@@ -119,7 +119,7 @@ exports.admin_company=function(req, res, next) {
 
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
-                       title:['企业名称','用户名','地址','联系人','联系方式','邮箱',"操作"],
+                       title:['企业名称','用户名','邮箱','联系人','联系方式','地址',"操作"],
                        content:data.content.content,
                        style:['20%','100px','auto','100px','80px','15%','18%'],
                        overflow:false,

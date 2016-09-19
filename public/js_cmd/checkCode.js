@@ -75,7 +75,7 @@ function getStyle(obj,attr){
 		var codeRender={
 			renderBG:function(obj){
 				var bg=codes.getColor();
-				obj.style.backgroundColor=bg;
+				//obj.style.backgroundColor=bg;
 			},
 			renderLayout:function(obj,len){
 				var codeHeight=obj.offsetHeight;

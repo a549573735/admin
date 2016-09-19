@@ -41,7 +41,7 @@
 
           this.getAppkey();  //获取appkey
           this.againSecret();
-          this.addParty('#modal-addParty');
+          this.addParty();
 
           this.setPassword('.model-password-btn');//修改密码
          
@@ -265,9 +265,9 @@ Common.prototype.againSecret=function (){
                         admin:$('.admin-admin').val()
                         }
 
-               var checked=self.checkEmpty($(form).find('input'))
-
-               var checkEmail=self.checkEmail($('.admin-email'));
+               var checked=self.checkEmpty($(this).closest('.form_Party').find('input[type=text]'))
+                   console.log($(form).find('input[type=text]').length)
+               var checkEmail=self.checkEmpty($(this).closest('.form_Party').find('.admin-email'))
 
                if(checked.state=='false'){
                   alert(checked.message)  

@@ -13,7 +13,6 @@ define(function (require, exports, module) {
                       <tbody class="v-tabs-check">\
                         <tr v-for="item in datalist.content" v-cloak>\
                             <td  class="text-center">{{ item.name }}</td>\
-                            <td  class="text-center">{{ item.use }}</td>\
                             <td  class="text-center">{{ item.address }}</td>\
                             <td  class="text-center">{{ item.belongMarket }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
