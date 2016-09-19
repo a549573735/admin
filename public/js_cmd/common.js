@@ -36,13 +36,12 @@
           this.sendMessage('.suggestion-btn','#tables','#val-suggestion',null,'/api/suggestion/msg',null,'.v-modal-min','.v-msg');    //建议
           this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg');    //约谈
           this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg');    // 预约
-
           this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg');  //不合格  
           this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null); 
 
           this.getAppkey();  //获取appkey
           this.againSecret();
-          this.addParty();
+          this.addParty('#modal-addParty');
 
           this.setPassword('.model-password-btn');//修改密码
          
@@ -249,12 +248,12 @@ Common.prototype.againSecret=function (){
       })
 
 }
- Common.prototype.addParty=function (){
+ Common.prototype.addParty=function (form){
             
-         
+         var self=this;
          $('.admin-add-btn').on('click',function (){
 
-                var form={
+               var form={
                         parentId:$('.select_park').val()||"ROOT",
                         name:$('.admin-name').val(),
                         phone:$('.admin-phone').val(),
@@ -264,7 +263,21 @@ Common.prototype.againSecret=function (){
                         mail:$('.admin-email').val(),
                         id:$('.admin-id').val(),
                         admin:$('.admin-admin').val()
-                   }
+                        }
+
+               var checked=self.checkEmpty($(form).find('input'))
+
+               var checkEmail=self.checkEmail($('.admin-email'));
+
+               if(checked.state=='false'){
+                  alert(checked.message)  
+                  return false 
+               }
+            
+               if(checkEmail.state=='false'){
+                  alert(checkEmail.message)  
+                  return false 
+               }
 
                    if($('.admin-type').val()=='modify'){
 

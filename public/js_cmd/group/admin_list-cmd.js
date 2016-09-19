@@ -60,6 +60,21 @@ define(function (require, exports, module) {
 
                 }
 
+
+               var checked=Common.checkEmpty($('#modal-addCompany').find('input'))
+
+               var checkEmail=Common.checkEmail($('.admin-email'));
+
+               if(checked.state=='false'){
+                  alert(checked.message)  
+                  return false 
+               }
+            
+               if(checkEmail.state=='false'){
+                  alert(checked.message)  
+                  return false 
+               }
+
                 if($('.admin-type').val()=='modify'){
 
                     $.post('/admin/company/modify',form).then(function (data){

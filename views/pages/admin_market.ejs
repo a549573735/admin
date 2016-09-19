@@ -10,7 +10,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="v-t-m">
-                                <button class="btn btn-md btn-primary btn-block" data-toggle="modal" data-target="#modal-addMerket" >新增市场所</button>
+                                <button class="btn btn-md btn-primary btn-block" data-toggle="modal" data-target="#modal-addParty" >新增市场所</button>
                             </div>
                         </div>
                     </div>
@@ -25,7 +25,7 @@
              <!-- <v-pages :pagelist="<%=JSON.stringify(data.page)||1%>"> </v-pages> -->
                 
 
-<div class="modal fade " id="modal-addMerket" tabindex="-1" role="dialog" aria-hidden="true">
+<div class="modal fade " id="modal-addParty" tabindex="-1" role="dialog" aria-hidden="true">
     <div class="modal-dialog  ">
         <div class="modal-content">
             <div class="modal-header o-nobor">
@@ -65,13 +65,13 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" >管理员用户名 <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <input class="form-control admin-username" type="text" name="val-username" >
+                                                <input class="form-control admin-username" type="text" name="val-username"  placeholder="作为登陆账号使用">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="val-email">邮箱 <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <input class="form-control admin-email" type="text" name="val-email" >
+                                                <input class="form-control admin-email" placeholder="用来接收密码和通知" type="text" name="val-email" >
                                             </div>
                                         </div>
 
