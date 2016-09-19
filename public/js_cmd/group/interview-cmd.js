@@ -1,7 +1,7 @@
 define(function (require, exports, module) {
      var Vue = require('lib_cmd/vue-cmd');
      require('/js_cmd/components/paging')
-     require('/js_cmd/components/tables/interview_tables')
+     require('/js_cmd/components/tables/interview_table')
      var select = require('/js_cmd/components/select');
       new Vue({
                 el: '#app',
@@ -19,7 +19,7 @@ define(function (require, exports, module) {
                                     type: "GET",   //请求方式
                                     success: function(data) {
                                         //请求成功时处理
-                                  console.log(data)
+                                     console.log(data)
                                         if(data.success){
                                        
                                             dataList=data.content
@@ -28,7 +28,7 @@ define(function (require, exports, module) {
                                         }
                                     },
                                     error: function(err) {
-                                        //请求出错处理
+                                         //请求出错处理
                                          //alert(err.msg);
                                     }
 
@@ -72,10 +72,11 @@ define(function (require, exports, module) {
 
                     'send-page':function (page){
 
-                       this.page=page-1
+                      this.page=page-1
+
                       var that=this;
 
-                      this.getContent(this.page)
+                      this.getContent( this.page )
 
                       // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
 

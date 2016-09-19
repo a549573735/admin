@@ -41,12 +41,13 @@
                                 <div class="v-t-b">
                                     <button class="btn btn-md btn-primary btn-block inspect_btn" @click="getContent()" type="submit">查询</button>
                                 </div>
-                                <% if(user.content.btnPermissions.publicity){%>
-                                         <div class="v-t-b" style="margin-left:15px;">
+                                
+                            </div>
+                             <% if(user.content.btnPermissions.publicity){%>
+                                        <div class="v-t-b" >
                                             <button class="btn btn-md btn-primary btn-block inspect_btn" data-target="#modal-publicity" data-toggle="modal" type="submit">新增公示</button>
                                         </div>
-                                 <%}%>  
-                            </div>
+                                 <%}%> 
                         </div>
                     </div>
                 </form>

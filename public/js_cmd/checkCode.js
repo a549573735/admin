@@ -113,7 +113,7 @@ function getStyle(obj,attr){
 			},
 			renderCode:function(code){
 				var colors=codes.getColor();
-				var fs=codes.getNumRange(12,22)+'px';
+				var fs=codes.getNumRange(20,28)+'px';
 				var skewDeg=codes.getNumRange(-60,60)+'deg';
 				var codeCssJson={
 					color:colors,

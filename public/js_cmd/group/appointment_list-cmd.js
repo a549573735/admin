@@ -47,6 +47,7 @@ define(function (require, exports, module) {
 
               
                     getContent:function (page){
+
                           var that=this;
                           var form= {
                               "page":this.dataList.content.page||page||0,
@@ -61,7 +62,8 @@ define(function (require, exports, module) {
 
                           $.get('/api/appointment/list',form).then(function (data){
 
-                              that.dataList.content=data.content
+                               that.dataList.content=data
+
                           })   
 
                    }
@@ -71,7 +73,9 @@ define(function (require, exports, module) {
 
                     'send-page':function (page){
 
-                       this.page=page-1
+                       
+                      this.page = page-1;
+
                       var that=this;
 
                       this.getContent(this.page)

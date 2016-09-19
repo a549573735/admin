@@ -44,6 +44,7 @@
           this.addParty();
 
           this.setPassword('.model-password-btn');//修改密码
+          this.btnslist={ btn1:false,btn2:false,btn3:false}
          
 
     }
@@ -110,7 +111,8 @@
     }
     Common.prototype.minModal=function () {
 
-         this.uiInit.$lMinBtn.on('click',function (){
+         this.uiInit.$lMinBtn.on('click',function (){ 
+            $(this).parent().siblings('.v-item-btn').children('.v-modal-min').hide()
             $(this).closest('.v-item-btn').find('.v-msg').hide()
             $(this).closest('.v-item-btn').find('textarea').val('')
              this.bclick=!this.bclick;

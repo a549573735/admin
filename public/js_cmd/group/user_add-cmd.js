@@ -77,7 +77,7 @@ define(function (require, exports, module) {
 
                                  }else {
 
-                                     $.post('/user/add/role',form).then(function (data){
+                                    $.post('/user/add/role',form).then(function (data){
                                             
                                             console.log(data)
                                             if(data.success){
@@ -87,7 +87,7 @@ define(function (require, exports, module) {
                                                alert(data.errMessage)
                                             }
 
-                                     })
+                                    })
                                  }
                              }
 
