@@ -29,9 +29,9 @@
 <div class="c-w" id="c-header">
     <div class="c-h">
        <% if(user){ %>
-        <div class="huany">欢迎<%=user.content.displayName %>进入奉贤医疗器械管理平台！！！</div>
+        <div class="huany"><%=user.content.displayName %>【<%=user.content.roleName%>】，欢迎您!！</div>
        <% } else{%>
-        <div class="huany">欢迎进入奉贤医疗器械管理平台！！！</div>
+        <div class="huany">欢迎进入奉贤医疗器械管理平台!</div>
        <%}%> 
         <div class="geren">
             <a href="javascript:;" class="gerena" id="u-btn">个人中心</a>
