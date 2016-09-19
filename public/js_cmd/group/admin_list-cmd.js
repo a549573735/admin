@@ -54,19 +54,43 @@ define(function (require, exports, module) {
                       name:$('input[name=admin-company]').val(),
                       phone:$('input[name=admin-phone]').val(),
                       username:$('input[name=admin-username]').val(),
+                      mail:$('.admin-email').val(),
+                      admin:$('.admin-admin').val(),
+                      id: $('.admin-id').val(),
+
                 }
 
-                $.post('/api/company/add',form).then(function (data){
+                if($('.admin-type').val()=='modify'){
+
+                    $.post('/admin/company/modify',form).then(function (data){
 
 
-                      if(data.success){
-                        alert('新增成功')
-                      }else {
-                        console.log(data.errMessage)
-                        alert('新增失败')
-                      }
+                          if(data.success){
+                            alert('修改成功')
+                          }else {
+                            console.log(data.errMessage)
+                            alert('修改失败')
+                          }
 
-                })
+                    })
+
+
+
+                }else {
+
+                    $.post('/api/company/add',form).then(function (data){
+
+
+                          if(data.success){
+                            alert('新增成功')
+                          }else {
+                            console.log(data.errMessage)
+                            alert('新增失败')
+                          }
+
+                    })
+
+                }
            }
        },events:{
 

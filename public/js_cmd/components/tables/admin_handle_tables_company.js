@@ -18,7 +18,7 @@ define(function (require, exports, module) {
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
                             <td  class="text-center">{{ item.mail }}</td>\
-                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  class="btn btn-primary " data-target="#modal-modifyCompany" data-toggle="modal" > 修改</a></div><div class="bei-zhu"><a  class="btn  btn-primary "> 重置</a></div></td>\
+                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addCompany" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
@@ -36,6 +36,40 @@ define(function (require, exports, module) {
                      $(event.target).siblings('span').css('overflow','hidden')
                      $(event.target).html('详情')
                   }
+             },
+             handleData:function (event){
+
+                 $('.admin-name').val($(event.target).attr('data-name'));
+                 $('.admin-parentId').val($(event.target).attr('data-parentId'));
+                 $('.admin-id').val($(event.target).attr('data-id'));
+                 $('.admin-mail').val($(event.target).attr('data-mail'));
+                 $('.admin-address').val($(event.target).attr('data-address'));
+                 $('.admin-username').val($(event.target).attr('data-username'));
+                 $('.admin-phone').val($(event.target).attr('data-phone'));
+                 $('.admin-contact').val($(event.target).attr('data-contact'));
+                 $('.admin-type').val($(event.target).attr('data-type'))
+                 $('.admin-admin').val($(event.target).attr('data-admin'))
+
+             },
+             resetPassword:function (event){  
+
+                  var id=$(event.target).attr('data-admin');
+                  
+
+                  $.post('/reset/user/password',{id:id}).then(function (data){
+
+                        if(data.success){
+
+                          alert('密码重置成功，新密码会发送该账户的邮箱')
+
+                        }else {
+                         
+                          alert(data.msg)
+                        }
+
+                  }) 
+
+
              }
 
         }          

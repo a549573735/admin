@@ -316,8 +316,9 @@ exports.api_admin_role=function (req, res, next){
  exports.reset_user_password=function (req,res,next){
 
 
-       var id=req.body.id||req.session.user.content.id;
-        console.log(1123)
+       var id=req.body.id
+       
+        console.log(req.body)
       
        api_services.commonRequest('api/app/user/'+id+'/password/reset',"PUT",null).then(function (data){
                 console.log(data)
@@ -484,7 +485,6 @@ exports.get_user_messages = function (req,res,next){
           size:15
        }
 
-       
        api_services.commonRequest('api/app/user/'+_id+'/messages',"POST",form).then(function (data){
                  data.content.page=Math.ceil(data.content.total/data.content.size);
                   console.log(data.content)

@@ -63,7 +63,7 @@
                                     <div class="js-validation-bootstrap form-horizontal" >
                                         
                                        <div class="form-group">
-                                        <label class="col-md-3 control-label" for="val-skill">市场所：</label>
+                                        <label class="col-md-3 control-label" for="val-skill">市场所<span class="text-danger">*</span></label></label>
                                         <div class="col-md-7">
                                             <select class="form-control select_park"  name="val-skill">
                                                 <option value="all">请选择</option>
@@ -74,7 +74,6 @@
                                             </select>
                                            </div>
                                         </div>
-
 
 
                                         <div class="form-group">
@@ -99,9 +98,26 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="val-email">联系人 <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <input class="form-control admin-concat" type="text" name="val-concat" >
+                                                <input class="form-control admin-contact" type="text" name="val-contact" >
                                             </div>
                                         </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" >管理员用户名 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-username" type="text" name="val-username" >
+                                            </div>
+                                        </div>    
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-email">邮箱 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-email" type="text" name="val-email" >
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" class="admin-parentId" name="parentId">
+                                        <input type="hidden" class="admin-id" name="id">
+                                        <input type="hidden" class="admin-type" name="type">
+                                        <input type="hidden" class="admin-admin" name="admin">
                                       
                                        
                                         <div class="form-group">

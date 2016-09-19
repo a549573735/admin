@@ -164,9 +164,7 @@ exports.admin_modify_organize=function(req, res, next) {        //单位管理  
 exports.admin_modify_company=function(req, res, next) {        //单位管理  市场所
 
      
-    var form=req.body||{};
-        form.page=req.body.page||req.query.page||0;
-        form.size=15;
+    var form=req.body
 
       api_services.commonRequest('api/app/company/modify',"POST",form).then(function (data){
 
