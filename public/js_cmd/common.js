@@ -46,6 +46,10 @@
           this.setPassword('.model-password-btn');//修改密码
          
           this.uiInit.$lMinBtn.attr('bclick',false)
+          var that=this
+           setTimeout(function (){
+                that.getChecked()
+           },500)
 
     }
 
@@ -146,6 +150,9 @@
              href="/user/edit/list"
          }else if(view){          //reg.test(href)
              href="/organize/company"
+
+         }else if(href=='/user/add'){
+             href="/user/role/list"
          }
 
            this.uiInit.$lNav.find('li a').each(function (index,val){
@@ -397,20 +404,27 @@ Common.prototype.setPassword=function (obj){
 
 Common.prototype.getChecked=function (){
 
+         var  permissionIds=[]
 
-    var  permissionIds=$.query.get('permissionIds').split(',');
-    
-    $('.rolt-user-checked').find('input[type=checkbox]').each(function (index,val){
+       var str=$.query.get('permissionIds').toString();
+        if(str.indexOf(',')!=-1){
 
-          permissionIds.forEach(function (item){
+             permissionIds=$.query.get('permissionIds').split(',');
 
-               if($(val).attr('data-id')==item){
-                  $(val).prop('checked','checked')
-               }
+       }else {
+            permissionIds.push(str)
+       }
+       
+        if(permissionIds!='')  {
 
-          })
+            permissionIds.forEach(function (item){
 
-    })
+                 $('.rolt-user-checked').find('input[type=checkbox]').eq(parseInt(item-1)).prop('checked','checked')
+
+            })
+        }
+
+
 
 }
 

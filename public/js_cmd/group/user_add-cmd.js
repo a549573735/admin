@@ -48,12 +48,13 @@ define(function (require, exports, module) {
                                  })
                                
                              },
-                             'send-code':function (id){
+                             'send-code':function (data){
                               //POST /api/app/role/add
+                          
                                  var form={
 
                                     name:$('.per_name').val(),
-                                    permissionIds:id,
+                                    permissionIds:data.id,
                                     type:this.radio_val||JSON.parse($('#user_role').val()).type,
                                     id:$.query.get('id')||'',
 
