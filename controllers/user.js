@@ -176,27 +176,27 @@ exports.user_role=function(req, res, next) {
 
 
 
-exports.user_modify=function (req,res,next){
+// exports.user_modify=function (req,res,next){
     
-      var id=req.query.id;
+//       var id=req.query.id;
 
 
-      api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
+//       api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
           
-           data.content.page=Math.ceil(data.content.total/data.content.size);
-           res.render('pages/user_admin_add', data);
+//            data.content.page=Math.ceil(data.content.total/data.content.size);
+//            res.render('pages/user_admin_add', data);
        
-     }).catch(function (err){
+//      }).catch(function (err){
              
-             console.log(err)
+//              console.log(err)
 
-           res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
+//            res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
        
 
-     })
+//      })
     
 
-}
+// }
 
 
 
@@ -419,7 +419,6 @@ exports.modify_role=function (req,res,next){
         }else {
            data.permissionIds=req.body['permissionIds[]']
         }     
-
 
       api_services.commonRequest('api/app/role/modify',"PUT",data).then(function (data){
              
