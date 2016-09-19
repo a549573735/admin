@@ -51,6 +51,8 @@ var config=require('../utils/config')
   
 	app.get('/user/add',User.signRequired,  User.user_add);   			 //用户添加
     
+    app.get('/user/modify',User.signRequired,  User.user_modify);   
+
     app.post('/app/role/delete',User.signRequired,  User.delete_user_role)
 
     app.post('/api/admin/role/list',User.signRequired,User.api_admin_role)    

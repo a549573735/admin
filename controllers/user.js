@@ -2,6 +2,7 @@ var path=require('path');
 var fs=require('fs');
 var api_services=require('../models/api_services');
 var config=require('../utils/config')
+var permission=require('../utils/premission')
 
 var md5=require('md5');
 
@@ -162,10 +163,37 @@ exports.user_add_list = function(req, res, next) {
 
 
 
+
+
+
+
 exports.user_role=function(req, res, next) {
 
      res.render('pages/user_role_list');
 
+
+}
+
+
+
+exports.user_modify=function (req,res,next){
+    
+     var id=req.query.id;
+
+      api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
+          
+           data.content.page=Math.ceil(data.content.total/data.content.size);
+           res.render('pages/user_admin_add', data);
+       
+     }).catch(function (err){
+             
+             console.log(err)
+
+           res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
+       
+
+     })
+    
 
 }
 
@@ -424,12 +452,12 @@ exports.user_role_list = function(req, res, next) {
 
    var type=req.body.type||"DISTRICT"; 
 
-
+       
 
    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
          data.content.page=Math.ceil(data.content.total/data.content.size);
-       
+         //data.permission=permission
          res.json(data);
      
 

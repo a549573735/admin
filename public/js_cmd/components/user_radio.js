@@ -155,7 +155,7 @@ define(function (require, exports, module) {
             return {k: 1, state: false ,permissionIds:function (){
             	       var data={
             	       	  name:$.query.get('name'),
-            	       	  permissionIds:$.query.get('permissionIds').split(','),
+            	       	
 
             	       }    
             	       return  data
@@ -193,17 +193,19 @@ define(function (require, exports, module) {
             sendCode: function () {
 
 
-                var id = []
+                var id = [];
+                var code=[]
 
                 $('.rolt-user-checked').find('input[type=checkbox]').each(function (index, val) {
 
                     if ($(val).prop('checked')) {
 
                         id.push($(val).attr('data-id'))
+                         code.push($(val).attr('code'))   
                     }
                 })
 
-                this.$dispatch('send-code', id)
+                this.$dispatch('send-code', {id:id,code:code})
 
 
             },
