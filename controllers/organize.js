@@ -29,7 +29,7 @@ exports.organize_company=function (req,res,next){
                        page:data.content.page
 
           }
-            console.log(data)
+            console.log(data.content)
 
 
         res.render('pages/organize_company',{data:datalist});
@@ -136,7 +136,7 @@ exports.api_organize_park_list=function(req, res, next) {
 
     api_services.commonRequest('api/app/park/'+id+'/'+parkName,'POST',form).then(function (dataSelect){
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
-             console.log(dataSelect)
+             console.log(dataSelect.content)
              res.json(dataSelect)
 
     }).catch(function (data){

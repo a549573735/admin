@@ -21,11 +21,10 @@
                                 <div class="col-md-2 o-pd-l">
                                     <select class="form-control" name="type"  id="selectType" >
                                         <option value="COMPANY">请选择</option>
-                                        <option value="DISTRICT">区局</option>
-                                        <option value="MARKET">市场所</option>
+                                      
                                         <option value="PARK">园区</option>
                                         <option value="COMPANY">企业</option>
-                                        <option value="BACKSTAGE">后台</option>
+                                        
                                     </select>
                                 </div>
                             </div>
@@ -42,7 +41,7 @@
                                 <div class="v-t-b">
                                     <button class="btn btn-md btn-primary btn-block inspect_btn" @click="getContent()" type="submit">查询</button>
                                 </div>
-                                <% if(user.content.type=="PARK"){%>
+                                <% if(user.content.btnPermissions.publicity){%>
                                          <div class="v-t-b" style="margin-left:15px;">
                                             <button class="btn btn-md btn-primary btn-block inspect_btn" data-target="#modal-publicity" data-toggle="modal" type="submit">新增公示</button>
                                         </div>

@@ -10,27 +10,28 @@
                     <div class="col-md-12">
                         <div class="form-group" >
                             <v-select ></v-select>
-                            <label class="col-md-1 o-pd-r v-label-s text-center" for="val-skill">企业：</label>
+                            <!-- <label class="col-md-1 o-pd-r v-label-s text-center" for="val-skill">企业：</label>
                             <div class="col-md-2 o-pd">
                                <input type="text" class="form-control" name="company" >
-                            </div>
+                            </div> -->
 
                             <div class="v-t-b o-m-p">
                                 <button class="btn btn-md btn-primary btn-block text-center" @click="searchData()">查询</button>
                             </div>
-                        </div>
-                          <div class="form-group">
-                              <div class="col-md-2 col-md-push-10">
+                             <div class="form-group">
+                              <div class="col-md-2 col-md-offset-1">
                                <div class="v-t-b o-m-p">
                                 <button class="btn btn-md btn-primary btn-block text-center" data-target="#modal-addCompany" data-toggle="modal" >新增企业</button>
                                 </div>
                               </div>
                          </div>
+                        </div>
+                         
                     </div>
                 </div>
             </div>
                 
-
+                
             <div class="row v-table" >
                 <div class="col-md-12">
                     <div class="block" >
@@ -65,71 +66,31 @@
                                                 <input class="form-control admin-name" type="text" name="admin-company" >
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">公司地址:</label>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-username">管理员用户名
+: <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <input class="form-control admin-address"  type="text" name="admin-address" >
+                                                <input class="form-control admin-username" type="text" name="admin-username" >
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">经营范围:</label>
-                                            <div class="col-md-7">
-                                                <input class="form-control admin-businesses"  type="text" name="admin-businesses" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">联系人: </label>
-                                            <div class="col-md-7">
-                                                <input class="form-control admin-contact"  type="text" name="admin-contact" >
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">经营许可证 :</label>
-                                            <div class="col-md-7">
-                                                <input class="form-control admin-certificate"  type="text" name="admin-certificate" >
-                                            </div>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">许可证有效期 : </label>
-                                            <div class="col-md-7">
-                                                <input class="form-control admin-expireDate"  type="text" name="admin-expireDate" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">联系方式 : </label>
-                                            <div class="col-md-7">
-                                                <input class="form-control admin-phone"  type="text" name="admin-phone" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">APPKEY:</label>
-                                            <div class="col-md-7">
-                                                <input class="form-control admin-key" disabled type="text" name="val-concat" >
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label" for="val-email">APPSECRET:</label>
-                                            <div class="col-md-7">
-                                                <input class="form-control admin-secret" disabled type="text" name="val-concat" >
-                                            </div>
-                                        </div> -->
+                                       
                                         <div class="form-group">
                                             <div class="col-md-3 col-md-offset-3">
                                                 <button class="btn btn-sm btn-primary v-btn-w admin-add-company" @click="createCompany()" >生成</button>
                                             </div>
                                             <div class="col-md-6 admin-msg">
-                                                
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal  新增园区  弹框  -->
+
+
+
+
 
 
         </div>

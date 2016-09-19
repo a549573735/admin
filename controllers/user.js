@@ -319,7 +319,7 @@ exports.api_admin_role=function (req, res, next){
        var id=req.body.id||req.session.user.content.id;
         console.log(1123)
       
-       api_services.commonRequest('/api/app/user/'+id+'/password/reset',"PUT",null).then(function (data){
+       api_services.commonRequest('api/app/user/'+id+'/password/reset',"PUT",null).then(function (data){
                 console.log(data)
                 data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)

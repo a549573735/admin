@@ -391,7 +391,8 @@ exports.api_inspect_qualified_msg=function (req,res,next){
     form.target=req.body['target[]']||req.body.target;
 
 
-    api_services.commonRequest('api/app/inspect/qualified','POST',form).then(function (dataSelect){
+
+    api_services.commonRequest('api/app/inspect/qualified/'+form.ccPark,'POST',form).then(function (dataSelect){
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)

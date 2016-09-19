@@ -28,9 +28,11 @@
                             <div class="v-t-b radio-m ">
                                 <button class="btn btn-md btn-primary btn-block " type="submit">查询</button>
                             </div>
-                            <div class="v-t-b">
-                                <button class="btn btn-md btn-primary btn-block" type="submit">新增公示</button>
-                            </div>
+                            <%=if(user.content.btnPermissions.publicity){%>
+                                    <div class="v-t-b">
+                                        <button class="btn btn-md btn-primary btn-block" >新增公示</button>
+                                    </div>
+                            <%}%>
                         </div>
                     </div>
                 </div>

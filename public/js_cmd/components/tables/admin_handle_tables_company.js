@@ -13,15 +13,12 @@ define(function (require, exports, module) {
                       <tbody class="v-tabs-check">\
                         <tr v-for="item in datalist.content" v-cloak>\
                             <td  class="text-center">{{ item.name }}</td>\
-                            <td  class="text-center">{{ item.use }}</td>\
+                            <td  class="text-center">{{ item.username }}</td>\
                             <td  class="text-center">{{ item.address }}</td>\
-                            <td  class="text-center">{{ item.belongMarket }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
-                            <td  class="text-center"><span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;"" @click="showMsg($event) " class="btn-link">详情</a></td>\
-                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  class="btn  btn-primary "> 修改</a></div><div class="bei-zhu"><a  class="btn  btn-primary "> 重置</a></div></td>\
-                            <td v-if="datalist.overflow" class="text-center" :expiredate="item.expireDate" :certificate="item.certificate" ><a href="javascript:;"  class="btn-link">详情</a></td>\
-                            <td v-if="!datalist.detals" class="text-center"><a :href="datalist.href+item.id"  class="btn  btn-primary "> 详情</a></td>\
+                            <td  class="text-center">{{ item.mail }}</td>\
+                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  class="btn btn-primary " data-target="#modal-modifyCompany" data-toggle="modal" > 修改</a></div><div class="bei-zhu"><a  class="btn  btn-primary "> 重置</a></div></td>\
                         </tr>\
                       </tbody>\
                   </table>', 

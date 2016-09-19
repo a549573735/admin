@@ -10,7 +10,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <div class="v-t-m">
-                                <button class="btn btn-md btn-primary btn-block" data-toggle="modal" data-target="#modal-addMerket"  >新增市场所</button>
+                                <button class="btn btn-md btn-primary btn-block" data-toggle="modal" data-target="#modal-addMerket" >新增市场所</button>
                             </div>
                         </div>
                     </div>
@@ -23,6 +23,81 @@
                 </div>
             </div>
              <!-- <v-pages :pagelist="<%=JSON.stringify(data.page)||1%>"> </v-pages> -->
+                
+
+<div class="modal fade " id="modal-addMerket" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  ">
+        <div class="modal-content">
+            <div class="modal-header o-nobor">
+                <button type="button" class="close v-tabs-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+
+                       <div class="block-content block-content-narrow">
+
+                                    <div class="js-validation-bootstrap form-horizontal" >
+   
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-username">名称 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-name" type="text" name="val-username" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label " for="val-password">电话 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-phone" type="text"  name="val-phone" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-username">地址 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-address" type="text" name="val-address" >
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-email">联系人 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-contact" type="text" name="val-contact" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" >管理员用户名 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-username" type="text" name="val-username" >
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-email">邮箱 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control admin-email" type="text" name="val-email" >
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" class="admin-parentId" name="parentId">
+                                        <input type="hidden" class="admin-id" name="id">
+                                        <input type="hidden" class="admin-type" name="type">
+                                        <input type="hidden" class="admin-admin" name="amin">
+
+
+                                        <div class="form-group">
+                                            <div class="col-md-3 col-md-offset-3">
+                                                <button class="btn btn-sm btn-primary v-btn-w admin-add-btn">提交</button>
+                                            </div>
+                                            <div class="col-md-6 admin-msg">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal  新增园区  弹框  -->
+
+
+
         </div>
    
     </div>
@@ -34,7 +109,7 @@
 
 
 <script>
-    seajs.use("/js_cmd/group/company_market-cmd");
+    seajs.use("/js_cmd/group/admin_market-cmd");
 
 
 </script>

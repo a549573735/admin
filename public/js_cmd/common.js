@@ -169,7 +169,7 @@
               $(table).find('input[type=checkbox]:checked').each(function (index,val){
                     targetList.push($(val).val())
               })
-              console.log(targetList)
+              
 
               var _type=$(table).find('input[type=checkbox]:checked').attr('data-type')
               var form={
@@ -179,10 +179,11 @@
                   period:$(select).val(),
                   inspectDate:$(date).val(),
                   notes:$(textarea).val(),
-                  status:$(this).attr('data-status')
-                 
+                  status:$(this).attr('data-status'),
+                  ccPark:$('.park-belongId').prop('checked')?true:false
               }
-              console.log(form)
+                alert($('.park-belongId').prop('checked')?true:false)
+              
               var that=this
 
              $.post(href,form).then(function (data){
@@ -257,22 +258,57 @@ Common.prototype.againSecret=function (){
                         parentId:$('.select_park').val()||"ROOT",
                         name:$('.admin-name').val(),
                         phone:$('.admin-phone').val(),
-                        contact:$('.admin-concat').val(),
-                        address:$('.admin-address').val()
+                        contact:$('.admin-contact').val(),
+                        address:$('.admin-address').val(),
+                        username:$('.admin-username').val(),
+                        mail:$('.admin-email').val(),
+                        id:$('.admin-id').val(),
+                        admin:$('.admin-admin').val()
                    }
 
-                   $.post('/api/organize/add',form).then(function (data){
+                   if($('.admin-type').val()=='modify'){
+
+                     $.post('/admin/organize/modify',form).then(function (data){
 
                              if(data.success){
-                               $('.admin-concat').val('')
+                               $('.admin-contact').val('')
                                $('.admin-phone').val('')
                                $('.admin-address').val('')
                                $('.admin-name').val('')
+                               $('.admin-email').val('')
+                               $('.admin-username').val(''),
+                               $('.admin-admin').val('')
+                               $('.admin-id').val('')
+                                   alert('修改成功')
+                             }else {
+                                   alert(data.errMessage)
+                             }      
+                     })    
+
+
+
+                   }else {
+
+                     $.post('/api/organize/add',form).then(function (data){
+
+                             if(data.success){
+                               $('.admin-contact').val('')
+                               $('.admin-phone').val('')
+                               $('.admin-address').val('')
+                               $('.admin-name').val('')
+                               $('.admin-email').val('')
+                               $('.admin-username').val(''),
+                               $('.admin-admin').val('')
+                               $('.admin-id').val('')
                                    alert('添加成功')
                              }else {
-                                   alert('添加失败')
-                               }      
-                   }) 
+                                   alert(data.errMessage)
+                             }      
+                     }) 
+
+                   }
+                    
+                  
           })
                   
 }  

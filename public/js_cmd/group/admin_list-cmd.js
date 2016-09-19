@@ -4,7 +4,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/select');
     require('/js_cmd/components/admin_select');
     require('/js_cmd/components/paging')
-    require('/js_cmd/components/tables/handle_tables_company')
+    require('/js_cmd/components/tables/admin_handle_tables_company')
 
     new Vue( {
         'el':'#handle-table',
@@ -15,28 +15,31 @@ define(function (require, exports, module) {
                       return data
 
           }(),
-          parkId:''
+          parkId:'',
+          page:0
        },
        methods:{
               searchData:function (){
-                var that=this;
+                  var that=this;
                   var form={
                     "businesses": $('input[name=businesses]').val(),
                     "company":  $('input[name=company]').val(),
                     "customer":  $('input[name=customer]').val(),
                     "market":  $('#select_market').val(),
-                    "page": this.tablsData.page,
+                    "page": this.page,
                     "park":  $('#select_park').val(),
                     "producer":  $('input[name=producer]').val(),
                     "product":  $('input[name=product]').val(),
                     "provider":  $('input[name=provider]').val(),
-                    "size": 15
+                    "size": 15,
+                    "id":$('#select_park').val()
                   }
-          
-                $.post('/api/organize/company/list',form).then(function (data){
+                this.parkId=$('#select_park').val();
+
+                $.post('/admin/company',form).then(function (data){
                   data.detals=true
-                  that.tablsData= data
-                  console.log(data)
+                  that.tablsData = data.data
+                  console.log(JSON.stringify(data))
                 })
 
           },createCompany:function(){
@@ -50,6 +53,7 @@ define(function (require, exports, module) {
                       contact:$('input[name=admin-contact]').val(),
                       name:$('input[name=admin-company]').val(),
                       phone:$('input[name=admin-phone]').val(),
+                      username:$('input[name=admin-username]').val(),
                 }
 
                 $.post('/api/company/add',form).then(function (data){
@@ -73,16 +77,18 @@ define(function (require, exports, module) {
             this.tablsData.page=page;
 
            // this.searchData()
-
             var that=this;
             var form={
-                page:page-1
+                page:page-1,
+                id:this.parkId,
+                park:this.parkId
+
             }
 
-            $.post(' /api/organize/company/list',form).then(function (data){
+            $.post('/admin/company',form).then(function (data){
 
                   data.detals=true
-                  that.tablsData = data
+                  that.tablsData = data.data
                   console.log(that.tablsData.page)  
                   console.log(that.tablsData)
 

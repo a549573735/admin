@@ -30,9 +30,14 @@ var config=require('../utils/config')
 
 	app.get('/admin/park', User.signRequired,  Admin.admin_park);             //单位管理  后台 园区 列表
     
+    app.post('/admin/company', User.signRequired,  Admin.admin_company);             //单位管理  后台 园区 列表
   
      
-	
+    app.post('/admin/organize/modify',User.signRequired,  Admin.admin_modify_organize)  //修改园区和市场
+	app.post('/admin/company/modify',User.signRequired,  Admin.admin_modify_company)  //修改公司
+
+
+
 	app.get('/user/role/list',User.signRequired,  User.user_role);			 //角色管理 编辑
     
     app.post('/api/user/role/list',User.signRequired,  User.user_role_list)

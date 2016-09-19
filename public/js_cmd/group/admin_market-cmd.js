@@ -3,7 +3,7 @@ define(function (require, exports, module) {
     
     var Vue = require('lib_cmd/vue-cmd');
     require('/js_cmd/components/paging')
-    require('/js_cmd/components/tables/handle_tables')
+    require('/js_cmd/components/tables/admin_handle_tables')
     
 	new Vue( {
 	    	'el':'#handle-table',

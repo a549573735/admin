@@ -8,7 +8,7 @@ define(function (require, exports, module) {
 		   data:   {
 			   tableList:{
 			   	   href:'',
-				   title:['No.','园区名称','园区地址','联系人','联系方式','操作'],
+				   title:['园区名称','用户名','园区地址','联系人','邮箱','联系方式','操作'],
 				   content:function (){
 				   	    var  arr =window.location.search.split('?')[1]?window.location.search.split('?')[1].split(/&?[a-z]+=/ig):'';
 				   	    var  form={
@@ -41,8 +41,10 @@ define(function (require, exports, module) {
 		                    });
 		                     return datalist
 				   }(),
-				   style:['5%','20%','auto','120px','120px','100px'],
+				   style:['15%','10%','auto','10%','120px','120px','18%'],
 				   type:"PARK",
+				   btns:true,
+				   checked:true
 				  
 			   }
 
