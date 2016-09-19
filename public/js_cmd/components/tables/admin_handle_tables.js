@@ -4,9 +4,6 @@ define(function (require, exports, module) {
      //null  企业名称   检查状态  检查员   检查日期  备注
 
 
-
-
-
     Vue.component('handle-table-list', {
 
         props: ['datalist'],
@@ -44,7 +41,7 @@ define(function (require, exports, module) {
                  $('.admin-name').val($(event.target).attr('data-name'));
                  $('.admin-parentId').val($(event.target).attr('data-parentId'));
                  $('.admin-id').val($(event.target).attr('data-id'));
-                 $('.admin-mail').val($(event.target).attr('data-mail'));
+                 $('.admin-email').val($(event.target).attr('data-mail'));
                  $('.admin-address').val($(event.target).attr('data-address'));
                  $('.admin-username').val($(event.target).attr('data-username'));
                  $('.admin-phone').val($(event.target).attr('data-phone'));
@@ -68,6 +65,7 @@ define(function (require, exports, module) {
                          
                           alert(data.msg)
                         }
+                        console.log(data)
 
                   }) 
 

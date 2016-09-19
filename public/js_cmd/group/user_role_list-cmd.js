@@ -2,8 +2,8 @@ define(function (require, exports, module) {
        var Vue = require('/lib_cmd/vue-cmd');
 
       require('/js_cmd/components/paging');
-      require('/js_cmd/components/user_radio');
-
+      require('/js_cmd/components/radio');
+      require('/js_cmd/components/select')
        new Vue({
                 el: '#app',
                    data:{ put_id:'' ,

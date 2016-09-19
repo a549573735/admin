@@ -42,13 +42,19 @@ define(function (require, exports, module) {
                  $('.admin-name').val($(event.target).attr('data-name'));
                  $('.admin-parentId').val($(event.target).attr('data-parentId'));
                  $('.admin-id').val($(event.target).attr('data-id'));
-                 $('.admin-mail').val($(event.target).attr('data-mail'));
+                 $('.admin-email').val($(event.target).attr('data-mail'));
                  $('.admin-address').val($(event.target).attr('data-address'));
                  $('.admin-username').val($(event.target).attr('data-username'));
                  $('.admin-phone').val($(event.target).attr('data-phone'));
                  $('.admin-contact').val($(event.target).attr('data-contact'));
                  $('.admin-type').val($(event.target).attr('data-type'))
                  $('.admin-admin').val($(event.target).attr('data-admin'))
+
+                 $('.form_Party').find('.select_park option').each(function (index,val){
+                     if($(val).val()==$(event.target).attr('data-parentId')){
+                         $(val).attr('selected','selected')
+                     }
+                 })    
 
              },
              resetPassword:function (event){  

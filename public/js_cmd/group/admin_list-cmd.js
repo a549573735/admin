@@ -61,7 +61,7 @@ define(function (require, exports, module) {
                 }
 
 
-               var checked=Common.checkEmpty($('#modal-addCompany').find('input'))
+               var checked=Common.checkEmpty($('#modal-addCompany').find('input[type=text]'))
 
                var checkEmail=Common.checkEmail($('.admin-email'));
 
@@ -88,8 +88,6 @@ define(function (require, exports, module) {
                           }
 
                     })
-
-
 
                 }else {
 
@@ -128,8 +126,6 @@ define(function (require, exports, module) {
 
                   data.detals=true
                   that.tablsData = data.data
-                  console.log(that.tablsData.page)  
-                  console.log(that.tablsData)
 
             })
 

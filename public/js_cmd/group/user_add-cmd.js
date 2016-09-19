@@ -1,7 +1,9 @@
 define(function (require, exports, module) {
        var Vue = require('/lib_cmd/vue-cmd');
     
-      require('/js_cmd/components/user_radio');
+      require('/js_cmd/components/radio');
+
+
 
        new Vue({
 
@@ -48,19 +50,21 @@ define(function (require, exports, module) {
                                  })
                                
                              },
-                             'send-code':function (data){
+                             'send-code':function (id){
                               //POST /api/app/role/add
                           
                                  var form={
 
                                     name:$('.per_name').val(),
-                                    permissionIds:data.id,
+                                    permissionIds:id,
                                     type:this.radio_val||JSON.parse($('#user_role').val()).type,
                                     id:$.query.get('id')||'',
 
                                  }
 
+
                                  var type=$.query.get('type')||''
+                                  alert(type)
 
                                  if(type=='modify'){
 

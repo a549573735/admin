@@ -18,18 +18,18 @@ exports.interface = function(req, res, next) {
             if(req.query.id){
                 form.park=req.query.id
               }
+
     
-    
-    api_services.commonRequest('api/app/company/all/list','POST',form).then(function (data){
+    api_services.commonRequest('api/app/company/list/new','POST',form).then(function (data){
 
 
         console.log(data.content)
         data.content.page=Math.ceil(data.content.total/data.content.size); 
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
-                       title:['企业名称','用户名','地址','联系人','联系方式','邮箱',"操作"],
+                       title:['企业名称','用户名','邮箱','联系人','联系方式',"操作"],
                        content:data.content.content,
-                       style:['20%','100px','auto','100px','80px','15%','18%'],
+                       style:['20%','100px','auto','100px','15%','18%'],
                        overflow:false,
                        page:data.content.page,
                        btns:true,
@@ -110,18 +110,20 @@ exports.admin_company=function(req, res, next) {
         if(req.query.id){
             form.park=req.query.id||req.body.id;
         }
-    
+       form.park= form.park==0?'':form.park
+       form.market= form.market==0?'':form.market
+        
 
-     api_services.commonRequest('api/app/company/'+form.park+'/list','POST',form).then(function (data){
+     api_services.commonRequest('api/app/company/list/new','POST',form).then(function (data){
 
         console.log(data.content)
         data.content.page=Math.ceil(data.content.total/data.content.size); 
 
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
-                       title:['企业名称','用户名','邮箱','联系人','联系方式','地址',"操作"],
+                       title:['企业名称','用户名','邮箱','联系人','联系方式',"操作"],
                        content:data.content.content,
-                       style:['20%','100px','auto','100px','80px','15%','18%'],
+                       style:['20%','100px','auto','100px','15%','18%'],
                        overflow:false,
                        page:data.content.page,
                        btns:true,
