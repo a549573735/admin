@@ -2,6 +2,72 @@
 /**
  * Created by lixiang on 16/8/26.
  */
+   // var permission=[{
+   //    "id": "1",
+   //    "name": "平级用户管理",
+   //    "1": "same_level_manage"
+   //  },
+   //  {
+   //    "id": "10",
+   //    "name": "行政建议列表",
+   //    "10": "suggestion_list"
+   //  },
+   //  {
+   //    "id": "11",
+   //    "name": "年报公示",
+   //    "11": "publicity"
+   //  },
+   //  {
+   //    "id": "12",
+   //    "name": "年报公示列表",
+   //    "12": "publicity_list"
+   //  },
+   //  {
+   //    "id": "2",
+   //    "name": "企业信息",
+   //    "2": "company_info"
+   //  },
+   //  {
+   //    "id": "3",
+   //    "name": "网络检查",
+   //    "3": "network_check"
+   //  },
+   //  {
+   //    "id": "4",
+   //    "name": "网络检查列表",
+   //    "4": "network_check_list"
+   //  },
+   //  {
+   //    "id": "5",
+   //    "name": "预约检查",
+   //    "5": "appointment"
+   //  },
+   //  {
+   //    "id": "6",
+   //    "name": "预约检查列表",
+   //    "6": "appointment_list"
+   //  },
+   //  {
+   //    "id": "7",
+   //    "name": "行政约谈",
+   //    "7": "interview"
+   //  },
+   //  {
+   //    "id": "8",
+   //    "name": "行政约谈列表",
+   //    "8": "interview_list"
+   //  },
+   //  {
+   //    "id": "9",
+   //    "name": "行政建议",
+   //    "9": "suggestion"
+   //  }] 
+
+   
+
+
+
+
 
 
     function Common(obj){
@@ -404,28 +470,29 @@ Common.prototype.setPassword=function (obj){
 
 Common.prototype.getChecked=function (){
 
-         var  permissionIds=[]
+       var  permissionIds=[]
+       var  json={
+
+       }
 
        var str=$.query.get('permissionIds').toString();
-        if(str.indexOf(',')!=-1){
 
-             permissionIds=$.query.get('permissionIds').split(',');
+       if(str.indexOf(',')!=-1){
+
+            permissionIds=$.query.get('permissionIds').split(',');
 
        }else {
             permissionIds.push(str)
        }
        
-        if(permissionIds!='')  {
+       if(permissionIds!='')  {
 
             permissionIds.forEach(function (item){
 
                  $('.rolt-user-checked').find('input[type=checkbox]').eq(parseInt(item-1)).prop('checked','checked')
 
             })
-        }
-
-
-
+       }
 }
 
 
