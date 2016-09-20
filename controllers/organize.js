@@ -135,6 +135,7 @@ exports.api_organize_park_list=function(req, res, next) {
       
 
     api_services.commonRequest('api/app/park/'+id+'/'+parkName,'POST',form).then(function (dataSelect){
+      
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
              console.log(dataSelect.content)
              res.json(dataSelect)
