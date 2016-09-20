@@ -32,6 +32,15 @@ define(function (require, exports, module) {
                                     }
 
                                 });
+
+                                  dataList.content.forEach(function (item){
+
+                                      for (var name in item ){
+                                         item[name]+=''
+                                      }
+
+                                   })     
+                             
                                  return dataList     
                             }(),
                            style:['23%','100px','100px','20%','auto'],
@@ -62,7 +71,18 @@ define(function (require, exports, module) {
                                 
                           $.get('/api/inspect/list',form).then(function (data){
 
+                                console.log(JSON.stringify(data))
+                                data.content.content.forEach(function (item){
+
+
+                                      for (var name in item ){
+                                           item[name]+=''
+                                      }
+                                      
+                                })   
+
                               that.dataList.content=data.content
+
                           })   
                    }
 

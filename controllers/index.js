@@ -285,14 +285,20 @@ exports.api_interview=function (req,res,next){
      var form= {
               "page":req.body.page||0,
               "size":15,
-              "type":req.body.type||'PARK',
+              "type":req.body.type||'COMPANY',
               "market":req.body.market==0?'':req.body.market||'',
               "company":req.body.company||'',
               "park":req.body.park==0?'':req.body.park||'',
               "from":req.body.from||req.body.from||time.from,
                "to":req.body.to||req.body.to||time.to
               }
-  
+      
+       if(form.market==''){
+          delete form.market
+       }      
+       if(form.park==''){
+          delete form.park
+       }    
 
 
     api_services.commonRequest('api/app/interview/list','POST',form).then(function (dataSelect){

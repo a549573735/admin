@@ -41,6 +41,14 @@ define(function (require, exports, module) {
                                     }
 
                                 });
+                                 dataList.content.forEach(function (item){
+
+                                      for (var name in item ){
+                                         item[name]+=''
+                                      }
+
+                                 })   
+
                                  return dataList     
                             }(),
                            style:['25%','100px','auto','100px','15%','10%'],
@@ -70,13 +78,12 @@ define(function (require, exports, module) {
                           $.get('/api/suggestion/list',form).then(function (data){
 
                               data.content.content.forEach(function (item){
-                                            item.readFlag+=''
-                                             if(item.readDate==null){
-                                                   item.readDate='null'
-                                                }
-                                       
-                                      
-                              })
+
+                                      for (var name in item ){
+                                         item[name]+=''
+                                      }
+
+                                 })   
                               that.dataList.content=data.content
                           })   
                    } 
