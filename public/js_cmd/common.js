@@ -195,7 +195,6 @@
                   status:$(this).attr('data-status'),
                   ccPark:$('.park-belongId').prop('checked')?true:false
               }
-                alert($('.park-belongId').prop('checked')?true:false)
               
               var that=this
 

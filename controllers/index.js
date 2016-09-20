@@ -244,7 +244,7 @@ exports.api_suggestion_msg=function (req,res,next){
    
 
     api_services.commonRequest('api/app/suggestion/add','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -308,7 +308,7 @@ exports.api_interview_msg=function (req,res,next){
  
 
     api_services.commonRequest('api/app/interview/add','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+            /// dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -405,7 +405,7 @@ exports.api_inspect_qualified_msg=function (req,res,next){
 
 
     api_services.commonRequest('api/app/inspect/qualified/'+form.ccPark,'POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
