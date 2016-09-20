@@ -9,7 +9,7 @@ module.exports=function (app){
 		resave:true,
 		saveUninitialized:false,
 		cookie:{
-		maxAge:1000*60*10000 //过期时间设置(单位毫秒)
+		maxAge:43200000 //过期时间设置(单位毫秒)
 		}
 	}));
 

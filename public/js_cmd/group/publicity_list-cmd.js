@@ -40,9 +40,33 @@ define(function (require, exports, module) {
                            overfull:false,
                            selectsubset:[],
 
-                    },companySelect:[]
-                   
-                  
+                    },companySelect:function(){
+
+                        var id=$.query.get('id');
+                        var select=null;
+                      
+                        $.ajax({
+                                url:'/company/select?id='+id,    //请求的url地址
+                                dataType: "json",   //返回格式为json
+                                async: false, //请求是否异步，默认为异步，这也是ajax重要特性
+                                type: "GET",   //请求方式
+                                success: function(data) {
+                                    //请求成功时处理
+               
+                                        select=data.dataSelect.content.content
+     
+                                },
+                                error: function(err) {
+                                    //请求出错处理
+                                     //alert(err.msg);
+                                }
+                        });
+
+                        console.log(select,111)
+                       
+                        return  select
+                    }()
+
                 },
                 methods: {
 
@@ -103,10 +127,7 @@ define(function (require, exports, module) {
                       'send-select-admin':function (id){
                          var that=this;
 
-                            $.get('/company/select?id='+id).then(function (data){
-                                console.log(JSON.stringify(data))
-                                that.companySelect=data.dataSelect.content.content
-                            })
+                           
                           
                       }
                   

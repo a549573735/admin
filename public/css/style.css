@@ -174,13 +174,13 @@ nav{float:left; text-align:center;}
 
 .interview-msg a{ color: red !important; }
 .inspect-msg a{ color:blue !important; }
-.appointment-msg a{ color:yellow !important; }
+.appointment-msg a{ color:#a468dc !important; }
 .suggestion-msg a{ color:green !important; }
 
 
 .interview-msg { color: red !important; }
 .inspect-msg { color:blue !important; }
-.appointment-msg { color:yellow !important; }
+.appointment-msg { color:#a468dc !important; }
 .suggestion-msg { color:green !important; }
 .confirm-msg{ color:#3f4535; }
 

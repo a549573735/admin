@@ -96,7 +96,7 @@ exports.api_publicity=function (req,res,next){
      var form= {
               "page":req.query.page||'0',
               "size":15,
-              "type":req.query.type||"PARK",
+              "type":req.query.type||"COMPANY",
               "market":req.query.market==0?'':req.query.market ||'',
               "company":req.query.company ||'',
               "park":req.query.park==0?'':req.query.park||'',

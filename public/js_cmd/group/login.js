@@ -36,7 +36,7 @@ define(function (require, exports, module) {
 	                  
 	                 console.log(data)   
 	                 if(data.state==false){
-	                    $('.error').show().html(data.msg)
+	                    $('.error').show().html('密码或用户名错误请重新输入')
 	                    checkCodes.refresh()
 	                    return false;
 	                 }
