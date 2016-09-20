@@ -17,6 +17,7 @@ define(function (require, exports, module) {
 
                       this.page=page-1
                       var that=this;
+                      
                       	
                       // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
 

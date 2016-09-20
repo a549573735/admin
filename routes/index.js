@@ -63,8 +63,6 @@ var config=require('../utils/config')
     app.post('/user/admin/add',User.signRequired, User.Post_add_user);   //添加用户个人信息
 
     
- 
-
 
     app.post('/delete/user',User.signRequired, User.delete_user);   //添加用户个人信息
 
@@ -112,6 +110,7 @@ var config=require('../utils/config')
 
   
 
+    app.get('/company/select',User.signRequired, Index.companySelect)
 
 	app.get('/publicity/list',User.signRequired,  Index.publicity);			 //年报公示列表
     
@@ -136,7 +135,7 @@ var config=require('../utils/config')
 
 	app.get('/interview/list',User.signRequired,  Index.interview);    //行政约谈列表
 
-	app.get('/api/interview/list',User.signRequired,  Index.api_interview);    //行政约谈列表
+	app.post('/api/interview/list',User.signRequired,  Index.api_interview);    //行政约谈列表
 
     app.post('/api/interview/msg',User.signRequired, Index.api_interview_msg);    //行政约谈列表
 

@@ -195,7 +195,6 @@
                   status:$(this).attr('data-status'),
                   ccPark:$('.park-belongId').prop('checked')?true:false
               }
-                alert($('.park-belongId').prop('checked')?true:false)
               
               var that=this
 
@@ -280,9 +279,10 @@ Common.prototype.againSecret=function (){
                         admin:$('.admin-admin').val()
                         }
 
-                      
-                  
-               alert($('.admin-parentId').val())
+               if(form.parentId==undefined){
+                  form.parentId='ROOT'
+               }       
+      
 
                var checked=self.checkEmpty($(this).closest('.form_Party').find('input[type=text]'))
                  
@@ -388,15 +388,18 @@ Common.prototype.checkIphone=function (obj){
 Common.prototype.setPassword=function (obj){
 
         $(obj).on('click',function (){
+        
              var that=this;
              var form={
                   "newPassword": $('#new-password').val(),
                   "oldPassword": $('#old-password').val()
               }
               $.post('/put/user/password',form).then(function (data){
+
                     if(data.success){
                   
                       $(that).parent().next().show().html('密码修改成功')
+
                       setTimeout(function (){
                          $('#modal-password').modal('toggle')
                          $(that).parent().next().hide()

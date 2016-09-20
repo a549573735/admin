@@ -31,8 +31,8 @@ exports.organize_company=function (req,res,next){
           }
             console.log(data.content)
 
-
         res.render('pages/organize_company',{data:datalist});
+
     }).catch(function (err){
 
         console.log(err)
@@ -48,6 +48,7 @@ exports.api_organize_company_list = function(req, res, next) {
        var form=req.body||{};
            form.page=req.body.page||0;
            form.size=15;
+
            if( form.park=='0'){
              delete form.park;
            }
@@ -61,12 +62,13 @@ exports.api_organize_company_list = function(req, res, next) {
                            href:'/organize/details?view=company&id=',
                            title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
                            content:data.content.content,
-                           style:['20%','auto','100px','100px','80px','20%','100px'],
+                           style:['20%','auto','120px','100px','80px','20%','80px'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overflow:false,
                            page:data.content.page
 
               }
+              console.log(datalist.content)
                
             res.json(datalist);
         })
@@ -86,7 +88,7 @@ exports.organize_market = function(req, res, next) {
       data.content.page=Math.ceil(data.content.total/data.content.size);   
         var  datalist={ 
                        href:'/organize/park?id=',
-                       title:['市场所名称','市场所地址','联系人','联系方式'],
+                       title:['市场所名称','市场所地址','联系人','联系方式','操作'],
                        content:data.content,
                        style:['25%','auto','100px','15%'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
@@ -135,6 +137,7 @@ exports.api_organize_park_list=function(req, res, next) {
       
 
     api_services.commonRequest('api/app/park/'+id+'/'+parkName,'POST',form).then(function (dataSelect){
+
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
              console.log(dataSelect.content)
              res.json(dataSelect)

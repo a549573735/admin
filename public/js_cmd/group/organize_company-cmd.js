@@ -52,9 +52,8 @@ define(function (require, exports, module) {
 
 					}else {
 
-			            $.post(' /api/organize/company/list',form).then(function (data){
+			            $.post('/api/organize/company/list',form).then(function (data){
 
-			                  data.detals=true
 			                  that.tablsData = data
 			                
 

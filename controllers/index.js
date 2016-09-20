@@ -27,26 +27,72 @@ exports.home=function(req,res,next){
 exports.publicity = function(req, res, next) {
    
     var id=req.session.user.content.id;
+
     var form={
          page:0,
          size:50
-    } 
+    }
 
-    api_services.commonRequest('api/app/company/'+id+'/list','POST',form).then(function (dataSelect){
+    switch(req.session.user.content.type){
+          case 'MARKET':
+          form.market=req.session.user.content.id;
+          break;
+          case 'PARK':
+          form.park=req.session.user.content.id;
+          break;
+    }
+
+
+    api_services.commonRequest('api/app/company/list/new','POST',form).then(function (dataSelect){
             
              console.log(dataSelect)
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
-              res.render('pages/publicity',{dataSelect:dataSelect});
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             res.render('pages/publicity',{dataSelect:dataSelect});
 
         
     }).catch(function (data){
               console.log(data)
-              res.json(data)
+
+              res.render('pages/publicity',{dataSelect:dataSelect});
     })
 
 
+}
+
+
+
+exports.companySelect = function(req, res, next) {
+   
+    var id=req.query.id
+
+    var form={
+         page:0,
+         size:50,
+         park:id,
+    }
+
+    api_services.commonRequest('api/app/company/list/new','POST',form).then(function (dataSelect){
+            
+             console.log(dataSelect)
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             res.json({dataSelect:dataSelect});
+
+        
+    }).catch(function (data){
+              console.log(data)
+
+            
+    })
+
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -54,22 +100,25 @@ exports.api_publicity=function (req,res,next){
      var date=new Date()
      var time=tools.setForm()
      var form= {
-              "page":req.query.page||0,
+              "page":req.query.page||'0',
               "size":15,
-              "type":req.query.type||req.session.user.content.type,
-              "market":req.query.park||req.session.user.content.id,
-              "company":req.query.company||'',
-              "park":req.query.park||'',
+              "type":req.query.type||"PARK",
+              "market":req.query.market==0?'':req.query.market ||'',
+              "company":req.query.company ||'',
+              "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
                "to":req.query.to||req.body.to||time.to
               }
-     if(req.session.user.content.type=="PARK"){
-          form.market=req.session.user.content.belongId;
-          form.park=req.session.user.content.id;
-      }         
-
+      
+       if(form.market==''){
+          delete form.market
+       }      
+       if(form.park==''){
+          delete form.park
+       }    
+    
     api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -85,10 +134,10 @@ exports.add_publicity=function (req,res,next){
 
       var form=req.body;
 
-      form.user=req.session.user.content.displayName;
+        form.user=req.session.user.content.id;
 
         api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -149,13 +198,20 @@ exports.api_inspect=function (req,res,next){
      var form= {
               "page":req.query.page||0,
               "size":15,
-              "type":req.query.type||req.session.user.content.type,
-              "market":req.query.park||req.session.user.content.id,
+              "type":req.query.type||"COMPANY",
+              "market":req.query.market==0?'':req.query.market||'',
               "company":req.query.company||'',
-              "park":req.query.park||req.session.user.content.id,
+              "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
               "to":req.query.to||req.body.to||time.to
               }
+       if(form.market==''){
+          delete form.market
+       }      
+       if(form.park==''){
+          delete form.park
+       }       
+ 
 
 
     api_services.commonRequest('api/app/inspect/list','POST',form).then(function (dataSelect){
@@ -192,13 +248,19 @@ exports.api_suggestion=function (req,res,next){
      var form= {
               "page":req.query.page||0,
               "size":15,
-              "type":req.query.type||req.session.user.content.type,
-              "market":req.query.park||req.session.user.content.id,
+              "type":req.query.type||'COMPANY',
+              "market":req.query.market==0?'':req.query.market||'',
               "company":req.query.company||'',
-              "park":req.query.park||req.session.user.content.id,
+              "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
                "to":req.query.to||req.body.to||time.to
               }
+       if(form.market==''){
+          delete form.market
+       }      
+       if(form.park==''){
+          delete form.park
+       }            
 
     api_services.commonRequest('api/app/suggestion/list','POST',form).then(function (dataSelect){
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
@@ -232,7 +294,7 @@ exports.api_suggestion_msg=function (req,res,next){
    
 
     api_services.commonRequest('api/app/suggestion/add','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -258,20 +320,32 @@ exports.api_interview=function (req,res,next){
      var date=new Date()
      var time=tools.setForm()
      var form= {
-              "page":req.query.page||0,
+              "page":req.body.page||0,
               "size":15,
-              "type":req.query.type||req.session.user.content.type,
-              "market":req.query.park||req.session.user.content.id,
-              "company":req.query.company||'',
-              "park":req.query.park||req.session.user.content.id,
-              "from":req.query.from||req.body.from||time.from,
-               "to":req.query.to||req.body.to||time.to
+              "type":req.body.type||'COMPANY',
+              "market":req.body.market==0?'':req.body.market||'',
+              "company":req.body.company||'',
+              "park":req.body.park==0?'':req.body.park||'',
+              "from":req.body.from||req.body.from||time.from,
+               "to":req.body.to||req.body.to||time.to
               }
+      
+       if(form.market==''){
+          delete form.market
+       }      
+       if(form.park==''){
+          delete form.park
+       }    
 
 
     api_services.commonRequest('api/app/interview/list','POST',form).then(function (dataSelect){
+
+           if(dataSelect.success){
+
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
-             console.log(dataSelect.content)
+
+           }
+             console.log(dataSelect)
              res.json(dataSelect)
 
     }).catch(function (data){
@@ -296,7 +370,7 @@ exports.api_interview_msg=function (req,res,next){
  
 
     api_services.commonRequest('api/app/interview/add','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+            /// dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -330,17 +404,18 @@ exports.api_appointment=function (req,res,next){
      var form= {
               "page":req.query.page||0,
               "size":15,
-              "type":req.query.type||req.session.user.content.type,
-              "market":req.query.park||req.session.user.content.id,
+              "type":req.query.type||'PARK',
+              "market":req.query.market==0?'':req.query.market||'',
               "company":req.query.company||'',
-              "park":req.query.park||req.session.user.content.id,
+              "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
                "to":req.query.to||req.body.to||time.to
               }
+             console.log(form)   
 
     api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
-             console.log(dataSelect)
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             console.log(dataSelect.content)
              res.json(dataSelect)
 
     }).catch(function (data){
@@ -393,7 +468,7 @@ exports.api_inspect_qualified_msg=function (req,res,next){
 
 
     api_services.commonRequest('api/app/inspect/qualified/'+form.ccPark,'POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 

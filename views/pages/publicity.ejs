@@ -73,16 +73,13 @@
                        <div class="block-content block-content-narrow">
 
                                     <div class="js-validation-bootstrap form-horizontal" >
+                                     <v-select-admin></v-select-admin>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label " for="val-password">公司: <span class="text-danger">*</span></label>
                                               <div class="col-md-7">
                                                           <select class="form-control" id="publicity-select"  name="modal-publicity">
-                                                                     <option value="">请选择</option>
-                                                                     <%if(dataSelect.content.content.length>0){%>
-                                                                            <%dataSelect.content.content.forEach(function(item){ %>  
-                                                                                     <option value="<%=item.id%>"><%=item.name%></option>
-                                                                              <%})%>    
-                                                                     <%}%>
+                                                                     <option >请选择</option>
+                                                                     <option  v-for="item in companySelect" :value="item.id" >{{item.name}}</option>
                                                           </select>
                                               </div>
                                         </div>

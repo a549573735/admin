@@ -103,13 +103,14 @@ exports.user_edit_list = function(req, res, next) {
 
 exports.api_user_edit_list = function(req, res, next) {
 
-    var _id=req.query.id || req.session.user.content.id 
+    var _id=req.query.id || req.session.user.content.belongId
+    
     var page=req.query.page
 
-      var data={
+    var data={
                 "page": page||0,
                 "size": 15
-                }
+             }
 
 
     api_services.commonRequest('api/app/user/'+_id+'/list',"POST",data).then(function (data){
@@ -206,7 +207,7 @@ exports.user_admin_add=function(req, res, next) {
     
     var type=req.body.type||req.session.user.content.type; 
 
-    console.log()
+    
    
     api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
@@ -254,17 +255,18 @@ exports.api_admin_role=function (req, res, next){
      var form=req.body;
        // console.log(form)
      // form.belongId=form.type!='DISTRICT'?req.session.user.content.id:form.belongId
-      form.belongId=form.belongId||req.session.user.content.id
+     form.belongId=req.session.user.content.belongId
 
   
+
      api_services.commonRequest('api/app/user/add',"POST",form).then(function (data){
 
-            data.content.page=Math.ceil(data.content.total/data.content.size);
+            //data.content.page=Math.ceil(data.content.total/data.content.size);
             res.json(data)
 
      }).catch(function (err){
             console.log(err)
-            res.json({msg:'服务器用户添加错误',state:false})
+           // res.json({msg:'服务器用户添加错误',state:false})
 
      })
 
@@ -326,7 +328,7 @@ exports.api_admin_role=function (req, res, next){
 
        api_services.commonRequest('api/app/user/password/modify',"PUT",form).then(function (data){
                 console.log(data)
-                data.content.page=Math.ceil(data.content.total/data.content.size);
+               // data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)
 
        }).catch(function (err){

@@ -101,9 +101,10 @@ define(function (require, exports, module) {
 
 		   	  	   	    var form={
 		 				   	   parkname:$('.select-parkname').val()||'',
-		 				   	   id: $('#select_park').val(),
+		 				   	   id: $('#select_park').val()==0?($.query.get('id')||'all'):$('#select_park').val(),
 		 				   	   page:page-1
-		 				 };
+		 				};
+
 
 		 			this.tableList.content=this.getData(form)
 

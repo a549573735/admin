@@ -16,8 +16,8 @@ define(function (require, exports, module) {
                       </thead>\
                       <tbody class="v-tabs-check">\
                          <tr v-for="item in datalist.content.content">\
-                            <td v-if="item.target" class="text-center">{{ item.target }}</td>\
-                            <td v-if="item.company" class="text-center">{{ item.company }}</td>\
+                            <td v-if="item.target" class="text-center">{{ item.target  }}</td>\
+                            <td v-if="item.company" class="text-center">{{ item.company==null?\'null\':item.company   }}</td>\
                             <td v-if="item.publicity" class="text-center">{{ item.publicity }}</td>\
                             <td v-if="item.status" class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
                             <td v-if="item.readFlag" class="text-center">{{ item.readFlag==\'false\'?\'未读\':\'已读\' }}</td>\
