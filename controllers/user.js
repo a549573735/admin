@@ -79,13 +79,14 @@ exports.signRequired=function (req,res,next)
 exports.user_edit_list = function(req, res, next) {
 
                 //user/edit/list
-    var type=req.body.type||req.session.user.content.type; 
+    var belongId=req.body.belongId||req.session.user.content.belongId; 
 
    
-    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-        
+    api_services.commonRequest('api/app/role/'+belongId+'/list',"GET",null).then(function (data){
+          
+         if( data.content.page) {
          data.content.page=Math.ceil(data.content.total/data.content.size);
-
+          }
          res.render('pages/user_edit_list', data);
      
    }).catch(function (err){
@@ -183,13 +184,14 @@ exports.user_role=function(req, res, next) {
 
 exports.user_admin_add=function(req, res, next) {
     
-    var type=req.body.type||req.session.user.content.type; 
+    var belongId=req.body.belongId||req.session.user.content.belongId; 
 
       
    
-    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-        
+    api_services.commonRequest('api/app/role/'+belongId+'/list',"GET",null).then(function (data){
+         if( data.content.page){
          data.content.page=Math.ceil(data.content.total/data.content.size);
+         }
          res.render('pages/user_admin_add', data);
      
    }).catch(function (err){
