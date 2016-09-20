@@ -411,7 +411,13 @@ exports.api_appointment=function (req,res,next){
                "to":req.query.to||req.body.to||time.to,
                "belongId":req.session.user.content.belongId
               }
-             console.log(form)   
+           if(form.market==''){
+             delete form.market
+           }
+           if(form.park==''){
+             delete form.park
+           }
+
 
     api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
              //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
