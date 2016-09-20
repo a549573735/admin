@@ -31,8 +31,8 @@ exports.organize_company=function (req,res,next){
           }
             console.log(data.content)
 
-
         res.render('pages/organize_company',{data:datalist});
+
     }).catch(function (err){
 
         console.log(err)
@@ -48,6 +48,7 @@ exports.api_organize_company_list = function(req, res, next) {
        var form=req.body||{};
            form.page=req.body.page||0;
            form.size=15;
+
            if( form.park=='0'){
              delete form.park;
            }
@@ -67,6 +68,7 @@ exports.api_organize_company_list = function(req, res, next) {
                            page:data.content.page
 
               }
+              console.log(datalist.content)
                
             res.json(datalist);
         })
@@ -135,7 +137,7 @@ exports.api_organize_park_list=function(req, res, next) {
       
 
     api_services.commonRequest('api/app/park/'+id+'/'+parkName,'POST',form).then(function (dataSelect){
-      
+
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
              console.log(dataSelect.content)
              res.json(dataSelect)

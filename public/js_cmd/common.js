@@ -279,9 +279,10 @@ Common.prototype.againSecret=function (){
                         admin:$('.admin-admin').val()
                         }
 
-                      
-                  
-               alert($('.admin-parentId').val())
+               if(form.parentId==undefined){
+                  form.parentId='ROOT'
+               }       
+      
 
                var checked=self.checkEmpty($(this).closest('.form_Party').find('input[type=text]'))
                  
