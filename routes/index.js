@@ -34,7 +34,8 @@ var config=require('../utils/config')
   
      
     app.post('/admin/organize/modify',User.signRequired,  Admin.admin_modify_organize)  //修改园区和市场
-	app.post('/admin/company/modify',User.signRequired,  Admin.admin_modify_company)  //修改公司
+	
+    app.post('/admin/company/modify',User.signRequired,  Admin.admin_modify_company)  //修改公司
 
 
 
@@ -51,7 +52,7 @@ var config=require('../utils/config')
   
 	app.get('/user/add',User.signRequired,  User.user_add);   			 //用户添加
     
-    app.get('/user/modify',User.signRequired,  User.user_modify);   
+    //app.get('/user/modify',User.signRequired,  User.user_modify);     
 
     app.post('/app/role/delete',User.signRequired,  User.delete_user_role)
 

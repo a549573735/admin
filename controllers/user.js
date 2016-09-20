@@ -176,26 +176,27 @@ exports.user_role=function(req, res, next) {
 
 
 
-exports.user_modify=function (req,res,next){
+// exports.user_modify=function (req,res,next){
     
-     var id=req.query.id;
+//       var id=req.query.id;
 
-      api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
+
+//       api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
           
-           data.content.page=Math.ceil(data.content.total/data.content.size);
-           res.render('pages/user_admin_add', data);
+//            data.content.page=Math.ceil(data.content.total/data.content.size);
+//            res.render('pages/user_admin_add', data);
        
-     }).catch(function (err){
+//      }).catch(function (err){
              
-             console.log(err)
+//              console.log(err)
 
-           res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
+//            res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
        
 
-     })
+//      })
     
 
-}
+// }
 
 
 
@@ -349,23 +350,15 @@ exports.api_admin_role=function (req, res, next){
         console.log(req.body)
       
        api_services.commonRequest('api/app/user/'+id+'/password/reset',"PUT",null).then(function (data){
-                console.log(data)
-                data.content.page=Math.ceil(data.content.total/data.content.size);
+          
                   res.json(data)
 
        }).catch(function (err){
-
-                  res.json({msg:'服务器用户更新错误',state:false})
-
+            console.log(err)
+            res.json(err)
        })
 
  }
-
-
-
-
-
-
 
 
 
@@ -412,15 +405,13 @@ exports.modify_role=function (req,res,next){
 
       var data={
             name:req.body.name,
-            permissionIds:[],
+            permissionIds:req.body,
             type:req.body.type,
             id:req.body.id||req.session.user.content.id
           
        }
 
-       console.log(data)
-
-//PUT /api/app/role/modify
+       
 
       if(typeof req.body['permissionIds[]'] =='string'){
             data.permissionIds.push(req.body['permissionIds[]'])
@@ -537,7 +528,7 @@ exports.read_user_messages = function (req,res,next){
        
        api_services.commonRequest('api/app/user/message/'+id+'/read',"POST",null).then(function (data){
                
-                  console.log(data)
+                  
                   res.json(data)
 
        }).catch(function (err){

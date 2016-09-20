@@ -2,69 +2,7 @@
 /**
  * Created by lixiang on 16/8/26.
  */
-   // var permission=[{
-   //    "id": "1",
-   //    "name": "平级用户管理",
-   //    "1": "same_level_manage"
-   //  },
-   //  {
-   //    "id": "10",
-   //    "name": "行政建议列表",
-   //    "10": "suggestion_list"
-   //  },
-   //  {
-   //    "id": "11",
-   //    "name": "年报公示",
-   //    "11": "publicity"
-   //  },
-   //  {
-   //    "id": "12",
-   //    "name": "年报公示列表",
-   //    "12": "publicity_list"
-   //  },
-   //  {
-   //    "id": "2",
-   //    "name": "企业信息",
-   //    "2": "company_info"
-   //  },
-   //  {
-   //    "id": "3",
-   //    "name": "网络检查",
-   //    "3": "network_check"
-   //  },
-   //  {
-   //    "id": "4",
-   //    "name": "网络检查列表",
-   //    "4": "network_check_list"
-   //  },
-   //  {
-   //    "id": "5",
-   //    "name": "预约检查",
-   //    "5": "appointment"
-   //  },
-   //  {
-   //    "id": "6",
-   //    "name": "预约检查列表",
-   //    "6": "appointment_list"
-   //  },
-   //  {
-   //    "id": "7",
-   //    "name": "行政约谈",
-   //    "7": "interview"
-   //  },
-   //  {
-   //    "id": "8",
-   //    "name": "行政约谈列表",
-   //    "8": "interview_list"
-   //  },
-   //  {
-   //    "id": "9",
-   //    "name": "行政建议",
-   //    "9": "suggestion"
-   //  }] 
-
-   
-
+   // 
 
 
 
@@ -112,10 +50,7 @@
           this.setPassword('.model-password-btn');//修改密码
          
           this.uiInit.$lMinBtn.attr('bclick',false)
-          var that=this
-           setTimeout(function (){
-                that.getChecked()
-           },500)
+         
 
     }
 
@@ -330,10 +265,11 @@ Common.prototype.againSecret=function (){
  Common.prototype.addParty=function (form){
             
          var self=this;
+
          $('.admin-add-btn').on('click',function (){
 
                var form={
-                        parentId:$('.select_park').val()||"ROOT",
+                        parentId:$('.select_park').val()=='all'?'':$('.select_park').val(),
                         name:$('.admin-name').val(),
                         phone:$('.admin-phone').val(),
                         contact:$('.admin-contact').val(),
@@ -344,9 +280,14 @@ Common.prototype.againSecret=function (){
                         admin:$('.admin-admin').val()
                         }
 
+                      
+                  
+               alert($('.admin-parentId').val())
+
                var checked=self.checkEmpty($(this).closest('.form_Party').find('input[type=text]'))
-                   console.log($(form).find('input[type=text]').length)
+                 
                var checkEmail=self.checkEmpty($(this).closest('.form_Party').find('.admin-email'))
+
 
                if(checked.state=='false'){
                   alert(checked.message)  
@@ -357,6 +298,7 @@ Common.prototype.againSecret=function (){
                   alert(checkEmail.message)  
                   return false 
                }
+
 
                    if($('.admin-type').val()=='modify'){
 
@@ -474,9 +416,11 @@ Common.prototype.getChecked=function (){
        var  json={
 
        }
-
+       
+       var name=$.query.get('name');
        var str=$.query.get('permissionIds').toString();
 
+       $('.per_name').val(name)
        if(str.indexOf(',')!=-1){
 
             permissionIds=$.query.get('permissionIds').split(',');
