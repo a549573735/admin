@@ -64,7 +64,7 @@ define(function (require, exports, module) {
 
 
                                  var type=$.query.get('type')||''
-                                  alert(type)
+                              
 
                                  if(type=='modify'){
 

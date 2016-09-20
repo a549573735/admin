@@ -353,7 +353,7 @@ exports.api_admin_role=function (req, res, next){
             name:req.body.name,
             permissionIds:[],
             type:req.body.type,
-          
+            belongId:req.session.user.content.belongId
        }
 
        if(typeof req.body['permissionIds[]'] =='string'){
@@ -363,9 +363,10 @@ exports.api_admin_role=function (req, res, next){
            data.permissionIds=req.body['permissionIds[]']
         }
 
-        console.log(data)  
+
 
        api_services.commonRequest('api/app/role/add',"POST",data).then(function (data){
+                console.log(data)  
                   data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)
 
@@ -421,14 +422,17 @@ exports.modify_role=function (req,res,next){
 
 exports.user_role_list = function(req, res, next) {
 
-   var type=req.body.type||"DISTRICT"; 
+   var belongId=req.body.belongId
 
        
 
-   api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-        
-         data.content.page=Math.ceil(data.content.total/data.content.size);
+   api_services.commonRequest('api/app/role/'+belongId+'/list',"GET",null).then(function (data){
+          
+         if(data.content.page) {
+            data.content.page=Math.ceil(data.content.total/data.content.size);
+          }
          //data.permission=permission
+         console.log(data)
          res.json(data);
      
 
