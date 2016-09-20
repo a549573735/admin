@@ -37,11 +37,11 @@
           this.inputDate();
           this.minModal();
           this.setNavActive();
-          this.sendMessage('.suggestion-btn','#tables','#val-suggestion',null,'/api/suggestion/msg',null,'.v-modal-min','.v-msg');    //建议
-          this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg');    //约谈
-          this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg');    // 预约
-          this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg');  //不合格  
-          this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null); 
+          this.sendMessage('.suggestion-btn','#tables','#val-suggestion',null,'/api/suggestion/msg',null,'.v-modal-min','.v-msg','.park-belongId_s');    //建议
+          this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg','.park-belongId_iv');    //约谈
+          this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg','.park-belongId_ap');    // 预约
+          this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg','.park-belongId_it');  //不合格  
+          this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null,null); 
 
           this.getAppkey();  //获取appkey
           this.againSecret();
@@ -171,7 +171,7 @@
     }
 
 
-  Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success) {
+  Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success,checked) {
       var self=this;
         $(obj).on('click',function(){
              
@@ -193,7 +193,7 @@
                   inspectDate:$(date).val(),
                   notes:$(textarea).val(),
                   status:$(this).attr('data-status'),
-                  ccPark:$('.park-belongId').prop('checked')?true:false
+                  ccPark:$(checked).prop('checked')?true:false
               }
               
               var that=this
