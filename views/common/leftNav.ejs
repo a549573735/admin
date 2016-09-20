@@ -6,7 +6,7 @@
                            <ul class="c-list">
                               
                               <% user.content.navlist.forEach(function (item){ %>
-                                  <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
+                                  <li><a href="<%=item.href%>?id=<%=user.content.belongId%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
                                      <% if(item.list){%>
                                          <dl >
                                             <% if(user.content.type=="DISTRICT"){%>
@@ -15,12 +15,14 @@
                                               </dd>
                                            <%}%>
                                               <% item.list.forEach(function (it){ %>
+
                                                  <dd>
-                                                     <a href="<%=it.href%>"><%=it.title%></a>
+                                                     <a href="<%=it.href%>?id=<%=user.content.belongId%>"><%=it.title%></a>
                                                  </dd>
+
                                               <%})%>
                                                <dd>
-                                                     <a href="/organize/company">企业</a>
+                                                     <a href="/organize/company?id=<%=user.content.belongId%>">企业</a>
                                                </dd>
                                         </dl>
                                      <%}%>

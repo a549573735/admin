@@ -47,11 +47,15 @@ define(function (require, exports, module) {
 
  						window.location.href='/admin/interface/list';
 
+                    }else if(data.type=="MARKET"){
+                    	window.location.href='/organize/park?id='+data.id;
+                   
+                    }else if(data.type=="PARK"){
+                    	window.location.href='/organize/company?id='+data.id;
                     }else {
                     	window.location.href='/organize/architecture';
                     }
 	               
-
 	        	 },'json')
 	        	 
 	        }else{

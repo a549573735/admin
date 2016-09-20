@@ -10,12 +10,20 @@ exports.organize_company=function (req,res,next){
             var form=req.body||{};
                 form.page=req.body.page||0;
                 form.size=15;
-            
-            if(req.query.id){
-                form.park=req.query.id
-              }
-    
-    
+
+            switch(req.session.user.content.type){
+               case  'MARKET':
+                 form.market=req.session.user.content.belongId;
+                 break;
+               case  'PARK':
+                 form.park=req.session.user.content.belongId;
+                 break;
+            }
+
+            if(req.query.id&&req.query.query){
+                form.park=req.query.id;
+            }
+   
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
            
         data.content.page=Math.ceil(data.content.total/data.content.size);   
@@ -108,7 +116,7 @@ exports.organize_market = function(req, res, next) {
 
 exports.organize_park_id = function(req, res, next) {
 
-    var id=req.query.id||req.session.user.content.id;
+    var id=req.query.id||req.session.user.content.belongId;
  
     api_services.commonRequest('api/app/market/all','GET',null).then(function (dataSelect){
             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);   
@@ -126,7 +134,7 @@ exports.organize_park_id = function(req, res, next) {
 
 exports.api_organize_park_list=function(req, res, next) {
 
-    var id=req.query.id||req.session.user.content.id;
+    var id=req.query.id||req.session.user.content.belongId;
     var parkName=encodeURI(req.query.parkname)||'';
 
 

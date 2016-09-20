@@ -157,8 +157,8 @@
          }
 
            this.uiInit.$lNav.find('li a').each(function (index,val){
-                
-                 if($(val).attr('href')==href){
+                 
+                 if($(val).attr('href').split('?')[0]==href){
                      $(val).addClass('active');
                       if($(val).parent()[0].tagName!=='LI'){
                           $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')

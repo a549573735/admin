@@ -90,12 +90,6 @@ exports.companySelect = function(req, res, next) {
 
 
 
-
-
-
-
-
-
 exports.api_publicity=function (req,res,next){
      var date=new Date()
      var time=tools.setForm()

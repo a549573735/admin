@@ -60,7 +60,7 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
                        href:'/organize/park?id=',
                        title:['市场所名称','市场所地址','用户名','邮箱','联系人','联系方式','操作'],
                        content:data.content,
-                       style:['15%','auto','10%','15%','100px','15%','18%'],
+                       style:['15%','15%','8%','auto','80px','5%','18%'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                        overflow:false,
                        overflow_btn:false,
