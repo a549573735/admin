@@ -283,6 +283,7 @@ exports.api_suggestion_msg=function (req,res,next){
       }else {
         form.targets=data
       }
+    form.belongId=req.session.user.content.belongId;
  
 
    
@@ -361,7 +362,7 @@ exports.api_interview_msg=function (req,res,next){
       }else {
         form.targets=data
       }
- 
+     form.belongId=req.session.user.content.belongId;
 
     api_services.commonRequest('api/app/interview/add','POST',form).then(function (dataSelect){
             /// dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
@@ -436,8 +437,9 @@ exports.api_appointment_msg=function (req,res,next){
         form.targets=data
       }
  
-
-   
+    form.belongId=req.session.user.content.belongId;
+    
+    console.log(form)
     api_services.commonRequest('api/app/appointment/add','POST',form).then(function (dataSelect){
              
              console.log(dataSelect)
@@ -458,6 +460,8 @@ exports.api_inspect_qualified_msg=function (req,res,next){
     // form.target=[]
 
     form.target=req.body['target[]']||req.body.target;
+
+    form.belongId=req.session.user.content.belongId;
 
 
 

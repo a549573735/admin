@@ -78,9 +78,7 @@ define(function (require, exports, module) {
 
                                  })
                                that.dataList.content=data.content
-
                           })   
-
                    }
 
                 },

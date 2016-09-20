@@ -193,7 +193,8 @@
                   inspectDate:$(date).val(),
                   notes:$(textarea).val(),
                   status:$(this).attr('data-status'),
-                  ccPark:$(checked).prop('checked')?true:false
+                  ccPark:$(checked).prop('checked')?true:false,
+                  
               }
               
               var that=this
@@ -276,7 +277,8 @@ Common.prototype.againSecret=function (){
                         username:$('.admin-username').val(),
                         mail:$('.admin-email').val(),
                         id:$('.admin-id').val(),
-                        admin:$('.admin-admin').val()
+                        admin:$('.admin-admin').val(),
+
                         }
 
                if(form.parentId==undefined){
