@@ -86,7 +86,7 @@ exports.organize_market = function(req, res, next) {
       data.content.page=Math.ceil(data.content.total/data.content.size);   
         var  datalist={ 
                        href:'/organize/park?id=',
-                       title:['市场所名称','市场所地址','联系人','联系方式'],
+                       title:['市场所名称','市场所地址','联系人','联系方式','操作'],
                        content:data.content,
                        style:['25%','auto','100px','15%'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],

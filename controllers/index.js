@@ -351,8 +351,8 @@ exports.api_appointment=function (req,res,next){
               }
 
     api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
-             console.log(dataSelect)
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             console.log(dataSelect.content)
              res.json(dataSelect)
 
     }).catch(function (data){

@@ -62,7 +62,7 @@ define(function (require, exports, module) {
 
                           $.get('/api/appointment/list',form).then(function (data){
 
-                               that.dataList.content=data
+                               that.dataList.content=data.content
 
                           })   
 
