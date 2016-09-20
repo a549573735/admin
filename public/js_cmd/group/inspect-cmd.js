@@ -49,7 +49,7 @@ define(function (require, exports, module) {
                      getContent:function (page){
                           var that=this;
                           var form= {
-                              "page":this.dataList.content.page||page||0,
+                              "page":page||0,
                               "size":15,
                               "type":$('#selectType').val(),
                               "market":$('#select_market').val(),
@@ -59,6 +59,7 @@ define(function (require, exports, module) {
                               "to":$('input[name=to]').val()
                               }
 
+                                
                           $.get('/api/inspect/list',form).then(function (data){
 
                               that.dataList.content=data.content
@@ -74,7 +75,7 @@ define(function (require, exports, module) {
                       this.page=page-1
                       var that=this;
 
-                      this.getContent(this.page)
+                      this.getContent(page-1)
 
                       // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
 

@@ -134,7 +134,7 @@ var config=require('../utils/config')
 
 	app.get('/interview/list',User.signRequired,  Index.interview);    //行政约谈列表
 
-	app.get('/api/interview/list',User.signRequired,  Index.api_interview);    //行政约谈列表
+	app.post('/api/interview/list',User.signRequired,  Index.api_interview);    //行政约谈列表
 
     app.post('/api/interview/msg',User.signRequired, Index.api_interview_msg);    //行政约谈列表
 

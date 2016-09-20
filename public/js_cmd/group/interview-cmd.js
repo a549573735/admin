@@ -16,7 +16,7 @@ define(function (require, exports, module) {
                                     url: '/api/interview/list',    //请求的url地址
                                     dataType: "json",   //返回格式为json
                                     async: false, //请求是否异步，默认为异步，这也是ajax重要特性
-                                    type: "GET",   //请求方式
+                                    type: "POST",   //请求方式
                                     success: function(data) {
                                         //请求成功时处理
                                      console.log(data)
@@ -49,7 +49,7 @@ define(function (require, exports, module) {
                   getContent:function (page){
                           var that=this;
                           var form= {
-                              "page":this.dataList.content.page||page||0,
+                              "page":page||0,
                               "size":15,
                               "type":$('#selectType').val(),
                               "market":$('#select_market').val(),
@@ -59,9 +59,11 @@ define(function (require, exports, module) {
                               "to":$('input[name=to]').val()
                               }
 
-                          $.get('/api/interview/list',form).then(function (data){
+                    
+                          $.post('/api/interview/list',form).then(function (data){
 
                               that.dataList.content=data.content
+
                           })   
 
                    }
@@ -85,6 +87,7 @@ define(function (require, exports, module) {
                       // })
 
                       }
+                      
                   
                 }
       })
