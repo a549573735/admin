@@ -57,8 +57,42 @@ exports.publicity = function(req, res, next) {
     })
 
 
+}
+
+
+
+exports.companySelect = function(req, res, next) {
+   
+    var id=req.query.id
+
+    var form={
+         page:0,
+         size:50,
+         park:id,
+    }
+
+    api_services.commonRequest('api/app/company/list/new','POST',form).then(function (dataSelect){
+            
+             console.log(dataSelect)
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             res.json({dataSelect:dataSelect});
+
+        
+    }).catch(function (data){
+              console.log(data)
+
+            
+    })
+
 
 }
+
+
+
+
+
+
+
 
 
 
@@ -66,7 +100,7 @@ exports.api_publicity=function (req,res,next){
      var date=new Date()
      var time=tools.setForm()
      var form= {
-              "page":req.query.page||0,
+              "page":req.query.page||'0',
               "size":15,
               "type":req.query.type||"PARK",
               "market":req.query.market==0?'':req.query.market ||'',
@@ -75,11 +109,14 @@ exports.api_publicity=function (req,res,next){
               "from":req.query.from||req.body.from||time.from,
                "to":req.query.to||req.body.to||time.to
               }
-     if(req.session.user.content.type=="PARK"){
-          form.market=req.session.user.content.belongId;
-          form.park=req.session.user.content.id;
-      }         
-
+      
+       if(form.market==''){
+          delete form.market
+       }      
+       if(form.park==''){
+          delete form.park
+       }    
+    
     api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
              //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
@@ -97,7 +134,7 @@ exports.add_publicity=function (req,res,next){
 
       var form=req.body;
 
-        form.user=req.session.user.content.belongId;
+        form.user=req.session.user.content.id;
 
         api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
              //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 

@@ -97,11 +97,6 @@ define(function (require, exports, module) {
 
                       this.getContent(page-1)
 
-                      // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
-
-                      //       that.listData=data.content;
-
-                      // })
 
                       }
                   

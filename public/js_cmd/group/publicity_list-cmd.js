@@ -3,6 +3,7 @@ define(function (require, exports, module) {
      require('/js_cmd/components/paging')
      require('/js_cmd/components/tables/com_tables')
      var select = require('/js_cmd/components/select');
+     require('/js_cmd/components/admin_select');
       new Vue({
                 el: '#app',
                 data: {
@@ -39,7 +40,7 @@ define(function (require, exports, module) {
                            overfull:false,
                            selectsubset:[],
 
-                    }
+                    },companySelect:[]
                    
                   
                 },
@@ -98,6 +99,15 @@ define(function (require, exports, module) {
 
                       // })
 
+                      },
+                      'send-select-admin':function (id){
+                         var that=this;
+
+                            $.get('/company/select?id='+id).then(function (data){
+                                console.log(JSON.stringify(data))
+                                that.companySelect=data.dataSelect.content.content
+                            })
+                          
                       }
                   
                 }

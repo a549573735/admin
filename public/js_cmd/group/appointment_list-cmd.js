@@ -70,6 +70,13 @@ define(function (require, exports, module) {
 
                           $.get('/api/appointment/list',form).then(function (data){
 
+                                 data.content.content.forEach(function (item){
+
+                                      if(item.target==null){
+                                        item.target+=''
+                                      }
+
+                                 })
                                that.dataList.content=data.content
 
                           })   

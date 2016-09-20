@@ -110,6 +110,7 @@ var config=require('../utils/config')
 
   
 
+    app.get('/company/select',User.signRequired, Index.companySelect)
 
 	app.get('/publicity/list',User.signRequired,  Index.publicity);			 //年报公示列表
     
