@@ -391,6 +391,7 @@ exports.modify_role=function (req,res,next){
             permissionIds:req.body,
             type:req.body.type,
             id:req.body.id||req.session.user.content.id,
+            belongId:req.body.belongId
           
        }
 

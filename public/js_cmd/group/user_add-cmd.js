@@ -59,7 +59,7 @@ define(function (require, exports, module) {
                                     permissionIds:id,
                                     type:this.radio_val||JSON.parse($('#user_role').val()).type,
                                     id:$.query.get('id')||'',
-
+                                    belongId:$.query.get('belongId')
                                  }
 
 
