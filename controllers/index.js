@@ -27,21 +27,33 @@ exports.home=function(req,res,next){
 exports.publicity = function(req, res, next) {
    
     var id=req.session.user.content.id;
+
     var form={
          page:0,
          size:50
-    } 
+    }
 
-    api_services.commonRequest('api/app/company/'+id+'/list','POST',form).then(function (dataSelect){
+    switch(req.session.user.content.type){
+          case 'MARKET':
+          form.market=req.session.user.content.id;
+          break;
+          case 'PARK':
+          form.park=req.session.user.content.id;
+          break;
+    }
+
+
+    api_services.commonRequest('api/app/company/list/new','POST',form).then(function (dataSelect){
             
              console.log(dataSelect)
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
-              res.render('pages/publicity',{dataSelect:dataSelect});
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             res.render('pages/publicity',{dataSelect:dataSelect});
 
         
     }).catch(function (data){
               console.log(data)
-              res.json(data)
+
+              res.render('pages/publicity',{dataSelect:dataSelect});
     })
 
 
@@ -69,7 +81,7 @@ exports.api_publicity=function (req,res,next){
       }         
 
     api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -85,10 +97,10 @@ exports.add_publicity=function (req,res,next){
 
       var form=req.body;
 
-      form.user=req.session.user.content.displayName;
+        form.user=req.session.user.content.id;
 
         api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
 

@@ -63,8 +63,6 @@ var config=require('../utils/config')
     app.post('/user/admin/add',User.signRequired, User.Post_add_user);   //添加用户个人信息
 
     
- 
-
 
     app.post('/delete/user',User.signRequired, User.delete_user);   //添加用户个人信息
 

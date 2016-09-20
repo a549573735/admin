@@ -70,7 +70,8 @@ define(function (require, exports, module) {
                         var form={
                             id:$('#publicity-select').val(),
                             publicity:$('.val-publicity').val(),
-                            notes:$('.notes-publicity').val()
+                            notes:$('.notes-publicity').val(),
+                            company:$('#publicity-select').find("option:selected").text()
                         }
 
                         $.post('/add/publicity',form).then(function (data){  
