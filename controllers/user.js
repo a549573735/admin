@@ -177,28 +177,6 @@ exports.user_role=function(req, res, next) {
 
 
 
-// exports.user_modify=function (req,res,next){
-    
-//       var id=req.query.id;
-
-
-//       api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-          
-//            data.content.page=Math.ceil(data.content.total/data.content.size);
-//            res.render('pages/user_admin_add', data);
-       
-//      }).catch(function (err){
-             
-//              console.log(err)
-
-//            res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
-       
-
-//      })
-    
-
-// }
-
 
 
    /* 权限列表 用户权限列表*/
@@ -207,7 +185,7 @@ exports.user_admin_add=function(req, res, next) {
     
     var type=req.body.type||req.session.user.content.type; 
 
-    
+      
    
     api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
         
@@ -257,7 +235,7 @@ exports.api_admin_role=function (req, res, next){
      // form.belongId=form.type!='DISTRICT'?req.session.user.content.id:form.belongId
      form.belongId=req.session.user.content.belongId
 
-  
+      
 
      api_services.commonRequest('api/app/user/add',"POST",form).then(function (data){
 
@@ -409,7 +387,7 @@ exports.modify_role=function (req,res,next){
             name:req.body.name,
             permissionIds:req.body,
             type:req.body.type,
-            id:req.body.id||req.session.user.content.id
+            id:req.body.id||req.session.user.content.id,
           
        }
 

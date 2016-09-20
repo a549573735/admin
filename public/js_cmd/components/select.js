@@ -27,22 +27,24 @@ define(function (require, exports, module) {
 
                         var id=$.query.get('id');
                         var select=[]; 
-                         $.ajax({
-                                  url: '/park/briefall/'+id,    //请求的url地址
-                                  dataType: "json",   //返回格式为json
-                                  async: false, //请求是否异步，默认为异步，这也是ajax重要特性  
-                                  type: "GET",   //请求方式
-                                  success: function(data) {
-                                      //请求成功时处理
-                                       select = data.content;
-                                  },
-                                  error: function(err) {
-                                      //请求出错处理
-                                      alert(err.msg);
-                                  }
+                        if(id){
+                           $.ajax({
+                                    url: '/park/briefall/'+id,    //请求的url地址
+                                    dataType: "json",   //返回格式为json
+                                    async: false, //请求是否异步，默认为异步，这也是ajax重要特性  
+                                    type: "GET",   //请求方式
+                                    success: function(data) {
+                                        //请求成功时处理
+                                         select = data.content;
+                                    },
+                                    error: function(err) {
+                                        //请求出错处理
+                                        alert(err.msg);
+                                    }
                               }); 
-
+                         }
                           return select
+
 
                     }(),selectId:function (){
                          return  $.query.get('id')

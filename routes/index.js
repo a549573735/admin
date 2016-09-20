@@ -39,6 +39,9 @@ var config=require('../utils/config')
 
 
 
+
+
+
 	app.get('/user/role/list',User.signRequired,  User.user_role);			 //角色管理 编辑
     
     app.post('/api/user/role/list',User.signRequired,  User.user_role_list)
@@ -81,6 +84,7 @@ var config=require('../utils/config')
 
 
     app.get('/user/messages/list',User.signRequired, User.get_user_messages);   //获取用户消息列表
+
 
 
 
