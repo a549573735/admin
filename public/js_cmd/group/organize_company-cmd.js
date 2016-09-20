@@ -54,7 +54,7 @@ define(function (require, exports, module) {
 
 			            $.post(' /api/organize/company/list',form).then(function (data){
 
-			                  data.detals=true
+			                 
 			                  that.tablsData = data
 			                
 
