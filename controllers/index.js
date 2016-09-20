@@ -136,7 +136,7 @@ exports.add_publicity=function (req,res,next){
 
         form.user=req.session.user.content.id;
 
-        api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
+        api_services.commonRequest('api/app/publicity/add','POST',form).then(function (dataSelect){
              //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
