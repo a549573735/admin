@@ -9,9 +9,11 @@
                                   <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
                                      <% if(item.list){%>
                                          <dl >
+                                            <% if(user.content.type=="DISTRICT"){%>
                                               <dd>
                                                   <a href="/organize/architecture">组织架构</a>
                                               </dd>
+                                           <%}%>
                                               <% item.list.forEach(function (it){ %>
                                                  <dd>
                                                      <a href="<%=it.href%>"><%=it.title%></a>
