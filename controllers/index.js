@@ -97,7 +97,7 @@ exports.add_publicity=function (req,res,next){
 
       var form=req.body;
 
-        form.user=req.session.user.content.id;
+        form.user=req.session.user.content.belongId;
 
         api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
              //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 

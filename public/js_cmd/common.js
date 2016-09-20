@@ -387,15 +387,18 @@ Common.prototype.checkIphone=function (obj){
 Common.prototype.setPassword=function (obj){
 
         $(obj).on('click',function (){
+        
              var that=this;
              var form={
                   "newPassword": $('#new-password').val(),
                   "oldPassword": $('#old-password').val()
               }
               $.post('/put/user/password',form).then(function (data){
+
                     if(data.success){
                   
                       $(that).parent().next().show().html('密码修改成功')
+
                       setTimeout(function (){
                          $('#modal-password').modal('toggle')
                          $(that).parent().next().hide()
