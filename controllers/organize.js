@@ -192,7 +192,7 @@ exports.details = function(req, res, next) {
                       title:[],
                       content:null,
                       style:[],
-                      details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+                      details:false,
                       overflow:false,
                  },
 
@@ -234,6 +234,7 @@ exports.details = function(req, res, next) {
                          data.data.content=dataSelect.content;
 
 
+                       
                             // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
@@ -259,6 +260,12 @@ exports.details = function(req, res, next) {
                                            dataSelect
                                            )
                    data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+
+                    data.data.content.content.forEach(function (item){
+                                      for (var name in item ){
+                                           item[name]+=''
+                                      }   
+                    })   
                    if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -280,6 +287,11 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
+              data.data.content.content.forEach(function (item){
+                                      for (var name in item ){
+                                           item[name]+=''
+                                      }   
+                })   
                         
           data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                        
@@ -303,6 +315,13 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
+
+                data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                })   
+
                data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
@@ -327,6 +346,11 @@ exports.details = function(req, res, next) {
                                       )
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                    
+                   data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                    })   
                         
                         data.data.type="provider" 
     
@@ -352,6 +376,11 @@ exports.details = function(req, res, next) {
                                       )
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                    
+                        data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                         })   
                     
                         data.data.type="provider" 
                    
@@ -375,8 +404,14 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
-                        data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
-                   
+                          data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                          })   
+
+                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+                       
                           // 给关联 设置路由 
                         data.data.type="provider" 
                         if(req.query.api=='true'){
@@ -401,6 +436,11 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
+                        data.data.content.content.forEach(function (item){
+                              for (var name in item ){
+                                   item[name]+=''
+                              }   
+                        })   
                        
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                       
@@ -419,13 +459,6 @@ exports.details = function(req, res, next) {
 
 
 }
-
-
-
-
-
-
-
 
 
 //关联接口

@@ -101,7 +101,8 @@ exports.api_publicity=function (req,res,next){
               "company":req.query.company ||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-               "to":req.query.to||req.body.to||time.to
+               "to":req.query.to||req.body.to||time.to,
+               "belongId":req.session.user.belongId
               }
       
        if(form.market==''){
@@ -197,7 +198,8 @@ exports.api_inspect=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-              "to":req.query.to||req.body.to||time.to
+              "to":req.query.to||req.body.to||time.to,
+              "belongId":req.session.user.content.belongId
               }
        if(form.market==''){
           delete form.market
@@ -247,7 +249,8 @@ exports.api_suggestion=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-               "to":req.query.to||req.body.to||time.to
+               "to":req.query.to||req.body.to||time.to,
+              "belongId":req.session.user.content.belongId
               }
        if(form.market==''){
           delete form.market
@@ -322,7 +325,8 @@ exports.api_interview=function (req,res,next){
               "company":req.body.company||'',
               "park":req.body.park==0?'':req.body.park||'',
               "from":req.body.from||req.body.from||time.from,
-               "to":req.body.to||req.body.to||time.to
+               "to":req.body.to||req.body.to||time.to,
+              "belongId":req.session.user.content.belongId
               }
       
        if(form.market==''){
@@ -404,7 +408,8 @@ exports.api_appointment=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-               "to":req.query.to||req.body.to||time.to
+               "to":req.query.to||req.body.to||time.to,
+               "belongId":req.session.user.content.belongId
               }
              console.log(form)   
 
