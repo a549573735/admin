@@ -79,10 +79,6 @@
 
 
 
-
-
-
-
                  <div class="denglu  reset-password ">
                  <div class="block block-themed animated fadeIn">
                         <div class="block-header bg-success" style="padding:15px;">
@@ -98,8 +94,6 @@
                                             </div>
                                         </div>
 
-                            
-                                  
                                   
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" >密码 <span class="text-danger">*</span></label>
@@ -113,7 +107,7 @@
                                                 <input class="form-control denglu_yz" type="text" id="val-confirm-password" name="val-confirm-password" >
                                             </div>
                                             <div class="col-md-3 " >
-                                                 <button class="btn btn-default btn-block ">获取验证码</button>
+                                                 <button class="btn btn-default btn-block getCode">获取验证码</button>
                                             </div>
                                         </div>
 
@@ -141,10 +135,10 @@
 </body>
 
 <script src="lib/jquery.min.js"></script>
+<script src="js_cmd/common.js"></script>
 <script type="text/javascript">
    seajs.use("/js_cmd/group/login");
 
-  
-   
+  var common=new Common();
 </script>
 </html>

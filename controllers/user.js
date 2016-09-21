@@ -570,7 +570,25 @@ exports.read_user_messages = function (req,res,next){
 }
 
 
+// PUT /api/app/code/by/name/{username}
 
+exports.get_user_name=function (req,res,next)){
+
+
+    var name=req.body.username;
+
+    api_services.commonRequest('/api/app/code/by/name/'+name,"PUT",null).then(function (data){
+              
+
+                res.json(data)
+
+     }).catch(function (err){
+
+                res.json(err)
+
+     })
+ 
+}
 
 
 

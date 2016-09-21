@@ -29,7 +29,7 @@ define(function (require, exports, module) {
         $('.loginUp').css({'MozTransform':'translateX(700px)',opacity:'0'})
         $('.loginUp').css({'msTransform':'translateX(700px)',opacity:'0'})
         $('.loginUp').css({'transform':'translateX(700px)',opacity:'0'})
-       
+
         $('.reset-password').css({opacity:'1','WebkitTransform':'translateX(450px)'})
         $('.reset-password').css({opacity:'1','MozTransform':'translateX(450px)'})
         $('.reset-password').css({opacity:'1','msTransform':'translateX(450px)'})
@@ -95,6 +95,23 @@ define(function (require, exports, module) {
 	        	return false;
 	        }
 	  })
+
+
+  
+ // /api/app/code/by/name/
+
+ $('.getCode').on('click',function (){
+
+
+ 			
+
+
+ })
+
+
+
+
+
 
 
 });

@@ -87,6 +87,9 @@ var config=require('../utils/config')
     app.get('/user/messages/list',User.signRequired, User.get_user_messages);   //获取用户消息列表
 
 
+    app.post('/api/app/code/by/name/',User.signRequired, User.get_user_name)
+
+
 
 
 

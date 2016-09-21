@@ -394,6 +394,32 @@ Common.prototype.checkIphone=function (obj){
 }
 
 
+
+Common.prototype.countdown=function (obtn){
+    obtn.attr('disabled','disabled')
+    var _t = 60, _timer = null;
+
+    clearInterval(_timer);
+    _timer = setInterval(function(){
+        _t--;
+        if(_t < 0){
+            clearInterval(_timer);
+            obtn.removeAttr('disabled').html('重新发送');
+            obtn.css({cursor:'pointer'})
+            return false;
+        }
+        if(_t < 10){
+            _t = '0'+_t;
+        }
+        obtn.html('正在发送请稍后...'+_t+'秒');
+
+    },1000);
+
+}
+
+
+
+
 Common.prototype.setPassword=function (obj){
 
         $(obj).on('click',function (){
