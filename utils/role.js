@@ -34,7 +34,7 @@ module.exports=function (app){
                          dest.push(item)
                    }
                })
-               var a={href:'javascript:;','parentTitle':'1',title:'组织',list:[]};
+               var a={href:'#','parentTitle':'1',title:'组织',list:[]};
                var b=[]
 
                   dest.forEach(function (item,val){

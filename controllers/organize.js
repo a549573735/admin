@@ -64,6 +64,7 @@ exports.api_organize_company_list = function(req, res, next) {
              delete form.market;
            }
            
+           console.log(form) 
         api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
             data.content.page=Math.ceil(data.content.total/data.content.size);   
             var  datalist={ 
