@@ -104,13 +104,15 @@ define(function (require, exports, module) {
                                         data: from,    //参数值
                                         type: "POST",   //请求方式
                                         success: function(data) {
-                                           console.log(data)
+                                           
                                            if(data.success){
-                                            $('#modal-fromuser').modal('toggle')
+                                            alert('修改成功') 
+                                           // $('#modal-fromuser').modal('toggle')
                                             window.location.reload()
                                           }else {
                                               alert(data.errMessage)
                                           }
+                                          
                                         },
                                         error: function(err) {
                                             //请求出错处理

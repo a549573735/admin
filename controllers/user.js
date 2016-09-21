@@ -286,8 +286,8 @@ exports.api_admin_role=function (req, res, next){
 
        api_services.commonRequest('api/app/user/modify',"PUT",data).then(function (data){
                 console.log(data)
-                data.content.page=Math.ceil(data.content.total/data.content.size);
-                  res.json(data)
+                //data.content.page=Math.ceil(data.content.total/data.content.size);
+                res.json(data)
 
        }).catch(function (err){
 
