@@ -140,6 +140,9 @@ define(function (require, exports, module) {
                                         <div class="v-t-b ">\
                                           <button class=" btn btn-md btn-primary btn-block " @click="sendCode()" type="submit">确定</button>\
                                         </div>\
+                                        <div class="v-t-b " style="margin-left:50px;">\
+                                          <a class=" btn btn-md btn-primary btn-block "  href="/user/role/list">取消</a>\
+                                        </div>\
                                     </div>\
                                     </div>\
                                 </div>\

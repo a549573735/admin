@@ -24,7 +24,7 @@ var config=require('../utils/config')
           		     	 
  
 
-	app.get('/admin/interface/list',User.signRequired, Admin.interface);						 //后台进入
+	app.get('/admin/interface/list', User.signRequired,  Admin.interface);						 //后台进入
 
 	app.get('/admin/market', User.signRequired,Admin.admin_market);			//单位管理 后台 市场所
 
@@ -39,6 +39,7 @@ var config=require('../utils/config')
 
 
 
+    app.get('/user/verify',User.signRequired, User.userVerify); 
 
 
 

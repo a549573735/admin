@@ -46,7 +46,7 @@
           this.getAppkey();  //获取appkey
           this.againSecret();
           this.addParty();
-
+          this.getUserCount()  // 获取用户信息个数  
           this.setPassword('.model-password-btn');//修改密码
          
           this.uiInit.$lMinBtn.attr('bclick',false)
@@ -92,6 +92,11 @@
         this.uiInit.$lUserBtn.on('click',function (){
 
             this.bclick= !this.bclick;
+
+           $.get('/user/verify').then(function (data){
+                 $('.sm_dian').html(data.content.messageCount)
+           })     
+
 
            if(this.bclick){
                $(this).next().show()
@@ -443,6 +448,15 @@ Common.prototype.getChecked=function (){
             })
        }
 }
+
+
+Common.prototype.getUserCount=function (){
+    
+    
+   
+}
+
+
 
 
 

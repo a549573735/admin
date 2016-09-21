@@ -1,3 +1,7 @@
+var path=require('path');
+var User_file=path.join(__dirname,'./str.txt');
+var util=require('./utils');
+
 var config = {
     
         internal:{
@@ -14,7 +18,15 @@ var config = {
                 "Content-Type": "application/json",
                 "Accept": "application/json",
                 "User-Token": '',
-        }
+        },
+        getUserMsg:function (){
+                  return util.readFileAsync(User_file,'utf-8');
+
+        },
+        saveUserMsg:function (data){
+                   data=JSON.stringify(data)
+                  return util.writeFileAsync(User_file,data);
+        },
     
 
 };

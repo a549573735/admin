@@ -3,8 +3,10 @@ var fs=require('fs');
 var api_services=require('../models/api_services');
 var config=require('../utils/config')
 var permission=require('../utils/premission')
-
 var md5=require('md5');
+var Promise=require('bluebird');
+
+
 
 
 
@@ -20,16 +22,21 @@ exports.loginUp = function(req, res, next) {
 
         var data=req.body;
         data.password=md5(data.password)
+
+        
         var str='username='+data.username+'&password='+data.password;
 
         api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
              
             data=JSON.parse(data);
-            console.log(data)
-            data.content.page=Math.ceil(data.content.total/data.content.size);
+         
             if(data.success){
-                 
+
+                 // config.saveUserMsg(str);
+              
                  req.session.user=data
+
+                 req.session.user.userMsg=str
 
                  config.headers['User-Token']=data.content.id;
                  
@@ -41,10 +48,11 @@ exports.loginUp = function(req, res, next) {
             }
 
         }).catch(function (err){
+     
              console.log(err)
-             res.json({msg:'服务器错误',state:false})
-
+     
         })
+
 }
 
 
@@ -71,6 +79,35 @@ exports.signRequired=function (req,res,next)
         next()
         
 }
+// POST /api/app/user/verify
+
+exports.userVerify=function (req,res,next)
+{
+
+    
+          var str=req.session.user.userMsg;
+    
+
+          api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
+
+              var user=JSON.parse(data);
+
+              if(data.success){
+                  req.session.user.content.messageCount=user.content.messageCount
+              }
+
+              console.log(data)  
+              res.json(user)
+
+            
+          }).catch(function (err){
+
+              console.log(err)
+          })
+
+}
+
+
 
 
 
@@ -492,8 +529,10 @@ exports.get_user_messages = function (req,res,next){
        }
 
        api_services.commonRequest('api/app/user/'+_id+'/messages',"POST",form).then(function (data){
+                if(data.success){
                  data.content.page=Math.ceil(data.content.total/data.content.size);
-                  console.log(data.content)
+               }
+               console.log(data.content)
                   res.json(data)
 
        }).catch(function (err){
@@ -514,7 +553,8 @@ exports.read_user_messages = function (req,res,next){
 
        
        api_services.commonRequest('api/app/user/message/'+id+'/read',"POST",null).then(function (data){
-               
+                
+
                   
                   res.json(data)
 

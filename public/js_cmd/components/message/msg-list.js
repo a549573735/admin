@@ -21,7 +21,7 @@ define(function (require, exports, module) {
                                     <tbody>\
                                     <tr v-for="item in messgaeList" >\
                                         <td class="text-center"><span class="v-core"></span></td>\
-                                        <td class="text-left v-cont"  :class="!item.isRead?item.class:\'\'" >[{{item.title}}] <a href="javascript:;"  @click="notify($event)" :data-type="item.type"  :data-msg-id="item.message.id"   :data-id="item.id"   > {{item.message.user}}</a></td>\
+                                        <td class="text-left v-cont"  :class="!item.isRead?item.class:\'\'" >[{{item.title}}] <a href="javascript:;" :data-isRead="item.isRead+\'\'"  @click="notify($event)" :data-type="item.type"  :data-msg-id="item.message.id"   :data-id="item.id"   > {{item.message.user}}</a></td>\
                                         <td class="text-left " ><span class="v-msg-content-n">{{item.message.suggestion||item.message.suggestion}}</span> <span class="v-msg-content-r">{{item.message.from}}</span></td>\
                                         <td class="text-center">\
                                             {{item.createDate}}\
@@ -61,7 +61,7 @@ define(function (require, exports, module) {
                  }
                  item.message=JSON.parse(item.message)
             })
-              console.log(JSON.stringify(this.datalist))
+            
             return this.datalist
         }
 
@@ -78,7 +78,9 @@ define(function (require, exports, module) {
                 company:$(event.target).parent().next().find('.v-msg-content-r').html(),
                 id:$(event.target).attr('data-id'),
                 type:$(event.target).attr('data-type'),
-                msg_id:$(event.target).attr('data-msg-id')
+                msg_id:$(event.target).attr('data-msg-id'),
+                show:true,
+                isRead:$(event.target).attr('data-isRead')
              }
 
                 this.$dispatch('send-msg', msg)         

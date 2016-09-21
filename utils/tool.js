@@ -66,12 +66,7 @@ Services.prototype.setForm=function (){
 }
 
 
-Services.prototype.matchPower=function(){
 
-    
-
-
-}
 
 
 

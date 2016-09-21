@@ -37,7 +37,7 @@ exports.organize_company=function (req,res,next){
                        page:data.content.page
 
           }
-            console.log(data.content)
+            console.log(data)
 
         res.render('pages/organize_company',{data:datalist});
 
@@ -76,7 +76,7 @@ exports.api_organize_company_list = function(req, res, next) {
                            page:data.content.page
 
               }
-              console.log(datalist.content)
+              console.log(data)
                
             res.json(datalist);
         })

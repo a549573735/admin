@@ -88,15 +88,12 @@ module.exports=function (app){
                       })
 
                     
-
                      _user.content.btnPermissions=json;
                 }
           }
 
-
              //publicity  年报  suggestion  行政建议  interview  行政约谈  appointment 预约检查   network_check 网络检查
        
-             	
 
           app.locals.user=_user
          
