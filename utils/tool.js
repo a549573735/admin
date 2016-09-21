@@ -10,7 +10,7 @@ Services.prototype.Interfacelogin=function (url,method,data){
    
      return new Promise(function (resolve,reject){
         
-         request({method:method,url:url,form:data}).then(function (response){
+         request({method:method,url:url,form:data,json:true}).then(function (response){
 
               resolve(response.body)
  

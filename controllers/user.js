@@ -554,8 +554,6 @@ exports.read_user_messages = function (req,res,next){
 
        
        api_services.commonRequest('api/app/user/message/'+id+'/read',"POST",null).then(function (data){
-                
-
                   
                   res.json(data)
 
@@ -565,21 +563,39 @@ exports.read_user_messages = function (req,res,next){
 
        })
 
-
-
 }
 
 
 // PUT /api/app/code/by/name/{username}
 
-exports.get_user_name=function (req,res,next)){
+exports.get_user_name=function (req,res,next){
+
+    var name=req.body.name;
+
+    api_services.loginUp('api/app/code/by/name/'+name,"PUT",null).then(function (data){
+               console.log(data)
+                res.json(data)
+                res.end()
+
+     }).catch(function (err){
+
+                res.json(err)
+
+     })
+ }
 
 
-    var name=req.body.username;
+///api/app/user/modify/password/by/code
 
-    api_services.commonRequest('/api/app/code/by/name/'+name,"PUT",null).then(function (data){
-              
+exports.modify_user_password=function (req,res,next){
 
+      var form=req.body;
+  
+      form.password=md5(form.password)
+          console.log(form)
+   
+    api_services.loginUp('api/app/user/modify/password/by/code',"PUT",form).then(function (data){
+               console.log(data)
                 res.json(data)
 
      }).catch(function (err){
@@ -587,9 +603,8 @@ exports.get_user_name=function (req,res,next)){
                 res.json(err)
 
      })
- 
-}
 
+}
 
 
 

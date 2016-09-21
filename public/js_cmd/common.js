@@ -411,7 +411,7 @@ Common.prototype.countdown=function (obtn){
         if(_t < 10){
             _t = '0'+_t;
         }
-        obtn.html('正在发送请稍后...'+_t+'秒');
+        obtn.html(_t+'秒');
 
     },1000);
 

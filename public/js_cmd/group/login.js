@@ -1,6 +1,11 @@
 define(function (require, exports, module) {
        
      require('/js_cmd/checkCode');
+     require('/lib/bootstrap-datepicker.js')
+     require('/lib/Jquery.Query.js')
+     require('/js_cmd/common')
+
+     var common=new Common();
 
      var checkCodes=new CheckCode({
 
@@ -102,16 +107,42 @@ define(function (require, exports, module) {
 
  $('.getCode').on('click',function (){
 
+	    common.countdown($(this))
+	    var username=$('input[name=restUsername]').val();
 
- 			
+	 
+	    $.post('/api/app/code/by/name/',{name:username}).then(function (data){
 
+	    	    console.log(data.content)
+
+	    		$('input[name=rest-code]').val(data.content)
+
+	    })
 
  })
 
 
 
+  $('.rest-btn').on('click',function (){
 
+  	  var form={
+	  	  	codeId:$('input[name=rest-code]').val(),
+	  	  	code:$('input[name=rest-confirm-code]').val(),
+	  	  	password:$('input[name=rest-password]').val(),
+	  	  	username:$('input[name=restUsername]').val()
+  	  }
+    
 
+  	  $.post('/api/app/user/modify/password',form).then(function (data){
 
+  	  			if(data.success){
+  	  				alert('修改成功')
+  	  			}else {
+  	  				alert('修改失败')
+  	  				console.log(data.errMessage)
+  	  			}
+  	  })	
+
+  })
 
 });

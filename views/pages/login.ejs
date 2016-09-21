@@ -90,11 +90,9 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" >用户名 <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
-                                                <input class="form-control" type="text"  name="rest-username"  placeholder="">
+                                                <input class="form-control" type="text"  name="restUsername"  placeholder="">
                                             </div>
                                         </div>
-
-                                  
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" >密码 <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
@@ -104,8 +102,9 @@
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="val-confirm-password">验证码 <span class="text-danger">*</span></label>
                                             <div class="col-md-4">
-                                                <input class="form-control denglu_yz" type="text" id="val-confirm-password" name="val-confirm-password" >
+                                                <input class="form-control denglu_yz" type="text"  name="rest-confirm-code" >
                                             </div>
+                                            <input class="form-control denglu_yz" type="hidden"  name="rest-code" >
                                             <div class="col-md-3 " >
                                                  <button class="btn btn-default btn-block getCode">获取验证码</button>
                                             </div>
@@ -116,7 +115,7 @@
                                             123123
                                         </div>
                                             <div class="col-md-7 col-md-offset-3">
-                                                <button class="btn login-btn denglu_btm btn-block btn-primary" >提交</button>
+                                                <button class="btn login-btn  rest-btn  btn-block btn-primary" >提交</button>
                                             </div>
                                             <div class="col-md-7 col-md-offset-3 text-center" style="padding-top:10px;">
                                               <a href="javascript:;" class="btn-link login-pass-btn" >登录</a>
@@ -135,10 +134,9 @@
 </body>
 
 <script src="lib/jquery.min.js"></script>
-<script src="js_cmd/common.js"></script>
 <script type="text/javascript">
    seajs.use("/js_cmd/group/login");
 
-  var common=new Common();
+
 </script>
 </html>

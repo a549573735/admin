@@ -87,17 +87,12 @@ var config=require('../utils/config')
     app.get('/user/messages/list',User.signRequired, User.get_user_messages);   //获取用户消息列表
 
 
-    app.post('/api/app/code/by/name/',User.signRequired, User.get_user_name)
+    app.post('/api/app/code/by/name/', User.get_user_name)   //获取验证码code
+
+    app.post('/api/app/user/modify/password', User.modify_user_password)   //获取验证码code
 
 
 
-
-
-
-
-
-
- 
 
 
     app.get('/organize/market',User.signRequired,  Organize.organize_market);         //   区局进入 市车所 
