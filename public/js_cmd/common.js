@@ -46,8 +46,10 @@
           this.getAppkey();  //获取appkey
           this.againSecret();
           this.addParty();
-          this.getUserCount()  // 获取用户信息个数  
+
           this.setPassword('.model-password-btn');//修改密码
+
+          this.EmptyInput(['#modal-addParty','#modal-addCompany'])  //清空弹框内容
          
           this.uiInit.$lMinBtn.attr('bclick',false)
          
@@ -450,10 +452,20 @@ Common.prototype.getChecked=function (){
 }
 
 
-Common.prototype.getUserCount=function (){
+Common.prototype.EmptyInput=function (arr){
     
     
-   
+   $('.add_admin_userBtn').on('click',function (){
+
+       for(var i=0;i<arr.length;i++){
+          
+          $(arr[i]).find('input').val('')
+
+       }
+
+   })
+
+
 }
 
 

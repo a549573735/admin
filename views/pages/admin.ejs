@@ -9,7 +9,7 @@
                 <div class="row clearfix">
                     <div class="col-md-12">
                         <div class="form-group" >
-                            <v-select ></v-select>
+                            <v-select :role="<%=JSON.stringify({type:'DISTRICT'})%>"></v-select>
                             <!-- <label class="col-md-1 o-pd-r v-label-s text-center" for="val-skill">企业：</label>
                             <div class="col-md-2 o-pd">
                                <input type="text" class="form-control" name="company" >
@@ -21,7 +21,7 @@
                              <div class="form-group">
                               <div class="col-md-2 col-md-offset-1">
                                <div class="v-t-b o-m-p">
-                                <button class="btn btn-md btn-primary btn-block text-center" data-target="#modal-addCompany" data-toggle="modal" >新增企业</button>
+                                <button class="btn btn-md btn-primary btn-block text-center add_admin_userBtn" data-target="#modal-addCompany" data-toggle="modal" >新增企业</button>
                                 </div>
                               </div>
                          </div>

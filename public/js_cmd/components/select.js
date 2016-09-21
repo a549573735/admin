@@ -56,7 +56,7 @@ define(function (require, exports, module) {
                 },
                 template: '<label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>\
 	                         <div class="col-md-2 o-pd">\
-	                                 <select class="form-control" id="select_market" :disabled="role.type!= type " name="market" @change="selectChange($event)">\
+	                                 <select class="form-control" id="select_market" :disabled="role.type!= type" name="market" @change="selectChange($event)">\
 	                                     <option value="0">请选择</option>\
                                        <option v-for="item in selectdata" :selected="marketId==item.id?true:false" :value="item.id">{{item.name}}</option>\
 	                                 </select>\

@@ -84,7 +84,6 @@ exports.signRequired=function (req,res,next)
 exports.userVerify=function (req,res,next)
 {
 
-    
           var str=req.session.user.userMsg;
     
 
@@ -96,13 +95,13 @@ exports.userVerify=function (req,res,next)
                   req.session.user.content.messageCount=user.content.messageCount
               }
 
-              console.log(data)  
               res.json(user)
 
             
           }).catch(function (err){
 
               console.log(err)
+          
           })
 
 }
