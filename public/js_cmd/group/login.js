@@ -131,14 +131,16 @@ define(function (require, exports, module) {
 	  	  	password:$('input[name=rest-password]').val(),
 	  	  	username:$('input[name=restUsername]').val()
   	  }
+  	  var that=this;
     
 
   	  $.post('/api/app/user/modify/password',form).then(function (data){
 
   	  			if(data.success){
-  	  				alert('修改成功')
+  	  				$(that).parent().prev().html('修改成功').show()
+  	  				
   	  			}else {
-  	  				alert('修改失败')
+  	  			    $(that).parent().prev().html('修改失败').show()
   	  				console.log(data.errMessage)
   	  			}
   	  })	
