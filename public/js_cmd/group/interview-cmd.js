@@ -8,7 +8,7 @@ define(function (require, exports, module) {
                 data: {
 
                     dataList:{
-                           title:['企业名称','约谈状态','时间类别','接受日期','约谈员','备注'],
+                           title:['企业名称','约谈状态','发送时间','时间类别','接受日期','约谈员','备注'],
                            content:function (){
                                      
                               var dataList=null;
@@ -35,7 +35,7 @@ define(function (require, exports, module) {
                                 });
                                  return dataList     
                             }(),
-                           style:['25%','80px','100px','100px','100px','80px','auto'],
+                           style:['20%','110px','110px','110px','110px','80px','auto'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],

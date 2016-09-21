@@ -6,7 +6,9 @@
 
 <link type="text/css" href="css/common.css" rel="stylesheet" />
 <link type="text/css" href="css/style.css" rel="stylesheet" />
- <script src="/lib/sea.js"></script>
+<link rel="stylesheet" href="/css/bootstrap/dist/css/bootstrap.min.css">
+
+<script src="/lib/sea.js"></script>
     <script>
     
         seajs.config({
@@ -17,48 +19,132 @@
 </head>
 
 <body>
+
+
     <div id="big_box">
         <div class="big_bj">
             <div class="warp">
-                <div class="denglu">
-                    <form id="form_login" action="/loginUp" method="post">
-                      <div class="denglu_title">用户登录</div>
-                      <div class="denglu_content">
-                         <div class="denglu_kuang">
-                           <div class="denglu_name">用户名：</div>
-                           <input type="text" class="denglu_m" name="username"  placeholder="请输入系统分配的密码">
-                         </div>
-                         <div class="denglu_kuang">
-                           <div class="denglu_name">密码：</div>
-                           <input type="password" class="denglu_m" name="password" placeholder="请输入系统分配的密码"  >
-                         </div>
-                     </form>
-                         <div class="denglu_kuang">
-                           <div class="denglu_name">验证码：</div>
-                           <input type="text" class="denglu_yz">
-                           <div class="denglu_tu" id="checkCodeArea"></div>
-                         </div>
-                         <div class="denglu_kuang " style="padding-top:10px; height:auto;">
-                                <div class="error">
-                                     123123
-                                </div>
-                         </div>
-              
-                      </div>
-               
-              
-                      <div class="denglu_am">
-               
-                      <div class="denglu_bm"><input class="btn denglu_btm" type="button"  value="登录"></div>
-                      <a href="#">忘记密码？</a></div>
+                <div class="denglu  loginUp ">
+                 <div class="block block-themed animated fadeIn">
+                        <div class="block-header bg-success" style="padding:15px;">
+                            <h3 class="block-title text-center">登录</h3>
+                        </div>
+                  <div class="block-content block-content-full block-content-narrow">
+                        <div class="col-md-12 ">
+                                 <div class="js-validation-bootstrap form-horizontal" novalidate="novalidate">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-username">用户名 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control" type="text" id="val-username" name="username"  placeholder="">
+                                            </div>
+                                        </div>
+                                  
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-password">密码 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control" type="password"  name="password" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-confirm-password">验证码 <span class="text-danger">*</span></label>
+                                            <div class="col-md-4">
+                                                <input class="form-control denglu_yz" type="text" id="val-confirm-password" name="val-confirm-password" >
+                                            </div>
+                                            <div class="col-md-3 o-pd" id="checkCodeArea"></div>
+                                        </div>
+
+                                        <div class="form-group">
+                                         <div class="col-md-8 col-md-offset-3 error">
+                                            123123
+                                        </div>
+                                            <div class="col-md-7 col-md-offset-3">
+                                                <button class="btn login-btn denglu_btm btn-block btn-primary" >登录</button>
+                                            </div>
+                                            <div class="col-md-7 col-md-offset-3 text-center" style="padding-top:10px;">
+                                              <a href="javascript:;" class="btn-link rest-pass-btn" >忘记密码？</a>
+                                            </div>
+                                        </div>
+                               </div>
+
+
+                        </div>
+                      </div> 
+                   </div> 
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                 <div class="denglu  reset-password ">
+                 <div class="block block-themed animated fadeIn">
+                        <div class="block-header bg-success" style="padding:15px;">
+                            <h3 class="block-title text-center">修改密码</h3>
+                        </div>
+                  <div class="block-content block-content-full block-content-narrow">
+                        <div class="col-md-12 ">
+                                 <div class="js-validation-bootstrap form-horizontal" novalidate="novalidate">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" >用户名 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control" type="text"  name="rest-username"  placeholder="">
+                                            </div>
+                                        </div>
+
+                            
+                                  
+                                  
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" >密码 <span class="text-danger">*</span></label>
+                                            <div class="col-md-7">
+                                                <input class="form-control" type="password"  name="rest-password" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label" for="val-confirm-password">验证码 <span class="text-danger">*</span></label>
+                                            <div class="col-md-4">
+                                                <input class="form-control denglu_yz" type="text" id="val-confirm-password" name="val-confirm-password" >
+                                            </div>
+                                            <div class="col-md-3 " >
+                                                 <button class="btn btn-default btn-block ">获取验证码</button>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                         <div class="col-md-8 col-md-offset-3 error">
+                                            123123
+                                        </div>
+                                            <div class="col-md-7 col-md-offset-3">
+                                                <button class="btn login-btn denglu_btm btn-block btn-primary" >提交</button>
+                                            </div>
+                                            <div class="col-md-7 col-md-offset-3 text-center" style="padding-top:10px;">
+                                              <a href="javascript:;" class="btn-link login-pass-btn" >登录</a>
+                                            </div>
+                                        </div>
+                               </div>
+                        </div>
+                      </div> 
+                   </div> 
                 </div>
             </div>
         </div>
     </div>
+
+
 </body>
 
 <script src="lib/jquery.min.js"></script>
 <script type="text/javascript">
    seajs.use("/js_cmd/group/login");
+
+  
+   
 </script>
 </html>

@@ -6,21 +6,21 @@ a{ text-decoration:none;}
 
 
 /*登录（denglu）页面的css*/
-.big_bj{width:100%;float:left;height:800px;background:url(../images/dl.jpg) no-repeat center center;background-size:cover;}
-.denglu{width:476px;height:497px;float:right;margin-top:157px;background:#fff;border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;-webkit-border-radius:6px;box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-webkit-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-moz-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);}
+.big_bj{width:100%;float:left;height:800px;background:url(../images/login.jpg) no-repeat center center;background-size:cover;}
+.denglu{width:450px; padding-bottom: 20px; float:right;margin-top:157px;background:#fff;border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;-webkit-border-radius:6px;box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-webkit-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-moz-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);}
 .denglu_title{ width:100%; height:48px; line-height:48px; padding-top:49px; text-align:center; overflow:hidden; font-size:36px; color:#333333; }
 .denglu_content{ width:388px; float:left; overflow:hidden;}
 .denglu_kuang{ width:100%; float:left; height:41px; padding-top:30px;}
 .denglu_name{ width:130px; float:left; height:41px; line-height:41px; overflow:hidden; text-align:right; font-size:24px; color:#000;}
 .denglu_m{ width:232px; height:37px; line-height:37px; float:right; border:1px solid #b5b5b5; color:#999999; font-size:14px;  text-indent:14px;}
-.denglu_yz{ width:107px; height:37px; float:left; margin-left:25px; display:inline; border:1px solid #b5b5b5;}
+.denglu_yz{ }
 .denglu_tu{ width:116px; float:right; height: 41px;}
 .denglu_tu img{ display:block;height:41px; }
 .denglu_rem{ float:left; padding-left:152px; height:30px; line-height:30px; color:#333333; font-size:14px;}
 .denglu_rem .kk{ width:15px; height:15px; border:1px solid #b5b5b5;}
 .denglu_am{ width:100%; float:left; padding-top:10px;}
 .denglu_am .denglu_bm{ width:120px; padding-left: 155px; height: 40px;}
-.denglu_am .denglu_bm .denglu_btm{ width:100%; float:left; height:40px; line-height:30px; outline: none; overflow:hidden; text-align:center; background:#438bd6; color:#fff; font-size:24px;}
+.denglu_am .denglu_bm .denglu_btm{ width:100%; float:left; border: none; border-radius: 3px; height:40px; line-height:30px; outline: none; overflow:hidden; text-align:center; background:#438bd6; color:#fff; font-size:24px;}
 .denglu_am a{ width:100%; float:left; padding-left: 185px; color:#333333; font-size:14px; line-height:40px;}
 .error{ color: red;  padding-left: 155px;  display: none;}
 
@@ -194,10 +194,12 @@ nav{float:left; text-align:center;}
 .suggestion-msg { color:green !important; }
 .confirm-msg{ color:#3f4535; }
 
+.rest-pass-btn{  }
 
+.loginUp{ transition: 1s all;   }
+.reset-password{  transition: 1s all .2s; opacity: 0;  }
 
-
-
+.login-btn{width: 100px;}
 
 
 

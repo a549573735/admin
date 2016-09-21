@@ -13,7 +13,7 @@ var config=require('../utils/config');
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || config.port);
+var port = normalizePort(process.env.PORT || config.internal.port);
 console.log('开启服务端口号'+port)
 app.set('port', port);
 

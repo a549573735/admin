@@ -21,6 +21,37 @@ define(function (require, exports, module) {
                 
       })
 
+
+
+    $('.rest-pass-btn').on('click',function (){
+
+        $('.loginUp').css({'WebkitTransform':'translateX(700px)',opacity:'0'})
+        $('.loginUp').css({'MozTransform':'translateX(700px)',opacity:'0'})
+        $('.loginUp').css({'msTransform':'translateX(700px)',opacity:'0'})
+        $('.loginUp').css({'transform':'translateX(700px)',opacity:'0'})
+       
+        $('.reset-password').css({opacity:'1','WebkitTransform':'translateX(450px)'})
+        $('.reset-password').css({opacity:'1','MozTransform':'translateX(450px)'})
+        $('.reset-password').css({opacity:'1','msTransform':'translateX(450px)'})
+        $('.reset-password').css({opacity:'1','transform':'translateX(450px)'})
+
+    })
+
+    $('.login-pass-btn').on('click',function (){
+        $('.loginUp').css({'WebkitTransform':'translateX(0)',opacity:'1'})
+        $('.loginUp').css({'MozTransform':'translateX(0)',opacity:'1'})
+        $('.loginUp').css({'msTransform':'translateX(0)',opacity:'1'})
+        $('.loginUp').css({'transform':'translateX(0)',opacity:'1'})
+        $('.reset-password').css({opacity:'0','WebkitTransform':'translateX(0px)'})
+        $('.reset-password').css({opacity:'0','MozTransform':'translateX(0px)'})
+        $('.reset-password').css({opacity:'0','msTransform':'translateX(0px)'})
+        $('.reset-password').css({opacity:'0','transform':'translateX(0px)'})
+    })
+
+ 
+
+
+
 	  $('.denglu_btm').on('click',function (){
 
 	        var val=$('.denglu_yz').val().toLowerCase()
