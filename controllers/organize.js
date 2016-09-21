@@ -192,7 +192,8 @@ exports.architecture = function(req, res, next) {
 exports.details = function(req, res, next) {
    
   console.log(req.query)
-   var id=req.query.id||req.session.user.companyId; 
+   var id=req.query.id||req.session.user.content.companyId; 
+   var user=req.session.user.content
    console.log(id)
    var data={ 
                data:{
@@ -204,14 +205,14 @@ exports.details = function(req, res, next) {
                  },
 
                  btnlist:[
-                  {href:"/organize/details?view=company&id="+id,title:'企业信息',active:false},
-                  {href:"/organize/details?view=purchase&id="+id,title:'采购信息',active:false},
-                  {href:"/organize/details?view=sale&id="+id,title:'销售信息',active:false},
-                  {href:"/organize/details?view=invoice&id="+id,title:'发票信息',active:false},
-                  {href:"/organize/details?view=customer&id="+id,title:'客户资质',active:false},
-                  {href:"/organize/details?view=producer&id="+id,title:'生产商资质',active:false},
-                  {href:"/organize/details?view=provider&id="+id,title:'供应商资质',active:false},
-                  {href:"/organize/details?view=product&id="+id,title:'产品资质',active:false}
+                  {href:"/organize/details?view=company&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'企业信息',active:false},
+                  {href:"/organize/details?view=purchase&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'采购信息',active:false},
+                  {href:"/organize/details?view=sale&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'销售信息',active:false},
+                  {href:"/organize/details?view=invoice&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId+id,title:'发票信息',active:false},
+                  {href:"/organize/details?view=customer&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId+id,title:'客户资质',active:false},
+                  {href:"/organize/details?view=producer&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId+id,title:'生产商资质',active:false},
+                  {href:"/organize/details?view=provider&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'供应商资质',active:false},
+                  {href:"/organize/details?view=product&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'产品资质',active:false}
                 ],   
                 company:false,
                 type:'search',

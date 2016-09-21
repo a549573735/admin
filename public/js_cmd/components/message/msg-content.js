@@ -47,10 +47,11 @@ define(function (require, exports, module) {
                   var id=$(event.target).attr('data-id');
                   var that=this;
                   console.log(that.datanow.isRead)  
-                  if(that.datanow.isRead!='true'){  
+                  if(that.datanow.isRead=='false'){  
                       $.get('/api/read/message?id='+id).then(function (data){
                             if(data.success){
                               $('.confirm-msg').html('提交成功')
+                              that.datanow.isRead='true'
                             }else {
                               $('.confirm-msg').html('提交失败')
                             }
