@@ -2,13 +2,14 @@ var path=require('path');
 var User_file=path.join(__dirname,'./str.txt');
 var util=require('./utils');
 
+
 var config = {
     
         internal:{
-            host:"http://139.196.152.218/",
+            host:process.env.server||"http://139.196.152.218/",
             port:"5000",
-            server:"http://localhost/"
         },
+
       
         headers: {
                 "Content-Type": "application/json",
