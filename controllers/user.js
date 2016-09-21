@@ -32,6 +32,7 @@ exports.loginUp = function(req, res, next) {
          
             if(data.success){
 
+              console.log(data)
                  // config.saveUserMsg(str);
               
                  req.session.user=data

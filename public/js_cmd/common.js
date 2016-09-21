@@ -41,7 +41,7 @@
           this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg','.park-belongId_iv');    //约谈
           this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg','.park-belongId_ap');    // 预约
           this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg','.park-belongId_it');  //不合格  
-          this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null,null); 
+          this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null,null);   //合格
 
           this.getAppkey();  //获取appkey
           this.againSecret();
@@ -77,7 +77,7 @@
         var $hWindow     = jQuery(window).height();
         var $hHeader     = this.uiInit.$lhead.outerHeight();
         var $hFooter     = this.uiInit.$lFooter.outerHeight();
-        var $hMain     = this.uiInit.$lMain.outerHeight();
+        var $hMain       = this.uiInit.$lMain.outerHeight();
 
         if($hMain+$hHeader+$hFooter<$hWindow){
             var $lh=$hWindow-$hFooter-$hHeader;
@@ -209,12 +209,12 @@
              $.post(href,form).then(function (data){
 
                     if(data.success){
+
                        $(that).closest(parent).find(success).html('提交成功').show()
-                      alert('提交成功')
+                        alert('提交成功')
 
                     }else {
                        $(that).closest(parent).find(success).html(data.errMessage).show()
-                  
                         alert('提交失败'+data.errMessage)
                     }
              })

@@ -192,7 +192,8 @@ exports.architecture = function(req, res, next) {
 exports.details = function(req, res, next) {
    
   console.log(req.query)
-   var id= req.query.id; 
+   var id=req.query.company||req.session.user.companyId; 
+   console.log(id)
    var data={ 
                data:{
                       title:[],
@@ -235,7 +236,8 @@ exports.details = function(req, res, next) {
        data.btnlist[0].active=true;
        api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
                         console.log(dataSelect)
-                         dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+
+                       
                          req.session.user.content.companyName=dataSelect.content.name;
                          data.data.content=dataSelect.content;
 

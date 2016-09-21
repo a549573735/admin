@@ -41,7 +41,7 @@ define(function (require, exports, module) {
 	                    return false;
 	                 }
 	                 if(data.type=='COMPANY'){ 	
-                	     window.location.href='/organize/details?view=company&id='+data.data.belongId+'&market='+data.data.marketId+'&park='+data.data.parkId;
+                	     window.location.href='/organize/details?view=company&id='+data.data.belongId+'&market='+data.data.marketId+'&park='+data.data.parkId+'&company='+data.data.companyId;
                     
                     }else if(data.type=="BACKSTAGE"){
 
