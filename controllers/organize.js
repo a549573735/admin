@@ -143,6 +143,10 @@ exports.api_organize_park_list=function(req, res, next) {
         page:req.body.page||req.query.page||0,
         size:15
     }
+    console.log(form)
+    if(id=='ROOT'){
+      id='all';
+    }
       
 
     api_services.commonRequest('api/app/park/'+id+'/'+parkName,'POST',form).then(function (dataSelect){
@@ -155,6 +159,7 @@ exports.api_organize_park_list=function(req, res, next) {
              console.log(data)
              res.json(data)
     })
+    
     
 }
 
