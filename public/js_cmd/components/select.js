@@ -25,7 +25,7 @@ define(function (require, exports, module) {
 
                     }(),selectsubset:function (){
 
-                        var id=$.query.get('id');
+                        var id=$.query.get('market');
                         var select=[]; 
                         if(id){
                            $.ajax({
@@ -46,22 +46,26 @@ define(function (require, exports, module) {
                           return select
 
 
-                    }(),selectId:function (){
-                         return  $.query.get('id')
-                    }(),type:'DISTRICT'}
+                    }(),marketId:function (){
+                         return  $.query.get('market')
+                    }(),type:'DISTRICT',parkId:function(){
+                         return $.query.get('park') 
+                    }(),parkType:'PARK'
+
+                  }
                 },
                 template: '<label class="col-md-1 o-pd-r v-label" for="val-skill">市场所：</label>\
 	                         <div class="col-md-2 o-pd">\
 	                                 <select class="form-control" id="select_market" :disabled="role.type!= type " name="market" @change="selectChange($event)">\
 	                                     <option value="0">请选择</option>\
-                                       <option v-for="item in selectdata" :selected="selectId==item.id?true:false" :value="item.id">{{item.name}}</option>\
+                                       <option v-for="item in selectdata" :selected="marketId==item.id?true:false" :value="item.id">{{item.name}}</option>\
 	                                 </select>\
 	                         </div>\
 	                          <label class="col-md-1 o-pd-r v-label text-center" for="val-skill2">园区：</label>\
 	                                 <div class="col-md-2 o-pd" >\
-	                                   <select class="form-control" id="select_park"  name="park"  @change="sendVal($event)">\
+	                                   <select class="form-control" id="select_park" :disabled="role.type== parkType " name="park"  @change="sendVal($event)">\
 	                                         <option value="0">请选择</option>\
-                                           <option v-for="item in selectsubset" :value="item.id">{{item.name}}</option>\
+                                           <option v-for="item in selectsubset" :selected="parkId==item.id?true:false" :value="item.id">{{item.name}}</option>\
 	                                   </select>\
 	                          </div>',
                 methods:{

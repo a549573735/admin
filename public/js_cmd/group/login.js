@@ -41,19 +41,19 @@ define(function (require, exports, module) {
 	                    return false;
 	                 }
 	                 if(data.type=='COMPANY'){ 	
-                	     window.location.href='/organize/details?view=company&id='+data.id;
+                	     window.location.href='/organize/details?view=company&id='+data.data.belongId+'&market='+data.data.marketId+'&park='+data.data.parkId;
                     
                     }else if(data.type=="BACKSTAGE"){
 
  						window.location.href='/admin/interface/list';
 
                     }else if(data.type=="MARKET"){
-                    	window.location.href='/organize/park?id='+data.id;
+                    	window.location.href='/organize/park?id='+data.data.belongId+'&market='+data.data.marketId+'&park='+data.data.parkId;
                    
                     }else if(data.type=="PARK"){
-                    	window.location.href='/organize/company?id='+data.id;
+                    	window.location.href='/organize/company?id='+data.data.belongId+'&market='+data.data.marketId+'&park='+data.data.parkId;
                     }else {
-                    	window.location.href='/organize/architecture';
+                    	window.location.href='/organize/architecture?id='+data.data.belongId+'&market='+data.data.marketId+'&park='+data.data.parkId;
                     }
 	               
 	        	 },'json')

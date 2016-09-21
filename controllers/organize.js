@@ -31,7 +31,7 @@ exports.organize_company=function (req,res,next){
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
                        content:data.content.content,
-                       style:['20%','auto','120px','100px','80px','20%','80px'],
+                       style:['20%','auto','120px','100px','100px','20%','80px'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                        overflow:false,
                        page:data.content.page
@@ -70,7 +70,7 @@ exports.api_organize_company_list = function(req, res, next) {
                            href:'/organize/details?view=company&id=',
                            title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
                            content:data.content.content,
-                           style:['20%','auto','120px','100px','80px','20%','80px'],
+                           style:['20%','auto','120px','100px','100px','20%','80px'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overflow:false,
                            page:data.content.page
