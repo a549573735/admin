@@ -303,7 +303,8 @@ exports.api_admin_role=function (req, res, next){
   
        api_services.commonRequest('api/app/user/delete',"DELETE",arr).then(function (data){
 
-              data.content.page=Math.ceil(data.content.total/data.content.size);
+              //data.content.page=Math.ceil(data.content.total/data.content.size);
+              console.log(data)
               res.json(data)
 
        }).catch(function (err){

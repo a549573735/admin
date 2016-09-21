@@ -51,8 +51,12 @@ define(function (require, exports, module) {
                                     type: "POST",   //请求方式
                                     success: function(data) {
                                        //console.log(data)
-                                       alert('删除成功')
+                                      if(data.success){
+                                        alert('删除成功')
                                        window.location.reload()
+                                      }else{
+                                        alert('删除失败')
+                                      }
 
                                     },
                                     error: function(err) {
