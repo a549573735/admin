@@ -113,10 +113,12 @@ define(function (require, exports, module) {
 	 
 	    $.post('/api/app/code/by/name/',{name:username}).then(function (data){
 
-	    	    console.log(data.content)
-
-	    		$('input[name=rest-code]').val(data.content)
-
+	    	   console.log(data.content)
+          if(data.success){    
+	    		   $('input[name=rest-code]').val(data.content)
+          }else {
+              alert(data.errMessage)
+          } 
 	    })
 
  })

@@ -45,7 +45,6 @@ define(function (require, exports, module) {
                          }
                           return select
 
-
                     }(),marketId:function (){
                          return  $.query.get('market')
                     }(),type:'DISTRICT',parkId:function(){
