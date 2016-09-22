@@ -254,7 +254,7 @@ exports.details = function(req, res, next) {
                        console.log(data)
        })
     //同时请求该公司最近一次网络检查时间
-           api_services.commonRequest('api/app/inspect/latest/'+user.belongId+'/'+id).then(function (dataSelect) {
+           api_services.commonRequest('api/app/inspect/latest/'+user.belongId+'/'+id,"POST",null).then(function (dataSelect) {
               // lastInspectTime = dataSelect.content;
                req.session.user.content.lastInspectTime=dataSelect.content;
            }).catch(function (data){
