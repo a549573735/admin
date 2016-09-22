@@ -431,7 +431,7 @@ exports.details = function(req, res, next) {
                         if(req.query.api=='true'){
                             res.json( data );
                          }else {
-                            res.render('pages/details', data );
+                             res.render('pages/details', data );
                          }
              }).catch(function (data){
                    console.log(data)
