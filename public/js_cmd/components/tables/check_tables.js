@@ -28,7 +28,7 @@ define(function (require, exports, module) {
                             <td  class="text-center">{{ item.address }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
-                            <td  v-if="datalist.btns"  class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addParty" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" class="btn  btn-primary "> 重置</a></div></td>\
+                            <td  v-if="datalist.btns"  class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addParty" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div></td>\
                             <td  v-if="datalist.overfull_btn"   class="text-center"><a :href="datalist.href+item.id+\'&query=true&market=\'+marketId "   class="btn  btn-primary v-btn-w"> 详情</a></td>\
                         </tr>\
                       </tbody>\
@@ -64,9 +64,9 @@ define(function (require, exports, module) {
              },
              resetPassword:function (event){  
 
-                  var id=$(event.target).attr('data-id');
+                  var id=$(event.target).attr('data-admin');
                   
-                  $.post('/reset/user/password',id).then(function (data){
+                  $.post('/reset/user/password',{id:id}).then(function (data){
 
                         if(data.success){
                           alert('密码重置成功，新密码会发送该账户的邮箱')

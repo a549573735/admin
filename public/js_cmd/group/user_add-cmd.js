@@ -67,6 +67,7 @@ define(function (require, exports, module) {
                               
 
                                  if(type=='modify'){
+                                     console.log(form)
 
                                     $.post('/api/user/role/modify',form).then(function (data){
                                             

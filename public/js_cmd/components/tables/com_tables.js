@@ -10,6 +10,7 @@ define(function (require, exports, module) {
 
             "newData":function (){
                   this.datalist.content.content.forEach(function (item){
+
                         switch (item.status){
                             case  'WAITING':
                               item.status="等待"
@@ -47,7 +48,7 @@ define(function (require, exports, module) {
                             <td v-if="item.target" class="text-center">{{ item.target  }}</td>\
                             <td v-if="item.company" class="text-center">{{ item.company==null?\'null\':item.company   }}</td>\
                             <td v-if="item.publicity" class="text-center">{{ item.publicity }}</td>\
-                            <td v-if="item.status" class="text-center">{{ item.status}}</td>\
+                            <td v-if="item.status" class="text-center">{{item.status}}</td>\
                             <td v-if="item.readFlag" class="text-center">{{ item.readFlag==\'false\'?\'未读\':\'已读\' }}</td>\
                             <td v-if="item.suggestion" class="text-center">{{ item.suggestion }}</td>\
                             <td v-if="item.user" class="text-center">{{ item.user }}</td>\

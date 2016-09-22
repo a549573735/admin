@@ -369,7 +369,7 @@ exports.api_admin_role=function (req, res, next){
         console.log(req.body)
       
        api_services.commonRequest('api/app/user/'+id+'/password/reset',"PUT",null).then(function (data){
-          
+           console.log(data)
                   res.json(data)
 
        }).catch(function (err){
@@ -425,24 +425,30 @@ exports.modify_role=function (req,res,next){
 
       var data={
             name:req.body.name,
-            permissionIds:req.body,
+            permissionIds:[],
             type:req.body.type,
             id:req.body.id||req.session.user.content.id,
             belongId:req.body.belongId
           
        }
 
-       
 
       if(typeof req.body['permissionIds[]'] =='string'){
+       
             data.permissionIds.push(req.body['permissionIds[]'])
-      
+ 
+
         }else {
+
            data.permissionIds=req.body['permissionIds[]']
+
         }     
 
+
+
       api_services.commonRequest('api/app/role/modify',"PUT",data).then(function (data){
-             
+            
+            console.log(data)     
                   res.json(data)
 
        }).catch(function (err){

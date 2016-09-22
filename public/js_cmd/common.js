@@ -466,12 +466,20 @@ Common.prototype.getChecked=function (){
        }else {
             permissionIds.push(str)
        }
+
+
        
        if(permissionIds!='')  {
 
             permissionIds.forEach(function (item){
 
-                 $('.rolt-user-checked').find('input[type=checkbox]').eq(parseInt(item-1)).prop('checked','checked')
+                 $('.rolt-user-checked').find('input[type=checkbox]').each(function (index,val){
+
+                   if($(val).attr('data-id')==item){
+                      $(val).prop('checked','checked')
+                   }
+                   
+                 })
 
             })
        }
