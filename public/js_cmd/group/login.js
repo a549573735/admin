@@ -66,7 +66,7 @@ define(function (require, exports, module) {
 	        	"username":$('input[name=username]').val(),
 	        	"password":$('input[name=password]').val()
 	        }
-             console.log(check,val)
+            
 	        if(val==check){
 	        	 $.post('/loginUp',data,function (data){
 	                  

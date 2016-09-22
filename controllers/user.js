@@ -23,12 +23,11 @@ exports.loginUp = function(req, res, next) {
         var data=req.body;
         data.password=md5(data.password)
 
-        
         var str='username='+data.username+'&password='+data.password;
 
         api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
              
-            data=JSON.parse(data);
+           // data=JSON.parse(data);
          
             if(data.success){
 
@@ -595,7 +594,8 @@ exports.modify_user_password=function (req,res,next){
           console.log(form)
    
     api_services.loginUp('api/app/user/modify/password/by/code',"PUT",form).then(function (data){
-               console.log(data)
+                console.log(data)
+                res.set('Content-Type','application/json');
                 res.json(data)
 
      }).catch(function (err){
