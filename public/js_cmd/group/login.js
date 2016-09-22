@@ -107,9 +107,15 @@ define(function (require, exports, module) {
 
  $('.getCode').on('click',function (){
 
-	    common.countdown($(this))
-	    var username=$('input[name=restUsername]').val();
+	    var check=common.checkEmpty($('input[name=restUsername]'))
 
+      if(check.state=='false'){
+        alert(check.message)
+        return false
+      }
+      common.countdown($(this))
+
+	    var username=$('input[name=restUsername]').val();
 	 
 	    $.post('/api/app/code/by/name/',{name:username}).then(function (data){
 
@@ -135,7 +141,6 @@ define(function (require, exports, module) {
   	  }
   	  var that=this;
     
-
   	  $.post('/api/app/user/modify/password',form).then(function (data){
 
   	  			if(data.success){
