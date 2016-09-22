@@ -35,7 +35,6 @@ define(function (require, exports, module) {
 
         },
         
-
         
         template:'<table class="table  table-hover table-borderless">\
                       <thead>\

@@ -5,6 +5,48 @@ define(function (require, exports, module) {
     Vue.component('com-table-list', {
 
         props: ['datalist'],
+
+        computed:{
+
+            "newData":function (){
+                  this.datalist.content.content.forEach(function (item){
+
+                        switch (item.status){
+                            case  'WAITING':
+                              item.status="等待"
+                            break;
+                            case  'CONFIRMED':
+                              item.status="确认"
+                            break;
+                            case  'NEGOTIATION':
+                              item.status="协商"
+                            break;
+                            case  'PASS':
+                              item.status="合格"
+                            break;
+                            case  'FAIL':
+                              item.status="不合格"
+                            break;
+                        }
+
+                       switch (item.period){
+                          case  3:
+                            item.period="三天内"
+                          break;
+                          case  7:
+                            item.period="七天内"
+                          break;
+                          case  10:
+                            item.period="十天内"
+                          break;
+                    
+                      }
+
+                  })
+                  return   this.datalist
+            }
+
+        },
         
         template:'<table class="table  table-hover table-borderless">\
                       <thead>\
@@ -13,9 +55,9 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                         <tr v-for="item in datalist.content.content">\
+                         <tr v-for="item in newData.content.content">\
                             <td  class="text-center">{{ item.target }}</td>\
-                            <td  class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
+                            <td  class="text-center">{{ item.status }}</td>\
                             <td  class="text-center">{{ item.interviewDate }}</td>\
                             <td  class="text-center">{{ item.period }}</td>\
                             <td  class="text-center">{{ item.agreeDate }}</td>\
