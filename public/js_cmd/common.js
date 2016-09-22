@@ -52,7 +52,8 @@
           this.EmptyInput(['#modal-addParty','#modal-addCompany'])  //清空弹框内容
          
           this.uiInit.$lMinBtn.attr('bclick',false)
-         
+
+          this.setFormDate();
 
     }
 
@@ -478,7 +479,7 @@ Common.prototype.getChecked=function (){
                    if($(val).attr('data-id')==item){
                       $(val).prop('checked','checked')
                    }
-                   
+
                  })
 
             })
@@ -501,6 +502,27 @@ Common.prototype.EmptyInput=function (arr){
 
 
 }
+
+
+
+Common.prototype.setForm=function (){
+    var date=new Date();
+
+    var from= date.getFullYear()+'-'+this.addZero(date.getMonth())+'-'+this.addZero(date.getDate());
+    var to=date.getFullYear()+'-'+this.addZero((date.getMonth()+1))+'-'+this.addZero(date.getDate());
+  return { from:from,to:to}
+
+}
+
+
+
+Common.prototype.setFormDate=function(){
+
+        $('input[name=from]').attr('placeholder',this.setForm().from)
+        $('input[name=to]').attr('placeholder',this.setForm().to)
+
+}
+
 
 
 
