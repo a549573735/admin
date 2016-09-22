@@ -22,9 +22,6 @@ define(function (require, exports, module) {
                           </div>\
                       </div>\
                       <div class="col-lg-12  col-md-12 v-msg-f-btn">\
-                          <div class="col-md-2">\
-                            <button type="button"  @click="readyMsg($event)" :data-id="datanow.id"   class="btn btn-primary  btn-block">已读</button>\
-                          </div>\
                         <template v-if="datanow.type==\'INTERVIEW\'||datanow.type==\'SUGGESTION\'">\
                           <div class="col-md-2"  >\
                             <button type="button"  @click="Confirm($event)" :data-id="datanow.id" :data-msg-id="datanow.msg_id" :data-type="datanow.type" status="CONFIRMED"  class="btn btn-primary btn-block">同意</button>\

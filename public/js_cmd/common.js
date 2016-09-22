@@ -213,7 +213,9 @@
                     if(data.success){
 
                        $(that).closest(parent).find(success).html('提交成功').show()
+                        $(that).closest('.v-modal-min').hide().prev().attr('bclick','false');
                         alert('提交成功')
+
 
                     }else {
                        $(that).closest(parent).find(success).html(data.errMessage).show()

@@ -44,7 +44,8 @@ define(function (require, exports, module) {
                   console.log(JSON.stringify(data))
                 })
 
-          },createCompany:function(){
+          },createCompany:function(event){
+
 
                 var form={
                       address:$('input[name=admin-address]').val(),
@@ -61,6 +62,7 @@ define(function (require, exports, module) {
                       id: $('.admin-id').val(),
 
                 }
+                var that=this;
 
 
                var checked=Common.checkEmpty($('#modal-addCompany').find('input[type=text]'))
@@ -83,7 +85,9 @@ define(function (require, exports, module) {
 
 
                           if(data.success){
+                       
                             alert('修改成功')
+
                           }else {
                             console.log(data.errMessage)
                             alert('修改失败')
@@ -95,9 +99,11 @@ define(function (require, exports, module) {
 
                     $.post('/api/company/add',form).then(function (data){
 
-
                           if(data.success){
+                           $('#modal-addCompany').find('input').val('')
+                           $('#modal-addCompany').find('select').val('0')
                             alert('新增成功')
+                            Common  
                           }else {
                             console.log(data.errMessage)
                             alert('新增失败')

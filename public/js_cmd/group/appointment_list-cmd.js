@@ -103,15 +103,7 @@ define(function (require, exports, module) {
                 }
       })
 
-      function setFormDate(){
-
-        $('input[name=from]').attr('placeholder',Common.setForm().from)
-        $('input[name=to]').attr('placeholder',Common.setForm().to)
-
-      }
-
-
-      setFormDate()
+    
      
 
 });

@@ -607,7 +607,7 @@ exports.api_add_company=function(req,res,next){
 
        var form=req.body;
 
-        console.log(1)
+      
        api_services.commonRequest('api/app/company/add','POST',form).then(function (data){
                  console.log(data)
             
