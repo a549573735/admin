@@ -20,6 +20,12 @@ define(function (require, exports, module) {
                             case  'NEGOTIATION':
                               item.status="协商"
                             break;
+                            case  'PASS':
+                              item.status="合格"
+                            break;
+                            case  'FAIL':
+                              item.status="不合格"
+                            break;
                         }
 
                   })
