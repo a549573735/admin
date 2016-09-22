@@ -24,7 +24,7 @@ var config=require('../utils/config')
           		     	 
  
 
-	app.get('/admin/interface/list',User.signRequired, Admin.interface);						 //后台进入
+	app.get('/admin/interface/list', User.signRequired,  Admin.interface);						 //后台进入
 
 	app.get('/admin/market', User.signRequired,Admin.admin_market);			//单位管理 后台 市场所
 
@@ -36,6 +36,10 @@ var config=require('../utils/config')
     app.post('/admin/organize/modify',User.signRequired,  Admin.admin_modify_organize)  //修改园区和市场
 	
     app.post('/admin/company/modify',User.signRequired,  Admin.admin_modify_company)  //修改公司
+
+
+
+    app.get('/user/verify',User.signRequired, User.userVerify); 
 
 
 
@@ -83,13 +87,12 @@ var config=require('../utils/config')
     app.get('/user/messages/list',User.signRequired, User.get_user_messages);   //获取用户消息列表
 
 
+    app.post('/api/app/code/by/name/', User.get_user_name)   //获取验证码code
+
+    app.post('/api/app/user/modify/password', User.modify_user_password)   //获取验证码code
 
 
 
-
-
-
- 
 
 
     app.get('/organize/market',User.signRequired,  Organize.organize_market);         //   区局进入 市车所 

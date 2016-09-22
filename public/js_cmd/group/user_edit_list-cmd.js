@@ -51,8 +51,12 @@ define(function (require, exports, module) {
                                     type: "POST",   //请求方式
                                     success: function(data) {
                                        //console.log(data)
-                                       alert('删除成功')
+                                      if(data.success){
+                                        alert('删除成功')
                                        window.location.reload()
+                                      }else{
+                                        alert('删除失败')
+                                      }
 
                                     },
                                     error: function(err) {
@@ -104,13 +108,15 @@ define(function (require, exports, module) {
                                         data: from,    //参数值
                                         type: "POST",   //请求方式
                                         success: function(data) {
-                                           console.log(data)
+                                           
                                            if(data.success){
-                                            $('#modal-fromuser').modal('toggle')
+                                            alert('修改成功') 
+                                           // $('#modal-fromuser').modal('toggle')
                                             window.location.reload()
                                           }else {
                                               alert(data.errMessage)
                                           }
+                                          
                                         },
                                         error: function(err) {
                                             //请求出错处理

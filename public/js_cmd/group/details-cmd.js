@@ -110,9 +110,22 @@ define(function (require, exports, module) {
 	         	},
 	         	"send-page":function (data){
 
-	         			this.page=data+1
+	         			this.page=data-1
+	         			var that=this;
 
-	         			this.getRelation(this.name,this.href);
+	         			 $.post(this.href,{name:this.name,page:this.page}).then(function (data){
+
+ 					 		console.log(JSON.stringify(data))
+ 					 		if(data.success){
+ 					 			that.page=data.content.page
+								that.modalList=data.content;
+								that.modalList.title=['公司名称','公司地址','联系方式','经营许可证','经营范围','许可证截止日期']
+								that.modalList.style=['10%','15%','10%','20%','auto','20%']
+
+ 					 		}else {
+ 					 			alert(data.errMessage)
+ 					 		}
+ 					   })
 	         	}
 	         }
 	    });

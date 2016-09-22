@@ -30,11 +30,13 @@ exports.parkBriefAll=function (req,res,next){
       
       var _id=req.params.id;
 
+
  
 	  api_services.commonRequest('api/app/park/brief/'+_id,"GET",null).then(function (data){
             
+            console.log(data)
       				
-      		data.content.page=Math.ceil(data.content.total/data.content.size);
+      		//data.content.page=Math.ceil(data.content.total/data.content.size);
             res.json(data)
 
 	  }).catch(function (err){

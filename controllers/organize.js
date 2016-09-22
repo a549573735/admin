@@ -10,12 +10,20 @@ exports.organize_company=function (req,res,next){
             var form=req.body||{};
                 form.page=req.body.page||0;
                 form.size=15;
-            
-            if(req.query.id){
-                form.park=req.query.id
-              }
-    
-    
+
+            switch(req.session.user.content.type){
+               case  'MARKET':
+                 form.market=req.session.user.content.belongId;
+                 break;
+               case  'PARK':
+                 form.park=req.session.user.content.belongId;
+                 break;
+            }
+
+            if(req.query.id&&req.query.query){
+                form.park=req.query.id;
+            }
+   
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
            
         data.content.page=Math.ceil(data.content.total/data.content.size);   
@@ -23,13 +31,13 @@ exports.organize_company=function (req,res,next){
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
                        content:data.content.content,
-                       style:['20%','auto','120px','100px','80px','20%','80px'],
+                       style:['20%','auto','120px','100px','100px','20%','80px'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                        overflow:false,
                        page:data.content.page
 
           }
-            console.log(data.content)
+            console.log(data)
 
         res.render('pages/organize_company',{data:datalist});
 
@@ -56,19 +64,20 @@ exports.api_organize_company_list = function(req, res, next) {
              delete form.market;
            }
            
+           console.log(form) 
         api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
             data.content.page=Math.ceil(data.content.total/data.content.size);   
             var  datalist={ 
                            href:'/organize/details?view=company&id=',
                            title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
                            content:data.content.content,
-                           style:['20%','auto','120px','100px','80px','20%','80px'],
+                           style:['20%','auto','120px','100px','100px','20%','80px'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overflow:false,
                            page:data.content.page
 
               }
-              console.log(datalist.content)
+              console.log(data)
                
             res.json(datalist);
         })
@@ -108,7 +117,7 @@ exports.organize_market = function(req, res, next) {
 
 exports.organize_park_id = function(req, res, next) {
 
-    var id=req.query.id||req.session.user.content.id;
+    var id=req.query.id||req.session.user.content.belongId;
  
     api_services.commonRequest('api/app/market/all','GET',null).then(function (dataSelect){
             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);   
@@ -126,13 +135,17 @@ exports.organize_park_id = function(req, res, next) {
 
 exports.api_organize_park_list=function(req, res, next) {
 
-    var id=req.query.id||req.session.user.content.id;
+    var id=req.query.id||req.session.user.content.belongId;
     var parkName=encodeURI(req.query.parkname)||'';
 
 
     var form={
         page:req.body.page||req.query.page||0,
         size:15
+    }
+    console.log(form)
+    if(id=='ROOT'){
+      id='all';
     }
       
 
@@ -146,6 +159,7 @@ exports.api_organize_park_list=function(req, res, next) {
              console.log(data)
              res.json(data)
     })
+    
     
 }
 
@@ -178,25 +192,27 @@ exports.architecture = function(req, res, next) {
 exports.details = function(req, res, next) {
    
   console.log(req.query)
-   var id= req.query.id; 
+   var id=req.query.id||req.session.user.content.companyId; 
+   var user=req.session.user.content
+   console.log(id)
    var data={ 
                data:{
                       title:[],
                       content:null,
                       style:[],
-                      details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
+                      details:false,
                       overflow:false,
                  },
 
                  btnlist:[
-                  {href:"/organize/details?view=company&id="+id,title:'企业信息',active:false},
-                  {href:"/organize/details?view=purchase&id="+id,title:'采购信息',active:false},
-                  {href:"/organize/details?view=sale&id="+id,title:'销售信息',active:false},
-                  {href:"/organize/details?view=invoice&id="+id,title:'发票信息',active:false},
-                  {href:"/organize/details?view=customer&id="+id,title:'客户资质',active:false},
-                  {href:"/organize/details?view=producer&id="+id,title:'生产商资质',active:false},
-                  {href:"/organize/details?view=provider&id="+id,title:'供应商资质',active:false},
-                  {href:"/organize/details?view=product&id="+id,title:'产品资质',active:false}
+                  {href:"/organize/details?view=company&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'企业信息',active:false},
+                  {href:"/organize/details?view=purchase&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'采购信息',active:false},
+                  {href:"/organize/details?view=sale&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'销售信息',active:false},
+                  {href:"/organize/details?view=invoice&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId+id,title:'发票信息',active:false},
+                  {href:"/organize/details?view=customer&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId+id,title:'客户资质',active:false},
+                  {href:"/organize/details?view=producer&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId+id,title:'生产商资质',active:false},
+                  {href:"/organize/details?view=provider&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'供应商资质',active:false},
+                  {href:"/organize/details?view=product&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'产品资质',active:false}
                 ],   
                 company:false,
                 type:'search',
@@ -221,11 +237,13 @@ exports.details = function(req, res, next) {
        data.btnlist[0].active=true;
        api_services.commonRequest('api/app/company/'+id+'/detail','GET',null).then(function (dataSelect){
                         console.log(dataSelect)
-                         dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+
+                       
                          req.session.user.content.companyName=dataSelect.content.name;
                          data.data.content=dataSelect.content;
 
 
+                       
                             // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
@@ -251,6 +269,12 @@ exports.details = function(req, res, next) {
                                            dataSelect
                                            )
                    data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+
+                    data.data.content.content.forEach(function (item){
+                                      for (var name in item ){
+                                           item[name]+=''
+                                      }   
+                    })   
                    if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -272,6 +296,11 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
+              data.data.content.content.forEach(function (item){
+                                      for (var name in item ){
+                                           item[name]+=''
+                                      }   
+                })   
                         
           data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                        
@@ -295,6 +324,13 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
+
+                data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                })   
+
                data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
@@ -319,6 +355,11 @@ exports.details = function(req, res, next) {
                                       )
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                    
+                   data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                    })   
                         
                         data.data.type="provider" 
     
@@ -344,6 +385,11 @@ exports.details = function(req, res, next) {
                                       )
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                    
+                        data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                         })   
                     
                         data.data.type="provider" 
                    
@@ -367,8 +413,14 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
-                        data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
-                   
+                          data.data.content.content.forEach(function (item){
+                            for (var name in item ){
+                                 item[name]+=''
+                            }   
+                          })   
+
+                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
+                       
                           // 给关联 设置路由 
                         data.data.type="provider" 
                         if(req.query.api=='true'){
@@ -393,6 +445,11 @@ exports.details = function(req, res, next) {
                                          data.data,
                                          dataSelect
                                       )
+                        data.data.content.content.forEach(function (item){
+                              for (var name in item ){
+                                   item[name]+=''
+                              }   
+                        })   
                        
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                       
@@ -411,13 +468,6 @@ exports.details = function(req, res, next) {
 
 
 }
-
-
-
-
-
-
-
 
 
 //关联接口

@@ -60,7 +60,7 @@ a:hover{ text-decoration: none;}
 
 
 
-.c-h{ width: 1200px; margin: 0 auto; height: 36px; background: #fff; line-height: 36px; font-size: 14px;}
+/*.c-h{ width: 1200px; margin: 0 auto; height: 36px; background: #fff; line-height: 36px; font-size: 14px;}
 .c-h .huany{ width:50%; float:left;}
 .c-h .geren{ width:88px; float:right; text-align:center; position:relative; color:#000; font-size:16px;}
 .c-h .gerena{ width:100%; height:36px; line-height:36px; float:left; background:#fff; color: #313131; display: block; text-decoration:none;}
@@ -71,38 +71,53 @@ a:hover{ text-decoration: none;}
 .c-h .tongzhi ul{ display:block;}
 .c-h .tongzhi ul li{ width:100%; float:left; height:40px; text-align:center;  font-size:14px; overflow:hidden; position:relative;}
 .c-h .tongzhi ul li a{ display:block;background:#e7e6e6; color:#666666; height: 40px; line-height: 30px; border-radius:0;}
-
-
 .c-h .tongzhi ul li a:hover{background:#cccccc; color:#333333;}
-
 .c-h .tongzhi ul li .sm_dian{ width:18px; height:18px; background:#e62600; border-radius:9px; position:absolute; top:3px; right:11px; text-align:center; color:#fff; font-size:14px; line-height:18px;}
+.c-h{ width: 1200px; margin: 0 auto; height: 36px; background: #fff; line-height: 36px; font-size: 14px;}*/
+
+.c-h{ width: 100%; margin: 0 auto; height: 56px; background:url(../images/tz.png) repeat-x; line-height: 56px; font-size: 14px; position:absolute;top:0; left:0;}
+.c-hm{width:1200px;margin:0 auto;}
+.c-hm .huany{ width:50%; float:left;color:#fff;}
+.c-hm .geren{ width:88px; float:right; text-align:center; position:relative; color:#000; font-size:16px;}
+.c-hm .gerena{ width:100%; height:56px; line-height:56px; float:left;color: #fff; display: block; text-decoration:none;}
+.c-hm .gerena i{ font-size: 16px; padding-right: 10px;}
+.c-hm .gerena span{ font-size: 14px; }
+.c-hm .gerena:hover{ background:#666;}
+.c-hm .tongzhi{ width:88px; position:absolute; right:0; top:56px; display:none;}
+.c-hm .tongzhi ul{ display:block;}
+.c-hm .tongzhi ul li{ width:100%; float:left; height:40px; text-align:center;  font-size:14px; overflow:hidden; position:relative;}
+.c-hm .tongzhi ul li a{ display:block;background:url(../images/tz.png) repeat; color:#fff; height: 40px; line-height: 30px; border-radius:0;}
+.c-hm .tongzhi ul li a:hover{background:#666; color:#fff;}
+.c-hm .tongzhi ul li .sm_dian{ width:18px; height:18px; background:#e62600; border-radius:9px; position:absolute; top:3px; right:11px; text-align:center; color:#fff; font-size:14px; line-height:18px;}
 
 
-.c-h{ width: 1200px; margin: 0 auto; height: 36px; background: #fff; line-height: 36px; font-size: 14px;}
 
-.c-bg{ width: 100%; background-image:url('../images/bg.jpg'); background-size:cover; height: 270px; overflow: hidden; background-position:50%;   }
+
+
+.c-bg{ width: 100%; background-image:url('../images/bg.jpg'); background-size:cover; height: 400px; overflow: hidden; background-position:50%;   }
 .c-w{ overflow: hidden; width: 100%; position: relative;}
 .c-content{ width: 1200px; min-height: 200px; margin: 48px auto;}
 
 .c-l{ width: 250px;  float: left;}
 
 .c-l ul{ width: 100%; position: relative; background: #f3f3f3;}
-.c-l ul >li{ width: 100%; min-height: 60px; font-size: 18px; text-align: center; border-bottom: 1px solid #cccccc; line-height: 60px; box-sizing: border-box;}
+.c-l ul >li{ width: 100%; min-height: 60px; font-size: 18px; text-align: center; border-bottom: 1px solid #fff; line-height: 60px; box-sizing: border-box;}
 .c-l ul >li >a{ height: 60px; color: #313131; width: 100%; display: block; line-height: 60px; text-decoration: none; }
 .c-l ul >li >a i{ color:#ccc; }
 .c-l ul >li:nth-last-child(1){ border-bottom: none;}
-.c-l ul >li dl{ width: 100%; position: relative; display: none; border-top: 1px solid #ccc; }
+.c-l ul >li dl{ width: 100%; position: relative; display: none; border-top: 1px solid #fff; }
 .c-l ul >li dl dd{ width: 100%; position: relative; text-align: center; height: 60px;}
-.c-l ul >li dl dd a{ width: 100%; color: #313131; background: rgba(67, 139, 214, 0.1); border-bottom: 1px solid #ccc; position: relative;display: block; font-size: 16px; text-decoration: none; text-align: center; height: 60px; line-height: 60px;}
+.c-l ul >li dl dd a{ width: 100%; color: #313131; background:#e2eeff; border-bottom: 1px solid #fff; position: relative;display: block; font-size: 16px; text-decoration: none; text-align: center; height: 60px; line-height: 60px;}
 .c-l ul >li dl dd:nth-last-child(1) a {border-bottom: none;}
 .c-l ul >li a:hover{ background: #438bd6; color: #fff;}
 .c-l ul >li a:hover i{color: #fff;}
 .c-l ul >li a.active i{color: #fff;}
 .c-l ul >li a.active{  background: #438bd6; color: #fff;}
+
 .c-r{ width:890px; float: left;  min-height: 500px; margin: 0px 30px; }
-.c-f{ width: 100%; position: relative; height: 96px; background:#438bd6; display: table; visibility: hidden;}
-.c-f .c-text{ text-align: center; font-size: 20px; color: #fff; display: table-cell; vertical-align: middle; }
-.c-f .c-text p{ margin: 0;}
+.c-f{ width: 100%; position: relative; height: 106px; background:#f4f4f4; display: table; visibility: hidden;}
+.c-f .c-text{ text-align: center; font-size: 15px; color: #666666; display: table-cell; vertical-align: middle; }
+.c-f .c-text p{ margin: 0; line-height:28px;}
 
 
 

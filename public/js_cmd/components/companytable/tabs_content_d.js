@@ -40,7 +40,7 @@ define(function (require, exports, module) {
                                                         <td v-if="item.invoiceFile"  class="text-center"><a  @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile"  >单据</a></td>\
                                                         <td v-if="item.purchaseBill"  class="text-center"><a  @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.purchaseBill"  >单据</a> </td>\
                                                         <td v-if="item.salesRep"  class="text-center">{{ item.salesRep }}</td>\
-                                                        <td v-if="item.notes"  class="text-center">{{ item.notes }}<a href="javascript:;" :data-id="item.id" class="btn-link"> 详情</a></td>\
+                                                        <td v-if="item.notes"  class="text-center">{{ item.notes }}</td>\
                                                     </tr>\
                                                   </tbody>\
                                               </table>\

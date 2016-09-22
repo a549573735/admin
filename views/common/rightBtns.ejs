@@ -25,6 +25,14 @@
                                             </div>
                                         </div>
 
+                                         <% if(user.content.type=="MARKET"||user.content.type=="DISTRICT"){%>
+                                             <div class="col-md-9 col-md-offset-3 o-pd text-left v-code">
+                                            <label class="css-input css-checkbox css-checkbox-primary" >
+                                                <input type="checkbox" class="park-belongId_it"  ><span></span> 抄送至该企业所属园区
+                                            </label>
+                                          </div>
+                                         <%}%> 
+
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd">
                                             <button class="btn btn-sm btn-primary v-t-b inspect-qualified-btn" data-status="FAIL" type="submit">提交</button>
                                         </div>
@@ -54,6 +62,13 @@
                                                 <p class="v-msg"></p>
                                             </div>
                                         </div>
+                                         <% if(user.content.type=="MARKET"||user.content.type=="DISTRICT"){%>
+                                             <div class="col-md-9 col-md-offset-3 o-pd text-left v-code">
+                                            <label class="css-input css-checkbox css-checkbox-primary" >
+                                                <input type="checkbox" class="park-belongId_s"  ><span></span> 抄送至该企业所属园区
+                                            </label>
+                                          </div>
+                                         <%}%> 
                                     
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd ">
                                             <button class="btn btn-sm btn-primary v-t-b suggestion-btn" type="submit">提交</button>
@@ -89,6 +104,13 @@
                                                  <p class="v-msg"></p>
                                             </div>
                                         </div>
+                                        <% if(user.content.type=="MARKET"||user.content.type=="DISTRICT"){%>
+                                             <div class="col-md-9 col-md-offset-3 o-pd text-left v-code">
+                                            <label class="css-input css-checkbox css-checkbox-primary" >
+                                                <input type="checkbox" class="park-belongId_ap"  ><span></span> 抄送至该企业所属园区
+                                            </label>
+                                          </div>
+                                         <%}%> 
                                     
 
                                         <div class="col-md-10 col-md-offset-3 v-code text-left o-pd ">
@@ -130,7 +152,7 @@
                                                                         <% if(user.content.type=="MARKET"||user.content.type=="DISTRICT"){%>
                                                                          <div class="col-md-9 col-md-offset-3 o-pd text-left v-code">
                                                                             <label class="css-input css-checkbox css-checkbox-primary" >
-                                                                                <input type="checkbox" class="park-belongId"  ><span></span> 抄送至该企业所属园区
+                                                                                <input type="checkbox" class="park-belongId_it"  ><span></span> 抄送至该企业所属园区
                                                                             </label>
                                                                           </div>
                                                                          <%}%> 

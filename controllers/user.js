@@ -3,8 +3,10 @@ var fs=require('fs');
 var api_services=require('../models/api_services');
 var config=require('../utils/config')
 var permission=require('../utils/premission')
-
 var md5=require('md5');
+var Promise=require('bluebird');
+
+
 
 
 
@@ -20,20 +22,25 @@ exports.loginUp = function(req, res, next) {
 
         var data=req.body;
         data.password=md5(data.password)
+
         var str='username='+data.username+'&password='+data.password;
 
         api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
              
-            data=JSON.parse(data);
-            console.log(data)
-            data.content.page=Math.ceil(data.content.total/data.content.size);
+           // data=JSON.parse(data);
+         
             if(data.success){
-                 
+
+              console.log(data)
+                 // config.saveUserMsg(str);
+              
                  req.session.user=data
+
+                 req.session.user.userMsg=str
 
                  config.headers['User-Token']=data.content.id;
                  
-                 res.json({msg:'登录成功',state:true,type:req.session.user.content.type,id:data.content.companyId})
+                 res.json({msg:'登录成功',state:true,type:req.session.user.content.type,data:req.session.user.content})
 
             }else {
                 // 
@@ -41,10 +48,11 @@ exports.loginUp = function(req, res, next) {
             }
 
         }).catch(function (err){
+     
              console.log(err)
-             res.json({msg:'服务器错误',state:false})
-
+     
         })
+
 }
 
 
@@ -71,6 +79,34 @@ exports.signRequired=function (req,res,next)
         next()
         
 }
+// POST /api/app/user/verify
+
+exports.userVerify=function (req,res,next)
+{
+
+          var str=req.session.user.userMsg;
+    
+
+          api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
+
+              var user=JSON.parse(data);
+
+              if(data.success){
+                  req.session.user.content.messageCount=user.content.messageCount
+              }
+
+              res.json(user)
+
+            
+          }).catch(function (err){
+
+              console.log(err)
+          
+          })
+
+}
+
+
 
 
 
@@ -79,13 +115,14 @@ exports.signRequired=function (req,res,next)
 exports.user_edit_list = function(req, res, next) {
 
                 //user/edit/list
-    var type=req.body.type||req.session.user.content.type; 
+    var belongId=req.body.belongId||req.session.user.content.belongId; 
 
    
-    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-        
+    api_services.commonRequest('api/app/role/'+belongId+'/list',"GET",null).then(function (data){
+          
+         if( data.content.page) {
          data.content.page=Math.ceil(data.content.total/data.content.size);
-
+          }
          res.render('pages/user_edit_list', data);
      
    }).catch(function (err){
@@ -177,41 +214,20 @@ exports.user_role=function(req, res, next) {
 
 
 
-// exports.user_modify=function (req,res,next){
-    
-//       var id=req.query.id;
-
-
-//       api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-          
-//            data.content.page=Math.ceil(data.content.total/data.content.size);
-//            res.render('pages/user_admin_add', data);
-       
-//      }).catch(function (err){
-             
-//              console.log(err)
-
-//            res.render('pages/user_admin_add',{msg:'用户权限列表服务器错误',state:false});
-       
-
-//      })
-    
-
-// }
-
 
 
    /* 权限列表 用户权限列表*/
 
 exports.user_admin_add=function(req, res, next) {
     
-    var type=req.body.type||req.session.user.content.type; 
+    var belongId=req.body.belongId||req.session.user.content.belongId; 
 
-    
+      
    
-    api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-        
+    api_services.commonRequest('api/app/role/'+belongId+'/list',"GET",null).then(function (data){
+         if( data.content.page){
          data.content.page=Math.ceil(data.content.total/data.content.size);
+         }
          res.render('pages/user_admin_add', data);
      
    }).catch(function (err){
@@ -257,7 +273,7 @@ exports.api_admin_role=function (req, res, next){
      // form.belongId=form.type!='DISTRICT'?req.session.user.content.id:form.belongId
      form.belongId=req.session.user.content.belongId
 
-  
+      
 
      api_services.commonRequest('api/app/user/add',"POST",form).then(function (data){
 
@@ -287,7 +303,8 @@ exports.api_admin_role=function (req, res, next){
   
        api_services.commonRequest('api/app/user/delete',"DELETE",arr).then(function (data){
 
-              data.content.page=Math.ceil(data.content.total/data.content.size);
+              //data.content.page=Math.ceil(data.content.total/data.content.size);
+              console.log(data)
               res.json(data)
 
        }).catch(function (err){
@@ -306,8 +323,8 @@ exports.api_admin_role=function (req, res, next){
 
        api_services.commonRequest('api/app/user/modify',"PUT",data).then(function (data){
                 console.log(data)
-                data.content.page=Math.ceil(data.content.total/data.content.size);
-                  res.json(data)
+                //data.content.page=Math.ceil(data.content.total/data.content.size);
+                res.json(data)
 
        }).catch(function (err){
 
@@ -375,7 +392,7 @@ exports.api_admin_role=function (req, res, next){
             name:req.body.name,
             permissionIds:[],
             type:req.body.type,
-          
+            belongId:req.session.user.content.belongId
        }
 
        if(typeof req.body['permissionIds[]'] =='string'){
@@ -385,9 +402,10 @@ exports.api_admin_role=function (req, res, next){
            data.permissionIds=req.body['permissionIds[]']
         }
 
-        console.log(data)  
+
 
        api_services.commonRequest('api/app/role/add',"POST",data).then(function (data){
+                console.log(data)  
                   data.content.page=Math.ceil(data.content.total/data.content.size);
                   res.json(data)
 
@@ -409,7 +427,8 @@ exports.modify_role=function (req,res,next){
             name:req.body.name,
             permissionIds:req.body,
             type:req.body.type,
-            id:req.body.id||req.session.user.content.id
+            id:req.body.id||req.session.user.content.id,
+            belongId:req.body.belongId
           
        }
 
@@ -443,14 +462,17 @@ exports.modify_role=function (req,res,next){
 
 exports.user_role_list = function(req, res, next) {
 
-   var type=req.body.type||"DISTRICT"; 
+   var belongId=req.body.belongId
 
        
 
-   api_services.commonRequest('api/app/role/'+type+'/list',"GET",null).then(function (data){
-        
-         data.content.page=Math.ceil(data.content.total/data.content.size);
+   api_services.commonRequest('api/app/role/'+belongId+'/list',"GET",null).then(function (data){
+          
+         if(data.content.page) {
+            data.content.page=Math.ceil(data.content.total/data.content.size);
+          }
          //data.permission=permission
+         console.log(data)
          res.json(data);
      
 
@@ -507,8 +529,10 @@ exports.get_user_messages = function (req,res,next){
        }
 
        api_services.commonRequest('api/app/user/'+_id+'/messages',"POST",form).then(function (data){
+                if(data.success){
                  data.content.page=Math.ceil(data.content.total/data.content.size);
-                  console.log(data.content)
+               }
+               console.log(data.content)
                   res.json(data)
 
        }).catch(function (err){
@@ -529,7 +553,6 @@ exports.read_user_messages = function (req,res,next){
 
        
        api_services.commonRequest('api/app/user/message/'+id+'/read',"POST",null).then(function (data){
-               
                   
                   res.json(data)
 
@@ -539,13 +562,49 @@ exports.read_user_messages = function (req,res,next){
 
        })
 
-
-
 }
 
 
+// PUT /api/app/code/by/name/{username}
+
+exports.get_user_name=function (req,res,next){
+
+    var name=req.body.name;
+
+    api_services.loginUp('api/app/code/by/name/'+name,"PUT",null).then(function (data){
+               console.log(data)
+                res.json(data)
+                res.end()
+
+     }).catch(function (err){
+
+                res.json(err)
+
+     })
+ }
 
 
+///api/app/user/modify/password/by/code
+
+exports.modify_user_password=function (req,res,next){
+
+      var form=req.body;
+  
+      form.password=md5(form.password)
+          console.log(form)
+   
+    api_services.commonRequest('api/app/user/modify/password/by/code',"PUT",form).then(function (data){
+                console.log(data)
+      
+                res.json(data)
+
+     }).catch(function (err){
+
+                res.json(err)
+
+     })
+
+}
 
 
 

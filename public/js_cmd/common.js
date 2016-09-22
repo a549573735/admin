@@ -37,17 +37,19 @@
           this.inputDate();
           this.minModal();
           this.setNavActive();
-          this.sendMessage('.suggestion-btn','#tables','#val-suggestion',null,'/api/suggestion/msg',null,'.v-modal-min','.v-msg');    //建议
-          this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg');    //约谈
-          this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg');    // 预约
-          this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg');  //不合格  
-          this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null); 
+          this.sendMessage('.suggestion-btn','#tables','#val-suggestion',null,'/api/suggestion/msg',null,'.v-modal-min','.v-msg','.park-belongId_s');    //建议
+          this.sendMessage('.interview-btn','#tables','#val-interview','#select-interview','/api/interview/msg',null,'.v-modal-min','.v-msg','.park-belongId_iv');    //约谈
+          this.sendMessage('.appointment-btn','#tables','#val-appointment',null,'/api/appointment/msg','#date-appointment','.v-modal-min','.v-msg','.park-belongId_ap');    // 预约
+          this.sendMessage('.inspect-qualified-btn','#tables','#val-qualified',null,'/api/inspect/qualified/msg',null,'.v-modal-min','.v-msg','.park-belongId_it');  //不合格  
+          this.sendMessage('.inspect-qualified-btn2','#tables',null,null,'/api/inspect/qualified/msg',null,null,null,null);   //合格
 
           this.getAppkey();  //获取appkey
           this.againSecret();
           this.addParty();
 
           this.setPassword('.model-password-btn');//修改密码
+
+          this.EmptyInput(['#modal-addParty','#modal-addCompany'])  //清空弹框内容
          
           this.uiInit.$lMinBtn.attr('bclick',false)
          
@@ -75,7 +77,7 @@
         var $hWindow     = jQuery(window).height();
         var $hHeader     = this.uiInit.$lhead.outerHeight();
         var $hFooter     = this.uiInit.$lFooter.outerHeight();
-        var $hMain     = this.uiInit.$lMain.outerHeight();
+        var $hMain       = this.uiInit.$lMain.outerHeight();
 
         if($hMain+$hHeader+$hFooter<$hWindow){
             var $lh=$hWindow-$hFooter-$hHeader;
@@ -92,6 +94,11 @@
         this.uiInit.$lUserBtn.on('click',function (){
 
             this.bclick= !this.bclick;
+
+           $.get('/user/verify').then(function (data){
+                 $('.sm_dian').html(data.content.messageCount)
+           })     
+
 
            if(this.bclick){
                $(this).next().show()
@@ -157,8 +164,8 @@
          }
 
            this.uiInit.$lNav.find('li a').each(function (index,val){
-                
-                 if($(val).attr('href')==href){
+                 
+                 if($(val).attr('href').split('?')[0]==href){
                      $(val).addClass('active');
                       if($(val).parent()[0].tagName!=='LI'){
                           $(val).parent().parent().prev().find('i').attr('class','icon-caret-down')
@@ -171,7 +178,7 @@
     }
 
 
-  Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success) {
+  Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success,checked) {
       var self=this;
         $(obj).on('click',function(){
              
@@ -193,7 +200,8 @@
                   inspectDate:$(date).val(),
                   notes:$(textarea).val(),
                   status:$(this).attr('data-status'),
-                  ccPark:$('.park-belongId').prop('checked')?true:false
+                  ccPark:$(checked).prop('checked')?true:false,
+                  
               }
               
               var that=this
@@ -201,12 +209,12 @@
              $.post(href,form).then(function (data){
 
                     if(data.success){
+
                        $(that).closest(parent).find(success).html('提交成功').show()
-                      alert('提交成功')
+                        alert('提交成功')
 
                     }else {
                        $(that).closest(parent).find(success).html(data.errMessage).show()
-                  
                         alert('提交失败'+data.errMessage)
                     }
              })
@@ -276,7 +284,8 @@ Common.prototype.againSecret=function (){
                         username:$('.admin-username').val(),
                         mail:$('.admin-email').val(),
                         id:$('.admin-id').val(),
-                        admin:$('.admin-admin').val()
+                        admin:$('.admin-admin').val(),
+
                         }
 
                if(form.parentId==undefined){
@@ -385,6 +394,32 @@ Common.prototype.checkIphone=function (obj){
 }
 
 
+
+Common.prototype.countdown=function (obtn){
+    obtn.attr('disabled','disabled')
+    var _t = 60, _timer = null;
+
+    clearInterval(_timer);
+    _timer = setInterval(function(){
+        _t--;
+        if(_t < 0){
+            clearInterval(_timer);
+            obtn.removeAttr('disabled').html('重新发送');
+            obtn.css({cursor:'pointer'})
+            return false;
+        }
+        if(_t < 10){
+            _t = '0'+_t;
+        }
+        obtn.html(_t+'秒');
+
+    },1000);
+
+}
+
+
+
+
 Common.prototype.setPassword=function (obj){
 
         $(obj).on('click',function (){
@@ -441,6 +476,25 @@ Common.prototype.getChecked=function (){
             })
        }
 }
+
+
+Common.prototype.EmptyInput=function (arr){
+    
+    
+   $('.add_admin_userBtn').on('click',function (){
+
+       for(var i=0;i<arr.length;i++){
+          
+          $(arr[i]).find('input').val('')
+
+       }
+
+   })
+
+
+}
+
+
 
 
 

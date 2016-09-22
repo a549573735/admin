@@ -10,10 +10,12 @@ define(function (require, exports, module) {
 			   	   href:'/organize/company?id=',
 				   title:['','园区名称','园区地址','联系人','联系方式','操作'],
 				   content:function (){
-				   	    var  arr =window.location.search.split('?')[1]?window.location.search.split('?')[1].split(/&?[a-z]+=/ig):'';
+				   	    
+				   	    var id=$.query.get('id');
+				   	    var page=$.query.get('page');
 				   	    var  form={
-				 				  	id:arr[1]||'all',
-				 				  	page:arr[2]||0,
+				 				  	id:id||'all',
+				 				  	page:page||0,
 				 				  	parkname:'',
 				 				}	
 				 		var datalist=null;
@@ -25,7 +27,7 @@ define(function (require, exports, module) {
 		                        type: "GET",   //请求方式
 		                        success: function(data) {
 		                            //请求成功时处理
-		                        console.log(data)
+		                        console.log(JSON.stringify(data))
 		                            if(data.success){
 		                           
 				                          datalist=data.content
@@ -57,7 +59,7 @@ define(function (require, exports, module) {
 
 		   	  	   	    var form={
 		 				   	   parkname:$('.select-parkname').val()||'',
-		 				   	   id: $('#select_park').val()
+		 				   	   id: $('#select_park').val()||$.query.get('id')
 		 				 };
 
 		 				this.tableList.content=this.getData(form)

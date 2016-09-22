@@ -16,6 +16,7 @@ define(function (require, exports, module) {
                          <tr v-for="item in datalist.content.content">\
                             <td  class="text-center">{{ item.target }}</td>\
                             <td  class="text-center">{{ item.status==\'PASS\'?\'合格\':\'不合格\' }}</td>\
+                            <td  class="text-center">{{ item.interviewDate }}</td>\
                             <td  class="text-center">{{ item.period }}</td>\
                             <td  class="text-center">{{ item.agreeDate }}</td>\
                             <td  class="text-center">{{ item.user }}</td>\

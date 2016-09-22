@@ -90,24 +90,19 @@ exports.companySelect = function(req, res, next) {
 
 
 
-
-
-
-
-
-
 exports.api_publicity=function (req,res,next){
      var date=new Date()
      var time=tools.setForm()
      var form= {
               "page":req.query.page||'0',
               "size":15,
-              "type":req.query.type||"PARK",
+              "type":req.query.type||"COMPANY",
               "market":req.query.market==0?'':req.query.market ||'',
               "company":req.query.company ||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-               "to":req.query.to||req.body.to||time.to
+               "to":req.query.to||req.body.to||time.to,
+               "belongId":req.session.user.belongId
               }
       
        if(form.market==''){
@@ -136,7 +131,7 @@ exports.add_publicity=function (req,res,next){
 
         form.user=req.session.user.content.id;
 
-        api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
+        api_services.commonRequest('api/app/publicity/add','POST',form).then(function (dataSelect){
              //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect)
              res.json(dataSelect)
@@ -203,7 +198,8 @@ exports.api_inspect=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-              "to":req.query.to||req.body.to||time.to
+              "to":req.query.to||req.body.to||time.to,
+              "belongId":req.session.user.content.belongId
               }
        if(form.market==''){
           delete form.market
@@ -253,7 +249,8 @@ exports.api_suggestion=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-               "to":req.query.to||req.body.to||time.to
+               "to":req.query.to||req.body.to||time.to,
+              "belongId":req.session.user.content.belongId
               }
        if(form.market==''){
           delete form.market
@@ -289,6 +286,7 @@ exports.api_suggestion_msg=function (req,res,next){
       }else {
         form.targets=data
       }
+    form.belongId=req.session.user.content.belongId;
  
 
    
@@ -327,7 +325,8 @@ exports.api_interview=function (req,res,next){
               "company":req.body.company||'',
               "park":req.body.park==0?'':req.body.park||'',
               "from":req.body.from||req.body.from||time.from,
-               "to":req.body.to||req.body.to||time.to
+               "to":req.body.to||req.body.to||time.to,
+              "belongId":req.session.user.content.belongId
               }
       
        if(form.market==''){
@@ -367,7 +366,7 @@ exports.api_interview_msg=function (req,res,next){
       }else {
         form.targets=data
       }
- 
+     form.belongId=req.session.user.content.belongId;
 
     api_services.commonRequest('api/app/interview/add','POST',form).then(function (dataSelect){
             /// dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
@@ -409,9 +408,16 @@ exports.api_appointment=function (req,res,next){
               "company":req.query.company||'',
               "park":req.query.park==0?'':req.query.park||'',
               "from":req.query.from||req.body.from||time.from,
-               "to":req.query.to||req.body.to||time.to
+               "to":req.query.to||req.body.to||time.to,
+               "belongId":req.session.user.content.belongId
               }
-             console.log(form)   
+           if(form.market==''){
+             delete form.market
+           }
+           if(form.park==''){
+             delete form.park
+           }
+
 
     api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
              //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
@@ -442,8 +448,9 @@ exports.api_appointment_msg=function (req,res,next){
         form.targets=data
       }
  
-
-   
+    form.belongId=req.session.user.content.belongId;
+    
+    console.log(form)
     api_services.commonRequest('api/app/appointment/add','POST',form).then(function (dataSelect){
              
              console.log(dataSelect)
@@ -464,6 +471,8 @@ exports.api_inspect_qualified_msg=function (req,res,next){
     // form.target=[]
 
     form.target=req.body['target[]']||req.body.target;
+
+    form.belongId=req.session.user.content.belongId;
 
 
 

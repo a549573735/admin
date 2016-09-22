@@ -8,6 +8,7 @@ var config=require('./utils/config')
 var proxy = require('express-http-proxy');
 
 var routes = require('./routes/index');
+var role=require('./utils/role');
 
 
 var app = express();
@@ -40,6 +41,8 @@ app.use(function(req, res, next) {
 
 
 session(app);
+
+role(app)
 
 routes(app)
 

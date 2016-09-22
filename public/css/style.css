@@ -6,21 +6,21 @@ a{ text-decoration:none;}
 
 
 /*登录（denglu）页面的css*/
-.big_bj{width:100%;float:left;height:800px;background:url(../images/dl.jpg) no-repeat center center;background-size:cover;}
-.denglu{width:476px;height:497px;float:right;margin-top:157px;background:#fff;border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;-webkit-border-radius:6px;box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-webkit-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-moz-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);}
+.big_bj{width:100%;float:left;height:800px;background:url(../images/login.jpg) no-repeat center center;background-size:cover;}
+.denglu{width:450px; padding-bottom: 20px; float:right;margin-top:157px;background:#fff;border-radius:6px;-moz-border-radius:6px;-o-border-radius:6px;-webkit-border-radius:6px;box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-webkit-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);-moz-box-shadow:0 2px 5px 2px rgba(118, 132, 138, .7);}
 .denglu_title{ width:100%; height:48px; line-height:48px; padding-top:49px; text-align:center; overflow:hidden; font-size:36px; color:#333333; }
 .denglu_content{ width:388px; float:left; overflow:hidden;}
 .denglu_kuang{ width:100%; float:left; height:41px; padding-top:30px;}
 .denglu_name{ width:130px; float:left; height:41px; line-height:41px; overflow:hidden; text-align:right; font-size:24px; color:#000;}
 .denglu_m{ width:232px; height:37px; line-height:37px; float:right; border:1px solid #b5b5b5; color:#999999; font-size:14px;  text-indent:14px;}
-.denglu_yz{ width:107px; height:37px; float:left; margin-left:25px; display:inline; border:1px solid #b5b5b5;}
+.denglu_yz{ }
 .denglu_tu{ width:116px; float:right; height: 41px;}
 .denglu_tu img{ display:block;height:41px; }
 .denglu_rem{ float:left; padding-left:152px; height:30px; line-height:30px; color:#333333; font-size:14px;}
 .denglu_rem .kk{ width:15px; height:15px; border:1px solid #b5b5b5;}
 .denglu_am{ width:100%; float:left; padding-top:10px;}
 .denglu_am .denglu_bm{ width:120px; padding-left: 155px; height: 40px;}
-.denglu_am .denglu_bm .denglu_btm{ width:100%; float:left; height:40px; line-height:30px; outline: none; overflow:hidden; text-align:center; background:#438bd6; color:#fff; font-size:24px;}
+.denglu_am .denglu_bm .denglu_btm{ width:100%; float:left; border: none; border-radius: 3px; height:40px; line-height:30px; outline: none; overflow:hidden; text-align:center; background:#438bd6; color:#fff; font-size:24px;}
 .denglu_am a{ width:100%; float:left; padding-left: 185px; color:#333333; font-size:14px; line-height:40px;}
 .error{ color: red;  padding-left: 155px;  display: none;}
 
@@ -150,16 +150,26 @@ nav{float:left; text-align:center;}
 
 
 /*区局架构*/
-
+/*
 .quju_title{ background:url(../images/tiao.jpg) no-repeat  center bottom; height:98px; margin-top:17px;}
 .quju_zi{ width:146px; height:75px; margin:0 auto; background:url(../images/kuang1.jpg) no-repeat center center; line-height:75px; text-align:center; font-size:24px; color:#000; overflow:hidden;}
 .quju{ position:relative;}
 .quju ul{ width:112%; position:absolute; left:-26px; top:0;}
 .quju ul li{ width:146px; height:97px; float:left; text-align:center; background:url(../images/kuang2.jpg) no-repeat center center; padding-top:22px; margin-right:45.5px;}
+
 .quju_sp1{ line-height:24px; font-size:14px; color:#000; padding-top:16px; padding-left:15px; padding-right: 15px; }
 .qiju_sp2{ font-size:24px; color:#000; line-height:79px;}
 .qiju_sp3{ font-size:24px; color:#000; line-height:31px; padding-top:9px;}
 .qiju_sp4{ font-size:20px; color:#666666; line-height:32px;}
+*/
+.quju_title{  margin:17px 0 60px 0;}
+.quju_zi{ width:154px; height:66px; margin:0 auto; background:#438bd6; line-height:66px; text-align:center; font-size:14px; color:#fff; overflow:hidden;}
+.quju{ position:relative;}
+.quju ul{ width:100%;}
+.quju ul li{ width:146px; height:76px; float:left; text-align:center;  margin:0 0 50px 23px; overflow:hidden; white-space:nowrap;}
+
+.quju_sp1{ line-height:86px; font-size:14px; color:#000;  background:#e2eeff;color:#666666;font-size:14px;}
+.qiju_sp3{ font-size:14px; color:#666666; line-height:35px; background:#f4f4f4;}
 
 .details-title{ width: 140px; display: inline-block; white-space:pre-line}
 
@@ -174,20 +184,22 @@ nav{float:left; text-align:center;}
 
 .interview-msg a{ color: red !important; }
 .inspect-msg a{ color:blue !important; }
-.appointment-msg a{ color:yellow !important; }
+.appointment-msg a{ color:#a468dc !important; }
 .suggestion-msg a{ color:green !important; }
 
 
 .interview-msg { color: red !important; }
 .inspect-msg { color:blue !important; }
-.appointment-msg { color:yellow !important; }
+.appointment-msg { color:#a468dc !important; }
 .suggestion-msg { color:green !important; }
 .confirm-msg{ color:#3f4535; }
 
+.rest-pass-btn{  }
 
+.loginUp{ transition: 1s all;   }
+.reset-password{  transition: 1s all .2s; opacity: 0;  }
 
-
-
+.login-btn{width: 100px;}
 
 
 

@@ -6,19 +6,23 @@
                            <ul class="c-list">
                               
                               <% user.content.navlist.forEach(function (item){ %>
-                                  <li><a href="<%=item.href%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
+                                  <li><a href="<%=item.href%>?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
                                      <% if(item.list){%>
                                          <dl >
+                                            <% if(user.content.type=="DISTRICT"){%>
                                               <dd>
                                                   <a href="/organize/architecture">组织架构</a>
                                               </dd>
+                                           <%}%>
                                               <% item.list.forEach(function (it){ %>
+
                                                  <dd>
-                                                     <a href="<%=it.href%>"><%=it.title%></a>
+                                                     <a href="<%=it.href%>?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>"><%=it.title%></a>
                                                  </dd>
+
                                               <%})%>
                                                <dd>
-                                                     <a href="/organize/company">企业</a>
+                                                     <a href="/organize/company?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">企业</a>
                                                </dd>
                                         </dl>
                                      <%}%>
@@ -28,11 +32,11 @@
                                 <li><a href="javascript:;"><i class="icon-caret-right"></i>用户管理</a>
                                      <dl>
                                                <dd>
-                                                   <a href="/user/role/list">角色管理</a>
+                                                   <a href="/user/role/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">角色管理</a>
                                                </dd>
                                             
                                                <dd>
-                                                   <a href="/user/edit/list">用户列表</a>
+                                                   <a href="/user/edit/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">用户列表</a>
                                                </dd>
                                             
                                                <dd>

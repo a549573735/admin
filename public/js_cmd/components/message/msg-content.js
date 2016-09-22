@@ -6,7 +6,7 @@ define(function (require, exports, module) {
         data:function (){
             return {  }
         },
-        template: ' <div class="row v-table-msg-c">\
+        template: ' <div v-if="datanow.show" class="row v-table-msg-c">\
                       <div class="col-md-12 col-lg-12 clearfix">\
                            <h5 class="text-left">{{datanow.title}}</h5>\
                           <div class="col-md-8 col-md-offset-1 v-msg-box">\
@@ -46,15 +46,20 @@ define(function (require, exports, module) {
 
                   var id=$(event.target).attr('data-id');
                   var that=this;
+                  console.log(that.datanow.isRead)  
+                  if(that.datanow.isRead=='false'){  
+                      $.get('/api/read/message?id='+id).then(function (data){
+                            if(data.success){
+                              $('.confirm-msg').html('提交成功')
+                              that.datanow.isRead='true'
+                            }else {
+                              $('.confirm-msg').html('提交失败')
+                            }
+                      })
+                    }else {
 
-
-                  $.get('/api/read/message?id='+id).then(function (data){
-                        if(data.success){
-                          $('.confirm-msg').html('提交成功')
-                        }else {
-                          $('.confirm-msg').html('提交失败')
-                        }
-                  })
+                          alert('已阅读')
+                  }
 
              },
              Confirm:function(event){  

@@ -5,6 +5,11 @@ define(function (require, exports, module) {
     Vue.component('check-table-list', {
 
         props: ['datalist'],
+        data:function (){
+          return { marketId:function (){
+              return  $.query.get('market')
+          }() }
+        },
         template:'<table class="table  table-hover table-borderless o-m-t">\
                       <thead>\
                       <tr class="v-table-tr">\
@@ -24,7 +29,7 @@ define(function (require, exports, module) {
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
                             <td  v-if="datalist.btns"  class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addParty" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" class="btn  btn-primary "> 重置</a></div></td>\
-                            <td  v-if="datalist.overfull_btn"   class="text-center"><a :href="datalist.href+item.id"   class="btn  btn-primary v-btn-w"> 详情</a></td>\
+                            <td  v-if="datalist.overfull_btn"   class="text-center"><a :href="datalist.href+item.id+\'&query=true&market=\'+marketId "   class="btn  btn-primary v-btn-w"> 详情</a></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
@@ -70,8 +75,6 @@ define(function (require, exports, module) {
                         }
 
                   }) 
-
-
              }
 
         }          
