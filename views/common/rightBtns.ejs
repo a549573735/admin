@@ -5,6 +5,9 @@
                     <div class="block-header clearfix">
                         <div class="col-md-12 o-pd">
                             <h3 class="block-title"><%=user.content.companyName%></h3>
+                            <% if(user.content.type!="COMPANY"&&user.content.lastInspectTime!=""&&user.content.lastInspectTime!="null"){%>
+                              <h3 class="block-title"><%=user.content.lastInspectTime%></h3>
+                            <%}%>
                         </div>
                        <%if(user.content.type!="COMPANY"){%> 
                         <div class="col-md-8 col-md-offset-4 text-right o-pd clearfix">
