@@ -2,6 +2,7 @@ define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
 
     Vue.component('v-select-admin', {
+        props:['market','park','selectsubset'],
         data: function () {
             return {
                 _id: 1, state: false, selectdata: function () {
@@ -23,24 +24,24 @@ define(function (require, exports, module) {
 
                     return dataSelect
 
-                }(), selectsubset: []
+                }()
             }
         },
         template: '<div class="form-group">\
                                 <label class="col-md-3 control-label" >隶属于市场所: <span class="text-danger">*</span></label>\
                                  <div class="col-md-7">\
-                                         <select class="form-control" id="select_market" name="market" @change="selectChange($event)">\
+                                         <select class="form-control"   id="select_market" name="market" @change="selectChange($event)">\
                                              <option value="0">请选择</option>\
-                                             <option v-for="item in selectdata" :value="item.id">{{item.name}}</option>\
+                                             <option v-for="item in selectdata" :selected="market==item.id?true:false" :value="item.id">{{item.name}}</option>\
                                          </select>\
                                  </div>\
                                </div>\
                                 <div class="form-group">\
                                   <label class="col-md-3 control-label" >隶属于园区: <span class="text-danger">*</span></label>\
                                          <div class="col-md-7" >\
-                                           <select class="form-control" id="select_park"name="park" @change="sendVal($event)">\
+                                           <select class="form-control" id="select_park" name="park" @change="sendVal($event)">\
                                                  <option value="0">请选择</option>\
-                                               <option v-if="state" v-for="item in selectsubset" :value="item.id">{{item.name}}</option>\
+                                                 <option   v-for="item in selectsubset" :selected="park==item.id?true:false" :value="item.id">{{item.name}}</option>\
                                            </select>\
                                   </div>\
                                 </div>',

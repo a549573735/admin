@@ -593,9 +593,9 @@ exports.modify_user_password=function (req,res,next){
       form.password=md5(form.password)
           console.log(form)
    
-    api_services.loginUp('api/app/user/modify/password/by/code',"PUT",form).then(function (data){
+    api_services.commonRequest('api/app/user/modify/password/by/code',"PUT",form).then(function (data){
                 console.log(data)
-                res.set('Content-Type','application/json');
+      
                 res.json(data)
 
      }).catch(function (err){

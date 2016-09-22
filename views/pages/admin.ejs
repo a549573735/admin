@@ -59,7 +59,7 @@
                        <div class="block-content block-content-narrow">
 
                                     <div class="js-validation-bootstrap form-horizontal" >
-                                        <v-select-admin></v-select-admin>                                        
+                                        <v-select-admin :market="marketId" :park="parkId" :selectsubset="selectsubset"></v-select-admin>                                        
                                         <div class="form-group">
                                             <label class="col-md-3 control-label" for="val-username">企业名称: <span class="text-danger">*</span></label>
                                             <div class="col-md-7">
@@ -84,6 +84,8 @@
                                         <input type="hidden" class="admin-id" name="id">
                                         <input type="hidden" class="admin-type" name="type">
                                         <input type="hidden" class="admin-admin" name="admin">
+                                        <input type="hidden" class="admin-marketId" name="marketId">
+                                        <input type="hidden" class="admin-parkId" name="parkId">
 
                                        
                                         <div class="form-group">

@@ -17,7 +17,7 @@ define(function (require, exports, module) {
                             <td  class="text-center">{{ item.mail }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
-                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addCompany" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div></td>\
+                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin" :data-marketId="item.marketId"  :data-parkId="item.parkId"    :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addCompany" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
@@ -48,9 +48,31 @@ define(function (require, exports, module) {
                  $('.admin-contact').val($(event.target).attr('data-contact'));
                  $('.admin-type').val($(event.target).attr('data-type'))
                  $('.admin-admin').val($(event.target).attr('data-admin'))
+                
+                var parkId=$(event.target).attr('data-parkId')
+                var marketId=$(event.target).attr('data-marketId')
 
+      
+                var select=[]; 
+                    
+                 $.ajax({
+                          url: '/park/briefall/'+marketId,    //请求的url地址
+                          dataType: "json",   //返回格式为json
+                          async: false, //请求是否异步，默认为异步，这也是ajax重要特性  
+                          type: "GET",   //请求方式
+                          success: function(data) {
+                              //请求成功时处理
+                               select = data.content;
+                          },
+                          error: function(err) {
+                              //请求出错处理
+                              alert(err.msg);
+                          }
+                    }); 
+              
 
-
+                this.$dispatch('send-selectId', {marketId:marketId,parkId:parkId,selectIds:select})   
+               
              },
              resetPassword:function (event){  
 

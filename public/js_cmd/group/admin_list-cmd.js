@@ -16,7 +16,9 @@ define(function (require, exports, module) {
 
           }(),
           parkId:'',
-          page:0
+          page:0,
+          marketId:'',
+          selectsubset:''
        },
        methods:{
               searchData:function (){
@@ -128,6 +130,14 @@ define(function (require, exports, module) {
                   that.tablsData = data.data
 
             })
+
+          },'send-selectId':function (data){
+
+                this.parkId=data.parkId;
+                this.marketId=data.marketId;
+                this.selectsubset=data.selectIds;
+
+                console.log(JSON.stringify(this.selectsubset))
 
           }
 
