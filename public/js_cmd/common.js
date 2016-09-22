@@ -93,10 +93,11 @@
     Common.prototype.userMessage=function () {
 
         this.uiInit.$lUserBtn.on('click',function (){
-
+          
             this.bclick= !this.bclick;
 
            $.get('/user/verify').then(function (data){
+            console.log(data)
                  $('.sm_dian').html(data.content.messageCount)
            })     
 
@@ -467,8 +468,6 @@ Common.prototype.getChecked=function (){
        }else {
             permissionIds.push(str)
        }
-
-
        
        if(permissionIds!='')  {
 
@@ -522,10 +521,6 @@ Common.prototype.setFormDate=function(){
         $('input[name=to]').attr('placeholder',this.setForm().to)
 
 }
-
-
-
-
 
 
 

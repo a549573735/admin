@@ -89,13 +89,13 @@ exports.userVerify=function (req,res,next)
 
           api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
 
-              var user=JSON.parse(data);
+             
 
               if(data.success){
-                  req.session.user.content.messageCount=user.content.messageCount
+                  req.session.user.content.messageCount=data.content.messageCount
               }
 
-              res.json(user)
+              res.json(data)
 
             
           }).catch(function (err){
