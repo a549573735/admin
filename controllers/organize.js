@@ -263,7 +263,7 @@ exports.details = function(req, res, next) {
         api_services.commonRequest('api/app/company/'+id+'/purchase/list','POST',form).then(function (dataSelect){
                   dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
               console.log(dataSelect.content)
-                  tools.Interface_company({title:['采购订单号','采购日期','供货企业','供货名称','经办人','采购随行单','备注'],
+                  tools.Interface_company({title:['采购订单号','采购日期','供应商','供货名称','经办人','采购随行单','备注'],
                                            style: ['20%','20%','10%','10%','10%','20%','10%']},
                                            data.data,
                                            dataSelect
@@ -272,6 +272,7 @@ exports.details = function(req, res, next) {
 
                     data.data.content.content.forEach(function (item){
                                       for (var name in item ){
+                                          if(item[name]==null)item[name]="";
                                            item[name]+=''
                                       }   
                     })   
@@ -291,13 +292,14 @@ exports.details = function(req, res, next) {
        api_services.commonRequest('api/app/company/'+id+'/sale/list','POST',form).then(function (dataSelect){
                dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
               console.log(dataSelect.content)
-             tools.Interface_company({title:['订货单号','销售日期','采购企业','供货名称','销售代表','备注'],
+             tools.Interface_company({title:['订货单号','销售日期','客户企业','供货名称','销售代表','备注'],
                                          style: ['20%','20%','20%','10%','10%','10%']},
                                          data.data,
                                          dataSelect
                                       )
               data.data.content.content.forEach(function (item){
                                       for (var name in item ){
+                                          if(item[name]==null)item[name]="";
                                            item[name]+=''
                                       }   
                 })   
@@ -319,15 +321,16 @@ exports.details = function(req, res, next) {
        api_services.commonRequest('api/app/company/'+id+'/invoice/list','POST',form).then(function (dataSelect){
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
              console.log(dataSelect.content)
-             tools.Interface_company({title:['发票单号','开票日期','发票类别','客户','税号','开票金额','收票人','经办人','发票单'],
-                                         style: ['10%','15%','10%','10%','15%','10%','10%','10%','10%']},
+             tools.Interface_company({title:['发票单号','开票日期','发票类别','客户','税号','开票金额','经办人','发票单','备注'],
+                                         style: ['15%','10%','10%','10%','15%','10%','10%','10%','10%']},
                                          data.data,
                                          dataSelect
                                       )
 
                 data.data.content.content.forEach(function (item){
                             for (var name in item ){
-                                 item[name]+=''
+                                if(item[name]==null)item[name]="";
+                                 item[name]+='  '
                             }   
                 })   
 
@@ -357,6 +360,7 @@ exports.details = function(req, res, next) {
                    
                    data.data.content.content.forEach(function (item){
                             for (var name in item ){
+                                if(item[name]==null)item[name]="";
                                  item[name]+=''
                             }   
                     })   
@@ -387,6 +391,7 @@ exports.details = function(req, res, next) {
                    
                         data.data.content.content.forEach(function (item){
                             for (var name in item ){
+                                if(item[name]==null)item[name]="";
                                  item[name]+=''
                             }   
                          })   
@@ -447,6 +452,7 @@ exports.details = function(req, res, next) {
                                       )
                         data.data.content.content.forEach(function (item){
                               for (var name in item ){
+                                  if(item[name]==null)item[name]="";
                                    item[name]+=''
                               }   
                         })   
