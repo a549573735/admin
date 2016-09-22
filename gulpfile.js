@@ -6,7 +6,6 @@ var gulp = require('gulp');
 // 引入组件
 var cssmin = require('gulp-clean-css'), //css压缩
     cssver = require('gulp-make-css-url-version'), //css引用路径加版本号
-    gulpif = require('gulp-if'),//if判断
     jshint = require('gulp-jshint'),//js检测
     uglify = require('gulp-uglify'),//js压缩
     imagemin = require('gulp-imagemin'),//图片压缩

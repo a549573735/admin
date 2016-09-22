@@ -21,7 +21,7 @@
     "glob": "^7.0.6",
     "gulp": "^3.9.1",
     "gulp-cache": "^0.4.4",
-    "gulp-clean-css": "^2.0.6",
+    "gulp-clean-css": "^2.0.12",
     "gulp-concat": "^2.6.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
