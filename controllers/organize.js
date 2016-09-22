@@ -191,10 +191,9 @@ exports.architecture = function(req, res, next) {
 
 exports.details = function(req, res, next) {
    
-  console.log(req.query)
    var id=req.query.id||req.session.user.content.companyId; 
    var user=req.session.user.content
-   console.log(id)
+       req.session.user.content.lastInspectTime = ""
    var data={ 
                data:{
                       title:[],
