@@ -33,7 +33,7 @@ define('', [
                             if (data.success) {
                                 dataList = data.content;
                             } else {
-                                alert(data.errMessage);
+                                console.log(data.errMessage);
                             }
                         },
                         error: function (err) {

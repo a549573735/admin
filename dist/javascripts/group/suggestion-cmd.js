@@ -37,17 +37,19 @@ define('', [
                                 });
                                 dataList = data.content;
                             } else {
-                                alert(data.errMessage);
+                                console.log(data.errMessage);
                             }
                         },
                         error: function (err) {
                         }
                     });
-                    dataList.content.forEach(function (item) {
-                        for (var name in item) {
-                            item[name] += '';
-                        }
-                    });
+                    if (dataList != null) {
+                        dataList.content.forEach(function (item) {
+                            if (item.target == null) {
+                                item.target += '';
+                            }
+                        });
+                    }
                     return dataList;
                 }(),
                 style: [

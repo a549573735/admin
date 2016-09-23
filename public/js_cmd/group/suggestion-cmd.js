@@ -41,7 +41,7 @@ define(function (require, exports, module) {
                                     }
 
                                 });
-                                 if( dataList.content.length>0){ 
+                                 if( dataList!=null){ 
                                    dataList.content.forEach(function (item){
 
                                         if(item.target==null){

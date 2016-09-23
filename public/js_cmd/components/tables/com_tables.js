@@ -9,7 +9,7 @@ define(function (require, exports, module) {
         computed:{
 
             "newData":function (){
-                 if(this.datalist!=null){
+                 if(this.datalist.content!=null){
                     this.datalist.content.content.forEach(function (item){
 
                           switch (item.status){
@@ -32,7 +32,9 @@ define(function (require, exports, module) {
 
                     })
                 
-                  return   this.datalist.content.content
+                      return   this.datalist.content.content
+                  }else {
+                      return false
                   }
             }
 
@@ -46,7 +48,7 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                         <tr v-for="item in newData">\
+                         <tr v-if="newData" v-for="item in newData">\
                             <td v-if="item.target" class="text-center">{{ item.target  }}</td>\
                             <td v-if="item.company" class="text-center">{{ item.company==null?\'null\':item.company   }}</td>\
                             <td v-if="item.publicity" class="text-center">{{ item.publicity }}</td>\

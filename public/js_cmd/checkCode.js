@@ -1,3 +1,7 @@
+
+seajs.use('/lib/bootstrap.min.js')
+
+seajs.use('/lib/bootstrap-datepicker.zh-CN.js')
 function getStyle(obj,attr){
     		if (obj.currentStyle) {
                 return obj.currentStyle[attr];

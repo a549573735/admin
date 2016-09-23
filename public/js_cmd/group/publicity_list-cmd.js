@@ -52,9 +52,9 @@ define(function (require, exports, module) {
                                 type: "GET",   //请求方式
                                 success: function(data) {
                                     //请求成功时处理
-               
+                                       if(data.dataSelect.content!=null){ 
                                         select=data.dataSelect.content.content
-     
+                                       }
                                 },
                                 error: function(err) {
                                     //请求出错处理
