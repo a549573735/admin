@@ -44,15 +44,15 @@ gulp.task('clean', function () {
         .pipe(notify({message: 'clean task ok'}));
 });
 
-//压缩html
-gulp.task('html', function () {
-    gulp.src('views/**/*.ejs')
-        .pipe(htmlmin({
-            collapseWhitespace: true
-        }))
-        .pipe(gulp.dest('dist/views'))
-        .pipe(notify({message: 'html task ok'}));
-});
+// //压缩html
+// gulp.task('html', function () {
+//     gulp.src('views/**/*.ejs')
+//         .pipe(htmlmin({
+//             collapseWhitespace: true
+//         }))
+//         .pipe(gulp.dest('dist/views'))
+//         .pipe(notify({message: 'html task ok'}));
+// });
 
 //压缩图片
 gulp.task('img', function () {
@@ -102,22 +102,42 @@ gulp.task('js', function () {
         .pipe(notify({message: 'js task ok'}));
 })
 
-gulp.task('seajs', function () {
-    gulp.src(['public/js_cmd/components/*.js','public/js_cmd/group/*.js'])
-        .pipe(seajs(null,{except:['jquery']}))
-        .pipe(concat('mian.js'))
-        .pipe(gulp.dest('dist/javascripts'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify({
-            mangle:{except:['require','exports','module','$']},
-            compress:true
-        }))
-        .pipe(rev())
-        .pipe(gulp.dest('dist/javascripts'))
-        .pipe(rev.manifest())
-        .pipe(gulp.dest('./rev/js'))
-        .pipe(notify({message: 'js task ok'}));
-})
+// gulp.task('seajs', function () {
+//     gulp.src(['public/js_cmd/**/*.js'])
+//         .pipe(seajs(null,{except:['jquery']}))
+//         .pipe(gulp.dest('dist/javascripts'))
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(uglify({
+//             mangle:{except:['require','exports','module','$']},
+//             compress:true
+//         }))
+      
+//         .pipe(gulp.dest('dist/javascripts'))
+//         .pipe(rev.manifest())
+    
+//         .pipe(notify({message: 'js task ok'}));
+// })
+
+//合并 压缩组建js文件
+
+// gulp.task('seacomponents', function () {
+//     gulp.src(['public/js_cmd/components/**/*.js'])
+//         .pipe(seajs(null,{except:['jquery']}))
+//         .pipe(concat('components.js'))
+//         .pipe(gulp.dest('dist/javascripts'))
+//         .pipe(rename({suffix: '.min'}))
+//         .pipe(uglify({
+//             mangle:{except:['require','exports','module','$']},
+//             compress:true
+//         }))
+      
+//         .pipe(gulp.dest('dist/javascripts/'))
+//         .pipe(rev.manifest())
+    
+//         .pipe(notify({message: 'js task ok'}));
+// })
+
+
 
 
 // //更新引入文件版本
@@ -160,12 +180,14 @@ gulp.task('copy', function () {
         .pipe(gulp.dest('dist/views'));
 });
 
-//gulp.task('rev', function () {
-//    gulp.src(['./rev/**/*.json', './public'])//读取 rev-manifest.json 文件以及需要进行css名替换的文件
-//        .pipe(revCollector()) //执行文件内css名的替换
-//        .pipe(gulp.dest('./dist/views')); //替换后的文件输出的目录
-//});
-gulp.task('default', ['lint','revImg', 'copy', 'js','seajs', 'css','version']);
+gulp.task('rev', function () {
+   gulp.src(['./rev/**/*.json', './public'])//读取 rev-manifest.json 文件以及需要进行css名替换的文件
+       .pipe(revCollector()) //执行文件内css名的替换
+       .pipe(gulp.dest('./dist/views')); //替换后的文件输出的目录
+});
+
+
+gulp.task('default', ['lint','revImg', 'copy', 'js','rev','css','version']);
 
 gulp.task('default2', ['copy', 'js', 'css', 'version', 'processhtml']);
 

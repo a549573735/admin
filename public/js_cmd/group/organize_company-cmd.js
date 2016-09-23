@@ -5,6 +5,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/paging')
     require('/js_cmd/components/tables/handle_tables_company')
 
+    
     new Vue( {
 	      'el':'#organize-company',
 		   data:{

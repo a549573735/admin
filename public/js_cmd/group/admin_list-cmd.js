@@ -6,6 +6,9 @@ define(function (require, exports, module) {
     require('/js_cmd/components/paging')
     require('/js_cmd/components/tables/admin_handle_tables_company')
 
+
+
+
     new Vue( {
         'el':'#admin-company',
        data:{
