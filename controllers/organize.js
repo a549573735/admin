@@ -25,16 +25,22 @@ exports.organize_company=function (req,res,next){
             }
    
     api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
-           
-        data.content.page=Math.ceil(data.content.total/data.content.size);   
+        var dataContent=null;
+        var page='0'
+        if(data.success){
+               data.content.page=Math.ceil(data.content.total/data.content.size);
+               dataContent=data.content.content
+               page=data.content.page
+        }   
+
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
-                       content:data.content.content,
+                       content:dataContent,
                        style:['20%','auto','120px','100px','100px','20%','80px'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                        overflow:false,
-                       page:data.content.page
+                       page:page
 
           }
             console.log(data)
@@ -64,21 +70,29 @@ exports.api_organize_company_list = function(req, res, next) {
              delete form.market;
            }
            
-           console.log(form) 
+        
         api_services.commonRequest('api/app/company/list','POST',form).then(function (data){
-            data.content.page=Math.ceil(data.content.total/data.content.size);   
+            
+             var dataContent=null;
+              var page='0'
+              if(data.success){
+                     data.content.page=Math.ceil(data.content.total/data.content.size);
+                     dataContent=data.content.content
+                     page=data.content.page
+              }   
+
             var  datalist={ 
                            href:'/organize/details?view=company&id=',
                            title:['企业名称','企业地址','所属','联系人','联系方式','经营范围',"操作"],
-                           content:data.content.content,
+                           content:dataContent||null,
                            style:['20%','auto','120px','100px','100px','20%','80px'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overflow:false,
-                           page:data.content.page
+                           page:page
 
               }
-              console.log(data)
-               
+      
+          
             res.json(datalist);
         })
 }

@@ -9,28 +9,31 @@ define(function (require, exports, module) {
         computed:{
 
             "newData":function (){
-                  this.datalist.content.content.forEach(function (item){
+                 if(this.datalist!=null){
+                    this.datalist.content.content.forEach(function (item){
 
-                        switch (item.status){
-                            case  'WAITING':
-                              item.status="等待"
-                            break;
-                            case  'CONFIRMED':
-                              item.status="确认"
-                            break;
-                            case  'NEGOTIATION':
-                              item.status="协商"
-                            break;
-                            case  'PASS':
-                              item.status="合格"
-                            break;
-                            case  'FAIL':
-                              item.status="不合格"
-                            break;
-                        }
+                          switch (item.status){
+                              case  'WAITING':
+                                item.status="等待"
+                              break;
+                              case  'CONFIRMED':
+                                item.status="确认"
+                              break;
+                              case  'NEGOTIATION':
+                                item.status="协商"
+                              break;
+                              case  'PASS':
+                                item.status="合格"
+                              break;
+                              case  'FAIL':
+                                item.status="不合格"
+                              break;
+                          }
 
-                  })
-                  return   this.datalist
+                    })
+                
+                  return   this.datalist.content.content
+                  }
             }
 
         },
@@ -43,7 +46,7 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                         <tr v-for="item in newData.content.content">\
+                         <tr v-for="item in newData">\
                             <td v-if="item.target" class="text-center">{{ item.target  }}</td>\
                             <td v-if="item.company" class="text-center">{{ item.company==null?\'null\':item.company   }}</td>\
                             <td v-if="item.publicity" class="text-center">{{ item.publicity }}</td>\

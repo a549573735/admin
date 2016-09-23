@@ -24,7 +24,7 @@ define(function (require, exports, module) {
                                        
                                             dataList=data.content
                                         }else {
-                                              alert(data.errMessage)
+                                              console.log(data.errMessage)
                                         }
                                     },
                                     error: function(err) {

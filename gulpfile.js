@@ -22,7 +22,10 @@ var cssmin = require('gulp-clean-css'), //css压缩
     processhtml = require('gulp-processhtml'),//替换文件
     runSequence = require('gulp-run-sequence'),
     gulpCopy = require('gulp-file-copy'),
-    notify = require('gulp-notify');//提示信息
+    notify = require('gulp-notify'),//提示信息
+    seajsCombo=require('gulp-seajs-combo'),
+    seajs=require('gulp-seajs-combine');
+
 
 //revImg
 gulp.task('revImg', function () {
@@ -43,7 +46,7 @@ gulp.task('clean', function () {
 
 //压缩html
 gulp.task('html', function () {
-    gulp.src('public/views/**/*.ejs')
+    gulp.src('views/**/*.ejs')
         .pipe(htmlmin({
             collapseWhitespace: true
         }))
@@ -87,7 +90,7 @@ gulp.task('lint', function () {
 
 //合并 压缩js文件
 gulp.task('js', function () {
-    gulp.src('public/js_cmd/**/*.js')
+    gulp.src(['public/js_cmd/*.js'])
         .pipe(concat('all.js'))
         .pipe(gulp.dest('dist/javascripts'))
         .pipe(rename({suffix: '.min'}))
@@ -99,20 +102,37 @@ gulp.task('js', function () {
         .pipe(notify({message: 'js task ok'}));
 })
 
-// //更新引入文件版本
-// gulp.task('version', function () {
-//     setTimeout(function () {
-//         gulp.src(['./rev/**/*.json', './public/views/**/*.ejs'])
-//             .pipe(revCollector())
-//             .pipe(gulp.dest('dist/views'))
-//             .pipe(notify({message: 'update version task ok'}));
+gulp.task('seajs', function () {
+    gulp.src(['public/js_cmd/**/*.js'])
+        .pipe(seajs(null,{except:['jquery']}))
+        .pipe(gulp.dest('dist/javascripts'))
+        .pipe(rename({suffix: '.min'}))
+        .pipe(uglify({
+            mangle:{except:['require','exports','module','$']},
+            compress:true
+        }))
+        // .pipe(rev())
+        .pipe(gulp.dest('dist/javascripts'))
+        .pipe(rev.manifest())
+        // .pipe(gulp.dest('./rev/js'))
+        .pipe(notify({message: 'js task ok'}));
+})
 
-//         gulp.src(['./rev/**/*.json', './dist/stylesheets/**/*.css'])
-//             .pipe(revCollector())
-//             .pipe(gulp.dest('dist/stylesheets'))
-//             .pipe(notify({message: 'update version task ok'}));
-//     }, 2000);
-// });
+
+// //更新引入文件版本
+gulp.task('version', function () {
+    setTimeout(function () {
+        gulp.src(['./rev/**/*.json', './public/views/**/*.ejs'])
+            .pipe(revCollector())
+            .pipe(gulp.dest('dist/views'))
+            .pipe(notify({message: 'update version task ok'}));
+
+        gulp.src(['./rev/**/*.json', './dist/stylesheets/**/*.css'])
+            .pipe(revCollector())
+            .pipe(gulp.dest('dist/stylesheets'))
+            .pipe(notify({message: 'update version task ok'}));
+    }, 2000);
+});
 
 //替换
 // gulp.task('processhtml', function () {
@@ -134,17 +154,17 @@ gulp.task('js', function () {
 
 
 //copy
-// gulp.task('copy', function () {
-//     gulp.src('public/views/**/*.ejs')
-//         .pipe(gulp.dest('dist/views'));
-// });
+gulp.task('copy', function () {
+    gulp.src('public/views/**/*.ejs')
+        .pipe(gulp.dest('dist/views'));
+});
 
 //gulp.task('rev', function () {
 //    gulp.src(['./rev/**/*.json', './public'])//读取 rev-manifest.json 文件以及需要进行css名替换的文件
 //        .pipe(revCollector()) //执行文件内css名的替换
 //        .pipe(gulp.dest('./dist/views')); //替换后的文件输出的目录
 //});
-gulp.task('default', ['lint', 'revImg', 'copy', 'js', 'css', 'version']);
+gulp.task('default', ['lint','revImg', 'copy', 'js','seajs', 'css','version']);
 
 gulp.task('default2', ['copy', 'js', 'css', 'version', 'processhtml']);
 

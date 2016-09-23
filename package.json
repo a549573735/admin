@@ -48,7 +48,11 @@
     "gulp-notify": "^2.2.0",
     "gulp-if": "^2.0.1",
     "gulp-imagemin": "^3.0.3",
-    "gulp-htmlmin": "^3.0.0"
+    "gulp-htmlmin": "^3.0.0",
+    "jshint": "^2.9.3",
+    "imagemin-pngcrush": "^5.0.0",
+    "gulp-seajs-combo": "^1.2.3",
+    "gulp-seajs-combine": "^0.3.3"
   },
   "main": "index.js",
   "repository": {

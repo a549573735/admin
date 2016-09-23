@@ -23,7 +23,7 @@ define(function (require, exports, module) {
                                        
                                             dataList=data.content
                                         }else {
-                                              alert(data.errMessage)
+                                            console.log(data.errMessage)
                                         }
                                     },
                                     error: function(err) {
@@ -32,14 +32,16 @@ define(function (require, exports, module) {
                                     }
 
                                 });
+                                console.log(dataList)
+                                if( dataList!=null){ 
+                                   dataList.content.forEach(function (item){
 
-                                  dataList.content.forEach(function (item){
+                                        if(item.target==null){
+                                          item.target+=''
+                                        }
 
-                                      for (var name in item ){
-                                         item[name]+=''
-                                      }
-
-                                   })     
+                                   })
+                                 }    
                              
                                  return dataList     
                             }(),
