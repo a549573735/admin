@@ -4,7 +4,7 @@ define(function (require, exports, module) {
 	 require('/js_cmd/components/tables/com_tables')
 	 var select = require('/js_cmd/components/select');
       new Vue({
-                el: '#app',
+                el: '#inspect',
                 data: {
                     dataList:{
                            title:['企业名称','检查状态','检查员','检查日期','备注'],

@@ -6,7 +6,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/tables/handle_tables_company')
 
     new Vue( {
-	      'el':'#handle-table',
+	      'el':'#organize-company',
 		   data:{
 		   	  tablsData: function (){
 

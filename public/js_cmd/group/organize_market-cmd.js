@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/tables/handle_tables')
     
 	new Vue( {
-	    	'el':'#handle-table',
+	    	'el':'#organize-market',
 		   data:   {
 
 		   },

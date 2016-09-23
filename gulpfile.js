@@ -90,8 +90,8 @@ gulp.task('lint', function () {
 
 //合并 压缩js文件
 gulp.task('js', function () {
-    gulp.src(['public/js_cmd/*.js'])
-        .pipe(concat('all.js'))
+    gulp.src(['public/js_cmd/common/*.js'])
+        .pipe(concat('common.js'))
         .pipe(gulp.dest('dist/javascripts'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify())
@@ -103,18 +103,19 @@ gulp.task('js', function () {
 })
 
 gulp.task('seajs', function () {
-    gulp.src(['public/js_cmd/**/*.js'])
+    gulp.src(['public/js_cmd/components/*.js','public/js_cmd/group/*.js'])
         .pipe(seajs(null,{except:['jquery']}))
+        .pipe(concat('mian.js'))
         .pipe(gulp.dest('dist/javascripts'))
         .pipe(rename({suffix: '.min'}))
         .pipe(uglify({
             mangle:{except:['require','exports','module','$']},
             compress:true
         }))
-        // .pipe(rev())
+        .pipe(rev())
         .pipe(gulp.dest('dist/javascripts'))
         .pipe(rev.manifest())
-        // .pipe(gulp.dest('./rev/js'))
+        .pipe(gulp.dest('./rev/js'))
         .pipe(notify({message: 'js task ok'}));
 })
 

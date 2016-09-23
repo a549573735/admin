@@ -5,7 +5,7 @@ define(function (require, exports, module) {
      var select = require('/js_cmd/components/select');
      require('/js_cmd/components/admin_select');
       new Vue({
-                el: '#app',
+                el: '#publicity',
                 data: {
 
                     dataList:{

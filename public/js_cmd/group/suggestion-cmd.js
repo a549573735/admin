@@ -4,7 +4,7 @@ define(function (require, exports, module) {
      require('/js_cmd/components/tables/com_tables')
      var select = require('/js_cmd/components/select');
       new Vue({
-                el: '#app',
+                el: '#suggestion',
                 data: {
 
                     dataList:{

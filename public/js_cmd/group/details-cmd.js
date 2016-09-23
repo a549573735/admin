@@ -9,7 +9,7 @@ define(function (require, exports, module) {
 	    require('/js_cmd/components/companytable/tabs_btn')
 
 	    new Vue({
-	         'el':'#app',
+	         'el':'#details',
 	         data:{
 
 	         	modalMsg:{title:[],content:{content:[{}]}},

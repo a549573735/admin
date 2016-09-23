@@ -1,9 +1,9 @@
 define(function (require, exports, module) {
        
-     require('/js_cmd/checkCode');
+     require('/js_cmd/common/checkCode');
      require('/lib/bootstrap-datepicker.js')
      require('/lib/Jquery.Query.js')
-     require('/js_cmd/common')
+     require('/js_cmd/common/common')
 
      var common=new Common();
 

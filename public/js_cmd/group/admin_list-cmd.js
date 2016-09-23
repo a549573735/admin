@@ -7,7 +7,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/tables/admin_handle_tables_company')
 
     new Vue( {
-        'el':'#handle-table',
+        'el':'#admin-company',
        data:{
           tablsData: function (){
                      var data= JSON.parse($('.data_tabls').val())
@@ -92,7 +92,6 @@ define(function (require, exports, module) {
                             console.log(data.errMessage)
                             alert('修改失败')
                           }
-
                     })
 
                 }else {

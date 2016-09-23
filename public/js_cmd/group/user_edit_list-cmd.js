@@ -6,7 +6,7 @@ define(function (require, exports, module) {
      
 
        new Vue({
-                el: '#app',
+                el: '#user-edit-list',
                    data:{ put_id:'' ,
                           listData:function (){
                             var list=[]

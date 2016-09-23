@@ -6,7 +6,7 @@ define(function (require, exports, module) {
 
        new Vue({
 
-                el: '#app',
+                el: '#user-admin-add',
                    data:{    form:{type:'',_id:'' } ,
                              radio_val:'',
                              checkboxDate:function (){

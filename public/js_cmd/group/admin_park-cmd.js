@@ -4,7 +4,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/tables/check_tables')
 	
 	new Vue( {
-	    	'el':'#check-table',
+	    	'el':'#admin-park',
 		   data:   {
 			   tableList:{
 			   	   href:'',
