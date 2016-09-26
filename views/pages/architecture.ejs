@@ -19,7 +19,7 @@
                 <div class="col-md-12 o-pd quju">
 
                   <ul>
-                    <% if(data.content.length>4){ %> 
+                    <% if(data.content.length>=4){ %> 
                        <% for(var i=0;i<4;i++){%>                   
                            <li><div class="quju_sp1"><a href="/organize/park?id=<%=data.content[i].id%>"><%=data.content[i].name%></a></div></li>
                       <%}%>

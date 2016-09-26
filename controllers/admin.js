@@ -60,7 +60,8 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
           var content=null;
          if(data.success){
 
-              data.content.page=Math.ceil(datalist.content.total/datalist.content.size);
+              data.content.page=Math.ceil(data.content.total/data.content.size);
+              
               content=data.content
          } 
 
