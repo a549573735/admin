@@ -187,13 +187,21 @@ exports.architecture = function(req, res, next) {
                          console.log(dataSelect)
                           var parkall=0;
                           var companyall=0;
-                           dataSelect.content.forEach(function (item){
-                                    parkall+=item.parkCount;
-                                    companyall+=item.companyCount
-                           })
+                          var marketLeng=0;
+                          dataSelect.content.forEach(function (item){
+                                  parkall+=item.parkCount;
+                                  companyall+=item.companyCount
+                          })
+                          if(dataSelect.content.length>=4){
+                            marketLeng=4;
+                          }else {
+                            marketLeng=dataSelect.content.length
+                          } 
+
+                          
 
 
-                         res.render('pages/architecture',{data:dataSelect,parkAll:parkall,companyAll:companyall});
+                         res.render('pages/architecture',{data:dataSelect,parkAll:parkall,companyAll:companyall,marketLeng:marketLeng});
 
                  
      }).catch(function (data){
