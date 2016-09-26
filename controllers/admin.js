@@ -22,13 +22,16 @@ exports.interface = function(req, res, next) {
     
     api_services.commonRequest('api/app/company/list/new','POST',form).then(function (data){
 
-
-        console.log(data.content)
+        var content =null;
+        if(data.success){
         data.content.page=Math.ceil(data.content.total/data.content.size); 
+         content=data.content.content
+        }
+
         var  datalist={ 
                        href:'/organize/details?view=company&id=',
                        title:['企业名称','用户名','邮箱','联系人','联系方式',"操作"],
-                       content:data.content.content,
+                       content:content,
                        style:['20%','100px','auto','100px','15%','160px'],
                        overflow:false,
                        page:data.content.page,
@@ -54,12 +57,18 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
       api_services.commonRequest('api/app/market/all',"GET",null).then(function (data){
 
          console.log(data)
+          var content=null;
+         if(data.success){
+
+              data.content.page=Math.ceil(datalist.content.total/datalist.content.size);
+              content=data.content
+         } 
 
 
       	 var  datalist={ 
                        href:'/organize/park?id=',
                        title:['市场所名称','市场所地址','用户名','邮箱','联系人','联系方式','操作'],
-                       content:data.content,
+                       content:content,
                        style:['15%','15%','8%','auto','80px','5%','160px'],
                        details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                        overflow:false,
@@ -67,9 +76,9 @@ exports.admin_market=function(req, res, next) {        //单位管理  市场所
                        btns:true
 
           }       
-             datalist.content.page=Math.ceil(datalist.content.total/datalist.content.size);
+      
 
-              res.render('pages/admin_market',{data:datalist} );
+             res.render('pages/admin_market',{data:datalist} );
 
 	  }).catch(function (err){
 
@@ -85,9 +94,14 @@ exports.admin_park=function(req, res, next) {
 
      api_services.commonRequest('api/app/market/brief/all',"GET",null).then(function (data){
             
+         var content =null;
+        if(data.success){
 
-        data.content.page=Math.ceil(data.content.total/data.content.size);
+           data.content.page=Math.ceil(data.content.total/data.content.size); 
+   
+        } 
 
+           
              res.render('pages/admin_park', { dataSelect:data.content });
 
 	  }).catch(function (err){

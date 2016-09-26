@@ -120,22 +120,6 @@ gulp.task('js', function () {
 
 //合并 压缩组建js文件
 
-// gulp.task('seacomponents', function () {
-//     gulp.src(['public/js_cmd/components/**/*.js'])
-//         .pipe(seajs(null,{except:['jquery']}))
-//         .pipe(concat('components.js'))
-//         .pipe(gulp.dest('dist/javascripts'))
-//         .pipe(rename({suffix: '.min'}))
-//         .pipe(uglify({
-//             mangle:{except:['require','exports','module','$']},
-//             compress:true
-//         }))
-      
-//         .pipe(gulp.dest('dist/javascripts/'))
-//         .pipe(rev.manifest())
-    
-//         .pipe(notify({message: 'js task ok'}));
-// })
 
 
 
