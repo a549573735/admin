@@ -513,17 +513,18 @@ exports.api_byProduct = function(req, res, next) {
 
       var name=encodeURI(req.body.name);
 
-
+ 
        var form={
               page:req.body.page||0,
               size:15
           }
         //POST /api/app/company/by/product/{name}
-      console.log(name)
+        console.log(form)
         api_services.commonRequest('api/app/company/by/product/'+name,'POST',form).then(function (dataSelect){
                  console.log(dataSelect)
-            
+              if(dataSelect.success){
                dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+              }
                res.json(dataSelect)
             
 

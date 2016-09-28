@@ -15,7 +15,7 @@ define(function (require, exports, module) {
 	         	modalMsg:{title:[],content:{content:[{}]}},
 
 	         	modalList:[],
-	         	page:'',
+	         	page:'0',
 	         	href:'',
 	         	name:'',
 	         	type:'',
@@ -40,13 +40,12 @@ define(function (require, exports, module) {
  					 var that=this;	
  					 this.href=href;
  					 this.name=name;
- 					 console.log(href)
-	 
+ 				
  					 $.post(href,{name:name,page:this.page}).then(function (data){
 
  					 		console.log(JSON.stringify(data))
  					 		if(data.success){
- 					 			that.page=data.content.page
+ 					 			that.page=data.content.page-1
 								that.modalList=data.content;
 								that.modalList.title=['公司名称','公司地址','联系方式','经营许可证','经营范围','许可证截止日期']
 								that.modalList.style=['10%','15%','10%','20%','auto','20%']
