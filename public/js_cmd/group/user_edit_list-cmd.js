@@ -30,7 +30,8 @@ define(function (require, exports, module) {
                           id:'',
                           roleSelect:function (){
                                   return   JSON.parse($('#role_select').val())
-                           }()
+                           }(),
+                          nowRole:'', 
                          
                           
                          },
@@ -81,6 +82,7 @@ define(function (require, exports, module) {
                              
                                $('.model-belongId').val(belongId);
                                $('.model-type').val(type);
+                               this.nowRole=$(event.target).attr('data-roleId');
                               
                          },putUser:function (){
                                 var that=this;

@@ -263,8 +263,6 @@ exports.details = function(req, res, next) {
                          req.session.user.content.companyName=dataSelect.content.name;
                          data.data.content=dataSelect.content;
 
-
-                       
                             // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
@@ -300,7 +298,7 @@ exports.details = function(req, res, next) {
                     data.data.content.content.forEach(function (item){
                                       for (var name in item ){
                                           if(item[name]==null)item[name]="";
-                                           item[name]+=''
+                                           item[name]+=' '
                                       }   
                     })   
                    if(req.query.api=='true'){
@@ -327,7 +325,7 @@ exports.details = function(req, res, next) {
               data.data.content.content.forEach(function (item){
                                       for (var name in item ){
                                           if(item[name]==null)item[name]="";
-                                           item[name]+=''
+                                           item[name]+=' '
                                       }   
                 })   
                         
@@ -388,7 +386,7 @@ exports.details = function(req, res, next) {
                    data.data.content.content.forEach(function (item){
                             for (var name in item ){
                                 if(item[name]==null)item[name]="";
-                                 item[name]+=''
+                                 item[name]+=' '
                             }   
                     })   
                         
@@ -419,7 +417,7 @@ exports.details = function(req, res, next) {
                         data.data.content.content.forEach(function (item){
                             for (var name in item ){
                                 if(item[name]==null)item[name]="";
-                                 item[name]+=''
+                                 item[name]+=' '
                             }   
                          })   
                     
@@ -438,7 +436,10 @@ exports.details = function(req, res, next) {
        data.btnlist[6].active=true;
        data.type='search';
        api_services.commonRequest('api/app/company/'+id+'/provider/aptitude/list','POST',form).then(function (dataSelect){
+
+                if(dataSelect.success){
                      dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+                }
                      console.log(dataSelect.content)
                       tools.Interface_company({title:['供应商姓名','供应商地址','联系方式','经营许可证','经营范围','许可证截止日期'],
                                          style: ['15%','15%','10%','20%','auto','20%']},
@@ -446,10 +447,12 @@ exports.details = function(req, res, next) {
                                          dataSelect
                                       )
                           data.data.content.content.forEach(function (item){
-                            for (var name in item ){
-                                 item[name]+=''
-                            }   
+                              for (var name in item ){
+                                   item[name]+=' '
+                              }   
                           })   
+
+                          console.log(data.data.content.content)
 
                          data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                        
@@ -480,7 +483,7 @@ exports.details = function(req, res, next) {
                         data.data.content.content.forEach(function (item){
                               for (var name in item ){
                                   if(item[name]==null)item[name]="";
-                                   item[name]+=''
+                                   item[name]+=' '
                               }   
                         })   
                        

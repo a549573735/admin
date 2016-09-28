@@ -19,7 +19,6 @@ define(function (require, exports, module) {
 	         	href:'',
 	         	name:'',
 	         	type:'',
-
 	         },
 	         methods:{
 

@@ -232,7 +232,7 @@ label{font-weight: normal; color: #313131;}
 .bus-msg{ width: 100%; display: inline-block; height: 40px;  overflow:hidden; text-overflow:ellipsis !important; }
 
 .product_name{ position: relative; display: inline-block; }
-.hover_table{ width: 100px; height: 35px; line-height: 35px;  position: absolute;  border-radius:10px;right: -120px;top: -10px; background: rgba(255,255,255,0.5); box-shadow: 0px 1px 5px 2px rgba(0,0,0,.5); z-index: -1; opacity: 0; }
+.hover_table{ width: 100px; height: 35px; line-height: 35px;  position: absolute;  border-radius:10px;right: -120px;top: -10px; background: rgba(255,255,255,0.5); box-shadow: 0px 1px 5px 2px rgba(0,0,0,.5);  opacity: 0; }
 .product_name:hover .hover_table{ opacity: 1; z-index: 1; }
 .v-modal-text{ font-size: 16px; line-height: 1.6; }
 
