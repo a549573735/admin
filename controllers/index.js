@@ -494,8 +494,10 @@ exports.put_appointment_messages=function (req,res,next){
 
 
        api_services.commonRequest('api/app/appointment/confirm/'+form.id+'/'+form.status,'PUT',null).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+            
              console.log(dataSelect)
+       
+             
              res.json(dataSelect)
 
         }).catch(function (data){
