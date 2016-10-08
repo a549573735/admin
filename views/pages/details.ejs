@@ -38,7 +38,7 @@
                                       <form  id="search-form" class="form-horizontal clearfix" action="/organize/details"   method="get" >
                                          <div class="col-md-12">
                                              <div class="form-group clearfix">
-                                              <label class="col-md-2 o-pd v-fz" >产品名称:</label>
+                                              <label class="col-md-2 o-pd v-fz" ><%=searchName%>:</label>
                                               <div class="col-md-5 ">
                                                   <div class="col-md-8 o-pd">
                                                       <input class="form-control" type="text" id="example-if-password" name="name" placeholder="">
@@ -62,7 +62,8 @@
                               <form class="form-horizontal clearfix" id="date-form" action=""  method="get" >
                                   <div class="col-md-12">
                                       <div class="form-group clearfix">
-                                          <label class="col-md-2 o-pd v-fz" >检查时间:</label>
+
+                                          <label class="col-md-2 o-pd v-fz" ><%=searchName%>:</label>
                                           <div class="col-md-5">
                                               <div class="input-daterange input-group" data-date-format="mm/dd/yyyy">
                                                   <input class="form-control" type="text"  name="from" placeholder="开始">

@@ -33,8 +33,8 @@ define(function (require, exports, module) {
                                                         <td v-if="type==\'producer\'&&datalist.product" class="text-center">{{ item.name }}</td>\
                                                         <td v-if="!datalist.product" class="text-center">{{ item.name }}</td>\
                                                         <td v-if="item.address" class="text-center">{{ item.address }}</td>\
+                                                        <td v-if="item.measurement" class="text-center">{{ item.measurement }}</td>\
                                                         <td v-if="item.specification" class="text-center">{{ item.specification }}</td>\
-                                                        <td v-if="item.registerNo" class="text-center">{{ item.registerNo }}</td>\
                                                         <td v-if="item.phone" class="text-center">{{ item.phone }}</td>\
                                                         <td v-if="item.certificate" class="text-center">{{ item.certificate }}</td>\
                                                         <td v-if="item.businesses" class="text-center"><span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;"" @click="showMsg($event) " class="btn-link">详情</a></td>\

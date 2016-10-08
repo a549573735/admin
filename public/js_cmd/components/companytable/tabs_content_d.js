@@ -1,13 +1,12 @@
 define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
-
     Vue.component('table-content-d', {
         props: {
             mydata: [],
             datalist: []
         },
-        data:function (){
-          return {href:'',type:''}
+        data: function () {
+            return {href: '', type: ''}
         },
         template: '<div class="tab-pane">\
                                 <div class="row v-table">\
@@ -37,8 +36,8 @@ define(function (require, exports, module) {
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.product"  class="text-center">{{ item.product }}</td>\
                                                         <td v-if="item.operator"  class="text-center">{{ item.operator }}</td>\
-                                                        <td v-if="item.invoiceFile"  class="text-center"><a  @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile"  >单据</a></td>\
-                                                        <td v-if="item.purchaseBill"  class="text-center"><a  @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.purchaseBill"  >单据</a> </td>\
+                                                        <td v-if="item.invoiceFile"  class="text-center"><a v-if="item.invoiceFile!=\'  \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile" >单据 </a></td>\
+                                                        <td v-if="item.purchaseBill"  class="text-center"><a  v-if="item.purchaseBill!=\' \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.purchaseBill" >单据</a> </td>\
                                                         <td v-if="item.salesRep"  class="text-center">{{ item.salesRep }}</td>\
                                                         <td v-if="item.notes"  class="text-center">{{ item.notes }}</td>\
                                                     </tr>\
@@ -49,55 +48,55 @@ define(function (require, exports, module) {
                                 </div>\
                   </div>',
         methods: {
-           showMsg:function (event){
-                       event.target.bclick=!event.target.bclick   
-                       if(event.target.bclick){ 
-                         console.log($(event.target))
-                         $(event.target).siblings('span').css('overflow','inherit')
-                         $(event.target).html('收起')
-                        /*  备注弹框  */
-                        }else {
-                           $(event.target).siblings('span').css('overflow','hidden')
-                           $(event.target).html('详情')
-                        }
-                   },
+            showMsg: function (event) {
+                event.target.bclick = !event.target.bclick
+                if (event.target.bclick) {
+                    console.log($(event.target))
+                    $(event.target).siblings('span').css('overflow', 'inherit')
+                    $(event.target).html('收起')
+                    /*  备注弹框  */
+                } else {
+                    $(event.target).siblings('span').css('overflow', 'hidden')
+                    $(event.target).html('详情')
+                }
+            },
 
-            getModalMsg:function (event){
+            getModalMsg: function (event) {
 
-                  var _id=$.query.get('id');
-                  var view=$.query.get('view')
-                  var _name=$(event.target).text().trim().split(/\s+/g)[0]
+                var _id = $.query.get('id');
+                var view = $.query.get('view')
+                var _name = $(event.target).text().trim().split(/\s+/g)[0]
 
-                  console.log(_name,$(event.target).text().split(/\s+/g))
-                  var that=this;
-                      
+                console.log(_name, $(event.target).text().split(/\s+/g))
+                var that = this;
 
-                     if($(event.target).attr('data-productId')){
-                        view='product'
-                        this.href='/api/app/company/by/product';
-                        this.type='product'
 
-                     }else if($(event.target).attr('data-providerId')){
-                       this.href='/api/app/company/by/provider'; 
-                       view='provider'
-                        this.type='provider'
-                     }
+                if ($(event.target).attr('data-productId')) {
+                    view = 'product'
+                    this.href = '/api/app/company/by/product';
+                    this.type = 'product'
 
-                  $.get('/organize/details?view='+view+'&id='+_id+'&name='+_name+'&api=true').then(function (data){
-                      data.data.content.name=_name;
-                      data.data.href=that.href;
-                      data.data.type=that.type;
-                      that.$dispatch('send-modal-msg',data)
+                } else if ($(event.target).attr('data-providerId')) {
+                    this.href = '/api/app/company/by/provider';
+                    view = 'provider'
+                    this.type = 'provider'
+                }
 
-                  })
-            },showImg:function (event){
-                
-                var src=$(event.target).attr('data-src');
-                var img= src.split(',')[0]
+                $.get('/organize/details?view=' + view + '&id=' + _id + '&name=' + _name + '&api=true').then(function (data) {
+                    data.data.content.name = _name;
+                    data.data.href = that.href;
+                    data.data.type = that.type;
+                    that.$dispatch('send-modal-msg', data)
 
-                $('#v-com-img').attr('src','http://'+img)
+                })
+            }, showImg: function (event) {
 
-            }  
+                var src = $(event.target).attr('data-src');
+                var img = src.split(',')[0]
+
+                $('#v-com-img').attr('src', 'http://' + img)
+
+            }
 
 
         }
@@ -105,8 +104,4 @@ define(function (require, exports, module) {
     })
 
 
-
-
-
-
-})                                 
+})

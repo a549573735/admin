@@ -224,7 +224,6 @@ exports.details = function(req, res, next) {
                       details:false,
                       overflow:false,
                  },
-
                  btnlist:[
                   {href:"/organize/details?view=company&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'企业信息',active:false},
                   {href:"/organize/details?view=purchase&id="+id+"&market="+user.marketId+"&park="+user.parkId+"&belongId="+user.belongId,title:'采购信息',active:false},
@@ -238,7 +237,8 @@ exports.details = function(req, res, next) {
                 company:false,
                 type:'search',
                 pagelist:1,
-                companyName:''
+                companyName:'',
+                searchName:'',
            }
    var form={
       page:req.query.page||req.body.page||0,
@@ -301,6 +301,7 @@ exports.details = function(req, res, next) {
                                            item[name]+=' '
                                       }   
                     })   
+                   data.searchName="采购时间";
                    if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -328,6 +329,7 @@ exports.details = function(req, res, next) {
                                            item[name]+=' '
                                       }   
                 })   
+              data.searchName="销售时间";
                         
           data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                        
@@ -358,7 +360,7 @@ exports.details = function(req, res, next) {
                                  item[name]+='  '
                             }   
                 })   
-
+               data.searchName="开票日期";
                data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                          if(req.query.api=='true'){
                             res.json( data );
@@ -390,6 +392,7 @@ exports.details = function(req, res, next) {
                             }   
                     })   
                         
+                        data.searchName="客户名称";
                         data.data.type="provider" 
     
                        if(req.query.api=='true'){
@@ -420,7 +423,7 @@ exports.details = function(req, res, next) {
                                  item[name]+=' '
                             }   
                          })   
-                    
+                        data.searchName="生产商名称";
                         data.data.type="provider" 
                    
                         if(req.query.api=='true'){
@@ -457,7 +460,8 @@ exports.details = function(req, res, next) {
                          data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                        
                           // 给关联 设置路由 
-                        data.data.type="provider" 
+                        data.data.type="provider" ;
+                        data.searchName="供应商名称";
                         if(req.query.api=='true'){
                             res.json( data );
                          }else {
@@ -475,7 +479,7 @@ exports.details = function(req, res, next) {
                        dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
                       console.log(dataSelect.content)
                       tools.Interface_company({
-                                         title:['产品名称','生产地址','产品规格','经营范围','产品注册证号','注册证有效期'],
+                                         title:['产品名称','产品计量单位','产品规格','经营范围','产品注册证号','注册证有效期'],
                                          style: ['15%','20%','15%','10%','auto','20%']},
                                          data.data,
                                          dataSelect
@@ -490,6 +494,7 @@ exports.details = function(req, res, next) {
                         data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                       
                         data.data.type="product" 
+                        data.searchName="产品名称";
                         if(req.query.api=='true'){
                             res.json( data );
                          }else {
