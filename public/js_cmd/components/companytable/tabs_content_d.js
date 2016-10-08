@@ -30,12 +30,12 @@ define(function (require, exports, module) {
                                                         <td v-if="item.taxNo"  class="text-center">{{ item.taxNo }}</td>\
                                                         <td v-if="item.amount"  class="text-center">{{ item.amount }}</td>\
                                                         <td v-if="item.receiver"  class="text-center">{{ item.receiver }}</td>\
-                                                        <td v-if="datalist.product&&item.provider"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-providerId="item.providerId"   data-target="#modal-details"> {{ item.provider }} <div class="hover_table"> 查看资质</div>\
+                                                        <td v-if="datalist.product && item.provider"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-providerId="item.providerId"   data-target="#modal-details"> {{ item.provider }} <div class="hover_table"> 查看资质</div>\
                                                          </a></td>\
-                                                        <td v-if="!datalist.product"   class="text-center">{{ item.provider }}</td>\
-                                                        <td v-if="item.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-productId="item.productId"   data-target="#modal-details">{{ item.product }} <div class="hover_table"> 查看资质</div>\
+                                                        <td v-if="!datalist.product&&item.provider "   class="text-center">{{ item.provider }}</td>\
+                                                        <td v-if="datalist.product&&item.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-productId="item.productId"   data-target="#modal-details">{{ item.product }} <div class="hover_table"> 查看资质</div>\
                                                          </a></td>\
-                                                        <td v-if="!datalist.product"  class="text-center">{{ item.product }}</td>\
+                                                        <td v-if="!datalist.product&&item.product"  class="text-center">{{ item.product }}</td>\
                                                         <td v-if="item.operator"  class="text-center">{{ item.operator }}</td>\
                                                         <td v-if="item.invoiceFile"  class="text-center"><a  @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile"  >单据</a></td>\
                                                         <td v-if="item.purchaseBill"  class="text-center"><a  @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.purchaseBill"  >单据</a> </td>\
