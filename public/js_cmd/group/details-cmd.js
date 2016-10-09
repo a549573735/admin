@@ -130,16 +130,16 @@ define(function (require, exports, module) {
  					 var type=data.type.replace(/^\s+|\s+$/g,"");
 
  					 if(type=="SALE"){
-							this.invoice.title=data.title[1];
-							this.invoice.style=data.style[1];
-							this.invoice.content=data.data
-							this.invoice.type='采购'
-
- 					 }else {
- 					 	    this.invoice.title=data.title[0];
+							this.invoice.title=data.title[0];
 							this.invoice.style=data.style[0];
 							this.invoice.content=data.data
 							this.invoice.type='销售'
+
+ 					 }else {
+ 					 	    this.invoice.title=data.title[1];
+							this.invoice.style=data.style[1];
+							this.invoice.content=data.data
+							this.invoice.type='采购'
 						
  					 }
 
