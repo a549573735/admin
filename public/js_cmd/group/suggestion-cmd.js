@@ -82,7 +82,8 @@ define(function (require, exports, module) {
                               data.content.content.forEach(function (item){
 
                                       for (var name in item ){
-                                         item[name]+=''
+                                           if(item[name]==null)item[name]="";
+                                         item[name]+=' '
                                       }
 
                                  })   
