@@ -37,7 +37,7 @@ define(function (require, exports, module) {
                                    dataList.content.forEach(function (item){
 
                                         if(item.target==null){
-                                          item.target+=''
+                                          item.target+='  '
                                         }
 
                                    })
