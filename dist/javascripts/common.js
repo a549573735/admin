@@ -279,6 +279,7 @@ function getStyle(obj,attr){
  
          },function (){
                 var that=this;
+               clearTimeout(time)
                time=setTimeout(function (){
                       $(that).next().hide()
                 },1000)
@@ -290,6 +291,7 @@ function getStyle(obj,attr){
                 $(this).show()
          },function (){
                var that=this;
+               clearTimeout(time2)
                 time2=setTimeout(function (){
                       $(that).hide()
                 },1000)
