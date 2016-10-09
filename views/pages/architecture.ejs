@@ -22,7 +22,15 @@
           
                        <% for(var i=0;i<marketLeng;i++){%>                   
                            <li><div class="quju_sp1"><a href="/organize/park?id=<%=data.content[i].id%>"><%=data.content[i].name%></a></div></li>
+
                       <%}%>
+
+                       <% if(marketLeng<4 ) {%>
+                              <% for(var i=0;i<5-marketLeng;i++){%>     
+                              <li><div class="quju_sp1" style="background:#f4f4f4;"><a style="color:#666" >暂未开启</a></div></li>
+                                <%}%>
+                       <% }%>  
+
                     <% if(marketLeng>=4){%>
                     <li><div class="quju_sp1"><a href="/organize/market">更多市场所</a></div></li>
                     <%}%>
@@ -31,13 +39,25 @@
                        <li><div class="qiju_sp3">园区详情<div class="qiju_sp4">（<%=data.content[i].parkCount%>家）</div></li>
                     <%}%>
 
+                    <% if(marketLeng<4 ) {%>
+                              <% for(var i=0;i<5-marketLeng;i++){%>     
+                              <li><div class="quju_sp1" style="background:#f4f4f4;"><a style="color:#666" >暂未开启</a></div></li>
+                                <%}%>
+                    <% }%>  
+
                     <% if(marketLeng>=4){%>
                     <li><div class="qiju_sp3"><a href="/organize/park">园区详情<div class="qiju_sp4">（<%=parkAll%>家）</a></div></div></li>  
                       <%}%>
                      <% for(var i=0;i<marketLeng;i++){%>   
                      <li><div class="qiju_sp3">企业详情<div class="qiju_sp4">（<%=data.content[i].companyCount%>家）</div></div></li>
                       <%}%>
-                       <% if(marketLeng>=4){%>
+
+                      <% if(marketLeng<4 ) {%>
+                              <% for(var i=0;i<5-marketLeng;i++){%>     
+                              <li><div class="quju_sp1" style="background:#f4f4f4;"><a style="color:#666" >暂未开启</a></div></li>
+                                <%}%>
+                    <% }%>  
+                      <% if(marketLeng>=4){%>
                       <li><div class="qiju_sp3">企业详情<div class="qiju_sp4">（<%=companyAll%>家）</div></div></li>      
                       <%}%>                             
                   </ul>

@@ -198,6 +198,8 @@ exports.architecture = function(req, res, next) {
                             marketLeng=dataSelect.content.length
                           } 
 
+                       
+
                           
 
 
