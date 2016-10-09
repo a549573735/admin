@@ -10,11 +10,12 @@
               <% include ../common/modals.ejs %>
    
             <!--  测试 -->
-               <div class="block" >
+              <div class="block" >
 
        		 	  <table-btns :btnlist="<%= JSON.stringify(btnlist)%>"></table-btns> 
               <% if(company){%> 
                     <div class="tab-pane active" v-cloak>
+                            
                             <div class="col-md-12">
                                         <div class="col-md-12 o-pd qyspxq_title">企业信息</div>
                                         <div class="col-md-12 o-pd qyspxq_text">
@@ -28,11 +29,11 @@
                                             <span class="col-md-12 o-pd"><span class="details-title">经营许可证：</span><%=data.content.certificate%></span><br />
                                             <span class="details-title">许可证有效期：</span><%=data.content.expireDate%>
                                         </div>
-                                  </div>
-                   </div>
+                            </div>
+                    </div>
                <% } else {%>
-                     
-                     <% if(type=='search'){%>
+
+                    <% if(type=='search'){%>
 
                            <div class="v-tabs-date">
                                       <form  id="search-form" class="form-horizontal clearfix" action="/organize/details"   method="get" >
@@ -52,9 +53,9 @@
                                             </div>
                                          </div>
                                       </form>
-                            </div>
+                           </div>
 
-                           <table-content-s :datalist="<%= JSON.stringify(data)%>" ></table-content-s>  
+                           <table-content-s :datalist="<%= JSON.stringify(data)%>"></table-content-s>  
                       
                      <% }else { %>
 
@@ -81,7 +82,6 @@
                                   </div>
                               </form>
                        </div>
-
                        <table-content-d :datalist="<%= JSON.stringify(data)%>" ></table-content-d> 
 
                      <%} %>

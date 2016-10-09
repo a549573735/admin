@@ -318,7 +318,7 @@ exports.details = function(req, res, next) {
        api_services.commonRequest('api/app/company/'+id+'/sale/list','POST',form).then(function (dataSelect){
                dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
               console.log(dataSelect.content)
-             tools.Interface_company({title:['订货单号','销售日期','客户企业','供货名称','销售代表','备注'],
+              tools.Interface_company({title:['订货单号','销售日期','客户企业','供货名称','销售代表','备注'],
                                          style: ['20%','20%','20%','10%','10%','10%']},
                                          data.data,
                                          dataSelect
@@ -328,7 +328,7 @@ exports.details = function(req, res, next) {
                                           if(item[name]==null)item[name]="";
                                            item[name]+=' '
                                       }   
-                })   
+              })   
               data.searchName="销售时间";
                         
           data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
@@ -660,11 +660,41 @@ exports.api_add_company=function(req,res,next){
 
 
 
+exports.api_invoice=function(req,res,next){
+
+       var form=req.body;
+
+        ///api/app/company/by/invoice/{id}/{type}
+       var json={
+                title:[['类型','订货单号','销售日期','客户企业','供货名称','销售代表','备注'],['类型','采购订单号','采购日期','供应商','供货名称','经办人','采购随行单','备注']],
+                style:[['8%','20%','12%','20%','10%','10%','10%'],['8%','20%','12%','10%','10%','10%','20%','10%']],
+                type:form.type
+
+        }
+      
+        api_services.commonRequest('api/app/company/by/invoice/'+form.id+'/'+form.type,'POST',null).then(function (data){
+                 
+                  
+          
+                 data.content.forEach(function (item){
+                          for (var name in item ){
+                              if(item[name]==null)item[name]="";
+                               item[name]+=' '
+                           }   
+                 })   
+
+                 json.data=data.content
+                 console.log(json)
+
+                 res.json(json)
+            
+        }).catch(function (data){
 
 
+                 res.json(data)
+        })
 
-
-
+}
 
 
 

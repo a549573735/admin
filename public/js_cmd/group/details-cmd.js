@@ -6,19 +6,19 @@ define(function (require, exports, module) {
 	    require("/js_cmd/components/paging");
 	    require('/js_cmd/components/companytable/tabs_content_s')
 	    require('/js_cmd/components/companytable/tabs_content_d')
+	    require('/js_cmd/components/companytable/tabs_invoice')
 	    require('/js_cmd/components/companytable/tabs_btn')
 
 	    new Vue({
 	         'el':'#details',
 	         data:{
-
 	         	modalMsg:{title:[],content:{content:[{}]}},
-
 	         	modalList:[],
 	         	page:'0',
 	         	href:'',
 	         	name:'',
 	         	type:'',
+	         	invoice:{title:[],style:[],content:[],type:''}
 	         },
 	         methods:{
 
@@ -124,6 +124,28 @@ define(function (require, exports, module) {
  					 			alert(data.errMessage)
  					 		}
  					   })
+	         	},
+	         	"send-invoice":function (data){
+ 		
+ 					 var type=data.type.replace(/^\s+|\s+$/g,"");
+
+ 					 if(type=="SALE"){
+							this.invoice.title=data.title[1];
+							this.invoice.style=data.style[1];
+							this.invoice.content=data.data
+							this.invoice.type='采购'
+
+ 					 }else {
+ 					 	    this.invoice.title=data.title[0];
+							this.invoice.style=data.style[0];
+							this.invoice.content=data.data
+							this.invoice.type='销售'
+						
+ 					 }
+
+ 					 console.log(JSON.stringify(this.invoice))
+
+		   
 	         	}
 	         }
 	    });

@@ -108,8 +108,13 @@ var config=require('../utils/config')
     		
 
     app.get('/organize/company',User.signRequired,  Organize.organize_company); //区局进入 企业
+
+
     
     app.post('/api/organize/company/list',User.signRequired, Organize.api_organize_company_list)  
+
+
+    app.post('/api/company/invoice',User.signRequired,Organize.api_invoice)
 
   
 

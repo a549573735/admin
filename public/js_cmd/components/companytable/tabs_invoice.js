@@ -1,8 +1,7 @@
 define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
-    Vue.component('table-content-d', {
+    Vue.component('table-invoice', {
         props: {
-            mydata: [],
             datalist: []
         },
         data: function () {
@@ -19,8 +18,9 @@ define(function (require, exports, module) {
                                                   </tr>\
                                                   </thead>\
                                                   <tbody class="v-tabs-check">\
-                                                     <tr v-for="item in datalist.content.content">\
-                                                        <td v-if="datalist.product&&item.invoiceNo" class="text-center"><a class="btn-link product_name" @click="getModalInvoice($event)"  data-toggle="modal" :data-id="item.id" :data-type="item.type"  data-target="#modal-invoice"> {{ item.invoiceNo }} <div class="hover_table"> 查看详细</div>\
+                                                     <tr v-for="item in datalist.content">\
+                                                    	<td  class="text-center">{{ datalist.type }}</td>\
+                                                        <td v-if="datalist.product&&item.invoiceNo" class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-providerId="item.providerId"   data-target="#modal-details"> {{ item.invoiceNo }} <div class="hover_table"> 查看详细</div>\
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.invoiceNo" class="text-center">{{ item.invoiceNo }}</td>\
                                                         <td v-if="item.invoiceDate" class="text-center">{{ item.invoiceDate }}</td>\
@@ -98,22 +98,12 @@ define(function (require, exports, module) {
 
                 $('#v-com-img').attr('src', 'http://' + img)
 
-            },
-            getModalInvoice:function (event){
-
-                 var form={
-                    id:$(event.target).attr('data-id'),
-                    type:$(event.target).attr('data-type')
-                 }   
-                 var that=this; 
-                 $.post('/api/company/invoice',form).then(function (data) {
-                      
-                      that.$dispatch('send-invoice', data)  
-                 })
-                 //       
             }
+
+
         }
+
     })
+
+
 })
-
-

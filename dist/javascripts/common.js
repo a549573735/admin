@@ -227,7 +227,6 @@ function getStyle(obj,attr){
     Common.prototype.listDown=function (obj){
         this.obj.on('click',function (){
             
-
             if(  !$(this).next().hasClass('open')){
                 $(this).find('i').attr('class','icon-caret-down')
                 $(this).next().addClass('open')
@@ -259,23 +258,45 @@ function getStyle(obj,attr){
 
     Common.prototype.userMessage=function () {
 
-        this.uiInit.$lUserBtn.on('click',function (){
+        // this.uiInit.$lUserBtn.on('mouse',function (){
           
-            this.bclick= !this.bclick;
+        //     this.bclick= !this.bclick;
 
-           $.get('/user/verify').then(function (data){
-            console.log(data)
-                 $('.sm_dian').html(data.content.messageCount)
-           })     
+          
+
+        // })
+        var time=null;
+        var time2=null;
+
+        this.uiInit.$lUserBtn.hover(function (){
+                 var that=this;
+                 clearTimeout(time2)
+                 $.get('/user/verify').then(function (data){
+                            console.log(data)
+                                 $('.sm_dian').html(data.content.messageCount)
+                                  $(that).next().show()
+                })     
+ 
+         },function (){
+                var that=this;
+               time=setTimeout(function (){
+                      $(that).next().hide()
+                },1000)
+                 
+         })
+
+         $('#tongzhi').hover(function (){
+                clearTimeout(time)
+                $(this).show()
+         },function (){
+               var that=this;
+                time2=setTimeout(function (){
+                      $(that).hide()
+                },1000)
+         })
 
 
-           if(this.bclick){
-               $(this).next().show()
-           }else {
-               $(this).next().hide()
-           }
 
-        })
     }
 
     Common.prototype.inputDate=function () {
