@@ -36,9 +36,9 @@ define(function (require, exports, module) {
                                 if( dataList!=null){ 
                                    dataList.content.forEach(function (item){
 
-                                        if(item.target==null){
-                                          item.target+=''
-                                        }
+                                        if(item.target==null)item.target="";
+                                          item.target+='  '
+                                        
 
                                    })
                                  }    
@@ -77,9 +77,10 @@ define(function (require, exports, module) {
                                 data.content.content.forEach(function (item){
 
 
-                                      for (var name in item ){
-                                           item[name]+=''
-                                      }
+                                      for (var name in item )
+					      if(item[name]==null)item[name]="";
+                                           item[name]+='  '
+                                      
                                       
                                 })   
 

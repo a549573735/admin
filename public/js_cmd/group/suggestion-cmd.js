@@ -8,7 +8,7 @@ define(function (require, exports, module) {
                 data: {
 
                     dataList:{
-                           title:['企业名称','建议状态','建议内容','检查员','检查日期','备注'],
+                           title:['企业名称','建议状态','建议内容','检查员','建议日期','备注'],
                            content:function (){
                                      
                               var dataList=null;
@@ -24,7 +24,7 @@ define(function (require, exports, module) {
                                             data.content.content.forEach(function (item){
                                                 item.readFlag+=''
                                                 if(item.readDate==null){
-                                                   item.readDate='null'
+                                                   item.readDate=' '
                                                 }
                                       
                                                 
