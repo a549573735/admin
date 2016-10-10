@@ -9,7 +9,7 @@ define(function (require, exports, module) {
                 data: {
 
                     dataList:{
-                           title:['企业名称','年报状态','操作员','备注'],
+                           title:['企业名称','年报内容','操作员','备注'],
                            content:function (){
                               var dataList=null;
                                  $.ajax({
