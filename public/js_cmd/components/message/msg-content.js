@@ -6,9 +6,32 @@ define(function (require, exports, module) {
         data: function () {
             return {}
         },
+        computed:{
+            'msgContent':function (){
+
+                  if(this.datanow.type=='INTERVIEW'||this.datanow.type=='INSPECT'){
+                      this.datanow.period=this.datanow.period.replace(/^\s+|\s+$/g,'')
+                      switch(this.datanow.period){
+                            case '3':
+                            this.datanow.title='请贵司于三天内接受我单位'+this.datanow.titleName;
+                            break;
+                            this.datanow.title='请贵司于七天内接受我单位'+this.datanow.titleName;
+                            case '7':
+                            break;
+                            this.datanow.title='请贵司于十天内接受我单位'+this.datanow.titleName;
+                            case '10':
+                            break;
+                       }
+                 }
+                 console.log( JSON.stringify(this.datanow))
+                  return   this.datanow
+                 
+
+            }
+        },
         template: '<div v-if="datanow.show" class="row v-table-msg-c">\
                               <div class="col-md-12 col-lg-12 clearfix">\
-                                   <h5 class="text-left">{{datanow.title}}</h5>\
+                                   <h5 class="text-left">{{msgContent.title}}</h5>\
                                   <div class="col-md-8 col-md-offset-1 v-msg-box">\
                                        <p class="v-msg-content">\
                                           {{datanow.content}}\

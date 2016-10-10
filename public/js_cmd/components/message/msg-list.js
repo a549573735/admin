@@ -21,16 +21,16 @@ define(function (require, exports, module) {
                                     <tbody>\
                                     <tr v-for="item in datalist.content.content" >\
                                         <td class="text-center"><span class="v-core"></span></td>\
-                                        <td class="text-left v-cont"  :class="!item.isRead?item.class:\'\'" >[{{item.title}}] <a href="javascript:;" :data-isRead="item.isRead+\'\'"  @click="notify($event)" :data-type="item.type"  :data-msg-id="item.message.id"   :data-id="item.id"   > {{item.message.user}}</a></td>\
-                                        <td class="text-left " ><span class="v-msg-content-n">{{item.message.suggestion||item.message.suggestion}}</span> <span class="v-msg-content-r">{{item.message.from}}</span></td>\
-                                        <td class="text-center">\
+                                        <td class="text-left v-cont"   @click="notify($event)" :data-isRead="item.isRead+\'\'" :data-type="item.type"  :data-period="item.message.period" :data-titleName="item.title"  :data-msg-id="item.message.id"   :data-id="item.id"    :class="!item.isRead?item.class:\'\'" >[{{item.title}}] <a href="javascript:;" > {{item.message.user}}</a></td>\
+                                        <td class="text-left " ><span class="v-msg-content-n">{{item.message.suggestion||item.message.notes}}</span> <span class="v-msg-content-r">{{item.message.from}}</span></td>\
+                                        <td class="text-center v-msg-date">\
                                             {{item.createDate}}\
                                         </td>\
                                     </tr>\
                                     </tbody>\
                                 </table>\
                             <div>\
-                            <msg-pages :pagelist="datalist.content.page||1"></msg-pages> {{aaa}}\
+                            <msg-pages :pagelist="datalist.content.page||1"></msg-pages>\
                      <div>\
                 <div>'        
         ,
@@ -41,15 +41,17 @@ define(function (require, exports, module) {
           notify: function (event) {
              $('.confirm-msg').html('')
              var msg={
-                title:$(event.target).html(),
-                content:$(event.target).parent().next().find('.v-msg-content-n').html(),
-                date:$(event.target).parent().next().next().html(),
-                company:$(event.target).parent().next().find('.v-msg-content-r').html(),
+                title:$(event.target).find('a').html(),
+                content:$(event.target).parent().find('.v-msg-content-n').html(),
+                date:$(event.target).parent().find('.v-msg-date').html(),
+                company:$(event.target).parent().find('.v-msg-content-r').html(),
                 id:$(event.target).attr('data-id'),
                 type:$(event.target).attr('data-type'),
                 msg_id:$(event.target).attr('data-msg-id'),
                 show:true,
-                isRead:$(event.target).attr('data-isRead')
+                isRead:$(event.target).attr('data-isRead'),
+                period:$(event.target).attr('data-period'),
+                titleName:$(event.target).attr('data-titleName')
             }
 
               var that=this;

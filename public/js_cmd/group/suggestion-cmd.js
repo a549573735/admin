@@ -8,7 +8,7 @@ define(function (require, exports, module) {
                 data: {
 
                     dataList:{
-                           title:['企业名称','建议状态','建议内容','检查员','建议日期','备注'],
+                           title:['企业名称','建议状态','建议内容','检查员','建议日期'],
                            content:function (){
                                      
                               var dataList=null;
@@ -53,10 +53,12 @@ define(function (require, exports, module) {
 
                                  return dataList     
                             }(),
-                           style:['25%','100px','auto','100px','15%','10%'],
+                           style:['25%','100px','auto','20%','20%'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],
+                           notes:true
+
 
                     }
                    

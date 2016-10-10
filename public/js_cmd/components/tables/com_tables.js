@@ -62,7 +62,7 @@ define(function (require, exports, module) {
                             <td v-if="item.user" class="text-center">{{ item.user }}</td>\
                             <td v-if="item.inspectDate " class="text-center">{{ item.inspectDate }}</td>\
                             <td v-if="item.readDate" class="text-center">{{ item.readDate===\'null\'?\'null\':item.readDate}}</td>\
-                            <td v-if="item.notes " class="text-center">{{ item.notes }}</td>\
+                            <td v-if="!datalist.notes&&item.notes " class="text-center">{{ item.notes }}</td>\
                         </tr>\
                       </tbody>\
                   </table>', 
