@@ -3,7 +3,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/message/msg-paging')
     Vue.component('v-msg-list', {
         data:function (){
-            return { type:'',top:['行政建议','行政约谈','网络检查','预约'],messgaeList:''}
+            return { type:'',top:['行政建议','行政约谈','网络检查','预约检查'],messgaeList:''}
         },
 
         template:'<div class="row v-table-msg" >\
