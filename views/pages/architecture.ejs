@@ -49,7 +49,7 @@
                     <li><div class="qiju_sp3"><a href="/organize/park">园区详情<div class="qiju_sp4">（<%=parkAll%>家）</a></div></div></li>  
                       <%}%>
                      <% for(var i=0;i<marketLeng;i++){%>   
-                     <li><div class="qiju_sp3"><a href="organize/company?id=ROOT&market=&park=">企业详情</a><div class="qiju_sp4"><a href="organize/company?id=ROOT&market=&park=">（<%=data.content[i].companyCount%>家）</a></div></div></li>
+                     <li><div class="qiju_sp3"><a href="/organize/company?id=ROOT&market=&park=">企业详情</a><div class="qiju_sp4"><a href="/organize/company?id=ROOT&market=&park=">（<%=data.content[i].companyCount%>家）</a></div></div></li>
                       <%}%>
 
                       <% if(marketLeng<4 ) {%>
@@ -58,7 +58,7 @@
                                 <%}%>
                     <% }%>  
                       <% if(marketLeng>=4){%>
-                      <li><div class="qiju_sp3"><a href="organize/company?id=ROOT&market=&park=">企业详情</a><div class="qiju_sp4"><a href="organize/company?id=ROOT&market=&park=">（<%=companyAll%>家）</a></div></div></li>      
+                      <li><div class="qiju_sp3"><a href="/organize/company?id=ROOT&market=&park=">企业详情</a><div class="qiju_sp4"><a href="/organize/company?id=ROOT&market=&park=">（<%=companyAll%>家）</a></div></div></li>      
                       <%}%>                             
                   </ul>
                 </div>
