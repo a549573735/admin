@@ -9,7 +9,7 @@ define(function (require, exports, module) {
         computed:{
             'msgContent':function (){
 
-                  if(this.datanow.type=='INTERVIEW'||this.datanow.type=='INSPECT'){
+                  if(this.datanow.type=='INTERVIEW'){
                       if(this.datanow.period){
                         this.datanow.period=this.datanow.period.replace(/^\s+|\s+$/g,'')
                       }
@@ -25,6 +25,13 @@ define(function (require, exports, module) {
                             break;
                        }
                  }
+                 if(this.datanow.type=='APPOINTMENT'){
+
+                      this.datanow.title='请贵司于七天内接受我单位'+this.datanow.titleName;
+                      
+                 } 
+
+
                  console.log( JSON.stringify(this.datanow))
                   return   this.datanow
                  
@@ -36,23 +43,23 @@ define(function (require, exports, module) {
                                    <h5 class="text-left">{{msgContent.title}}</h5>\
                                   <div class="col-md-8 col-md-offset-1 v-msg-box">\
                                        <p class="v-msg-content">\
-                                          {{datanow.content}}\
+                                          {{msgContent.content}}\
                                        </p>\
                                   </div>\
                                   <div class="col-md-12  ">\
                                        <p class="v-msg-f pull-right col-md-3 text-center">\
-                                           {{datanow.company}}<br>\
-                                           {{datanow.date}}\
+                                           {{msgContent.company}}<br>\
+                                           {{msgContent.date}}\
                                        </p>\
                                   </div>\
                               </div>\
                               <div class="col-lg-12  col-md-12 v-msg-f-btn">\
                                 <template v-if="datanow.type==\'INTERVIEW\'||datanow.type==\'APPOINTMENT\'">\
                                   <div class="col-md-2"  >\
-                                    <button type="button"  @click="Confirm($event)" :data-id="datanow.id" :data-msg-id="datanow.msg_id" :data-type="datanow.type" status="CONFIRMED"  class="btn btn-primary btn-block">同意</button>\
+                                    <button type="button"  @click="Confirm($event)" :data-id="msgContent.id" :data-msg-id="msgContent.msg_id" :data-type="msgContent.type" status="CONFIRMED"  class="btn btn-primary btn-block">同意</button>\
                                   </div>\
                                   <div class="col-md-2">\
-                                    <button type="button"  @click="Confirm($event)" :data-id="datanow.id"  :data-msg-id="datanow.msg_id"  :data-type="datanow.type" status="NEGOTIATION"  class="btn btn-primary  btn-block">协商</button>\
+                                    <button type="button"  @click="Confirm($event)" :data-id="msgContent.id"  :data-msg-id="msgContent.msg_id"  :data-type="msgContent.type" status="NEGOTIATION"  class="btn btn-primary  btn-block">协商</button>\
                                   </div>\
                                   <p class="col-md-2 confirm-msg" style="padding-top:7px;font-size:16px;"> </p>\
                                 </template>\

@@ -3,7 +3,7 @@ define(function (require, exports, module) {
     require('/js_cmd/components/message/msg-paging')
     Vue.component('v-msg-list', {
         data:function (){
-            return { type:'',top:['行政建议','行政约谈','网络检查','预约'],messgaeList:''}
+            return { type:'',top:['行政建议','行政约谈','网络检查','预约检查'],messgaeList:''}
         },
 
         template:'<div class="row v-table-msg" >\
@@ -21,7 +21,7 @@ define(function (require, exports, module) {
                                     <tbody>\
                                     <tr v-for="item in datalist.content.content" >\
                                         <td class="text-center"><span class="v-core"></span></td>\
-                                        <td class="text-left v-cont"   @click="notify($event)" :data-isRead="item.isRead+\'\'" :data-type="item.type"  :data-period="item.message.period" :data-titleName="item.title"  :data-msg-id="item.message.id"   :data-id="item.id"    :class="!item.isRead?item.class:\'\'" >[{{item.title}}] <span> {{item.message.user}}</span></td>\
+                                        <td class="text-left v-cont"   @click="notify($event)" :data-isRead="item.isRead+\'\'" :data-type="item.type"  :data-period="item.message.period" :data-inspectDate="item.inspectDate" :data-titleName="item.title"  :data-msg-id="item.message.id"   :data-id="item.id"    :class="!item.isRead?item.class:\'\'" >[{{item.title}}]  <a >{{item.message.user}}</a></td>\
                                         <td class="text-left " ><span class="v-msg-content-n">{{item.message.suggestion||item.message.notes}}</span> <span class="v-msg-content-r">{{item.message.from}}</span></td>\
                                         <td class="text-center v-msg-date">\
                                             {{item.createDate}}\
@@ -39,6 +39,7 @@ define(function (require, exports, module) {
     methods:{     
         
           notify: function (event) {
+             if(event.target.tagName=='A')return
              $('.confirm-msg').html('')
              var msg={
                 title:$(event.target).find('a').html(),
@@ -51,7 +52,8 @@ define(function (require, exports, module) {
                 show:true,
                 isRead:$(event.target).attr('data-isRead'),
                 period:$(event.target).attr('data-period'),
-                titleName:$(event.target).attr('data-titleName')
+                titleName:$(event.target).attr('data-titleName'),
+                inspectDate:$(event.target).attr('data-inspectDate')
             }
 
               var that=this;
