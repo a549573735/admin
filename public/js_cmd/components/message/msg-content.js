@@ -10,7 +10,9 @@ define(function (require, exports, module) {
             'msgContent':function (){
 
                   if(this.datanow.type=='INTERVIEW'||this.datanow.type=='INSPECT'){
-                      this.datanow.period=this.datanow.period.replace(/^\s+|\s+$/g,'')
+                      if(this.datanow.period){
+                        this.datanow.period=this.datanow.period.replace(/^\s+|\s+$/g,'')
+                      }
                       switch(this.datanow.period){
                             case '3':
                             this.datanow.title='请贵司于三天内接受我单位'+this.datanow.titleName;
