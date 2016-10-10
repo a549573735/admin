@@ -10,7 +10,7 @@ define(function (require, exports, module) {
          	return {
          	     msglist:function (){
                    var msgList=null
-                   var top=['行政建议','行政约谈','网络检查','预约']
+                   var top=['行政建议','行政约谈','网络检查','预约检查']
                    $.ajax({
                             url: '/user/messages/list',    //请求的url地址
                             dataType: "json",   //返回格式为json
@@ -18,7 +18,6 @@ define(function (require, exports, module) {
                             type: "GET",   //请求方式
                             success: function(data) {
                                 //请求成功时处理
-                      
                                 if(data.success){
                                
                                   msgList=data

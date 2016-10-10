@@ -11,26 +11,24 @@ define(function (require, exports, module) {
 
                   if(this.datanow.type=='INTERVIEW'){
                       if(this.datanow.period){
-                        this.datanow.period=this.datanow.period.replace(/^\s+|\s+$/g,'')
+                        this.datanow.period=this.datanow.period.replace(/^\s+|\s+$/g,'').toString()
                       }
                       switch(this.datanow.period){
                             case '3':
                             this.datanow.title='请贵司于三天内接受我单位'+this.datanow.titleName;
                             break;
-                            this.datanow.title='请贵司于七天内接受我单位'+this.datanow.titleName;
                             case '7':
+                             this.datanow.title='请贵司于七天内接受我单位'+this.datanow.titleName;
                             break;
-                            this.datanow.title='请贵司于十天内接受我单位'+this.datanow.titleName;
                             case '10':
+                             this.datanow.title='请贵司于十天内接受我单位'+this.datanow.titleName;
                             break;
-                       }
+                      }
                  }
                  if(this.datanow.type=='APPOINTMENT'){
+                      this.datanow.title='请贵司于'+this.datanow.inspectDate+'接受我单位'+this.datanow.titleName;
 
-                      this.datanow.title='请贵司于七天内接受我单位'+this.datanow.titleName;
-                      
                  } 
-
 
                  console.log( JSON.stringify(this.datanow))
                   return   this.datanow
