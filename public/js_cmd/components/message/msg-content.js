@@ -15,7 +15,7 @@ define(function (require, exports, module) {
                                        </p>\
                                   </div>\
                                   <div class="col-md-12  ">\
-                                       <p class="v-msg-f pull-right col-md-2">\
+                                       <p class="v-msg-f pull-right col-md-3 text-center">\
                                            {{datanow.company}}<br>\
                                            {{datanow.date}}\
                                        </p>\
@@ -29,10 +29,10 @@ define(function (require, exports, module) {
                                   <div class="col-md-2">\
                                     <button type="button"  @click="Confirm($event)" :data-id="datanow.id"  :data-msg-id="datanow.msg_id"  :data-type="datanow.type" status="NEGOTIATION"  class="btn btn-primary  btn-block">协商</button>\
                                   </div>\
+                                  <p class="col-md-2 confirm-msg" style="padding-top:7px;font-size:16px;"> </p>\
                                 </template>\
                               </div>\
                                <div class="col-lg-12  col-md-12 v-msg-f-btn text-center">\
-                                <p class="confirm-msg" style="padding-top:50px;font-size:16px;"> </p>\
                                </div>\
                         </div>\
                 ',

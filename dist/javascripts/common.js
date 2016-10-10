@@ -258,13 +258,6 @@ function getStyle(obj,attr){
 
     Common.prototype.userMessage=function () {
 
-        // this.uiInit.$lUserBtn.on('mouse',function (){
-          
-        //     this.bclick= !this.bclick;
-
-          
-
-        // })
         var time=null;
         var time2=null;
 
@@ -273,6 +266,7 @@ function getStyle(obj,attr){
                  clearTimeout(time2)
                  $.get('/user/verify').then(function (data){
                             console.log(data)
+                            data.content.messageCount=data.content.messageCount<0?'0':data.content.messageCount
                                  $('.sm_dian').html(data.content.messageCount)
                                   $(that).next().show()
                 })     

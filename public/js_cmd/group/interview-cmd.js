@@ -53,7 +53,7 @@ define(function (require, exports, module) {
                               "size":15,
                               "type":$('#selectType').val(),
                               "market":$('#select_market').val(),
-                              "company":$('input[name=company]').val(),
+                              "company":$('input[name=companyName]').val(),
                               "park":$('#select_park').val(),
                               "from":$('input[name=from]').val(),
                               "to":$('input[name=to]').val()

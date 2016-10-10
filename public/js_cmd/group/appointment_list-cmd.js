@@ -18,7 +18,7 @@ define(function (require, exports, module) {
                                     type: "GET",   //请求方式
                                     success: function(data) {
                                         //请求成功时处理
-                                  console.log(JSON.stringify(data))
+                                
                                         if(data.success){
                                         
                                             dataList=data.content
@@ -64,7 +64,7 @@ define(function (require, exports, module) {
                               "size":15,
                               "type":$('#selectType').val(),
                               "market":$('#select_market').val(),
-                              "company":$('input[name=company]').val(),
+                              "company":$('input[name=companyName]').val(),
                               "park":$('#select_park').val(),
                               "from":$('input[name=from]').val(),
                               "to":$('input[name=to]').val()

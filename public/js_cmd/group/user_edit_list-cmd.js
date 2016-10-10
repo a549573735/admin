@@ -17,7 +17,7 @@ define(function (require, exports, module) {
                                     type: "GET",   //请求方式
                                     success: function(data) {
                                        
-                                       console.log(JSON.stringify(data))
+                           
                                        if(data.success){
                                            list=data.content
                                          }else {

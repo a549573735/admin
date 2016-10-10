@@ -18,7 +18,7 @@ define(function (require, exports, module) {
                             type: "GET",   //请求方式
                             success: function(data) {
                                 //请求成功时处理
-                          console.log(data)
+                      
                                 if(data.success){
                                
                                   msgList=data

@@ -18,12 +18,12 @@ define(function (require, exports, module) {
                                     type: "GET",   //请求方式
                                     success: function(data) {
                                         //请求成功时处理
-                                  console.log(JSON.stringify(data))
+                          
                                         if(data.success){
                                        
                                             dataList=data.content
                                         }else {
-                                            console.log(data.errMessage)
+                                       
                                         }
                                     },
                                     error: function(err) {
@@ -32,7 +32,7 @@ define(function (require, exports, module) {
                                     }
 
                                 });
-                                console.log(dataList)
+                     
                                 if( dataList!=null){ 
                                    dataList.content.forEach(function (item){
 
@@ -64,7 +64,7 @@ define(function (require, exports, module) {
                               "size":15,
                               "type":$('#selectType').val(),
                               "market":$('#select_market').val(),
-                              "company":$('input[name=company]').val(),
+                              "company":$('input[name=companyName]').val(),
                               "park":$('#select_park').val(),
                               "from":$('input[name=from]').val(),
                               "to":$('input[name=to]').val()
@@ -73,18 +73,16 @@ define(function (require, exports, module) {
                                 
                           $.get('/api/inspect/list',form).then(function (data){
 
-                                console.log(JSON.stringify(data))
+                                
                                 data.content.content.forEach(function (item){
 
-
                                       for (var name in item )
-					      if(item[name]==null)item[name]="";
-                                           item[name]+='  '
-                                      
-                                      
+					                            if(item[name]==null)item[name]="";
+                                        item[name]+='  '
+                                                                            
                                 })   
 
-                              that.dataList.content=data.content
+                                that.dataList.content=data.content
 
                           })   
                    }

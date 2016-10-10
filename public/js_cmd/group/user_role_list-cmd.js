@@ -19,10 +19,9 @@ define(function (require, exports, module) {
                                     data:{belongId:JSON.parse($('#user_role').val()).belongId},
                                     type: "POST",   //请求方式
                                     success: function(data) {
-                                       
-                                       console.log(JSON.stringify(data))
+                                     
                                        if(data.success){
-                                        console.log(data.content)
+                                 
                                            list=data.content
                                          }else {
                                             alert(data.errMessage)

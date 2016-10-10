@@ -43,7 +43,7 @@ define(function (require, exports, module) {
  				
  					 $.post(href,{name:name,page:this.page}).then(function (data){
 
- 					 		console.log(JSON.stringify(data))
+ 			
  					 		if(data.success){
  					 			that.page=data.content.page-1
 								that.modalList=data.content;
@@ -113,7 +113,7 @@ define(function (require, exports, module) {
 
 	         			 $.post(this.href,{name:this.name,page:this.page}).then(function (data){
 
- 					 		console.log(JSON.stringify(data))
+ 					 
  					 		if(data.success){
  					 			that.page=data.content.page
 								that.modalList=data.content;

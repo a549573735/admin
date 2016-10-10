@@ -9,9 +9,13 @@ define(function (require, exports, module) {
         computed:{
 
             "newData":function (){
+
                  if(this.datalist.content!=null){
                     this.datalist.content.content.forEach(function (item){
-
+                           if(item.status){
+                              item.status=item.status.replace(/^\s+|\s+$/g,'')
+                            }
+                       
                           switch (item.status){
                               case  'WAITING':
                                 item.status="等待"

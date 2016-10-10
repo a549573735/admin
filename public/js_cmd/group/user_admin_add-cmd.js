@@ -73,20 +73,13 @@ define(function (require, exports, module) {
                                $.post('/user/admin/add',form).then(function (data){
                                       
                                       if(data.success==false||data.state==false){
-                                        alert(data.msg)
+                                        alert('请选择人员角色！')
                                       }else {
                                          window.location.href='/user/edit/list';
                                       }
                                })
-                         },
-                         getSelect:function (){
-
-                            
-
-
-
-
                          }
+                    
                      },
                       events:{
                             'send-radio': function (msg) {

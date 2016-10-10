@@ -261,7 +261,7 @@ exports.api_suggestion=function (req,res,next){
 
     api_services.commonRequest('api/app/suggestion/list','POST',form).then(function (dataSelect){
              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
-             console.log(dataSelect)
+             console.log(dataSelect.content)
              res.json(dataSelect)
 
     }).catch(function (data){

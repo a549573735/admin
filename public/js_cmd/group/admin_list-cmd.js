@@ -44,7 +44,7 @@ define(function (require, exports, module) {
                 $.post('/admin/company',form).then(function (data){
                   data.detals=true
                   that.tablsData = data.data
-                  console.log(JSON.stringify(data))
+                  
                 })
 
           },createCompany:function(event){

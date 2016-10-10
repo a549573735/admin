@@ -539,6 +539,7 @@ exports.get_user_messages = function (req,res,next){
                 if(data.success){
                  data.content.page=Math.ceil(data.content.total/data.content.size);
                }
+               console.log(data.content.content)
       
                res.json(data)
 
@@ -560,7 +561,9 @@ exports.read_user_messages = function (req,res,next){
 
        
        api_services.commonRequest('api/app/user/message/'+id+'/read',"POST",null).then(function (data){
-                  
+                    
+         
+
                   res.json(data)
 
        }).catch(function (err){

@@ -43,8 +43,8 @@
                                 </td>
                                 <td class="text-center displayName">{{item.displayName}}</td>
                                 <td class="text-center username">{{item.username}}</td>
-                                <td class="text-center phone">{{item.phone||'null'}}</td>
-                                <td class="text-center mail">{{item.mail||'null'}}</td>
+                                <td class="text-center phone">{{item.phone||' '}}</td>
+                                <td class="text-center mail">{{item.mail||' '}}</td>
                                 <td class="text-center">{{item.createDate}}</td>
                                 <td class="text-center">{{item.roleName}}</td>
                                 <td class="text-center"><div class="bei-zhu"><button class=" btn btn-md btn-primary btn-block" :data-id="item.id" :data-belongId="item.belongId" :data-roleId="item.roleId"  data-toggle="modal" @click="getMsg($event)" :data-type="item.type" data-target="#modal-fromuser" >修改</button></div>

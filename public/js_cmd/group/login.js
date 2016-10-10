@@ -94,14 +94,16 @@ define(function (require, exports, module) {
         alert(check.message)
         return false
       }
-      common.countdown($(this))
+      var that=this;
+     
 
 	    var username=$('input[name=restUsername]').val();
 	 
 	    $.post('/api/app/code/by/name/',{name:username}).then(function (data){
-
+         
 	    	   console.log(data.content)
           if(data.success){    
+             common.countdown($(that))
 	    		   $('input[name=rest-code]').val(data.content)
           }else {
               alert(data.errMessage)
