@@ -12,16 +12,9 @@ var api_services=require('../models/api_services');
 
 exports.home=function(req,res,next){
      
-     if(req.session.user){
-     
-          res.redirect('/organize/architecture');
-     
-     }else {
-          res.redirect('/login');
-     }
+      res.redirect('/login');
      
 }
-
 
 
 exports.publicity = function(req, res, next) {
