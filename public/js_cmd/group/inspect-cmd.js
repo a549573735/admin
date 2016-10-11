@@ -7,7 +7,7 @@ define(function (require, exports, module) {
                 el: '#inspect',
                 data: {
                     dataList:{
-                           title:['企业名称','检查状态','检查员','检查日期','备注'],
+                           title:['企业名称','检查状态','检查员','检查时间','备注'],
                            content:function (){
                                      
                               var dataList=null;
