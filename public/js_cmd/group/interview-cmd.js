@@ -8,7 +8,7 @@ define(function (require, exports, module) {
                 data: {
 
                     dataList:{
-                           title:['企业/园区名称','约谈状态','发送时间','时间类别','接受日期','约谈员','备注'],
+                           title:['企业/园区名称','约谈状态','发送q日期','时间类别','接受时间','约谈员','备注'],
                            content:function (){
                                      
                               var dataList=null;
