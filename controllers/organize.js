@@ -331,7 +331,7 @@ exports.details = function(req, res, next) {
                                            item[name]+=' '
                                       }   
               })   
-              data.searchName="销售时间";
+              data.searchName="销售日期";
                         
           data.data.product=req.session.user.content.type!="COMPANY"?true:false   // 控制 权限 公司不加关联
                        
