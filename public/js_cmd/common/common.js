@@ -128,18 +128,23 @@
 
     }
 
-    Common.prototype.inputDate=function () {
+     Common.prototype.inputDate=function () {
+          var that=this;
+          this.uiInit.$lDate.datepicker({
+              language: 'zh-CN',
+              weekStart: 1,
+              autoclose: true,
+              todayHighlight: true,
+              format: 'yyyy-mm-dd',   //yyyy-mm-dd
+              // endDate:that.setForm().to ,
+              // startDate:that.setForm().from
 
-        this.uiInit.$lDate.datepicker({
-            language: 'zh-CN',
-            weekStart: 1,
-            autoclose: true,
-            todayHighlight: true,
-            format: 'yyyy-mm-dd'   //yyyy-mm-dd
-
-        })
+          })
+          $('input[name=from]').datepicker("setDate",that.setForm().from)
+          $('input[name=to]').datepicker("setDate",that.setForm().to)
 
     }
+    
     Common.prototype.minModal=function () {
 
          this.uiInit.$lMinBtn.on('click',function (){ 
