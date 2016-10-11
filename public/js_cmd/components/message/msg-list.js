@@ -63,7 +63,7 @@ define(function (require, exports, module) {
                         if(data.success){
                       
                           msg.isRead='true'
-                          $(event.target).attr('data-isRead',true).parent().attr('class','text-left v-cont')
+                          $(event.target).attr('data-isRead',true).attr('class','text-left v-cont')
                         }else {
                           
                         }
