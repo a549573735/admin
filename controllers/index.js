@@ -38,10 +38,9 @@ exports.publicity = function(req, res, next) {
 
     api_services.commonRequest('api/app/company/list/new','POST',form).then(function (dataSelect){
             
-             console.log(dataSelect)
-             if(dataSelect.success){
-              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
-             }
+         
+             
+                 console.log(dataSelect)
              res.render('pages/publicity',{dataSelect:dataSelect});
 
         
@@ -107,7 +106,9 @@ exports.api_publicity=function (req,res,next){
        }    
     
     api_services.commonRequest('api/app/publicity/list','POST',form).then(function (dataSelect){
-             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+           if(dataSelect.success){
+             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+            }
              console.log(dataSelect)
              res.json(dataSelect)
 
@@ -205,7 +206,9 @@ exports.api_inspect=function (req,res,next){
 
 
     api_services.commonRequest('api/app/inspect/list','POST',form).then(function (dataSelect){
-             dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+            if(dataSelect.success){
+               dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             }
              console.log(dataSelect.content)
              res.json(dataSelect)
 
@@ -414,7 +417,9 @@ exports.api_appointment=function (req,res,next){
 
 
     api_services.commonRequest('api/app/appointment/list','POST',form).then(function (dataSelect){
-             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+            if(dataSelect.success){
+                dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             }
              console.log(dataSelect.content)
              res.json(dataSelect)
 
