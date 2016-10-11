@@ -507,7 +507,7 @@ exports.delete_user_role = function (req,res,next){
         
        
        api_services.commonRequest('api/app/role/delete',"DELETE",arr).then(function (data){
-                  console.log(data)
+            
                   res.json(data)
 
        }).catch(function (err){
@@ -534,12 +534,12 @@ exports.get_user_messages = function (req,res,next){
           size:15
        }
 
-        console.log(form)
+    
        api_services.commonRequest('api/app/user/'+_id+'/messages',"POST",form).then(function (data){
                 if(data.success){
                  data.content.page=Math.ceil(data.content.total/data.content.size);
                }
-               console.log(data.content.content)
+             
       
                res.json(data)
 

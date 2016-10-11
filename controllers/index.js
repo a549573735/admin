@@ -23,7 +23,7 @@ exports.publicity = function(req, res, next) {
 
     var form={
          page:0,
-         size:50
+         size:15
     }
 
     switch(req.session.user.content.type){
@@ -39,14 +39,15 @@ exports.publicity = function(req, res, next) {
     api_services.commonRequest('api/app/company/list/new','POST',form).then(function (dataSelect){
             
              console.log(dataSelect)
-             //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             if(dataSelect.success){
+              dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size); 
+             }
              res.render('pages/publicity',{dataSelect:dataSelect});
 
         
     }).catch(function (data){
               console.log(data)
 
-              res.render('pages/publicity',{dataSelect:dataSelect});
     })
 
 

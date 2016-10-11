@@ -127,8 +127,6 @@ define(function (require, exports, module) {
                       'send-select-admin':function (id){
                          var that=this;
 
-                           
-                          
                       }
                   
                 }

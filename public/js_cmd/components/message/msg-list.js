@@ -61,8 +61,8 @@ define(function (require, exports, module) {
               if(msg.isRead=='false'){  
                   $.get('/api/read/message?id='+msg.id).then(function (data){
                         if(data.success){
-                      
-                          msg.isRead='true'
+                          $(event.target).attr('data-isRead','true')
+                          msg.isRead='true';
                           $(event.target).attr('data-isRead',true).attr('class','text-left v-cont')
                         }else {
                           

@@ -101,8 +101,11 @@ define(function (require, exports, module) {
                                           roleId:$('#select-role-id').val(),
                                           roleName:$('#select-role-id').find("option:selected").text()
                                     }
-                                  
-       
+                                    if($('#select-role-id').val()==''){
+                                       alert('角色不能为空');
+                                         false 
+                                    }
+                                
                                    $.ajax({
                                         url: '/put/user',    //请求的url地址
                                         dataType: "json",   //返回格式为json
@@ -116,6 +119,7 @@ define(function (require, exports, module) {
                                            // $('#modal-fromuser').modal('toggle')
                                             window.location.reload()
                                           }else {
+
                                               alert(data.errMessage)
                                           }
                                           
@@ -146,8 +150,6 @@ define(function (require, exports, module) {
                             'send-radio': function (msg) {
                                 // 事件回调内的 `this` 自动绑定到注册它的实例上
                                  var that=this;
-
-
                              },
                              'send-select': function (id){
                                  var that=this;

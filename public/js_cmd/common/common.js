@@ -220,10 +220,18 @@
                   notes:$(textarea).val(),
                   status:$(this).attr('data-status'),
                   ccPark:$(checked).prop('checked')?true:false,
-                  
               }
+
               
               var that=this
+              var reg=/park/i;  
+              var winHref=window.location.pathname
+              if(targetList.length==0&& reg.test(winHref) ){ 
+                  alert('请选择园区') 
+                  return false
+              }
+           
+           
 
              $.post(href,form).then(function (data){
 

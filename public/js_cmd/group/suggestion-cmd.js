@@ -24,10 +24,9 @@ define(function (require, exports, module) {
                                             data.content.content.forEach(function (item){
                                                 item.readFlag+=''
                                                 if(item.readDate==null){
-                                                   item.readDate=' '
+                                                   item.readDate=''
+                                                   item.readDate+=' '
                                                 }
-                                      
-                                                
                                             })
                                    
                                             dataList=data.content
@@ -45,7 +44,8 @@ define(function (require, exports, module) {
                                    dataList.content.forEach(function (item){
 
                                         if(item.target==null){
-                                          item.target+=''
+                                          item.target='';
+                                          item.target+=' '
                                         }
 
                                    })
@@ -83,11 +83,16 @@ define(function (require, exports, module) {
 
                               data.content.content.forEach(function (item){
 
-                                      for (var name in item ){
-                                           if(item[name]==null)item[name]="";
-                                         item[name]+=' '
-                                      }
 
+                                      for (var name in item ){
+                                         if(item[name]==null){
+                                              item[name]="";
+                                          }
+                                          item[name]+='';
+                                      }
+                              
+                                      $.trim(item.readFlag)
+                                      
                                  })   
                               that.dataList.content=data.content
                           })   
