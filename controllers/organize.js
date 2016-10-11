@@ -303,7 +303,7 @@ exports.details = function(req, res, next) {
                                            item[name]+=' '
                                       }   
                     })   
-                   data.searchName="采购时间";
+                   data.searchName="采购日期";
                    if(req.query.api=='true'){
                             res.json( data );
                          }else {
