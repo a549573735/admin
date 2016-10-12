@@ -8,7 +8,7 @@ define(function (require, exports, module) {
 		   data:   {
 			   tableList:{
 			   	   href:'',
-				   title:['园区名称','用户名','邮箱','联系人','园区地址','联系方式','操作'],
+				   title:['园区名称','用户名','邮箱','园区地址','联系人','联系方式','操作'],
 				   content:function (){
 				   	    var  arr =window.location.search.split('?')[1]?window.location.search.split('?')[1].split(/&?[a-z]+=/ig):'';
 				   	    var  form={
