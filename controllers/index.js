@@ -90,12 +90,12 @@ exports.api_publicity=function (req,res,next){
               "page":req.query.page||'0',
               "size":15,
               "type":req.query.type||"COMPANY",
-              "market":req.query.market==0?'':req.query.market ||'',
+              "market":(req.query.market==0?'':req.query.market)||(req.session.user.content.marketId==null?'':req.session.user.content.marketId),
               "company":req.query.company ||'',
-              "park":req.query.park==0?'':req.query.park||'',
+              "park":(req.query.park==0?'':req.query.park)||(req.session.user.content.parkId==null?'':req.session.user.content.parkId),
               "from":req.query.from||req.body.from||time.from,
                "to":req.query.to||req.body.to||time.to,
-               "belongId":req.session.user.belongId
+               "belongId":req.session.user.content.belongId
               }
       
        if(form.market==''){
