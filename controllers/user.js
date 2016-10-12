@@ -86,10 +86,7 @@ exports.userVerify=function (req,res,next)
 
           var str=req.session.user.userMsg;
     
-
           api_services.loginUp('api/app/user/verify','POST',str).then(function (data){
-
-             
 
               if(data.success){
                   req.session.user.content.messageCount=data.content.messageCount
@@ -343,9 +340,16 @@ exports.api_admin_role=function (req, res, next){
        form.oldPassword= md5(form.oldPassword);
        form.id=req.session.user.content.id;
 
+      
+
+
        api_services.commonRequest('api/app/user/password/modify',"PUT",form).then(function (data){
                 console.log(data)
+                  var str=req.session.user.userMsg.split(/password=/g)[0];
+                  str+='password='+form.newPassword
+                  req.session.user.userMsg=str;
                // data.content.page=Math.ceil(data.content.total/data.content.size);
+                      console.log(req.session.user.userMsg)
                   res.json(data)
 
        }).catch(function (err){
@@ -602,6 +606,7 @@ exports.modify_user_password=function (req,res,next){
   
       form.password=md5(form.password)
           console.log(form)
+
    
     api_services.commonRequest('api/app/user/modify/password/by/code',"PUT",form).then(function (data){
                 console.log(data)
