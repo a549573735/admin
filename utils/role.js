@@ -26,6 +26,7 @@ module.exports=function (app){
                if( _user.content.permissions.length==0)return 
 
                 var dest=[]
+               _user.content.permissions.push('manage_level_manage');
           
                nav.navData.subAdmin.forEach(function (item){
  
@@ -46,8 +47,10 @@ module.exports=function (app){
                   })
                  var c=[a]//
                  var d =c.concat(b)
+                     console.log(d)
                   if(_user.content.type=="MARKET"){
                        // json.same_level_manage='same_level_manage_PARK'
+                      
                         d[0].list.shift();
                   }else  if(_user.content.type=="PARK"){
 
@@ -59,32 +62,14 @@ module.exports=function (app){
                }
           }
 
-          var json={publicity:'',suggestion:'',interview:'',appointment:'',network_check:'',same_level_manage:""}  
+          var json={publicity:'',suggestion:'',interview:'',appointment:'',network_check:'',same_level_manage:"",company_info:""} 
 
          if(_user ){   
                     if( _user.content.permissions!=null){
                       _user.content.permissions.forEach(function (item){
 
-                              switch(item){
-                                case 'publicity':
-                              json.publicity=  item;
-                                break
-                                case 'suggestion':
-                              json.suggestion=  item;
-                                break
-                                case 'interview':
-                              json.interview=  item;
-                                break
-                                case 'appointment':
-                              json.appointment=  item;
-                                break
-                                 case 'network_check':
-                              json.network_check=  item;
-                                break
-                                case  'same_level_manage':
-                              json.same_level_manage =item;
-                              }
-
+                              json[item]=item
+                            
                       })
 
                     

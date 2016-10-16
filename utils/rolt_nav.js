@@ -35,8 +35,8 @@
            ],
            subAdmin:[
 
-                {href:"/organize/market",title:'市场所',parentTitle:'1', code:'same_level_manage'},
-                {href:"/organize/park",title:'园区', parentTitle:'1',code:'same_level_manage'},//lower_level_manage
+                {href:"/organize/market",title:'市场所',parentTitle:'1', code:'manage_level_manage'},
+                {href:"/organize/park",title:'园区', parentTitle:'1',code:'manage_level_manage'},//lower_level_manage
                 {href:'/inspect/list',title:'网络检查列表',parentTitle:'2', code:'network_check_list'},
                 {href:'/appointment/list',title:'预约检查列表',parentTitle:'3',code:'appointment_list'},
                 {href:'/interview/list',title:'行政约谈列表',parentTitle:'4',code:'interview_list'},

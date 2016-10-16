@@ -28,22 +28,22 @@
                                      <%}%>
                                   </li>
                               <%})%>
-
-                                <li><a href="javascript:;"><i class="icon-caret-right"></i>用户管理</a>
-                                     <dl>
-                                               <dd>
-                                                   <a href="/user/role/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">角色管理</a>
-                                               </dd>
-                                            
-                                               <dd>
-                                                   <a href="/user/edit/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">用户列表</a>
-                                               </dd>
-                                            
-                                               <dd>
-                                                   <a href="/signout">退出</a>
-                                               </dd>
-                                      </dl>
-                                </li>
+                                <%if(user.content.btnPermissions.same_level_manage){%>
+                                  <li><a href="javascript:;"><i class="icon-caret-right"></i>用户管理</a>
+                                       <dl>
+                                                 <dd>
+                                                     <a href="/user/role/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">角色管理</a>
+                                                 </dd>
+                                                 <dd>
+                                                     <a href="/user/edit/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">用户列表</a>
+                                                 </dd>
+                                              
+                                                 <dd>
+                                                     <a href="/signout">退出</a>
+                                                 </dd>
+                                        </dl>
+                                  </li>
+                                <%}%>
                            </ul>               
                     <%}%>
            <%  }else{ %>

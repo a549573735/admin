@@ -1,45 +1,41 @@
-var path=require('path'); 
-var fs=require('fs');
-var api_services=require('../models/api_services');
+var path = require('path');
+var fs = require('fs');
+var api_services = require('../models/api_services');
 
 
+exports.marketAll = function (req, res, next) {
 
 
+    //GET /api/app/market/all  // 市场所
+    api_services.commonRequest('api/app/market/all', "GET", null).then(function (data) {
+        data.content.page = Math.ceil(data.content.total / data.content.size);
+        res.json(data)
 
-exports.marketAll=function (req,res,next){
+    }).catch(function (err) {
 
- 
-  //GET /api/app/market/all  // 市场所
-	  api_services.commonRequest('api/app/market/all',"GET",null).then(function (data){
-			data.content.page=Math.ceil(data.content.total/data.content.size); 
-            res.json(data)
+        res.json({msg: '市场所服务器返回错误', 'state': false})
 
-	  }).catch(function (err){
+    })
 
-            res.json({msg:'市场所服务器返回错误','state':false})
-
-	  })
-	     
 }
 
 
+exports.marketBriefAll = function (req, res, next) {
 
-exports.marketBriefAll=function (req,res,next){
-    
- 
-  //GET /api/app/market/brief/all
 
-	  api_services.commonRequest('api/app/market/brief/all',"GET",null).then(function (data){
-            
-     		data.content.page=Math.ceil(data.content.total/data.content.size); 
-            res.json(data)
+    //GET /api/app/market/brief/all
 
-	  }).catch(function (err){
+    api_services.commonRequest('api/app/market/brief/all', "GET", null).then(function (data) {
 
-            res.json({msg:'市场所服务器返回错误','state':false})
+        data.content.page = Math.ceil(data.content.total / data.content.size);
+        res.json(data)
 
-	  })
-	     
+    }).catch(function (err) {
+
+        res.json({msg: '市场所服务器返回错误', 'state': false})
+
+    })
+
 
 }
 

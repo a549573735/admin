@@ -26,7 +26,6 @@ var cssmin = require('gulp-clean-css'), //css压缩
     seajsCombo=require('gulp-seajs-combo'),
     seajs=require('gulp-seajs-combine');
 
-
 //revImg
 gulp.task('revImg', function () {
     gulp.src('public/images/*')
