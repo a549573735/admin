@@ -52,7 +52,7 @@
                 <div class="col-md-12">
                     <div class="block" >
                         <input class="data_tabls" type="hidden" value="<%=JSON.stringify(data)%>">
-                        <handle-table-list :datalist="tablsData" ></handle-table-list>
+                        <handle-table-list :datalist="tablsData" :power="<%=JSON.stringify(user.content.btnPermissions.company_info)%>" ></handle-table-list>
                     </div>
                 </div>
                  <v-pages :pagelist="tablsData.page||1"> </v-pages>

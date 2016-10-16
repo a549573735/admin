@@ -27,8 +27,8 @@
               
               {href:'javascript:;',title:'单位管理',list:[
                                                         
-                                                        {href:"/admin/market",title:'市场所',code:'same_level_manage'},
-                                                        {href:"/admin/park",title:'园区',code:'same_level_manage'},
+                                                        {href:"/admin/market",title:'市场所',code:'manage_level_manage'},
+                                                        {href:"/admin/park",title:'园区',code:'manage_level_manage'},
                                                         {href:"/admin/interface/list",title:"企业"}
                                                        ]}
 

@@ -3,7 +3,7 @@ define(function (require, exports, module) {
 
     Vue.component('handle-table-list', {
 
-        props: ['datalist'],
+        props: ['datalist','power'],
         template:'<table class="table  table-hover table-borderless">\
                       <thead>\
                       <tr class="v-table-tr">\
@@ -20,7 +20,7 @@ define(function (require, exports, module) {
                             <td  class="text-center"><span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;"" @click="showMsg($event) " class="btn-link">详情</a></td>\
                             <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  class="btn  btn-primary "> 修改</a></div><div class="bei-zhu"><a  class="btn  btn-primary "> 重置</a></div></td>\
                             <td v-if="datalist.overflow" class="text-center" :expiredate="item.expireDate" :certificate="item.certificate" ><a href="javascript:;"  class="btn-link">详情</a></td>\
-                            <td v-if="!datalist.detals" class="text-center"><a :href="datalist.href+item.id"  class="btn  btn-primary "> 详情</a></td>\
+                            <td v-if="!datalist.detals&&power" class="text-center"><a :href="datalist.href+item.id"  class="btn  btn-primary "> 详情</a></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
