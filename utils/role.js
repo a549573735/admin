@@ -47,7 +47,7 @@ module.exports=function (app){
                   })
                  var c=[a]//
                  var d =c.concat(b)
-                     console.log(d)
+  
                   if(_user.content.type=="MARKET"){
                        // json.same_level_manage='same_level_manage_PARK'
                       

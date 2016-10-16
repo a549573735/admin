@@ -34,7 +34,7 @@ define(function (require, exports, module) {
                                                         <td v-if="datalist.product && item.provider"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-providerId="item.providerId"   data-target="#modal-details"> {{ item.provider }} <div class="hover_table"> 查看资质</div>\
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.provider "   class="text-center">{{ item.provider }}</td>\
-                                                        <td v-if="datalist.product&&item.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-productId="item.productId"   data-target="#modal-details">{{ item.product }} <div class="hover_table"> 查看资质</div>\
+                                                        <td v-if="datalist.product&&item.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-productId="item.productId"   data-target="#modal-details" >{{ item.product }} <div class="hover_table"> 查看资质</div>\
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.product"  class="text-center">{{ item.product }}</td>\
                                                         <td v-if="item.operator"  class="text-center">{{ item.operator }}</td>\
@@ -95,8 +95,18 @@ define(function (require, exports, module) {
 
                 var src = $(event.target).attr('data-src');
                 var img = src.split(',')[0]
+                var reg=/(jpg|jpeg|png)$/g;
+                var path=img.split('/')[1];
 
+                if(!reg.test(img)&&path.indexOf('.')!=-1){
+                        $(event.target).removeAttr('data-toggle')
+                        $(event.target).removeAttr('data-target')
+                        $(event.target).attr('href','http://'+img)
+                        $(event.target).attr( 'download','')
+                }
+          
                 $('#v-com-img').attr('src', 'http://' + img)
+
 
             },
             getModalInvoice:function (event){

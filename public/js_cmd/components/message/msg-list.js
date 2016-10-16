@@ -21,7 +21,7 @@ define(function (require, exports, module) {
                                     <tbody>\
                                     <tr v-for="item in datalist.content.content" >\
                                         <td class="text-center"><span class="v-core"></span></td>\
-                                        <td class="text-left v-cont"   @click="notify($event)" :data-isRead="item.isRead+\'\'" :data-type="item.type"  :data-period="item.message.period" :data-inspectDate="item.message.inspectDate" :data-titleName="item.title"  :data-msg-id="item.message.id"   :data-id="item.id"    :class="!item.isRead?item.class:\'\'" >[{{item.title}}]  <a >{{item.message.user}}</a></td>\
+                                        <td class="text-left v-cont"   @click="notify($event)" :data-isRead="item.isRead+\'\'" :data-type="item.type"  :data-period="item.message.period" :data-inspectDate="item.message.inspectDate" :data-titleName="item.title"  :data-msg-id="item.message.id"   :data-id="item.id"    :class="!item.isRead?item.class:\'\'" >[{{item.title}}] {{item.message.cc?\'[ 抄送 ]\':\'\'}}<a >{{item.message.user}}</a></td>\
                                         <td class="text-left " ><span class="v-msg-content-n">{{item.message.suggestion||item.message.notes}}</span> <span class="v-msg-content-r">{{item.message.from}}</span></td>\
                                         <td class="text-center v-msg-date">\
                                             {{item.createDate}}\
