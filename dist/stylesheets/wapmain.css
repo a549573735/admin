@@ -401,8 +401,10 @@ a:hover{ text-decoration: none;}
 
 a{ text-decoration:none;}
 
-.warp {width:1200px; margin:0 auto;}
+.warp {width:1200px; margin:0 auto;  position: relative;}
 #big_box{width:100%; min-width:1200px; overflow:hidden;}
+.loginUp{ right: 0;position: absolute; }
+.reset-password{ right:500px;  position: absolute; }
 
 
 /*登录（denglu）页面的css*/

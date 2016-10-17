@@ -393,8 +393,13 @@ function getStyle(obj,attr){
                   status:$(this).attr('data-status'),
                   ccPark:$(checked).prop('checked')?true:false,
               }
+              if($(date)!=null){
+                if($(date).val()==''){
+                  alert('请选择时间')
+                  return false;
+                }
+              }
 
-              
               var that=this
               var reg=/park/i;  
               var winHref=window.location.pathname
