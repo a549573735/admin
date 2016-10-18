@@ -45,7 +45,7 @@ define(function (require, exports, module) {
                                           {{msgContent.content}}\
                                        </p>\
                                   </div>\
-                                  <div class="col-md-12  ">\
+                                  <div class="col-md-12 ">\
                                        <p class="v-msg-f pull-right col-md-3 text-center">\
                                            {{msgContent.company}}<br>\
                                            {{msgContent.date}}\

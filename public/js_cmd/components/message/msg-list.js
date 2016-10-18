@@ -42,7 +42,7 @@ define(function (require, exports, module) {
              if(event.target.tagName=='A')return
              $('.confirm-msg').html('')
              var msg={
-                title:$(event.target).find('a').html(),
+                title:'',
                 content:$(event.target).parent().find('.v-msg-content-n').html(),
                 date:$(event.target).parent().find('.v-msg-date').html(),
                 company:$(event.target).parent().find('.v-msg-content-r').html(),
