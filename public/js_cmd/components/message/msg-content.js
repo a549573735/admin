@@ -38,6 +38,7 @@ define(function (require, exports, module) {
         },
         template: '<div v-if="datanow.show" class="row v-table-msg-c">\
                               <div class="col-md-12 col-lg-12 clearfix">\
+                                   <h5 class="text-left">{{msgContent.target}}:</h5>\
                                    <h5 class="text-left">{{msgContent.title}}</h5>\
                                   <div class="col-md-8 col-md-offset-1 v-msg-box">\
                                        <p class="v-msg-content">\
