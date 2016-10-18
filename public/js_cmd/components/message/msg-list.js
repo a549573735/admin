@@ -65,8 +65,6 @@ define(function (require, exports, module) {
                           $(event.target).attr('data-isRead','true')
                           msg.isRead='true';
                           $(event.target).attr('data-isRead',true).attr('class','text-left v-cont')
-                        }else {
-                          
                         }
                    })
                 } 
