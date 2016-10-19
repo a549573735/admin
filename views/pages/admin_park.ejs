@@ -71,7 +71,7 @@
                                                   <% dataSelect.forEach(function (item){ %>
                                                          <option value="<%=item.id%>"><%=item.name%></option>
                                                   <%})%>
-                                               
+                                               <option v-for="item in selectdata" :selected="market==item.id?true:false" :value="item.id">{{item.name}}</option>
                                             </select>
                                            </div>
                                         </div>
