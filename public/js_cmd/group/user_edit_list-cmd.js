@@ -103,7 +103,7 @@ define(function (require, exports, module) {
                                     }
                                     if($('#select-role-id').val()==''){
                                        alert('角色不能为空');
-                                         false 
+                                         return false 
                                     }
                                 
                                    $.ajax({

@@ -313,7 +313,7 @@ Common.prototype.againSecret=function (){
          var self=this;
 
          $('.admin-add-btn').on('click',function (){
-
+            
                var form={
                         parentId:$('.select_park').val()=='all'?'':$('.select_park').val(),
                         name:$('.admin-name').val(),
@@ -336,7 +336,7 @@ Common.prototype.againSecret=function (){
                  
                var checkEmail=self.checkEmpty($(this).closest('.form_Party').find('.admin-email'))
 
-
+      
                if(checked.state=='false'){
                   alert(checked.message)  
                   return false 
@@ -385,6 +385,7 @@ Common.prototype.againSecret=function (){
                                    alert('添加成功')
                              }else {
                                    alert(data.errMessage)
+
                              }      
                      }) 
 

@@ -105,10 +105,10 @@ define(function (require, exports, module) {
                            $('#modal-addCompany').find('input').val('')
                            $('#modal-addCompany').find('select').val('0')
                             alert('新增成功')
-                            Common  
+                           
                           }else {
-                            console.log(data.errMessage)
-                            alert('新增失败')
+               
+                            alert(data.errMessage)
                           }
 
                     })

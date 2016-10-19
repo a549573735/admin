@@ -667,7 +667,7 @@ exports.api_add_organize = function (req, res, next) {
 
     api_services.commonRequest('api/app/organize/add', 'POST', form).then(function (data) {
         console.log(data)
-        data.content.page = Math.ceil(data.content.total / data.content.size);
+       
         res.json(data)
 
     }).catch(function (data) {

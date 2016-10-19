@@ -24,7 +24,7 @@ define(function (require, exports, module) {
                                                   },
                                                   error: function(err) {
                                                       //请求出错处理
-                                                      alert(err.msg);
+                                              
                                                   }
                                               });
                                          return dataCheck
@@ -73,7 +73,7 @@ define(function (require, exports, module) {
                                $.post('/user/admin/add',form).then(function (data){
                                       
                                       if(data.success==false||data.state==false){
-                                        alert('请选择人员角色！')
+                                        alert(data.errMessage)
                                       }else {
                                          window.location.href='/user/edit/list';
                                       }
@@ -97,8 +97,6 @@ define(function (require, exports, module) {
                                     }
                                   
                                 })
-                               
-                           
                              },
                              'send-select':function (id){
                                

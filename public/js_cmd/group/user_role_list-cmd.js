@@ -61,7 +61,7 @@ define(function (require, exports, module) {
                                     },
                                     error: function(err) {
                                         //请求出错处理
-                                        alert(err.msg);
+                            
                                     }
                                 });
                          },
