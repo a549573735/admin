@@ -597,12 +597,17 @@ exports.api_byProvider = function (req, res, next) {
         page: req.body.page || 0,
         size: 15
     }
+    if(form.page<=0){
+        form.page=0;
+    }
     //POST /api/app/company/by/provider/{name}
     console.log(name)
+
     api_services.commonRequest('api/app/company/by/provider/' + name, 'POST', form).then(function (dataSelect) {
         console.log(dataSelect)
-
+        if(dataSelect.success){
         dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+        }
         res.json(dataSelect)
 
 

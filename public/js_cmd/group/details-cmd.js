@@ -21,9 +21,7 @@ define(function (require, exports, module) {
 	         	invoice:{title:[],style:[],content:[],type:''}
 	         },
 	         methods:{
-
 	         	  setDate:function (){
-	         	  
 	         	  	 $('input[name=view]').val($.query.get('view'));
 	         	  	 $('input[name=id]').val($.query.get('id'));
 	         	  }(),
@@ -35,17 +33,16 @@ define(function (require, exports, module) {
 	         	  	  $('#search-form').submit()
 	         	  },
 	         	  getRelation:function (event,href){
-
+	         	  		
  					 var name=$(event.target).attr('data-name');
  					 var that=this;	
  					 this.href=href;
  					 this.name=name;
  				
- 					 $.post(href,{name:name,page:this.page}).then(function (data){
+ 					 $.post(href,{name:name,page:'0'}).then(function (data){
 
- 			
  					 		if(data.success){
- 					 			that.page=data.content.page-1
+ 					 			that.page=data.content.page
 								that.modalList=data.content;
 								that.modalList.title=['公司名称','公司地址','联系方式','经营许可证','经营范围','许可证截止日期']
 								that.modalList.style=['10%','15%','10%','20%','auto','20%']

@@ -64,7 +64,8 @@ define(function (require, exports, module) {
             },
 
             getModalMsg: function (event) {
-
+              
+                if(event.target.tagName=='DIV')return        
                 var _id = $.query.get('id');
                 var view = $.query.get('view')
                 var _name = $(event.target).text().trim().split(/\s+/g)[0]
