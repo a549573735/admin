@@ -234,6 +234,11 @@
                     return false;
                   }
                 }
+              }else {
+                if(targetList.length<=0){
+                      alert('没有选择公司，不能发送约谈')
+                      return false;
+                }
               }
 
               var that=this
