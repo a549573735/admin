@@ -66,8 +66,8 @@ define(function (require, exports, module) {
                         }
                    },
                    appointment:function (){
-
-                   	    Common.sendMessage('.interview-btn-all','#tables-all',null,'#select-interview-all','/api/interview/msg','.v-modal-min-all','#v-msg');
+                        
+                   	    Common.sendMessage('.interview-btn-all','#tables-all',null,'#select-interview-all','/api/interview/msg','.v-modal-min-all','#v-msg',null,null,'false');
 
                    }()
 

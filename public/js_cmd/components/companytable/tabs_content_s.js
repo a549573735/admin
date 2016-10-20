@@ -25,9 +25,9 @@ define(function (require, exports, module) {
                                                   </thead>\
                                                   <tbody class="v-tabs-check">\
                                                      <tr v-for="item in datalist.content.content">\
-                                                        <td v-if="datalist.product&&!!item.producerId"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} <div class="hover_table"> 查看资质</div>\
+                                                        <td v-if="datalist.product&&!!item.producerId"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} \
                                                          </a></td>\
-                                                        <td v-if="type==\'provider\'&&datalist.product" class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} <div class="hover_table"> 查看资质</div>\
+                                                        <td v-if="type==\'provider\'&&datalist.product" class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} \
                                                          </a></td>\
                                                         <td v-if="type==\'customer\'&&datalist.product" class="text-center">{{ item.name }}</td>\
                                                         <td v-if="type==\'producer\'&&datalist.product" class="text-center">{{ item.name }}</td>\

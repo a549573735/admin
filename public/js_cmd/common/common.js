@@ -202,8 +202,9 @@
     }
 
 
-  Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success,checked) {
+  Common.prototype.sendMessage=function (obj,table,textarea,select,href,date,parent,success,checked,components) {
       var self=this;
+      components=components||true;
         $(obj).on('click',function(){
              
               var id=$.query.get('id')
@@ -226,10 +227,12 @@
                   status:$(this).attr('data-status'),
                   ccPark:$(checked).prop('checked')?true:false,
               }
-              if($(date)!=null){
-                if($(date).val()==''){
-                  alert('请选择时间')
-                  return false;
+              if(components!='false'){
+                if($(date)!=null){
+                  if($(date).val()==''){
+                    alert('请选择时间')
+                    return false;
+                  }
                 }
               }
 

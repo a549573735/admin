@@ -248,7 +248,7 @@ exports.Post_add_user = function (req, res, next) {
     // console.log(form)
     // form.belongId=form.type!='DISTRICT'?req.session.user.content.id:form.belongId
     form.belongId = req.session.user.content.belongId
-
+   
 
     api_services.commonRequest('api/app/user/add', "POST", form).then(function (data) {
 
