@@ -27,7 +27,7 @@ exports.interface = function (req, res, next) {
             href: '/organize/details?view=company&id=',
             title: ['企业名称', '用户名', '邮箱', '联系人', '联系方式', "操作"],
             content: content,
-            style: ['20%', '100px', 'auto', '100px', '15%', '160px'],
+            style: ['20%', '100px', 'auto', '100px', '15%', '25%'],
             overflow: false,
             page: data.content.page,
             btns: true,
