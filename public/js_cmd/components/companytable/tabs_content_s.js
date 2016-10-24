@@ -65,7 +65,7 @@ define(function (require, exports, module) {
                       var view=$.query.get('view')
                       var _name=$(event.target).text().split(/\s+/g)[1]
                       var that=this;
-                     alert(1)   
+                  
                      // $('.all-check').removeAttr('checked');
                      $('#v-all-check').removeClass('active')
 
