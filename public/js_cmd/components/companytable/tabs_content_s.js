@@ -63,13 +63,10 @@ define(function (require, exports, module) {
 
                       var _id=$.query.get('id');
                       var view=$.query.get('view')
-                      var _name=$(event.target).text().split(/\s+/g)[1]
+                      var _name=$(event.target).text().trim()
                       var that=this;
-                  
                      // $('.all-check').removeAttr('checked');
                      $('#v-all-check').removeClass('active')
-
-                     console.log($(event.target).attr('data-producerId'))
                      if($(event.target).attr('data-producerId')){
                        view='product'
                        this.type='product'

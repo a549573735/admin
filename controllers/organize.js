@@ -558,9 +558,10 @@ exports.details = function (req, res, next) {
 
 exports.api_byProduct = function (req, res, next) {
 
-
+   console.log(req.body.name)
     var name = encodeURI(req.body.name);
 
+   console.log(name) 
 
     var form = {
         page: req.body.page || 0,

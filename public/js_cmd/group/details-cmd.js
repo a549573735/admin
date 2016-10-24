@@ -101,7 +101,7 @@ define(function (require, exports, module) {
 	         		}
 	         		
 	         		this.modalMsg=data.data;
-	         		console.log(this.modalMsg.content.content[0].name)
+	         	
 	         	},
 	         	"send-page":function (data){
 
