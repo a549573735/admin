@@ -74,7 +74,7 @@ define(function (require, exports, module) {
                        id:$(event.target).attr('data-id')
                     }
                     var tr=$(event.target).closest('tr');
-                    $.post('/admin/company/delete',form).then(function (res){
+                    $.post('/admin/market/delete',form).then(function (res){
                         if(res.success){
                             tr.remove();
                             alert('删除成功')

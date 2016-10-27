@@ -218,7 +218,6 @@ exports.admin_delete_market = function (req, res, next) {        //单位管理 
     var form = req.body
     api_services.commonRequest('api/app/organize/delete/market?id='+form.id, "DELETE",null).then(function (data) {
         console.log(data)
-
         res.json(data);
 
     }).catch(function (err) {
