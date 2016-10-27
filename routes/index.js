@@ -37,6 +37,16 @@ var config=require('../utils/config')
 	
     app.post('/admin/company/modify',User.signRequired,  Admin.admin_modify_company)  //修改公司
 
+    app.post('/admin/company/delete',User.signRequired, Admin.admin_delete_company)  //删除公司
+
+    app.post('/admin/park/delete',User.signRequired, Admin.admin_delete_park)  //删除园区
+
+    app.post('/admin/market/delete',User.signRequired, Admin.admin_delete_market)  //删除市场所
+
+
+
+
+
 
 
     app.get('/user/verify',User.signRequired, User.userVerify); 

@@ -27,7 +27,7 @@ exports.interface = function (req, res, next) {
             href: '/organize/details?view=company&id=',
             title: ['企业名称', '用户名', '邮箱', '联系人', '联系方式', "操作"],
             content: content,
-            style: ['20%', '100px', 'auto', '100px', '15%', '25%'],
+            style: ['20%', '10%', 'auto', '80px', '10%', '24%'],
             overflow: false,
             page: data.content.page,
             btns: true,
@@ -63,7 +63,7 @@ exports.admin_market = function (req, res, next) {        //单位管理  市场
             href: '/organize/park?id=',
             title: ['市场所名称', '市场所地址', '用户名', '邮箱', '联系人', '联系方式', '操作'],
             content: content,
-            style: ['15%', '15%', '8%', 'auto', '80px', '5%', '25%'],
+            style: ['15%', '15%', '8%', 'auto', '80px', '5%', '30%'],
             details: [{_id: '1', msg: '该公司的销售及供应商'}, {_id: '2', msg: '该公司的销售及供应商'}],
             overflow: false,
             overflow_btn: false,
@@ -130,7 +130,7 @@ exports.admin_company = function (req, res, next) {
             href: '/organize/details?view=company&id=',
             title: ['企业名称', '用户名', '邮箱', '联系人', '联系方式', "操作"],
             content: data.content.content,
-            style: ['20%', '100px', 'auto', '100px', '15%', '160px'],
+            style: ['20%', '10%', 'auto', '80px', '10%', '24%'],
             overflow: false,
             page: data.content.page,
             btns: true,
@@ -170,7 +170,6 @@ exports.admin_modify_organize = function (req, res, next) {        //单位管�
 
 exports.admin_modify_company = function (req, res, next) {        //单位管理  市场所
 
-
     var form = req.body
 
     api_services.commonRequest('api/app/company/modify', "POST", form).then(function (data) {
@@ -180,11 +179,51 @@ exports.admin_modify_company = function (req, res, next) {        //单位管理
         res.json(data);
 
     }).catch(function (err) {
-
         console.log(err)
-
     })
+}
 
+exports.admin_delete_company = function (req, res, next) {        //单位管理  市场所
+
+    var form = req.body
+
+    api_services.commonRequest('api/app/company/delete?id='+form.id, "DELETE",null).then(function (data) {
+        console.log(data.content)
+
+        res.json(data);
+
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+
+exports.admin_delete_park = function (req, res, next) {        //单位管理  市场所
+
+    var form = req.body
+
+    api_services.commonRequest('api/app/organize/delete/park?id='+form.id, "DELETE",null).then(function (data) {
+        console.log(data)
+
+        res.json(data);
+
+    }).catch(function (err) {
+        console.log(err)
+    })
+}
+
+
+exports.admin_delete_market = function (req, res, next) {        //单位管理  市场所
+
+    var form = req.body
+    api_services.commonRequest('api/app/organize/delete/market?id='+form.id, "DELETE",null).then(function (data) {
+        console.log(data)
+
+        res.json(data);
+
+    }).catch(function (err) {
+        console.log(err)
+    })
 }
 
 

@@ -21,7 +21,7 @@ define(function (require, exports, module) {
                             <td  class="text-center">{{ item.mail }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
-                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addParty" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div></td>\
+                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addParty" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div><div class="bei-zhu"><a  @click="deleteEle($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 删除</a></div></td>\
                             <td v-if="datalist.overflow" class="text-center">{{ datalist.details[$index].msg}}<a href="javascript:;" class="btn-link">详情</a></td>\
                             <td v-if="datalist.overflow_btn" class="text-center"><a :href="datalist.href+item.id"  class="btn  btn-primary "> 详情</a></td>\
                         </tr>\
@@ -68,10 +68,21 @@ define(function (require, exports, module) {
                         console.log(data)
 
                   }) 
-
-
+             },
+             deleteEle:function (event){
+                   var form={
+                       id:$(event.target).attr('data-id')
+                    }
+                    var tr=$(event.target).closest('tr');
+                    $.post('/admin/company/delete',form).then(function (res){
+                        if(res.success){
+                            tr.remove();
+                            alert('删除成功')
+                        }else {
+                            alert(res.errMessage)
+                        }
+                    })
              }
-
         }          
       }
     )
