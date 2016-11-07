@@ -26,7 +26,7 @@ Services.prototype.Interfacelogin=function (url,method,data,req){
 Services.prototype.Interface=function (url,method,data,req){
    
      return new Promise(function (resolve,reject){
-        console.log(config.headers)
+ 
          request({method:method,url:url,body:data,json:true,headers:config.headers}).then(function (response){
 
             if(response.headers.latesttoken===''){

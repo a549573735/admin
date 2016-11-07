@@ -27,14 +27,12 @@ exports.loginUp = function (req, res, next) {
        
         // data=JSON.parse(data);
         if (data.body.success) {
-           console.log(data)         
             //console.log(data)
             // config.saveUserMsg(str);
             req.session.user = data.body
             req.session.user.lastSessionId=data.headers.latesttoken;
             req.session.user.userMsg = str
             config.headers['User-Token'] = data.body.content.id;
-            console.log(req.session.user)
             res.json({msg: '登录成功', state: true, type: req.session.user.content.type, data: req.session.user.content})
 
         } else {
@@ -80,8 +78,9 @@ exports.userVerify = function (req, res, next) {
 
     api_services.loginUp('api/app/user/verify', 'POST', str,req).then(function (data) {
         if (data.body.success) {
-            req.session.user.content.messageCount = data.content.messageCount
+            req.session.user.content.messageCount = data.body.content.messageCount
         }
+        console.log(data)
         res.json(data.body)
     }).catch(function (err) {
         console.log(err)
