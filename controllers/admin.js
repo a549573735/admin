@@ -14,8 +14,7 @@ exports.interface = function (req, res, next) {
         form.park = req.query.id
     }
 
-
-    api_services.commonRequest('api/app/company/list/new', 'POST', form).then(function (data) {
+    api_services.commonRequest('api/app/company/list/new', 'POST', form,req).then(function (data) {
 
         var content = null;
         if (data.success) {
@@ -47,7 +46,7 @@ exports.admin_market = function (req, res, next) {        //单位管理  市场
         size: 15
     }
 
-    api_services.commonRequest('api/app/market/all', "GET", null).then(function (data) {
+    api_services.commonRequest('api/app/market/all', "GET", null,req).then(function (data) {
 
         console.log(data)
         var content = null;
@@ -86,7 +85,7 @@ exports.admin_market = function (req, res, next) {        //单位管理  市场
 exports.admin_park = function (req, res, next) {
 
 
-    api_services.commonRequest('api/app/market/brief/all', "GET", null).then(function (data) {
+    api_services.commonRequest('api/app/market/brief/all', "GET", null,req).then(function (data) {
 
         var content = null;
         if (data.success) {
@@ -121,7 +120,7 @@ exports.admin_company = function (req, res, next) {
     form.market = form.market == 0 ? '' : form.market
 
 
-    api_services.commonRequest('api/app/company/list/new', 'POST', form).then(function (data) {
+    api_services.commonRequest('api/app/company/list/new', 'POST', form,req).then(function (data) {
 
         console.log(data.content)
         data.content.page = Math.ceil(data.content.total / data.content.size);
@@ -153,7 +152,7 @@ exports.admin_modify_organize = function (req, res, next) {        //单位管�
     var form = req.body
 
 
-    api_services.commonRequest('api/app/organize/modify', "POST", form).then(function (data) {
+    api_services.commonRequest('api/app/organize/modify', "POST", form,req).then(function (data) {
 
         console.log(data.content)
 
@@ -172,7 +171,7 @@ exports.admin_modify_company = function (req, res, next) {        //单位管理
 
     var form = req.body
 
-    api_services.commonRequest('api/app/company/modify', "POST", form).then(function (data) {
+    api_services.commonRequest('api/app/company/modify', "POST", form,req).then(function (data) {
 
         console.log(data.content)
 
@@ -187,7 +186,7 @@ exports.admin_delete_company = function (req, res, next) {        //单位管理
 
     var form = req.body
 
-    api_services.commonRequest('api/app/company/delete?id='+form.id, "DELETE",null).then(function (data) {
+    api_services.commonRequest('api/app/company/delete?id='+form.id, "DELETE",null,req).then(function (data) {
         console.log(data.content)
 
         res.json(data);
@@ -202,7 +201,7 @@ exports.admin_delete_park = function (req, res, next) {        //单位管理  �
 
     var form = req.body
 
-    api_services.commonRequest('api/app/organize/delete/park?id='+form.id, "DELETE",null).then(function (data) {
+    api_services.commonRequest('api/app/organize/delete/park?id='+form.id, "DELETE",null,req).then(function (data) {
         console.log(data)
 
         res.json(data);
@@ -216,7 +215,7 @@ exports.admin_delete_park = function (req, res, next) {        //单位管理  �
 exports.admin_delete_market = function (req, res, next) {        //单位管理  市场所
 
     var form = req.body
-    api_services.commonRequest('api/app/organize/delete/market?id='+form.id, "DELETE",null).then(function (data) {
+    api_services.commonRequest('api/app/organize/delete/market?id='+form.id, "DELETE",null,req).then(function (data) {
         console.log(data)
         res.json(data);
 

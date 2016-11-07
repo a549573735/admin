@@ -1,19 +1,20 @@
 var Promise=require('bluebird');
 var request=Promise.promisify(require('request'));
 var config=require('./config')
+var prex=config.internal.host;
+
 
 
 function Services(){}
 
 
-Services.prototype.Interfacelogin=function (url,method,data){
+Services.prototype.Interfacelogin=function (url,method,data,req){
    
      return new Promise(function (resolve,reject){
-        
          request({method:method,url:url,form:data,json:true}).then(function (response){
+             console.log(response.headers.latesttoken,response.headers)
+             resolve({body:response.body,headers:response.headers})
 
-              resolve(response.body)
- 
          }).catch(function (err){
               console.log(err)
          	    reject(err)
@@ -21,17 +22,34 @@ Services.prototype.Interfacelogin=function (url,method,data){
      }) 
 }
 
-Services.prototype.Interface=function (url,method,data){
+
+Services.prototype.Interface=function (url,method,data,req){
    
      return new Promise(function (resolve,reject){
-     
+        console.log(config.headers)
          request({method:method,url:url,body:data,json:true,headers:config.headers}).then(function (response){
 
-              resolve(response.body)
- 
+            if(response.headers.latesttoken===''){
+               delete req.session.user;
+            }else if(response.headers.latesttoken!=req.session.user.lastSessionId){
+
+                    var str = req.session.user.userMsg;
+                    request({method:'POST',url:prex+'api/app/user/verify',body:str,json:true,headers:config.headers}).then(function (data){
+                        if (data.body.success) {
+                            req.session.user = data.body.content
+                            req.session.user.lastSessionId=data.headers.LatestToken
+                        }
+
+                    }).catch(function (err) {
+                        console.log(err)
+                   })
+            }
+
+            resolve(response.body)
+
          }).catch(function (err){
               console.log(err)
-         	  reject(err)
+           	  reject(err)
          })
      }) 
 }

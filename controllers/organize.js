@@ -24,7 +24,7 @@ exports.organize_company = function (req, res, next) {
         form.park = req.query.id;
     }
 
-    api_services.commonRequest('api/app/company/list', 'POST', form).then(function (data) {
+    api_services.commonRequest('api/app/company/list', 'POST', form,req).then(function (data) {
         var dataContent = null;
         var page = '0'
         if (data.success) {
@@ -69,7 +69,7 @@ exports.api_organize_company_list = function (req, res, next) {
     }
 
 
-    api_services.commonRequest('api/app/company/list', 'POST', form).then(function (data) {
+    api_services.commonRequest('api/app/company/list', 'POST', form,req).then(function (data) {
 
         var dataContent = null;
         var page = '0'
@@ -103,7 +103,7 @@ exports.organize_market = function (req, res, next) {
         size: 15
     }
 
-    api_services.commonRequest('api/app/market/all', 'GET', null).then(function (data) {
+    api_services.commonRequest('api/app/market/all', 'GET', null,req).then(function (data) {
 
         data.content.page = Math.ceil(data.content.total / data.content.size);
         var datalist = {
@@ -129,7 +129,7 @@ exports.organize_park_id = function (req, res, next) {
 
     var id = req.query.id || req.session.user.content.belongId;
 
-    api_services.commonRequest('api/app/market/all', 'GET', null).then(function (dataSelect) {
+    api_services.commonRequest('api/app/market/all', 'GET', null,req).then(function (dataSelect) {
         dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         console.log(dataSelect)
 
@@ -159,7 +159,7 @@ exports.api_organize_park_list = function (req, res, next) {
     }
 
 
-    api_services.commonRequest('api/app/park/' + id + '/' + parkName, 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/park/' + id + '/' + parkName, 'POST', form,req).then(function (dataSelect) {
 
         dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         console.log(dataSelect.content)
@@ -177,7 +177,7 @@ exports.api_organize_park_list = function (req, res, next) {
 exports.architecture = function (req, res, next) {
 
 
-    api_services.commonRequest('api/app/organize/architecture', 'GET', null).then(function (dataSelect) {
+    api_services.commonRequest('api/app/organize/architecture', 'GET', null,req).then(function (dataSelect) {
 
         console.log(dataSelect)
         var parkall = 0;
@@ -286,7 +286,7 @@ exports.details = function (req, res, next) {
         case 'company':
             data.company = true;
             data.btnlist[0].active = true;
-            api_services.commonRequest('api/app/company/' + id + '/detail', 'GET', null).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/detail', 'GET', null,req).then(function (dataSelect) {
                 console.log(dataSelect)
 
 
@@ -303,7 +303,7 @@ exports.details = function (req, res, next) {
                 console.log(data)
             })
             //同时请求该公司最近一次网络检查时间
-            api_services.commonRequest('api/app/inspect/latest/' + user.belongId + '/' + id, "POST", null).then(function (dataSelect) {
+            api_services.commonRequest('api/app/inspect/latest/' + user.belongId + '/' + id, "POST", null,req).then(function (dataSelect) {
                 // lastInspectTime = dataSelect.content;
                 req.session.user.content.lastInspectTime = dataSelect.content;
             }).catch(function (data) {
@@ -315,7 +315,7 @@ exports.details = function (req, res, next) {
             data.btnlist[1].active = true;
             data.type = 'date';
 
-            api_services.commonRequest('api/app/company/' + id + '/purchase/list', 'POST', form).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/purchase/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
@@ -347,7 +347,7 @@ exports.details = function (req, res, next) {
         case 'sale':
             data.btnlist[2].active = true;
             data.type = 'date';
-            api_services.commonRequest('api/app/company/' + id + '/sale/list', 'POST', form).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/sale/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
@@ -379,7 +379,7 @@ exports.details = function (req, res, next) {
         case 'invoice':
             data.btnlist[3].active = true;
             data.type = 'date';
-            api_services.commonRequest('api/app/company/' + id + '/invoice/list', 'POST', form).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/invoice/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
@@ -411,7 +411,7 @@ exports.details = function (req, res, next) {
             data.btnlist[4].active = true;
             data.type = 'search';
 
-            api_services.commonRequest('api/app/company/' + id + '/customer/aptitude/list', 'POST', form).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/customer/aptitude/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
@@ -445,7 +445,7 @@ exports.details = function (req, res, next) {
         case 'producer':
             data.btnlist[5].active = true;
             data.type = 'search';
-            api_services.commonRequest('api/app/company/' + id + '/producer/aptitude/list', 'POST', form).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/producer/aptitude/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
@@ -478,7 +478,7 @@ exports.details = function (req, res, next) {
         case 'provider':
             data.btnlist[6].active = true;
             data.type = 'search';
-            api_services.commonRequest('api/app/company/' + id + '/provider/aptitude/list', 'POST', form).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/provider/aptitude/list', 'POST', form,req).then(function (dataSelect) {
 
                 if (dataSelect.success) {
                     dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
@@ -517,7 +517,7 @@ exports.details = function (req, res, next) {
             data.btnlist[7].active = true;
             data.type = 'search';
 
-            api_services.commonRequest('api/app/company/' + id + '/product/aptitude/list', 'POST', form).then(function (dataSelect) {
+            api_services.commonRequest('api/app/company/' + id + '/product/aptitude/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
@@ -569,7 +569,7 @@ exports.api_byProduct = function (req, res, next) {
     }
     //POST /api/app/company/by/product/{name}
     console.log(form)
-    api_services.commonRequest('api/app/company/by/product/' + name, 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/company/by/product/' + name, 'POST', form,req).then(function (dataSelect) {
         console.log(dataSelect)
         if (dataSelect.success) {
             dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
@@ -604,7 +604,7 @@ exports.api_byProvider = function (req, res, next) {
     //POST /api/app/company/by/provider/{name}
     console.log(name)
 
-    api_services.commonRequest('api/app/company/by/provider/' + name, 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/company/by/provider/' + name, 'POST', form,req).then(function (dataSelect) {
         console.log(dataSelect)
         if(dataSelect.success){
         dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
@@ -627,7 +627,7 @@ exports.api_appkey = function (req, res, next) {
 
     var id = req.session.user.content.id;
 
-    api_services.commonRequest('/api/app/company/' + id + '/appKey', 'POST', null).then(function (dataSelect) {
+    api_services.commonRequest('/api/app/company/' + id + '/appKey', 'POST', null,req).then(function (dataSelect) {
         console.log(dataSelect)
 
         res.json(dataSelect)
@@ -644,7 +644,7 @@ exports.api_secret = function (req, res, next) {
 
     var id = req.session.user.content.id;
 
-    api_services.commonRequest('/api/app/company/' + id + '/secret/generate', 'POST', null).then(function (dataSelect) {
+    api_services.commonRequest('/api/app/company/' + id + '/secret/generate', 'POST', null,req).then(function (dataSelect) {
         console.log(dataSelect)
 
         res.json(dataSelect)
@@ -666,7 +666,7 @@ exports.api_add_organize = function (req, res, next) {
     var form = req.body;
 
 
-    api_services.commonRequest('api/app/organize/add', 'POST', form).then(function (data) {
+    api_services.commonRequest('api/app/organize/add', 'POST', form,req).then(function (data) {
         console.log(data)
        
         res.json(data)
@@ -686,7 +686,7 @@ exports.api_add_company = function (req, res, next) {
     var form = req.body;
 
 
-    api_services.commonRequest('api/app/company/add', 'POST', form).then(function (data) {
+    api_services.commonRequest('api/app/company/add', 'POST', form,req).then(function (data) {
         console.log(data)
 
         res.json(data)
@@ -713,7 +713,7 @@ exports.api_invoice = function (req, res, next) {
 
     }
 
-    api_services.commonRequest('api/app/company/by/invoice/' + form.id + '/' + form.type, 'POST', null).then(function (data) {
+    api_services.commonRequest('api/app/company/by/invoice/' + form.id + '/' + form.type, 'POST', null,req).then(function (data) {
 
 
         data.content.forEach(function (item) {

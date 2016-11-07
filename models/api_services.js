@@ -6,12 +6,11 @@ var config=require('../utils/config');
 var prex=config.internal.host;
 
 
-exports.loginUp=function (url,method,data){
+exports.loginUp=function (url,method,data,req){
 		
 	return  new Promise(function (resolve,reject){
 	  
-		
-		services.Interfacelogin(prex+url,method,data).then(function (data){
+		services.Interfacelogin(prex+url,method,data,req).then(function (data){
 
                 resolve(data)
            
@@ -26,14 +25,14 @@ exports.loginUp=function (url,method,data){
 
 
 
-exports.commonRequest=function (url,method,data){
+exports.commonRequest=function (url,method,data,req){
 
 
 	return  new Promise(function (resolve,reject){
 
 		console.log(prex+url,method,data)
          
-       services.Interface(prex+url,method,data).then(function(data){
+       services.Interface(prex+url,method,data,req).then(function(data){
 
   				resolve(data)
        

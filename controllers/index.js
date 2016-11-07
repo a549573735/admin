@@ -34,7 +34,7 @@ exports.publicity = function (req, res, next) {
     }
 
 
-    api_services.commonRequest('api/app/company/list/new', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/company/list/new', 'POST', form,req).then(function (dataSelect) {
 
 
         console.log(dataSelect)
@@ -60,7 +60,7 @@ exports.companySelect = function (req, res, next) {
         park: id,
     }
 
-    api_services.commonRequest('api/app/company/list/new', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/company/list/new', 'POST', form,req).then(function (dataSelect) {
 
         console.log(dataSelect)
         //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
@@ -99,7 +99,7 @@ exports.api_publicity = function (req, res, next) {
         delete form.park
     }
 
-    api_services.commonRequest('api/app/publicity/list', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/publicity/list', 'POST', form,req).then(function (dataSelect) {
         if (dataSelect.success) {
             dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         }
@@ -120,7 +120,7 @@ exports.add_publicity = function (req, res, next) {
 
     form.user = req.session.user.content.id;
 
-    api_services.commonRequest('api/app/publicity/add', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/publicity/add', 'POST', form,req).then(function (dataSelect) {
         //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
         console.log(dataSelect)
         res.json(dataSelect)
@@ -147,7 +147,7 @@ exports.api_publicity_msg = function (req, res, next) {
     }
 
 
-    api_services.commonRequest('api/app/publicity/add', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/publicity/add', 'POST', form,req).then(function (dataSelect) {
         dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         console.log(dataSelect)
         res.json(dataSelect)
@@ -190,7 +190,7 @@ exports.api_inspect = function (req, res, next) {
     }
 
 
-    api_services.commonRequest('api/app/inspect/list', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/inspect/list', 'POST', form,req).then(function (dataSelect) {
         if (dataSelect.success) {
             dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         }
@@ -234,7 +234,7 @@ exports.api_suggestion = function (req, res, next) {
         delete form.park
     }
 
-    api_services.commonRequest('api/app/suggestion/list', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/suggestion/list', 'POST', form,req).then(function (dataSelect) {
         dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         console.log(dataSelect.content)
         res.json(dataSelect)
@@ -262,7 +262,7 @@ exports.api_suggestion_msg = function (req, res, next) {
     form.belongId = req.session.user.content.belongId;
 
 
-    api_services.commonRequest('api/app/suggestion/add', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/suggestion/add', 'POST', form,req).then(function (dataSelect) {
         //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
         console.log(dataSelect)
         res.json(dataSelect)
@@ -305,7 +305,7 @@ exports.api_interview = function (req, res, next) {
     }
 
 
-    api_services.commonRequest('api/app/interview/list', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/interview/list', 'POST', form,req).then(function (dataSelect) {
 
         if (dataSelect.success) {
 
@@ -336,7 +336,7 @@ exports.api_interview_msg = function (req, res, next) {
     }
     form.belongId = req.session.user.content.belongId;
 
-    api_services.commonRequest('api/app/interview/add', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/interview/add', 'POST', form,req).then(function (dataSelect) {
         /// dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
         console.log(dataSelect)
         res.json(dataSelect)
@@ -379,7 +379,7 @@ exports.api_appointment = function (req, res, next) {
     }
 
 
-    api_services.commonRequest('api/app/appointment/list', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/appointment/list', 'POST', form,req).then(function (dataSelect) {
         if (dataSelect.success) {
             dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         }
@@ -411,7 +411,7 @@ exports.api_appointment_msg = function (req, res, next) {
     form.belongId = req.session.user.content.belongId;
 
     console.log(form)
-    api_services.commonRequest('api/app/appointment/add', 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/appointment/add', 'POST', form,req).then(function (dataSelect) {
 
         console.log(dataSelect)
         res.json(dataSelect)
@@ -435,7 +435,7 @@ exports.api_inspect_qualified_msg = function (req, res, next) {
     form.belongId = req.session.user.content.belongId;
 
 
-    api_services.commonRequest('api/app/inspect/qualified/' + form.ccPark, 'POST', form).then(function (dataSelect) {
+    api_services.commonRequest('api/app/inspect/qualified/' + form.ccPark, 'POST', form,req).then(function (dataSelect) {
         //dataSelect.content.page=Math.ceil(dataSelect.content.total/dataSelect.content.size);
         console.log(dataSelect)
         res.json(dataSelect)
@@ -452,7 +452,7 @@ exports.put_appointment_messages = function (req, res, next) {
     var form = req.body;
 
 
-    api_services.commonRequest('api/app/appointment/confirm/' + form.id + '/' + form.status, 'PUT', null).then(function (dataSelect) {
+    api_services.commonRequest('api/app/appointment/confirm/' + form.id + '/' + form.status, 'PUT', null,req).then(function (dataSelect) {
 
         console.log(dataSelect)
 
@@ -471,7 +471,7 @@ exports.put_appointment_messages = function (req, res, next) {
 exports.put_interview_messages = function (req, res, next) {
     var form = req.body;
 
-    api_services.commonRequest('api/app/interview/confirm/' + form.id + '/' + form.status, 'PUT', null).then(function (dataSelect) {
+    api_services.commonRequest('api/app/interview/confirm/' + form.id + '/' + form.status, 'PUT', null,req).then(function (dataSelect) {
         console.log(dataSelect)
         res.json(dataSelect)
 

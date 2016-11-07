@@ -7,7 +7,7 @@ exports.marketAll = function (req, res, next) {
 
 
     //GET /api/app/market/all  // 市场所
-    api_services.commonRequest('api/app/market/all', "GET", null).then(function (data) {
+    api_services.commonRequest('api/app/market/all', "GET", null,req).then(function (data) {
         data.content.page = Math.ceil(data.content.total / data.content.size);
         res.json(data)
 
@@ -25,7 +25,7 @@ exports.marketBriefAll = function (req, res, next) {
 
     //GET /api/app/market/brief/all
 
-    api_services.commonRequest('api/app/market/brief/all', "GET", null).then(function (data) {
+    api_services.commonRequest('api/app/market/brief/all', "GET", null,req).then(function (data) {
 
         data.content.page = Math.ceil(data.content.total / data.content.size);
         res.json(data)
