@@ -31,22 +31,27 @@ Services.prototype.Interface=function (url,method,data,req){
 
             if(response.headers.latesttoken===''){
                delete req.session.user;
+               resolve(response.body)
             }else if(response.headers.latesttoken!=req.session.user.lastSessionId){
 
                     var str = req.session.user.userMsg;
-                    request({method:'POST',url:prex+'api/app/user/verify',body:str,json:true,headers:config.headers}).then(function (data){
+
+                    request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (data){
                         if (data.body.success) {
                             req.session.user = data.body.content
-                            req.session.user.lastSessionId=data.headers.LatestToken
+                            req.session.user.lastSessionId=data.headers.latesttoken
                         }
-
+                        console.log(req.session.user,data.body)
+                        resolve(response.body)
                     }).catch(function (err) {
+                        reject(err)
                         console.log(err)
                    })
+            }else{
+                       resolve(response.body)
             }
-
-            resolve(response.body)
-
+              
+            
          }).catch(function (err){
               console.log(err)
            	  reject(err)
