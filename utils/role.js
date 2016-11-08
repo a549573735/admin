@@ -13,6 +13,7 @@ module.exports=function (app){
        var _user=req.session.user||false
 
         if(_user){
+
              if(_user.content.type=="BACKSTAGE"){
 
                  _user.content.navlist=nav.navData.backStage

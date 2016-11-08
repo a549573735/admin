@@ -12,7 +12,7 @@ Services.prototype.Interfacelogin=function (url,method,data,req){
    
      return new Promise(function (resolve,reject){
          request({method:method,url:url,form:data,json:true}).then(function (response){
-             console.log(response.headers.latesttoken,response.headers)
+          //   console.log(response.headers.latesttoken,response.headers)
              resolve({body:response.body,headers:response.headers})
 
          }).catch(function (err){
@@ -27,30 +27,33 @@ Services.prototype.Interface=function (url,method,data,req){
    
      return new Promise(function (resolve,reject){
  
-         request({method:method,url:url,body:data,json:true,headers:config.headers}).then(function (response){
+         request({method:method,url:url,body:data,json:true,headers:config.headers}).then(function (data){
 
-            if(response.headers.latesttoken===''){
+            if(data.headers.latesttoken===''){
                delete req.session.user;
-              // resolve(response.body)
-            }else if(response.headers.latesttoken!=req.session.user.lastSessionId){
+                resolve(data.body)
+            }else if(data.headers.latesttoken!=req.session.user.lastSessionId){
+                  var str = req.session.user.userMsg;
+                  request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (response){
+        
+                    if (response.body.success) {
+                        req.session.user = response.body
+                        req.session.user.lastSessionId=response.headers.latesttoken
+                    }
+                        resolve(data.body)
 
-                    var str = req.session.user.userMsg;
+                  }).catch(function (err) {
+                
+                    console.log(err)
+                     reject(err)
+               })    
 
-                    request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (data){
-                        if (data.body.success) {
-                            req.session.user = data.body.content
-                            req.session.user.lastSessionId=data.headers.latesttoken
-                        }
-                        console.log(req.session.user,data.body)
-                       //  resolve(response.body)
-                    }).catch(function (err) {
-                        reject(err)
-                        console.log(err)
-                   })
+            }else{
+                  resolve(data.body)
             }
-                 resolve(response.body)
               
-            
+
+               //  resolve(response.body)
          }).catch(function (err){
               console.log(err)
            	  reject(err)
