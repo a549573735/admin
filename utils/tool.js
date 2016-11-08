@@ -31,7 +31,7 @@ Services.prototype.Interface=function (url,method,data,req){
 
             if(response.headers.latesttoken===''){
                delete req.session.user;
-               resolve(response.body)
+              // resolve(response.body)
             }else if(response.headers.latesttoken!=req.session.user.lastSessionId){
 
                     var str = req.session.user.userMsg;
@@ -42,14 +42,13 @@ Services.prototype.Interface=function (url,method,data,req){
                             req.session.user.lastSessionId=data.headers.latesttoken
                         }
                         console.log(req.session.user,data.body)
-                        resolve(response.body)
+                       //  resolve(response.body)
                     }).catch(function (err) {
                         reject(err)
                         console.log(err)
                    })
-            }else{
-                       resolve(response.body)
             }
+                 resolve(response.body)
               
             
          }).catch(function (err){
