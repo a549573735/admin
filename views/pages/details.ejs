@@ -25,9 +25,18 @@
                                             <span class="details-title">隶属园区：</span> <%=data.content.belongPark%><br />
                                             <span class="details-title">联系人：</span> <%=data.content.contact%><br />
                                             <span class="details-title">联系电话：</span> <%=data.content.phone%><br />
-                                            <span class="col-md-2 o-pd qjjr_xq ">经营范围 ：</span><span class="col-md-10"><%=data.content.businesses%></span><br />
+                                            <span class="details-title">经营范围 ：</span><%=data.content.businesses%></span><br />
                                             <span class="col-md-12 o-pd"><span class="details-title">经营许可证：</span><%=data.content.certificate%></span><br />
+                                            <span class="col-md-12 o-pd">
                                             <span class="details-title">许可证有效期：</span><%=data.content.expireDate%>
+                                            </span>
+                                            <br />
+                                            <span class="col-md-12 o-pd">
+                                              <span class="details-title">经营许可证文件列表:</span><%data.content.certificateFiles.forEach(function (user){%>
+                                                  <a class="btn-link" target="_blank" href="http://<%=user%>">下载</a>
+                                              <% }) %>
+                                            </span>
+                                         
                                         </div>
                             </div>
                     </div>

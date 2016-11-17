@@ -23,6 +23,12 @@ define(function (require, exports, module) {
                                                         <td v-if="datalist.product&&item.invoiceNo" class="text-center"><a class="btn-link product_name" @click="getModalInvoice($event)"  data-toggle="modal" :data-id="item.id" :data-type="item.type"  data-target="#modal-invoice"> {{ item.invoiceNo }} <div class="hover_table"> 查看详细</div>\
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.invoiceNo" class="text-center">{{ item.invoiceNo }}</td>\
+                                                        <td v-if="item.batchNo" class="text-center">{{ item.batchNo }}</td>\
+                                                        <td v-if="item.produceDate" class="text-center">{{ item.produceDate }}</td>\
+                                                        <td v-if="item.expireDate" class="text-center">{{ item.expireDate }}</td>\
+                                                        <td v-if="item.productName" class="text-center">{{ item.productName }}</td>\
+                                                        <td v-if="item.warehouse" class="text-center">{{ item.warehouse }}</td>\
+                                                        <td v-if="item.quantity" class="text-center">{{ item.quantity }}</td>\
                                                         <td v-if="item.invoiceDate" class="text-center">{{ item.invoiceDate }}</td>\
                                                         <td v-if="item.invoiceType" class="text-center">{{ item.invoiceType }}</td>\
                                                         <td v-if="item.orderNo" class="text-center">{{ item.orderNo }}</td>\

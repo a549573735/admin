@@ -34,6 +34,7 @@ Services.prototype.Interface=function (url,method,data,req){
                 resolve(data.body)
             }else if(data.headers.latesttoken!=req.session.user.lastSessionId){
                   var str = req.session.user.userMsg;
+                   console.log(config.headers)
                   request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (response){
         
                     if (response.body.success) {

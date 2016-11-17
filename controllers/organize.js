@@ -244,6 +244,11 @@ exports.details = function (req, res, next) {
                 active: false
             },
             {
+                href: "/organize/details?view=stock&id=" + id + "&market=" + user.marketId + "&park=" + user.parkId + "&belongId=" + user.belongId,
+                title: '库存',
+                active: false
+            },
+            {
                 href: "/organize/details?view=customer&id=" + id + "&market=" + user.marketId + "&park=" + user.parkId + "&belongId=" + user.belongId + id,
                 title: '客户资质',
                 active: false
@@ -287,12 +292,11 @@ exports.details = function (req, res, next) {
             data.company = true;
             data.btnlist[0].active = true;
             api_services.commonRequest('api/app/company/' + id + '/detail', 'GET', null,req).then(function (dataSelect) {
+               
+                dataSelect.content.certificateFiles=dataSelect.content.certificateFiles.split(/,/g);
                 console.log(dataSelect)
-
-
                 req.session.user.content.companyName = dataSelect.content.name;
                 data.data.content = dataSelect.content;
-
                 // 控制 权限 公司不加关联
                 if (req.query.api == 'true') {
                     res.json(data);
@@ -307,9 +311,50 @@ exports.details = function (req, res, next) {
                 // lastInspectTime = dataSelect.content;
                 req.session.user.content.lastInspectTime = dataSelect.content;
             }).catch(function (data) {
-                console.log(data)
+                 console.log(data)
             })
             break;
+
+               //库存 
+         case 'stock':
+
+            data.btnlist[4].active = true;
+            data.type = 'date';
+          
+            api_services.commonRequest('api/app/company/' + id + '/warehouse/list', 'POST', form,req).then(function (dataSelect) {
+                console.log(dataSelect)
+                if(dataSelect.content){
+                        dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                }
+              
+                tools.Interface_company({
+                        title: ['产品批号', '生产日期', '产品有效期 ', '货品或产品名称', '仓库', '实存数量', '备注'],
+                        style: ['15%', '15%', '20%', '25%', '10%', '10%', '10%']
+                    },
+                    data.data,
+                    dataSelect
+                )
+                data.data.product = req.session.user.content.type != "COMPANY" ? true : false   // 控制 权限 公司不加关联
+
+                data.data.content.content.forEach(function (item) {
+                    for (var name in item) {
+                        if (item[name] == null)item[name] = "";
+                        item[name] += ' '
+                    }
+                })
+
+                data.searchName = "库存日期";
+                if (req.query.api == 'true') {
+                    res.json(data);
+                } else {
+                    res.render('pages/details', data);
+                }
+            }).catch(function (data) {
+                console.log(data)
+            })
+            break;    
+
+
         case 'purchase':
 
             data.btnlist[1].active = true;
@@ -337,7 +382,6 @@ exports.details = function (req, res, next) {
                 if (req.query.api == 'true') {
                     res.json(data);
                 } else {
-
                     res.render('pages/details', data);
                 }
             }).catch(function (data) {
