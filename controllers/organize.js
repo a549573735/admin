@@ -245,7 +245,7 @@ exports.details = function (req, res, next) {
             },
             {
                 href: "/organize/details?view=stock&id=" + id + "&market=" + user.marketId + "&park=" + user.parkId + "&belongId=" + user.belongId,
-                title: '库存',
+                title: '库存信息',
                 active: false
             },
             {
@@ -452,7 +452,7 @@ exports.details = function (req, res, next) {
             })
             break;
         case 'customer':
-            data.btnlist[4].active = true;
+            data.btnlist[5].active = true;
             data.type = 'search';
 
             api_services.commonRequest('api/app/company/' + id + '/customer/aptitude/list', 'POST', form,req).then(function (dataSelect) {
@@ -487,7 +487,7 @@ exports.details = function (req, res, next) {
             })
             break;
         case 'producer':
-            data.btnlist[5].active = true;
+            data.btnlist[6].active = true;
             data.type = 'search';
             api_services.commonRequest('api/app/company/' + id + '/producer/aptitude/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
@@ -520,7 +520,7 @@ exports.details = function (req, res, next) {
             })
             break;
         case 'provider':
-            data.btnlist[6].active = true;
+            data.btnlist[7].active = true;
             data.type = 'search';
             api_services.commonRequest('api/app/company/' + id + '/provider/aptitude/list', 'POST', form,req).then(function (dataSelect) {
 
@@ -558,7 +558,7 @@ exports.details = function (req, res, next) {
             })
             break;
         case 'product':
-            data.btnlist[7].active = true;
+            data.btnlist[8].active = true;
             data.type = 'search';
 
             api_services.commonRequest('api/app/company/' + id + '/product/aptitude/list', 'POST', form,req).then(function (dataSelect) {
