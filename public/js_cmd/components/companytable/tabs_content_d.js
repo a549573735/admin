@@ -24,8 +24,8 @@ define(function (require, exports, module) {
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.invoiceNo" class="text-center">{{ item.invoiceNo }}</td>\
                                                         <td v-if="item.batchNo" class="text-center">{{ item.batchNo }}</td>\
-                                                        <td v-if="item.produceDate" class="text-center">{{ item.produceDate }}</td>\
                                                         <td v-if="item.expireDate" class="text-center">{{ item.expireDate }}</td>\
+                                                        <td v-if="item.productDate" class="text-center">{{ item.productDate }}</td>\
                                                         <td v-if="item.productName" class="text-center">{{ item.productName }}</td>\
                                                         <td v-if="item.warehouse" class="text-center">{{ item.warehouse }}</td>\
                                                         <td v-if="item.quantity" class="text-center">{{ item.quantity }}</td>\
