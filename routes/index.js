@@ -105,6 +105,8 @@ var config=require('../utils/config')
 
 
 
+
+
     app.get('/organize/market',User.signRequired,  Organize.organize_market);         //   区局进入 市车所 
     
     app.get('/organize/architecture',User.signRequired, Organize.architecture)     //组织架构
@@ -125,6 +127,12 @@ var config=require('../utils/config')
 
 
     app.post('/api/company/invoice',User.signRequired,Organize.api_invoice)
+    
+    app.post('/api/company/saleList',User.signRequired,Organize.api_saleList)
+    
+    app.post('/api/company/purchaseList',User.signRequired,Organize.api_purchaseList)
+
+   
 
   
 

@@ -31,7 +31,7 @@ define(function (require, exports, module) {
                                                         <td v-if="item.quantity" class="text-center">{{ item.quantity }}</td>\
                                                         <td v-if="item.invoiceDate" class="text-center">{{ item.invoiceDate }}</td>\
                                                         <td v-if="item.invoiceType" class="text-center">{{ item.invoiceType }}</td>\
-                                                        <td v-if="item.orderNo" class="text-center">{{ item.orderNo }}</td>\
+                                                        <td v-if="item.orderNo" class="text-center"><a class="btn-link"  data-toggle="modal" :data-id="item.id"  @click="getPurchaseSale($event)"  data-target="#modal-purchase-sale" >{{ item.orderNo }}</a></td>\
                                                         <td v-if="item.orderDate"  class="text-center">{{ item.orderDate}}</td>\
                                                         <td v-if="item.customer"  class="text-center">{{ item.customer }}</td>\
                                                         <td v-if="item.taxNo"  class="text-center">{{ item.taxNo }}</td>\
@@ -130,6 +130,26 @@ define(function (require, exports, module) {
                       that.$dispatch('send-invoice', data)  
                  })
                  //       
+            },getPurchaseSale:function (event){
+                    var type= $.query.get('view');
+                    var that=this;
+                    var form={id:$(event.target).attr('data-id')}
+                    var json={
+                         style:['20%','30%','30%','10%','10%'],
+                         title:['产品批号','生产日期','产品有效期','数量','单价'],
+                         content:[]
+                    };
+                    if(type=='sale'){   //销售
+                            $.post('/api/company/saleList',form).then(function (data) {
+                                    json.content=data.content;
+                                  that.$dispatch('send-purchase-sale-list', json)  
+                            })
+                    }else if(type=='purchase'){
+                            $.post('/api/company/purchaseList',form).then(function (data) {
+                                  json.content=data.content;
+                                  that.$dispatch('send-purchase-sale-list', json)  
+                            })
+                    }    
             }
         }
     })
