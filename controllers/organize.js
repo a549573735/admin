@@ -395,8 +395,8 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['订货单号', '销售日期', '客户企业', '供货名称', '销售代表', '备注'],
-                        style: ['20%', '20%', '20%', '10%', '10%', '10%']
+                        title: ['订货单号', '销售日期', '客户企业', '供货名称', '销售代表', '总价','备注'],
+                        style: ['20%', '20%', '20%', '10%', '10%','10%', '10%']
                     },
                     data.data,
                     dataSelect
