@@ -459,8 +459,8 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['客户名称', '客户地址', '联系方式', '经营许可证', '经营范围', '许可证截止日期'],
-                        style: ['10%', '15%', '10%', '20%', 'auto', '20%']
+                        title: ['客户名称', '客户地址', '联系方式', '经营许可证', '许可证文件','经营范围', '许可证截止日期'],
+                        style: ['10%', '15%', '10%', '15%','10%', 'auto', '20%']
                     },
                     data.data,
                     dataSelect
@@ -529,8 +529,8 @@ exports.details = function (req, res, next) {
                 }
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['供应商姓名', '供应商地址', '联系方式', '经营许可证', '经营范围', '许可证截止日期'],
-                        style: ['15%', '15%', '10%', '20%', 'auto', '20%']
+                        title: ['供应商姓名', '供应商地址', '联系方式', '经营许可证','许可证文件', '经营范围', '许可证截止日期'],
+                        style: ['15%', '15%', '10%', '15%','10%', 'auto', '20%']
                     },
                     data.data,
                     dataSelect
@@ -565,8 +565,8 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['产品名称', '产品计量单位', '产品规格', '经营范围', '产品注册证号', '注册证有效期'],
-                        style: ['15%', '20%', '15%', '10%', 'auto', '20%']
+                        title: ['产品名称', '产品计量单位', '产品规格', '经营范围', '产品注册证号','注册号文件', '注册证有效期'],
+                        style: ['15%', '20%', '15%', '10%', '10%','10%', '20%']
                     },
                     data.data,
                     dataSelect
