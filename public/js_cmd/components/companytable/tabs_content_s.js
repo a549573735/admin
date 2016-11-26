@@ -40,6 +40,7 @@ define(function (require, exports, module) {
                                                         <td v-if="item.certificateFiles" class="text-center">{{ item.certificateFiles }}</td>\
                                                         <td v-if="item.businesses" class="text-center"><span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;"" @click="showMsg($event) " class="btn-link">详情</a></td>\
                                                         <td v-if="item.registerNo" class="text-center"><span class="bus-msg">{{ item.registerNo }}</td>\
+                                                        <td v-if="item.registerFiles" class="text-center"><span class="bus-msg">{{ item.registerFiles }}</td>\
                                                         <td v-if="item.expireDate" class="text-center">{{ item.expireDate }}</td>\
                                                     </tr>\
                                                   </tbody>\
