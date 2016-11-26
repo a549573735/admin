@@ -214,6 +214,7 @@ exports.details = function (req, res, next) {
     var id = req.query.id || req.session.user.content.companyId;
     var user = req.session.user.content
     req.session.user.content.lastInspectTime = ""
+    var isImgsreg=/\.jpg$|\.jpeg$|\.png$/i;
     var data = {
         data: {
             title: [],
@@ -292,8 +293,9 @@ exports.details = function (req, res, next) {
             data.company = true;
             data.btnlist[0].active = true;
             api_services.commonRequest('api/app/company/' + id + '/detail', 'GET', null,req).then(function (dataSelect) {
-               
-                dataSelect.content.certificateFiles=dataSelect.content.certificateFiles.split(/,/g);
+                if( dataSelect.content.certificateFiles!=null){
+                         dataSelect.content.certificateFiles=dataSelect.content.certificateFiles.split(/,/g);
+                }
                 console.log(dataSelect)
                 req.session.user.content.companyName = dataSelect.content.name;
                 data.data.content = dataSelect.content;
@@ -460,19 +462,34 @@ exports.details = function (req, res, next) {
                 console.log(dataSelect.content)
                 tools.Interface_company({
                         title: ['客户名称', '客户地址', '联系方式', '经营许可证', '许可证文件','经营范围', '许可证截止日期'],
-                        style: ['10%', '15%', '10%', '15%','10%', 'auto', '20%']
+                        style: ['10%', '15%', '10%', '15%','15%', 'auto', '20%']
                     },
                     data.data,
                     dataSelect
                 )
                 data.data.product = req.session.user.content.type != "COMPANY" ? true : false   // 控制 权限 公司不加关联
+              
 
                 data.data.content.content.forEach(function (item) {
                     for (var name in item) {
-                        if (item[name] == null)item[name] = "";
-                        item[name] += ' '
+                             item[name] += ' '
+                        if(name=='certificateFiles'&&item[name]!=null){
+                    
+                             if(typeof item[name] =='string'){
+                                 item[name]=item[name].split(',');
+                                  item[name].forEach(function (files){
+                                         files=files.replace(/(^\s+)|(\s+$)/g,"")
+                                         if(isImgsreg.test(files)){
+                                            item.isImg=true;
+                                         }else {
+                                            item.isImg=false;
+                                         }
+                                })
+                             }
+                        }
                     }
                 })
+                console.log( data.data.content.content)
 
                 data.searchName = "客户名称";
                 data.data.type = "provider"
@@ -530,18 +547,34 @@ exports.details = function (req, res, next) {
                 console.log(dataSelect.content)
                 tools.Interface_company({
                         title: ['供应商姓名', '供应商地址', '联系方式', '经营许可证','许可证文件', '经营范围', '许可证截止日期'],
-                        style: ['15%', '15%', '10%', '15%','10%', 'auto', '20%']
+                        style: ['15%', '15%', '10%', '15%','15%', 'auto', '20%']
                     },
                     data.data,
                     dataSelect
                 )
-                data.data.content.content.forEach(function (item) {
+
+              data.data.content.content.forEach(function (item) {
                     for (var name in item) {
-                        item[name] += ' '
+                             item[name] += ' '
+                 
+                        if(name=='certificateFiles'&&item[name]!=null){
+                    
+                             if(typeof item[name] =='string'){
+                                 item[name]=item[name].split(',');
+                                 item[name].forEach(function (files){
+                                 files=files.replace(/(^\s+)|(\s+$)/g,"")
+                                 if(isImgsreg.test(files)){
+                                    item.isImg=true;
+                                 }else {
+                                    item.isImg=false;
+                                 }
+                                })
+                             }
+                        }
                     }
                 })
+              console.log( data.data.content.content)
 
-                console.log(data.data.content.content)
 
                 data.data.product = req.session.user.content.type != "COMPANY" ? true : false   // 控制 权限 公司不加关联
 

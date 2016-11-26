@@ -240,6 +240,9 @@ label{font-weight: normal; color: #313131;}
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     padding: 12px 10px;
     border-top: 1px solid #f0f0f0;
+    table-layout: fixed;
+		word-break: break-all;
+		overflow: hidden;
 }
 
 .table > thead > tr > th {

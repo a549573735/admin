@@ -37,7 +37,7 @@ define(function (require, exports, module) {
                                                         <td v-if="item.specification" class="text-center">{{ item.specification }}</td>\
                                                         <td v-if="item.phone" class="text-center">{{ item.phone }}</td>\
                                                         <td v-if="item.certificate" class="text-center">{{ item.certificate }}</td>\
-                                                        <td v-if="item.certificateFiles" class="text-center">{{ item.certificateFiles }}</td>\
+                                                        <td v-if="item.certificateFiles" class="text-center"><a v-if="item.isImg"  v-for="files in item.certificateFiles"  href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'查看,\'}}</a> <a v-if="!item.isImg"   v-for="files in item.certificateFiles"  href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'下载\'}}</a> </td>\
                                                         <td v-if="item.businesses" class="text-center"><span class="bus-msg">{{ item.businesses }} </span><a href="javascript:;"" @click="showMsg($event) " class="btn-link">详情</a></td>\
                                                         <td v-if="item.registerNo" class="text-center"><span class="bus-msg">{{ item.registerNo }}</td>\
                                                         <td v-if="item.registerFiles" class="text-center"><span class="bus-msg">{{ item.registerFiles }}</td>\
