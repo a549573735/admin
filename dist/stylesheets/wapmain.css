@@ -505,7 +505,8 @@ a{ text-decoration:none;}
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.yema{ width:100%; float:left; line-height:77px; text-align:left; padding-left:30%;}
+.yema-warp{ text-align: center;}
+.yema{line-height:77px;  display: inline-block; overflow: hidden; margin: 0 auto;  }
 .yema_befor{ float:left; text-align:right;}
 .yema_end{ float: left; }
 .disabled a:hover{ cursor: not-allowed; }

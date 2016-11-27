@@ -4,10 +4,9 @@ define(function (require, exports, module) {
     Vue.component('v-pages', {
         props: ['pagelist'],
         data: function () {
-
             return {now: 1}
         },
-        template: '<div class="yema">\
+        template: '<div class="yema-warp"><div class="yema">\
                                 <div class="yema_befor"><a href="javascript:;" class="btn btn-link"  @click="getPrevious($event)" >上一页</a>  第</div>\
                                 <nav>\
                                     <ul class="pagination pagination-sm">\
@@ -23,8 +22,7 @@ define(function (require, exports, module) {
                                     </ul>\
                                 </nav>\
                                 <div class="yema_end"> 页<a href="javascript:;" class="btn btn-link" @click="getNext($event)"  >下一页</a> <a href="javascript:;" @click="getPage($event)"  class="btn btn-link">尾页</a></div>\
-               </div> ',
-
+               </div></div> ',
         methods: {
 
             getPage: function (event) {
@@ -42,7 +40,6 @@ define(function (require, exports, module) {
             getPrevious: function (event) {
 
                 if (this.now == 1) {
-
                     return false;
                 } else {
                     this.now--;

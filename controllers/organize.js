@@ -599,15 +599,27 @@ exports.details = function (req, res, next) {
                 console.log(dataSelect.content)
                 tools.Interface_company({
                         title: ['产品名称', '产品计量单位', '产品规格', '经营范围', '产品注册证号','注册号文件', '注册证有效期'],
-                        style: ['15%', '20%', '15%', '10%', '10%','10%', '20%']
+                        style: ['15%', '15%', '15%', '10%', '15%','10%','20%']
                     },
                     data.data,
                     dataSelect
                 )
-                data.data.content.content.forEach(function (item) {
+               data.data.content.content.forEach(function (item) {
                     for (var name in item) {
-                        if (item[name] == null)item[name] = "";
-                        item[name] += ' '
+                             item[name] += ' '
+                        if(name=='registerFiles'&&item[name]!=null){
+                             if(typeof item[name] =='string'){
+                                 item[name]=item[name].split(',');
+                                 item[name].forEach(function (files){
+                                 files=files.replace(/(^\s+)|(\s+$)/g,"")
+                                 if(isImgsreg.test(files)){
+                                    item.isImg=true;
+                                 }else {
+                                    item.isImg=false;
+                                 }
+                                })
+                             }
+                        }
                     }
                 })
 
