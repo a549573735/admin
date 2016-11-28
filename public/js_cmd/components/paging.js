@@ -6,18 +6,21 @@ define(function (require, exports, module) {
         data: function () {
             return {now: 1}
         },
+        computed:{
+            'setpage':function (){
+                if(this.pagelist>10){
+                    return {num:10,carry:true}
+                }else {
+                    return {num:this.pagelist,carry:true}
+                }
+            }
+        },
         template: '<div class="yema-warp"><div class="yema">\
                                 <div class="yema_befor"><a href="javascript:;" class="btn btn-link"  @click="getPrevious($event)" >上一页</a>  第</div>\
                                 <nav>\
                                     <ul class="pagination pagination-sm">\
-                                        <li>\
-                                            <a href="javascript:void(0)"><i class="fa fa-angle-double-right"></i></a>\
-                                        </li>\
                                         <li v-for="item in pagelist" :class="{\'active\':($index+1)==now}" >\
                                             <a href="javascript:void(0)" @click="getPage($event)">{{$index+1}}</a>\
-                                        </li>\
-                                        <li>\
-                                            <a href="javascript:void(0)"><i class="fa fa-angle-double-right"></i></a>\
                                         </li>\
                                     </ul>\
                                 </nav>\

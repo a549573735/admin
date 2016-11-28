@@ -522,18 +522,12 @@ exports.read_user_messages = function (req, res, next) {
 // PUT /api/app/code/by/name/{username}
 
 exports.get_user_name = function (req, res, next) {
-
     var name = req.body.name;
-
     api_services.loginUp('api/app/code/by/name/' + name, "PUT", null,req).then(function (data) {
-        console.log(data)
-        res.json(data)
-        res.end()
-
+        res.json(data.body)
+      
     }).catch(function (err) {
-
         res.json(err)
-
     })
 }
 

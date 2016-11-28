@@ -93,10 +93,9 @@ define(function (require, exports, module) {
         return false
       }
       var that=this;
-     
-
+    
 	    var username=$('input[name=restUsername]').val();
-	 
+	   console.log(username)
 	    $.post('/api/app/code/by/name/',{name:username}).then(function (data){
          
 	    	   console.log(data.content)
@@ -104,6 +103,7 @@ define(function (require, exports, module) {
              common.countdown($(that))
 	    		   $('input[name=rest-code]').val(data.content)
           }else {
+
               alert(data.errMessage)
           } 
 	    })
@@ -121,7 +121,7 @@ define(function (require, exports, module) {
 	  	  	username:$('input[name=restUsername]').val()
   	  }
   	  var that=this;
-    
+      console.log(form)
   	  $.post('/api/app/user/modify/password',form).then(function (data){
 
   	  			if(data.success){

@@ -507,8 +507,8 @@ a{ text-decoration:none;}
 }
 .yema-warp{ text-align: center;}
 .yema{line-height:77px;  display: inline-block; overflow: hidden; margin: 0 auto;  }
-.yema_befor{ float:left; text-align:right;}
-.yema_end{ float: left; }
+.yema_befor{ float:left; text-align:right; padding-right: 10px;}
+.yema_end{ float: left; padding-left: 15px; }
 .disabled a:hover{ cursor: not-allowed; }
 .disabled a{pointer-events: none;opacity: .65;    border-color: transparent;    background-color: transparent;}
 nav{float:left; text-align:center;}
