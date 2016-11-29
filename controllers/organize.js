@@ -474,15 +474,15 @@ exports.details = function (req, res, next) {
                     for (var name in item) {
                              item[name] += ' '
                         if(name=='certificateFiles'&&item[name]!=null){
-                    
+                             item.isImg=[];
                              if(typeof item[name] =='string'){
                                  item[name]=item[name].split(',');
                                   item[name].forEach(function (files){
                                          files=files.replace(/(^\s+)|(\s+$)/g,"")
                                          if(isImgsreg.test(files)){
-                                            item.isImg=true;
+                                            item.isImg.push(true)
                                          }else {
-                                            item.isImg=false;
+                                            item.isImg.push(false)
                                          }
                                 })
                              }
@@ -555,8 +555,8 @@ exports.details = function (req, res, next) {
 
               data.data.content.content.forEach(function (item) {
                     for (var name in item) {
-                             item[name] += ' '
-                 
+                        item[name] += ' '
+                        item.isImg=[];
                         if(name=='certificateFiles'&&item[name]!=null){
                     
                              if(typeof item[name] =='string'){
@@ -564,10 +564,10 @@ exports.details = function (req, res, next) {
                                  item[name].forEach(function (files){
                                  files=files.replace(/(^\s+)|(\s+$)/g,"")
                                  if(isImgsreg.test(files)){
-                                    item.isImg=true;
-                                 }else {
-                                    item.isImg=false;
-                                 }
+                                            item.isImg.push(true)
+                                         }else {
+                                            item.isImg.push(false)
+                                  }
                                 })
                              }
                         }
@@ -607,16 +607,17 @@ exports.details = function (req, res, next) {
                data.data.content.content.forEach(function (item) {
                     for (var name in item) {
                              item[name] += ' '
+                             item.isImg=[];
                         if(name=='registerFiles'&&item[name]!=null){
                              if(typeof item[name] =='string'){
                                  item[name]=item[name].split(',');
                                  item[name].forEach(function (files){
                                  files=files.replace(/(^\s+)|(\s+$)/g,"")
                                  if(isImgsreg.test(files)){
-                                    item.isImg=true;
-                                 }else {
-                                    item.isImg=false;
-                                 }
+                                        item.isImg.push(true)
+                                   }else {
+                                        item.isImg.push(false)
+                                  }
                                 })
                              }
                         }
