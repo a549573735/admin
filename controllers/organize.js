@@ -535,7 +535,7 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['生产商姓名', '生产商地址', '联系方式', '生产商许可证', '经营范围', '许可证截止日期'],
+                        title: ['生产商名称', '生产商地址', '联系方式', '生产商许可证', '经营范围', '许可证截止日期'],
                         style: ['15%', '15%', '10%', '20%', 'auto', '20%']
                     },
                     data.data,
