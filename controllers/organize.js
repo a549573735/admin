@@ -379,7 +379,7 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['采购订单号', '采购日期', '供应商', '经办人', '采购随行单', '总价','备注'],
+                        title: ['采购订单号', '采购日期', '供应商', '经办人', '采购随行单', '总价(元)','备注'],
                         style: ['20%', '20%', '10%', '10%', 'auto','10%', '10%']
                     },
                     data.data,
@@ -423,7 +423,7 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['订货单号', '销售日期', '客户企业', '销售代表', '总价','备注'],
+                        title: ['订货单号', '销售日期', '客户企业', '销售代表', '总价(元)','备注'],
                         style: ['20%', '20%', 'auto','10%','10%', '10%']
                     },
                     data.data,
