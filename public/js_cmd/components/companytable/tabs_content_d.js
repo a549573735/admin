@@ -45,7 +45,7 @@ define(function (require, exports, module) {
                                                         <td v-if="!datalist.product&&item.product"  class="text-center">{{ item.product }}</td>\
                                                         <td v-if="item.operator"  class="text-center">{{ item.operator }}</td>\
                                                         <td v-if="item.invoiceFile"  class="text-center"><a v-if="item.invoiceFile!=\'  \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile" >单据 </a></td>\
-                                                        <td v-if="item.purchaseBill"  class="text-center"><a  v-if="item.purchaseBill!=\' \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.purchaseBill" >单据</a> </td>\
+                                                        <td v-if="item.purchaseBill" class="text-center"><a v-for="(index,files) in item.purchaseBill" v-if="item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'查看,\'}}</a> <a v-for="(index,files)  in item.purchaseBill"    v-if="!item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'下载\'}}</a> </td>\
                                                         <td v-if="item.salesRep"  class="text-center">{{ item.salesRep }}</td>\
                                                         <td v-if="item.totalPrice"  class="text-center">{{ item.totalPrice}}</td>\
                                                         <td v-if="item.notes"  class="text-center">{{ item.notes }}</td>\
@@ -98,8 +98,8 @@ define(function (require, exports, module) {
                     data.data.href = that.href;
                     data.data.type = that.type;
                     that.$dispatch('send-modal-msg', data)
-
                 })
+
             }, showImg: function (event) {
 
                 var src = $(event.target).attr('data-src');
@@ -115,7 +115,6 @@ define(function (require, exports, module) {
                 }
           
                 $('#v-com-img').attr('src', 'http://' + img)
-
 
             },
             getModalInvoice:function (event){

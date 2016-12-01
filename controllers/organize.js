@@ -298,7 +298,11 @@ exports.details = function (req, res, next) {
                 }
                 console.log(dataSelect)
                 req.session.user.content.companyName = dataSelect.content.name;
+
+
                 data.data.content = dataSelect.content;
+                
+
                 // 控制 权限 公司不加关联
                 if (req.query.api == 'true') {
                     res.json(data);
@@ -374,10 +378,23 @@ exports.details = function (req, res, next) {
                 )
                 data.data.product = req.session.user.content.type != "COMPANY" ? true : false   // 控制 权限 公司不加关联
 
-                data.data.content.content.forEach(function (item) {
+               data.data.content.content.forEach(function (item) {
                     for (var name in item) {
-                        if (item[name] == null)item[name] = "";
-                        item[name] += ' '
+                             item[name] += ' '
+                        if(name=='purchaseBill'&&item[name]!=null){
+                             item.isImg=[];
+                             if(typeof item[name] =='string'){
+                                 item[name]=item[name].split(',');
+                                  item[name].forEach(function (files){
+                                         files=files.replace(/(^\s+)|(\s+$)/g,"")
+                                         if(isImgsreg.test(files)){
+                                            item.isImg.push(true)
+                                         }else {
+                                            item.isImg.push(false)
+                                         }
+                                })
+                             }
+                        }
                     }
                 })
                 data.searchName = "采购日期";
