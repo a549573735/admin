@@ -129,8 +129,8 @@ define(function (require, exports, module) {
                     var that=this;
                     var form={id:$(event.target).attr('data-id')}
                     var json={
-                         style:['20%','20%','20%','10%','20%','10%'],
-                         title:['产品批号','生产日期','产品有效期','供货名称','数量','单价'],
+                         style:['15%','15%','15%','25%','20%','10%'],
+                         title:['产品批号','生产日期','产品有效期','供货名称','数量','单价(元)'],
                          content:[]
                     };
                     if(type=='sale'){   //销售
