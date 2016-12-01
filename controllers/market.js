@@ -4,19 +4,13 @@ var api_services = require('../models/api_services');
 
 
 exports.marketAll = function (req, res, next) {
-
-
     //GET /api/app/market/all  // 市场所
     api_services.commonRequest('api/app/market/all', "GET", null,req).then(function (data) {
         data.content.page = Math.ceil(data.content.total / data.content.size);
         res.json(data)
-
     }).catch(function (err) {
-
         res.json({msg: '市场所服务器返回错误', 'state': false})
-
     })
-
 }
 
 

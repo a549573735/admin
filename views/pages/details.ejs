@@ -35,8 +35,12 @@
                                              
                                                    <span class="details-title">经营许可证文件列表:</span>
                                                    <% if(data.content.certificateFiles!=null){%>
-                                                    <%data.content.certificateFiles.forEach(function (user){%>
-                                                      <a class="btn-link" target="_blank" href="http://<%=user%>">下载</a>
+                                                    <%data.content.certificateFiles.forEach(function (user,index){%>
+                                                          <% if(data.content.isImg[index]){%>
+                                                            <a class="btn-link" target="_blank" href="http://<%=user%>">查看</a>
+                                                        <%}else {%>
+                                                           <a class="btn-link" target="_blank" href="http://<%=user%>">下载</a>
+                                                          <%}%>
                                                     <% }) %>
                                                    <%}%>
                                               </span>

@@ -39,10 +39,7 @@ define(function (require, exports, module) {
                                                         <td v-if="item.receiver"  class="text-center">{{ item.receiver }}</td>\
                                                         <td v-if="datalist.product && item.provider"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-providerId="item.providerId"   data-target="#modal-details"> {{ item.provider }}\
                                                          </a></td>\
-                                                        <td v-if="!datalist.product&&item.provider "   class="text-center">{{ item.provider }}</td>\
-                                                        <td v-if="datalist.product&&item.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-productId="item.productId"   data-target="#modal-details" >{{ item.product }} \
-                                                         </a></td>\
-                                                        <td v-if="!datalist.product&&item.product"  class="text-center">{{ item.product }}</td>\
+                                                        <td v-if="!datalist.product&&item.provider "  class="text-center">{{ item.provider }}</td>\
                                                         <td v-if="item.operator"  class="text-center">{{ item.operator }}</td>\
                                                         <td v-if="item.invoiceFile"  class="text-center"><a v-if="item.invoiceFile!=\'  \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile" >单据 </a></td>\
                                                         <td v-if="item.purchaseBill" class="text-center"><a v-for="(index,files) in item.purchaseBill" v-if="item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'查看,\'}}</a> <a v-for="(index,files)  in item.purchaseBill"    v-if="!item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'下载\'}}</a> </td>\
@@ -78,8 +75,6 @@ define(function (require, exports, module) {
                 var view = $.query.get('view')
                 var _name = $(event.target).text().trim()
                 var that = this;
-
-               
                 $('#v-all-check').removeClass('active')
 
                 if ($(event.target).attr('data-productId')) {
@@ -92,7 +87,7 @@ define(function (require, exports, module) {
                     view = 'provider'
                     this.type = 'provider'
                 }
-
+                console.log('/organize/details?view='+view+'&id='+_id+'&name='+_name+'&api=true')
                 $.get('/organize/details?view=' + view + '&id=' + _id + '&name=' + _name + '&api=true').then(function (data) {
                     data.data.content.name = _name;
                     data.data.href = that.href;
@@ -134,13 +129,13 @@ define(function (require, exports, module) {
                     var that=this;
                     var form={id:$(event.target).attr('data-id')}
                     var json={
-                         style:['20%','30%','30%','10%','10%'],
-                         title:['产品批号','生产日期','产品有效期','数量','单价'],
+                         style:['20%','20%','20%','10%','20%','10%'],
+                         title:['产品批号','生产日期','产品有效期','供货名称','数量','单价'],
                          content:[]
                     };
                     if(type=='sale'){   //销售
                             $.post('/api/company/saleList',form).then(function (data) {
-                                    json.content=data.content;
+                                  json.content=data.content;
                                   that.$dispatch('send-purchase-sale-list', json)  
                             })
                     }else if(type=='purchase'){
@@ -154,4 +149,9 @@ define(function (require, exports, module) {
     })
 })
 
+                                                        // 关联供货名称
+
+                                                       // <td v-if="datalist.product&&item.product"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-productId="item.productId"   data-target="#modal-details" >{{ item.product }} \
+                                                       //   </a></td>\
+                                                       //  <td v-if="!datalist.product&&item.product"  class="text-center">{{ item.product }}</td>\
 

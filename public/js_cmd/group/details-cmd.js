@@ -71,12 +71,56 @@ define(function (require, exports, module) {
                    	    Common.sendMessage('.interview-btn-all','#tables-all',null,'#select-interview-all','/api/interview/msg','.v-modal-min-all','#v-msg',null,null,'false');
 
                    }(),
-
-
+                   getModalMsg:function (event){
+                   $('#modal-purchase-sale').modal('toggle');		
+                   	 if(event.target.tagName=='DIV')return   
+                      var _id=$.query.get('id');
+                      var view=$.query.get('view')
+                      var _name=$(event.target).text().trim()
+                      var that=this;
+                      var reg=/id$/i
+                     // $('.all-check').removeAttr('checked');
+                     $('#v-all-check').removeClass('active')
+                     if($(event.target).attr('data-producerId')){
+                         view='product'
+                         this.type='product'
+                         this.href='/api/app/company/by/product';
+                     }else  if($(event.target).attr('data-customerId')){
+                         this.href='/api/app/company/by/provider'; 
+                         view='provider'
+                         this.type='provider'
+                     }else {
+                        this.href='/api/app/company/by/product'; 
+                        view='product'
+                        this.type='product'
+                     }
+      
+                     $.get('/organize/details?view='+view+'&id='+_id+'&name='+_name+'&api=true').then(function (data){
+	                        data.data.content.name=_name;
+	                        data.data.href=that.href;
+	                        data.data.type=that.type;
+	              			//console.log(JSON.stringify(data))
+				         		if(data.data.content.content.length<=0)return 
+				         		var keys=Object.keys(data.data.content.content[0]);
+				         		
+				         		for(var i=0;i<keys.length;i++){
+				         			if(reg.test(keys[i])){
+				         				keys.splice(i,1)
+				         			}
+				         		}
+				         		data.data.content.keys=keys;
+				         		if(that.type=='product'){
+				         			data.data.content.title=['产品名称','经营范围','规格','产品注册号','产品计量单位','过期时间']
+				         		}else{
+				         			data.data.content.title=['供应商名称','地址','电话号码','产品注册号','过期时间','经营范围']
+				         		}
+	                            that.modalMsg=data.data
+                        })
+                }  
 	         },
 	         events:{
 	         	"send-modal-msg":function (data){
-	         	
+	     
 	         		var reg=/id$/i
 	         		this.href=data.data.href
 	  				this.type=data.data.type

@@ -70,17 +70,16 @@ define(function (require, exports, module) {
                      // $('.all-check').removeAttr('checked');
                      $('#v-all-check').removeClass('active')
                      if($(event.target).attr('data-producerId')){
-                       view='product'
-                       this.type='product'
-                        this.href='/api/app/company/by/product';
+                         view='product'
+                         this.type='product'
+                         this.href='/api/app/company/by/product';
                      }else  if($(event.target).attr('data-customerId')){
-                      this.href='/api/app/company/by/provider'; 
-                       view='provider'
-                      this.type='provider'
+                         this.href='/api/app/company/by/provider'; 
+                         view='provider'
+                         this.type='provider'
                      }else {
-
-                       this.href='/api/app/company/by/provider'; 
-                       view='provider'
+                        this.href='/api/app/company/by/provider'; 
+                        view='provider'
                         this.type='provider'
                      }
                       
