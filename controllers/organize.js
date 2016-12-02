@@ -344,7 +344,7 @@ exports.details = function (req, res, next) {
               
                 tools.Interface_company({
                         title: ['产品批号', '生产日期', '产品有效期 ', '货品或产品名称', '仓库', '实存数量', '备注'],
-                        style: ['15%', '15%', '20%', '25%', '10%', '10%', '10%']
+                        style: ['15%', '15%', '15%', '20%', '10%', '10%', '10%']
                     },
                     data.data,
                     dataSelect
@@ -379,7 +379,7 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['采购订单号', '采购日期', '供应商', '经办人', '采购随行单', '总价','备注'],
+                        title: ['采购订单号', '采购日期', '供应商', '经办人', '采购随行单', '总价(元)','备注'],
                         style: ['20%', '20%', '10%', '10%', 'auto','10%', '10%']
                     },
                     data.data,
@@ -423,7 +423,7 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['订货单号', '销售日期', '客户企业', '销售代表', '总价','备注'],
+                        title: ['订货单号', '销售日期', '客户企业', '销售代表', '总价(元)','备注'],
                         style: ['20%', '20%', 'auto','10%','10%', '10%']
                     },
                     data.data,
@@ -535,7 +535,7 @@ exports.details = function (req, res, next) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['生产商姓名', '生产商地址', '联系方式', '生产商许可证', '经营范围', '许可证截止日期'],
+                        title: ['生产商名称', '生产商地址', '联系方式', '生产商许可证', '经营范围', '许可证截止日期'],
                         style: ['15%', '15%', '10%', '20%', 'auto', '20%']
                     },
                     data.data,
