@@ -539,7 +539,7 @@ exports.modify_user_password = function (req, res, next) {
     var form = req.body;
     form.password = md5(form.password)
     console.log(form)
-    api_services.commonRequest('api/app/user/modify/password/by/code', "PUT", form,req).then(function (data) {
+    api_services.loginPassword('api/app/user/modify/password/by/code', "PUT", form,req).then(function (data) {
         console.log(data)
         res.json(data)
     }).catch(function (err) {

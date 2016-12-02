@@ -129,7 +129,7 @@ define(function (require, exports, module) {
 
   	  				showLogin()
   	  			}else {
-  	  			    $(that).parent().prev().html('修改失败').show()
+  	  			  $(that).parent().prev().html('修改失败').show()
   	  				console.log(data.errMessage)
   	  			}
   	  })	

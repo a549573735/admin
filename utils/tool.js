@@ -22,21 +22,63 @@ Services.prototype.Interfacelogin=function (url,method,data,req){
      }) 
 }
 
+Services.prototype.InterfacePassword=function (url,method,data,req){
+   
+     return new Promise(function (resolve,reject){
+ 
+         request({method:method,url:url,body:data,json:true,headers:config.headers}).then(function (data){
+           
+            if(data.headers.latesttoken===''){
+                delete req.session.user;
+                resolve(data.body)
+
+            }else if(!!req.session.user.lastSessionId){
+                console.log(data.headers.latesttoken)
+                  var str = req.session.user.userMsg;
+                  request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (response){
+                    
+                    if (response.body.success) {
+                        req.session.user = response.body
+                        req.session.user.lastSessionId=response.headers.latesttoken
+                    }
+                        resolve(data.body)
+
+                  }).catch(function (err) {
+                
+                    console.log(err)
+                     reject(err)
+               })    
+
+            }else{
+                  resolve(data.body)
+            }
+              
+
+               //  resolve(response.body)
+         }).catch(function (err){
+              console.log(err)
+              reject(err)
+         })
+     }) 
+}
+
+
 
 Services.prototype.Interface=function (url,method,data,req){
    
      return new Promise(function (resolve,reject){
  
          request({method:method,url:url,body:data,json:true,headers:config.headers}).then(function (data){
-
+           
             if(data.headers.latesttoken===''){
-               delete req.session.user;
+                delete req.session.user;
                 resolve(data.body)
+
             }else if(data.headers.latesttoken!=req.session.user.lastSessionId){
+                console.log(data.headers.latesttoken)
                   var str = req.session.user.userMsg;
-                   console.log(config.headers)
                   request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (response){
-        
+                    
                     if (response.body.success) {
                         req.session.user = response.body
                         req.session.user.lastSessionId=response.headers.latesttoken
