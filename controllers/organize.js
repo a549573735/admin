@@ -462,10 +462,23 @@ exports.details = function (req, res, next) {
                     dataSelect
                 )
 
-                data.data.content.content.forEach(function (item) {
+               data.data.content.content.forEach(function (item) {
                     for (var name in item) {
-                        if (item[name] == null)item[name] = "";
-                        item[name] += '  '
+                             item[name] += ' '
+                        if(name=='invoiceFile'&&item[name]!=null){
+                             item.isImg=[];
+                             if(typeof item[name] =='string'){
+                                 item[name]=item[name].split(',');
+                                  item[name].forEach(function (files){
+                                         files=files.replace(/(^\s+)|(\s+$)/g,"")
+                                         if(isImgsreg.test(files)){
+                                            item.isImg.push(true)
+                                         }else {
+                                            item.isImg.push(false)
+                                         }
+                                })
+                             }
+                        }
                     }
                 })
                 data.searchName = "开票日期";
