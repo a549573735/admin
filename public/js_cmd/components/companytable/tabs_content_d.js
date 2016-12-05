@@ -20,7 +20,7 @@ define(function (require, exports, module) {
                                                   </thead>\
                                                   <tbody class="v-tabs-check">\
                                                      <tr v-for="item in datalist.content.content">\
-                                                        <td v-if="datalist.product&&item.invoiceNo" class="text-center"><a class="btn-link product_name" @click="getModalInvoice($event)"  data-toggle="modal" :data-id="item.id" :data-type="item.type"  data-target="#modal-invoice"> {{ item.invoiceNo }} <div class="hover_table"> 查看详细</div>\
+                                                        <td v-if="datalist.product&&item.invoiceNo" class="text-center" style=""><a class="btn-link product_name" @click="getModalInvoice($event)"  data-toggle="modal" :data-id="item.id" :data-type="item.type"  data-target="#modal-invoice"> {{ item.invoiceNo }} \
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.invoiceNo" class="text-center">{{ item.invoiceNo }}</td>\
                                                         <td v-if="item.batchNo" class="text-center">{{ item.batchNo }}</td>\
