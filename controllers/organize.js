@@ -586,7 +586,7 @@ exports.details = function (req, res, next) {
                 }
                 console.log(dataSelect.content)
                 tools.Interface_company({
-                        title: ['供应商姓名', '供应商地址', '联系方式', '经营许可证','许可证文件', '经营范围', '许可证截止日期'],
+                        title: ['供应商名称', '供应商地址', '联系方式', '经营许可证','许可证文件', '经营范围', '许可证截止日期'],
                         style: ['15%', '15%', '10%', '15%','15%', 'auto', '20%']
                     },
                     data.data,
