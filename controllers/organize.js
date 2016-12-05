@@ -343,7 +343,7 @@ exports.details = function (req, res, next) {
                 }
               
                 tools.Interface_company({
-                        title: ['产品批号', '生产日期', '产品有效期 ', '货品或产品名称', '仓库', '实存数量', '备注'],
+                        title: ['产品批号', '产品有效期 ','生产日期',  '货品或产品名称', '仓库', '实存数量', '备注'],
                         style: ['15%', '15%', '15%', '20%', '10%', '10%', '10%']
                     },
                     data.data,
@@ -358,7 +358,7 @@ exports.details = function (req, res, next) {
                     }
                 })
 
-                data.searchName = "库存日期";
+                data.searchName = "生产日期";
                 if (req.query.api == 'true') {
                     res.json(data);
                 } else {
@@ -389,6 +389,7 @@ exports.details = function (req, res, next) {
 
                data.data.content.content.forEach(function (item) {
                     for (var name in item) {
+                        if (item[name] == null)item[name] = "";
                              item[name] += ' '
                         if(name=='purchaseBill'&&item[name]!=null){
                              item.isImg=[];
