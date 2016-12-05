@@ -465,6 +465,7 @@ exports.details = function (req, res, next) {
 
                data.data.content.content.forEach(function (item) {
                     for (var name in item) {
+                        if (item[name] == null)item[name] = "";
                              item[name] += ' '
                         if(name=='invoiceFile'&&item[name]!=null){
                              item.isImg=[];
