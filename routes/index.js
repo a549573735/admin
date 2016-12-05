@@ -51,8 +51,6 @@ var config=require('../utils/config')
 
     app.get('/user/verify',User.signRequired, User.userVerify); 
 
-
-
 	app.get('/user/role/list',User.signRequired,  User.user_role);			 //角色管理 编辑
     
     app.post('/api/user/role/list',User.signRequired,  User.user_role_list)

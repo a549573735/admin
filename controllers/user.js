@@ -29,8 +29,9 @@ exports.loginUp = function (req, res, next) {
         if (data.body.success) {
             //console.log(data)
             // config.saveUserMsg(str);
-   
+            
             req.session.user = data.body
+            console.log(req.session.user)
             req.session.user.lastSessionId=data.headers.latesttoken;
             req.session.user.userMsg = str
             config.headers['User-Token'] = data.body.content.id;
