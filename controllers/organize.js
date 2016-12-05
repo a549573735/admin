@@ -358,7 +358,7 @@ exports.details = function (req, res, next) {
                     }
                 })
 
-                data.searchName = "库存日期";
+                data.searchName = "生产日期";
                 if (req.query.api == 'true') {
                     res.json(data);
                 } else {
