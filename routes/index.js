@@ -45,10 +45,6 @@ var config=require('../utils/config')
 
 
 
-
-
-
-
     app.get('/user/verify',User.signRequired, User.userVerify); 
 
 	app.get('/user/role/list',User.signRequired,  User.user_role);			 //角色管理 编辑
@@ -116,13 +112,9 @@ var config=require('../utils/config')
     
     app.get('/api/organize/park/list',User.signRequired, Organize.api_organize_park_list)  
     		
-
     app.get('/organize/company',User.signRequired,  Organize.organize_company); //区局进入 企业
-
-
     
     app.post('/api/organize/company/list',User.signRequired, Organize.api_organize_company_list)  
-
 
     app.post('/api/company/invoice',User.signRequired,Organize.api_invoice)
     

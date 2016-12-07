@@ -125,11 +125,10 @@ define(function (require, exports, module) {
 	         		var reg=/id$/i
 	         		this.href=data.data.href
 	  				this.type=data.data.type
-	          
+	  				//console.log(data)
 	         		if(data.data.content.content.length<=0)return 
 	         		var keys=Object.keys(data.data.content.content[0]);
-	         		
-	         		console.log(keys)
+	         		//console.log(keys)
 	         		for(var i=0;i<keys.length;i++){
 	         			if(reg.test(keys[i])){
 	         				keys.splice(i,1)
@@ -150,7 +149,6 @@ define(function (require, exports, module) {
 
 	         			 $.post(this.href,{name:this.name,page:this.page}).then(function (data){
 
- 					 
  					 		if(data.success){
  					 			that.page=data.content.page
 								that.modalList=data.content;
@@ -163,9 +161,7 @@ define(function (require, exports, module) {
  					   })
 	         	},
 	         	"send-invoice":function (data){
- 		
  					 var type=data.type.replace(/^\s+|\s+$/g,"");
-
  					 if(type=="SALE"){
 							this.invoice.title=data.title[0];
 							this.invoice.style=data.style[0];
@@ -179,10 +175,7 @@ define(function (require, exports, module) {
 							this.invoice.type='采购'
 						
  					 }
-
  					 console.log(JSON.stringify(this.invoice))
-
-		   
 	         	},
 	         	"send-purchase-sale-list":function (data){
 	         			this.purchase_sale_List=data;

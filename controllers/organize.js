@@ -829,40 +829,34 @@ exports.api_invoice = function (req, res, next) {
         style: [['8%', '20%', '12%', '20%', '10%', '10%', '10%'], ['8%', '20%', '12%', '10%', '10%', '10%', '20%', '10%']],
         type: form.type
     }
-
+    var reg=/^\s+|\s+$/g;
+    form.id=form.id.replace(reg,'');
+    var isImgsreg=/\.jpg$|\.jpeg$|\.png$/ig;
+    
     api_services.commonRequest('api/app/company/by/invoice/' + form.id + '/' + form.type, 'POST', null,req).then(function (data) {
 
-            data.content.forEach(function (item) {
-                for (var name in item) {
-                    if (item[name] == null)item[name] = "";
-                    item[name] += ' '
-                }
-            })
-        
-
-              // data.content.forEach(function (item) {
-              //       for (var name in item) {
-              //                item[name] += ' '
-              //                item.isImg=[];
-              //           if(name=='purchaseBill'&&item[name]!=null){
-              //                if(typeof item[name] =='string'){
-              //                    item[name]=item[name].split(',');
-              //                    item[name].forEach(function (files){
-              //                    files=files.replace(/(^\s+)|(\s+$)/g,"")
-              //                    if(isImgsreg.test(files)){
-              //                           item.isImg.push(true)
-              //                      }else {
-              //                           item.isImg.push(false)
-              //                     }
-              //                   })
-              //                }
-              //           }
-              //       }
-              //   })
-
-        console.log(data)
+              data.content.forEach(function (item) {
+                    item.isImg= [];
+                        for (var name in item) {
+                           if(name!='isImg'){
+                             item[name] += ' '
+                        }                           
+                        if(name=='purchaseBill'&&item[name]!=null){
+                             if(typeof item[name] =='string'){
+                                 item[name]=item[name].split(',');
+                                 item[name].forEach(function (files){
+                                 files=files.replace(/(^\s+)|(\s+$)/g,"")
+                                      if(isImgsreg.test(files)){
+                                            item['isImg'].push(true)
+                                       }else {
+                                            item['isImg'].push(false)
+                                      }
+                                })
+                             }
+                        }
+                    }
+                })
         json.data = data.content
-       
         res.json(json)
 
     }).catch(function (data) {
