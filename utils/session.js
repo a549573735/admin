@@ -12,11 +12,5 @@ module.exports=function (app){
 		maxAge:43200000 //过期时间设置(单位毫秒)
 		}
 	}));
-
-    
-    
-
 	 //预处理
-
-
 }

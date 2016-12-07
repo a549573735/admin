@@ -28,11 +28,12 @@ define(function (require, exports, module) {
                  event.target.bclick=!event.target.bclick   
                  if(event.target.bclick){ 
                    console.log($(event.target))
-                   $(event.target).siblings('span').css('overflow','inherit')
+          
+                   $(event.target).siblings('span').css({'overflow':'inherit','display':'inline'})
                    $(event.target).html('收起')
                   /*  备注弹框  */
                   }else {
-                     $(event.target).siblings('span').css('overflow','hidden')
+                    $(event.target).siblings('span').css({'overflow':'hidden','display':'inline-block'})
                      $(event.target).html('详情')
                   }
              },

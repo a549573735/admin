@@ -38,8 +38,8 @@ define(function (require, exports, module) {
                                                          </a></td>\
                                                         <td v-if="!datalist.product&&item.product"  class="text-center">{{ item.product }}</td>\
                                                         <td v-if="item.operator"  class="text-center">{{ item.operator }}</td>\
-                                                        <td v-if="item.invoiceFile"  class="text-center"><a v-if="item.invoiceFile!=\'  \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile" >单据 </a></td>\
-                                                        <td v-if="item.purchaseBill"  class="text-center"><a  v-if="item.purchaseBill!=\' \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.purchaseBill" >单据</a> </td>\
+                                                        <td v-if="item.invoiceFile"  class="text-center"><a v-if="item.invoiceFile!=\'  \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.invoiceFile" >查看 </a></td>\
+                                                        <td v-if="item.purchaseBill"  class="text-center"><a  v-if="item.purchaseBill!=\' \'" @click="showImg($event)"  data-toggle="modal"   data-target="#modal-fromphoto" :data-src="item.purchaseBill" >查看</a> </td>\
                                                         <td v-if="item.salesRep"  class="text-center">{{ item.salesRep }}</td>\
                                                         <td v-if="item.notes"  class="text-center">{{ item.notes }}</td>\
                                                     </tr>\
@@ -54,11 +54,11 @@ define(function (require, exports, module) {
                 event.target.bclick = !event.target.bclick
                 if (event.target.bclick) {
                     console.log($(event.target))
-                    $(event.target).siblings('span').css('overflow', 'inherit')
+                     $(event.target).siblings('span').css({'overflow':'inherit','display':'inline'})
                     $(event.target).html('收起')
                     /*  备注弹框  */
                 } else {
-                    $(event.target).siblings('span').css('overflow', 'hidden')
+                    $(event.target).siblings('span').css({'overflow':'hidden','display':'inline-block'})
                     $(event.target).html('详情')
                 }
             },

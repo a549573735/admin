@@ -343,8 +343,8 @@ exports.details = function (req, res, next) {
                 }
               
                 tools.Interface_company({
-                        title: ['产品批号', '产品有效期 ','生产日期',  '货品或产品名称', '仓库', '实存数量', '备注'],
-                        style: ['15%', '15%', '15%', '20%', '10%', '10%', '10%']
+                        title: ['产品批号', '产品有效期 ','生产日期',  '货品或产品名称', '仓库', '实存数量'],
+                        style: ['15%', '15%', '15%', '20%', '10%', '10%']
                     },
                     data.data,
                     dataSelect
@@ -832,15 +832,37 @@ exports.api_invoice = function (req, res, next) {
 
     api_services.commonRequest('api/app/company/by/invoice/' + form.id + '/' + form.type, 'POST', null,req).then(function (data) {
 
-        data.content.forEach(function (item) {
-            for (var name in item) {
-                if (item[name] == null)item[name] = "";
-                item[name] += ' '
-            }
-        })
+            data.content.forEach(function (item) {
+                for (var name in item) {
+                    if (item[name] == null)item[name] = "";
+                    item[name] += ' '
+                }
+            })
+        
 
+              // data.content.forEach(function (item) {
+              //       for (var name in item) {
+              //                item[name] += ' '
+              //                item.isImg=[];
+              //           if(name=='purchaseBill'&&item[name]!=null){
+              //                if(typeof item[name] =='string'){
+              //                    item[name]=item[name].split(',');
+              //                    item[name].forEach(function (files){
+              //                    files=files.replace(/(^\s+)|(\s+$)/g,"")
+              //                    if(isImgsreg.test(files)){
+              //                           item.isImg.push(true)
+              //                      }else {
+              //                           item.isImg.push(false)
+              //                     }
+              //                   })
+              //                }
+              //           }
+              //       }
+              //   })
+
+        console.log(data)
         json.data = data.content
-        console.log(json)
+       
         res.json(json)
 
     }).catch(function (data) {
