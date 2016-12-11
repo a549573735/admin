@@ -153,9 +153,12 @@
                     </div>
                 </div>
             </div>
-             <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" data-toggle="modal" :data-name="modalMsg.content.name"  data-target="#modal-fromleft" data-dismiss="modal" @click="getRelation($event,modalMsg.href)">关联账户</button>
-             </div>
+            <%if(user.content.type!='COMPANY'&&user.content.type!='PARK'){%>
+                 <div class="modal-footer">
+                            <button type="button"  class="btn btn-primary" data-toggle="modal" :data-name="modalMsg.content.name"  data-target="#modal-fromleft" data-dismiss="modal" @click="getRelation($event,modalMsg.href)">关联账户</button>
+                 </div>
+            <%}%> 
+          
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal  详情页面  -->

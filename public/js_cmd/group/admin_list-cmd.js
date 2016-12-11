@@ -28,7 +28,7 @@ define(function (require, exports, module) {
                   var that=this;
                   var form={
                     "businesses": $('input[name=businesses]').val(),
-                    "company":  $('input[name=company]').val(),
+                    "companyName":  $('input[name=company]').val(),
                     "customer":  $('input[name=customer]').val(),
                     "market":  $('#select_market').val(),
                     "page": this.page,
