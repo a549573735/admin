@@ -127,9 +127,8 @@ define(function (require, exports, module) {
             var that=this;
             var form={
                 page:page-1,
-                id:this.parkId,
-                park:this.parkId
-
+                id:'',
+                park:''
             }
 
             $.post('/admin/company',form).then(function (data){

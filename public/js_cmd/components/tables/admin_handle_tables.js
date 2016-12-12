@@ -48,7 +48,6 @@ define(function (require, exports, module) {
                  $('.admin-contact').val($(event.target).attr('data-contact'));
                  $('.admin-type').val($(event.target).attr('data-type'))
                  $('.admin-admin').val($(event.target).attr('data-admin'))
-
              },
              resetPassword:function (event){  
 
