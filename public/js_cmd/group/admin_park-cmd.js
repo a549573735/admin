@@ -41,7 +41,7 @@ define(function (require, exports, module) {
 		                    });
 		                     return datalist
 				   }(),
-				   style:['15%','10%','auto','10%','10%','120px','30%'],
+				   style:['15%','10%','auto','10%','10%','120px','33%'],
 				   type:"PARK",
 				   btns:true,
 				   checked:true
