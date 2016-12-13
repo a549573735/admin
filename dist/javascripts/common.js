@@ -574,8 +574,6 @@ Common.prototype.againSecret=function (){
 }  
 
 
-
-
 Common.prototype.checkEmpty=function (obj){
     var count=0;
     $.each(obj,function (i,val){

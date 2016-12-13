@@ -45,7 +45,7 @@ define(function (require, exports, module) {
                                                         <td v-if="item.purchaseBill" class="text-center"><a v-for="(index,files) in item.purchaseBill" v-if="item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'查看  \'}}</a> <a v-for="(index,files)  in item.purchaseBill"    v-if="!item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'下载  \'}}</a> </td>\
                                                         <td v-if="item.salesRep"  class="text-center">{{ item.salesRep }}</td>\
                                                         <td v-if="item.totalPrice"  class="text-center">{{ item.totalPrice}}</td>\
-                                                        <td v-if="item.notes"  class="text-center">{{ item.notes }}</td>\
+                                                        <td v-if="item.notes"  class="text-center"></td>\
                                                     </tr>\
                                                   </tbody>\
                                               </table>\

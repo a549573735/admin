@@ -351,7 +351,7 @@ a:hover{ text-decoration: none;}
 
 .c-bg{ width: 100%; background-image:url('../images/bg-1f5bb93e2a.jpg'); background-size:cover; height: 400px; overflow: hidden; background-position:50%;   }
 .c-w{ overflow: hidden; width: 100%; position: relative;}
-.c-content{ width: 1200px; min-height: 200px; margin: 48px auto;}
+.c-content{ width: 1400px; min-height: 200px; margin: 48px auto;}
 
 .c-l{ width: 250px;  float: left;}
 
@@ -369,7 +369,7 @@ a:hover{ text-decoration: none;}
 .c-l ul >li a.active i{color: #fff;}
 .c-l ul >li a.active{  background: #438bd6; color: #fff;}
 
-.c-r{ width:890px; float: left;  min-height: 500px; margin: 0px 30px; }
+.c-r{ width:1090px; float: left;  min-height: 500px; margin: 0px 30px; }
 .c-f{ width: 100%; position: relative; height: 106px; background:#f4f4f4; display: table; visibility: hidden;}
 .c-f .c-text{ text-align: center; font-size: 15px; color: #666666; display: table-cell; vertical-align: middle; }
 .c-f .c-text p{ margin: 0; line-height:28px;}

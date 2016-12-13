@@ -27,7 +27,6 @@ define(function (require, exports, module) {
                         </tr>\
                       </tbody>\
                   </table>', 
-
         methods:{
             
              sub:function (event){
