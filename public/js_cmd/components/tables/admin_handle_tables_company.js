@@ -11,13 +11,13 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                        <tr v-for="item in datalist.content" v-cloak>\
+                        <tr v-for="item in datalist.content" :class="\'tr-\'+$index" v-cloak>\
                             <td  class="text-center">{{ item.name }}</td>\
                             <td  class="text-center">{{ item.username }}</td>\
                             <td  class="text-center">{{ item.mail }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
-                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin" :data-marketId="item.marketId"  :data-parkId="item.parkId"    :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addCompany" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div><div class="bei-zhu"><a  @click="deleteEle($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 删除</a></div></td>\
+                            <td v-if="datalist.btns" class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin" :data-marketId="item.marketId"  :data-parkId="item.parkId"    :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addCompany" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div><div class="bei-zhu"><a  @click="deleteEle($event)"   data-toggle="modal"  data-target="#modal-DeletePrompt"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 删除</a></div></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
@@ -98,17 +98,9 @@ define(function (require, exports, module) {
                        id:$(event.target).attr('data-id')
                     }
                     var tr=$(event.target).closest('tr');
-                    $.post('/admin/company/delete',form).then(function (res){
-                        if(res.success){
-                            tr.remove();
-                            alert('删除成功')
-                        }else {
-                            alert(res.errMessage)
-                        }
-                    })
-
+                    $('#delete-ground').attr({'data-tr':tr.attr('class'),'data-id':form.id,'data-api':'/admin/company/delete'})
+                
              }
-
         }          
       }
     )

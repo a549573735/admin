@@ -222,6 +222,8 @@ function getStyle(obj,attr){
 
           this.setFormDate();
 
+          this.DeleteTr('#delete-ground')
+
     }
 
     Common.prototype.listDown=function (obj){
@@ -734,6 +736,30 @@ Common.prototype.setFormDate=function(){
         $('input[name=to]').attr('placeholder',this.setForm().to)
 
 }
+
+Common.prototype.DeleteTr=function(obj){
+
+        $(obj).on('click',function (){
+           var tr= $(this).attr('data-tr');
+           var api= $(this).attr('data-api');
+           var  form= {
+                   id:$(this).attr('data-id')
+           }
+
+             $.post(api,form).then(function (res){
+                      if(res.success){
+                          $('.'+tr).remove();
+                          alert('删除成功')
+                          $('#modal-DeletePrompt').modal('toggle');
+                      }else {
+                          alert(res.errMessage)
+                      }
+              })
+
+        })
+
+}
+
 
 
 

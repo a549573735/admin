@@ -17,7 +17,7 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                        <tr v-for="item in datalist.content.content">\
+                        <tr v-for="item in datalist.content.content" :class="\'tr-\'+$index">\
                             <td v-if="!datalist.checked" class="text-center"><label v-if="datalist.overfull" class="css-input css-checkbox css-checkbox-primary">\
                                             <input type="checkbox" name="row_3" :data-type="datalist.type" :value="item.id"><span></span>\
                                            </label>\
@@ -28,7 +28,7 @@ define(function (require, exports, module) {
                             <td  class="text-center">{{ item.address }}</td>\
                             <td  class="text-center">{{ item.contact }}</td>\
                             <td  class="text-center">{{ item.phone }}</td>\
-                            <td  v-if="datalist.btns"  class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addParty" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div><div  class="bei-zhu"><a  @click="deleteEle($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 删除</a></div></td>\
+                            <td  v-if="datalist.btns"  class="text-center"><div class="bei-zhu"><a  :data-admin="item.admin"   :data-id="item.id" :data-parentId="item.parentId" :data-phone="item.phone" data-type="modify" :data-contact="item.contact" :data-mail="item.mail" :data-username="item.username" :data-name="item.name" :data-address="item.address" class="btn  btn-primary " data-toggle="modal" data-target="#modal-addParty" @click="handleData($event)" > 修改</a></div><div class="bei-zhu"><a  @click="resetPassword($event)"  :data-id="item.id" :data-admin="item.admin" class="btn  btn-primary "> 重置</a></div><div  class="bei-zhu"><a  @click="deleteEle($event)"  :data-id="item.id" data-toggle="modal"  data-target="#modal-DeletePrompt"  :data-admin="item.admin" class="btn  btn-primary "> 删除</a></div></td>\
                             <td  v-if="datalist.overfull_btn"   class="text-center"><a :href="datalist.href+item.id+\'&query=true&market=\'+marketId "   class="btn  btn-primary v-btn-w"> 详情</a></td>\
                         </tr>\
                       </tbody>\
@@ -77,18 +77,12 @@ define(function (require, exports, module) {
                   }) 
              },
              deleteEle:function (event){
-                  var form={
+                   var form={
                        id:$(event.target).attr('data-id')
-                   }
-                  var tr=$(event.target).closest('tr');
-                  $.post('/admin/park/delete',form).then(function (res){
-                      if(res.success){
-                          tr.remove();
-                          alert('删除成功')
-                      }else {
-                          alert(res.errMessage)
-                      }
-                  })
+                    }
+                    var tr=$(event.target).closest('tr');
+                    $('#delete-ground').attr({'data-tr':tr.attr('class'),'data-id':form.id,'data-api':'/admin/park/delete'})
+
              }
         }          
       }

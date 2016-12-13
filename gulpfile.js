@@ -170,7 +170,7 @@ gulp.task('rev', function () {
 });
 
 
-gulp.task('default', ['lint','img','revImg', 'copy', 'js','rev','css','version']);
+gulp.task('default', ['lint','revImg', 'copy', 'js','rev','css','version']);
 
 gulp.task('default2', ['copy', 'js', 'css', 'version', 'processhtml']);
 

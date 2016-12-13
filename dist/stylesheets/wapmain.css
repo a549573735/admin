@@ -240,9 +240,6 @@ label{font-weight: normal; color: #313131;}
 .table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
     padding: 12px 10px;
     border-top: 1px solid #f0f0f0;
-    table-layout: fixed;
-		word-break: break-all;
-		overflow: hidden;
 }
 
 .table > thead > tr > th {
@@ -354,7 +351,7 @@ a:hover{ text-decoration: none;}
 
 .c-bg{ width: 100%; background-image:url('../images/bg-1f5bb93e2a.jpg'); background-size:cover; height: 400px; overflow: hidden; background-position:50%;   }
 .c-w{ overflow: hidden; width: 100%; position: relative;}
-.c-content{ width: 1260px; min-height: 200px; margin: 48px auto;}
+.c-content{ width: 1200px; min-height: 200px; margin: 48px auto;}
 
 .c-l{ width: 250px;  float: left;}
 
@@ -372,7 +369,7 @@ a:hover{ text-decoration: none;}
 .c-l ul >li a.active i{color: #fff;}
 .c-l ul >li a.active{  background: #438bd6; color: #fff;}
 
-.c-r{ width:950px; float: left;  min-height: 500px; margin: 0px 30px; }
+.c-r{ width:890px; float: left;  min-height: 500px; margin: 0px 30px; }
 .c-f{ width: 100%; position: relative; height: 106px; background:#f4f4f4; display: table; visibility: hidden;}
 .c-f .c-text{ text-align: center; font-size: 15px; color: #666666; display: table-cell; vertical-align: middle; }
 .c-f .c-text p{ margin: 0; line-height:28px;}
@@ -505,10 +502,9 @@ a{ text-decoration:none;}
   -webkit-box-shadow: none;
   box-shadow: none;
 }
-.yema-warp{ text-align: center;}
-.yema{line-height:77px;  display: inline-block; overflow: hidden; margin: 0 auto;  }
-.yema_befor{ float:left; text-align:right; padding-right: 10px;}
-.yema_end{ float: left; padding-left: 15px; }
+.yema{ width:100%; float:left; line-height:77px; text-align:left; padding-left:30%;}
+.yema_befor{ float:left; text-align:right;}
+.yema_end{ float: left; }
 .disabled a:hover{ cursor: not-allowed; }
 .disabled a{pointer-events: none;opacity: .65;    border-color: transparent;    background-color: transparent;}
 nav{float:left; text-align:center;}
@@ -577,7 +573,7 @@ nav{float:left; text-align:center;}
 .quju_sp1{ line-height:86px; font-size:14px; color:#000;  background:#e2eeff;color:#666666;font-size:14px;}
 .qiju_sp3{ font-size:14px; color:#666666; line-height:35px; background:#f4f4f4;}
 
-.details-title{ width: 180px; display: inline-block; white-space:pre-line}
+.details-title{ width: 140px; display: inline-block; white-space:pre-line}
 
 .v-msg{ text-align: left;  padding-top: 10px; display: none;}
 
