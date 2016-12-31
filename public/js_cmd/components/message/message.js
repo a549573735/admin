@@ -76,8 +76,6 @@ define(function (require, exports, module) {
 		    'send-msg': function (msg) {
 		      // 事件回调内的 `this` 自动绑定到注册它的实例上
 		      this.message=msg
-
-		    
 		    }
 		  }
 

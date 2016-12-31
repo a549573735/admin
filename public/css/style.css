@@ -214,6 +214,7 @@ nav{float:left; text-align:center;}
 .line-c{ width:  680px; height: 1px;   left: 108px; top: 110px;}
 .line {background: #e5e5e5; position: absolute;}
 .company-msg{  padding-top: 10px; }
+.activeNoic{position: absolute; top:50%; margin-top:-5px; right:50px; width:10px; height:10px;  border-radius: 50%; background: red;}
 
 
 

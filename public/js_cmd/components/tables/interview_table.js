@@ -83,9 +83,7 @@ define(function (require, exports, module) {
                   $('#modal-fromtext').on('show.bs.modal', function () {
                          $(this).find('.remarks').html('按钮的 _id '+_id)
                   })
-
              }
-
         }          
       }
     )

@@ -1,0 +1,74 @@
+<% include ../common/header.ejs %>
+<link rel="stylesheet" href="/stylesheets/uploadifive.css">
+<div class="c-content o-pad" id="c-content">
+    <div class="clearfix">
+       <% include ../common/leftNav.ejs %>
+         <div class="c-r" >
+                 <div class="col-md-8 col-md-offset-2">
+        					<div class="block">
+                                <div class="block-header">
+                                    <h3 class="block-title">新增公告</h3>
+                                </div>
+                                <div class="col-md-8 o-pd-l" style="margin-top:30px;">
+	                                <div class="block-content block-content-narrow">
+	                                    <form action="base_forms_elements.html" method="post" onsubmit="return false;">
+	                                        <div class="form-group">
+	                                            <label for="example-nf-email">标题</label>
+	                                            <input class="form-control" type="text"  placeholder="标题">
+	                                        </div>
+		                                   <div class="form-group clearfix">
+	                                            <label class="col-xs-12 o-pd-l" for="example-textarea-input">正文</label>
+	                                            <div class="col-xs-12 o-pd-l o-pd-r">
+	                                                <textarea class="form-control"  rows="6" placeholder="正文内容.."></textarea>
+	                                            </div>
+	                                        </div>
+											<div class="form-group">
+												   <div class="add-notice" id="add-notice">
+												        		  
+												   </div>
+											</div>
+											 <div class="form-group clearfix">
+	                                          <input id="file_upload" name="file_upload" type="file" multiple="true">
+	                                          <a  class="btn btn-sm btn-primary uploadifive"  href="javascript:$('#file_upload').uploadifive('upload')">确认上传</a>
+	                                        </div>
+	                                        <div class="form-group">
+	                                            <button class="btn btn-sm btn-primary" type="submit">Login</button>
+	                                        </div>
+	                                    </form>
+	                                </div>
+                                </div>
+                            </div>
+                       </div>     
+        </div>
+    </div>
+</div>
+
+
+<% include ../common/modals.ejs %>
+<% include ../common/footer.ejs %>
+
+<script src="/lib/jquery.js"></script>
+<script src="/lib/jquery.uploadifive.js"></script>
+<script>
+	$("#file_upload").uploadifive({
+			'auto'              : false,
+			'uploadScript'      : '/api/file/upload',
+			"fileSizeLimit"		: "10MB",
+			"fileTypeExts" 		: "*.*",
+			'buttonText'        : '上传',
+			'multi'             : false,
+			'queueSizeLimit'    : 999,
+			'queueID'           : 'add-notice',
+			"onUploadComplete" : function(file, data) {
+
+				  console.log(file,data);
+
+			},
+			
+		});	
+ 
+
+</script>
+
+
+      

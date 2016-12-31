@@ -3,7 +3,7 @@ var request = Promise.promisify(require('request'));
 var config = require('../utils/config')
 var Services = require('../utils/tool');
 var tools = new Services();
-
+var proxy = require('http-proxy-middleware');
 
 var api_services = require('../models/api_services');
 
@@ -487,6 +487,114 @@ exports.put_interview_messages = function (req, res, next) {
 // PUT /api/app/appointment/confirm/{id}/{status}
 
 //  PUT /api/app/interview/confirm/{id}/{status}
+//  
+
+exports.noticeBoard = function (req, res, next) {
+
+      res.render('pages/noticeBoard');
+
+}
+
+exports.api_noticeBoard=function (req,res,next){
+   
+    var form = {
+          "page": req.body.page||0,
+          "size": 15,
+        }
+        if(req.body.title){
+            form.title=req.body.title;
+        }
+
+    api_services.commonRequest('api/app/noticeboard/list', 'POST', form,req).then(function (dataSelect) {
+        console.log(dataSelect.content)
+        res.json(dataSelect)
+
+    }).catch(function (data) {
+        console.log(data)
+        res.json(data)
+    })
+    
+}
+
+exports.api_get_noticeDetails=function (req,res,next){
+        var id=req.body.id;
+         api_services.commonRequest('api/app/noticeboard/detail?id='+id,'GET',null,req).then(function (dataSelect) {
+                console.log(dataSelect.content)
+
+                res.json(dataSelect)
+
+            }).catch(function (data) {
+                console.log(data)
+                res.json(data)
+          })
+
+}
+
+exports.notice_content=function (req,res,next){             // 填写公告页面
+
+            res.render('pages/noticeContent');
+
+}
+exports.api_readnotice_messages=function (req,res,next){    
+
+           var form={
+                  "id": req.body.id,
+                  "page": req.body.page||0,
+                  "read": req.body.read,
+                  "size": 5
+            }
+
+           api_services.commonRequest('api/app/noticeboard/read/log','POST',form,req).then(function (dataSelect) {
+      
+              dataSelect.content.page=Math.ceil(dataSelect.content.total/5)
+                console.log(dataSelect.content)
+                res.json(dataSelect)
+            }).catch(function (data) {
+                res.json(data)
+          })
+}
+
+exports.api_readnotice_deleteList=function (req,res,next){    
+            var form={
+                ids:[]
+            }
+            if(Object.prototype.toString.call(req.body['id[]'])=='[object Array]'){
+                form.ids=req.body['id[]']
+            }else {
+                  form.ids.push(req.body['id[]'])  
+            }
+           api_services.commonRequest('api/app/noticeboard/deleteList','DELETE',form.ids,req).then(function (dataSelect) {
+                console.log(dataSelect)
+                res.json(dataSelect)
+            }).catch(function (data) {
+                res.json(data)
+          })
+}
+
+exports.add_noticeboard=function (req,res,next){    
+
+        res.render('pages/noticeContent');
+
+}
+
+
+//api/data/v1/file/upload?appKey=20161215105008023&secret=49bbab6b122c4312b6e3c0bb488f1f35
+
+exports.add_uploadFile=function (req,res,next){
+
+         var form=req.body;
+         console.log(form,req)
+         api_services.commonRequest('api/data/v1/file/upload?appKey=20161215105008023&secret=49bbab6b122c4312b6e3c0bb488f1f35','POST',form,req).then(function (dataSelect) {
+                console.log(dataSelect)
+                res.json(dataSelect)
+            }).catch(function (data) {
+                res.json(data)
+          })
+
+}
+
+
+
 
 
 

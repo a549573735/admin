@@ -17,22 +17,17 @@ define(function (require, exports, module) {
                                     async: false, //请求是否异步，默认为异步，这也是ajax重要特性
                                     type: "GET",   //请求方式
                                     success: function(data) {
-                                        //请求成功时处理
-                          
+                                        //请求成功时处理                          
                                         if(data.success){
-                                       
                                             dataList=data.content
                                         }else {
-                                       
                                         }
                                     },
                                     error: function(err) {
                                         //请求出错处理
                                          //alert(err.msg);
                                     }
-
                                 });
-                     
                                 if( dataList!=null){ 
                                    dataList.content.forEach(function (item){
 

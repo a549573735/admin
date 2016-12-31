@@ -52,7 +52,8 @@
     "jshint": "^2.9.3",
     "imagemin-pngcrush": "^5.0.0",
     "gulp-seajs-combo": "^1.2.3",
-    "gulp-seajs-combine": "^0.3.3"
+    "gulp-seajs-combine": "^0.3.3",
+    "http-proxy-middleware": "^0.17.3"
   },
   "main": "index.js",
   "repository": {

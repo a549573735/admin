@@ -27,7 +27,13 @@
                                         </dl>
                                      <%}%>
                                   </li>
+                               
                               <%})%>
+                                 <li style=" position: relative; "><a href="/noticeBoard/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">公告列表</a>
+                                     <span class="noic activeNoic" ></span>   <!-- activeNoic-->
+                                  </li>
+                                
+                                  
                                 <%if(user.content.btnPermissions.same_level_manage){%>
                                   <li><a href="javascript:;"><i class="icon-caret-right"></i>用户管理</a>
                                        <dl>

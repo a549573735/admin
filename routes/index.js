@@ -7,7 +7,7 @@ var Park=require('../controllers/park');
 var Market=require('../controllers/market');
 var request=require('request');
 var config=require('../utils/config')
-
+var proxy = require('http-proxy-middleware');
 
 
  module.exports=function (app){
@@ -140,6 +140,25 @@ var config=require('../utils/config')
 	app.get('/api/inspect/list',User.signRequired,  Index.api_inspect);  //
 
 
+    app.get('/noticeBoard/list',User.signRequired,  Index.noticeBoard);  //    公告列表
+
+    app.post('/api/noticeboard/list',User.signRequired, Index.api_noticeBoard);  //    公告列表
+
+    app.post('/api/noticedetails',User.signRequired, Index.api_get_noticeDetails);  //    获取公告详情
+
+    app.post('/notice/content',User.signRequired, Index.api_get_noticeDetails);  //    获取公告详情
+
+    app.post('/notice/isread/list',User.signRequired, Index.api_readnotice_messages);  //    获取 已读 和 未读的公司 
+
+    app.post('/notice/deletelist',User.signRequired, Index.api_readnotice_deleteList);  //    获取 已读 和 未读的公司 
+
+    app.get('/add/noticeboard',User.signRequired, Index.add_noticeboard);  //    获取 已读 和 未读的公司 
+        
+
+    app.post('/api/file/upload',User.signRequired, Index.add_uploadFile);
+     
+
+    // app.post('/api/data/v1/file/upload', proxy({target:'http://139.196.152.218/api/data/v1/file/upload?appKey=20161215105008023&secret=49bbab6b122c4312b6e3c0bb488f1f35', changeOrigin: true}));
 
 
 	app.get('/suggestion/list',User.signRequired,  Index.suggestion);   //行政建议列表
@@ -147,7 +166,6 @@ var config=require('../utils/config')
 	app.get('/api/suggestion/list',User.signRequired,  Index.api_suggestion);   //行政建议列表
 
 	app.post('/api/suggestion/msg',User.signRequired,  Index.api_suggestion_msg);   //行政建议
-
 
 	app.get('/interview/list',User.signRequired,  Index.interview);    //行政约谈列表
 
@@ -168,8 +186,6 @@ var config=require('../utils/config')
 
 
     app.post('/api/inspect/qualified/msg',User.signRequired,  Index.api_inspect_qualified_msg);   //预约列表
-
-
 
 
 
