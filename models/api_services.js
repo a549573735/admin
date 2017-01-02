@@ -33,18 +33,14 @@ exports.commonRequest=function (url,method,data,req){
 		console.log(prex+url,method,data)
          
        services.Interface(prex+url,method,data,req).then(function(data){
-
   				resolve(data)
-       
        }).catch(function (err){
              console.log(err);
         		reject(err)
-
        })
-
 	})
-
 }
+
 
 
 exports.loginPassword=function (url,method,data,req){

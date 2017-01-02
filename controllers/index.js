@@ -3,9 +3,10 @@ var request = Promise.promisify(require('request'));
 var config = require('../utils/config')
 var Services = require('../utils/tool');
 var tools = new Services();
-var proxy = require('http-proxy-middleware');
 
 var api_services = require('../models/api_services');
+var multiparty = require('multiparty');
+var form = new multiparty.Form();
 
 
 exports.home = function (req, res, next) {
@@ -572,19 +573,73 @@ exports.api_readnotice_deleteList=function (req,res,next){
 }
 
 exports.add_noticeboard=function (req,res,next){    
-
         res.render('pages/noticeContent');
-
 }
 
 
 //api/data/v1/file/upload?appKey=20161215105008023&secret=49bbab6b122c4312b6e3c0bb488f1f35
+// POST /api/app/noticeboard/add;
+exports.add_noticeContent=function (req,res,next){
+          var form={
+                attachments:[],
+                title:req.body.title,
+                content:req.body.content,
+            }
+            var reg=/attachments\[[\d]\]\[(filename)\]/ig;
+            var reg2=/attachments\[[\d]\]\[(fileUrl)\]/ig;
+     
+            for(var name in req.body){
+                if(reg.test(name)){
+                    arr.push(req.body[name])
+                }
+                if(reg2.test(name)){
+                    arr.push(req.body[name])
+                }
+            }
+        
 
-exports.add_uploadFile=function (req,res,next){
+            for(var i=0;i<arr.length;i++){
+                if(i%2==0){    
+                  form.attachments.push({fileName:arr[i],fileUrl:arr[i+1]})
+                }
+            }
+                  console.log(form)
+           api_services.commonRequest('api/app/noticeboard/add','POST',form,req).then(function (dataSelect) {
+                console.log(dataSelect)
+                res.json(dataSelect)
+            }).catch(function (data) {
+                res.json(data)
+          })
+}
 
-         var form=req.body;
-         console.log(form,req)
-         api_services.commonRequest('api/data/v1/file/upload?appKey=20161215105008023&secret=49bbab6b122c4312b6e3c0bb488f1f35','POST',form,req).then(function (dataSelect) {
+exports.modify_noticeContent=function (req,res,next){
+
+           var form={
+                attachments:[],
+                title:req.body.title,
+                content:req.body.content,
+                id:req.body.id
+            }
+            var arr=[]
+            var reg=/attachments\[[\d]\]\[(filename)\]/ig;
+            var reg2=/attachments\[[\d]\]\[(fileUrl)\]/ig;
+            
+            for(var name in req.body){
+                if(reg.test(name)){
+                    arr.push(req.body[name])
+                }
+                if(reg2.test(name)){
+                    arr.push(req.body[name])
+                }
+            }
+        
+            for(var i=0;i<arr.length;i++){
+                if(i%2==0){    
+                  form.attachments.push({fileName:arr[i],fileUrl:arr[i+1]})
+                }
+            }
+            console.log(form)
+          api_services.commonRequest('/api/app/noticeboard/update','PUT',form,req).then(function (dataSelect) {
                 console.log(dataSelect)
                 res.json(dataSelect)
             }).catch(function (data) {
@@ -592,6 +647,7 @@ exports.add_uploadFile=function (req,res,next){
           })
 
 }
+
 
 
 

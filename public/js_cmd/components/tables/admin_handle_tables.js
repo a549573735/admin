@@ -52,7 +52,6 @@ define(function (require, exports, module) {
 
                   var id=$(event.target).attr('data-admin');
                   
-
                   $.post('/reset/user/password',{id:id}).then(function (data){
 
                         if(data.success){
@@ -64,7 +63,6 @@ define(function (require, exports, module) {
                           alert(data.msg)
                         }
                         console.log(data)
-
                   }) 
              },
              deleteEle:function (event){

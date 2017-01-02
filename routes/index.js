@@ -90,7 +90,6 @@ var proxy = require('http-proxy-middleware');
 
     app.get('/user/messages/list',User.signRequired, User.get_user_messages);   //获取用户消息列表
 
-
     app.post('/api/app/code/by/name/', User.get_user_name)   //获取验证码code
 
     app.post('/api/app/user/modify/password', User.modify_user_password)   //获取验证码code
@@ -154,12 +153,14 @@ var proxy = require('http-proxy-middleware');
 
     app.get('/add/noticeboard',User.signRequired, Index.add_noticeboard);  //    获取 已读 和 未读的公司 
         
+    app.post('/api/add/noticeboard',User.signRequired, Index.add_noticeContent);
 
-    app.post('/api/file/upload',User.signRequired, Index.add_uploadFile);
-     
+ 
 
-    // app.post('/api/data/v1/file/upload', proxy({target:'http://139.196.152.218/api/data/v1/file/upload?appKey=20161215105008023&secret=49bbab6b122c4312b6e3c0bb488f1f35', changeOrigin: true}));
 
+    app.post('/api/modify/noticeboard/update',User.signRequired, Index.modify_noticeContent);
+
+    app.post('/api/app/file/upload', proxy({target:config.internal.host, changeOrigin: true}));
 
 	app.get('/suggestion/list',User.signRequired,  Index.suggestion);   //行政建议列表
 
@@ -181,13 +182,7 @@ var proxy = require('http-proxy-middleware');
 
     app.post('/api/appointment/msg',User.signRequired,  Index.api_appointment_msg);   //预约列表
 
-
-   
-
-
     app.post('/api/inspect/qualified/msg',User.signRequired,  Index.api_inspect_qualified_msg);   //预约列表
-
-
 
     app.post('/api/appointment/confirm',User.signRequired, Index.put_appointment_messages)     //回复预约 
 
@@ -196,9 +191,6 @@ var proxy = require('http-proxy-middleware');
     app.get('/api/read/message',User.signRequired, User.read_user_messages)                    //回复 已读
 
    
-
-
-
 
     app.get('/park/all/:id', User.signRequired, Park.parkAll); 	
 
@@ -221,10 +213,6 @@ var proxy = require('http-proxy-middleware');
     app.get('/api/app/company/appKey',User.signRequired,Organize.api_appkey)       //获取appKEY
 
     app.get('/api/app/company/secret/generate',User.signRequired,Organize.api_secret)       //获取appKEY
-
-
-
-
 
     app.post('/api/organize/add',User.signRequired,Organize.api_add_organize)       //获取appKEY 
 

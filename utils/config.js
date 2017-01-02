@@ -16,6 +16,11 @@ var config = {
                 "Accept": "application/json",
                 "User-Token": '',
         },
+        multipartHeaders: {
+                "Content-Type": "multipart/form-data",
+                "Accept": "application/json",
+                "User-Token": '',
+        },
         getUserMsg:function (){
                   return util.readFileAsync(User_file,'utf-8');
 

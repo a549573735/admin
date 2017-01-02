@@ -42,7 +42,7 @@
                 {href:'/interview/list',title:'行政约谈列表',parentTitle:'4',code:'interview_list'},
                 {href:'/suggestion/list',title:'行政建议列表',parentTitle:'5',code:'suggestion_list'},
                 {href:'/publicity/list',title:'年报公示列表',parentTitle:'6',code:'publicity_list'},
-                {href:'/noticeBoard/list',title:'公告列表',parentTitle:'7',code:'noticeBoard_list'}
+                {href:'/noticeBoard/list',title:'公告列表',parentTitle:'7',code:'publish_notice'}
                 ]   
 
        };

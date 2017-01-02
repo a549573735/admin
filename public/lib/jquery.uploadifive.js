@@ -43,7 +43,7 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                     'checkScript'     : false,              // Path to the script that checks for existing file names 
                     'dnd'             : true,               // Allow drag and drop into the queue
                     'dropTarget'      : false,              // Selector for the drop target
-                    'fileObjName'     : 'Filedata',         // The name of the file object to use in your server-side script
+                    'fileObjName'     : 'file',         // The name of the file object to use in your server-side script
                     'fileSizeLimit'   : '',                  // Maximum allowed size of files to upload
                     'fileType'        : false,              // Type of files allowed (image, etc), separate with a pipe character |
                     'formData'        : {},                 // Additional data to send to the upload script
@@ -58,7 +58,7 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                     'simUploadLimit'  : 0,                  // The maximum number of files to upload at once
                     'truncateLength'  : 0,                  // The length to truncate the file names to
                     'uploadLimit'     : 0,                  // The maximum number of files you can upload
-                    'uploadScript'    : '/add/loadfile',  // The path to the upload script  
+                    'uploadScript'    : '',  // The path to the upload script  
                     'width'           : 100,               // The width of the button
 
                     /*

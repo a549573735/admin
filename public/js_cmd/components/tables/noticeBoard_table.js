@@ -22,7 +22,7 @@ define(function (require, exports, module) {
                             <td  v-if="item.title" class="text-center"><a   data-toggle="modal"   data-target="#modal-noticeDetails" @click="getDetails($event)"  :data-id="item.id" >{{ item.title }}</a></td>\
                             <td  v-if="item.createUser" class="text-center">{{ item.createUser }}</td>\
                             <td  v-if="item.createDate" class="text-center">{{ item.createDate }}</td>\
-                            <td  v-if="usertype==\'DISTRICT\'" class="text-center"><div class="bei-zhu" style="float: inherit; display:inline-block"><a  :data-id="item.id"    class="btn  btn-primary "  > 编辑</a></div><div class="bei-zhu" style="float: inherit; display:inline-block"><a   :data-id="item.id" @click="getDetails($event)"  data-toggle="modal" data-target="#modal-noticeDetails"  class="btn  btn-primary "> 详情</a></div><div class="bei-zhu" style="float: inherit; display:inline-block"><a   :data-id="item.id"  class="btn  btn-primary " @click="showmodal($event)"  > 删除</a></div></td>\
+                            <td  v-if="usertype==\'DISTRICT\'" class="text-center"><div class="bei-zhu" style="float: inherit; display:inline-block"><a  :href="\'/add/noticeboard?id=\'+item.id+\'&status=modify\'" :data-id="item.id"    class="btn  btn-primary "  > 编辑</a></div><div class="bei-zhu" style="float: inherit; display:inline-block"><a   :data-id="item.id" @click="getDetails($event)"  data-toggle="modal" data-target="#modal-noticeDetails"  class="btn  btn-primary "> 详情</a></div><div class="bei-zhu" style="float: inherit; display:inline-block"><a   :data-id="item.id"  class="btn  btn-primary " @click="showmodal($event)"  > 删除</a></div></td>\
                         </tr>\
                       </tbody>\
                   </table>', 
@@ -45,7 +45,7 @@ define(function (require, exports, module) {
                         $('#modal-deleteDetails').modal('toggle');
                         var trClass=$(event.target).closest('tr').attr('class');
                         $('#delete-notice').attr({'trClass':trClass,'data-id':form.id })
-                     
+                        
              
               }
         }          
