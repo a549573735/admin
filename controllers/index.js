@@ -6,7 +6,7 @@ var tools = new Services();
 
 var api_services = require('../models/api_services');
 var multiparty = require('multiparty');
-var form = new multiparty.Form();
+
 
 
 exports.home = function (req, res, next) {
@@ -638,7 +638,6 @@ exports.modify_noticeContent=function (req,res,next){
                   form.attachments.push({fileName:arr[i],fileUrl:arr[i+1]})
                 }
             }
-            console.log(form)
           api_services.commonRequest('/api/app/noticeboard/update','PUT',form,req).then(function (dataSelect) {
                 console.log(dataSelect)
                 res.json(dataSelect)
@@ -647,6 +646,11 @@ exports.modify_noticeContent=function (req,res,next){
           })
 
 }
+
+exports.modify_noticeContent=function (req,res,next){
+
+}
+GET /api/app/noticeboard/has/unread
 
 
 
