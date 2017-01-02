@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 app.use(function(req, res, next) {
    res.locals.config = {
-       version: '20160922'
+       version: '20170102'
    };
    next();
 });

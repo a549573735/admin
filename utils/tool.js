@@ -133,12 +133,13 @@ Services.prototype.setForm=function (){
      if(month==0){
           month=12
      }
-    var from= date.getFullYear()+'-'+this.addZero(month)+'-'+this.addZero(date.getDate());
-        if(month==12){
-          var to=date.getFullYear()+'-'+this.addZero(1)+'-'+this.addZero(date.getDate());
-        }else {
-          var to=date.getFullYear()+'-'+this.addZero((month+1))+'-'+this.addZero(date.getDate());
-        }
+      if(month==12){
+        var from=(date.getFullYear()-1)+'-'+this.addZero(month)+'-'+this.addZero(date.getDate());
+        var to=date.getFullYear()+'-'+this.addZero(1)+'-'+this.addZero(date.getDate());
+      }else {
+         var from= date.getFullYear()+'-'+this.addZero(month)+'-'+this.addZero(date.getDate());
+        var to=date.getFullYear()+'-'+this.addZero((month+1))+'-'+this.addZero(date.getDate());
+      }
 
   return { from:from,to:to}
 }
