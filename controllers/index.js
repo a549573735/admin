@@ -576,7 +576,7 @@ exports.api_readnotice_deleteList=function (req,res,next){
 }
 
 exports.add_noticeboard=function (req,res,next){    
-       console.log(req.session.user);
+
         res.render('pages/noticeContent');
 }
 

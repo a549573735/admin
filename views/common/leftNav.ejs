@@ -6,7 +6,8 @@
                            <ul class="c-list">
                                          <!--   <span class="noic activeNoic" ></span>   activeNoic-->
                               <% user.content.navlist.forEach(function (item){ %>
-                                  <li><a href="<%=item.href%>?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
+                                  <li style="position: relative; "><a href="<%=item.href%>?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>"><%if(item.list){ %><i class="icon-caret-right"></i><%}%><%=item.title%></a>
+                                    <%if(item.parentTitle==7){ %><span class="noic" data-active="<%=user.isunread%>" ></span><%}%>
                                      <% if(item.list){%>
                                          <dl >
                                             <% if(user.content.type=="DISTRICT"){%>
@@ -71,3 +72,22 @@
                        <%}%>
            <%}%>
    </div>
+ <script>
+   $(function (){
+           var isunread=$('.noic').attr('data-active');
+           var href= $('.noic').prev().attr('href')
+           if(isunread){
+               $('.noic').addClass('activeNoic') 
+               $('.noic').prev().attr('href',href+'&isunread=true')
+           }
+           if($.query.get('isunread')==='false'){
+               $('.noic').removeClass('activeNoic') 
+           }
+           $('.noic').parent().on('click',function (){
+               $('.noic').removeClass('activeNoic') 
+               $('.noic').prev().attr('href',href+'&isunread=false')
+           })
+   })
+
+
+ </script>  

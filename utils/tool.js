@@ -50,11 +50,12 @@ Services.prototype.Interface=function (url,method,data,req){
                 request({method:'GET',url:prex+'api/app/noticeboard/has/unread',json:true,headers:config.headers}).then(function (isunread){
                                    console.log(isunread.body)
                                    if(isunread.body.success){
-                                          req.session.user.isunread=isunread.content
+                                          req.session.user.content.isunread=isunread.body.content
+                         
                                           resolve(data.body)
                                    }
-                            }).catch(function (err) {
-                                      reject(err)
+                }).catch(function (err) {
+                                   reject(err)
                 })   
 
             }else if(data.headers.latesttoken!=req.session.user.lastSessionId){
@@ -68,7 +69,8 @@ Services.prototype.Interface=function (url,method,data,req){
                             request({method:'GET',url:prex+'api/app/noticeboard/has/unread',json:true,headers:config.headers}).then(function (isunread){
                      
                                    if(isunread.body.success){
-                                          req.session.user.isunread=isunread.content
+                                           req.session.user.content.isunread=isunread.body.content
+                                 
                                           resolve(data.body)
                                    }
                             }).catch(function (err) {
@@ -81,9 +83,10 @@ Services.prototype.Interface=function (url,method,data,req){
 
             }else{
                    request({method:'GET',url:prex+'api/app/noticeboard/has/unread',json:true,headers:config.headers}).then(function (isunread){
-                              
+                        
                                  if(isunread.body.success){
-                                        req.session.user.isunread=isunread.content
+                                        req.session.user.isunread=isunread.body.content
+      
                                         resolve(data.body)
                                  }
                             }).catch(function (err) {
