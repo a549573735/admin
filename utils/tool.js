@@ -128,9 +128,18 @@ Services.prototype.Interface_company=function (obj,data,dataSelect){
 
 Services.prototype.setForm=function (){
     var date=new Date();
+     console.log(date.getMonth())
+     var month=date.getMonth()
+     if(month==0){
+          month=12
+     }
+    var from= date.getFullYear()+'-'+this.addZero(month)+'-'+this.addZero(date.getDate());
+        if(month==12){
+          var to=date.getFullYear()+'-'+this.addZero(1)+'-'+this.addZero(date.getDate());
+        }else {
+          var to=date.getFullYear()+'-'+this.addZero((month+1))+'-'+this.addZero(date.getDate());
+        }
 
-    var from= date.getFullYear()+'-'+this.addZero(date.getMonth())+'-'+this.addZero(date.getDate());
-    var to=date.getFullYear()+'-'+this.addZero((date.getMonth()+1))+'-'+this.addZero(date.getDate());
   return { from:from,to:to}
 }
 

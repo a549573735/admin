@@ -228,6 +228,7 @@ exports.api_suggestion = function (req, res, next) {
         "to": req.query.to || req.body.to || time.to,
         "belongId": req.session.user.content.belongId
     }
+
     if (form.market == '') {
         delete form.market
     }

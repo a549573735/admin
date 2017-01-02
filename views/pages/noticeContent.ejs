@@ -6,7 +6,7 @@
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
          <div class="c-r" id="noticeBoard">
-        
+
                  <div class="col-md-8 col-md-offset-2">
         					<div class="block">
                                 <div class="block-header">
@@ -135,10 +135,12 @@
 		                r = null;  
 		                return context == null || context == "" || context == "undefined" ? "" : context;  
 		        }
+
+		     seajs.use("/js_cmd/group/add_noticeBoard.js?v=<%= config.version %>");
 		
 	})
 
-	seajs.use("/js_cmd/group/add_noticeBoard.js?v=<%= config.version %>");
+	
 
 </script>
 
