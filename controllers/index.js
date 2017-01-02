@@ -236,9 +236,13 @@ exports.api_suggestion = function (req, res, next) {
     }
 
     api_services.commonRequest('api/app/suggestion/list', 'POST', form,req).then(function (dataSelect) {
-        dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
-        console.log(dataSelect.content)
-        res.json(dataSelect)
+            if (dataSelect.success) {
+                    if(dataSelect.content.total){
+                    dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                    console.log(dataSelect.content)
+                    }
+                    res.json(dataSelect)
+            }
 
     }).catch(function (data) {
         console.log(data)
@@ -309,11 +313,9 @@ exports.api_interview = function (req, res, next) {
     api_services.commonRequest('api/app/interview/list', 'POST', form,req).then(function (dataSelect) {
 
         if (dataSelect.success) {
-
-            dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
-
+            dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size)||0;
         }
-        console.log(dataSelect)
+       
         res.json(dataSelect)
 
     }).catch(function (data) {
@@ -573,6 +575,7 @@ exports.api_readnotice_deleteList=function (req,res,next){
 }
 
 exports.add_noticeboard=function (req,res,next){    
+       console.log(req.session.user);
         res.render('pages/noticeContent');
 }
 
@@ -648,7 +651,7 @@ exports.modify_noticeContent=function (req,res,next){
 }
 
 // exports.modify_noticeContent=function (req,res,next){
-        
+
 // }
 // GET /api/app/noticeboard/has/unread
 
