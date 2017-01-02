@@ -647,9 +647,9 @@ exports.modify_noticeContent=function (req,res,next){
 
 }
 
-exports.modify_noticeContent=function (req,res,next){
-
-}
+// exports.modify_noticeContent=function (req,res,next){
+        
+// }
 // GET /api/app/noticeboard/has/unread
 
 
