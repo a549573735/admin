@@ -284,8 +284,8 @@ exports.details = function (req, res, next) {
     //encodeURIComponent
 
     var date = new Date();
-    form.from = req.query.from || req.body.from || date.getFullYear() + '-' + tools.addZero(date.getMonth()) + '-' + tools.addZero(date.getDate());
-    form.to = req.query.to || req.body.to || date.getFullYear() + '-' + tools.addZero((date.getMonth() + 1)) + '-' + tools.addZero(date.getDate());
+    form.from = req.query.from || req.body.from || tools.setForm().from;
+    form.to = req.query.to || req.body.to || tools.setForm().to;
 
 
     switch (req.query.view) {
@@ -293,7 +293,7 @@ exports.details = function (req, res, next) {
             data.company = true;
             data.btnlist[0].active = true;
             api_services.commonRequest('api/app/company/' + id + '/detail', 'GET', null,req).then(function (dataSelect) {
-                console.log(dataSelect)     
+                console.log(dataSelect) 
                 if( dataSelect.content.certificateFiles!=null){
                              dataSelect.content.certificateFiles=dataSelect.content.certificateFiles.split(/,/g);
                              dataSelect.content.isImg=[]
@@ -699,16 +699,10 @@ exports.api_byProduct = function (req, res, next) {
             dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
         }
         res.json(dataSelect)
-
-
     }).catch(function (data) {
-
         console.log(data)
         res.json(data)
-
     })
-
-
 }
 
 
