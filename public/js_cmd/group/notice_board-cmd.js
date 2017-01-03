@@ -112,6 +112,7 @@ define(function (require, exports, module) {
                                          $(trs).each(function (index,item){
                                               $(item).remove();
                                          })
+                                         $('#modal-deletemore').modal('toggle');
                                     }
                             })
                    },

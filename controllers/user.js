@@ -481,20 +481,16 @@ exports.get_user_messages = function (req, res, next) {
         size: 15
     }
 
-
     api_services.commonRequest('api/app/user/' + _id + '/messages', "POST", form,req).then(function (data) {
         if (data.success) {
             data.content.page = Math.ceil(data.content.total / data.content.size);
         }
 
-            console.log(data.content)
+        console.log(data.content)
         res.json(data)
 
     }).catch(function (err) {
-
-
         console.log(err)
-
     })
 
 }

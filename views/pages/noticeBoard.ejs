@@ -3,7 +3,11 @@
 <div class="c-content o-pad" id="c-content">
     <div class="clearfix">
        <% include ../common/leftNav.ejs %>
-         <div class="c-r" id="noticeBoard">
+          <% if(user.content.type==="COMPANY"){%>
+          <div class="c-r" id="noticeBoard" style="float:initial;margin:0 auto;" >
+            <%}else {%> 
+           <div class="c-r" id="noticeBoard" >
+            <% } %>
                 <form class="form-horizontal clearfix"  onsubmit="return false;">
                     <div class="clearfix">
                         <div class="col-md-12">
@@ -17,14 +21,15 @@
                                 <div class="v-t-b ">
                                     <button class="btn btn-md btn-primary btn-block inspect_btn" @click="getContent()" type="submit">查询</button>
                                 </div>
-
+                          <% if(user.content.type=='DISTRICT'){%>
                                  <div class="v-t-b "  style="margin-left:16px;" >
-                                    <button class="btn btn-md btn-primary btn-block inspect_btn" @click="deletelist()" type="submit">批量删除</button>
-                                </div>
+                                     <button class="btn btn-md btn-primary btn-block inspect_btn"  data-toggle="modal"  data-target="#modal-deletemore" type="submit">批量删除</button>
+                                 </div>
 
                                 <div class="v-t-b "  style="margin-left:16px;" >
                                          <a  href="/add/noticeboard" class="btn btn-md btn-primary btn-block inspect_btn"  type="submit">发布</a>
                                 </div>
+                          <%}%>      
                             </div>
                         </div>
                     </div>
@@ -57,19 +62,20 @@
                                           <div class="col-md-3 text-right v-modal-text">发布内容 :</div> 
                                           <div class="col-md-9 text-left v-modal-text">{{details.content}}</div> 
                                     </div>
-
-                                     <div class="col-md-12 col-lg-12"  v-if="<%=user.content.type%>==DISTRICT">
+                                     <%if(user.content.type=='DISTRICT'){%> 
+                                     <div class="col-md-12 col-lg-12" >
                                           <div class="col-md-3 text-right v-modal-text">公司总数  :</div> 
                                           <div class="col-md-9 text-left v-modal-text">{{details.companyCount}}</div> 
                                     </div>
 
-                                    <div class="col-md-12 col-lg-12" v-if="<%=user.content.type%>==DISTRICT">
+                                    <div class="col-md-12 col-lg-12" >
                                           <div class="col-md-3 text-right v-modal-text">已读数 :</div> 
                                           <div class="col-md-9 text-left v-modal-text">{{details.readCount}}/{{details.companyCount}}
                                             <a class="btn-link" data-toggle="modal" data-target="#modal-readDetails" @click="getreacDetails($event)" :data-id="details.id" data-read="true" >已读</a>  
                                             <a class="btn-link" data-toggle="modal" data-target="#modal-readDetails" @click="getreacDetails($event)" :data-id="details.id" data-read="false" >未读</a>    
                                            </div> 
                                     </div>
+                                    <%}%>
 
                                      <div class="col-md-12 col-lg-12"  >
                                           <div class="col-md-3 text-right v-modal-text">附件列表 :</div> 
@@ -100,6 +106,25 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal  用户 修改密码  弹框  -->
+
+
+<div class="modal fade " id="modal-deletemore" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog  ">
+        <div class="modal-content">
+            <div class="modal-header o-nobor">
+                <button type="button" class="close v-tabs-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            </div>
+            <div class="modal-body">
+                    <p>“确认删除选中公告吗？”</p>
+            </div>
+            <div class="modal-footer">
+                    <button type="button" class="btn btn-default "  data-dismiss="modal"   >取消</button>
+                    <button type="button" class="btn btn-primary "  id="delete-more-notice" @click="deletelist()" >确定</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal   弹框  -->
+
 
 
  <div class="modal fade " id="modal-readDetails" tabindex="-1" role="dialog" aria-hidden="true">
@@ -142,7 +167,6 @@
                 <div class="row v-table">
                     <div class="col-md-12">
                         <div class="block" v-cloak>
-                          
                             <com-table-list :datalist="dataList" :usertype="<%=JSON.stringify(user.content.type)%>" ></com-table-list>
                         </div>
                     </div>

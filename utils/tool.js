@@ -38,7 +38,6 @@ Services.prototype.InterfacePassword=function (url,method,data,req){
 }
 
 
-
 Services.prototype.Interface=function (url,method,data,req){
    
      return new Promise(function (resolve,reject){
@@ -61,7 +60,7 @@ Services.prototype.Interface=function (url,method,data,req){
             }else if(data.headers.latesttoken!=req.session.user.lastSessionId){
       
                   var str = req.session.user.userMsg;
-                  request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (response){
+                   request({method:'POST',url:prex+'api/app/user/verify?'+str,json:true,headers:config.headers}).then(function (response){
                     if (response.body.success) {
                         req.session.user = response.body
                         req.session.user.lastSessionId=response.headers.latesttoken
@@ -70,8 +69,7 @@ Services.prototype.Interface=function (url,method,data,req){
                      
                                    if(isunread.body.success){
                                            req.session.user.content.isunread=isunread.body.content
-                                 
-                                          resolve(data.body)
+                                           resolve(data.body)
                                    }
                             }).catch(function (err) {
                                       reject(err)
@@ -86,7 +84,6 @@ Services.prototype.Interface=function (url,method,data,req){
                         
                                  if(isunread.body.success){
                                         req.session.user.isunread=isunread.body.content
-      
                                         resolve(data.body)
                                  }
                             }).catch(function (err) {
