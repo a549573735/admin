@@ -65,7 +65,7 @@
 
                                     <div class="col-md-12 col-lg-12" v-if="<%=user.content.type%>==DISTRICT">
                                           <div class="col-md-3 text-right v-modal-text">已读数 :</div> 
-                                          <div class="col-md-9 text-left v-modal-text">{{details.readCount}}
+                                          <div class="col-md-9 text-left v-modal-text">{{details.readCount}}/{{details.companyCount}}
                                             <a class="btn-link" data-toggle="modal" data-target="#modal-readDetails" @click="getreacDetails($event)" :data-id="details.id" data-read="true" >已读</a>  
                                             <a class="btn-link" data-toggle="modal" data-target="#modal-readDetails" @click="getreacDetails($event)" :data-id="details.id" data-read="false" >未读</a>    
                                            </div> 
@@ -119,7 +119,7 @@
                                 </tr>
                                 </thead>
                                 <tbody class="v-tabs-check">
-                                    <tr v-for="item in dataNotice.content.content" >
+                                    <tr v-if="dataNotice.content.content" v-for="item in dataNotice.content.content" >
                                         <td class="text-center">{{item.companyName}}</td>
                                         <td class="text-center">{{item.contact}}</td>
                                         <td class="text-center">{{item.phone}}</td>

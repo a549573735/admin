@@ -38,8 +38,7 @@ define(function (require, exports, module) {
                     dataNotice:{
                           title:['企业名称','联系人','联系方式','阅读时间'],
                           style:['auto','10%','20%','20%'],
-                          content:[]
-
+                          content:{page:0,content:[{companyName:'',contact:'',phone:'',readTime:''}]}
                     },
                     details:{title:'',companyCount:'',createDate:'',content:'',createUser:'',readCount:'',attachments:''},
                     booleanRead:null,
@@ -73,8 +72,10 @@ define(function (require, exports, module) {
                           
                            var that=this;
                            $.post('/notice/isread/list',form).then(function (data){
-                                 console.log(data.content)
-                                 that.dataNotice.content=data.content
+                                  console.log(data)
+                                  if(data.content.content.length>0){
+                                      that.dataNotice.content=data.content
+                                  }
                            }) 
                    },
                    getPageDetails:function (read,id){
@@ -87,8 +88,10 @@ define(function (require, exports, module) {
                           
                            var that=this;
                            $.post('/notice/isread/list',form).then(function (data){
-                                 console.log(data.content)
-                                 that.dataNotice.content=data.content
+                                  
+                                  if(data.content.content.length>0){
+                                      that.dataNotice.content=data.content
+                                  }
                            }) 
                    },
 

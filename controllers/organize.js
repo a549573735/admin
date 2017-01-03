@@ -293,6 +293,7 @@ exports.details = function (req, res, next) {
             data.company = true;
             data.btnlist[0].active = true;
             api_services.commonRequest('api/app/company/' + id + '/detail', 'GET', null,req).then(function (dataSelect) {
+                console.log(dataSelect)     
                 if( dataSelect.content.certificateFiles!=null){
                              dataSelect.content.certificateFiles=dataSelect.content.certificateFiles.split(/,/g);
                              dataSelect.content.isImg=[]

@@ -48,7 +48,7 @@ Services.prototype.Interface=function (url,method,data,req){
             if(data.headers.latesttoken===''){
                 delete req.session.user;
                 request({method:'GET',url:prex+'api/app/noticeboard/has/unread',json:true,headers:config.headers}).then(function (isunread){
-                                   console.log(isunread.body)
+                     
                                    if(isunread.body.success){
                                           req.session.user.content.isunread=isunread.body.content
                          
