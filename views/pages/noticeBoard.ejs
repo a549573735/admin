@@ -21,15 +21,21 @@
                                 <div class="v-t-b ">
                                     <button class="btn btn-md btn-primary btn-block inspect_btn" @click="getContent()" type="submit">查询</button>
                                 </div>
-                          <% if(user.content.type=='DISTRICT'){%>
-                                 <div class="v-t-b "  style="margin-left:16px;" >
-                                     <button class="btn btn-md btn-primary btn-block inspect_btn"  data-toggle="modal"  data-target="#modal-deletemore" type="submit">批量删除</button>
-                                 </div>
+                               <% if(user.content.type=="COMPANY"){%>
+                                  <div class="v-t-b " style="margin-left:16px; float:right;">
+                                      <button class="btn btn-md btn-primary btn-block inspect_btn" onClick="javascript:window.history.go(-1)" type="submit">企业详情</button>
+                                  </div>
+                                <%}%>
 
-                                <div class="v-t-b "  style="margin-left:16px;" >
-                                         <a  href="/add/noticeboard" class="btn btn-md btn-primary btn-block inspect_btn"  type="submit">发布</a>
-                                </div>
-                          <%}%>      
+                              <% if(user.content.type=='DISTRICT'){%>
+                                     <div class="v-t-b "  style="margin-left:16px;" >
+                                         <button class="btn btn-md btn-primary btn-block inspect_btn"  data-toggle="modal"  data-target="#modal-deletemore" type="submit">批量删除</button>
+                                     </div>
+
+                                    <div class="v-t-b "  style="margin-left:16px;" >
+                                             <a  href="/add/noticeboard" class="btn btn-md btn-primary btn-block inspect_btn"  type="submit">发布</a>
+                                    </div>
+                              <%}%>      
                             </div>
                         </div>
                     </div>
