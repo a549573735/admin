@@ -5,9 +5,12 @@
                     <div class="block-header clearfix">
                         <div class="col-md-12 o-pd">
                             <h3 class="block-title col-md-10" ><%=user.content.companyName%></h3>
-                            <div class="block-title col-md-2 text-right o-pd-r">
-                                   <a class="btn btn-minw btn-primary v-tabs-btn"  href="/noticeBoard/list" >公告列表</a>
-                            </div>
+                            <% if(user.content.type=="COMPANY"){%>
+                              <div class="block-title col-md-2 text-right o-pd-r">
+                                     <a class="btn btn-minw btn-primary v-tabs-btn"  href="/noticeBoard/list" >公告列表</a>
+                              </div>
+                            <%}%>
+
                             <% if(user.content.type!="COMPANY"&&user.content.lastInspectTime!=""&&user.content.lastInspectTime!=null){%>
                               <label class="block-title company-msg">该企业最近一次网络检查时间为：<%=user.content.lastInspectTime%></label>
                             <%}%>
