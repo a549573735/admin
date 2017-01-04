@@ -63,7 +63,7 @@ module.exports=function (app){
                }
           }
 
-          var json={publicity:'',suggestion:'',interview:'',appointment:'',network_check:'',same_level_manage:"",company_info:""} 
+          var json={publicity:'',suggestion:'',interview:'',appointment:'',network_check:'',same_level_manage:"",company_info:"",publish_notice:""} 
 
          if(_user ){   
                     if( _user.content.permissions!=null){
