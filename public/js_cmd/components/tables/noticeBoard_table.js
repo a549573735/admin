@@ -15,7 +15,7 @@ define(function (require, exports, module) {
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
-                         <tr v-if="datalist" v-for="item in datalist.content.content" :class="\'id-\'+$index">\
+                         <tr v-if="datalist" v-for="item in datalist.content.content" v-bind:style="{ color: item.read?\'\':\'red\' }"  :class="\'id-\'+$index">\
                             <td  class="text-center">\
                               <label class="css-input css-checkbox css-checkbox-primary"><input type="checkbox"  :value="item.id"><span></span></label>\
                             </td>\
@@ -30,9 +30,11 @@ define(function (require, exports, module) {
              getDetails:function (event){
                    var that=this;   
                    var _id =$(event.target).attr('data-id');
+
                    $.post('/api/noticedetails',{id:_id}).then(function (res){
                         
                         if(res.success){
+                            $(event.target).closest('tr').css('color','#666');
                             that.$dispatch('send-details', res.content)
                         }
                    }) 
