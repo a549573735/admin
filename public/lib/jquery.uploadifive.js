@@ -58,7 +58,7 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                     'simUploadLimit'  : 0,                  // The maximum number of files to upload at once
                     'truncateLength'  : 0,                  // The length to truncate the file names to
                     'uploadLimit'     : 0,                  // The maximum number of files you can upload
-                    'uploadScript'    : '',  // The path to the upload script  
+                    'uploadScript'    : '',  // The path to the upload script
                     'width'           : 100,               // The width of the button
 
                     /*
@@ -67,12 +67,12 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                     'onCancel'         : function(file) {},                        // Triggered when a file is cancelled or removed from the queue
                     'onCheck'          : function(file, exists) {},                // Triggered when the server is checked for an existing file
                     */
-					'onClearQueue'     : function(queue) {alert(1)},                       // Triggered during the clearQueue function
+                    'onClearQueue'     : function(queue) {},                       // Triggered during the clearQueue function
                     /*'onDestroy'        : function() {}                             // Triggered during the destroy function
                     'onDrop'           : function(files, numberOfFilesDropped) {}, // Triggered when files are dropped into the file queue*/
                     'onError'          : function(file, fileType, data) {
-						console.log("makeSureBox","上传的文件类型、大小超出限制！")
-						},        // Triggered when an error occurs
+                        console.log("makeSureBox","上传的文件类型、大小超出限制！")
+                     },        // Triggered when an error occurs
                     /*'onFallback'       : function(){},                            // Triggered if the HTML5 File API is not supported by the browser
                     'onInit'           : function() {},                            // Triggered when UploadiFive if initialized
                     'onQueueComplete'  : function() {},                            // Triggered once when an upload queue is done
@@ -189,7 +189,7 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                     if (($data.queue.count + limit) > settings.queueSizeLimit && settings.queueSizeLimit !== 0) {
                         // Check if the queueSizeLimit was reached
                         if ($.inArray('onError', settings.overrideEvents) < 0) {
-                            makeSure("makeSureBox",'最大数量为(' + settings.queueSizeLimit + ')个.  请重新选择.');
+
                         }
                         // Trigger the onError event
                         if (typeof settings.onError === 'function') {
@@ -812,7 +812,7 @@ Released under the UploadiFive Standard License <http://www.uploadify.com/upload
                         if ($data.uploads.current == 0) {
                             if ($.inArray('onError', settings.overrideEvents) < 0) {
                                 if ($data.filesToUpload() > 0 && settings.uploadLimit != 0) {
-                                    console.log("makeSureBox",'超出最大上传限制.');
+                                    makeSure("makeSureBox",'超出最大上传限制.');
                                 }
                             }
                             // Trigger the onError event

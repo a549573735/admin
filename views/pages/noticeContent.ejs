@@ -66,14 +66,15 @@
 <script>
 	$(function (){
 			var fileData=[];
+
 			$("#file_upload").uploadifive({
 				'auto'              : true,
 				'uploadScript'      : '/api/app/file/upload',
 				"fileSizeLimit"		: "10MB",
 				"fileTypeExts" 		: "*.*",
 				'buttonText'        : '选择文件',
-				'multi'             : false,
-				'queueSizeLimit'    : 999,
+				'multi'             : true,
+				'queueSizeLimit'    : 9999,
 				'queueID'           : 'add-notice',
 				"onUploadComplete" : function(file, data) {
 					  console.log(file,data);
