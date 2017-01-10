@@ -30,7 +30,7 @@
                                   </li>
                               <%})%>
                             <li style="position: relative; "><a href="/noticeBoard/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>">公告列表</a>
-                                    <span class="noic activeNoic"  data-active="<%=user.isunread%>"></span>
+                                    <span class="noic"  data-active="<%=user.isunread%>"></span>
                              </li>
                                 <%if(user.content.btnPermissions.same_level_manage){%>
                                   <li><a href="javascript:;"><i class="icon-caret-right"></i>用户管理</a>
@@ -75,13 +75,14 @@
    $(function (){
            var isunread=$('.noic').attr('data-active');
            var href= $('.noic').prev().attr('href')
-           if(isunread){
+           if(isunread!='false'){
                $('.noic').addClass('activeNoic') 
                $('.noic').prev().attr('href',href+'&isunread=true')
+           }else {
+              $('.noic').removeClass('activeNoic') 
+               $('.noic').prev().attr('href',href+'&isunread=false')
            }
-           if(GetQueryString('isunread')==='false'){
-               $('.noic').removeClass('activeNoic') 
-           }
+       
            // $('.noic').parent().on('click',function (){
            //     $('.noic').removeClass('activeNoic') 
            //     $('.noic').prev().attr('href',href+'&isunread=false')

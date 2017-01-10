@@ -50,7 +50,7 @@ Services.prototype.Interface=function (url,method,data,req){
                      
                                    if(isunread.body.success){
                                           req.session.user.content.isunread=isunread.body.content
-                         
+                                                    console.log(333333333);
                                           resolve(data.body)
                                    }
                 }).catch(function (err) {
@@ -69,11 +69,12 @@ Services.prototype.Interface=function (url,method,data,req){
                      
                                    if(isunread.body.success){
                                            req.session.user.content.isunread=isunread.body.content
+                                           console.log(req.session.user.content.isunread,1111111111);
                                            resolve(data.body)
                                    }
                             }).catch(function (err) {
                                       reject(err)
-                           })   
+                             })   
                           
                     }).catch(function (err) {
                         reject(err)
@@ -84,6 +85,7 @@ Services.prototype.Interface=function (url,method,data,req){
                         
                                  if(isunread.body.success){
                                         req.session.user.isunread=isunread.body.content
+                                           console.log(req.session.user.isunread,2222222);
                                         resolve(data.body)
                                  }
                             }).catch(function (err) {
