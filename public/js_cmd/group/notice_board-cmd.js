@@ -63,7 +63,7 @@ define(function (require, exports, module) {
                    getreacDetails:function (event){
                            this._id=$(event.target).attr('data-id');
                            this.booleanRead=$(event.target).attr('data-read');
-                           this.dataNotice.content={page:0,content:[{companyName:'',contact:'',phone:'',readTime:''}]}
+                           this.dataNotice.content = {page:0,content:[{companyName:'',contact:'',phone:'',readTime:''}]}
                            var form={
                                 id:this._id,
                                 read:this.booleanRead,
