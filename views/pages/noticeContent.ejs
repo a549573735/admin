@@ -10,7 +10,7 @@
                  <div class="col-md-8 col-md-offset-2">
         					<div class="block">
                                 <div class="block-header">
-                                    <h3 class="block-title">新增公告</h3>
+                                    <h3 class="block-title">编辑公告</h3>
                                 </div>
                                 <div class="col-md-8 o-pd-l" style="margin-top:30px;">
 	                                <div class="block-content block-content-narrow">
@@ -30,7 +30,7 @@
 													<div class="col-md-6 " v-if="nowNoticBoard.attachments" v-for="item in nowNoticBoard.attachments">
 															<div class="alert alert-info  close_notice" >
 					                                        <button type="button" class="close close-data" :data-url="item.fileUrl" :data-name="item.fileName" :data-index="$index"  data-dismiss="alert" >×</button>
-					                                      		  <p v-if="item.fileName">{{item.fileName}}</p>
+					                                      		  <p v-if="item.fileName" style="word-break:break-all;">{{item.fileName}}</p>
 					                                  		</div>
 													</div>
 											</div>
@@ -41,11 +41,12 @@
 
 											 <div class="form-group clearfix">
 	                                          <input id="file_upload" name="file_upload" type="file" multiple="true">
-	                                          <a  style="float: right;" class="btn btn-sm btn-primary uploadifive"  href="javascript:$('#file_upload').uploadifive('upload')">确认上传</a>
+	                                       <!--    <a   class="btn btn-sm btn-primary uploadifive"  href="javascript:$('#file_upload').uploadifive('upload')">确认上传</a> -->
+	                                         <button style="float: right;" class="btn btn-sm btn-primary uploadifive inspect_btn" id="subNotice" type="submit">提交保存</button>
 	                                 
 	                                        </div>
 	                                        <div class="col-md-3 o-pd-l">
-	                                            <button class="btn btn-md btn-block  btn-primary inspect_btn" id="subNotice" type="submit">提交</button>
+	                                          
 	                                        </div>
 	                                    </form>
 	                                </div>
@@ -66,7 +67,7 @@
 	$(function (){
 			var fileData=[];
 			$("#file_upload").uploadifive({
-				'auto'              : false,
+				'auto'              : true,
 				'uploadScript'      : '/api/app/file/upload',
 				"fileSizeLimit"		: "10MB",
 				"fileTypeExts" 		: "*.*",

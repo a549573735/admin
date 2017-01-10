@@ -45,8 +45,6 @@ define(function (require, exports, module) {
                         $('#modal-deleteDetails').modal('toggle');
                         var trClass=$(event.target).closest('tr').attr('class');
                         $('#delete-notice').attr({'trClass':trClass,'data-id':form.id })
-                        
-             
               }
         }          
       }

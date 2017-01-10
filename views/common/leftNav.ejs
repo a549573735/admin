@@ -82,10 +82,10 @@
            if(GetQueryString('isunread')==='false'){
                $('.noic').removeClass('activeNoic') 
            }
-           $('.noic').parent().on('click',function (){
-               $('.noic').removeClass('activeNoic') 
-               $('.noic').prev().attr('href',href+'&isunread=false')
-           })
+           // $('.noic').parent().on('click',function (){
+           //     $('.noic').removeClass('activeNoic') 
+           //     $('.noic').prev().attr('href',href+'&isunread=false')
+           // })
 
              function GetQueryString(name) {  
                 var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
