@@ -7,9 +7,8 @@ define(function (require, exports, module) {
       new Vue({
                 el: '#noticeBoard',
                 data: {
-
                     dataList:{
-                           title:[' ','标题','发布人','发布时间','操作'],
+                           title:[' ','标题','发布人','发布时间'],
                            content:function (){
                               var dataList=null;
                                     $.ajax({
@@ -27,17 +26,16 @@ define(function (require, exports, module) {
                                     error: function(err) {
                                     }
                                 });
-                      
                                  return dataList     
                             }(),
-                           style:['8%','20%','20%','20%','auto'],
+                           style:['8%','auto','auto','auto'],
                            details:[{_id:'1',msg:'该公司的销售及供应商'},{_id:'2',msg:'该公司的销售及供应商'}],
                            overfull:false,
                            selectsubset:[],
                     },
                     dataNotice:{
-                          title:['企业名称','联系人','联系方式','阅读时间'],
-                          style:['auto','10%','20%','20%'],
+                          title:[],
+                          style:[],
                           content:{page:0,content:[{companyName:'',contact:'',phone:'',readTime:''}]}
                     },
                     details:{title:'',companyCount:'',createDate:'',content:'',createUser:'',readCount:'',attachments:''},
@@ -69,12 +67,24 @@ define(function (require, exports, module) {
                                 read:this.booleanRead,
                                 page:this.page_notice||0
                            }
-                          
                            var that=this;
+                          that.dataNotice.title=[]
+                          that.dataNotice.style=[]
+                        
                            $.post('/notice/isread/list',form).then(function (data){
                                   console.log(data)
                                   if(data.content.content.length>0){
-                                      that.dataNotice.content=data.content
+                                       if(that.booleanRead=='true'){
+                                          that.dataNotice.title=['企业名称','联系人','联系方式','阅读时间'];
+                                           that.dataNotice.style=['auto','10%','20%','20%'];
+                                        
+                                       }else {
+                                         
+                                            that.dataNotice.title=['企业名称','联系人','联系方式'];
+                                            that.dataNotice.style=['auto','30%','30%'];
+                                       }
+                                       console.log(that.dataNotice.style,that.dataNotice.title)
+                                       that.dataNotice.content=data.content
                                   }
                            }) 
                    },

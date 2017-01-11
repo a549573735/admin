@@ -125,11 +125,21 @@ define(function (require, exports, module) {
 
            // this.searchData()
             var that=this;
-            var form={
-                page:page-1,
-                id:'',
-                park:''
-            }
+      
+             var form={
+                    "businesses": $('input[name=businesses]').val(),
+                    "companyName":  $('input[name=company]').val(),
+                    "customer":  $('input[name=customer]').val(),
+                    "market":  $('#select_market').val(),
+                    "page": page-1,
+                    "park":  $('#select_park').val(),
+                    "producer":  $('input[name=producer]').val(),
+                    "product":  $('input[name=product]').val(),
+                    "provider":  $('input[name=provider]').val(),
+                    "size": 15,
+                    "id":$('#select_park').val()
+                  }
+
 
             $.post('/admin/company',form).then(function (data){
 

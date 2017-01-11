@@ -523,8 +523,10 @@ exports.api_noticeBoard=function (req,res,next){
 exports.api_get_noticeDetails=function (req,res,next){
         var id=req.body.id;
          api_services.commonRequest('api/app/noticeboard/detail?id='+id,'GET',null,req).then(function (dataSelect) {
-                console.log(dataSelect.content)
-
+                                    console.log(dataSelect.content)
+                var content=dataSelect.content.content.replace(/\n/g,'<br />');
+                dataSelect.content.content=content
+                    console.log(dataSelect.content.content)
                 res.json(dataSelect)
 
             }).catch(function (data) {

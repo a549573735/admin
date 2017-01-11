@@ -91,12 +91,12 @@ define(function (require, exports, module) {
 		   },events:{
 			   	'send-page':function (page){
 
-
 			   		    var  form={
-				 				  	id:'all',
-				 				  	page:page-1,
-				 				  	parkname:'',
+				 				     page:page-1,
+				 				  	 parkname:$('.select-parkname').val()||'',
+		 				   	  		 id: $('#select_park').val()||'all'
 				 				}	
+
 				 		var that=this;			
 
 		                     $.ajax({

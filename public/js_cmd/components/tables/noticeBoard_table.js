@@ -2,8 +2,6 @@ define(function (require, exports, module) {
     var Vue = require('lib_cmd/vue-cmd');
     
 
-
-
     Vue.component('com-table-list', {
 
         props: ['datalist','notice'],
@@ -12,6 +10,7 @@ define(function (require, exports, module) {
                       <thead>\
                       <tr class="v-table-tr">\
                             <th class="text-center " v-for="item in datalist.title" v-bind:style="{ width: datalist.style[$index] }">{{item}}</th>\
+                            <th class="text-center" v-if="notice==\'publish_notice\'" style="width:auto" >操作</th>\
                       </tr>\
                       </thead>\
                       <tbody class="v-tabs-check">\
@@ -36,6 +35,7 @@ define(function (require, exports, module) {
                         if(res.success){
                             $(event.target).closest('tr').css('color','#666');
                             that.$dispatch('send-details', res.content)
+                            $('.details-content').html(res.content.content)
                         }
                    }) 
              },

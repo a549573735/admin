@@ -105,6 +105,7 @@
 					 		$.post('/api/modify/noticeboard/update',form).then(function (data){
 								 if(data.success){
 								 	alert('修改成功')
+								 	window.location.href="/noticeBoard/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>"
 								 }else {
 								 	alert('添加失败')
 								 }
@@ -114,6 +115,7 @@
 							$.post('/api/add/noticeboard',form).then(function (data){
 								 if(data.success){
 								 	alert('添加成功')
+								 	window.location.href="/noticeBoard/list?id=<%=user.content.belongId%>&market=<%=user.content.marketId%>&park=<%=user.content.parkId%>"
 								 }else {
 								 	alert('添加失败')
 								 }
