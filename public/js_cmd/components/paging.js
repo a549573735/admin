@@ -8,11 +8,11 @@ define(function (require, exports, module) {
         },
         computed:{
             'setpage':function (){
-                
+
                 if(this.pagelist>this.intNum){
                     return {num:this.intNum,carry:true,allnum:this.pagelist,preCarry:false}
                 }else {
-                    return {num:this.pagelist,carry:false,preCarry:false}
+                    return {num:this.pagelist,carry:true,allnum:this.pagelist,preCarry:false}
                 }
             }
         },
@@ -26,7 +26,7 @@ define(function (require, exports, module) {
                                         <li v-for="item in setpage.allnum" :class="{\'active\':($index+1)==now}"  v-bind:style="{ display: $index>=intNum?\'none\':\'block\'  }" >\
                                             <a href="javascript:void(0)" @click="getPage($event)">{{$index+1}}</a>\
                                         </li>\
-                                        <li  class="more"   v-bind:style="{ display:carry?\'none\':\'block\'  }">\
+                                        <li  class="more"   v-bind:style="{ display:setpage.carry?\'none\':\'block\'  }">\
                                             ...\
                                         </li>\
                                     </ul>\
