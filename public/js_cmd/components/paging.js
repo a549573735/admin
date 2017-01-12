@@ -8,10 +8,11 @@ define(function (require, exports, module) {
         },
         computed:{
             'setpage':function (){
+                
                 if(this.pagelist>this.intNum){
-                    return {num:this.intNum,carry:true,allnum:this.pagelist}
+                    return {num:this.intNum,carry:true,allnum:this.pagelist,preCarry:false}
                 }else {
-                    return {num:this.pagelist,carry:false}
+                    return {num:this.pagelist,carry:false,preCarry:false}
                 }
             }
         },
@@ -19,10 +20,13 @@ define(function (require, exports, module) {
                                 <div class="yema_befor"><a href="javascript:;" class="btn btn-link"  @click="getPrevious($event)" >上一页</a>  第</div>\
                                 <nav class="yema_nav">\
                                     <ul class="pagination pagination-sm yema_ul">\
-                                        <li v-for="item in pagelist" :class="{\'active\':($index+1)==now}"  v-bind:style="{ display: $index>=intNum?\'none\':\'block\'  }" >\
+                                        <li  class="more2 hide">\
+                                            ...\
+                                        </li>\
+                                        <li v-for="item in setpage.allnum" :class="{\'active\':($index+1)==now}"  v-bind:style="{ display: $index>=intNum?\'none\':\'block\'  }" >\
                                             <a href="javascript:void(0)" @click="getPage($event)">{{$index+1}}</a>\
                                         </li>\
-                                        <li v-if="setpage.carry">\
+                                        <li  class="more"   v-bind:style="{ display:carry?\'none\':\'block\'  }">\
                                             ...\
                                         </li>\
                                     </ul>\
@@ -38,47 +42,71 @@ define(function (require, exports, module) {
                 } else {
                     this.now = $(event.target).html()
                 }
-                      // $('.yema_ul').find('li').each(function (index,item){
-                      //          if(that.now-5>1){
-                      //               if(index<that.now-5){
-                      //                   $(item).css('display','none')
-                      //               }
-                      //          }else {
-                      //               if(index<that.now){
-                      //                   $(item).css('display','block')
-                      //               }
-
-                      //          }
-                      //          if(that.now+5< that.setpage.allnum){
-                      //                  if(index>that.now+5){
-                      //                     $(item).css('display','none')
-                      //                  }
-                      //                  if(){
-
-                      //                  }
-                      //          }
-                      // })  
-               
-                this.$dispatch('send-page', this.now)
+                
+                  this.getCompute();
+                  
+                   this.$dispatch('send-page', this.now)
             },
             getPrevious: function (event) {
+
                 if (this.now == 1) {
                     return false;
                 } else {
                     this.now--;
                     this.$dispatch('send-page', this.now)
                 }
+                  this.getCompute(); 
             },
             getNext: function () {
-
+                
                 if (this.now >= this.pagelist) {
                     return false;
                 } else {
                     this.now++;
                     this.$dispatch('send-page', this.now)
                 }
-            }
+                 this.getCompute(); 
+            },
+            getCompute:function (){
+                     var that=this;
+                        var ali=$('.yema_ul').find('li');
+                        var arr=[];
+                        var iNow=parseInt(this.now)
+
+                    if(iNow+5<that.setpage.allnum){
+                        for(var i=iNow;i<iNow+5;i++){
+                            arr.push(ali.eq(i));
+                        }
+                        $('.more').removeClass('hide');
+
+                    }else {
+                        for(var i=iNow;i<parseInt(that.setpage.allnum)+1;i++){
+                            arr.push(ali.eq(i));
+                        }
+                           $('.more').addClass('hide');
+                    }
+
+                    if(iNow-5>0){
+                        for(var i=iNow;i>iNow-5;i--){
+                            arr.push(ali.eq(i));
+                        }
+                         $('.more2').removeClass('hide');
+                    }else {
+                         for(var i=1;i<iNow;i++){
+                             arr.push(ali.eq(i));
+                         }
+                         $('.more2').addClass('hide');
+                    }  
+                   ali.not('.more').not('.more2').css('display','none');
+                   
+                   arr.forEach(function (item){
+                        $(item).css('display','block');
+                   })
+                 }
         }
     });
+
+
+
 });
 

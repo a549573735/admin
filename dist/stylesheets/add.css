@@ -4,4 +4,5 @@
 .uploadifive{ float: left;}
 .uploadifive-button{ border-radius: 8px; background-color:#428bca; background-image:none; border:none; }
 .uploadifive-button:hover{ background:#316796; cursor: pointer;}
+.hide{ display: none !important;}
 
