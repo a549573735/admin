@@ -510,7 +510,11 @@ exports.api_noticeBoard=function (req,res,next){
         }
 
     api_services.commonRequest('api/app/noticeboard/list', 'POST', form,req).then(function (dataSelect) {
-        console.log(dataSelect.content)
+
+       if (dataSelect.success) {
+            dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+        }
+
         res.json(dataSelect)
 
     }).catch(function (data) {

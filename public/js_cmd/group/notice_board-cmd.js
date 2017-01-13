@@ -19,6 +19,7 @@ define(function (require, exports, module) {
                                     success: function(data) {
                                         //请求成功时处理
                                         if(data.success){
+                                          console.log(data.content)
                                             dataList=data.content
                                         }else {
                                         }
@@ -55,7 +56,9 @@ define(function (require, exports, module) {
                                form.title=title;
                            }   
                           $.post('/api/noticeboard/list',form).then(function (data){
-                              that.dataList.content=data.content
+                               console.log(JSON.stringify(data.content))
+                               that.dataList.content=data.content
+                              console.log(that.dataList.content.page)
                           })   
                    },
                    getreacDetails:function (event){
@@ -83,7 +86,7 @@ define(function (require, exports, module) {
                                             that.dataNotice.title=['企业名称','联系人','联系方式'];
                                             that.dataNotice.style=['auto','30%','30%'];
                                        }
-                                       console.log(that.dataNotice.style,that.dataNotice.title)
+                                       console.log(data.content)
                                        that.dataNotice.content=data.content
                                   }
                            }) 
