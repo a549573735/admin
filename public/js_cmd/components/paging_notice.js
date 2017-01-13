@@ -42,7 +42,7 @@ define(function (require, exports, module) {
                     this.now = $(event.target).html()
                 }
                 
-                  this.getCompute();
+                  this.getCompute($(event.target));
                   
                   this.$dispatch('send-page', this.now)
             },
@@ -54,7 +54,7 @@ define(function (require, exports, module) {
                     this.now--;
                     this.$dispatch('send-page', this.now)
                 }
-                  this.getCompute(); 
+                  this.getCompute($(event.target)); 
             },
             getNext: function () {
                 
@@ -64,11 +64,11 @@ define(function (require, exports, module) {
                     this.now++;
                     this.$dispatch('send-page', this.now)
                 }
-                 this.getCompute(); 
+                 this.getCompute($(event.target)); 
             },
-            getCompute:function (){
-                     var that=this;
-                        var ali=$('.yema_ul').find('li');
+            getCompute:function (target){
+                        var that=this;
+                        var ali=target.closest('.yema_ul').find('li');
                         var arr=[];
                         var iNow=parseInt(this.now)
 
