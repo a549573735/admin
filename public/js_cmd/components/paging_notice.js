@@ -4,35 +4,36 @@ define(function (require, exports, module) {
     Vue.component('v-pages-notice', {
         props: ['pagelist'],
         data: function () {
-           return {now: 1,intNum:11}
+            return {now: 1,intNum:11}
         },
         computed:{
-             'setpage':function (){
+            'setpage':function (){
+
                 if(this.pagelist>this.intNum){
-                    return {num:this.intNum,carry:true,allnum:this.pagelist,preCarry:false}
+                    return {num:this.intNum,carry:false,allnum:this.pagelist,preCarry:false}
                 }else {
                     return {num:this.pagelist,carry:true,allnum:this.pagelist,preCarry:false}
                 }
             }
         },
-         template: '<div class="yema-warp clearfix"><div class="yema">\
+        template: '<div class="yema-warp clearfix"><div class="yema">\
                                 <div class="yema_befor"><a href="javascript:;" class="btn btn-link"  @click="getPrevious($event)" >上一页</a>  第</div>\
                                 <nav class="yema_nav">\
                                     <ul class="pagination pagination-sm yema_ul">\
-                                        <li  class="more3 hide">\
+                                        <li  class="more2 hide">\
                                             ...\
                                         </li>\
                                         <li v-for="item in setpage.allnum" :class="{\'active\':($index+1)==now}"  v-bind:style="{ display: $index>=intNum?\'none\':\'block\'  }" >\
                                             <a href="javascript:void(0)" @click="getPage($event)">{{$index+1}}</a>\
                                         </li>\
-                                        <li  class="more4"   v-bind:style="{ display:setpage.carry?\'none\':\'block\'  }">\
+                                        <li  class="more"  v-bind:style="{ display:setpage.carry?\'none\':\'block\'}">\
                                             ...\
                                         </li>\
                                     </ul>\
                                 </nav>\
                                 <div class="yema_end"> 页<a href="javascript:;" class="btn btn-link" @click="getNext($event)"  >下一页</a> <a href="javascript:;" @click="getPage($event)"  class="btn btn-link">尾页</a></div>\
                </div></div> ',
-         methods: {
+        methods: {
 
             getPage: function (event) {
                 var that=this;
@@ -45,6 +46,7 @@ define(function (require, exports, module) {
                   this.getCompute($(event.target));
                   
                   this.$dispatch('send-page', this.now)
+                 
             },
             getPrevious: function (event) {
 
@@ -52,57 +54,62 @@ define(function (require, exports, module) {
                     return false;
                 } else {
                     this.now--;
+                     this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
                     this.$dispatch('send-page', this.now)
                 }
-                  this.getCompute($(event.target)); 
+                   console.log(this.now)
+               
             },
-            getNext: function () {
+            getNext: function (event) {
                 
                 if (this.now >= this.pagelist) {
                     return false;
                 } else {
                     this.now++;
+                    this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
                     this.$dispatch('send-page', this.now)
                 }
-                 this.getCompute($(event.target)); 
+                  console.log(this.now)
+        
             },
             getCompute:function (target){
                         var that=this;
-                        var ali=target.closest('.yema_ul').find('li');
+                        var warp=$(target).closest('.yema_ul')
+                        var ali=$(target).closest('.yema_ul').find('li');
                         var arr=[];
+                        var more1=warp.find('.more')
+                        var more2=warp.find('.more2')
                         var iNow=parseInt(this.now)
-
                     if(iNow+5<that.setpage.allnum){
                         for(var i=iNow;i<iNow+5;i++){
                             arr.push(ali.eq(i));
                         }
-                        $('.more3').removeClass('hide');
+                        more1.removeClass('hide');
 
                     }else {
                         for(var i=iNow;i<parseInt(that.setpage.allnum)+1;i++){
                             arr.push(ali.eq(i));
                         }
-                           $('.more3').addClass('hide');
+                           more1.addClass('hide');
                     }
-
                     if(iNow-5>0){
                         for(var i=iNow;i>iNow-5;i--){
                             arr.push(ali.eq(i));
                         }
-                         $('.more4').removeClass('hide');
+                        more2.removeClass('hide');
                     }else {
                          for(var i=1;i<iNow;i++){
                              arr.push(ali.eq(i));
                          }
-                         $('.more4').addClass('hide');
+                         more2.addClass('hide');
                     }  
-                   ali.not('.more3').not('.more4').css('display','none');
-                   
-                   arr.forEach(function (item){
-                        $(item).css('display','block');
-                   })
+                     ali.not('.more').not('.more2').css('display','none');
+                
+                       arr.forEach(function (item){
+                            $(item).css('display','block');
+                       })
                  }
-           }
+        }
     });
 });
 

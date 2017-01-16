@@ -10,7 +10,7 @@ define(function (require, exports, module) {
             'setpage':function (){
 
                 if(this.pagelist>this.intNum){
-                    return {num:this.intNum,carry:true,allnum:this.pagelist,preCarry:false}
+                    return {num:this.intNum,carry:false,allnum:this.pagelist,preCarry:false}
                 }else {
                     return {num:this.pagelist,carry:true,allnum:this.pagelist,preCarry:false}
                 }
@@ -46,6 +46,7 @@ define(function (require, exports, module) {
                   this.getCompute($(event.target));
                   
                   this.$dispatch('send-page', this.now)
+                 
             },
             getPrevious: function (event) {
 
@@ -53,47 +54,54 @@ define(function (require, exports, module) {
                     return false;
                 } else {
                     this.now--;
+                     this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
                     this.$dispatch('send-page', this.now)
                 }
-                  this.getCompute($(event.target)); 
+                   console.log(this.now)
+               
             },
-            getNext: function () {
+            getNext: function (event) {
                 
                 if (this.now >= this.pagelist) {
                     return false;
                 } else {
                     this.now++;
+                    this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
                     this.$dispatch('send-page', this.now)
                 }
-                 this.getCompute($(event.target)); 
+                  console.log(this.now)
+        
             },
             getCompute:function (target){
                         var that=this;
+                        var warp=$(target).closest('.yema_ul')
                         var ali=$(target).closest('.yema_ul').find('li');
                         var arr=[];
+                        var more1=warp.find('.more')
+                        var more2=warp.find('.more2')
                         var iNow=parseInt(this.now)
                     if(iNow+5<that.setpage.allnum){
                         for(var i=iNow;i<iNow+5;i++){
                             arr.push(ali.eq(i));
                         }
-                        $('.more').removeClass('hide');
+                        more1.removeClass('hide');
 
                     }else {
                         for(var i=iNow;i<parseInt(that.setpage.allnum)+1;i++){
                             arr.push(ali.eq(i));
                         }
-                           $('.more').addClass('hide');
+                           more1.addClass('hide');
                     }
                     if(iNow-5>0){
                         for(var i=iNow;i>iNow-5;i--){
                             arr.push(ali.eq(i));
                         }
-                         $('.more2').removeClass('hide');
+                        more2.removeClass('hide');
                     }else {
                          for(var i=1;i<iNow;i++){
                              arr.push(ali.eq(i));
                          }
-                         $('.more2').addClass('hide');
+                         more2.addClass('hide');
                     }  
                      ali.not('.more').not('.more2').css('display','none');
                 
@@ -103,8 +111,5 @@ define(function (require, exports, module) {
                  }
         }
     });
-
-
-
 });
 
