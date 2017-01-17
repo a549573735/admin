@@ -19,6 +19,8 @@ define(function (require, exports, module) {
                                     success: function(data) {
                                         //请求成功时处理
                                         if(data.success){
+                                            data.content.content=data.content.content.replace(/<br\s\/>/gi,'\n');
+                                            console.log(data.content.content)
                                             noticBoard = data.content;
                                         }
                                     },
@@ -32,6 +34,7 @@ define(function (require, exports, module) {
                                      return noticBoard
                       }(),
                 },
+
                 methods: {
                     addNoticeBoard:function (event){
                           

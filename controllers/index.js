@@ -612,7 +612,7 @@ exports.add_noticeContent=function (req,res,next){
                 }
 
             }
-           console.log(form,arr)
+           
 
             for(var i=0;i<arr.length;i++){
                 if(i%2==0){    
