@@ -3,6 +3,7 @@ define(function (require, exports, module) {
 
     Vue.component('v-pages-notice', {
         props: ['pagelist'],
+        props: ['pagelist'],
         data: function () {
             return {now: 1,intNum:11}
         },
@@ -39,11 +40,13 @@ define(function (require, exports, module) {
                 var that=this;
                 if ($(event.target).html() == '尾页') {
                     this.now = this.pagelist;
+                    this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
                 } else {
                     this.now = $(event.target).html()
+                     this.getCompute($(event.target));
                 }
                 
-                  this.getCompute($(event.target));
+                 
                   
                   this.$dispatch('send-page', this.now)
                  
@@ -112,4 +115,3 @@ define(function (require, exports, module) {
         }
     });
 });
-
