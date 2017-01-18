@@ -47,7 +47,7 @@ define(function (require, exports, module) {
                 
                  
                   
-                  this.$dispatch('send-page', this.now)
+                  this.$dispatch('send-page-msg', this.now)
                  
             },
             getPrevious: function (event) {
@@ -57,7 +57,7 @@ define(function (require, exports, module) {
                 } else {
                     this.now--;
                      this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
-                    this.$dispatch('send-page', this.now)
+                    this.$dispatch('send-page-msg', this.now)
                 }
                    console.log(this.now)
                
@@ -69,7 +69,7 @@ define(function (require, exports, module) {
                 } else {
                     this.now++;
                     this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
-                    this.$dispatch('send-page', this.now)
+                    this.$dispatch('send-page-msg', this.now)
                 }
                   console.log(this.now)
         
