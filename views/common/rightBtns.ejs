@@ -7,7 +7,7 @@
                             <h3 class="block-title col-md-10" ><%=user.content.companyName%></h3>
                             <% if(user.content.type=="COMPANY"){%>
                               <div class="block-title col-md-2 text-right o-pd-r">
-                                     <a class="btn btn-minw btn-primary v-tabs-btn"  href="/noticeBoard/list" >公告列表</a>
+                                     <a class="btn btn-minw btn-primary v-tabs-btn"  style=" position: relative;" href="/noticeBoard/list" >公告列表<span class="noic  company-right-btn"  data-active="<%=user.isunread%>"></span></a>
                               </div>
                             <%}%>
 
@@ -184,3 +184,35 @@
                     </div>
                 </div>   
          </div>
+
+          <script>
+          // $(function (){
+          //    var isunread=$('.noic').attr('data-active');
+          //    var href= $('.noic').prev().attr('href')
+
+          //    if(isunread!='false'){
+          //        $('.noic').addClass('activeNoic') 
+          //        $('.noic').prev().attr('href',href+'&isunread=true')
+          //    }else {
+          //       $('.noic').removeClass('activeNoic') 
+          //        $('.noic').prev().attr('href',href+'&isunread=false')
+          //    }
+         
+          //  // $('.noic').parent().on('click',function (){
+          //  //     $('.noic').removeClass('activeNoic') 
+          //  //     $('.noic').prev().attr('href',href+'&isunread=false')
+          //  // })
+
+          //    function GetQueryString(name) {  
+          //       var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");  
+          //       var r = window.location.search.substr(1).match(reg);  //获取url中"?"符后的字符串并正则匹配
+          //       var context = "";  
+          //       if (r != null)  
+          //            context = r[2];  
+          //       reg = null;  
+          //       r = null;  
+          //       return context == null || context == "" || context == "undefined" ? "" : context;  
+          //   }
+
+          // })
+ </script>  
