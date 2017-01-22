@@ -3,7 +3,6 @@ define(function (require, exports, module) {
 
     Vue.component('v-pages-notice', {
         props: ['pagelist'],
-        props: ['pagelist'],
         data: function () {
             return {now: 1,intNum:11}
         },
@@ -48,7 +47,7 @@ define(function (require, exports, module) {
                 
                  
                   
-                  this.$dispatch('send-page', this.now)
+                  this.$dispatch('send-page-notice', this.now)
                  
             },
             getPrevious: function (event) {
@@ -58,7 +57,7 @@ define(function (require, exports, module) {
                 } else {
                     this.now--;
                      this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
-                    this.$dispatch('send-page', this.now)
+                    this.$dispatch('send-page-notice', this.now)
                 }
                    console.log(this.now)
                
@@ -70,7 +69,7 @@ define(function (require, exports, module) {
                 } else {
                     this.now++;
                     this.getCompute($(event.target).parent().siblings('.yema_nav').find('li').eq(this.now)); 
-                    this.$dispatch('send-page', this.now)
+                    this.$dispatch('send-page-notice', this.now)
                 }
                   console.log(this.now)
         
