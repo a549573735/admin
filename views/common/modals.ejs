@@ -146,10 +146,46 @@
             <div class="modal-body">
 
                 <div class="row " v-cloak>
-                    <div class="col-md-12 col-lg-12" v-for="item in modalMsg.content.title">
-                          <div class="col-md-3 text-right v-modal-text">{{item}}:</div> 
-                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0][modalMsg.content.keys[$index]]}}</div> 
+                    <div class="col-md-12 col-lg-12" ><!-- v-for="item in modalMsg.content.title" -->
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[0]}}:</div> 
+                         <!--  <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0][modalMsg.content.keys[$index]]}}</div>  -->
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].name}}</div>
                     </div>
+                    <div class="col-md-12 col-lg-12" >
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[1]}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].businesses}}</div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12" >
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[2]}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].specification}}</div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12" >
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[3]}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].registerNo}}</div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12" >
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[4]}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].measurement}}</div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12" >
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[5]}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].expireDate}}</div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12" >
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[6]}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].producerName}}</div>
+                    </div>
+
+                    <div class="col-md-12 col-lg-12" >
+                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[7]}}:</div> 
+                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].certificates}}</div>
+                    </div>
+
                 </div>
             </div>
             <%if(user.content.type!='COMPANY'&&user.content.type!='PARK'){%>
