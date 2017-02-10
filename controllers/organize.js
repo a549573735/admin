@@ -645,6 +645,10 @@ exports.details = function (req, res, next) {
                     for (var name in item) {
                              item[name] += ' '
                              item.isImg=[];
+                        if(name=='certificate'){
+                            item.certificates=item['certificate'];
+                            delete item['certificate']
+                        }    
                         if(name=='registerFiles'&&item[name]!=null){
                              if(typeof item[name] =='string'){
                                  item[name]=item[name].split(',');
@@ -660,6 +664,7 @@ exports.details = function (req, res, next) {
                         }
                     }
                 })
+               console.log(data.data.content.content)
 
                 data.data.product = req.session.user.content.type != "COMPANY" ? true : false   // 控制 权限 公司不加关联
 

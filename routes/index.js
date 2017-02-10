@@ -22,8 +22,6 @@ var proxy = require('http-proxy-middleware');
 
     app.post('/loginUp', User.loginUp);               // 用户登录 提交用户名
           		     	 
- 
-
 	app.get('/admin/interface/list', User.signRequired,  Admin.interface);						 //后台进入
 
 	app.get('/admin/market', User.signRequired,Admin.admin_market);			//单位管理 后台 市场所

@@ -136,7 +136,7 @@ define(function (require, exports, module) {
 	         		}
 	         		data.data.content.keys=keys;
 	         		if(this.type=='product'){
-	         			data.data.content.title=['产品名称','经营范围','规格','产品注册号','产品计量单位','过期时间','注册号文件','生产企业','企业许可证号']
+	         			data.data.content.title=['产品名称','经营范围','规格','产品注册号','产品计量单位','过期时间','生产企业','企业许可证号']
 	         		}else{
 	         			data.data.content.title=['供应商名称','地址','电话号码','产品注册号','过期时间','经营范围']
 	         		}
