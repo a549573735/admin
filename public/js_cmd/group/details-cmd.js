@@ -122,7 +122,7 @@ define(function (require, exports, module) {
 	         events:{
 	         	"send-modal-msg":function (data){
 	     
-	         		var reg=/id$/i
+	         		var reg=/id|registerFiles|isImg$/i
 	         		this.href=data.data.href
 	  				this.type=data.data.type
 	  				//console.log(data)
@@ -143,6 +143,18 @@ define(function (require, exports, module) {
 	         		// data.data.forEach(function (item,name){
 	         		// 		console.log(item)
 	         		// })
+	         		// for(var name in data.data){
+	         		// 	//console.log(data.data[name])
+	         		// 	if(name=='content'){
+	         		// 		//console.log(data.data[name].content[0].registerFiles)
+	         		// 		 delete data.data[name].content[0].registerFiles
+	         		// 		 delete data.data[name].content[0].isImg
+
+	         		// 		 console.log(JSON.stringify(data.data[name].content[0]))
+	         		// 	}
+	         		// }
+	         		//console.log(data.data)
+	         		//delete data.data.
 	         		this.modalMsg=data.data;
 	         	},
 	         	"send-page":function (data){
