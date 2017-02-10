@@ -140,6 +140,9 @@ define(function (require, exports, module) {
 	         		}else{
 	         			data.data.content.title=['供应商名称','地址','电话号码','产品注册号','过期时间','经营范围']
 	         		}
+	         		// data.data.forEach(function (item,name){
+	         		// 		console.log(item)
+	         		// })
 	         		this.modalMsg=data.data;
 	         	},
 	         	"send-page":function (data){

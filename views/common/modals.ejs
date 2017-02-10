@@ -147,43 +147,43 @@
 
                 <div class="row " v-cloak>
                     <div class="col-md-12 col-lg-12" ><!-- v-for="item in modalMsg.content.title" -->
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[0]}}:</div> 
+                          <div class="col-md-3 text-right v-modal-text">产品名称:</div> 
                          <!--  <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0][modalMsg.content.keys[$index]]}}</div>  -->
                           <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].name}}</div>
                     </div>
                     <div class="col-md-12 col-lg-12" >
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[1]}}:</div> 
+                          <div class="col-md-3 text-right v-modal-text">经营范围:</div> 
                           <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].businesses}}</div>
                     </div>
 
                     <div class="col-md-12 col-lg-12" >
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[2]}}:</div> 
+                          <div class="col-md-3 text-right v-modal-text">规格:</div> 
                           <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].specification}}</div>
                     </div>
 
                     <div class="col-md-12 col-lg-12" >
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[3]}}:</div> 
+                          <div class="col-md-3 text-right v-modal-text">产品注册号:</div> 
                           <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].registerNo}}</div>
                     </div>
 
                     <div class="col-md-12 col-lg-12" >
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[4]}}:</div> 
+                          <div class="col-md-3 text-right v-modal-text">产品计量单位:</div> 
                           <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].measurement}}</div>
                     </div>
 
                     <div class="col-md-12 col-lg-12" >
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[5]}}:</div> 
+                          <div class="col-md-3 text-right v-modal-text">过期时间:</div> 
                           <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].expireDate}}</div>
                     </div>
 
                     <div class="col-md-12 col-lg-12" >
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[6]}}:</div> 
-                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].producerName}}</div>
+                          <div class="col-md-3 text-right v-modal-text">生产企业:</div> 
+                          <div class="col-md-9 text-left v-modal-text" >{{modalMsg.content.content[0].producerName=='null '?'':modalMsg.content.content[0].producerName}}</div>
                     </div>
 
                     <div class="col-md-12 col-lg-12" >
-                          <div class="col-md-3 text-right v-modal-text">{{modalMsg.content.title[7]}}:</div> 
-                          <div class="col-md-9 text-left v-modal-text">{{modalMsg.content.content[0].certificates}}</div>
+                          <div class="col-md-3 text-right v-modal-text">企业许可证号:</div> 
+                          <div class="col-md-9 text-left v-modal-text" >{{modalMsg.content.content[0].certificates=='null '?'':modalMsg.content.content[0].certificates}}</div>
                     </div>
 
                 </div>
