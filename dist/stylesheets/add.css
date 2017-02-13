@@ -2,7 +2,7 @@
 .add-notice{ width: 100%;  }
 #uploadifive-file_upload{ float: left;}
 .uploadifive{ float: left;}
-.uploadifive-button{ border-radius: 8px; background-color:#428bca; background-image:none; border:none; }
+.uploadifive-button{ border-radius: 3px; width: 70px !important;  background-color:#428bca; background-image:none; border:none; }
 .uploadifive-button:hover{ background:#316796; cursor: pointer;}
 .hide{ display: none !important;}
 .company-right-btn{ left: -15px;}
