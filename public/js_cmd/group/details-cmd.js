@@ -79,7 +79,7 @@ define(function (require, exports, module) {
                       var view=$.query.get('view')
                       var _name=$(event.target).text().trim()
                       var that=this;
-                      var reg=/id$/i
+                      var reg=/id|registerFiles|isImg$/i
                      // $('.all-check').removeAttr('checked');
                      $('#v-all-check').removeClass('active')
                      if($(event.target).attr('data-producerId')){
