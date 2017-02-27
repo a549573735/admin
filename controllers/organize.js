@@ -891,7 +891,7 @@ exports.api_purchaseList = function (req, res, next) {
             data.content.forEach(function (item) {
                 for (var name in item) {
                     
-                    item[name] += ' '
+                    item[name] += '   '
                 }
             })
         }     
