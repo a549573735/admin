@@ -46,6 +46,7 @@ define(function (require, exports, module) {
                                                         <td v-if="item.salesRep"  class="text-center">{{ item.salesRep }}</td>\
                                                         <td v-if="item.totalPrice"  class="text-center">{{ item.totalPrice===\'null \'?\'\':item.totalPrice}}</td>\
                                                         <td v-if="item.notes"  class="text-center"></td>\
+                                                        <td v-if="item.unitPrice"  class="text-center">{{ item.unitPrice===\'null \'?\'\':item.unitPrice}}</td>\
                                                     </tr>\
                                                   </tbody>\
                                               </table>\
