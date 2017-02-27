@@ -869,7 +869,7 @@ exports.api_saleList = function (req, res, next) {
         if(data.content!=null){        
             data.content.forEach(function (item) {
                 for (var name in item) {
-                    
+                    if(item[name]=="null"||item[name]==null)item[name]="";
                     item[name] += ' '
                 }
             })
@@ -890,7 +890,7 @@ exports.api_purchaseList = function (req, res, next) {
         if(data.content!=null){            
             data.content.forEach(function (item) {
                 for (var name in item) {
-                    
+                    if(item[name]=="null"||item[name]==null)item[name]="";
                     item[name] += '   '
                 }
             })
