@@ -595,7 +595,6 @@ exports.details = function (req, res, next) {
                         item[name] += ' '
                         item.isImg=[];
                         if(name=='certificateFiles'&&item[name]!=null){
-                    
                              if(typeof item[name] =='string'){
                                  item[name]=item[name].split(',');
                                  item[name].forEach(function (files){
@@ -633,7 +632,7 @@ exports.details = function (req, res, next) {
 
             api_services.commonRequest('api/app/company/' + id + '/product/aptitude/list', 'POST', form,req).then(function (dataSelect) {
                 dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
-                console.log(dataSelect.content)
+             
                 tools.Interface_company({
                         title: ['产品名称', '产品计量单位', '产品规格', '经营范围', '产品注册证号','注册号文件', '注册证有效期'],
                         style: ['15%', '15%', '15%', '10%', '15%','10%','20%']
@@ -642,9 +641,15 @@ exports.details = function (req, res, next) {
                     dataSelect
                 )
                data.data.content.content.forEach(function (item) {
-                    for (var name in item) {
-                             item[name] += ' '
+                           for (var name in item) {
+                                item[name] += ' '
+                           }
                              item.isImg=[];
+               }) 
+
+                   
+               data.data.content.content.forEach(function (item) {
+                    for (var name in item) {
                         if(name=='certificate'){
                             item.certificates=item['certificate'];
                             delete item['certificate']
@@ -652,26 +657,28 @@ exports.details = function (req, res, next) {
                         if(name=='registerFiles'&&item[name]!=null){
                              if(typeof item[name] =='string'){
                                  item[name]=item[name].split(',');
-                                 item[name].forEach(function (files){
-                                 files=files.replace(/(^\s+)|(\s+$)/g,"")
-                                 if(isImgsreg.test(files)){
-                                        item.isImg.push(true)
-                                   }else {
-                                        item.isImg.push(false)
-                                  }
+                                 item['registerFiles'].forEach(function (files){
+                                     files=files.replace(/(^\s+)|(\s+$)/g,"")
+                                     if(isImgsreg.test(files)){
+                                            item.isImg.push(true)
+                                       }else {
+                                            item.isImg.push(false)
+                                      }
                                 })
                              }
                         }
                     }
                 })
-               console.log(data.data.content.content)
+                   console.log(data.data.content.content)
+            
+            
 
                 data.data.product = req.session.user.content.type != "COMPANY" ? true : false   // 控制 权限 公司不加关联
 
                 data.data.type = "product"
                 data.searchName = "产品名称";
                 if (req.query.api == 'true') {
-                    res.json(data);
+                       res.json(data);
                 } else {
                     res.render('pages/details', data);
                 }
