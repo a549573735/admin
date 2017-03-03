@@ -70,7 +70,7 @@
                                       </form>
                            </div>
 
-                           <table-content-s :datalist="<%= JSON.stringify(data)%>"></table-content-s>  
+                           <table-content-s :datalist="<%= JSON.stringify(data)%>" :newdata="newdata"></table-content-s>  
                       
                      <% }else { %>
 
@@ -97,7 +97,7 @@
                                   </div>
                               </form>
                        </div>
-                       <table-content-d :datalist="<%= JSON.stringify(data)%>" ></table-content-d> 
+                       <table-content-d :datalist="<%= JSON.stringify(data)%>"  :newdata="newdata"></table-content-d> 
 
                      <%} %>
                      <v-pages :pagelist="<%= JSON.stringify(pagelist) %>"></v-pages>

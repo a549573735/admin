@@ -306,7 +306,6 @@ exports.details = function (req, res, next) {
                                    }
                                })
                 }
-                console.log(dataSelect)
             
 
                 req.session.user.content.companyName = dataSelect.content.name;
@@ -340,7 +339,7 @@ exports.details = function (req, res, next) {
             api_services.commonRequest('api/app/company/' + id + '/warehouse/list', 'POST', form,req).then(function (dataSelect) {
                 console.log(dataSelect)
                 if(dataSelect.content){
-                        dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                        data.pagelist=dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 }
               
                 tools.Interface_company({
@@ -376,7 +375,7 @@ exports.details = function (req, res, next) {
             data.type = 'date';
 
             api_services.commonRequest('api/app/company/' + id + '/purchase/list', 'POST', form,req).then(function (dataSelect) {
-                dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                data.pagelist=dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
                         title: ['采购订单号', '采购日期', '供应商', '经办人', '采购随行单', '总价(元)','备注'],
@@ -420,7 +419,7 @@ exports.details = function (req, res, next) {
             data.btnlist[2].active = true;
             data.type = 'date';
             api_services.commonRequest('api/app/company/' + id + '/sale/list', 'POST', form,req).then(function (dataSelect) {
-                dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                data.pagelist=dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
                         title: ['订货单号', '销售日期', '客户企业', '销售代表', '总价(元)','备注'],
@@ -451,8 +450,7 @@ exports.details = function (req, res, next) {
             data.btnlist[3].active = true;
             data.type = 'date';
             api_services.commonRequest('api/app/company/' + id + '/invoice/list', 'POST', form,req).then(function (dataSelect) {
-                dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
-                console.log(dataSelect.content)
+                data.pagelist=dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 tools.Interface_company({
                         title: ['发票单号', '开票日期', '发票类别', '客户', '税号', '开票金额', '经办人', '发票单', '备注'],
                         style: ['15%', '10%', '10%', '10%', '15%', '10%', '10%', '10%', '10%']
@@ -496,7 +494,7 @@ exports.details = function (req, res, next) {
             data.type = 'search';
 
             api_services.commonRequest('api/app/company/' + id + '/customer/aptitude/list', 'POST', form,req).then(function (dataSelect) {
-                dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                data.pagelist=dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 console.log(dataSelect.content)
                 tools.Interface_company({
                         title: ['客户名称', '客户地址', '联系方式', '经营许可证', '许可证文件','经营范围', '许可证截止日期'],
@@ -579,8 +577,9 @@ exports.details = function (req, res, next) {
             api_services.commonRequest('api/app/company/' + id + '/provider/aptitude/list', 'POST', form,req).then(function (dataSelect) {
 
                 if (dataSelect.success) {
-                    dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                    data.pagelist=dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
                 }
+                
                 console.log(dataSelect.content)
                 tools.Interface_company({
                         title: ['供应商名称', '供应商地址', '联系方式', '经营许可证','许可证文件', '经营范围', '许可证截止日期'],
@@ -631,7 +630,7 @@ exports.details = function (req, res, next) {
             data.type = 'search';
 
             api_services.commonRequest('api/app/company/' + id + '/product/aptitude/list', 'POST', form,req).then(function (dataSelect) {
-                dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
+                data.pagelist=dataSelect.content.page = Math.ceil(dataSelect.content.total / dataSelect.content.size);
              
                 tools.Interface_company({
                         title: ['产品名称', '产品计量单位', '产品规格', '经营范围', '产品注册证号','注册号文件', '注册证有效期'],

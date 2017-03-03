@@ -3,10 +3,22 @@ define(function (require, exports, module) {
     Vue.component('table-content-d', {
         props: {
             mydata: [],
-            datalist: []
+            datalist: [],
+            newdata:[]
         },
         data: function () {
             return {href: '', type: ''}
+        },
+        computed:{
+             newdataList:function (){
+                    console.log(this.newdata.data)
+                     if(this.newdata.content!==undefined){
+                    return this.newdata
+                  }else {
+
+                    return this.datalist
+                  }
+             }
         },
         template: '<div class="tab-pane">\
                                 <div class="row v-table">\
@@ -15,14 +27,14 @@ define(function (require, exports, module) {
                                             <table class="table  table-hover table-borderless">\
                                                   <thead>\
                                                   <tr class="v-table-tr">\
-                                                        <th class="text-center " v-for="item in datalist.title" v-bind:style="{ width: datalist.style[$index] }">{{item}}</th>\
+                                                        <th class="text-center " v-for="item in newdataList.title" v-bind:style="{ width: newdataList.style[$index] }">{{item}}</th>\
                                                   </tr>\
                                                   </thead>\
                                                   <tbody class="v-tabs-check">\
-                                                     <tr v-for="item in datalist.content.content">\
-                                                        <td v-if="datalist.product&&item.invoiceNo" class="text-center" style=""><a class="btn-link product_name" @click="getModalInvoice($event)"  data-toggle="modal" :data-id="item.id" :data-type="item.type"  data-target="#modal-invoice"> {{ item.invoiceNo }} \
+                                                     <tr v-for="item in newdataList.content.content">\
+                                                        <td v-if="newdataList.product&&item.invoiceNo" class="text-center" style=""><a class="btn-link product_name" @click="getModalInvoice($event)"  data-toggle="modal" :data-id="item.id" :data-type="item.type"  data-target="#modal-invoice"> {{ item.invoiceNo }} \
                                                          </a></td>\
-                                                        <td v-if="!datalist.product&&item.invoiceNo" class="text-center">{{ item.invoiceNo }}</td>\
+                                                        <td v-if="!newdataList.product&&item.invoiceNo" class="text-center">{{ item.invoiceNo }}</td>\
                                                         <td v-if="item.batchNo" class="text-center">{{ item.batchNo }}</td>\
                                                         <td v-if="item.expireDate" class="text-center">{{ item.expireDate }}</td>\
                                                         <td v-if="item.productDate" class="text-center">{{ item.productDate }}</td>\
@@ -37,9 +49,9 @@ define(function (require, exports, module) {
                                                         <td v-if="item.taxNo"  class="text-center">{{ item.taxNo }}</td>\
                                                         <td v-if="item.amount"  class="text-center">{{ item.amount }}</td>\
                                                         <td v-if="item.receiver"  class="text-center">{{ item.receiver }}</td>\
-                                                        <td v-if="datalist.product && item.provider"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-providerId="item.providerId"   data-target="#modal-details"> {{ item.provider }}\
+                                                        <td v-if="newdataList.product && item.provider"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)"  data-toggle="modal" :data-providerId="item.providerId"   data-target="#modal-details"> {{ item.provider }}\
                                                          </a></td>\
-                                                        <td v-if="!datalist.product&&item.provider "  class="text-center">{{ item.provider }}</td>\
+                                                        <td v-if="!newdataList.product&&item.provider "  class="text-center">{{ item.provider }}</td>\
                                                         <td v-if="item.operator"  class="text-center">{{ item.operator }}</td>\
                                                         <td v-if="item.invoiceFile" class="text-center"><a v-for="(index,files) in item.invoiceFile"   v-if="item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'查看  \'}}</a> <a v-for="(index,files)  in item.invoiceFile"    v-if="!item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\' \'?"":\'下载  \'}}</a> </td>\
                                                         <td v-if="item.purchaseBill" class="text-center"><a v-for="(index,files) in item.purchaseBill" v-if="item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'查看  \'}}</a> <a v-for="(index,files)  in item.purchaseBill"    v-if="!item.isImg[index]"   href="http://{{files}}" target="_blank" >{{files==\'null \'?"":\'下载  \'}}</a> </td>\

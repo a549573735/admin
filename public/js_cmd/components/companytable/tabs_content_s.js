@@ -6,12 +6,23 @@ define(function (require, exports, module) {
     Vue.component('table-content-s', {
         props: {
             mydata: [],
-            datalist: []
+            datalist: [],
+            newdata:[]
         },
         data:function (){
           return {href:'',type:function (){
                   return  $.query.get('view')
           }()}
+        },
+        computed:{
+             newdataList:function (){
+                 console.log(JSON.stringify(this.newdata))
+                  if(this.newdata.content!==undefined){
+                    return this.newdata
+                  }else {
+                    return this.datalist
+                  }
+             }
         },
         template: '<div class="tab-pane">\
                                 <div class="row v-table">\
@@ -20,18 +31,18 @@ define(function (require, exports, module) {
                                              <table class="table  table-hover table-borderless">\
                                                   <thead>\
                                                   <tr class="v-table-tr">\
-                                                        <th class="text-center " v-for="item in datalist.title" v-bind:style="{ width: datalist.style[$index] }">{{item}}</th>\
+                                                        <th class="text-center " v-for="item in newdataList.title" v-bind:style="{ width: newdataList.style[$index] }">{{item}}</th>\
                                                   </tr>\
                                                   </thead>\
                                                   <tbody class="v-tabs-check">\
-                                                     <tr v-for="item in datalist.content.content">\
-                                                        <td v-if="datalist.product&&!!item.producerId"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} \
+                                                     <tr v-for="item in newdataList.content.content">\
+                                                        <td v-if="newdataList.product&&!!item.producerId"  class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} \
                                                          </a></td>\
-                                                        <td v-if="type==\'provider\'&&datalist.product" class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} \
+                                                        <td v-if="type==\'provider\'&&newdataList.product" class="text-center"><a class="btn-link product_name" @click="getModalMsg($event)" :data-producerId="item.producerId"  data-toggle="modal"   data-target="#modal-details"> {{ item.name }} \
                                                          </a></td>\
-                                                        <td v-if="type==\'customer\'&&datalist.product" class="text-center">{{ item.name }}</td>\
-                                                        <td v-if="type==\'producer\'&&datalist.product" class="text-center">{{ item.name }}</td>\
-                                                        <td v-if="!datalist.product" class="text-center">{{ item.name }}</td>\
+                                                        <td v-if="type==\'customer\'&&newdataList.product" class="text-center">{{ item.name }}</td>\
+                                                        <td v-if="type==\'producer\'&&newdataList.product" class="text-center">{{ item.name }}</td>\
+                                                        <td v-if="!newdataList.product" class="text-center">{{ item.name }}</td>\
                                                         <td v-if="item.address" class="text-center">{{ item.address }}</td>\
                                                         <td v-if="item.measurement" class="text-center">{{ item.measurement }}</td>\
                                                         <td v-if="item.specification" class="text-center">{{ item.specification }}</td>\

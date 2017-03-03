@@ -20,6 +20,8 @@ define(function (require, exports, module) {
 	         	type:'',
 	         	invoice:{title:[],style:[],content:[],type:''},
 	            purchase_sale_List:{title:[],style:[],content:[],type:''},
+	            newdata:{}
+
 	         },
 	         methods:{
 	         	  setDate:function (){
@@ -140,40 +142,21 @@ define(function (require, exports, module) {
 	         		}else{
 	         			data.data.content.title=['供应商名称','地址','电话号码','产品注册号','过期时间','经营范围']
 	         		}
-	         		// data.data.forEach(function (item,name){
-	         		// 		console.log(item)
-	         		// })
-	         		// for(var name in data.data){
-	         		// 	//console.log(data.data[name])
-	         		// 	if(name=='content'){
-	         		// 		//console.log(data.data[name].content[0].registerFiles)
-	         		// 		 delete data.data[name].content[0].registerFiles
-	         		// 		 delete data.data[name].content[0].isImg
-
-	         		// 		 console.log(JSON.stringify(data.data[name].content[0]))
-	         		// 	}
-	         		// }
-	         		//console.log(data.data)
-	         		//delete data.data.
+	  
 	         		this.modalMsg=data.data;
 	         	},
-	         	"send-page":function (data){
+	         	"send-page":function (page){
 
-	         			this.page=data-1
-	         			var that=this;
-
-	         			 $.post(this.href,{name:this.name,page:this.page}).then(function (data){
-
- 					 		if(data.success){
- 					 			that.page=data.content.page
-								that.modalList=data.content;
-								that.modalList.title=['公司名称','公司地址','联系方式','经营许可证','经营范围','许可证截止日期']
-								that.modalList.style=['10%','15%','10%','20%','auto','20%']
-
- 					 		}else {
- 					 			alert(data.errMessage)
- 					 		}
- 					   })
+	         			this.page=page-1
+	         		     var that=this;
+	         		     var view=$.query.get('view');	
+	         		     var name=$('input[name=name]').val()
+	         		     var form=$('input[name=from]').val()
+	         		     var to=$('input[name=to]').val()
+	         		     var id=$.query.get('id');	
+	         			 $.get('/organize/details?view='+view+'&name='+name+'&form='+form+'&to='+to+'&page='+(page-1)+'&api=true&id='+id).then(function (data){
+	 					 		that.newdata=data.data;
+ 					     })
 	         	},
 	         	"send-invoice":function (data){
  					 var type=data.type.replace(/^\s+|\s+$/g,"");
