@@ -85,7 +85,6 @@ define(function (require, exports, module) {
                               }
 
                           $.get('/api/publicity/list',form).then(function (data){
-                              console.log(JSON.stringify(data.content))
                               that.dataList.content=data.content
                           })   
 
@@ -109,13 +108,12 @@ define(function (require, exports, module) {
                    }
                 },
                 events:{
-
                     'send-page':function (page){
 
                       this.page=page-1
                       var that=this;
 
-                       this.getContent()
+                       this.getContent(page-1)
 
                       // $.get('/api/user/edit/list?page='+this.page+'&id='+this.id).then(function (data){
 
