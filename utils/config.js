@@ -6,7 +6,7 @@ var util=require('./utils');
 var config = {
     
         internal:{
-            host:process.env.server||"http://139.196.152.218/",
+            host:process.env.server||"http://120.76.181.106/",
             port:"5000",
         },  
         headers: {

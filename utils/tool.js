@@ -145,7 +145,6 @@ Services.prototype.setForm=function (){
          var from= date.getFullYear()+'-'+this.addZero(month)+'-'+this.addZero(date.getDate());
         var to=date.getFullYear()+'-'+this.addZero((month+1))+'-'+this.addZero(date.getDate());
       }
-
   return { from:from,to:to}
 }
 
