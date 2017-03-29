@@ -8,9 +8,7 @@ var config = {
         internal:{
             host:process.env.server||"http://139.196.152.218/",
             port:"5000",
-        },
-
-      
+        },  
         headers: {
                 "Content-Type": "application/json",
                 "Accept": "application/json",

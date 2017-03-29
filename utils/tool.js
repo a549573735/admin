@@ -139,7 +139,7 @@ Services.prototype.setForm=function (){
         var to=date.getFullYear()+'-'+this.addZero(1)+'-'+this.addZero(date.getDate());
       }else if(month==3){
         var from=(date.getFullYear()-1)+'-'+this.addZero(month)+'-'+(this.addZero(date.getDate()-1));
-        var to=date.getFullYear()+'-'+this.addZero(1)+'-'+this.addZero(date.getDate());
+        var to=date.getFullYear()+'-'+this.addZero(month+1)+'-'+this.addZero(date.getDate());
       }else
       {
          var from= date.getFullYear()+'-'+this.addZero(month)+'-'+this.addZero(date.getDate());
