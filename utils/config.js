@@ -6,8 +6,8 @@ var util=require('./utils');
 var config = {
     
         internal:{
-            host:process.env.server||"http://120.76.181.106/",
-            port:"8181",
+            host:process.env.server||"http://120.76.181.106:8181/",
+            port:"5000",
         },  
         headers: {
                 "Content-Type": "application/json",

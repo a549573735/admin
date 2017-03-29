@@ -60,7 +60,7 @@ define(function (require, exports, module) {
                     
                     }else if(data.type=="BACKSTAGE"){
 
- 						window.location.href='/admin/interface/list';
+ 					          	window.location.href='/admin/interface/list';
 
                     }else if(data.type=="MARKET"){
                     	window.location.href='/organize/park?id='+data.data.belongId+'&market='+data.data.marketId+'&park='+data.data.parkId;

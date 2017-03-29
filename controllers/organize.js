@@ -193,7 +193,6 @@ exports.architecture = function (req, res, next) {
             marketLeng = dataSelect.content.length
         }
 
-
         res.render('pages/architecture', {
             data: dataSelect,
             parkAll: parkall,
